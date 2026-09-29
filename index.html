@@ -232,10 +232,28 @@ a.side-action:hover,.side-action:hover{background:#191c25;color:#fff;transform:t
       <div class="playground-grid discord-embed">
         <div class="embed-accent"></div>
         <div class="embed-content">
-          <label class="playground-label" for="commandSelect" data-i18n="playground_choose">Choose a command</label>
-          <select id="commandSelect" class="playground-select">
-            <option value="qotd">/qotd</option><option value="edit">/edit</option><option value="delete">/delete</option><option value="leaderboard">/leaderboard</option><option value="history">/history</option><option value="setup">/setup</option><option value="logs">/logs</option><option value="audit_log">/audit_log</option><option value="maintenance">/maintenance</option><option value="lock">/lock</option>
-          </select>
+          <label class="playground-label" data-i18n="playground_choose">Choose a command</label>
+          <button class="command-picker-trigger" id="commandPickerTrigger" type="button" aria-haspopup="dialog" aria-expanded="false">
+            <span class="command-picker-current">
+              <code id="commandPickerName">/qotd</code>
+              <span id="commandPickerLabel">Create a new Question of the Day.</span>
+            </span>
+            <span class="command-picker-chevron" aria-hidden="true">⌄</span>
+          </button>
+
+          <div class="command-drawer" id="commandDrawer" aria-hidden="true">
+            <div class="command-drawer-backdrop" data-command-close></div>
+            <aside class="command-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="commandDrawerTitle">
+              <div class="command-drawer-head">
+                <div>
+                  <span class="eyebrow">COMMAND PLAYGROUND</span>
+                  <h3 id="commandDrawerTitle" data-i18n="playground_choose">Choose a command</h3>
+                </div>
+                <button class="command-drawer-close" type="button" data-command-close aria-label="Close">×</button>
+              </div>
+              <div class="command-options" id="commandOptions"></div>
+            </aside>
+          </div>
           <div class="playground-card" id="playgroundCard">
             <div class="command-head"><code id="playgroundName">/qotd</code><span class="command-tag" id="playgroundTag">QOTD</span></div>
             <h3 id="playgroundTitle">Create a new Question of the Day.</h3>
@@ -721,20 +739,71 @@ a.side-action:hover,.side-action:hover{background:#191c25;color:#fff;transform:t
       maintenance:['OWNER','Manage maintenance mode.','Temporarily block new QOTD creation while maintaining the server.','Bot Owner or Server Owner','/maintenance enabled:true'],
       lock:['OWNER','Lock QOTD creation.','Lock or unlock the creation of new QOTDs.','Bot Owner or Server Owner','/lock enabled:true']
     };
-    const commandSelect = document.getElementById('commandSelect');
-    function updatePlayground(){
-      if(!commandSelect) return;
-      const d=playgroundData[commandSelect.value]||playgroundData.qotd;
-      document.getElementById('playgroundName').textContent='/'+commandSelect.value;
+    const commandPickerTrigger = document.getElementById('commandPickerTrigger');
+    const commandDrawer = document.getElementById('commandDrawer');
+    const commandPickerName = document.getElementById('commandPickerName');
+    const commandPickerLabel = document.getElementById('commandPickerLabel');
+    const commandOptions = document.getElementById('commandOptions');
+    let selectedCommand = 'qotd';
+
+    function setCommandDrawer(open){
+      if(!commandDrawer) return;
+      commandDrawer.classList.toggle('open', open);
+      commandDrawer.setAttribute('aria-hidden', String(!open));
+      commandPickerTrigger?.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('command-drawer-open', open);
+      if(open){
+        document.body.style.overflow = 'hidden';
+        setTimeout(()=>commandDrawer.querySelector('.command-option.active')?.focus(), 60);
+      } else {
+        document.body.style.overflow = '';
+        commandPickerTrigger?.focus({preventScroll:true});
+      }
+    }
+
+    function renderCommandOptions(){
+      if(!commandOptions) return;
+      commandOptions.innerHTML='';
+      Object.entries(playgroundData).forEach(([command,d])=>{
+        const option=document.createElement('button');
+        option.type='button';
+        option.className='command-option';
+        option.dataset.command=command;
+        option.innerHTML=`<span class="command-option-main"><code>/${command}</code><small>${d[1]}</small></span><span class="command-option-radio" aria-hidden="true"></span>`;
+        option.addEventListener('click',()=>{
+          updatePlayground(command);
+          setCommandDrawer(false);
+        });
+        commandOptions.appendChild(option);
+      });
+    }
+
+    function updatePlayground(command=selectedCommand){
+      selectedCommand=command;
+      const d=playgroundData[command]||playgroundData.qotd;
+      document.getElementById('playgroundName').textContent='/'+command;
       document.getElementById('playgroundTag').textContent=d[0];
       document.getElementById('playgroundTitle').textContent=d[1];
       document.getElementById('playgroundDescription').textContent=d[2];
       document.getElementById('playgroundAccess').textContent=d[3];
       document.getElementById('playgroundExample').textContent=d[4];
+      if(commandPickerName) commandPickerName.textContent='/'+command;
+      if(commandPickerLabel) commandPickerLabel.textContent=d[1];
+      commandOptions?.querySelectorAll('.command-option').forEach(option=>{
+        const active=option.dataset.command===command;
+        option.classList.toggle('active',active);
+        option.setAttribute('aria-selected',String(active));
+      });
       localStorage.setItem('quello-playground-used','1');
       unlockAchievement('playground');
     }
-    commandSelect?.addEventListener('change',updatePlayground);
+
+    commandPickerTrigger?.addEventListener('click',()=>setCommandDrawer(true));
+    commandDrawer?.querySelectorAll('[data-command-close]').forEach(el=>el.addEventListener('click',()=>setCommandDrawer(false)));
+    document.addEventListener('keydown',e=>{
+      if(e.key==='Escape' && commandDrawer?.classList.contains('open')) setCommandDrawer(false);
+    });
+    renderCommandOptions();
     updatePlayground();
 
     // Build Your QOTD flow
