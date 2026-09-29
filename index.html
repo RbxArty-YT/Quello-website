@@ -726,7 +726,7 @@ a.side-action:hover,.side-action:hover{background:#191c25;color:#fff;transform:t
     checklist.forEach(item => item.addEventListener('change', updateChecklist));
     updateChecklist();
 
-    // Command Playground
+    // Command Playground — stable custom drawer
     const playgroundData = {
       qotd:['QOTD','Create a new Question of the Day.','Create and publish a QOTD using the configured server settings.','Configured QOTD role, Bot Owner or Server Owner','/qotd question:"What should we discuss today?"'],
       edit:['QOTD','Edit an existing QOTD.','Change a QOTD by its Discord message ID.','Configured QOTD role, Bot Owner or Server Owner','/edit message_id:123456789 question:"New question"'],
@@ -739,70 +739,100 @@ a.side-action:hover,.side-action:hover{background:#191c25;color:#fff;transform:t
       maintenance:['OWNER','Manage maintenance mode.','Temporarily block new QOTD creation while maintaining the server.','Bot Owner or Server Owner','/maintenance enabled:true'],
       lock:['OWNER','Lock QOTD creation.','Lock or unlock the creation of new QOTDs.','Bot Owner or Server Owner','/lock enabled:true']
     };
+
     const commandPickerTrigger = document.getElementById('commandPickerTrigger');
     const commandDrawer = document.getElementById('commandDrawer');
     const commandPickerName = document.getElementById('commandPickerName');
     const commandPickerLabel = document.getElementById('commandPickerLabel');
     const commandOptions = document.getElementById('commandOptions');
     let selectedCommand = 'qotd';
+    let previousBodyOverflow = '';
 
-    function setCommandDrawer(open){
-      if(!commandDrawer) return;
+    // Keep the drawer outside cards/sections so mobile and desktop positioning is reliable.
+    if (commandDrawer && commandDrawer.parentElement !== document.body) {
+      document.body.appendChild(commandDrawer);
+    }
+
+    function setCommandDrawer(open) {
+      if (!commandDrawer) return;
       commandDrawer.classList.toggle('open', open);
       commandDrawer.setAttribute('aria-hidden', String(!open));
       commandPickerTrigger?.setAttribute('aria-expanded', String(open));
-      document.body.classList.toggle('command-drawer-open', open);
-      if(open){
+
+      if (open) {
+        previousBodyOverflow = document.body.style.overflow;
         document.body.style.overflow = 'hidden';
-        setTimeout(()=>commandDrawer.querySelector('.command-option.active')?.focus(), 60);
+        requestAnimationFrame(() => {
+          commandDrawer.querySelector('.command-option.active')?.focus({preventScroll:true});
+        });
       } else {
-        document.body.style.overflow = '';
+        document.body.style.overflow = previousBodyOverflow;
         commandPickerTrigger?.focus({preventScroll:true});
       }
     }
 
-    function renderCommandOptions(){
-      if(!commandOptions) return;
-      commandOptions.innerHTML='';
-      Object.entries(playgroundData).forEach(([command,d])=>{
-        const option=document.createElement('button');
-        option.type='button';
-        option.className='command-option';
-        option.dataset.command=command;
-        option.innerHTML=`<span class="command-option-main"><code>/${command}</code><small>${d[1]}</small></span><span class="command-option-radio" aria-hidden="true"></span>`;
-        option.addEventListener('click',()=>{
+    function renderCommandOptions() {
+      if (!commandOptions) return;
+      commandOptions.innerHTML = '';
+
+      Object.entries(playgroundData).forEach(([command, data]) => {
+        const option = document.createElement('button');
+        option.type = 'button';
+        option.className = 'command-option';
+        option.dataset.command = command;
+        option.setAttribute('role', 'option');
+        option.innerHTML = `
+          <span class="command-option-main">
+            <code>/${command}</code>
+            <small>${data[1]}</small>
+          </span>
+          <span class="command-option-radio" aria-hidden="true"></span>`;
+
+        option.addEventListener('click', () => {
           updatePlayground(command);
           setCommandDrawer(false);
         });
+
         commandOptions.appendChild(option);
       });
     }
 
-    function updatePlayground(command=selectedCommand){
-      selectedCommand=command;
-      const d=playgroundData[command]||playgroundData.qotd;
-      document.getElementById('playgroundName').textContent='/'+command;
-      document.getElementById('playgroundTag').textContent=d[0];
-      document.getElementById('playgroundTitle').textContent=d[1];
-      document.getElementById('playgroundDescription').textContent=d[2];
-      document.getElementById('playgroundAccess').textContent=d[3];
-      document.getElementById('playgroundExample').textContent=d[4];
-      if(commandPickerName) commandPickerName.textContent='/'+command;
-      if(commandPickerLabel) commandPickerLabel.textContent=d[1];
-      commandOptions?.querySelectorAll('.command-option').forEach(option=>{
-        const active=option.dataset.command===command;
-        option.classList.toggle('active',active);
-        option.setAttribute('aria-selected',String(active));
+    function updatePlayground(command = selectedCommand) {
+      selectedCommand = playgroundData[command] ? command : 'qotd';
+      const data = playgroundData[selectedCommand];
+
+      document.getElementById('playgroundName').textContent = '/' + selectedCommand;
+      document.getElementById('playgroundTag').textContent = data[0];
+      document.getElementById('playgroundTitle').textContent = data[1];
+      document.getElementById('playgroundDescription').textContent = data[2];
+      document.getElementById('playgroundAccess').textContent = data[3];
+      document.getElementById('playgroundExample').textContent = data[4];
+
+      if (commandPickerName) commandPickerName.textContent = '/' + selectedCommand;
+      if (commandPickerLabel) commandPickerLabel.textContent = data[1];
+
+      commandOptions?.querySelectorAll('.command-option').forEach(option => {
+        const active = option.dataset.command === selectedCommand;
+        option.classList.toggle('active', active);
+        option.setAttribute('aria-selected', String(active));
       });
-      localStorage.setItem('quello-playground-used','1');
-      unlockAchievement('playground');
+
+      localStorage.setItem('quello-playground-used', '1');
+      if (typeof unlockAchievement === 'function') unlockAchievement('playground');
     }
 
-    commandPickerTrigger?.addEventListener('click',()=>setCommandDrawer(true));
-    commandDrawer?.querySelectorAll('[data-command-close]').forEach(el=>el.addEventListener('click',()=>setCommandDrawer(false)));
-    document.addEventListener('keydown',e=>{
-      if(e.key==='Escape' && commandDrawer?.classList.contains('open')) setCommandDrawer(false);
+    commandPickerTrigger?.addEventListener('click', () => setCommandDrawer(true));
+
+    commandDrawer?.querySelectorAll('[data-command-close]').forEach(element => {
+      element.addEventListener('click', () => setCommandDrawer(false));
     });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && commandDrawer?.classList.contains('open')) {
+        setCommandDrawer(false);
+      }
+    });
+
     renderCommandOptions();
     updatePlayground();
 
