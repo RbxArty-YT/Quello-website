@@ -760,6 +760,8 @@ a.side-action:hover,.side-action:hover{background:#191c25;color:#fff;transform:t
       commandPickerTrigger?.setAttribute('aria-expanded', String(open));
 
       if (open) {
+        // Opening the playground counts as using it for Quello Explorer.
+        if (typeof unlockAchievement === 'function') unlockAchievement('playground');
         previousBodyOverflow = document.body.style.overflow;
         document.body.style.overflow = 'hidden';
         requestAnimationFrame(() => {
@@ -817,11 +819,17 @@ a.side-action:hover,.side-action:hover{background:#191c25;color:#fff;transform:t
         option.setAttribute('aria-selected', String(active));
       });
 
-      localStorage.setItem('quello-playground-used', '1');
-      if (typeof unlockAchievement === 'function') unlockAchievement('playground');
+      // The achievement is unlocked by actually opening/using the playground,
+      // not merely by rendering the default command on page load.
+      if (selectedCommand !== 'qotd' || localStorage.getItem('quello-playground-used') === '1') {
+        localStorage.setItem('quello-playground-used', '1');
+      }
     }
 
-    commandPickerTrigger?.addEventListener('click', () => setCommandDrawer(true));
+    commandPickerTrigger?.addEventListener('click', () => {
+      if (typeof unlockAchievement === 'function') unlockAchievement('playground');
+      setCommandDrawer(true);
+    });
 
     commandDrawer?.querySelectorAll('[data-command-close]').forEach(element => {
       element.addEventListener('click', () => setCommandDrawer(false));
