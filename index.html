@@ -505,25 +505,6 @@ a.side-action:hover,.side-action:hover{background:#191c25;color:#fff;transform:t
 
   <footer>Quello • <span data-i18n="footer_text">Questions for better conversations.</span></footer>
 
-  <div class="explorer-complete-overlay" id="explorerCompleteOverlay" aria-hidden="true">
-    <div class="explorer-particles" id="explorerParticles" aria-hidden="true"></div>
-    <div class="explorer-complete-card" role="dialog" aria-modal="true" aria-labelledby="explorerCompleteTitle">
-      <button class="explorer-complete-close" id="explorerCompleteClose" type="button" aria-label="Close">×</button>
-      <div class="explorer-logo-wrap" aria-hidden="true">
-        <div class="explorer-ring explorer-ring-a"></div>
-        <div class="explorer-ring explorer-ring-b"></div>
-        <img class="explorer-logo" src="quello-avatar.png" alt="">
-        <div class="explorer-check">✓</div>
-      </div>
-      <span class="eyebrow" id="explorerCompleteEyebrow">QUELLO EXPLORER</span>
-      <h2 id="explorerCompleteTitle">Explorer Complete! ✨</h2>
-      <p id="explorerCompleteText">You unlocked every Quello Explorer achievement. You found your way through the whole site!</p>
-      <div class="explorer-achievement-count"><span>4 / 4</span><b></b></div>
-      <div class="explorer-badge-row" aria-hidden="true"><span>◇</span><span>✓</span><span>🎲</span><span>✦</span></div>
-      <button class="button explorer-complete-button" id="explorerCompleteButton" type="button">Keep Exploring</button>
-    </div>
-  </div>
-
   <script>
     const translations = {
       en: {nav_home:'Home',nav_commands:'Commands',nav_playground:'Playground',nav_builder:'QOTD Builder',nav_guide:'Guide',nav_changelog:'Changelog',nav_community:'Community',
@@ -922,80 +903,18 @@ a.side-action:hover,.side-action:hover{background:#191c25;color:#fff;transform:t
 
     // Quello Explorer
     const explorerAchievementKeys=['playground','setup','random','secret'];
-    const explorerCompleteOverlay=document.getElementById('explorerCompleteOverlay');
-    const explorerCompleteClose=document.getElementById('explorerCompleteClose');
-    const explorerCompleteButton=document.getElementById('explorerCompleteButton');
-    const explorerCompleteEyebrow=document.getElementById('explorerCompleteEyebrow');
-    const explorerCompleteTitle=document.getElementById('explorerCompleteTitle');
-    const explorerCompleteText=document.getElementById('explorerCompleteText');
-    const explorerParticles=document.getElementById('explorerParticles');
-    const explorerCompleteSeenKey='quello-explorer-complete-celebration';
-
-    const explorerCompleteCopy={
-      en:{eyebrow:'QUELLO EXPLORER',title:'Explorer Complete! ✨',text:'You unlocked every Quello Explorer achievement. You found your way through the whole site!',button:'Keep Exploring'},
-      ru:{eyebrow:'QUELLO EXPLORER',title:'Исследователь завершён! ✨',text:'Ты открыл все достижения Quello Explorer. Ты прошёл весь сайт!',button:'Продолжить исследование'},
-      de:{eyebrow:'QUELLO EXPLORER',title:'Explorer abgeschlossen! ✨',text:'Du hast alle Quello-Explorer-Erfolge freigeschaltet. Du hast die gesamte Website erkundet!',button:'Weiter erkunden'},
-      fr:{eyebrow:'QUELLO EXPLORER',title:'Explorateur terminé ! ✨',text:'Vous avez débloqué tous les succès Quello Explorer. Vous avez exploré tout le site !',button:'Continuer l’exploration'},
-      it:{eyebrow:'QUELLO EXPLORER',title:'Esploratore completato! ✨',text:'Hai sbloccato tutti i traguardi Quello Explorer. Hai esplorato tutto il sito!',button:'Continua a esplorare'}
-    };
 
     function allExplorerAchievementsUnlocked(){
       return explorerAchievementKeys.every(key=>localStorage.getItem(`quello-ach-${key}`)==='1');
     }
 
-    function closeExplorerCelebration(){
-      explorerCompleteOverlay?.classList.remove('open');
-      explorerCompleteOverlay?.setAttribute('aria-hidden','true');
-    }
-
-    function createExplorerParticles(){
-      if(!explorerParticles) return;
-      explorerParticles.innerHTML='';
-      const symbols=['✦','✧','•','◇','+'];
-      for(let i=0;i<32;i++){
-        const particle=document.createElement('span');
-        particle.textContent=symbols[i%symbols.length];
-        particle.style.setProperty('--x',`${Math.random()*100}%`);
-        particle.style.setProperty('--delay',`${Math.random()*300}ms`);
-        particle.style.setProperty('--duration',`${900+Math.random()*700}ms`);
-        particle.style.setProperty('--distance',`${70+Math.random()*220}px`);
-        particle.style.setProperty('--rotation',`${-180+Math.random()*360}deg`);
-        explorerParticles.appendChild(particle);
-      }
-    }
-
-    function showExplorerCelebration(){
-      if(!explorerCompleteOverlay || localStorage.getItem(explorerCompleteSeenKey)==='1') return;
-      const lang=currentLanguage || 'en';
-      const copy=explorerCompleteCopy[lang] || explorerCompleteCopy.en;
-      if(explorerCompleteEyebrow) explorerCompleteEyebrow.textContent=copy.eyebrow;
-      if(explorerCompleteTitle) explorerCompleteTitle.textContent=copy.title;
-      if(explorerCompleteText) explorerCompleteText.textContent=copy.text;
-      if(explorerCompleteButton) explorerCompleteButton.textContent=copy.button;
-      createExplorerParticles();
-      explorerCompleteOverlay.classList.add('open');
-      explorerCompleteOverlay.setAttribute('aria-hidden','false');
-      localStorage.setItem(explorerCompleteSeenKey,'1');
-    }
-
-    explorerCompleteClose?.addEventListener('click',closeExplorerCelebration);
-    explorerCompleteButton?.addEventListener('click',closeExplorerCelebration);
-    explorerCompleteOverlay?.addEventListener('click',event=>{
-      if(event.target===explorerCompleteOverlay) closeExplorerCelebration();
-    });
-    document.addEventListener('keydown',event=>{
-      if(event.key==='Escape' && explorerCompleteOverlay?.classList.contains('open')) closeExplorerCelebration();
-    });
-
     function unlockAchievement(key){
-      const alreadyUnlocked=localStorage.getItem(`quello-ach-${key}`)==='1';
       const el=document.querySelector(`.achievement[data-achievement="${key}"]`);
       if(el) el.classList.add('unlocked');
       localStorage.setItem(`quello-ach-${key}`,'1');
-      if(!alreadyUnlocked && allExplorerAchievementsUnlocked()) showExplorerCelebration();
     }
 
-    // Restore saved badges without triggering the completion animation on page load.
+    // Restore saved badges on page load without triggering any animation.
     explorerAchievementKeys.forEach(key=>{
       if(localStorage.getItem(`quello-ach-${key}`)==='1'){
         document.querySelector(`.achievement[data-achievement="${key}"]`)?.classList.add('unlocked');
