@@ -290,3 +290,38 @@ button:focus-visible {
   .command-drawer-head h3{font-size:20px;}
   .command-option{min-height:68px;padding:13px 8px;}
 }
+
+
+/* Quello Explorer completion celebration */
+.explorer-complete-overlay{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;padding:20px;box-sizing:border-box;background:rgba(6,7,12,.78);backdrop-filter:blur(12px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .28s ease,visibility .28s ease;}
+.explorer-complete-overlay.open{opacity:1;visibility:visible;pointer-events:auto;}
+.explorer-complete-card{position:relative;width:min(460px,100%);box-sizing:border-box;padding:34px 26px 26px;border:1px solid rgba(155,140,255,.34);border-radius:26px;background:linear-gradient(145deg,#171a26,#0f121a);box-shadow:0 28px 90px rgba(0,0,0,.58),0 0 70px rgba(110,90,255,.16);text-align:center;transform:translateY(22px) scale(.94);transition:transform .4s cubic-bezier(.2,.8,.2,1);overflow:hidden;}
+.explorer-complete-overlay.open .explorer-complete-card{transform:translateY(0) scale(1);}
+.explorer-complete-close{position:absolute;top:12px;right:14px;width:38px;height:38px;border:0;outline:0;background:transparent;color:#b7bac4;font-size:28px;line-height:1;cursor:pointer;border-radius:10px;}
+.explorer-complete-close:hover{background:rgba(255,255,255,.06);color:#fff;}
+.explorer-logo-wrap{position:relative;width:126px;height:126px;margin:0 auto 20px;display:grid;place-items:center;}
+.explorer-logo{position:relative;z-index:3;width:92px;height:92px;border-radius:50%;object-fit:cover;box-shadow:0 0 32px rgba(88,101,242,.5);animation:explorerLogoFloat 3s ease-in-out infinite;}
+.explorer-ring{position:absolute;border-radius:50%;border:1px solid rgba(160,140,255,.5);animation:explorerRing 2.4s ease-out infinite;}
+.explorer-ring-a{inset:5px;}
+.explorer-ring-b{inset:17px;animation-delay:.35s;}
+.explorer-check{position:absolute;z-index:4;right:4px;bottom:3px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#5865f2;color:#fff;font-weight:900;box-shadow:0 0 22px rgba(88,101,242,.65);animation:explorerCheck .55s .25s both;}
+.explorer-complete-card .eyebrow{display:inline-block;letter-spacing:.18em;}
+.explorer-complete-card h2{margin:10px 0 10px;font-size:clamp(26px,6vw,36px);}
+.explorer-complete-card p{margin:0 auto;color:#b5bac1;line-height:1.6;max-width:380px;}
+.explorer-achievement-count{margin:20px auto 14px;max-width:280px;text-align:left;}
+.explorer-achievement-count span{display:block;margin-bottom:7px;color:#fff;font-weight:800;font-size:13px;}
+.explorer-achievement-count b{display:block;height:7px;border-radius:99px;background:linear-gradient(90deg,#5865f2,#b48cff);box-shadow:0 0 18px rgba(88,101,242,.35);animation:explorerProgress .8s ease both;}
+.explorer-badge-row{display:flex;justify-content:center;gap:10px;margin:15px 0 22px;}
+.explorer-badge-row span{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:#222634;border:1px solid #3b4260;font-size:18px;animation:explorerBadge .45s both;}
+.explorer-badge-row span:nth-child(2){animation-delay:.08s}.explorer-badge-row span:nth-child(3){animation-delay:.16s}.explorer-badge-row span:nth-child(4){animation-delay:.24s}
+.explorer-complete-button{width:100%;border:0!important;outline:0!important;box-shadow:none;cursor:pointer;}
+.explorer-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.explorer-particles span{position:absolute;left:var(--x);top:52%;opacity:0;color:#b9a8ff;font-size:18px;animation:explorerParticle var(--duration) var(--delay) ease-out forwards;}
+@keyframes explorerLogoFloat{50%{transform:translateY(-5px)}}
+@keyframes explorerRing{0%{transform:scale(.72);opacity:.8}100%{transform:scale(1.18);opacity:0}}
+@keyframes explorerCheck{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes explorerProgress{from{width:0}to{width:100%}}
+@keyframes explorerBadge{from{transform:translateY(10px) scale(.8);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+@keyframes explorerParticle{0%{transform:translate(-50%,0) scale(.4) rotate(0);opacity:0}15%{opacity:1}100%{transform:translate(-50%,calc(var(--distance) * -1)) rotate(var(--rotation)) scale(1);opacity:0}}
+@media(max-width:600px){.explorer-complete-overlay{padding:14px}.explorer-complete-card{padding:30px 20px 20px;border-radius:22px}.explorer-logo-wrap{width:112px;height:112px}.explorer-logo{width:84px;height:84px}}
+@media(prefers-reduced-motion:reduce){.explorer-complete-card,.explorer-logo,.explorer-ring,.explorer-check,.explorer-achievement-count b,.explorer-badge-row span,.explorer-particles span{animation:none!important;transition:none!important}.explorer-complete-card{transform:none!important}}
