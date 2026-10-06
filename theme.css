@@ -1,0 +1,297 @@
+/* =========================================
+   QUELLO — THEMES, FLAG FONT, MOTION
+   Loaded after style.css. Colors used across the site live here as tokens.
+   ========================================= */
+
+/* Country flags as real images on every OS (Windows shows "RU"/"DE" letters otherwise).
+   unicode-range limits the font to flag codepoints, so all other text keeps its own font.
+   "Twemoji Country Flags" by TalkJS (MIT), https://github.com/talkjs/country-flag-emoji-polyfill
+   Flag graphics: Twemoji, Copyright Twitter, Inc. and other contributors, CC BY 4.0
+   https://creativecommons.org/licenses/by/4.0/ — redistributed unmodified, see fonts/LICENSE.md */
+@font-face{
+  font-family:"Twemoji Country Flags";
+  src:url("fonts/TwemojiCountryFlags.woff2") format("woff2");
+  unicode-range:U+1F1E6-1F1FF,U+1F3F4,U+E0062-E0063,U+E0065,U+E0067,U+E006C,U+E006E,U+E0073-E0074,U+E0077,U+E007F;
+  font-display:swap;
+}
+
+:root{
+  --font-ui:"Twemoji Country Flags",Arial,Helvetica,sans-serif;
+  --bg:#0f1117;--bg-deep:#0b0e14;
+  --surface-sunken:#10131a;--surface:#151821;--surface-2:#171a22;--surface-3:#191c25;
+  --surface-hover:#1e222d;--surface-active:#252a38;
+  --discord-bg:#1e1f22;--discord-embed:#2b2d31;
+  --line:#252936;--line-strong:#303441;--line-hover:#3d4252;--line-soft:rgba(255,255,255,.07);
+  --text:#f2f3f5;--text-strong:#fff;--text-2:#c9ccd1;--text-3:#b5bac1;--text-4:#8e9297;
+  --accent:#5865f2;--accent-2:#b48cff;--accent-text:#9da6ff;--on-accent:#fff;
+  --nav-bg:rgba(17,19,26,.9);
+  --shadow-pop:0 18px 45px rgba(0,0,0,.45);
+  --shadow-card:0 1px 0 rgba(255,255,255,.02);
+  --glow-1:rgba(88,101,242,.22);--glow-2:rgba(180,140,255,.14);--glow-3:rgba(46,204,170,.08);
+  color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#f4f5fa;--bg-deep:#eceef5;
+  --surface-sunken:#f1f3f8;--surface:#ffffff;--surface-2:#f8f9fc;--surface-3:#f3f4f9;
+  --surface-hover:#eaecf4;--surface-active:#e1e4f2;
+  --discord-bg:#ffffff;--discord-embed:#f2f3f5;
+  --line:#e2e5ee;--line-strong:#d5d9e4;--line-hover:#bfc4d4;--line-soft:rgba(15,17,23,.08);
+  --text:#1d2130;--text-strong:#0e1018;--text-2:#363b4b;--text-3:#525869;--text-4:#666c7d;
+  --accent:#5865f2;--accent-2:#7b4dff;--accent-text:#4651d1;--on-accent:#fff;
+  --nav-bg:rgba(255,255,255,.82);
+  --shadow-pop:0 18px 45px rgba(30,35,60,.16);
+  --shadow-card:0 1px 2px rgba(30,35,60,.05),0 6px 20px rgba(30,35,60,.04);
+  --glow-1:rgba(88,101,242,.16);--glow-2:rgba(180,140,255,.14);--glow-3:rgba(46,204,170,.10);
+  color-scheme:light;
+}
+
+body{font-family:var(--font-ui);background:var(--bg);transition:background-color .35s ease,color .35s ease}
+.language-option{font-family:var(--font-ui)!important}
+::selection{background:rgba(88,101,242,.35)}
+
+/* Soft animated aurora behind the page */
+body::before{
+  content:"";position:fixed;inset:-20vmax;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(38vmax 30vmax at 20% 10%,var(--glow-1),transparent 70%),
+    radial-gradient(34vmax 26vmax at 85% 18%,var(--glow-2),transparent 70%),
+    radial-gradient(40vmax 30vmax at 60% 95%,var(--glow-3),transparent 70%);
+  animation:q-aurora 26s ease-in-out infinite alternate;
+}
+@keyframes q-aurora{
+  0%{transform:translate3d(0,0,0) rotate(0deg)}
+  50%{transform:translate3d(3vmax,-2vmax,0) rotate(6deg)}
+  100%{transform:translate3d(-3vmax,2vmax,0) rotate(-4deg)}
+}
+
+/* Light theme: shadows instead of dark borders, readable overlays */
+:root[data-theme="light"] .discord-embed,
+:root[data-theme="light"] .hero-embed,
+:root[data-theme="light"] .setup-embed,
+:root[data-theme="light"] .builder-panel,
+:root[data-theme="light"] .discord-message-preview,
+:root[data-theme="light"] .faq details,
+:root[data-theme="light"] .timeline article{box-shadow:var(--shadow-card)}
+:root[data-theme="light"] .header-language-menu,
+:root[data-theme="light"] .language-dropdown{box-shadow:var(--shadow-pop)!important}
+:root[data-theme="light"] .side-menu{box-shadow:22px 0 60px rgba(30,35,60,.18)}
+:root[data-theme="light"] .menu-overlay{background:rgba(20,24,40,.35)}
+:root[data-theme="light"] .command-drawer-backdrop{background:rgba(20,24,40,.4)}
+:root[data-theme="light"] .command-drawer-panel{box-shadow:-24px 0 70px rgba(30,35,60,.18)}
+:root[data-theme="light"] .side-menu-head{box-shadow:0 8px 18px rgba(30,35,60,.05)}
+:root[data-theme="light"] .site-tabs{background:var(--nav-bg)!important}
+:root[data-theme="light"] .site-tab.active{background:var(--surface)!important;box-shadow:0 -1px 0 var(--line) inset}
+:root[data-theme="light"] .role-mention{color:var(--accent-text)}
+:root[data-theme="light"] .achievement.unlocked{background:var(--surface-sunken)}
+
+/* ---------- Header ---------- */
+.nav{background:var(--nav-bg);transition:background-color .35s ease,box-shadow .25s ease}
+.nav.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.18)}
+:root[data-theme="light"] .nav.scrolled{box-shadow:0 10px 30px rgba(30,35,60,.08)}
+.header-tools{margin-left:auto;display:flex;align-items:center;gap:8px}
+.header-tools .header-language{margin-left:0}
+.brand span{background:linear-gradient(90deg,var(--text) 0%,var(--text) 40%,var(--accent-text) 50%,var(--text) 60%,var(--text) 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:q-shine 7s ease-in-out infinite}
+.brand-avatar{transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.brand:hover .brand-avatar{transform:rotate(-14deg) scale(1.08)}
+
+.theme-toggle{
+  position:relative;width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;
+  border-radius:11px;background:var(--surface);color:var(--text);cursor:pointer;overflow:hidden;
+  box-shadow:inset 0 0 0 1px var(--line-strong);transition:background .16s ease,box-shadow .16s ease,transform .16s ease;
+}
+.theme-toggle:hover{background:var(--surface-hover);box-shadow:inset 0 0 0 1px var(--line-hover);transform:translateY(-1px)}
+.theme-toggle:active{transform:scale(.92)}
+.theme-toggle svg{width:20px;height:20px;position:absolute;transition:transform .5s cubic-bezier(.4,1.6,.5,1),opacity .3s ease}
+.theme-toggle .icon-sun{color:#f5b84a}
+.theme-toggle .icon-moon{color:#a9b2ff}
+:root:not([data-theme="light"]) .theme-toggle .icon-sun{transform:translateY(130%) rotate(90deg);opacity:0}
+:root[data-theme="light"] .theme-toggle .icon-moon{transform:translateY(-130%) rotate(-90deg);opacity:0}
+
+/* Header language button: proper bordered pill + nicer flags */
+.header-language-button{box-shadow:inset 0 0 0 1px var(--line-strong);background:var(--surface)!important}
+.header-language-button:hover,.header-language.open .header-language-button{box-shadow:inset 0 0 0 1px var(--line-hover);background:var(--surface-hover)!important}
+.header-language-arrow{display:grid;place-items:center;transition:transform .2s ease}
+.header-language-arrow svg{width:14px;height:14px}
+.header-language.open .header-language-arrow{transform:rotate(180deg)}
+.header-language-menu{transform-origin:top right;transform:translateY(-6px) scale(.96)!important}
+.header-language.open .header-language-menu{transform:none!important}
+.header-language-menu button{position:relative}
+.header-language-menu button.active::after{content:"✓";margin-left:auto;color:var(--accent);font-weight:900}
+.header-language.open .header-language-menu button{animation:q-pop-in .28s cubic-bezier(.2,.9,.3,1.2) both}
+.header-language.open .header-language-menu button:nth-child(2){animation-delay:.03s}
+.header-language.open .header-language-menu button:nth-child(3){animation-delay:.06s}
+.header-language.open .header-language-menu button:nth-child(4){animation-delay:.09s}
+.header-language.open .header-language-menu button:nth-child(5){animation-delay:.12s}
+
+.flag{
+  display:inline-block;font-family:"Twemoji Country Flags",var(--font-ui);font-size:1.3em;line-height:1;
+  filter:drop-shadow(0 1px 1.5px rgba(0,0,0,.25));transform-origin:left center;
+}
+.header-language-button .flag{font-size:18px}
+.header-language-menu .flag{font-size:20px;width:24px;text-align:center;transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.header-language-menu button:hover .flag,.language-option:hover span:first-child{transform:scale(1.18) rotate(-6deg)}
+.language-option span:first-child{transition:transform .25s cubic-bezier(.3,1.6,.5,1)}
+.flag.wave{animation:q-wave .9s ease-in-out}
+@keyframes q-wave{
+  0%{transform:none}20%{transform:rotate(-12deg) scale(1.25)}40%{transform:rotate(9deg) scale(1.2) skewY(4deg)}
+  60%{transform:rotate(-6deg) scale(1.12) skewY(-3deg)}80%{transform:rotate(3deg)}100%{transform:none}
+}
+
+/* ---------- Hero ---------- */
+.hero-avatar{cursor:pointer;animation:q-float 5s ease-in-out infinite;transition:box-shadow .3s ease}
+.hero-avatar:hover{box-shadow:0 14px 45px rgba(88,101,242,.5)}
+.hero-avatar.boop{animation:q-boop .45s cubic-bezier(.3,1.8,.5,1)}
+.hero-avatar.spin{animation:q-spin 1s cubic-bezier(.5,0,.2,1)}
+@keyframes q-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes q-boop{0%{transform:scale(1)}35%{transform:scale(.86) rotate(-8deg)}100%{transform:scale(1)}}
+@keyframes q-spin{0%{transform:rotate(0) scale(1)}50%{transform:rotate(200deg) scale(1.2)}100%{transform:rotate(360deg) scale(1)}}
+.hero h1{
+  background:linear-gradient(100deg,var(--text-strong) 20%,var(--accent-text) 45%,var(--accent-2) 55%,var(--text-strong) 80%);
+  background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:q-shine 9s ease-in-out infinite;letter-spacing:-.02em;
+}
+@keyframes q-shine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+.badge{box-shadow:0 6px 20px rgba(88,101,242,.35)}
+
+/* Buttons: sheen on hover + click ripple */
+.button,.primary-button{position:relative;overflow:hidden;isolation:isolate;transition:transform .18s ease,box-shadow .18s ease,opacity .15s ease}
+.button:hover,.primary-button:hover{transform:translateY(-2px);opacity:1;box-shadow:0 10px 26px rgba(88,101,242,.38)}
+.button:active,.primary-button:active{transform:translateY(0) scale(.98)}
+.button::after,.primary-button::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.28) 50%,transparent 70%);
+  transform:translateX(-120%);transition:transform .7s ease;
+}
+.button:hover::after,.primary-button:hover::after{transform:translateX(120%)}
+.q-ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);pointer-events:none;animation:q-ripple .6s ease-out forwards}
+@keyframes q-ripple{to{transform:scale(1);opacity:0}}
+
+/* Cards lift a bit */
+.extra-card,.quick-start,.intent-embed,.whats-new,.hero-embed{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.extra-card:hover{transform:translateY(-3px);border-color:var(--line-hover)}
+.embed-accent{background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+
+/* Tabs: animated underline */
+.site-tab.active::after{animation:q-grow .3s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes q-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* Panels animate in when their tab is opened (animation restarts on display:none -> block) */
+#home > section:not(.tab-hidden),#privacyNotice:not(.tab-hidden){animation:q-fade-up .45s cubic-bezier(.2,.8,.2,1) both}
+#home > section:nth-child(2){animation-delay:.05s}
+#home > section:nth-child(3){animation-delay:.1s}
+#home > section:nth-child(4){animation-delay:.15s}
+#home > section:nth-child(5){animation-delay:.2s}
+@keyframes q-fade-up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes q-pop-in{from{opacity:0;transform:translateY(-4px) scale(.96)}to{opacity:1;transform:none}}
+
+/* Scroll reveal (class is only added by JS, so content is never hidden without it) */
+.q-reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1)}
+.q-reveal.q-in{opacity:1;transform:none}
+
+/* Floating emoji / confetti particles */
+.q-particle{position:fixed;left:0;top:0;z-index:20000;pointer-events:none;font-size:22px;line-height:1;will-change:transform,opacity}
+
+/* Toast */
+.q-toast{
+  position:fixed;left:50%;bottom:max(22px,env(safe-area-inset-bottom));z-index:20001;
+  padding:11px 16px;border-radius:12px;background:var(--surface);color:var(--text);font-size:14px;font-weight:700;
+  box-shadow:var(--shadow-pop),inset 0 0 0 1px var(--line-strong);
+  transform:translate(-50%,140%);opacity:0;transition:transform .35s cubic-bezier(.2,.9,.3,1.2),opacity .3s ease;pointer-events:none;
+  max-width:calc(100vw - 32px);text-align:center;
+}
+.q-toast.show{transform:translate(-50%,0);opacity:1}
+
+/* Scroll progress line under the header */
+.q-progress{position:fixed;left:0;top:0;height:3px;width:100%;z-index:100;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--accent),var(--accent-2));pointer-events:none}
+
+/* Theme switch circle reveal (View Transitions API, where supported) */
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+
+/* ---------- Responsive polish ---------- */
+.container{padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right))}
+h1{font-size:clamp(40px,8vw,64px)}
+.section h2{font-size:clamp(24px,4.4vw,32px)}
+.subtitle{font-size:clamp(15px,2.2vw,18px)}
+img{max-width:100%}
+pre,code{overflow-wrap:anywhere}
+
+@media(max-width:600px){
+  .nav-inner{padding:11px 14px;gap:10px}
+  .container{padding:44px 16px}
+  .brand{font-size:18px}
+  .brand-avatar{width:30px;height:30px}
+  .theme-toggle{width:38px;height:38px;flex-basis:38px}
+  .header-tools{gap:6px}
+  .button{width:100%;max-width:340px}
+  .hero-embed{margin:22px auto 44px}
+  .site-tab{padding:0 12px}
+  .embed-meta span{font-size:11px}
+  .faq details{padding:14px}
+  .timeline{padding-left:18px}
+  .timeline article:before{left:-25px}
+}
+@media(max-width:340px){
+  .brand span{display:none}
+  #headerLanguageCode{display:none}
+}
+@media(hover:none){
+  .button:hover,.primary-button:hover,.extra-card:hover{transform:none}
+}
+
+/* Respect users who prefer less motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .q-reveal{opacity:1;transform:none}
+  body::before{animation:none}
+}
+
+/* Footer credits (CC BY 4.0 attribution for flag artwork) */
+.footer-credits{display:block;margin-top:6px;font-size:11px;color:var(--text-4);opacity:.8}
+.footer-credits a{text-decoration:underline;text-underline-offset:2px}
+.footer-credits a:hover{color:var(--accent-text)}
+
+/* ---------- Layout fixes ---------- */
+/* Hero: avatar, badge and title stacked in one centered column */
+.hero{display:flex;flex-direction:column;align-items:center}
+.hero-avatar{display:block;margin:0 auto 16px}
+.hero .badge{margin:0 auto}
+
+/* Community: text + button on top, spotlight full width below */
+.community{margin-top:8px}
+.community-box{
+  display:grid!important;grid-template-columns:4px minmax(0,1fr) auto;
+  grid-template-areas:"accent content button" "accent spot spot";
+  align-items:center;column-gap:0;
+}
+.community-box>.embed-accent{grid-area:accent;align-self:stretch;width:4px}
+.community-box>.embed-content{grid-area:content;padding:26px 26px 10px}
+.community-box h2{font-size:clamp(22px,3.4vw,28px);line-height:1.25}
+.community-box>.button{grid-area:button;margin:16px 26px 0 0!important;white-space:nowrap}
+.community-box>.community-spotlight{grid-area:spot;width:auto;margin:14px 26px 26px}
+@media(max-width:700px){
+  .community-box{grid-template-columns:4px minmax(0,1fr);grid-template-areas:"accent content" "accent button" "accent spot"}
+  .community-box>.embed-content{padding:20px 19px 6px}
+  .community-box>.button{justify-self:start;margin:12px 19px 0!important;width:auto}
+  .community-box>.community-spotlight{margin:14px 19px 19px}
+}
+
+/* Buttons: style.css strips every button border with `border:0!important`,
+   so bordered controls get their outline back as an inset shadow. */
+.menu-toggle,.menu-close,.flow-step,.flow-language,.side-language,.language-switch,.secondary-button,.side-search-result{box-shadow:inset 0 0 0 1px var(--line-strong)}
+.menu-toggle:hover,.menu-close:hover,.flow-language:hover,.side-language:hover,.secondary-button:hover{box-shadow:inset 0 0 0 1px var(--accent)}
+.language-switch.side-language{box-shadow:inset 0 0 0 1px var(--line-strong)!important}
+.language-switch.side-language:hover,.language-picker.open .language-switch.side-language{box-shadow:inset 0 0 0 1px var(--accent)!important}
+.flow-language.active{box-shadow:inset 0 0 0 1.5px var(--accent),0 0 0 3px rgba(88,101,242,.15)}
+.flow-step.active{box-shadow:inset 0 0 0 1px var(--accent),0 0 18px rgba(88,101,242,.3)}
+.secondary-button{transition:background .16s ease,box-shadow .16s ease,transform .16s ease}
+.secondary-button:hover{background:var(--surface-hover);transform:translateY(-1px)}
+.button,.primary-button,.secondary-button,.flow-language{cursor:pointer;font-family:inherit}
+button.button{border:0;font:inherit;font-weight:700}
+.text-button{transition:color .16s ease,transform .16s ease}
+.text-button:hover{transform:translateX(3px)}
+/* Keyboard users still get a visible focus ring */
+html body button:focus-visible,html body a:focus-visible{outline:2px solid var(--accent)!important;outline-offset:2px}
+
+/* Extras spacing */
+.extras-grid{margin-top:22px}
+.extra-card .button{margin-top:14px}
