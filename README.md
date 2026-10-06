@@ -21,3 +21,6 @@ The site intentionally does not include a Bot Status dashboard, public statistic
 
 
 Latest update: the site now combines the Quello avatar, slide-out navigation, interactive command exploration, guided QOTD building, setup progress, community highlights, and hidden extras.
+
+## Third-party assets
+- `fonts/TwemojiCountryFlags.woff2` — country flag emoji font from [country-flag-emoji-polyfill](https://github.com/talkjs/country-flag-emoji-polyfill) (MIT, © TalkJS). Flag artwork from [Twemoji](https://github.com/twitter/twemoji), © Twitter, Inc. and other contributors, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Redistributed unmodified; see [fonts/LICENSE.md](fonts/LICENSE.md).

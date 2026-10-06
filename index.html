@@ -5,69 +5,78 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Quello — your Question of the Day bot for creating, managing, and organizing QOTDs and discussions.">
   <title>Quello — Your Question of the Day Bot</title>
-  <link rel="stylesheet" href="style.css?v=6">
+  <script>(function(){try{var t=localStorage.getItem("quello-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme="dark";}})();</script>
+  <link rel="preload" href="fonts/TwemojiCountryFlags.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=7">
   <link rel="icon" type="image/png" href="quello-avatar.png">
   <link rel="apple-touch-icon" href="quello-avatar.png">
 
 <style id="quello-side-menu-v2">
-.side-section-label{padding:4px 4px 6px;color:#6f7582;font-size:10px;font-weight:800;letter-spacing:.12em}
+.side-section-label{padding:4px 4px 6px;color:var(--text-4);font-size:10px;font-weight:800;letter-spacing:.12em}
 .side-search{display:grid;gap:7px}
-.side-search-box{display:flex;align-items:center;gap:9px;min-height:46px;padding:0 12px;background:#171a22;border:1px solid #303441;border-radius:10px;transition:.16s ease}
-.side-search-box:focus-within{border-color:#5865f2;background:#1b1f2b;box-shadow:0 0 0 3px rgba(88,101,242,.12)}
-.side-search-box input{width:100%;border:0;outline:0;background:transparent;color:#f2f3f5;font:inherit;font-size:13px}
-.side-search-box input::placeholder{color:#777d89}
+.side-search-box{display:flex;align-items:center;gap:9px;min-height:46px;padding:0 12px;background:var(--surface-2);border:1px solid var(--line-strong);border-radius:10px;transition:.16s ease}
+.side-search-box:focus-within{border-color:var(--accent);background:var(--surface-3);box-shadow:0 0 0 3px rgba(88,101,242,.12)}
+.side-search-box input{width:100%;border:0;outline:0;background:transparent;color:var(--text);font:inherit;font-size:13px}
+.side-search-box input::placeholder{color:var(--text-4)}
 .side-search-results{display:grid;gap:4px;max-height:210px;overflow:auto;padding:2px 0}
-.side-search-result{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:8px;color:#c9ccd1;font-size:12px;font-weight:650;background:#171a22;border:1px solid transparent;cursor:pointer;text-align:left}
-.side-search-result:hover{background:#202430;color:#fff;border-color:#303441}
-.side-search-result small{display:block;color:#777d89;font-size:10px;font-weight:500;margin-top:1px}
-.side-action{width:100%;min-height:44px;padding:10px 12px;border:0;border-radius:9px;background:transparent;color:#b5bac1;font:inherit;font-size:14px;font-weight:700;display:flex;align-items:center;gap:11px;text-align:left;cursor:pointer;transition:.16s ease}
-a.side-action:hover,.side-action:hover{background:#191c25;color:#fff;transform:translateX(2px)}
-.side-action-primary{background:rgba(88,101,242,.13);color:#e8eaff;border:1px solid rgba(88,101,242,.25)}
+.side-search-result{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:8px;color:var(--text-2);font-size:12px;font-weight:650;background:var(--surface-2);border:1px solid transparent;cursor:pointer;text-align:left}
+.side-search-result:hover{background:var(--surface-hover);color:var(--text-strong);border-color:var(--line-strong)}
+.side-search-result small{display:block;color:var(--text-4);font-size:10px;font-weight:500;margin-top:1px}
+.side-action{width:100%;min-height:44px;padding:10px 12px;border:0;border-radius:9px;background:transparent;color:var(--text-3);font:inherit;font-size:14px;font-weight:700;display:flex;align-items:center;gap:11px;text-align:left;cursor:pointer;transition:.16s ease}
+a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--text-strong);transform:translateX(2px)}
+.side-action-primary{background:rgba(88,101,242,.13);color:var(--text);border:1px solid rgba(88,101,242,.25)}
 .side-action-primary:hover{background:rgba(88,101,242,.2)!important;border-color:rgba(88,101,242,.45)}
 .side-action-icon{width:22px;display:inline-flex;justify-content:center;flex:0 0 22px}
 .side-action span:last-child{min-width:0}
-.language-current-name{color:#9ca1ab;font-weight:600}
+.language-current-name{color:var(--text-3);font-weight:600}
 @media(max-width:600px){.side-section-label{font-size:9px}.side-action{min-height:46px}}
 </style>
 
 <style id="quello-tabs-v3">
 .header-language{position:relative;margin-left:auto;z-index:60}
-.header-language-button{display:flex;align-items:center;gap:7px;min-height:40px;padding:8px 11px;border:1px solid #2b2f3b;border-radius:11px;background:#151821;color:#f2f3f5;font:inherit;font-size:12px;font-weight:800;letter-spacing:.06em;cursor:pointer;transition:.16s ease}
-.header-language-button:hover,.header-language.open .header-language-button{background:#1b1f2a;border-color:#3a3f4e}
-.header-language-arrow{font-size:14px;color:#8e9297;line-height:1;transform:translateY(-1px)}
-.header-language-menu{position:absolute;top:calc(100% + 9px);right:0;min-width:165px;padding:7px;border:1px solid #2b2f3b;border-radius:13px;background:#151821;box-shadow:0 18px 45px rgba(0,0,0,.45);opacity:0;visibility:hidden;transform:translateY(-5px);transition:.16s ease}
+.header-language-button{display:flex;align-items:center;gap:7px;min-height:40px;padding:8px 11px;border:1px solid var(--line-strong);border-radius:11px;background:var(--surface);color:var(--text);font:inherit;font-size:12px;font-weight:800;letter-spacing:.06em;cursor:pointer;transition:.16s ease}
+.header-language-button:hover,.header-language.open .header-language-button{background:var(--surface-3);border-color:var(--line-hover)}
+.header-language-arrow{font-size:14px;color:var(--text-4);line-height:1;transform:translateY(-1px)}
+.header-language-menu{position:absolute;top:calc(100% + 9px);right:0;min-width:165px;padding:7px;border:1px solid var(--line-strong);border-radius:13px;background:var(--surface);box-shadow:0 18px 45px rgba(0,0,0,.45);opacity:0;visibility:hidden;transform:translateY(-5px);transition:.16s ease}
 .header-language.open .header-language-menu{opacity:1;visibility:visible;transform:translateY(0)}
-.header-language-menu button{width:100%;display:flex;align-items:center;gap:9px;padding:10px 11px;border:0;border-radius:9px;background:transparent;color:#c9ccd1;font:inherit;font-size:13px;font-weight:650;text-align:left;cursor:pointer}
-.header-language-menu button:hover,.header-language-menu button.active{background:rgba(88,101,242,.16);color:#fff}
-.site-tabs{position:sticky;top:61px;z-index:30;border-bottom:1px solid #252936;background:rgba(17,19,26,.96);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
+.header-language-menu button{width:100%;display:flex;align-items:center;gap:9px;padding:10px 11px;border:0;border-radius:9px;background:transparent;color:var(--text-2);font:inherit;font-size:13px;font-weight:650;text-align:left;cursor:pointer}
+.header-language-menu button:hover,.header-language-menu button.active{background:rgba(88,101,242,.16);color:var(--text-strong)}
+.site-tabs{position:sticky;top:61px;z-index:30;border-bottom:1px solid var(--line);background:var(--nav-bg);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
 .site-tabs::-webkit-scrollbar{display:none}
 .site-tabs-inner{max-width:1120px;margin:0 auto;display:flex;align-items:stretch;gap:5px;padding:0 24px;min-width:max-content}
-.site-tab{position:relative;min-height:52px;padding:0 17px;border:0;border-radius:10px 10px 0 0;background:transparent;color:#aeb3bd;font:inherit;font-size:14px;font-weight:750;white-space:nowrap;cursor:pointer;transition:.16s ease}
-.site-tab:hover{color:#fff;background:#171a22}
-.site-tab.active{color:#fff;background:#20242f}
-.site-tab.active::after{content:"";position:absolute;left:10px;right:10px;bottom:0;height:2px;border-radius:2px;background:#5865f2}
+.site-tab{position:relative;min-height:52px;padding:0 17px;border:0;border-radius:10px 10px 0 0;background:transparent;color:var(--text-3);font:inherit;font-size:14px;font-weight:750;white-space:nowrap;cursor:pointer;transition:.16s ease}
+.site-tab:hover{color:var(--text-strong);background:var(--surface-2)}
+.site-tab.active{color:var(--text-strong);background:var(--surface-hover)}
+.site-tab.active::after{content:"";position:absolute;left:10px;right:10px;bottom:0;height:2px;border-radius:2px;background:var(--accent)}
 .tab-hidden{display:none!important}
 @media(max-width:600px){.site-tabs{top:61px}.site-tabs-inner{padding:0 12px;gap:2px}.site-tab{min-height:48px;padding:0 14px;font-size:13px}.header-language-button{min-height:38px;padding:7px 9px}.header-language-menu{right:0}}
 </style>
+<link rel="stylesheet" href="theme.css?v=1">
 </head>
 <body>
   <nav class="nav">
     <div class="nav-inner">
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-controls="sideMenu" aria-expanded="false">☰</button>
       <a class="brand" href="#home"><img class="brand-avatar" src="quello-avatar.png" alt="Quello bot avatar"> <span>Quello</span></a>
+      <div class="header-tools">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light / dark theme" title="Theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.6 14.4A8.6 8.6 0 0 1 9.6 3.4a.7.7 0 0 0-.9-.9 9.9 9.9 0 1 0 12.8 12.8.7.7 0 0 0-.9-.9Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></svg>
+      </button>
       <div class="header-language" id="headerLanguage">
         <button class="header-language-button" id="headerLanguageButton" type="button" aria-haspopup="listbox" aria-expanded="false">
-          <span id="headerLanguageFlag">🇬🇧</span>
+          <span class="flag" id="headerLanguageFlag">🇬🇧</span>
           <span id="headerLanguageCode">EN</span>
-          <span class="header-language-arrow" aria-hidden="true">⌄</span>
+          <span class="header-language-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </button>
         <div class="header-language-menu" id="headerLanguageMenu" role="listbox" aria-label="Language">
-          <button type="button" data-header-language="en" role="option">🇬🇧 <span>English</span></button>
-          <button type="button" data-header-language="ru" role="option">🇷🇺 <span>Русский</span></button>
-          <button type="button" data-header-language="de" role="option">🇩🇪 <span>Deutsch</span></button>
-          <button type="button" data-header-language="fr" role="option">🇫🇷 <span>Français</span></button>
-          <button type="button" data-header-language="it" role="option">🇮🇹 <span>Italiano</span></button>
+          <button type="button" data-header-language="en" role="option"><span class="flag">🇬🇧</span> <span>English</span></button>
+          <button type="button" data-header-language="ru" role="option"><span class="flag">🇷🇺</span> <span>Русский</span></button>
+          <button type="button" data-header-language="de" role="option"><span class="flag">🇩🇪</span> <span>Deutsch</span></button>
+          <button type="button" data-header-language="fr" role="option"><span class="flag">🇫🇷</span> <span>Français</span></button>
+          <button type="button" data-header-language="it" role="option"><span class="flag">🇮🇹</span> <span>Italiano</span></button>
         </div>
+      </div>
       </div>
     </div>
   </nav>
@@ -125,7 +134,7 @@ a.side-action:hover,.side-action:hover{background:#191c25;color:#fff;transform:t
         <div class="side-section-label" data-i18n="side_language_label">🌐 LANGUAGE</div>
         <div class="language-picker" id="languagePicker">
           <button class="language-switch side-language" id="languageSwitch" type="button" aria-haspopup="listbox" aria-expanded="false">
-            <span class="language-current-flag" id="languageCurrentFlag">🇬🇧</span>
+            <span class="language-current-flag flag" id="languageCurrentFlag">🇬🇧</span>
             <span class="language-current-code" id="languageCurrentCode">EN</span>
             <span class="language-current-name" id="languageCurrentName">English</span>
             <span class="language-caret" aria-hidden="true">⌃</span>
@@ -503,7 +512,7 @@ a.side-action:hover,.side-action:hover{background:#191c25;color:#fff;transform:t
     <div class="notice" id="privacyNotice"><strong data-i18n="privacy_first">Privacy first.</strong> <span data-i18n="privacy_text">Quello processes Discord and QOTD information needed for its features, including server configuration, QOTD history, normal logs, and detailed interaction audit records.</span> <a href="privacy.html" data-i18n="privacy_link">Read the Privacy Policy.</a></div>
   </main>
 
-  <footer>Quello • <span data-i18n="footer_text">Questions for better conversations.</span></footer>
+  <footer>Quello • <span data-i18n="footer_text">Questions for better conversations.</span><small class="footer-credits">Flag emoji: <a href="https://github.com/twitter/twemoji" target="_blank" rel="noopener noreferrer">Twemoji</a> © Twitter, Inc. and contributors, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></small></footer>
 
   <script>
     const translations = {
@@ -1125,6 +1134,152 @@ a.side-action:hover,.side-action:hover{background:#191c25;color:#fff;transform:t
     };
 
     applyLanguage(currentLanguage);
+
+    // Themes, motion and small fun extras
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const themeToggle = document.getElementById('themeToggle');
+
+    function showToast(text){
+      let toast = document.querySelector('.q-toast');
+      if(!toast){ toast = document.createElement('div'); toast.className = 'q-toast'; toast.setAttribute('role','status'); document.body.appendChild(toast); }
+      toast.textContent = text;
+      requestAnimationFrame(() => toast.classList.add('show'));
+      clearTimeout(showToast.timer);
+      showToast.timer = setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+
+    function burst(x, y, items, count=14, spread=1){
+      if(reduceMotion) return;
+      for(let i=0;i<count;i++){
+        const p = document.createElement('span');
+        p.className = 'q-particle';
+        p.textContent = items[i % items.length];
+        document.body.appendChild(p);
+        const angle = Math.random() * Math.PI * 2;
+        const dist = (60 + Math.random() * 110) * spread;
+        const dx = Math.cos(angle) * dist, dy = Math.sin(angle) * dist - 60;
+        const rot = (Math.random() - .5) * 540;
+        p.animate([
+          { transform:`translate(${x}px,${y}px) translate(-50%,-50%) scale(.4)`, opacity:1 },
+          { transform:`translate(${x+dx}px,${y+dy}px) translate(-50%,-50%) rotate(${rot/2}deg) scale(1.1)`, opacity:1, offset:.6 },
+          { transform:`translate(${x+dx*1.15}px,${y+dy+90}px) translate(-50%,-50%) rotate(${rot}deg) scale(.8)`, opacity:0 }
+        ], { duration:1100 + Math.random()*500, easing:'cubic-bezier(.2,.7,.3,1)' }).onfinish = () => p.remove();
+      }
+    }
+    function burstFrom(el, items, count, spread){
+      const r = el.getBoundingClientRect();
+      burst(r.left + r.width/2, r.top + r.height/2, items, count, spread);
+    }
+
+    function setTheme(theme, origin){
+      const apply = () => {
+        document.documentElement.dataset.theme = theme;
+        try{ localStorage.setItem('quello-theme', theme); }catch(e){}
+      };
+      if(!document.startViewTransition || reduceMotion || !origin){ apply(); return; }
+      const r = origin.getBoundingClientRect();
+      const x = r.left + r.width/2, y = r.top + r.height/2;
+      const radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+      document.startViewTransition(apply).ready.then(() => {
+        document.documentElement.animate(
+          { clipPath:[`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+          { duration:550, easing:'cubic-bezier(.4,0,.2,1)', pseudoElement:'::view-transition-new(root)' }
+        );
+      });
+    }
+    themeToggle?.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      setTheme(next, themeToggle);
+      burstFrom(themeToggle, next === 'light' ? ['☀️','✨','🌤️'] : ['🌙','⭐','✨'], 10, .7);
+    });
+    matchMedia('(prefers-color-scheme: light)').addEventListener?.('change', e => {
+      let saved = null;
+      try{ saved = localStorage.getItem('quello-theme'); }catch(err){}
+      if(!saved) document.documentElement.dataset.theme = e.matches ? 'light' : 'dark';
+    });
+
+    // Flags wave and pop out when the language changes
+    const applyLanguageBase = applyLanguage;
+    applyLanguage = function(lang){
+      const changed = lang !== document.documentElement.lang;
+      applyLanguageBase(lang);
+      if(!changed) return;
+      document.querySelectorAll('#headerLanguageFlag,#languageCurrentFlag').forEach(flag => {
+        flag.classList.remove('wave'); void flag.offsetWidth; flag.classList.add('wave');
+      });
+      const visibleFlag = [headerLanguageFlag, languageCurrentFlag].find(f => f && f.offsetParent);
+      if(visibleFlag) burstFrom(visibleFlag, [languageFlags[lang] || '🏳️', '✨'], 9, .6);
+    };
+
+    // Click ripple on buttons
+    document.addEventListener('pointerdown', e => {
+      const btn = e.target.closest('.button,.primary-button');
+      if(!btn || reduceMotion) return;
+      const r = btn.getBoundingClientRect();
+      const size = Math.max(r.width, r.height) * 2.2;
+      const ripple = document.createElement('span');
+      ripple.className = 'q-ripple';
+      ripple.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX - r.left - size/2}px;top:${e.clientY - r.top - size/2}px`;
+      btn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 650);
+    });
+
+    // Hero avatar: boop on every click, party on the secret
+    heroAvatar?.addEventListener('click', e => {
+      heroAvatar.classList.remove('boop','spin'); void heroAvatar.offsetWidth;
+      if(avatarClicks === 0){
+        heroAvatar.classList.add('spin');
+        burstFrom(heroAvatar, ['🎉','✦','💬','❓','💜','⭐'], 34, 1.6);
+        showToast('✦ Quello secret unlocked!');
+      }else{
+        heroAvatar.classList.add('boop');
+        burst(e.clientX, e.clientY, ['❓','💬','✨'], 4 + avatarClicks, .5);
+      }
+    });
+
+    document.getElementById('randomQotd')?.addEventListener('click', e => burstFrom(e.currentTarget, ['🎲','❓','💭'], 8, .6));
+
+    // Konami code: ↑ ↑ ↓ ↓ ← → ← → B A
+    const konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+    let konamiPos = 0;
+    document.addEventListener('keydown', e => {
+      const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+      konamiPos = key === konami[konamiPos] ? konamiPos + 1 : (key === konami[0] ? 1 : 0);
+      if(konamiPos === konami.length){
+        konamiPos = 0;
+        for(let i=0;i<6;i++) setTimeout(() => burst(innerWidth*(.15 + Math.random()*.7), innerHeight*(.2 + Math.random()*.4), ['🎉','🎊','❓','💬','⭐','💜'], 18, 1.4), i*180);
+        showToast('🎉 Question of the Day party mode!');
+      }
+    });
+
+    // Scroll progress + header shadow
+    const nav = document.querySelector('.nav');
+    const progress = document.createElement('div');
+    progress.className = 'q-progress';
+    document.body.appendChild(progress);
+    function onScroll(){
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.transform = `scaleX(${max > 0 ? Math.min(1, scrollY / max) : 0})`;
+      nav?.classList.toggle('scrolled', scrollY > 8);
+    }
+    addEventListener('scroll', onScroll, { passive:true });
+    addEventListener('resize', onScroll);
+    onScroll();
+
+    // Reveal cards as they scroll into view
+    if('IntersectionObserver' in window && !reduceMotion){
+      const revealTargets = document.querySelectorAll('.command-embed,.faq details,.timeline article,.extra-card,.setup-step,.permission-line,.troubleshoot-embed details,.command-detail-list details');
+      const io = new IntersectionObserver(entries => entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('q-in');
+        io.unobserve(entry.target);
+      }), { rootMargin:'0px 0px -6% 0px' });
+      revealTargets.forEach((el, i) => {
+        el.classList.add('q-reveal');
+        el.style.transitionDelay = `${(i % 4) * 60}ms`;
+        io.observe(el);
+      });
+    }
   </script>
 </body>
 </html>
