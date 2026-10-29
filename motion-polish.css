@@ -53,3 +53,89 @@ html { scroll-behavior:smooth; }
   *,*::before,*::after { animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important; }
   .q-motion-reveal { opacity:1;transform:none; }
 }
+
+/* QUELLO COSMIC GLASS — site-wide finish, responsive-safe and accessible */
+:root {
+  --q-glass-bg: color-mix(in srgb, var(--surface) 86%, #7861c8 14%);
+  --q-glass-line: rgba(183, 158, 255, .22);
+  --q-glass-shadow: 0 18px 50px rgba(5, 4, 18, .16);
+  --q-focus: #c8b5ff;
+}
+html { max-width:100%; overflow-x:clip; }
+body { position:relative; width:100%; max-width:100%; overflow-x:clip; }
+body::before {
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:radial-gradient(ellipse at 8% 9%, rgba(105,72,210,.10), transparent 34%),
+             radial-gradient(ellipse at 92% 32%, rgba(52,113,198,.07), transparent 30%),
+             radial-gradient(ellipse at 55% 94%, rgba(145,75,219,.06), transparent 36%);
+}
+/* Keep animated artwork visible vertically; only the document's horizontal edge is clipped. */
+.hero-redesign,.hero-copy,.hero-visual,.hero-feature-strip,.hero-visual-caption { min-width:0; }
+.hero-redesign,.hero-visual { overflow:visible; }
+.hero-visual { isolation:isolate; }
+.hero-visual .hero-orbit { pointer-events:none; }
+/* Glass depth on major panels without changing their layout or interaction model. */
+.discord-embed,.hero-embed,.setup-embed,.builder-panel,.discord-message-preview,
+.permission-note,.notice,.command-embed,.playground-card,.flow-card,.extra-card,
+.community-spotlight,.changelog-card,.faq details,.setup-step,.permission-line,
+.troubleshoot-embed details,.command-detail-list details,.hero-feature {
+  border-color:color-mix(in srgb, var(--line) 76%, rgba(176,145,255,.42));
+  box-shadow:var(--q-glass-shadow);
+  transition:background-color .28s ease,border-color .28s ease,box-shadow .32s ease,transform .32s var(--q-motion-ease);
+}
+.discord-embed,.hero-embed,.setup-embed,.builder-panel,.discord-message-preview,
+.permission-note,.notice,.command-embed,.playground-card,.flow-card,.extra-card,
+.community-spotlight,.changelog-card,.faq details,.setup-step,.permission-line,
+.troubleshoot-embed details,.command-detail-list details {
+  background-image:linear-gradient(145deg,rgba(168,143,255,.035),transparent 58%);
+}
+.command-embed:hover,.faq details:hover,.setup-step:hover,.permission-line:hover,
+.extra-card:hover,.community-spotlight:hover,.hero-feature:hover {
+  border-color:rgba(176,145,255,.52);
+  box-shadow:0 18px 48px rgba(4,3,16,.22),0 0 0 1px rgba(163,126,255,.07);
+}
+.button,.primary-button,.secondary-button,.text-button,.flow-language,
+.command-picker-trigger,.site-tab,.header-language-button,.theme-toggle { -webkit-tap-highlight-color:transparent; }
+/* Restore a clear keyboard focus indicator even where older rules removed outlines. */
+:where(a,button,input,select,textarea,[tabindex]):focus-visible {
+  outline:2px solid var(--q-focus) !important;
+  outline-offset:3px !important;
+  box-shadow:0 0 0 4px rgba(151,111,255,.18) !important;
+}
+:where(input,select,textarea):focus-visible { border-color:var(--q-focus) !important; }
+/* Long commands, translations and user-entered text must wrap instead of widening the page. */
+:where(h1,h2,h3,h4,p,li,a,button,label,small,strong,span,code,pre,.embed-content,.command-details) {
+  overflow-wrap:anywhere;
+}
+pre,.generated-command { max-width:100%; white-space:pre-wrap; overflow-wrap:anywhere; }
+img,svg,video,canvas,iframe { max-width:100%; }
+.container,.nav-inner,.site-tabs-inner,.hero-redesign,.builder,.extras-grid,.playground-grid { min-width:0; }
+@media (hover:hover) and (pointer:fine) {
+  .discord-embed:hover,.hero-embed:hover,.builder-panel:hover,.playground-card:hover,
+  .changelog-card:hover { border-color:rgba(176,145,255,.35); }
+}
+@media (max-width:700px) {
+  .hero-visual { width:100%; max-width:100%; margin-inline:0; }
+  .hero-orbit-one { right:2%; width:94%; }
+  .hero-orbit-two { right:8%; width:82%; }
+  .hero-orbit-three { right:-2%; width:104%; }
+  .hero-orbit-four { right:12%; width:76%; }
+  .hero-orbit-five { right:0; width:96%; }
+  .hero-orbit-six { right:7%; width:86%; }
+  .qotd-floating-card { max-width:calc(100% - 28px); }
+  .nav-inner { flex-wrap:wrap; }
+  .hero-buttons { min-width:0; }
+  .builder { grid-template-columns:minmax(0,1fr) !important; }
+}
+@media (max-width:360px) {
+  .hero-redesign h1 { font-size:clamp(48px,16vw,64px); }
+  .hero-buttons { grid-template-columns:minmax(0,1fr) !important; }
+  .qotd-floating-card { padding:14px; }
+  .command-head { flex-wrap:wrap; }
+  .command-tag { margin-left:0; }
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+  .q-motion-reveal,.q-reveal { opacity:1 !important; transform:none !important; }
+  .hero-visual::before,.hero-visual::after { transform:none !important; }
+}

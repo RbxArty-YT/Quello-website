@@ -53,7 +53,7 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
 </style>
 <link rel="stylesheet" href="theme.css?v=1">
   <link rel="stylesheet" href="landing-redesign.css?v=4">
-<link rel="stylesheet" href="motion-polish.css?v=1">
+<link rel="stylesheet" href="motion-polish.css?v=2">
 </head>
 <body>
   <nav class="nav">
@@ -394,8 +394,8 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
         <div class="embed-content">
           <div class="flow-steps"><span class="flow-step active" data-step="1">01</span><span class="flow-line"></span><span class="flow-step" data-step="2">02</span><span class="flow-line"></span><span class="flow-step" data-step="3">03</span></div>
           <div class="flow-panel active" data-panel="1">
-            <h3 data-i18n="flow_step1">1. Write your question</h3>
-            <input id="flowQuestion" class="flow-input" maxlength="200" value="What game would you recommend to everyone?" data-i18n-placeholder="flow_placeholder">
+            <h3 id="flowQuestionLabel" data-i18n="flow_step1">1. Write your question</h3>
+            <input id="flowQuestion" aria-labelledby="flowQuestionLabel" class="flow-input" maxlength="200" value="What game would you recommend to everyone?" data-i18n-placeholder="flow_placeholder">
             <button class="button flow-next" type="button" data-i18n="flow_next">Next →</button>
           </div>
           <div class="flow-panel" data-panel="2">
