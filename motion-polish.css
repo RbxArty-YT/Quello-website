@@ -28,7 +28,7 @@ html { scroll-behavior:smooth; }
 .hero-feature::after { content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(115deg,transparent 20%,rgba(175,143,255,.09) 50%,transparent 78%);transform:translateX(-70%);transition:opacity .3s ease,transform .65s var(--q-motion-ease); }
 .hero-feature:hover::after { opacity:1;transform:translateX(70%); }
 .site-tab::after { transition:left .25s ease,right .25s ease,opacity .25s ease; }
-.q-motion-reveal { opacity:0; transform:translateY(18px); transition:opacity .65s var(--q-motion-ease),transform .65s var(--q-motion-ease); }
+.q-motion-reveal { opacity:0; transform:translateY(16px); transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1); }
 .q-motion-reveal.q-motion-in { opacity:1;transform:translateY(0); }
 @keyframes qAmbientPulse { 0%,100%{opacity:.72;transform:scale(.96)} 50%{opacity:1;transform:scale(1.045)} }
 @keyframes qStarDrift { 0%{transform:translate3d(-4px,2px,0);opacity:.55} 100%{transform:translate3d(5px,-8px,0);opacity:1} }
@@ -138,4 +138,132 @@ img,svg,video,canvas,iframe { max-width:100%; }
   *,*::before,*::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
   .q-motion-reveal,.q-reveal { opacity:1 !important; transform:none !important; }
   .hero-visual::before,.hero-visual::after { transform:none !important; }
+}
+
+/* QUELLO MOTION FINISH — balanced ambient motion and glass interaction polish.
+   Deliberately does not override .q-motion-reveal / .q-motion-in or card reveal timing. */
+:root {
+  --q-glass-hover-line: rgba(199, 176, 255, .62);
+  --q-glass-hover-shadow: 0 20px 48px rgba(5, 3, 22, .24), 0 0 0 1px rgba(165, 128, 255, .10), 0 0 28px rgba(117, 75, 255, .10);
+  --q-hover-lift: -3px;
+}
+
+/* Keep the orbital scene smooth and GPU-friendly without changing its composition. */
+.hero-orbit {
+  transform-origin: 50% 50%;
+  backface-visibility: hidden;
+}
+.hero-orbit-one { filter: drop-shadow(0 0 8px rgba(159,112,255,.24)); }
+.hero-orbit-two { filter: drop-shadow(0 0 7px rgba(113,124,255,.16)); }
+.hero-orbit-three { filter: drop-shadow(0 0 6px rgba(176,145,255,.16)); }
+.hero-orbit-four { filter: drop-shadow(0 0 5px rgba(105,168,255,.13)); }
+.hero-orbit-five { filter: drop-shadow(0 0 7px rgba(170,130,255,.15)); }
+.hero-orbit-six { filter: drop-shadow(0 0 5px rgba(133,117,255,.12)); }
+
+/* A few extra pinprick stars: restrained, low-contrast and independent of layout. */
+.hero-visual::after {
+  box-shadow:
+    0 0 14px 3px rgba(168,124,255,.58),
+    225px 205px 0 1px rgba(190,160,255,.82),
+    250px 35px 0 0 rgba(190,160,255,.68),
+    75px 270px 0 0 rgba(190,160,255,.68),
+    42px 118px 0 -1px rgba(170,190,255,.72),
+    185px 82px 0 -1px rgba(215,197,255,.68),
+    292px 155px 0 -1px rgba(157,145,255,.62),
+    128px 238px 0 -1px rgba(195,174,255,.60);
+}
+
+/* Glass interaction: a quiet specular sweep, never clipping card content or shadows. */
+@media (hover:hover) and (pointer:fine) {
+  .discord-embed,.hero-embed,.setup-embed,.builder-panel,.discord-message-preview,
+  .permission-note,.notice,.command-embed,.playground-card,.flow-card,.extra-card,
+  .community-spotlight,.changelog-card,.faq details,.setup-step,.permission-line,
+  .troubleshoot-embed details,.command-detail-list details,.hero-feature {
+    transition:
+      background-color .28s ease,
+      border-color .34s ease,
+      box-shadow .38s ease,
+      transform .38s var(--q-motion-ease);
+  }
+  .discord-embed:hover,.hero-embed:hover,.setup-embed:hover,.builder-panel:hover,
+  .discord-message-preview:hover,.permission-note:hover,.notice:hover,.command-embed:hover,
+  .playground-card:hover,.flow-card:hover,.extra-card:hover,.community-spotlight:hover,
+  .changelog-card:hover,.faq details:hover,.setup-step:hover,.permission-line:hover,
+  .troubleshoot-embed details:hover,.command-detail-list details:hover,.hero-feature:hover {
+    border-color: var(--q-glass-hover-line);
+    box-shadow: var(--q-glass-hover-shadow);
+    transform: translateY(var(--q-hover-lift));
+  }
+  .hero-feature,.command-embed,.extra-card,.playground-card,.community-spotlight,.changelog-card {
+    position:relative;
+    isolation:isolate;
+  }
+  .hero-feature::before,.command-embed::before,.extra-card::before,.playground-card::before,
+  .community-spotlight::before,.changelog-card::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    border-radius:inherit;
+    pointer-events:none;
+    opacity:0;
+    background:linear-gradient(118deg, transparent 18%, rgba(218,204,255,.075) 46%, rgba(151,122,255,.035) 54%, transparent 78%);
+    background-size:220% 100%;
+    background-position:120% 0;
+    transition:opacity .28s ease, background-position .7s var(--q-motion-ease);
+  }
+  .hero-feature > *, .command-embed > *, .extra-card > *, .playground-card > *,
+  .community-spotlight > *, .changelog-card > * { position:relative; z-index:1; }
+  .hero-feature:hover::before,.command-embed:hover::before,.extra-card:hover::before,
+  .playground-card:hover::before,.community-spotlight:hover::before,.changelog-card:hover::before {
+    opacity:1;
+    background-position:-20% 0;
+  }
+  .qotd-floating-card:hover {
+    border-color:rgba(207,187,255,.82);
+    box-shadow:0 34px 78px rgba(0,0,0,.38),0 0 0 1px rgba(196,164,255,.12),0 0 62px rgba(110,57,255,.26);
+    filter:brightness(1.025);
+  }
+  .button,.primary-button,.secondary-button,.text-button,.flow-language,
+  .command-picker-trigger,.site-tab,.header-language-button,.theme-toggle,.qotd-next {
+    transition:color .22s ease,background-color .28s ease,border-color .28s ease,
+      box-shadow .3s ease,transform .28s var(--q-motion-ease),filter .28s ease;
+  }
+  .button:hover,.primary-button:hover,.secondary-button:hover,.text-button:hover,
+  .flow-language:hover,.command-picker-trigger:hover,.header-language-button:hover,.theme-toggle:hover {
+    filter:brightness(1.06);
+    box-shadow:0 10px 28px rgba(106,66,235,.16);
+  }
+}
+
+/* Clear press feedback; does not interfere with the card's existing float animation. */
+.button:active,.primary-button:active,.secondary-button:active,.text-button:active,
+.flow-language:active,.command-picker-trigger:active,.site-tab:active,.qotd-next:active {
+  transition-duration:.12s;
+  filter:brightness(.98);
+}
+
+@media (max-width:700px) {
+  /* Touch devices get lightweight state changes rather than hover sweeps. */
+  .hero-visual::after { opacity:.72; }
+  .hero-orbit { filter:none; }
+  .discord-embed,.hero-embed,.setup-embed,.builder-panel,.discord-message-preview,
+  .permission-note,.notice,.command-embed,.playground-card,.flow-card,.extra-card,
+  .community-spotlight,.changelog-card,.faq details,.setup-step,.permission-line,
+  .troubleshoot-embed details,.command-detail-list details,.hero-feature { transition-duration:.22s; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .hero-orbit,.hero-visual::after,.hero-feature::before,.command-embed::before,
+  .extra-card::before,.playground-card::before,.community-spotlight::before,.changelog-card::before {
+    animation:none !important;
+    transition:none !important;
+  }
+  .discord-embed:hover,.hero-embed:hover,.setup-embed:hover,.builder-panel:hover,
+  .discord-message-preview:hover,.permission-note:hover,.notice:hover,.command-embed:hover,
+  .playground-card:hover,.flow-card:hover,.extra-card:hover,.community-spotlight:hover,
+  .changelog-card:hover,.faq details:hover,.setup-step:hover,.permission-line:hover,
+  .troubleshoot-embed details:hover,.command-detail-list details:hover,.hero-feature:hover {
+    transform:none !important;
+  }
 }
