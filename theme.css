@@ -185,7 +185,7 @@ body::before{
 @keyframes q-pop-in{from{opacity:0;transform:translateY(-4px) scale(.96)}to{opacity:1;transform:none}}
 
 /* Scroll reveal (class is only added by JS, so content is never hidden without it) */
-.q-reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1)}
+.q-reveal{opacity:0;transform:translateY(8px);transition:opacity 1.15s cubic-bezier(.22,.55,.25,1),transform 1.15s cubic-bezier(.22,.65,.25,1);will-change:opacity,transform}
 .q-reveal.q-in{opacity:1;transform:none}
 
 /* Floating emoji / confetti particles */
@@ -295,3 +295,112 @@ html body button:focus-visible,html body a:focus-visible{outline:2px solid var(-
 /* Extras spacing */
 .extras-grid{margin-top:22px}
 .extra-card .button{margin-top:14px}
+
+/* QUELLO LIGHT COSMIC GLASS — complete light-theme surface and motion finish */
+:root[data-theme="light"] {
+  --q-glass-bg: rgba(255,255,255,.82);
+  --q-glass-line: rgba(105,86,210,.20);
+  --q-glass-shadow: 0 14px 36px rgba(49,55,105,.09), 0 2px 8px rgba(49,55,105,.035);
+  --q-focus: #6552d9;
+  --q-glass-hover-line: rgba(105,86,210,.42);
+  --q-glass-hover-shadow: 0 18px 42px rgba(55,52,120,.12), 0 0 0 1px rgba(123,77,255,.08), 0 0 26px rgba(123,77,255,.08);
+}
+:root[data-theme="light"] body {
+  background-image: linear-gradient(180deg, rgba(255,255,255,.28), transparent 38%);
+}
+:root[data-theme="light"] body::before {
+  background:
+    radial-gradient(38vmax 30vmax at 15% 8%, rgba(112,94,238,.13), transparent 72%),
+    radial-gradient(34vmax 26vmax at 88% 20%, rgba(168,125,255,.12), transparent 72%),
+    radial-gradient(40vmax 30vmax at 58% 95%, rgba(72,158,220,.08), transparent 72%);
+}
+:root[data-theme="light"] .nav {
+  border-color: rgba(104,99,158,.13);
+  box-shadow: 0 5px 24px rgba(47,51,93,.045);
+  backdrop-filter: blur(18px) saturate(1.2);
+}
+:root[data-theme="light"] .hero-redesign::before,
+:root[data-theme="light"] .hero-visual::before {
+  opacity: .75;
+}
+:root[data-theme="light"] .hero-redesign h1 {
+  background-image: linear-gradient(100deg,#22233a 12%,#6352d9 43%,#8b5be7 58%,#22233a 88%);
+  background-size: 240% 100%;
+}
+:root[data-theme="light"] .hero-orbit {
+  border-color: rgba(106,88,220,.27);
+  box-shadow: 0 0 26px rgba(120,91,236,.075), inset 0 0 20px rgba(120,91,236,.045);
+}
+:root[data-theme="light"] .hero-orbit-two { border-color: rgba(81,105,220,.24); }
+:root[data-theme="light"] .hero-orbit-three { border-color: rgba(145,104,229,.28); }
+:root[data-theme="light"] .hero-orbit-four { border-color: rgba(70,145,220,.24); }
+:root[data-theme="light"] .hero-orbit-five { border-color: rgba(125,95,220,.25); }
+:root[data-theme="light"] .hero-orbit-six { border-color: rgba(99,125,223,.22); }
+:root[data-theme="light"] .hero-orbit-three::before,
+:root[data-theme="light"] .hero-orbit-five::after {
+  background: #8c70ef;
+  box-shadow: 0 0 8px 3px rgba(142,112,239,.40), 0 0 20px 6px rgba(122,80,255,.18);
+}
+:root[data-theme="light"] .hero-orbit-four::after { box-shadow: 0 0 9px 3px rgba(74,145,225,.35); }
+:root[data-theme="light"] .hero-spark { filter: saturate(.8); }
+:root[data-theme="light"] .hero-bot-glow { filter: drop-shadow(0 8px 20px rgba(97,78,207,.20)); }
+:root[data-theme="light"] .qotd-floating-card {
+  color: #24233a;
+  background: linear-gradient(145deg, rgba(255,255,255,.97), rgba(246,245,255,.96));
+  border-color: rgba(132,111,224,.34);
+  box-shadow: 0 26px 64px rgba(56,49,112,.15), 0 0 0 1px rgba(120,96,222,.055), 0 0 42px rgba(130,102,239,.11);
+}
+:root[data-theme="light"] .qotd-floating-card .hero-question,
+:root[data-theme="light"] .qotd-floating-card p,
+:root[data-theme="light"] .qotd-floating-card strong { color: #29283f; }
+:root[data-theme="light"] .qotd-floating-card small,
+:root[data-theme="light"] .qotd-floating-card .muted { color: #66677d; }
+:root[data-theme="light"] .qotd-floating-card:hover {
+  border-color: rgba(112,88,220,.58);
+  box-shadow: 0 30px 72px rgba(56,49,112,.18), 0 0 0 1px rgba(120,96,222,.09), 0 0 48px rgba(130,102,239,.17);
+}
+:root[data-theme="light"] .hero-feature,
+:root[data-theme="light"] .discord-embed,
+:root[data-theme="light"] .hero-embed,
+:root[data-theme="light"] .setup-embed,
+:root[data-theme="light"] .builder-panel,
+:root[data-theme="light"] .discord-message-preview,
+:root[data-theme="light"] .permission-note,
+:root[data-theme="light"] .notice,
+:root[data-theme="light"] .command-embed,
+:root[data-theme="light"] .playground-card,
+:root[data-theme="light"] .flow-card,
+:root[data-theme="light"] .extra-card,
+:root[data-theme="light"] .community-spotlight,
+:root[data-theme="light"] .changelog-card,
+:root[data-theme="light"] .setup-step,
+:root[data-theme="light"] .permission-line,
+:root[data-theme="light"] .faq details,
+:root[data-theme="light"] .timeline article {
+  background-color: rgba(255,255,255,.84);
+  border-color: rgba(107,99,163,.16);
+}
+:root[data-theme="light"] .button,
+:root[data-theme="light"] .secondary-button,
+:root[data-theme="light"] .text-button,
+:root[data-theme="light"] .flow-language,
+:root[data-theme="light"] .command-picker-trigger,
+:root[data-theme="light"] .site-tab,
+:root[data-theme="light"] .header-language-button,
+:root[data-theme="light"] .theme-toggle {
+  box-shadow: inset 0 0 0 1px rgba(91,84,148,.13);
+}
+:root[data-theme="light"] .button:hover,
+:root[data-theme="light"] .secondary-button:hover,
+:root[data-theme="light"] .text-button:hover,
+:root[data-theme="light"] .flow-language:hover,
+:root[data-theme="light"] .command-picker-trigger:hover,
+:root[data-theme="light"] .site-tab:hover,
+:root[data-theme="light"] .header-language-button:hover,
+:root[data-theme="light"] .theme-toggle:hover {
+  box-shadow: 0 8px 24px rgba(94,76,194,.12), inset 0 0 0 1px rgba(91,84,148,.18);
+}
+:root[data-theme="light"] :where(a,button,input,select,textarea,[tabindex]):focus-visible {
+  outline-color: #6552d9 !important;
+  box-shadow: 0 0 0 4px rgba(101,82,217,.16) !important;
+}

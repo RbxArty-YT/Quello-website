@@ -28,7 +28,7 @@ html { scroll-behavior:smooth; }
 .hero-feature::after { content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(115deg,transparent 20%,rgba(175,143,255,.09) 50%,transparent 78%);transform:translateX(-70%);transition:opacity .3s ease,transform .65s var(--q-motion-ease); }
 .hero-feature:hover::after { opacity:1;transform:translateX(70%); }
 .site-tab::after { transition:left .25s ease,right .25s ease,opacity .25s ease; }
-.q-motion-reveal { opacity:0; transform:translateY(16px); transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1); }
+.q-motion-reveal { opacity:0; transform:translateY(8px); transition:opacity 1.15s cubic-bezier(.22,.55,.25,1),transform 1.15s cubic-bezier(.22,.65,.25,1); will-change:opacity,transform; }
 .q-motion-reveal.q-motion-in { opacity:1;transform:translateY(0); }
 @keyframes qAmbientPulse { 0%,100%{opacity:.72;transform:scale(.96)} 50%{opacity:1;transform:scale(1.045)} }
 @keyframes qStarDrift { 0%{transform:translate3d(-4px,2px,0);opacity:.55} 100%{transform:translate3d(5px,-8px,0);opacity:1} }
@@ -265,5 +265,65 @@ img,svg,video,canvas,iframe { max-width:100%; }
   .changelog-card:hover,.faq details:hover,.setup-step:hover,.permission-line:hover,
   .troubleshoot-embed details:hover,.command-detail-list details:hover,.hero-feature:hover {
     transform:none !important;
+  }
+}
+
+/* LIGHT THEME MOTION: luminous, readable glass instead of dark neon treatment. */
+:root[data-theme="light"] .hero-visual::before {
+  background: radial-gradient(ellipse at 50% 48%, rgba(126,101,239,.15), transparent 62%);
+}
+:root[data-theme="light"] .hero-visual::after {
+  opacity: .62;
+  filter: drop-shadow(0 0 4px rgba(126,101,239,.25));
+}
+:root[data-theme="light"] .hero-orbit-one { filter: drop-shadow(0 0 8px rgba(125,101,236,.18)); }
+:root[data-theme="light"] .hero-orbit-two { filter: drop-shadow(0 0 7px rgba(104,122,230,.14)); }
+:root[data-theme="light"] .hero-orbit-three { filter: drop-shadow(0 0 6px rgba(145,108,232,.16)); }
+:root[data-theme="light"] .hero-orbit-four { filter: drop-shadow(0 0 5px rgba(79,153,225,.14)); }
+:root[data-theme="light"] .hero-orbit-five { filter: drop-shadow(0 0 7px rgba(130,103,229,.15)); }
+:root[data-theme="light"] .hero-orbit-six { filter: drop-shadow(0 0 5px rgba(103,123,226,.13)); }
+:root[data-theme="light"] .hero-visual::after {
+  box-shadow:
+    0 0 12px 2px rgba(145,112,239,.42),
+    225px 205px 0 1px rgba(143,116,229,.62),
+    250px 35px 0 0 rgba(143,116,229,.54),
+    75px 270px 0 0 rgba(143,116,229,.52),
+    42px 118px 0 -1px rgba(99,146,222,.56),
+    185px 82px 0 -1px rgba(160,139,229,.56),
+    292px 155px 0 -1px rgba(125,115,225,.52),
+    128px 238px 0 -1px rgba(150,130,226,.50);
+}
+@media (hover:hover) and (pointer:fine) {
+  :root[data-theme="light"] .discord-embed:hover,
+  :root[data-theme="light"] .hero-embed:hover,
+  :root[data-theme="light"] .setup-embed:hover,
+  :root[data-theme="light"] .builder-panel:hover,
+  :root[data-theme="light"] .discord-message-preview:hover,
+  :root[data-theme="light"] .permission-note:hover,
+  :root[data-theme="light"] .notice:hover,
+  :root[data-theme="light"] .command-embed:hover,
+  :root[data-theme="light"] .playground-card:hover,
+  :root[data-theme="light"] .flow-card:hover,
+  :root[data-theme="light"] .extra-card:hover,
+  :root[data-theme="light"] .community-spotlight:hover,
+  :root[data-theme="light"] .changelog-card:hover,
+  :root[data-theme="light"] .faq details:hover,
+  :root[data-theme="light"] .setup-step:hover,
+  :root[data-theme="light"] .permission-line:hover,
+  :root[data-theme="light"] .troubleshoot-embed details:hover,
+  :root[data-theme="light"] .command-detail-list details:hover,
+  :root[data-theme="light"] .hero-feature:hover {
+    box-shadow: 0 18px 42px rgba(55,52,120,.12), 0 0 0 1px rgba(123,77,255,.08), 0 0 26px rgba(123,77,255,.08);
+  }
+  :root[data-theme="light"] .hero-feature::before,
+  :root[data-theme="light"] .command-embed::before,
+  :root[data-theme="light"] .extra-card::before,
+  :root[data-theme="light"] .playground-card::before,
+  :root[data-theme="light"] .community-spotlight::before,
+  :root[data-theme="light"] .changelog-card::before {
+    background: linear-gradient(118deg, transparent 18%, rgba(119,98,208,.075) 46%, rgba(151,122,255,.045) 54%, transparent 78%);
+  }
+  :root[data-theme="light"] .qotd-floating-card:hover {
+    filter: brightness(1.015);
   }
 }

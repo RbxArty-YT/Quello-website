@@ -15,7 +15,7 @@
   targets.forEach((element, index) => {
     if (element.classList.contains('q-reveal') || element.classList.contains('q-motion-reveal')) return;
     element.classList.add('q-motion-reveal');
-    element.style.transitionDelay = `${(index % 3) * 45}ms`;
+    element.style.transitionDelay = `${(index % 3) * 85}ms`;
     observer.observe(element);
   });
 
