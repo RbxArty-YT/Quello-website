@@ -52,6 +52,7 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
 @media(max-width:600px){.site-tabs{top:61px}.site-tabs-inner{padding:0 12px;gap:2px}.site-tab{min-height:48px;padding:0 14px;font-size:13px}.header-language-button{min-height:38px;padding:7px 9px}.header-language-menu{right:0}}
 </style>
 <link rel="stylesheet" href="theme.css?v=1">
+  <link rel="stylesheet" href="landing-redesign.css?v=1">
 </head>
 <body>
   <nav class="nav">
@@ -163,30 +164,36 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
   </nav>
 
   <main class="container" id="home">
-    <section class="hero">
-      <img class="hero-avatar" src="quello-avatar.png" alt="Quello bot avatar">
-      <span class="badge" data-i18n="badge">DISCORD BOT</span>
-      <h1>Quello</h1>
-      <p class="subtitle" data-i18n="hero_subtitle">A Discord bot for creating, managing, and tracking Question of the Day posts with configurable channels, roles, logs, history, and administration tools.</p>
-      <div class="buttons">
-        <a class="button" href="https://discord.com/oauth2/authorize?client_id=1548745092586676246" data-i18n="add_discord">Add to Discord</a>
-        <a class="button discord-button" href="https://discord.gg/rYqGXWRbfJ" target="_blank" rel="noopener noreferrer">
-          <svg class="discord-logo" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M19.54 4.1A16.7 16.7 0 0 0 15.38 2.8c-.18.32-.38.75-.52 1.09a15.6 15.6 0 0 0-5.72 0A11.8 11.8 0 0 0 8.61 2.8c-1.5.26-2.9.7-4.15 1.3C1.82 8.16 1.11 12.1 1.47 15.98a16.8 16.8 0 0 0 5.1 2.58c.41-.56.77-1.16 1.08-1.8-.59-.22-1.15-.49-1.68-.8.14-.1.27-.2.4-.3 3.24 1.5 6.75 1.5 9.95 0 .13.1.26.2.4.3-.54.31-1.1.58-1.69.8.31.64.67 1.24 1.08 1.8a16.8 16.8 0 0 0 5.1-2.58c.42-4.49-.72-8.39-3.67-11.88ZM8.43 14.72c-.97 0-1.77-.9-1.77-2s.78-2 1.77-2 1.78.9 1.77 2c0 1.1-.79 2-1.77 2Zm7.14 0c-.97 0-1.77-.9-1.77-2s.78-2 1.77-2 1.78.9 1.77 2c0 1.1-.79 2-1.77 2Z"/></svg>
-          <span data-i18n="join_discord">Join our Discord</span>
-        </a>
+    <section class="hero hero-redesign" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="hero-kicker"><span class="status-dot"></span><span data-i18n="badge">DISCORD BOT</span><span class="hero-kicker-divider">/</span><span>Your Question of the Day</span></div>
+        <h1 id="hero-title">Quello<span class="hero-period">.</span></h1>
+        <p class="hero-tagline" data-i18n="overview_title">Questions made for community conversations.</p>
+        <p class="subtitle" data-i18n="hero_subtitle">A Discord bot for creating, managing, and tracking Question of the Day posts with configurable channels, roles, logs, history, and administration tools.</p>
+        <div class="buttons hero-buttons">
+          <a class="button hero-primary" href="https://discord.com/oauth2/authorize?client_id=1548745092586676246" target="_blank" rel="noopener noreferrer" data-i18n="add_discord">Add to Discord <span aria-hidden="true">↗</span></a>
+          <a class="button discord-button hero-secondary" href="#playground"><span aria-hidden="true">⌘</span><span data-i18n="nav_playground">Playground</span></a>
+        </div>
+        <div class="hero-proof"><span class="hero-proof-icon">✦</span><span data-i18n="overview_text">Create numbered QOTDs, mention the configured role, optionally credit the suggester, and automatically open a discussion thread.</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Illustrative preview of a Quello Question of the Day message">
+        <div class="hero-orbit hero-orbit-one"></div><div class="hero-orbit hero-orbit-two"></div>
+        <div class="hero-spark hero-spark-one">✦</div><div class="hero-spark hero-spark-two">✧</div><div class="hero-spark hero-spark-three">✦</div>
+        <div class="hero-bot-glow"><img src="quello-avatar.png" alt="" class="hero-bot-avatar"></div>
+        <article class="qotd-floating-card">
+          <div class="qotd-card-top"><img src="quello-avatar.png" alt="" class="qotd-mini-avatar"><div class="qotd-author"><strong>Quello</strong><span class="app-pill">APP</span><small>Question of the Day</small></div><span class="qotd-menu">•••</span></div>
+          <div class="qotd-card-body"><span class="qotd-number">QOTD <b>#01</b></span><h2>What's a game you could play forever?</h2><p>Share your answer with the community.</p></div>
+          <div class="qotd-card-footer"><span>↩ Reply in thread</span><span class="qotd-reaction">♡ <b>React</b></span></div>
+        </article>
+        <div class="hero-visual-caption"><span class="caption-pulse"></span> A little question. A better conversation.</div>
       </div>
     </section>
 
-    <section class="hero-embed">
-      <div class="embed-accent"></div>
-      <div class="embed-content">
-        <div class="embed-label" data-i18n="overview_label">ABOUT QUELLO</div>
-        <h2 data-i18n="overview_title">Questions made for community conversations.</h2>
-        <p data-i18n="overview_text">Create numbered QOTDs, mention the configured role, optionally credit the suggester, and automatically open a discussion thread. Server owners can configure the bot and manage logs and controls from Discord.</p>
-        <div class="embed-meta">
-          <span>💬 QOTD</span><span>⚙️ Server configuration</span><span>🧵 Discussion threads</span>
-        </div>
-      </div>
+    <section class="hero-feature-strip" aria-label="Quello highlights">
+      <a class="hero-feature" href="#playground"><span class="hero-feature-icon">⌘</span><span><strong>Explore commands</strong><small>Find the right tool fast</small></span><b aria-hidden="true">↗</b></a>
+      <a class="hero-feature" href="#preview"><span class="hero-feature-icon">✎</span><span><strong>Preview your QOTD</strong><small>Build a message before posting</small></span><b aria-hidden="true">↗</b></a>
+      <a class="hero-feature" href="#setup"><span class="hero-feature-icon">⚙</span><span><strong>Simple setup</strong><small>Get your server ready</small></span><b aria-hidden="true">↗</b></a>
+      <a class="hero-feature" href="#extras"><span class="hero-feature-icon">✧</span><span><strong>Discover extras</strong><small>Tips, questions and secrets</small></span><b aria-hidden="true">↗</b></a>
     </section>
 
     <section class="quick-start discord-embed">
