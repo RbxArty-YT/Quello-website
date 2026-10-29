@@ -1,21 +1,33 @@
 (() => {
   'use strict';
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const targets = document.querySelectorAll('.hero-feature, .quick-start, .discord-embed, .playground-card, .community-spotlight, .changelog-card');
+  const targets = document.querySelectorAll(
+    '.hero-feature, .quick-start, .discord-embed, .playground-card, .community-spotlight, .changelog-card, ' +
+    '.command-embed, .faq details, .timeline article, .extra-card, .setup-step, .permission-line, ' +
+    '.troubleshoot-embed details, .command-detail-list details'
+  );
+
+  // If motion is disabled or IntersectionObserver is unavailable, leave content visible.
   if (motionPreference.matches || !('IntersectionObserver' in window)) return;
 
   const observer = new IntersectionObserver((entries, activeObserver) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      entry.target.classList.add('q-motion-in');
-      activeObserver.unobserve(entry.target);
+      const element = entry.target;
+      // Apply the visible state on a later frame so the browser paints the hidden
+      // starting state first; otherwise the transition can be skipped entirely.
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        element.classList.add('q-motion-in');
+        element.classList.add('q-in');
+      }));
+      activeObserver.unobserve(element);
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+  }, { threshold: 0.04, rootMargin: '0px 0px -5% 0px' });
 
   targets.forEach((element, index) => {
-    if (element.classList.contains('q-reveal') || element.classList.contains('q-motion-reveal')) return;
+    element.classList.remove('q-reveal', 'q-in');
     element.classList.add('q-motion-reveal');
-    element.style.transitionDelay = `${(index % 3) * 150}ms`;
+    element.style.transitionDelay = `${(index % 4) * 90}ms`;
     observer.observe(element);
   });
 
@@ -23,7 +35,7 @@
     if (!event.matches) return;
     targets.forEach(element => {
       element.classList.remove('q-motion-reveal');
-      element.classList.add('q-motion-in');
+      element.classList.add('q-motion-in', 'q-in');
       element.style.transitionDelay = '';
     });
     observer.disconnect();

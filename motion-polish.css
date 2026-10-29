@@ -28,8 +28,19 @@ html { scroll-behavior:smooth; }
 .hero-feature::after { content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(115deg,transparent 20%,rgba(175,143,255,.09) 50%,transparent 78%);transform:translateX(-70%);transition:opacity .3s ease,transform .65s var(--q-motion-ease); }
 .hero-feature:hover::after { opacity:1;transform:translateX(70%); }
 .site-tab::after { transition:left .25s ease,right .25s ease,opacity .25s ease; }
-.q-motion-reveal { opacity:0; transform:translate3d(0,4px,0); transition:opacity 1.8s cubic-bezier(.16,1,.3,1),transform 1.8s cubic-bezier(.16,1,.3,1); will-change:opacity,transform; }
-.q-motion-reveal.q-motion-in { opacity:1;transform:translateY(0); }
+/* One coordinated scroll-reveal system: enough travel to read as a gentle slide, not a pop. */
+.q-motion-reveal {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(.99);
+  transition-property: opacity, transform;
+  transition-duration: 860ms;
+  transition-timing-function: cubic-bezier(.22, .72, .18, 1);
+  will-change: opacity, transform;
+}
+.q-motion-reveal.q-motion-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
 @keyframes qAmbientPulse { 0%,100%{opacity:.72;transform:scale(.96)} 50%{opacity:1;transform:scale(1.045)} }
 @keyframes qStarDrift { 0%{transform:translate3d(-4px,2px,0);opacity:.55} 100%{transform:translate3d(5px,-8px,0);opacity:1} }
 @keyframes qOrbitBreathA { 0%{transform:rotate(-30deg) scale(.985);opacity:.55} 100%{transform:rotate(-17deg) scale(1.02);opacity:.96} }
@@ -136,7 +147,7 @@ img,svg,video,canvas,iframe { max-width:100%; }
 }
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
-  .q-motion-reveal,.q-reveal { opacity:1 !important; transform:none !important; }
+  .q-motion-reveal,.q-reveal { opacity:1 !important; transform:none !important; transition:none !important; }
   .hero-visual::before,.hero-visual::after { transform:none !important; }
 }
 
