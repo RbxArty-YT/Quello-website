@@ -185,7 +185,7 @@ body::before{
 @keyframes q-pop-in{from{opacity:0;transform:translateY(-4px) scale(.96)}to{opacity:1;transform:none}}
 
 /* Scroll reveal (class is only added by JS, so content is never hidden without it) */
-.q-reveal{opacity:0;transform:translateY(8px);transition:opacity 1.15s cubic-bezier(.22,.55,.25,1),transform 1.15s cubic-bezier(.22,.65,.25,1);will-change:opacity,transform}
+.q-reveal{opacity:0;transform:translate3d(0,4px,0);transition:opacity 1.8s cubic-bezier(.16,1,.3,1),transform 1.8s cubic-bezier(.16,1,.3,1);will-change:opacity,transform}
 .q-reveal.q-in{opacity:1;transform:none}
 
 /* Floating emoji / confetti particles */
@@ -438,3 +438,28 @@ html body button:focus-visible,html body a:focus-visible{outline:2px solid var(-
 :root[data-theme="light"] .flow-input::placeholder { color:#77788c; opacity:1; }
 :root[data-theme="light"] .hero-tagline { color:#28263d; }
 :root[data-theme="light"] .hero-gradient-text { background-image:linear-gradient(105deg,#29263f 8%,#6752d3 48%,#8c62dc 82%); }
+
+
+/* HARD OVERRIDE: ensure the hero QOTD question remains readable in light mode.
+   The landing stylesheet is loaded after theme.css, so use explicit high-specificity rules. */
+:root[data-theme="light"] .hero-visual .qotd-floating-card .qotd-card-body h2,
+:root[data-theme="light"] .hero-visual .qotd-floating-card #heroQotdQuestion,
+:root[data-theme="light"] .qotd-floating-card .qotd-card-body h2,
+:root[data-theme="light"] .qotd-floating-card #heroQotdQuestion {
+  color: #24233a !important;
+  -webkit-text-fill-color: #24233a !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
+:root[data-theme="light"] .qotd-floating-card .qotd-card-body p,
+:root[data-theme="light"] .qotd-floating-card #heroQotdPrompt {
+  color: #505168 !important;
+  -webkit-text-fill-color: #505168 !important;
+  opacity: 1 !important;
+}
+:root[data-theme="light"] .qotd-floating-card .qotd-number { color: #6048c8 !important; }
