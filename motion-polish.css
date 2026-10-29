@@ -429,3 +429,25 @@ html { color-scheme: dark; }
   *,*::before,*::after { scroll-behavior:auto !important; }
   :is(.hero-feature,.command-embed,.extra-card,.playground-card,.community-spotlight,.changelog-card)::before { display:none !important; }
 }
+
+/* QUELLO REVEAL SOFT-FADE FIX — make opacity visibly ease in instead of popping. */
+.q-motion-reveal {
+  opacity: 0 !important;
+  transform: translate3d(0, 26px, 0) scale(.985) !important;
+  transition: opacity 1.35s cubic-bezier(.16, 1, .3, 1),
+              transform 1.35s cubic-bezier(.16, 1, .3, 1) !important;
+  transition-delay: 0ms;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+.q-motion-reveal.q-motion-in {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) scale(1) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .q-motion-reveal, .q-motion-reveal.q-motion-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
