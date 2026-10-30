@@ -576,3 +576,61 @@ footer a { text-decoration-color:rgba(166,137,255,.42); text-underline-offset:3p
   :where(button,a,.theme-toggle,.header-language-button,.site-tab) svg,
   :where(button,a,.theme-toggle,.header-language-button,.site-tab) .icon { transition:none !important; }
 }
+
+/* SIGNATURE EXPERIENCE — interactive spotlight, holographic glass and refined navigation. */
+:root {
+  --q-signature-violet: 158, 126, 255;
+  --q-signature-blue: 111, 159, 255;
+  --q-signature-amber: 255, 166, 112;
+}
+/* Local spotlight: pointer coordinates are set by signature-effects.js. */
+.q-spotlight-surface { position:relative; isolation:isolate; }
+.q-spotlight-surface::before {
+  content:""; position:absolute; inset:0; z-index:0; border-radius:inherit; pointer-events:none;
+  opacity:0; background:radial-gradient(260px circle at var(--q-spot-x,50%) var(--q-spot-y,50%),rgba(var(--q-signature-violet),.16),rgba(var(--q-signature-blue),.055) 42%,transparent 72%);
+  transition:opacity 360ms ease;
+}
+.q-spotlight-surface:hover::before { opacity:1; }
+.q-spotlight-surface > * { position:relative; z-index:1; }
+/* Restrained iridescent edge, visible mostly while interacting. */
+@media (hover:hover) and (pointer:fine) {
+  :where(.discord-embed,.hero-feature,.playground-card,.command-embed,.extra-card,.community-spotlight,.changelog-card,.setup-step,.builder-panel):hover {
+    border-color:rgba(174,148,255,.38);
+    box-shadow:0 18px 48px rgba(8,5,24,.22),0 0 28px rgba(133,94,255,.105),inset 0 1px 0 rgba(255,255,255,.075);
+  }
+}
+/* The main navigation becomes a calm floating glass rail after scrolling. */
+.site-tabs { transition:background-color .3s ease,box-shadow .3s ease,border-color .3s ease; }
+.site-tabs.is-floating {
+  background:color-mix(in srgb,var(--nav-bg) 88%,transparent);
+  box-shadow:0 12px 34px rgba(8,5,24,.13);
+  border-bottom-color:color-mix(in srgb,var(--line) 72%,rgba(155,124,255,.3));
+}
+.site-tabs-inner { position:relative; }
+.site-tab { position:relative; }
+.site-tab.active { text-shadow:0 0 18px rgba(160,130,255,.2); }
+.site-tab.active::before {
+  content:""; position:absolute; left:15px; right:15px; bottom:5px; height:2px; border-radius:99px;
+  background:linear-gradient(90deg,rgba(145,111,255,.25),rgba(177,145,255,.95),rgba(112,159,255,.5));
+  box-shadow:0 0 12px rgba(151,116,255,.4);
+}
+/* A small signature shimmer for the brand mark; no layout shift. */
+.brand-avatar { filter:drop-shadow(0 0 7px rgba(145,105,255,.2)); transition:filter .35s ease,transform .5s cubic-bezier(.2,.72,.2,1); }
+@media (hover:hover) and (pointer:fine) {
+  .brand:hover .brand-avatar { filter:drop-shadow(0 0 12px rgba(159,125,255,.55)); transform:rotate(-7deg) scale(1.045); }
+}
+.brand span { background:linear-gradient(100deg,currentColor 0%,currentColor 42%,rgba(184,158,255,.95) 50%,currentColor 60%,currentColor 100%); background-size:220% 100%; background-clip:text; -webkit-background-clip:text; }
+@media (hover:hover) and (pointer:fine) { .brand:hover span { color:transparent; animation:qBrandSheen 1.05s ease both; } }
+@keyframes qBrandSheen { from{background-position:100% 0} to{background-position:0 0} }
+/* Image placeholders are only active while an actual asset is loading. */
+.q-image-loading { background:linear-gradient(105deg,rgba(130,112,177,.12) 25%,rgba(190,170,255,.25) 42%,rgba(130,112,177,.12) 62%); background-size:220% 100%; animation:qImageShimmer 1.25s ease-in-out infinite; }
+@keyframes qImageShimmer { to{background-position-x:-220%} }
+:root[data-theme="light"] .q-spotlight-surface::before { background:radial-gradient(260px circle at var(--q-spot-x,50%) var(--q-spot-y,50%),rgba(128,94,220,.10),rgba(95,135,220,.035) 44%,transparent 72%); }
+@media(max-width:700px) {
+  .q-spotlight-surface::before { display:none; }
+  .site-tabs.is-floating { box-shadow:0 7px 22px rgba(8,5,24,.09); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .q-spotlight-surface::before,.brand-avatar,.brand span,.q-image-loading { animation:none !important; transition:none !important; }
+  .site-tabs,.site-tab { transition:none !important; }
+}
