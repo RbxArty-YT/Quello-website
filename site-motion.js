@@ -4,7 +4,7 @@
   const targets = document.querySelectorAll(
     '.hero-feature, .quick-start, .discord-embed, .playground-card, .community-spotlight, .changelog-card, ' +
     '.command-embed, .faq details, .timeline article, .extra-card, .setup-step, .permission-line, ' +
-    '.troubleshoot-embed details, .command-detail-list details'
+    '.troubleshoot-embed details, .command-detail-list details, .evolution-card, .evolution-step-list li'
   );
 
   // If motion is disabled or IntersectionObserver is unavailable, leave content visible.

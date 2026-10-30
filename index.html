@@ -53,7 +53,8 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
 </style>
 <link rel="stylesheet" href="theme.css?v=4">
   <link rel="stylesheet" href="landing-redesign.css?v=4">
-<link rel="stylesheet" href="motion-polish.css?v=11">
+<link rel="stylesheet" href="motion-polish.css?v=13">
+  <link rel="stylesheet" href="interface-evolution.css?v=1">
 </head>
 <body>
   <nav class="nav">
@@ -197,6 +198,23 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
       <a class="hero-feature" href="#extras"><span class="hero-feature-icon">✧</span><span><strong data-i18n="hero_feature_extras">Discover extras</strong><small data-i18n="hero_feature_extras_desc">Tips, questions and secrets</small></span><b aria-hidden="true">↗</b></a>
     </section>
 
+    <section class="evolution-showcase" aria-labelledby="evolution-title">
+      <div class="evolution-heading"><span class="eyebrow" data-i18n="evo_eyebrow">BUILT FOR COMMUNITIES</span><h2 id="evolution-title" data-i18n="evo_title">Everything your QOTD community needs.</h2><p data-i18n="evo_intro">A clearer way to create questions, keep conversations moving, and manage your server.</p></div>
+      <div class="evolution-grid">
+        <article class="evolution-card"><span class="evolution-icon" aria-hidden="true">✦</span><h3 data-i18n="evo_card1_title">Create with confidence</h3><p data-i18n="evo_card1_text">Build numbered questions, choose a language, and send them to the right channel.</p></article>
+        <article class="evolution-card"><span class="evolution-icon" aria-hidden="true">⌁</span><h3 data-i18n="evo_card2_title">Keep discussions flowing</h3><p data-i18n="evo_card2_text">Give every question a place for replies with automatically created discussion threads.</p></article>
+        <article class="evolution-card"><span class="evolution-icon" aria-hidden="true">◈</span><h3 data-i18n="evo_card3_title">Stay in control</h3><p data-i18n="evo_card3_text">Use roles, configuration, history, logs, and owner tools to manage QOTD activity.</p></article>
+      </div>
+    </section>
+    <section class="evolution-steps" aria-labelledby="evolution-steps-title">
+      <div class="evolution-heading"><span class="eyebrow" data-i18n="evo_steps_eyebrow">GET STARTED</span><h2 id="evolution-steps-title" data-i18n="evo_steps_title">From invite to first question.</h2><p data-i18n="evo_steps_intro">Four simple steps to bring Quello into your server.</p></div>
+      <ol class="evolution-step-list">
+        <li><span>01</span><div><strong data-i18n="evo_step1_title">Invite Quello</strong><small data-i18n="evo_step1_text">Add the bot to your Discord server.</small></div></li>
+        <li><span>02</span><div><strong data-i18n="evo_step2_title">Configure access</strong><small data-i18n="evo_step2_text">Choose the QOTD mention role and allowed role.</small></div></li>
+        <li><span>03</span><div><strong data-i18n="evo_step3_title">Choose channels</strong><small data-i18n="evo_step3_text">Set the channels and bot language.</small></div></li>
+        <li><span>04</span><div><strong data-i18n="evo_step4_title">Post your first QOTD</strong><small data-i18n="evo_step4_text">Create a question and start a conversation.</small></div></li>
+      </ol><a class="evolution-steps-link" href="#setup" data-i18n="evo_steps_link">Read the setup guide →</a>
+    </section>
     <section class="quick-start discord-embed">
       <div class="embed-accent"></div>
       <div class="embed-content">
@@ -990,7 +1008,7 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
     Object.entries(tabGroups).forEach(([tab, group]) => group.ids.forEach(id => sectionToTab[id] = tab));
 
     const mainSections = Array.from(document.querySelectorAll('#home > section'));
-    mainSections.slice(0, 5).forEach(section => {
+    mainSections.forEach(section => {
       section.dataset.tabPanel = 'home';
     });
     Object.entries(tabGroups).forEach(([tab, group]) => {
@@ -1291,6 +1309,7 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
   </script>
   <script src="hero-interactions.js?v=2" defer></script>
   <script src="site-motion.js?v=5" defer></script>
-  <script src="signature-effects.js?v=1" defer></script>
+  <script src="signature-effects.js?v=2" defer></script>
+  <script src="interface-evolution.js?v=1" defer></script>
 </body>
 </html>

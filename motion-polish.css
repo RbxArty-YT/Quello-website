@@ -634,3 +634,48 @@ footer a { text-decoration-color:rgba(166,137,255,.42); text-underline-offset:3p
   .q-spotlight-surface::before,.brand-avatar,.brand span,.q-image-loading { animation:none !important; transition:none !important; }
   .site-tabs,.site-tab { transition:none !important; }
 }
+
+
+/* HEADER WORDMARK CONTRAST + MOBILE PERFORMANCE SAFETY PATCH */
+/* Keep the Quello wordmark readable in both themes; avoid transparent animated text. */
+.nav .brand span {
+  display:inline-block !important;
+  color:var(--text-strong, var(--text)) !important;
+  -webkit-text-fill-color:currentColor !important;
+  background:none !important;
+  -webkit-background-clip:border-box !important;
+  background-clip:border-box !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+  animation:none !important;
+  font-weight:800;
+  letter-spacing:-.035em;
+}
+:root[data-theme="light"] .nav .brand span { color:#29243d !important; -webkit-text-fill-color:#29243d !important; }
+:root[data-theme="dark"] .nav .brand span,
+:root:not([data-theme="light"]) .nav .brand span { color:#f0eaff !important; -webkit-text-fill-color:#f0eaff !important; }
+
+/* Mobile: retain the visual identity, but remove costly continuous effects. */
+@media (max-width:700px), (hover:none) and (pointer:coarse) {
+  .nav .brand span { display:inline-block !important; font-size:16px; }
+  .nav .brand { gap:8px; min-width:0; }
+  .nav .brand-avatar { flex:0 0 auto; }
+  body::before, body::after,
+  .hero-visual::before, .hero-visual::after,
+  .hero-orbit, .hero-bot-glow, .hero-particles,
+  .qotd-floating-card {
+    animation:none !important;
+  }
+  body::before { transform:none !important; }
+  body::after { opacity:.22 !important; filter:none !important; transform:none !important; }
+  :where(.discord-embed,.hero-embed,.setup-embed,.builder-panel,.discord-message-preview,
+    .permission-note,.notice,.command-embed,.playground-card,.flow-card,.extra-card,
+    .community-spotlight,.changelog-card,.setup-step,.permission-line,.faq details,
+    .timeline article,.hero-feature,.nav,.site-tabs) {
+    -webkit-backdrop-filter:none !important;
+    backdrop-filter:none !important;
+  }
+  .q-spotlight-surface::before { display:none !important; }
+  .brand-avatar { filter:none !important; }
+  .site-tabs.is-floating { box-shadow:0 4px 14px rgba(8,5,24,.08); }
+}
