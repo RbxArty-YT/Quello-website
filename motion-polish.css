@@ -451,3 +451,54 @@ html { color-scheme: dark; }
     transition: none !important;
   }
 }
+
+/* QUELLO VISUAL FINISH — cohesive cosmic atmosphere and restrained glass surfaces */
+:root {
+  --q-surface-ease: cubic-bezier(.2,.72,.2,1);
+  --q-card-radius: 18px;
+}
+body::before {
+  background:
+    radial-gradient(ellipse 42% 34% at 8% 8%, rgba(116,82,232,.15), transparent 76%),
+    radial-gradient(ellipse 38% 32% at 92% 28%, rgba(65,112,210,.10), transparent 78%),
+    radial-gradient(ellipse 48% 38% at 52% 100%, rgba(145,87,238,.09), transparent 78%);
+  animation: qCosmicAtmosphere 28s ease-in-out infinite alternate;
+}
+:root[data-theme="light"] body::before {
+  background:
+    radial-gradient(ellipse 42% 34% at 8% 8%, rgba(135,112,239,.13), transparent 76%),
+    radial-gradient(ellipse 38% 32% at 92% 28%, rgba(94,150,224,.09), transparent 78%),
+    radial-gradient(ellipse 48% 38% at 52% 100%, rgba(168,130,239,.08), transparent 78%);
+}
+@keyframes qCosmicAtmosphere { from { background-position:0 0, 0 0, 0 0; } to { background-position:18px -12px, -16px 14px, 12px -10px; } }
+:where(.hero-feature,.discord-embed,.hero-embed,.setup-embed,.builder-panel,.discord-message-preview,.permission-note,.notice,.command-embed,.playground-card,.flow-card,.extra-card,.community-spotlight,.changelog-card,.setup-step,.permission-line,.faq details,.timeline article) {
+  border-radius:var(--q-card-radius);
+  transition: transform 520ms var(--q-surface-ease), background-color 380ms ease, border-color 380ms ease, box-shadow 520ms var(--q-surface-ease), color 260ms ease;
+}
+@media (hover:hover) and (pointer:fine) {
+  :where(.hero-feature,.discord-embed,.hero-embed,.setup-embed,.builder-panel,.discord-message-preview,.permission-note,.notice,.command-embed,.playground-card,.flow-card,.extra-card,.community-spotlight,.changelog-card,.setup-step,.permission-line,.faq details,.timeline article):hover {
+    transform:translateY(-3px);
+    border-color:var(--q-glass-hover-line);
+    box-shadow:var(--q-glass-hover-shadow);
+  }
+}
+:where(button,a,input,textarea,select,[tabindex]):focus-visible {
+  outline:2px solid var(--q-focus, #bda8ff);
+  outline-offset:3px;
+}
+/* Modals and drawers: backdrop settles first, panel follows with a soft ease. */
+.command-drawer-backdrop,.menu-overlay { transition:opacity 420ms ease, backdrop-filter 420ms ease; }
+.command-drawer-panel { transition:transform 560ms cubic-bezier(.16,1,.3,1), opacity 420ms ease !important; }
+.command-drawer:not(.open) .command-drawer-panel { opacity:.96; }
+/* Tab content gets a longer, calmer entrance instead of a quick pop. */
+.tab-panel-active { animation:qTabEnter 460ms cubic-bezier(.16,1,.3,1) both; }
+@keyframes qTabEnter { from { opacity:0; transform:translate3d(0,10px,0); filter:blur(2px); } to { opacity:1; transform:translate3d(0,0,0); filter:blur(0); } }
+@media (max-width:700px) {
+  body::before { animation-duration:40s; }
+  :where(.hero-feature,.discord-embed,.hero-embed,.setup-embed,.builder-panel,.discord-message-preview,.permission-note,.notice,.command-embed,.playground-card,.flow-card,.extra-card,.community-spotlight,.changelog-card,.setup-step,.permission-line,.faq details,.timeline article):hover { transform:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  body::before { animation:none !important; }
+  .tab-panel-active { animation:none !important; }
+  .command-drawer-backdrop,.menu-overlay,.command-drawer-panel { transition:none !important; }
+}

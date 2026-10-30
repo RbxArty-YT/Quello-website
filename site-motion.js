@@ -27,7 +27,8 @@
   targets.forEach((element, index) => {
     element.classList.remove('q-reveal', 'q-in');
     element.classList.add('q-motion-reveal');
-    element.style.transitionDelay = `${(index % 4) * 130}ms`; 
+    element.style.transitionDelay = `${(index % 4) * 115}ms`;
+    element.style.setProperty('--q-reveal-order', String(index % 4)); 
     observer.observe(element);
   });
 
