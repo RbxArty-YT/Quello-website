@@ -57,6 +57,7 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
   <link rel="stylesheet" href="interface-evolution.css?v=1">
   <link rel="stylesheet" href="sidebar-evolution.css?v=1">
   <link rel="stylesheet" href="performance-optimization.css?v=2">
+<style>html{scroll-padding-top:112px} section[id]{scroll-margin-top:112px}</style>
 </head>
 <body>
   <nav class="nav">
@@ -529,7 +530,7 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
       <div class="section-heading"><div><span class="eyebrow" data-i18n="eyebrow_changelog">UPDATES</span><h2 data-i18n="changelog_title">Changelog</h2></div></div>
       <div class="timeline">
         <article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change13_title">Advanced desktop rendering optimization</h3><p data-i18n="change13_text">Reduced off-screen rendering work with content visibility, optimized pointer parallax to avoid repeated layout reads, and improved image decoding. Existing animations and visual timing are unchanged.</p></article>
-        Desktop performance optimization</h3><p data-i18n="change12_text">Reduced unnecessary work during scrolling and pointer movement by scheduling visual updates once per animation frame. Off-screen images now load lazily, and the Quello avatar uses a much smaller WebP asset. Existing animations, transitions, glow effects, and parallax remain intact.</p></article>
+        <article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change12_title">Desktop performance optimization</h3><p data-i18n="change12_text">Reduced unnecessary work during scrolling and pointer movement by scheduling visual updates once per animation frame. Off-screen images now load lazily, and the Quello avatar uses a much smaller WebP asset. Existing animations, transitions, glow effects, and parallax remain intact.</p></article>
         <article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change11_title">Motion, navigation &amp; interface polish</h3><p data-i18n="change11_text">Added refined hero parallax and orbit effects, scroll-aware navigation, a sliding active-tab indicator, spotlight interactions, animated content reveals, image-loading feedback, toast notifications, and an upgraded sidebar with clearer actions and language controls.</p></article>
         <article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change10_title">Landing page redesign &amp; guided onboarding</h3><p data-i18n="change10_text">Introduced the redesigned hero with an interactive QOTD preview, a feature strip, a new community-focused showcase, and a four-step getting-started section. The desktop and responsive layouts now have a clearer visual hierarchy and more room for the key features.</p></article>
         <article><span>OCTOBER 6, 2026</span><h3 data-i18n="change7_title">Quello Explorer &amp; progress polish</h3><p data-i18n="change7_text">Improved Quello Explorer with persistent achievements, clearer completion states, and a more distinct visual difference between completed and unfinished actions.</p></article>
@@ -1372,8 +1373,6 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
     // Card reveals are coordinated by site-motion.js to prevent competing observers.
   </script>
   <script src="hero-interactions.js?v=2" defer></script>
-  <script src="site-motion.js?v=5" defer></script>
-  <script src="signature-effects.js?v=2" defer></script>
   <script src="interface-evolution.js?v=1" defer></script>
 </body>
 </html>
