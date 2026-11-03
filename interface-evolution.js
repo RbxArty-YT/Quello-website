@@ -35,13 +35,21 @@
     };
     update();
     new MutationObserver(update).observe(inner, {subtree:true,attributes:true,attributeFilter:['class']});
-    tabs.addEventListener('scroll', update, {passive:true});
-    window.addEventListener('resize', update, {passive:true});
+    let indicatorFrame = 0;
+    const scheduleUpdate = () => {
+      if (indicatorFrame) return;
+      indicatorFrame = requestAnimationFrame(() => {
+        indicatorFrame = 0;
+        update();
+      });
+    };
+    tabs.addEventListener('scroll', scheduleUpdate, {passive:true});
+    window.addEventListener('resize', scheduleUpdate, {passive:true});
   }
 
   // Defer decoding for off-screen images; keep the hero/avatar eager for a stable first paint.
   document.querySelectorAll('img').forEach((img, index) => {
-    if (index > 2 && !img.loading) img.loading = 'lazy';
+    if (index > 2 && !img.hasAttribute('loading')) img.loading = 'lazy';
     img.decoding = 'async';
     if (img.complete) return;
     img.classList.add('q-image-pending');

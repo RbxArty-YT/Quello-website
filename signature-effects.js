@@ -4,8 +4,16 @@
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
   const tabs = document.querySelector('.site-tabs');
   const updateTabs = () => tabs?.classList.toggle('is-floating', window.scrollY > 90);
+  let scrollFrame = 0;
+  const scheduleTabsUpdate = () => {
+    if (scrollFrame) return;
+    scrollFrame = requestAnimationFrame(() => {
+      scrollFrame = 0;
+      updateTabs();
+    });
+  };
   updateTabs();
-  window.addEventListener('scroll', updateTabs, { passive: true });
+  window.addEventListener('scroll', scheduleTabsUpdate, { passive: true });
   if (reduced.matches || !finePointer.matches) return;
 
   // A restrained spotlight follows the pointer only inside selected glass surfaces.
@@ -15,12 +23,23 @@
   );
   surfaces.forEach(surface => {
     surface.classList.add('q-spotlight-surface');
+    let pointerFrame = 0;
+    let latestPointer = null;
     surface.addEventListener('pointermove', event => {
-      const rect = surface.getBoundingClientRect();
-      surface.style.setProperty('--q-spot-x', `${event.clientX - rect.left}px`);
-      surface.style.setProperty('--q-spot-y', `${event.clientY - rect.top}px`);
+      latestPointer = { x: event.clientX, y: event.clientY };
+      if (pointerFrame) return;
+      pointerFrame = requestAnimationFrame(() => {
+        pointerFrame = 0;
+        if (!latestPointer) return;
+        const rect = surface.getBoundingClientRect();
+        surface.style.setProperty('--q-spot-x', `${latestPointer.x - rect.left}px`);
+        surface.style.setProperty('--q-spot-y', `${latestPointer.y - rect.top}px`);
+      });
     }, { passive: true });
     surface.addEventListener('pointerleave', () => {
+      if (pointerFrame) cancelAnimationFrame(pointerFrame);
+      pointerFrame = 0;
+      latestPointer = null;
       surface.style.removeProperty('--q-spot-x');
       surface.style.removeProperty('--q-spot-y');
     }, { passive: true });
