@@ -56,7 +56,7 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
 <link rel="stylesheet" href="motion-polish.css?v=13">
   <link rel="stylesheet" href="interface-evolution.css?v=1">
   <link rel="stylesheet" href="sidebar-evolution.css?v=1">
-  <link rel="stylesheet" href="performance-optimization.css?v=2">
+  <link rel="stylesheet" href="performance-optimization.css?v=4">
 <style>html{scroll-padding-top:112px} section[id]{scroll-margin-top:112px}</style>
 </head>
 <body>
@@ -529,6 +529,7 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
     <section class="section" id="changelog">
       <div class="section-heading"><div><span class="eyebrow" data-i18n="eyebrow_changelog">UPDATES</span><h2 data-i18n="changelog_title">Changelog</h2></div></div>
       <div class="timeline">
+        <article><span>NOVEMBER 4, 2026</span><h3>Desktop GPU rendering optimization</h3><p>Reduced GPU-heavy blur, backdrop-filter, and shadow rendering on desktop while keeping the original orbit, hero, hover, and transition animations. Standardized changelog card layout across entries.</p></article>
         <article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change13_title">Advanced desktop rendering optimization</h3><p data-i18n="change13_text">Reduced off-screen rendering work with content visibility, optimized pointer parallax to avoid repeated layout reads, and improved image decoding. Existing animations and visual timing are unchanged.</p></article>
         <article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change12_title">Desktop performance optimization</h3><p data-i18n="change12_text">Reduced unnecessary work during scrolling and pointer movement by scheduling visual updates once per animation frame. Off-screen images now load lazily, and the Quello avatar uses a much smaller WebP asset. Existing animations, transitions, glow effects, and parallax remain intact.</p></article>
         <article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change11_title">Motion, navigation &amp; interface polish</h3><p data-i18n="change11_text">Added refined hero parallax and orbit effects, scroll-aware navigation, a sliding active-tab indicator, spotlight interactions, animated content reveals, image-loading feedback, toast notifications, and an upgraded sidebar with clearer actions and language controls.</p></article>

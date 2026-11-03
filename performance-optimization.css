@@ -1,12 +1,90 @@
-/*
- * QUELLO — additional desktop rendering optimization
- * Keeps the existing motion definitions, durations, easing and visual effects intact.
- * content-visibility lets Chromium-based browsers skip painting distant sections
- * until they approach the viewport, while remembering their measured size.
- */
+/* QUELLO DESKTOP GPU PERFORMANCE PATCH
+   Keep the original motion/keyframes, but avoid expensive full-surface filters.
+   This file is loaded last from index.html. */
 @media (min-width: 701px) and (hover: hover) and (pointer: fine) {
-  main > section:nth-of-type(n + 3) {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 720px;
+  /* Large fixed blurred atmosphere layers force expensive repainting. Keep their
+     gradients, but render them without live blur/filter passes. */
+  body::before,
+  body::after {
+    filter: none !important;
+    animation: none !important;
+    transform: none !important;
   }
+
+  /* Preserve the orbit and hero animations (transform/opacity only), while
+     removing costly drop-shadows and large blurred pseudo-elements. */
+  .hero-orbit,
+  .hero-orbit-one,
+  .hero-orbit-two,
+  .hero-orbit-three,
+  .hero-orbit-four,
+  .hero-orbit-five,
+  .hero-orbit-six {
+    filter: none !important;
+    box-shadow: none !important;
+    will-change: transform, opacity;
+  }
+  .hero-orbit::before,
+  .hero-orbit::after {
+    box-shadow: none !important;
+  }
+  .hero-visual::before {
+    filter: none !important;
+  }
+  .hero-visual::after {
+    filter: none !important;
+  }
+  .hero-bot-glow {
+    filter: none !important;
+  }
+
+  /* Glass blur is especially costly when many cards are visible together.
+     Keep translucent surfaces and borders, remove only backdrop processing. */
+  :where(.discord-embed,.hero-embed,.setup-embed,.builder-panel,
+    .discord-message-preview,.permission-note,.notice,.command-embed,
+    .playground-card,.flow-card,.extra-card,.community-spotlight,
+    .changelog-card,.setup-step,.permission-line,.faq details,
+    .timeline article,.hero-feature,.nav,.site-tabs,
+    .menu-overlay,.command-drawer-backdrop) {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Do not animate shadow/filter properties on large cards. Their transform
+     hover motion remains available. */
+  :where(.hero-feature,.discord-embed,.hero-embed,.setup-embed,
+    .builder-panel,.discord-message-preview,.permission-note,.notice,
+    .command-embed,.playground-card,.flow-card,.extra-card,
+    .community-spotlight,.changelog-card,.setup-step,.permission-line,
+    .faq details,.timeline article) {
+    transition-property: transform, background-color, border-color, color !important;
+  }
+
+  /* Make every changelog entry a consistent card, including translated entries. */
+  .timeline {
+    display: grid !important;
+    align-items: stretch;
+    gap: 18px !important;
+  }
+  .timeline > article {
+    display: block !important;
+    position: relative;
+    min-width: 0;
+    padding: 22px 24px !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 14px !important;
+    background: var(--surface) !important;
+    box-sizing: border-box;
+  }
+  .timeline > article > span,
+  .timeline > article > h3,
+  .timeline > article > p {
+    display: block;
+  }
+}
+
+/* Changelog card consistency at every viewport size. */
+.timeline > article {
+  box-sizing: border-box;
+  min-width: 0;
 }
