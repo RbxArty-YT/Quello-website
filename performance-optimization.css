@@ -1,0 +1,12 @@
+/*
+ * QUELLO — additional desktop rendering optimization
+ * Keeps the existing motion definitions, durations, easing and visual effects intact.
+ * content-visibility lets Chromium-based browsers skip painting distant sections
+ * until they approach the viewport, while remembering their measured size.
+ */
+@media (min-width: 701px) and (hover: hover) and (pointer: fine) {
+  main > section:nth-of-type(n + 3) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 720px;
+  }
+}

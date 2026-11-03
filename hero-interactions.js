@@ -68,26 +68,34 @@
   });
   next.addEventListener('click', showNextQuestion);
 
-  // Gentle pointer parallax on devices that have a precise pointer; no motion on touch/reduced-motion.
+  // Gentle pointer parallax on precise-pointer devices. Coalesce pointer events
+  // into one frame and perform the layout read only inside that frame.
   if (visual && window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reduceMotion.matches) {
     let frame = 0;
+    let pointerX = 0;
+    let pointerY = 0;
+    const orbitOne = visual.querySelector('.hero-orbit-one');
+    const orbitTwo = visual.querySelector('.hero-orbit-two');
+
     visual.addEventListener('pointermove', (event) => {
-      const rect = visual.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      if (frame) cancelAnimationFrame(frame);
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (frame) return;
       frame = requestAnimationFrame(() => {
-        const orbitOne = visual.querySelector('.hero-orbit-one');
-        const orbitTwo = visual.querySelector('.hero-orbit-two');
+        frame = 0;
+        const rect = visual.getBoundingClientRect();
+        const x = (pointerX - rect.left) / Math.max(rect.width, 1) - 0.5;
+        const y = (pointerY - rect.top) / Math.max(rect.height, 1) - 0.5;
         if (orbitOne) orbitOne.style.translate = `${x * 8}px ${y * 7}px`;
         if (orbitTwo) orbitTwo.style.translate = `${x * -6}px ${y * -5}px`;
       });
-    });
+    }, { passive: true });
+
     visual.addEventListener('pointerleave', () => {
-      const orbitOne = visual.querySelector('.hero-orbit-one');
-      const orbitTwo = visual.querySelector('.hero-orbit-two');
+      if (frame) cancelAnimationFrame(frame);
+      frame = 0;
       if (orbitOne) orbitOne.style.translate = '';
       if (orbitTwo) orbitTwo.style.translate = '';
-    });
+    }, { passive: true });
   }
 })();
