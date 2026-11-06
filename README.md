@@ -38,3 +38,12 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 - HTML parsed successfully and checked for duplicate IDs, images without `alt`, unnamed buttons, and unnamed links.
 - Confirmed all five language dictionaries and the responsive/reduced-motion safeguards are present.
 - A full interactive Chromium viewport run was attempted, but this environment blocked local browser navigation (`ERR_BLOCKED_BY_ADMINISTRATOR`); visual browser testing therefore remains unverified.
+
+
+## Documentation sync (November 6, 2026)
+- `/edit`, `/delete`, and `/info` are documented with Discord message links (`message_link`) instead of message IDs.
+- `/setup`, `/edit`, and `/delete` are documented with the Confirm / Cancel step; the mention role in `/setup` is documented as optional (`allowed_role` is the required one).
+- `/diagnostics` is documented as a normal (non-ephemeral) message with a Refresh button and an optional channel.
+- Added filters/limits to the `/history`, `/reset`, `/logs`, and `/audit_log` descriptions, and a permissions line for the commands open to everyone.
+- The QOTD Preview Builder and its Copy text output now follow the real bot message format (`# QOTD N:` + quoted question + `Suggested by`).
+- Privacy Policy: documented answer tracking in QOTD threads, thread IDs, daily backups (7 kept), and short-lived interaction IDs; Last Updated set to November 6, 2026.
