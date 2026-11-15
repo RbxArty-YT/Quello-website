@@ -160,7 +160,7 @@
         el('p', { text: t('pick_lead') })),
         el('a', { class: 'button hero-primary add-server-btn', href: CFG.INVITE_URL || '#', target: '_blank', rel: 'noopener noreferrer' },
           el('span', { class: 'add-server-plus', 'aria-hidden': 'true', text: '+' }), el('span', { text: t('add_short') }))),
-      guilds.length > 1 ? search : null,
+      ...(guilds.length > 1 ? [search] : []),
       grid);
   }
 
