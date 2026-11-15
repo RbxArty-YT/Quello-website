@@ -1,7 +1,7 @@
 /* login.html: send people to Discord (via the bot's API) or straight to the docs. */
 (function () {
   'use strict';
-  const { CFG, API_BASE, t, applyI18n, wireHeader, getToken, clearToken, tokenLooksValid } = window.Q;
+  const { CFG, API_BASE, API_UNSET, t, applyI18n, wireHeader, getToken, clearToken, tokenLooksValid } = window.Q;
 
   wireHeader();
   applyI18n();
@@ -20,7 +20,7 @@
   const errorBox = document.getElementById('loginError');
   const showError = key => { errorBox.textContent = t(key); errorBox.classList.remove('is-hidden'); };
 
-  if (API_BASE) {
+  if (!API_UNSET) {
     discordBtn.href = API_BASE + '/auth/login';
   } else {
     discordBtn.removeAttribute('href');
@@ -40,6 +40,6 @@
   }
   window.addEventListener('quello:languagechange', () => {
     if (errorKey) showError(errorKey);
-    else if (!API_BASE) showError('err_config');
+    else if (API_UNSET) showError('err_config');
   });
 })();

@@ -89,7 +89,7 @@
   function showError(error, retry) {
     rerender = () => showError(error, retry);
     updateBar();
-    const message = error && error.code === 'network' ? t('err_network') : (error && error.message) || t('err_server');
+    const message = (error && error.message) || t('err_server');
     app.replaceChildren(stateCard(null, message, retry ? el('button', { class: 'button hero-primary', type: 'button', text: t('retry'), onclick: retry }) : null));
   }
 

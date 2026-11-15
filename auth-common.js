@@ -6,6 +6,9 @@
 
   const CFG = window.QUELLO_CONFIG || {};
   const API_BASE = String(CFG.API_BASE || '').replace(/\/+$/, '');
+  // site-config.js still holds the placeholder address from the download.
+  const API_UNSET = !API_BASE || /example\.com/i.test(API_BASE);
+  const apiHost = () => { try { return new URL(API_BASE).host; } catch (e) { return API_BASE; } };
   const TOKEN_KEY = 'quello-dash-token';
   const LANG_KEY = 'quello-site-language-v2';
 
@@ -30,7 +33,7 @@
       login_legal: 'By signing in you accept the', legal_terms: 'Terms of Service', legal_and: 'and', legal_privacy: 'Privacy Policy',
       err_state: 'The sign-in link expired. Please try again.',
       err_auth: 'Discord sign-in failed. Please try again.',
-      err_config: 'The dashboard is not configured yet (API address is missing).',
+      err_config: 'The dashboard is not configured yet: set API_BASE in site-config.js to your bot’s API address.',
       menu_open: 'Open menu', menu_close: 'Close menu', theme: 'Theme', language: 'Language',
       menu_server: 'SERVER', menu_account: 'ACCOUNT', menu_links: 'LINKS',
       menu_switch: 'All servers', menu_docs: 'Documentation', menu_add: 'Add Quello to a server', menu_logout: 'Log out',
@@ -94,7 +97,7 @@
       login_legal: 'Входя, вы принимаете', legal_terms: 'Условия использования', legal_and: 'и', legal_privacy: 'Политику конфиденциальности',
       err_state: 'Ссылка для входа устарела. Попробуйте ещё раз.',
       err_auth: 'Не удалось войти через Discord. Попробуйте ещё раз.',
-      err_config: 'Панель ещё не настроена (не указан адрес API).',
+      err_config: 'Панель ещё не настроена: впишите адрес API бота в API_BASE в файле site-config.js.',
       menu_open: 'Открыть меню', menu_close: 'Закрыть меню', theme: 'Тема', language: 'Язык',
       menu_server: 'СЕРВЕР', menu_account: 'АККАУНТ', menu_links: 'ССЫЛКИ',
       menu_switch: 'Все серверы', menu_docs: 'Документация', menu_add: 'Добавить Quello на сервер', menu_logout: 'Выйти',
@@ -353,7 +356,7 @@
 
   async function api(path, options) {
     options = options || {};
-    if (!API_BASE) throw new ApiFailure('config', t('err_config'));
+    if (API_UNSET) throw new ApiFailure('config', t('err_config'));
     const headers = { Authorization: 'Bearer ' + getToken() };
     if (options.body !== undefined) headers['Content-Type'] = 'application/json';
     let response;
@@ -364,7 +367,7 @@
         body: options.body !== undefined ? JSON.stringify(options.body) : undefined
       });
     } catch (e) {
-      throw new ApiFailure('network', t('err_network'));
+      throw new ApiFailure('network', t('err_network') + ' (' + apiHost() + ')');
     }
     let data = null;
     try { data = await response.json(); } catch (e) { /* not JSON */ }
@@ -379,5 +382,5 @@
     return data;
   }
 
-  window.Q = { CFG, API_BASE, LANGS, t, applyI18n, setLang, wireHeader, getToken, setToken, clearToken, tokenLooksValid, api, ApiFailure };
+  window.Q = { CFG, API_BASE, API_UNSET, LANGS, t, applyI18n, setLang, wireHeader, getToken, setToken, clearToken, tokenLooksValid, api, ApiFailure };
 })();
