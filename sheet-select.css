@@ -1,0 +1,32 @@
+/* Dashboard: custom bottom-sheet pickers (replaces native <select> popups).
+   Reuses the Command Playground drawer styles from style.css. */
+select.sheet-native{display:none !important}
+
+.sheet-trigger{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  text-align:left;font:inherit;font-size:14px;
+  -webkit-tap-highlight-color:transparent;
+}
+.sheet-trigger .sheet-trigger-label{min-width:0;flex:1 1 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sheet-trigger .sheet-trigger-label.is-placeholder{color:var(--text-4)}
+.sheet-trigger[aria-expanded="true"]{border-color:var(--accent)}
+.sheet-trigger:disabled{opacity:.6;cursor:not-allowed}
+.sheet-trigger:focus:not(:focus-visible){outline:0;box-shadow:none}
+
+.sheet-drawer .command-option{min-height:60px}
+.sheet-option-label{
+  font-size:15px;font-weight:600;line-height:1.35;color:var(--text-strong);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.sheet-drawer .command-option.active .sheet-option-label{color:var(--accent-text)}
+.sheet-drawer .command-option:disabled{opacity:.45;cursor:not-allowed}
+.sheet-group{
+  padding:18px 14px 6px;font-size:11px;font-weight:800;line-height:1.2;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--text-4);
+}
+.sheet-group:first-child{padding-top:8px}
+
+@media(max-width:700px){
+  .sheet-drawer .command-drawer-panel{height:auto;max-height:min(86vh,760px)}
+  .sheet-drawer .command-option{min-height:58px}
+}
