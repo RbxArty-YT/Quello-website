@@ -167,3 +167,12 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
 .badge-pill.ok{border-color:rgba(35,165,90,.55);background:rgba(35,165,90,.12);color:var(--text)}
 .badge-pill.bad{border-color:rgba(237,66,69,.55);background:rgba(237,66,69,.12);color:var(--text)}
 @media(max-width:680px){.compose-row{grid-template-columns:1fr}.tab{padding:8px 12px}}
+
+/* Server search */
+.search-input{display:block;width:100%;min-height:44px;margin:0 0 16px;padding:0 14px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface-2);color:var(--text);font:inherit;font-size:16px;appearance:none;-webkit-appearance:none}
+.search-input::placeholder{color:var(--text-4)}
+.search-input:hover{border-color:var(--line-hover)}
+.search-input:focus-visible{outline:0;border-color:var(--accent);box-shadow:0 0 0 3px rgba(88,101,242,.2)}
+.side-search{margin:0 0 8px;min-height:40px;font-size:14px}
+.side-empty{padding:6px 4px}
+.search-empty{grid-column:1/-1}

@@ -20,6 +20,9 @@
   let current = null;       // saved configuration
   let pending = {};         // staged changes: setting name -> new value
   let busy = false;
+  let serverQuery = '';     // text typed in the server search boxes
+  let redrawPicker = null;  // redraws the picker's grid while the picker is on screen
+  let pickerBox = null;     // the picker's search input, kept in sync with the side-menu one
   let tab = 'settings';     // settings | qotds | suggestions | logs
   let viewSeq = 0;          // drops answers that arrive after the person moved on
   let rerender = () => {};  // re-draws the current view (language change)
@@ -91,9 +94,24 @@
   }
 
   /* ---------------------------------------------------------- server picker */
+  // Case-insensitive match on the server name (or its id).
+  function matchingGuilds() {
+    const query = serverQuery.trim().toLowerCase();
+    return query ? guilds.filter(guild => guild.name.toLowerCase().includes(query) || guild.id.includes(query)) : guilds;
+  }
+
+  function onSearch(value) {
+    serverQuery = value;
+    if (pickerBox && pickerBox.value !== value) pickerBox.value = value;
+    renderServerList();
+    if (redrawPicker) redrawPicker();
+  }
+
   function showPicker() {
     guildId = null; detail = null; current = null; pending = {};
     rerender = showPicker;
+    redrawPicker = null;
+    pickerBox = null;
     updateBar();
     crumb.classList.add('is-hidden');
     renderServerList();
@@ -103,18 +121,39 @@
         el('a', { class: 'button hero-primary', href: CFG.INVITE_URL || '#', target: '_blank', rel: 'noopener noreferrer', text: t('menu_add') + ' ↗' })));
       return;
     }
+
     const grid = el('div', { class: 'server-grid' });
-    guilds.forEach(guild => {
-      grid.append(el('button', { class: 'server-card', type: 'button', onclick: () => navigate(guild.id) },
-        icon(guild, 48),
-        el('div', null,
-          el('strong', { text: guild.name }),
-          el('small', { text: !guild.configured ? t('pick_setup') : guild.access === 'moderator' ? t('pick_moderator') : t('pick_ready') }))));
+    const draw = () => {
+      const found = matchingGuilds();
+      grid.replaceChildren();
+      if (!found.length) {
+        grid.append(el('p', { class: 'empty-note search-empty', text: t('search_none', { q: serverQuery.trim() }) }));
+        return;
+      }
+      found.forEach(guild => {
+        grid.append(el('button', { class: 'server-card', type: 'button', onclick: () => navigate(guild.id) },
+          icon(guild, 48),
+          el('div', null,
+            el('strong', { text: guild.name }),
+            el('small', { text: !guild.configured ? t('pick_setup') : guild.access === 'moderator' ? t('pick_moderator') : t('pick_ready') }))));
+      });
+    };
+    redrawPicker = draw;
+
+    const search = el('input', {
+      class: 'search-input', id: 'pickerSearch', type: 'search', autocomplete: 'off', spellcheck: 'false',
+      placeholder: t('search_ph'), 'aria-label': t('search_ph'),
     });
+    search.value = serverQuery;
+    pickerBox = guilds.length > 1 ? search : null;
+    search.addEventListener('input', () => onSearch(search.value));
+    draw();
+
     app.replaceChildren(
       el('header', { class: 'page-head' }, el('div', null,
         el('h1', { class: 'hero-gradient-text', text: t('pick_title') }),
         el('p', { text: t('pick_lead') }))),
+      guilds.length > 1 ? search : null,
       grid);
   }
 
@@ -671,12 +710,20 @@
 
   function renderServerList() {
     const list = document.getElementById('serverList');
-    list.replaceChildren(...guilds.map(guild => {
+    const box = document.getElementById('serverSearch');
+    const many = guilds.length > 6;
+    box.classList.toggle('is-hidden', !many);
+    box.placeholder = t('search_ph');
+    box.setAttribute('aria-label', t('search_ph'));
+    if (box.value !== serverQuery) box.value = serverQuery;
+    const shown = many ? matchingGuilds() : guilds;
+    list.replaceChildren(...shown.map(guild => {
       const button = el('button', { class: 'side-action' + (guild.id === guildId ? ' active' : ''), type: 'button', onclick: () => { setMenu(false); if (guild.id !== guildId) navigate(guild.id); } },
         el('span', { class: 'side-action-icon' }, icon(guild, 22)),
         el('span', { text: guild.name }));
       return button;
     }));
+    if (many && !shown.length) list.append(el('p', { class: 'hint side-empty', text: t('search_none', { q: serverQuery.trim() }) }));
   }
 
   const hashFor = (id, name) => '#g=' + id + (name && name !== 'settings' ? '&t=' + name : '');
@@ -716,6 +763,8 @@
     document.getElementById('menuClose').addEventListener('click', () => setMenu(false));
     menuOverlay.addEventListener('click', () => setMenu(false));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+    const serverSearch = document.getElementById('serverSearch');
+    serverSearch.addEventListener('input', () => onSearch(serverSearch.value));
     document.getElementById('allServersBtn').addEventListener('click', () => { setMenu(false); if (guildId) navigate(null); });
     document.getElementById('docsLink').href = CFG.DOCS_URL || 'index.html#home';
     document.getElementById('addLink').href = CFG.INVITE_URL || '#';

@@ -79,7 +79,8 @@
       sug_approved: 'Suggestion #{id} published as QOTD #{n}.', sug_rejected: 'Suggestion #{id} rejected.',
       sug_dm_failed: 'The author could not be notified by DM.',
       logs_logs: 'Activity log', logs_audit: 'Audit log', logs_empty: 'Nothing recorded yet.', logs_more: 'Load more', logs_total: '{n} entries',
-      act_failed: 'Action failed: {msg}'
+      act_failed: 'Action failed: {msg}',
+      search_ph: '🔍 Search servers…', search_none: 'No servers match “{q}”.'
     },
     ru: {
       title_login: 'Quello — Вход', title_dashboard: 'Quello — Панель управления',
@@ -142,7 +143,8 @@
       sug_approved: 'Предложение #{id} опубликовано как QOTD #{n}.', sug_rejected: 'Предложение #{id} отклонено.',
       sug_dm_failed: 'Автору не удалось отправить уведомление в личные сообщения.',
       logs_logs: 'Журнал действий', logs_audit: 'Аудит', logs_empty: 'Пока ничего не записано.', logs_more: 'Показать ещё', logs_total: 'записей: {n}',
-      act_failed: 'Не удалось выполнить действие: {msg}'
+      act_failed: 'Не удалось выполнить действие: {msg}',
+      search_ph: '🔍 Поиск сервера…', search_none: 'Серверов по запросу «{q}» не найдено.'
     },
     de: {
       title_login: 'Quello — Anmelden', title_dashboard: 'Quello — Dashboard',
