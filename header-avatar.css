@@ -1,0 +1,42 @@
+/* Quello — Discord avatar in the top-right of every page (shown only when signed in).
+   It is the last element of the header, to the right of the theme and language buttons. */
+.header-avatar{position:relative;flex:0 0 auto;margin-left:8px;z-index:70}
+.header-tools .header-avatar{margin-left:2px}
+.header-avatar-btn{
+  display:block;width:40px;height:40px;padding:0;border:0;border-radius:50%;cursor:pointer;
+  background:var(--surface,#151821);overflow:hidden;
+  box-shadow:0 0 0 2px var(--surface,#151821),0 0 0 3.5px var(--accent,#8b5cf6);
+  transition:transform .16s ease,box-shadow .16s ease;-webkit-tap-highlight-color:transparent;
+}
+.header-avatar-btn:hover,.header-avatar.open .header-avatar-btn{transform:translateY(-1px);box-shadow:0 0 0 2px var(--surface,#151821),0 0 0 3.5px var(--accent-2,#ec4899)}
+.header-avatar-btn:active{transform:scale(.94)}
+.header-avatar-btn:focus-visible{outline:2px solid var(--accent,#8b5cf6);outline-offset:4px}
+.header-avatar-btn img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.header-avatar-menu{
+  position:absolute;top:calc(100% + 12px);right:0;min-width:210px;padding:8px;border-radius:14px;
+  background:var(--surface,#151821);color:var(--text,#fff);
+  box-shadow:inset 0 0 0 1px var(--line-strong,#303441),0 18px 44px rgba(0,0,0,.35);
+  opacity:0;visibility:hidden;transform:translateY(-6px) scale(.98);transform-origin:top right;
+  transition:opacity .16s ease,transform .16s ease,visibility .16s;
+}
+:root[data-theme="light"] .header-avatar-menu{box-shadow:inset 0 0 0 1px var(--line-strong,#d9dcea),0 18px 44px rgba(30,35,60,.14)}
+.header-avatar.open .header-avatar-menu{opacity:1;visibility:visible;transform:none}
+.header-avatar-user{display:flex;align-items:center;gap:10px;padding:8px 10px 10px;margin-bottom:6px;border-bottom:1px solid var(--line,#252936)}
+.header-avatar-user img{width:32px;height:32px;border-radius:50%;flex:none;object-fit:cover}
+.header-avatar-user span{min-width:0;font-size:14px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.header-avatar-item{
+  display:flex;align-items:center;gap:10px;width:100%;padding:10px;border:0;border-radius:10px;
+  background:transparent;color:var(--text,#fff);font:inherit;font-size:14px;text-align:left;text-decoration:none;cursor:pointer;
+}
+.header-avatar-item:hover,.header-avatar-item:focus-visible{background:var(--surface-hover,#1e222d);outline:none}
+.header-avatar-item svg{width:18px;height:18px;flex:none;opacity:.85}
+.header-avatar-item.danger{color:var(--accent-red,#fb4b5d)}
+@media(max-width:600px){
+  .header-avatar-btn{width:38px;height:38px}
+  .header-avatar{margin-left:6px}
+  .header-tools .header-avatar{margin-left:0}
+}
+/* privacy / terms: the nav is a plain row, keep the avatar on the far right */
+.nav-inner>.header-avatar{margin-left:auto}
+.about-nav-actions>.header-avatar{margin-left:0}
+@media(max-width:560px){.about-nav-actions>.header-avatar{flex:none}}
