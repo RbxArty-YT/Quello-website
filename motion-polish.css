@@ -73,7 +73,7 @@ html { scroll-behavior:smooth; }
   --q-focus: #c8b5ff;
 }
 html { max-width:100%; overflow-x:clip; }
-body { position:relative; width:100%; max-width:100%; overflow-x:clip; }
+body { position:relative; width:100%; max-width:100%; }
 body::before {
   content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
   background:radial-gradient(ellipse at 8% 9%, rgba(105,72,210,.10), transparent 34%),

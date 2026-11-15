@@ -17,6 +17,8 @@
 
   var reduce = false;
   try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  var lite = false;
+  try { lite = matchMedia('(max-width:700px), (pointer:coarse)').matches; } catch (e) {}
   var busy = false;
 
   function save(theme) { try { localStorage.setItem('quello-theme', theme); } catch (e) {} }
@@ -27,7 +29,7 @@
     var done = function () { root.classList.remove('theme-switching'); busy = false; };
 
     // Instant path: no View Transitions, reduced motion, no origin, or a switch already running.
-    if (!document.startViewTransition || reduce || !origin || busy) {
+    if (!document.startViewTransition || reduce || lite || !origin || busy) {
       root.classList.add('theme-switching');
       apply();
       requestAnimationFrame(function () { requestAnimationFrame(done); });

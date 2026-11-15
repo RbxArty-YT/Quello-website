@@ -42,7 +42,9 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
 .header-language.open .header-language-menu{opacity:1;visibility:visible;transform:translateY(0)}
 .header-language-menu button{width:100%;display:flex;align-items:center;gap:9px;padding:10px 11px;border:0;border-radius:9px;background:transparent;color:var(--text-2);font:inherit;font-size:13px;font-weight:650;text-align:left;cursor:pointer}
 .header-language-menu button:hover,.header-language-menu button.active{background:rgba(88,101,242,.16);color:var(--text-strong)}
-.site-tabs{position:sticky;top:61px;z-index:30;border-bottom:1px solid var(--line);background:var(--nav-bg);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
+.site-header{position:sticky;top:0;z-index:40}
+.site-header .nav{position:relative;top:auto}
+.site-tabs{position:relative;border-bottom:1px solid var(--line);background:var(--nav-bg);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
 .site-tabs::-webkit-scrollbar{display:none}
 .site-tabs-inner{max-width:1120px;margin:0 auto;display:flex;align-items:stretch;gap:5px;padding:0 24px;min-width:max-content}
 .site-tab{position:relative;min-height:52px;padding:0 17px;border:0;border-radius:10px 10px 0 0;background:transparent;color:var(--text-3);font:inherit;font-size:14px;font-weight:750;white-space:nowrap;cursor:pointer;transition:.16s ease}
@@ -50,7 +52,7 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
 .site-tab.active{color:var(--text-strong);background:var(--surface-hover)}
 .site-tab.active::after{content:"";position:absolute;left:10px;right:10px;bottom:0;height:2px;border-radius:2px;background:var(--accent)}
 .tab-hidden{display:none!important}
-@media(max-width:600px){.site-tabs{top:61px}.site-tabs-inner{padding:0 12px;gap:2px}.site-tab{min-height:48px;padding:0 14px;font-size:13px}.header-language-button{min-height:38px;padding:7px 9px}.header-language-menu{right:0}}
+@media(max-width:600px){.site-tabs-inner{padding:0 12px;gap:2px}.site-tab{min-height:48px;padding:0 14px;font-size:13px}.header-language-button{min-height:38px;padding:7px 9px}.header-language-menu{right:0}}
 </style>
 <link rel="stylesheet" href="theme.css?v=4">
   <link rel="stylesheet" href="landing-redesign.css?v=4">
@@ -64,6 +66,7 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
   <link rel="stylesheet" href="header-avatar.css?v=1">
 </head>
 <body>
+  <header class="site-header" id="siteHeader">
   <nav class="nav">
     <div class="nav-inner">
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-controls="sideMenu" aria-expanded="false">☰</button>
@@ -90,6 +93,19 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
       </div>
     </div>
   </nav>
+
+  <nav class="site-tabs" id="siteTabs" aria-label="Documentation sections">
+    <div class="site-tabs-inner">
+      <button class="site-tab active" type="button" data-tab="home" data-i18n="nav_home">Home</button>
+      <button class="site-tab" type="button" data-tab="commands" data-i18n="nav_commands">Commands</button>
+      <button class="site-tab" type="button" data-tab="playground" data-i18n="nav_playground">Playground</button>
+      <button class="site-tab" type="button" data-tab="builder" data-i18n="nav_builder">QOTD Builder</button>
+      <button class="site-tab" type="button" data-tab="guide" data-i18n="nav_guide">Guide</button>
+      <button class="site-tab" type="button" data-tab="changelog" data-i18n="nav_changelog">Changelog</button>
+      <button class="site-tab" type="button" data-tab="community" data-i18n="nav_community">Community</button>
+    </div>
+  </nav>
+  </header>
 
   <div class="menu-overlay" id="menuOverlay"></div>
   <aside class="side-menu" id="sideMenu" aria-hidden="true">
@@ -172,18 +188,6 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
         </div>
       </div>
     </aside>
-
-  <nav class="site-tabs" id="siteTabs" aria-label="Documentation sections">
-    <div class="site-tabs-inner">
-      <button class="site-tab active" type="button" data-tab="home" data-i18n="nav_home">Home</button>
-      <button class="site-tab" type="button" data-tab="commands" data-i18n="nav_commands">Commands</button>
-      <button class="site-tab" type="button" data-tab="playground" data-i18n="nav_playground">Playground</button>
-      <button class="site-tab" type="button" data-tab="builder" data-i18n="nav_builder">QOTD Builder</button>
-      <button class="site-tab" type="button" data-tab="guide" data-i18n="nav_guide">Guide</button>
-      <button class="site-tab" type="button" data-tab="changelog" data-i18n="nav_changelog">Changelog</button>
-      <button class="site-tab" type="button" data-tab="community" data-i18n="nav_community">Community</button>
-    </div>
-  </nav>
 
   <main class="container" id="home">
     <section class="hero hero-redesign" aria-labelledby="hero-title">
@@ -1183,8 +1187,14 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
         if(location.hash !== targetHash) history.replaceState(null, '', targetHash);
       }
       const activeButton = siteTabs.find(button => button.dataset.tab === tab);
-      activeButton?.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
-      window.scrollTo({top:0,behavior:'smooth'});
+      // Jump to the top instantly: the page height changes the moment a panel is hidden, so a smooth scroll
+      // would fight the layout change. Centre the tab inside its own bar only (never scroll the window).
+      window.scrollTo({top:0,left:0,behavior:'instant'});
+      const bar = document.getElementById('siteTabs');
+      if(bar && activeButton){
+        const left = activeButton.offsetLeft - (bar.clientWidth - activeButton.offsetWidth) / 2;
+        bar.scrollTo({left:Math.max(0,left),behavior:'smooth'});
+      }
       if(typeof setActiveSection === 'function') setActiveSection(tab === 'home' ? 'home' : (tabGroups[tab].ids[0] || tab));
     }
 

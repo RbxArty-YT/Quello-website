@@ -128,8 +128,9 @@
 
 
 /* Mobile overflow guard + tighter responsive composition (v3). */
-html, body { width:100%; max-width:100%; overflow-x:clip; }
-@supports not (overflow:clip) { html, body { overflow-x:hidden; } }
+html { overflow-x:clip; }
+html, body { width:100%; max-width:100%; }
+@supports not (overflow:clip) { html { overflow-x:hidden; } }
 *, *::before, *::after { box-sizing:border-box; }
 img, svg, video, canvas { max-width:100%; }
 .hero-redesign, .hero-copy, .hero-visual, .hero-feature-strip { min-width:0; }
