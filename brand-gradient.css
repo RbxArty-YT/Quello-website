@@ -1,0 +1,69 @@
+/* Quello — one brand gradient (violet -> pink -> red) for the whole site.
+   Loaded LAST on every page so it wins over the older per-page stylesheets. */
+:root{
+  --brand-gradient:linear-gradient(100deg,#7c4dff 0%,#c43c9b 62%,#e9455a 100%);
+  --brand-gradient-text:linear-gradient(100deg,#b794ff 0%,#ec4899 55%,#fb4b5d 100%);
+  --brand-glow:rgba(236,72,153,.34);
+  --brand-ring:rgba(139,92,246,.30);
+}
+:root[data-theme="light"]{
+  --brand-gradient:linear-gradient(100deg,#7541d8 0%,#c43c9b 66%,#d9364b 100%);
+  --brand-gradient-text:linear-gradient(100deg,#6a3fd0 0%,#c43c9b 58%,#d9364b 100%);
+  --brand-glow:rgba(196,60,155,.28);
+}
+
+/* Primary buttons and active controls */
+.button:not(.ghost):not(.secondary):not(.danger):not(.hero-secondary),
+.hero-primary,.primary-button,.tab.active,.badge,.about-back,.creator-primary,
+.creator-tab.active{
+  background:var(--brand-gradient)!important;
+  color:#fff!important;
+  border-color:transparent!important;
+}
+.button:hover,.primary-button:hover{box-shadow:0 10px 26px var(--brand-glow)!important}
+.hero-secondary:hover,.button.ghost:hover,.button.secondary:hover{box-shadow:none!important}
+.badge{box-shadow:0 6px 20px var(--brand-glow)}
+.hero-avatar:hover{box-shadow:0 14px 45px var(--brand-glow)}
+.flow-language.active{box-shadow:inset 0 0 0 1.5px var(--accent),0 0 0 3px var(--brand-ring)}
+.flow-step.active{box-shadow:inset 0 0 0 1px var(--accent),0 0 18px var(--brand-glow)}
+.switch input:checked+.switch-ui{background:var(--brand-gradient)}
+
+/* Gradient headings */
+.hero h1,.hero-redesign h1,:root[data-theme="light"] .hero-redesign h1{
+  background:var(--brand-gradient-text)!important;
+  background-size:100% 100%!important;
+  -webkit-background-clip:text!important;background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;color:transparent!important;
+  animation:none!important;
+}
+.hero-period{
+  background:var(--brand-gradient-text);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;text-shadow:none;
+  filter:drop-shadow(0 0 18px var(--brand-glow));
+}
+.hero-gradient-text,:root[data-theme="light"] .hero-gradient-text{
+  background-image:var(--brand-gradient-text)!important;
+  -webkit-background-clip:text!important;background-clip:text!important;
+  -webkit-text-fill-color:transparent!important;color:transparent!important;
+}
+
+/* Tabs: gradient underline on the active tab */
+.site-tab.active::after,.site-tab[aria-selected="true"]::after{
+  background:var(--brand-gradient)!important;
+}
+.site-tab.active{color:var(--text-strong)}
+
+/* Progress bar, scrollbar, small accents */
+.q-progress,.embed-accent{background:var(--brand-gradient)!important}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,rgba(150,110,255,.75),rgba(236,72,153,.62))!important;background-clip:padding-box!important}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,rgba(170,135,255,.92),rgba(251,75,93,.8))!important;background-clip:padding-box!important}
+footer::before{background:linear-gradient(90deg,transparent,rgba(139,92,246,.6),rgba(236,72,153,.6),transparent)!important}
+
+/* Cool-blue leftovers -> brand colours */
+.side-menu-links .side-telegram-icon{color:#39aeea}  /* Telegram keeps its own brand colour */
+.q-spotlight-surface::before{
+  background:radial-gradient(260px circle at var(--q-spot-x,50%) var(--q-spot-y,50%),rgba(158,126,255,.16),rgba(236,72,153,.07) 42%,transparent 72%)!important;
+}
+:root[data-theme="light"] .q-spotlight-surface::before{
+  background:radial-gradient(260px circle at var(--q-spot-x,50%) var(--q-spot-y,50%),rgba(128,94,220,.10),rgba(196,60,155,.05) 44%,transparent 72%)!important;
+}

@@ -75,3 +75,13 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 - Passkey and TOTP are explicitly reported as not configured in this build. Do not advertise them as active until WebAuthn/TOTP enrollment, secure secret storage, recovery and server-side verification have been implemented.
 - The uploaded website archive has `API_BASE` set to the example placeholder in `site-config.js`; set it to the real deployed Quello API origin before publishing this archive. Never put Discord client secrets or session signing secrets in the website repository.
 - The creator's personal avatar was not present in either supplied ZIP. `about.html` currently uses a styled initial placeholder; replace it with the previously selected creator avatar asset when that image is supplied in the project files.
+
+## Brand gradient and About page fixes (November 15, 2026)
+- `brand-gradient.css` is loaded last on every page and defines the single violet → pink → red brand gradient used for primary buttons, hero headings, switches, progress bar and scrollbar. Edit the `--brand-gradient*` variables there to change the look site-wide.
+- Leftover Discord-blue / cool-blue glows were removed from `theme.css`, `landing-redesign.css` and `motion-polish.css`.
+- `about.html` now shows `creator-avatar.png` (falls back to the letter badge if the file is missing), uses the shared theme toggle and follows the saved/system theme like the other pages, and has a tidy two-row header on phones.
+
+## Creator Console on phones
+- Verified creators get a small round ✦ button (bottom-right) on every page, plus the "Creator Console" entry in the side menu (☰) and in the About header.
+- Long-pressing the Quello logo for 2 seconds also works now (touch events, movement tolerance, context menu and link navigation suppressed).
+- The button only appears after `/api/me` confirms `is_creator`, so it needs a valid login (`quello-dash-token`) and a real `API_BASE`.

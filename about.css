@@ -4,11 +4,15 @@ body{min-height:100vh;background:var(--bg);color:var(--text)}
 .about-brand img{width:36px;height:36px;border-radius:12px}
 .about-nav-actions{display:flex;align-items:center;gap:14px}
 .about-nav-actions a{color:var(--text-2);text-decoration:none;font-size:13px}
-.about-nav-actions select,.about-nav-actions button{border:1px solid var(--line-strong);background:var(--surface);color:var(--text);border-radius:10px;padding:8px 10px}
+.about-nav-actions select,.about-nav-actions .creator-console-entry{border:1px solid var(--line-strong);background:var(--surface);color:var(--text);border-radius:10px;padding:8px 10px;font:inherit;font-size:13px;cursor:pointer}
+.about-nav-actions .theme-toggle{position:relative;display:grid;place-items:center;width:38px;height:38px;padding:0;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);cursor:pointer;overflow:hidden}
 .about-wrap{width:min(100% - 32px,900px);margin:clamp(38px,8vh,90px) auto 70px}
 .about-card{position:relative;isolation:isolate;overflow:hidden;text-align:center;padding:clamp(28px,6vw,64px);border:1px solid color-mix(in srgb,var(--accent) 32%,var(--line));border-radius:30px;background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 94%,#8b5cf6 8%),var(--surface-2));box-shadow:0 25px 80px rgba(0,0,0,.18)}
 .about-card:before{content:"";position:absolute;z-index:-1;width:520px;height:520px;top:-300px;left:calc(50% - 260px);border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.23),rgba(236,72,153,.1) 42%,transparent 70%)}
-.about-avatar-fallback{width:124px;height:124px;margin:0 auto 24px;display:grid;place-items:center;border-radius:36px;background:linear-gradient(135deg,#8b5cf6,#ec4899 68%,#fb4b5d);color:#fff;font-size:52px;font-weight:900;box-shadow:0 15px 45px rgba(139,92,246,.3);border:3px solid rgba(255,255,255,.25)}
+.about-avatar{position:relative;width:148px;height:148px;margin:0 auto 26px;padding:4px;border-radius:44px;background:linear-gradient(135deg,#8b5cf6,#ec4899 62%,#fb4b5d);box-shadow:0 16px 48px rgba(139,92,246,.34),0 0 0 6px rgba(139,92,246,.10)}
+.about-avatar img{display:block;width:100%;height:100%;object-fit:cover;border-radius:40px;background:var(--surface-2)}
+.about-avatar-letter{display:none;place-items:center;width:100%;height:100%;border-radius:40px;color:#fff;font-size:60px;font-weight:900}
+.about-avatar.is-fallback .about-avatar-letter{display:grid}
 .about-eyebrow{font-size:11px;letter-spacing:.2em;font-weight:800;color:var(--accent-text)}
 .about-card h1{font-size:clamp(22px,4vw,36px);line-height:1.25;overflow-wrap:anywhere;margin:12px 0}
 .about-role{color:var(--accent-text);font-weight:650}
@@ -22,4 +26,12 @@ body{min-height:100vh;background:var(--bg);color:var(--text)}
 .orbit-one{width:500px;height:180px;top:20px;left:calc(50% - 250px);transform:rotate(-22deg)}
 .orbit-two{width:590px;height:220px;top:8px;left:calc(50% - 295px);transform:rotate(22deg)}
 :root[data-theme="light"] .about-card{box-shadow:0 25px 80px rgba(40,25,80,.10)}
-@media(max-width:560px){.about-nav{align-items:flex-start}.about-nav-actions{gap:8px;flex-wrap:wrap;justify-content:flex-end}.about-nav-actions a{font-size:12px}.about-wrap{margin-top:28px}.about-card{border-radius:22px;padding:28px 20px}.about-avatar-fallback{width:104px;height:104px;border-radius:30px}}
+@media(max-width:560px){.about-nav{flex-wrap:wrap;row-gap:10px}.about-nav-actions{width:100%;gap:8px;flex-wrap:wrap;justify-content:space-between}.about-nav-actions a{font-size:12px}.about-wrap{margin-top:28px}.about-card{border-radius:22px;padding:28px 20px}.about-avatar{position:relative;width:148px;height:148px;margin:0 auto 26px;padding:4px;border-radius:44px;background:linear-gradient(135deg,#8b5cf6,#ec4899 62%,#fb4b5d);box-shadow:0 16px 48px rgba(139,92,246,.34),0 0 0 6px rgba(139,92,246,.10)}
+.about-avatar img{display:block;width:100%;height:100%;object-fit:cover;border-radius:40px;background:var(--surface-2)}
+.about-avatar-letter{display:none;place-items:center;width:100%;height:100%;border-radius:40px;color:#fff;font-size:60px;font-weight:900}
+.about-avatar.is-fallback .about-avatar-letter{display:grid}}
+
+.about-eyebrow{background:var(--brand-gradient-text,none);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.about-role{background:var(--brand-gradient-text,none);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.about-card h1{font-family:inherit}
+.about-eyebrow,.about-role{display:block;width:fit-content;margin-left:auto;margin-right:auto}

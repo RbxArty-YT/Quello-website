@@ -124,15 +124,41 @@
   function closeConsole(){if(drawer)drawer.classList.remove('open');document.body.classList.remove('creator-console-open');}
   async function verifyCreator() {
     if(!token())return;
-    try {const me=await request('/api/me');if(me.is_creator){creator=true;addSidebarButton();}}
+    try {const me=await request('/api/me');if(me.is_creator){creator=true;addSidebarButton();addFloatingButton();}}
     catch(_){}
   }
   document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.shiftKey&&e.key.toLowerCase()==='k'){e.preventDefault();openConsole();}if(e.key==='Escape')closeConsole();});
-  // Hold the Quello brand mark for two seconds on touch devices.
-  document.addEventListener('DOMContentLoaded',()=>{
+  // Touch devices: hold the Quello brand mark for two seconds. Uses touch events with a movement
+  // tolerance, blocks the long-press context menu / link navigation, and is not cancelled by a tiny finger drift.
+  function bindLongPress(logo) {
+    let timer = null, fired = false, sx = 0, sy = 0;
+    const point = e => (e.touches && e.touches[0]) || e;
+    const stop = () => { if (timer) clearTimeout(timer); timer = null; };
+    const start = e => {
+      fired = false; stop(); const p = point(e); sx = p.clientX; sy = p.clientY;
+      timer = setTimeout(() => { timer = null; fired = true; openConsole(); }, 2000);
+    };
+    const move = e => { const p = point(e); if (Math.abs(p.clientX - sx) > 14 || Math.abs(p.clientY - sy) > 14) stop(); };
+    logo.style.webkitTouchCallout = 'none'; logo.style.webkitUserSelect = 'none'; logo.style.userSelect = 'none';
+    logo.addEventListener('touchstart', start, { passive: true });
+    logo.addEventListener('touchmove', move, { passive: true });
+    ['touchend', 'touchcancel'].forEach(ev => logo.addEventListener(ev, stop));
+    logo.addEventListener('pointerdown', e => { if (e.pointerType === 'mouse') start(e); });
+    ['pointerup', 'pointerleave'].forEach(ev => logo.addEventListener(ev, e => { if (e.pointerType === 'mouse') stop(); }));
+    logo.addEventListener('contextmenu', e => { if (timer || fired) e.preventDefault(); });
+    logo.addEventListener('click', e => { if (fired) { e.preventDefault(); e.stopPropagation(); fired = false; } }, true);
+  }
+  // A small round button for verified creators only, so the console is reachable on phones without a keyboard.
+  function addFloatingButton() {
+    if (document.querySelector('.creator-fab')) return;
+    const b = el('button', 'creator-fab', '✦');
+    b.type = 'button'; b.setAttribute('aria-label', tr('button')); b.title = tr('button');
+    b.addEventListener('click', openConsole);
+    document.body.append(b);
+  }
+  document.addEventListener('DOMContentLoaded', () => {
     verifyCreator();
-    const logo=document.querySelector('.brand, .side-brand, .about-brand');
-    if(logo){let timer=null;const start=()=>{timer=setTimeout(()=>openConsole(),2000);};const stop=()=>{if(timer)clearTimeout(timer);timer=null;};logo.addEventListener('pointerdown',start);['pointerup','pointerleave','pointercancel'].forEach(ev=>logo.addEventListener(ev,stop));}
+    document.querySelectorAll('.brand, .side-brand, .about-brand').forEach(bindLongPress);
   });
   window.addEventListener('error',e=>{errorLog.push(`${e.message} · ${e.filename||''}:${e.lineno||0}`);});
   window.addEventListener('unhandledrejection',e=>{errorLog.push(`Unhandled promise: ${String(e.reason)}`);});
