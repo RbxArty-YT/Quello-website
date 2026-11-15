@@ -43,7 +43,7 @@
 
   function esc(s) { var d = document.createElement('div'); d.textContent = String(s == null ? '' : s); return d.innerHTML; }
 
-  // The documentation link is shown in the dashboard's avatar menu.
+  // Documentation link (shown in the dashboard's avatar menu).
   function docsHref() {
     var cfg = window.QUELLO_CONFIG || {};
     return cfg.DOCS_URL || 'index.html#home';
@@ -60,6 +60,7 @@
   function host() {
     return document.querySelector('.header-tools') ||
            document.querySelector('.about-nav-actions') ||
+           document.querySelector('.legal-nav-actions') ||
            document.querySelector('.nav-inner');
   }
 
@@ -77,9 +78,10 @@
     var t = L[lang()];
     var url = avatarUrl(p);
     var name = p.name || 'Discord';
-    var docsItem = onDashboard()
+    // On the dashboard the menu links to the documentation only; everywhere else it links to the dashboard only.
+    var linkItem = onDashboard()
       ? '<a class="header-avatar-item" role="menuitem" href="' + esc(docsHref()) + '">' + ICON_DOCS + '<span data-ha="docs">' + esc(t.docs) + '</span></a>'
-      : '';
+      : '<a class="header-avatar-item" role="menuitem" href="dashboard.html">' + ICON_DASH + '<span data-ha="dash">' + esc(t.dash) + '</span></a>';
 
     var wrap = document.createElement('div');
     wrap.className = 'header-avatar';
@@ -90,8 +92,7 @@
       '</button>' +
       '<div class="header-avatar-menu" role="menu">' +
         '<div class="header-avatar-user"><img src="' + esc(url) + '" alt="" width="32" height="32" referrerpolicy="no-referrer"><span>' + esc(name) + '</span></div>' +
-        '<a class="header-avatar-item" role="menuitem" href="dashboard.html">' + ICON_DASH + '<span data-ha="dash">' + esc(t.dash) + '</span></a>' +
-        docsItem +
+        linkItem +
         '<button class="header-avatar-item danger" role="menuitem" type="button" data-ha-out>' + ICON_OUT + '<span data-ha="out">' + esc(t.out) + '</span></button>' +
       '</div>';
     h.appendChild(wrap);   // last child = rightmost, after theme and language

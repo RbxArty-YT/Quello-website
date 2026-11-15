@@ -85,3 +85,11 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 - Verified creators get a small round ✦ button (bottom-right) on every page, plus the "Creator Console" entry in the side menu (☰) and in the About header.
 - Long-pressing the Quello logo for 2 seconds also works now (touch events, movement tolerance, context menu and link navigation suppressed).
 - The button only appears after `/api/me` confirms `is_creator`, so it needs a valid login (`quello-dash-token`) and a real `API_BASE`.
+
+## Terms of Service and Privacy Policy pages
+- `terms.html` and `privacy.html` share `legal.css`, `legal.js` and `legal-content.js`.
+- All text (en / ru / de / fr / it) lives in `legal-content.js`. The page follows the site language (`quello-site-language-v2`) and has its own language dropdown, theme toggle, contents list with scroll tracking, and summary cards. The English text inside the HTML files is only a no-JavaScript fallback: when you edit the policy, edit `legal-content.js` (and the dates in its `dates` object).
+
+## Avatar menu
+- On the dashboard the avatar menu links to the documentation only; on every other page it links to the dashboard only. "Log out" is always there.
+- The Creator Console no longer adds a button to the About header; use the round ✦ button, the side menu, Ctrl + Shift + K, or hold the Quello logo.

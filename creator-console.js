@@ -29,13 +29,7 @@
   }
   function addSidebarButton() {
     const links=document.querySelector('.side-menu-links');
-    if(!links) {
-      const nav=document.querySelector('.about-nav-actions');
-      if(nav && !nav.querySelector('[data-creator-console-entry]')) {
-        const b=el('button','creator-console-entry',tr('button')); b.type='button'; b.dataset.creatorConsoleEntry='1'; b.onclick=openConsole; nav.append(b);
-      }
-      return;
-    }
+    if(!links) return;   // pages without a side menu (About, legal) get no header button — use the round ✦ button or hold the logo
     if(links.querySelector('[data-creator-console-entry]')) return;
     const divider=el('div','side-divider');
     const label=el('div','side-section-label','CREATOR');
