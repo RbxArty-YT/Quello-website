@@ -64,3 +64,14 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 - Privacy Policy: added the withdrawn status, the stored rejection reason and the direct message to the author.
 - Same override mechanism as before: the new strings sit in a block after the last `Object.assign(translations.it, ...)`.
 
+
+
+## Creator Console (November 15, 2026)
+- Added the shared Hidden Creator Console entry points: `Ctrl + Shift + K`, a 2-second press on the Quello logo, and a sidebar entry after creator verification.
+- Added the standalone `about.html` creator page and its EN / RU / DE / FR / IT copy.
+- Added the Violet → Magenta → Red brand tokens while retaining dark/light theme support.
+- The console uses the existing Dashboard session token and asks the existing API to verify creator access. It does not trust a client-side owner flag.
+- The bot API now exposes `/api/creator/overview` and `/api/creator/diagnostics`; both require a valid signed session and enforce `BOT_OWNER_ID` server-side.
+- Passkey and TOTP are explicitly reported as not configured in this build. Do not advertise them as active until WebAuthn/TOTP enrollment, secure secret storage, recovery and server-side verification have been implemented.
+- The uploaded website archive has `API_BASE` set to the example placeholder in `site-config.js`; set it to the real deployed Quello API origin before publishing this archive. Never put Discord client secrets or session signing secrets in the website repository.
+- The creator's personal avatar was not present in either supplied ZIP. `about.html` currently uses a styled initial placeholder; replace it with the previously selected creator avatar asset when that image is supplied in the project files.

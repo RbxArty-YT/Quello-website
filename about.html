@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#100b1c">
+  <title>About the Creator — Quello</title>
+  <link rel="icon" href="quello-avatar.webp" type="image/webp">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="creator-console.css?v=1"><link rel="stylesheet" href="about.css">
+</head>
+<body>
+  <header class="about-nav">
+    <a class="about-brand" href="index.html"><img src="quello-avatar.webp" alt="Quello"><span>Quello</span></a>
+    <div class="about-nav-actions">
+      <a href="index.html#home" data-i18n="docs">Documentation</a><a href="login.html" data-i18n="dashboard">Dashboard</a>
+      <select id="aboutLanguage" aria-label="Language"><option value="en">EN</option><option value="ru">RU</option><option value="de">DE</option><option value="fr">FR</option><option value="it">IT</option></select>
+      <button id="aboutTheme" type="button" aria-label="Toggle theme">◐</button>
+    </div>
+  </header>
+  <main class="about-wrap">
+    <section class="about-card">
+      <div class="about-orbit orbit-one"></div><div class="about-orbit orbit-two"></div>
+      <div class="about-avatar-fallback" aria-label="Creator avatar placeholder">R</div>
+      <p class="about-eyebrow" data-i18n="eyebrow">BEHIND QUELLO</p>
+      <h1>Rbˣ∆rτy_YT//[∪ИÐΞҒ_NUŁŁØˣ∆]</h1>
+      <p class="about-role" data-i18n="role">Creator · Developer · Builder of Quello</p>
+      <p class="about-description" data-i18n="description">I create digital projects with a focus on interface design, bot development and thoughtful user experience. Quello began as a tool for managing Question of the Day sessions and gradually grew into a connected Discord and Telegram bot project with its own website and documentation. I enjoy turning ideas into practical, polished products and continuously improving the details that make them easier to use.</p>
+      <div class="about-socials">
+        <a href="https://discord.com/users/981488941662371880" target="_blank" rel="noopener noreferrer"><span>◈</span> Discord</a>
+        <a href="https://t.me/RbxArty_YT" target="_blank" rel="noopener noreferrer"><span>➤</span> Telegram</a>
+        <a href="https://www.tiktok.com/@rbxarty_yt?" target="_blank" rel="noopener noreferrer"><span>♪</span> TikTok</a>
+      </div>
+      <a class="about-back" href="index.html#home" data-i18n="back">Back to Quello</a>
+    </section>
+  </main>
+  <script>
+  (function(){
+    const dict={
+      en:{docs:'Documentation',dashboard:'Dashboard',eyebrow:'BEHIND QUELLO',role:'Creator · Developer · Builder of Quello',description:'I create digital projects with a focus on interface design, bot development and thoughtful user experience. Quello began as a tool for managing Question of the Day sessions and gradually grew into a connected Discord and Telegram bot project with its own website and documentation. I enjoy turning ideas into practical, polished products and continuously improving the details that make them easier to use.',back:'Back to Quello'},
+      ru:{docs:'Документация',dashboard:'Панель управления',eyebrow:'ЗА КУЛИСАМИ QUELLO',role:'Создатель · Разработчик · Автор Quello',description:'Я создаю цифровые проекты, уделяя внимание дизайну интерфейсов, разработке ботов и продуманному пользовательскому опыту. Quello начинался как инструмент для управления «Вопросом дня», а постепенно вырос в связанную экосистему Discord- и Telegram-ботов с собственным сайтом и документацией. Мне нравится превращать идеи в практичные, продуманные продукты и постоянно улучшать детали, которые делают их удобнее.',back:'Вернуться к Quello'},
+      de:{docs:'Dokumentation',dashboard:'Dashboard',eyebrow:'HINTER QUELLO',role:'Gründer · Entwickler · Quello-Ersteller',description:'Ich entwickle digitale Projekte mit Schwerpunkt auf Interface-Design, Bot-Entwicklung und durchdachter Benutzererfahrung. Quello begann als Werkzeug zur Verwaltung der Frage des Tages und entwickelte sich nach und nach zu einem verbundenen Discord- und Telegram-Bot-Projekt mit eigener Website und Dokumentation. Ich setze Ideen gern in praktische, ausgearbeitete Produkte um und verbessere kontinuierlich die Details, die ihre Nutzung einfacher machen.',back:'Zurück zu Quello'},
+      fr:{docs:'Documentation',dashboard:'Tableau de bord',eyebrow:'DERRIÈRE QUELLO',role:'Créateur · Développeur · Auteur de Quello',description:'Je crée des projets numériques en mettant l’accent sur la conception d’interfaces, le développement de bots et une expérience utilisateur réfléchie. Quello a commencé comme un outil de gestion de la Question du jour, puis est devenu un projet connecté de bots Discord et Telegram avec son propre site et sa documentation. J’aime transformer des idées en produits pratiques et soignés, tout en améliorant continuellement les détails qui les rendent plus faciles à utiliser.',back:'Retour à Quello'},
+      it:{docs:'Documentazione',dashboard:'Dashboard',eyebrow:'DIETRO QUELLO',role:'Creatore · Sviluppatore · Autore di Quello',description:'Creo progetti digitali con particolare attenzione al design delle interfacce, allo sviluppo di bot e a un’esperienza utente curata. Quello è nato come strumento per gestire la Domanda del giorno e si è gradualmente trasformato in un progetto connesso di bot Discord e Telegram, con sito e documentazione propri. Mi piace trasformare le idee in prodotti pratici e rifiniti, migliorando continuamente i dettagli che li rendono più semplici da usare.',back:'Torna a Quello'}
+    };
+    const key='quello-site-language-v2', themeKey='quello-theme';
+    const select=document.getElementById('aboutLanguage');
+    function apply(l){const d=dict[l]||dict.en;document.documentElement.lang=l;document.querySelectorAll('[data-i18n]').forEach(n=>{const v=d[n.dataset.i18n];if(v)n.textContent=v;});select.value=l;try{localStorage.setItem(key,l);}catch(e){}}
+    let lang='en';try{lang=localStorage.getItem(key)||'en';}catch(e){} apply(lang);
+    select.addEventListener('change',()=>apply(select.value));
+    const theme=document.getElementById('aboutTheme');
+    function setTheme(v){document.documentElement.dataset.theme=v;try{localStorage.setItem(themeKey,v);}catch(e){}}
+    let saved='dark';try{saved=localStorage.getItem(themeKey)||'dark';}catch(e){}setTheme(saved);
+    theme.addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='light'?'dark':'light'));
+  })();
+  </script>
+  <script src="site-config.js"></script><script src="creator-console.js?v=1"></script>
+</body></html>

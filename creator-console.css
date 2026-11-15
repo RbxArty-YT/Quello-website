@@ -1,0 +1,39 @@
+/* Hidden Creator Console */
+.creator-console-open{overflow:hidden}
+.creator-console-overlay{position:fixed;inset:0;z-index:9998;display:flex;justify-content:flex-end;background:rgba(5,6,14,.62);backdrop-filter:blur(9px);opacity:0;visibility:hidden;transition:opacity .24s ease,visibility .24s ease}
+.creator-console-overlay.open{opacity:1;visibility:visible}
+.creator-console-panel{width:min(760px,100%);height:100%;overflow:auto;background:color-mix(in srgb,var(--surface) 94%,#130a24);border-left:1px solid color-mix(in srgb,var(--accent) 42%,var(--line));box-shadow:-28px 0 90px rgba(0,0,0,.42);padding:22px;transform:translateX(36px);transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+.creator-console-overlay.open .creator-console-panel{transform:translateX(0)}
+.creator-console-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.creator-console-identity{display:flex;align-items:center;gap:13px;min-width:0}
+.creator-console-mark{width:44px;height:44px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(135deg,#8b5cf6,#ec4899 68%,#fb4b5d);color:#fff;font-weight:900;font-size:21px;box-shadow:0 8px 28px rgba(139,92,246,.28)}
+.creator-console-identity strong,.creator-console-identity small{display:block}
+.creator-console-identity strong{font-size:18px;color:var(--text-strong)}
+.creator-console-identity small{font-size:12px;color:var(--text-3);margin-top:3px}
+.creator-icon-button{width:38px;height:38px;border:1px solid var(--line-strong);border-radius:12px;background:var(--surface-2);color:var(--text);font-size:24px;cursor:pointer}
+.creator-console-tabs{display:flex;gap:7px;overflow-x:auto;padding:16px 0;scrollbar-width:thin}
+.creator-tab,.creator-secondary,.creator-primary{border:1px solid var(--line-strong);border-radius:11px;padding:9px 12px;background:var(--surface-2);color:var(--text-2);font:inherit;font-size:13px;white-space:nowrap;cursor:pointer;transition:.18s ease}
+.creator-tab:hover,.creator-secondary:hover{border-color:var(--accent);color:var(--text-strong);transform:translateY(-1px)}
+.creator-tab.active,.creator-primary{background:linear-gradient(110deg,#7541d8,#c43c9b 72%,#d9364b);border-color:transparent;color:white}
+.creator-primary{margin-top:16px;font-weight:700}
+.creator-console-content{padding:4px 0 28px}
+.creator-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.creator-card,.creator-note{min-width:0;padding:16px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,var(--surface-2),color-mix(in srgb,var(--surface) 82%,#8b5cf6 8%));box-shadow:0 10px 28px rgba(0,0,0,.08)}
+.creator-card-label,.creator-card-value,.creator-card-detail{display:block}
+.creator-card-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-3)}
+.creator-card-value{font-size:20px;line-height:1.35;color:var(--text-strong);margin:9px 0;overflow-wrap:anywhere}
+.creator-card-detail,.creator-muted{font-size:12px;line-height:1.6;color:var(--text-3);overflow-wrap:anywhere}
+.creator-note{margin-top:13px}
+.creator-note h3{font-size:15px;margin:0 0 12px;color:var(--text-strong)}
+.creator-note p{line-height:1.6}
+.creator-button-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.creator-swatches{display:flex;gap:9px;margin:12px 0}
+.creator-swatch{width:42px;height:42px;border-radius:13px;border:2px solid rgba(255,255,255,.28);box-shadow:0 5px 18px rgba(0,0,0,.15)}
+.creator-toggle-row{display:flex;align-items:center;gap:10px;padding:10px 0;color:var(--text-2);border-top:1px solid var(--line)}
+.creator-toggle-row input{accent-color:var(--accent);width:17px;height:17px}
+.creator-log{font:12px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;padding:9px 10px;border-radius:9px;background:var(--surface-sunken);overflow-wrap:anywhere}
+.creator-error{padding:14px;border:1px solid rgba(251,75,93,.4);border-radius:12px;color:var(--accent-red);background:rgba(251,75,93,.07)}
+.creator-console-entry{border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line))!important;background:linear-gradient(100deg,rgba(139,92,246,.13),rgba(236,72,153,.09))!important}
+.creator-console-entry .side-action-icon{color:var(--accent-2)}
+@media(max-width:560px){.creator-console-panel{padding:16px}.creator-card-grid{grid-template-columns:1fr}.creator-console-tabs{margin-right:-16px;padding-right:16px}.creator-card-value{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.creator-console-overlay,.creator-console-panel,.creator-tab,.creator-secondary{transition:none!important}}
