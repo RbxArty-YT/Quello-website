@@ -119,3 +119,10 @@
   .site-tabs { overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
   .site-tab { transition: color .12s ease, background-color .12s ease !important; }
 }
+
+/* ===== NO SIDEWAYS SCROLL =====
+   Decorative orbits/glows poke past the right edge. On mobile Chrome that widens the layout viewport
+   (e.g. 464px on a 412px screen), which causes horizontal panning and makes sticky headers drift.
+   Clip them at the source, horizontally only, so vertical glow stays visible. */
+.hero-redesign, .hero-visual, .hero-copy { overflow-x: clip; overflow-y: visible; }
+.container, main { max-width: 100%; overflow-x: clip; overflow-y: visible; }
