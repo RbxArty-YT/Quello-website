@@ -1,0 +1,45 @@
+/* login.html: send people to Discord (via the bot's API) or straight to the docs. */
+(function () {
+  'use strict';
+  const { CFG, API_BASE, t, applyI18n, wireHeader, getToken, clearToken, tokenLooksValid } = window.Q;
+
+  wireHeader();
+  applyI18n();
+
+  // Already signed in -> go to the dashboard.
+  const existing = getToken();
+  if (existing) {
+    if (tokenLooksValid(existing)) { location.replace('dashboard.html'); return; }
+    clearToken();
+  }
+
+  const docsUrl = CFG.DOCS_URL || 'index.html#home';
+  document.getElementById('docsBtn').href = docsUrl;
+
+  const discordBtn = document.getElementById('discordBtn');
+  const errorBox = document.getElementById('loginError');
+  const showError = key => { errorBox.textContent = t(key); errorBox.classList.remove('is-hidden'); };
+
+  if (API_BASE) {
+    discordBtn.href = API_BASE + '/auth/login';
+  } else {
+    discordBtn.removeAttribute('href');
+    discordBtn.setAttribute('aria-disabled', 'true');
+    showError('err_config');
+  }
+
+  // The API sends people back here with ?error=state|auth when sign-in fails.
+  const params = new URLSearchParams(location.search);
+  const error = params.get('error');
+  let errorKey = null;
+  if (error === 'state') errorKey = 'err_state';
+  else if (error === 'auth') errorKey = 'err_auth';
+  if (errorKey) {
+    showError(errorKey);
+    history.replaceState(null, '', location.pathname);
+  }
+  window.addEventListener('quello:languagechange', () => {
+    if (errorKey) showError(errorKey);
+    else if (!API_BASE) showError('err_config');
+  });
+})();

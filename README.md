@@ -47,3 +47,20 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 - Added filters/limits to the `/history`, `/reset`, `/logs`, and `/audit_log` descriptions, and a permissions line for the commands open to everyone.
 - The QOTD Preview Builder and its Copy text output now follow the real bot message format (`# QOTD N:` + quoted question + `Suggested by`).
 - Privacy Policy: documented answer tracking in QOTD threads, thread IDs, daily backups (7 kept), and short-lived interaction IDs; Last Updated set to November 6, 2026.
+
+## Documentation sync (November 11, 2026)
+- New commands documented in the Command Explorer, command details, Playground, Permissions and FAQ: `/suggest`, `/suggestions`, `/me`, `/question_week` (all five languages for the card text, details in EN/RU with fallbacks as before).
+- `/setup` is documented with a single allowed role, separate `@everyone` / `@here` options, and "omitted options keep their current values"; `/config` is documented as an interactive editor (pick one setting, change it, Save changes; only changed fields are written).
+- `/reset` and `/reset_logs` are documented with the Confirm / Cancel step; `/qotd` and `/edit` with the 1,500-character limit and suggestion credit.
+- `/diagnostics` description mentions the `@everyone` thread-reply check.
+- Privacy Policy: added suggestion data and the new role / mention settings; Last Updated set to November 11, 2026.
+- New strings are applied by a single override block placed after the last `Object.assign(translations.it, ...)`, so earlier dictionary entries are superseded without being deleted.
+- The QOTD Preview Builder already matched the bot's message format and was left unchanged.
+- `/suggest` is documented with the limit of one unreviewed suggestion per member (details, FAQ, Playground, changelog).
+
+## Documentation sync (suggestion queue update)
+- Changelog: new entry `change17` (suggestion queue, rejection reasons, author notifications) in all five languages, placed above the previous entry.
+- `/suggest` details, `/suggestions` card and details, FAQ and Playground now describe: one unreviewed suggestion per member with a Delete my suggestion button, refusal of empty / too-short / filler questions, arrow-button paging through the queue, the required rejection reason and the direct message to the author.
+- Privacy Policy: added the withdrawn status, the stored rejection reason and the direct message to the author.
+- Same override mechanism as before: the new strings sit in a block after the last `Object.assign(translations.it, ...)`.
+
