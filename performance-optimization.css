@@ -114,7 +114,7 @@
   :where(.hero-feature,.playground-card,.command-embed,.extra-card,.community-spotlight,.changelog-card)::after { display: none !important; }
 
   /* The header is a single sticky layer: keep it cheap and stable. */
-  .site-header { transform: translateZ(0); background: var(--bg); }
+  .site-header { background: var(--bg); }
   /* No backdrop blur on phones, so the header must be opaque or page text shows through it. */
   .site-tabs { overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
   .site-tab { transition: color .12s ease, background-color .12s ease !important; }

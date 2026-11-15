@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
   <meta name="description" content="Quello — your Question of the Day bot for creating, managing, and organizing QOTDs and discussions.">
   <title>Quello — Your Question of the Day Bot</title>
   <script>(function(){try{var t=localStorage.getItem("quello-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme="dark";}})();</script>
-  <script src="theme-switch.js?v=1"></script>
+  <script src="theme-switch.js?v=2"></script>
   <link rel="preload" href="fonts/TwemojiCountryFlags.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css?v=7">
   <link rel="icon" type="image/png" href="quello-avatar.webp">
@@ -42,8 +42,12 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
 .header-language.open .header-language-menu{opacity:1;visibility:visible;transform:translateY(0)}
 .header-language-menu button{width:100%;display:flex;align-items:center;gap:9px;padding:10px 11px;border:0;border-radius:9px;background:transparent;color:var(--text-2);font:inherit;font-size:13px;font-weight:650;text-align:left;cursor:pointer}
 .header-language-menu button:hover,.header-language-menu button.active{background:rgba(88,101,242,.16);color:var(--text-strong)}
-.site-header{position:sticky;top:0;z-index:40}
+.site-header{position:fixed;top:0;left:0;right:0;width:100%;z-index:40}
 .site-header .nav{position:relative;top:auto}
+:root{--header-h:114px}
+body{padding-top:var(--header-h)}
+html{overflow-x:clip;touch-action:pan-y pinch-zoom}
+.hero-redesign,.hero-visual,.hero-copy{overflow-x:clip;overflow-y:visible}
 .site-tabs{position:relative;border-bottom:1px solid var(--line);background:var(--nav-bg);backdrop-filter:blur(12px);overflow-x:auto;scrollbar-width:none}
 .site-tabs::-webkit-scrollbar{display:none}
 .site-tabs-inner{max-width:1120px;margin:0 auto;display:flex;align-items:stretch;gap:5px;padding:0 24px;min-width:max-content}
@@ -55,11 +59,11 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
 @media(max-width:600px){.site-tabs-inner{padding:0 12px;gap:2px}.site-tab{min-height:48px;padding:0 14px;font-size:13px}.header-language-button{min-height:38px;padding:7px 9px}.header-language-menu{right:0}}
 </style>
 <link rel="stylesheet" href="theme.css?v=4">
-  <link rel="stylesheet" href="landing-redesign.css?v=4">
-<link rel="stylesheet" href="motion-polish.css?v=13">
+  <link rel="stylesheet" href="landing-redesign.css?v=5">
+<link rel="stylesheet" href="motion-polish.css?v=14">
   <link rel="stylesheet" href="interface-evolution.css?v=1">
   <link rel="stylesheet" href="sidebar-evolution.css?v=1">
-  <link rel="stylesheet" href="performance-optimization.css?v=4">
+  <link rel="stylesheet" href="performance-optimization.css?v=5">
 <style>html{scroll-padding-top:112px} section[id]{scroll-margin-top:112px}</style>
   <link rel="stylesheet" href="creator-console.css?v=3">
   <link rel="stylesheet" href="brand-gradient.css?v=5">
@@ -106,6 +110,13 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
     </div>
   </nav>
   </header>
+  <script>
+  (function(){var h=document.getElementById('siteHeader');if(!h)return;
+    function set(){var v=Math.round(h.getBoundingClientRect().height);if(v)document.documentElement.style.setProperty('--header-h',v+'px')}
+    set();addEventListener('resize',set,{passive:true});addEventListener('load',set);
+    if(window.ResizeObserver)new ResizeObserver(set).observe(h);
+  })();
+  </script>
 
   <div class="menu-overlay" id="menuOverlay"></div>
   <aside class="side-menu" id="sideMenu" aria-hidden="true">
