@@ -58,9 +58,8 @@ body{min-height:100vh;background:var(--bg);color:var(--text)}
 .about-nav-actions .about-btn-primary{color:#fff;border:0;background:var(--brand-gradient,linear-gradient(100deg,#7541d8,#c43c9b 72%,#d9364b));box-shadow:0 8px 22px rgba(139,92,246,.28)}
 .about-nav-actions .about-btn-primary:hover{box-shadow:0 12px 28px rgba(196,60,155,.38)}
 @media(max-width:560px){
-  .about-nav-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-  .about-nav-actions .about-btn{width:100%;min-height:42px;padding:10px 12px;font-size:13px}
-  .about-nav-actions .header-language{grid-column:1;margin-left:0}
-  .about-nav-actions .header-language-button{width:100%;justify-content:center}
-  .about-nav-actions .theme-toggle{grid-column:2;justify-self:end}
+  .about-nav-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .about-nav-actions .about-btn{flex:1 1 40%;min-height:42px;padding:10px 12px;font-size:13px}
+  .about-nav-actions .header-language{flex:none;margin-left:auto}
+  .about-nav-actions .theme-toggle{flex:none}
 }
