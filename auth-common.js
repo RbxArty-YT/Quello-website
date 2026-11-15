@@ -476,6 +476,7 @@
     if (themeToggle) {
       themeToggle.addEventListener('click', () => {
         const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+        if (window.QThemeSwitch) { window.QThemeSwitch.set(next, themeToggle); return; }
         document.documentElement.dataset.theme = next;
         try { localStorage.setItem('quello-theme', next); } catch (e) { /* ignore */ }
       });

@@ -110,7 +110,9 @@ footer::before{background:linear-gradient(90deg,transparent,rgba(139,92,246,.6),
 }
 
 /* Page background: gradient base (the animated aurora in theme.css stays on top of it) */
-html{background:var(--page-grad) fixed,var(--bg)}
+html{background:var(--bg)}
+/* A fixed gradient background repaints on every scroll/theme frame on phones; a composited fixed layer does not. */
+html::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:var(--page-grad);transform:translateZ(0)}
 body{background:transparent!important}
 body::before{opacity:1}
 

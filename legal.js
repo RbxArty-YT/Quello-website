@@ -110,9 +110,9 @@
 
   // theme
   var themeBtn = $('legalTheme');
-  function setTheme(v) { document.documentElement.dataset.theme = v; try { localStorage.setItem(THEME_KEY, v); } catch (e) { /* ignore */ } }
+  function setTheme(v, origin) { if (window.QThemeSwitch && origin) { window.QThemeSwitch.set(v, origin); return; } document.documentElement.dataset.theme = v; try { localStorage.setItem(THEME_KEY, v); } catch (e) { /* ignore */ } }
   if (!document.documentElement.dataset.theme) setTheme('dark');
-  themeBtn.addEventListener('click', function () { setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'); });
+  themeBtn.addEventListener('click', function () { setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light', themeBtn); });
 
   // back to top
   var top = $('legalTop');

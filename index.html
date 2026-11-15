@@ -6,6 +6,7 @@
   <meta name="description" content="Quello — your Question of the Day bot for creating, managing, and organizing QOTDs and discussions.">
   <title>Quello — Your Question of the Day Bot</title>
   <script>(function(){try{var t=localStorage.getItem("quello-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme="dark";}})();</script>
+  <script src="theme-switch.js?v=1"></script>
   <link rel="preload" href="fonts/TwemojiCountryFlags.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css?v=7">
   <link rel="icon" type="image/png" href="quello-avatar.webp">
@@ -59,7 +60,7 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
   <link rel="stylesheet" href="performance-optimization.css?v=4">
 <style>html{scroll-padding-top:112px} section[id]{scroll-margin-top:112px}</style>
   <link rel="stylesheet" href="creator-console.css?v=3">
-  <link rel="stylesheet" href="brand-gradient.css?v=4">
+  <link rel="stylesheet" href="brand-gradient.css?v=5">
   <link rel="stylesheet" href="header-avatar.css?v=1">
 </head>
 <body>
@@ -1359,26 +1360,15 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
       burst(r.left + r.width/2, r.top + r.height/2, items, count, spread);
     }
 
-    function setTheme(theme, origin){
-      const apply = () => {
-        document.documentElement.dataset.theme = theme;
-        try{ localStorage.setItem('quello-theme', theme); }catch(e){}
-      };
-      if(!document.startViewTransition || reduceMotion || !origin){ apply(); return; }
-      const r = origin.getBoundingClientRect();
-      const x = r.left + r.width/2, y = r.top + r.height/2;
-      const radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
-      document.startViewTransition(apply).ready.then(() => {
-        document.documentElement.animate(
-          { clipPath:[`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
-          { duration:550, easing:'cubic-bezier(.4,0,.2,1)', pseudoElement:'::view-transition-new(root)' }
-        );
-      });
+    function setTheme(theme, origin, after){
+      if(window.QThemeSwitch){ window.QThemeSwitch.set(theme, origin, after); return; }
+      document.documentElement.dataset.theme = theme;
+      try{ localStorage.setItem('quello-theme', theme); }catch(e){}
+      if(after) after();
     }
     themeToggle?.addEventListener('click', () => {
       const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
-      setTheme(next, themeToggle);
-      burstFrom(themeToggle, next === 'light' ? ['☀️','✨','🌤️'] : ['🌙','⭐','✨'], 10, .7);
+      setTheme(next, themeToggle, () => burstFrom(themeToggle, next === 'light' ? ['☀️','✨','🌤️'] : ['🌙','⭐','✨'], 10, .7));
     });
     matchMedia('(prefers-color-scheme: light)').addEventListener?.('change', e => {
       let saved = null;
