@@ -5,11 +5,17 @@
   --brand-gradient-text:linear-gradient(100deg,#b794ff 0%,#ec4899 55%,#fb4b5d 100%);
   --brand-glow:rgba(236,72,153,.34);
   --brand-ring:rgba(139,92,246,.30);
+  /* Seamless "flowing" versions: the same colours repeated so a moving window never shows a seam. */
+  --brand-flow:linear-gradient(100deg,#7c4dff 0%,#c43c9b 25%,#e9455a 50%,#c43c9b 75%,#7c4dff 100%);
+  --brand-flow-text:linear-gradient(100deg,#b794ff 0%,#ec4899 25%,#fb4b5d 50%,#ec4899 75%,#b794ff 100%);
 }
+@keyframes brandFlow{from{background-position:0% 50%}to{background-position:100% 50%}}
 :root[data-theme="light"]{
   --brand-gradient:linear-gradient(100deg,#7541d8 0%,#c43c9b 66%,#d9364b 100%);
   --brand-gradient-text:linear-gradient(100deg,#6a3fd0 0%,#c43c9b 58%,#d9364b 100%);
   --brand-glow:rgba(196,60,155,.28);
+  --brand-flow:linear-gradient(100deg,#7541d8 0%,#c43c9b 25%,#d9364b 50%,#c43c9b 75%,#7541d8 100%);
+  --brand-flow-text:linear-gradient(100deg,#6a3fd0 0%,#c43c9b 25%,#d9364b 50%,#c43c9b 75%,#6a3fd0 100%);
 }
 
 /* Primary buttons and active controls */
@@ -19,6 +25,14 @@
   background:var(--brand-gradient)!important;
   color:#fff!important;
   border-color:transparent!important;
+}
+/* Primary buttons: slowly flowing gradient (the shorthand above would otherwise freeze it) */
+.button:not(.ghost):not(.secondary):not(.danger):not(.hero-secondary),
+.hero-primary,.primary-button,.about-back,.about-nav-actions .about-btn-primary,.creator-primary{
+  background-image:var(--brand-flow)!important;
+  background-size:220% 100%!important;
+  background-repeat:no-repeat!important;
+  animation:brandFlow 8s ease-in-out infinite alternate;
 }
 .button:hover,.primary-button:hover{box-shadow:0 10px 26px var(--brand-glow)!important}
 .hero-secondary:hover,.button.ghost:hover,.button.secondary:hover{box-shadow:none!important}
@@ -30,11 +44,12 @@
 
 /* Gradient headings */
 .hero h1,.hero-redesign h1,:root[data-theme="light"] .hero-redesign h1{
-  background:var(--brand-gradient-text)!important;
-  background-size:100% 100%!important;
+  background-image:var(--brand-flow-text)!important;
+  background-size:250% 100%!important;
+  background-repeat:no-repeat!important;
   -webkit-background-clip:text!important;background-clip:text!important;
   -webkit-text-fill-color:transparent!important;color:transparent!important;
-  animation:none!important;
+  animation:brandFlow 9s ease-in-out infinite alternate!important;
 }
 .hero-period{
   background:var(--brand-gradient-text);-webkit-background-clip:text;background-clip:text;
@@ -95,8 +110,8 @@ footer::before{background:linear-gradient(90deg,transparent,rgba(139,92,246,.6),
 }
 
 /* Page background: gradient base (the animated aurora in theme.css stays on top of it) */
-html{background:var(--bg)}
-body{background:var(--page-grad) fixed,var(--bg)!important}
+html{background:var(--page-grad) fixed,var(--bg)}
+body{background:transparent!important}
 body::before{opacity:1}
 
 /* Navigation bars */
@@ -139,3 +154,8 @@ footer{background:linear-gradient(180deg,transparent,rgba(124,77,255,.10) 55%,rg
 /* Creator console panel */
 .creator-console-panel{background:linear-gradient(160deg,rgba(124,77,255,.22),rgba(196,60,155,.12) 55%,rgba(233,69,90,.12)),var(--surface)!important}
 .creator-fab{background:var(--brand-gradient)!important;box-shadow:0 8px 26px var(--brand-glow)!important}
+
+@media (prefers-reduced-motion:reduce){
+  .hero h1,.hero-redesign h1,.hero-primary,.primary-button,.about-back,.about-nav-actions .about-btn-primary,.creator-primary,
+  .button:not(.ghost):not(.secondary):not(.danger):not(.hero-secondary){animation:none!important}
+}

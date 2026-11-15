@@ -171,6 +171,24 @@
     b.addEventListener('click', openConsole);
     document.body.append(b);
   }
+  // Keep every creator-console label in sync when the site language changes without a page reload.
+  function refreshLabels() {
+    document.querySelectorAll('[data-creator-console-entry]').forEach(b => {
+      const label = b.querySelector('span:not(.side-action-icon)') || b;
+      label.textContent = tr('button');
+    });
+    const fab = document.querySelector('.creator-fab');
+    if (fab) { fab.setAttribute('aria-label', tr('button')); fab.title = tr('button'); }
+    if (drawer) {
+      const wasOpen = drawer.classList.contains('open');
+      drawer.remove(); drawer = null; body = null;
+      if (wasOpen) { makeDrawer(); drawer.classList.add('open'); render(); }
+    }
+  }
+  let refreshTimer = null;
+  const scheduleRefresh = () => { clearTimeout(refreshTimer); refreshTimer = setTimeout(refreshLabels, 0); };
+  new MutationObserver(scheduleRefresh).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  window.addEventListener('storage', e => { if (e.key === LANG_KEY) scheduleRefresh(); });
   installLongPress();
   document.addEventListener('DOMContentLoaded', () => {
     verifyCreator();
