@@ -49,7 +49,7 @@
   background-repeat:no-repeat!important;
   -webkit-background-clip:text!important;background-clip:text!important;
   -webkit-text-fill-color:transparent!important;color:transparent!important;
-  animation:brandFlow 9s ease-in-out infinite alternate!important;
+  animation:brandFlow 5.5s ease-in-out infinite alternate!important;
 }
 .hero-period{
   background:var(--brand-gradient-text);-webkit-background-clip:text;background-clip:text;
@@ -155,7 +155,16 @@ footer{background:linear-gradient(180deg,transparent,rgba(124,77,255,.10) 55%,rg
 .creator-console-panel{background:linear-gradient(160deg,rgba(124,77,255,.22),rgba(196,60,155,.12) 55%,rgba(233,69,90,.12)),var(--surface)!important}
 .creator-fab{background:var(--brand-gradient)!important;box-shadow:0 8px 26px var(--brand-glow)!important}
 
+/* Card reveal: a longer, more even ease-out so the slide stays visible for its whole length
+   (the earlier expo curve finished almost everything in the first few hundred milliseconds). */
+.q-motion-reveal{
+  transform:translate3d(0,30px,0) scale(.985)!important;
+  transition:opacity 1.2s cubic-bezier(.25,.6,.3,1),transform 1.2s cubic-bezier(.25,.6,.3,1)!important;
+}
+.q-motion-reveal.q-motion-in{transform:translate3d(0,0,0) scale(1)!important}
+
 @media (prefers-reduced-motion:reduce){
+  .q-motion-reveal,.q-motion-reveal.q-motion-in{opacity:1!important;transform:none!important;transition:none!important}
   .hero h1,.hero-redesign h1,.hero-primary,.primary-button,.about-back,.about-nav-actions .about-btn-primary,.creator-primary,
   .button:not(.ghost):not(.secondary):not(.danger):not(.hero-secondary){animation:none!important}
 }
