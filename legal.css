@@ -109,4 +109,4 @@ body[data-page="legal"]{min-height:100vh;background:var(--bg);color:var(--text);
 .header-language-menu button:hover,.header-language-menu button.active{background:rgba(139,92,246,.16);color:var(--text-strong)}
 
 @media(max-width:520px){.legal-nav-actions .legal-btn{flex:0 0 auto;width:40px;padding:0;justify-content:center}.legal-nav-actions .legal-btn span{display:none}.legal-nav-actions{justify-content:flex-end}}
-@media(max-width:640px){.legal-nav{position:static}.legal-sec{scroll-margin-top:16px}}
+@media(max-width:640px){.legal-nav{position:relative;z-index:40}.legal-sec{scroll-margin-top:16px}}
