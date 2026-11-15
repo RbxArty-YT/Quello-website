@@ -811,6 +811,10 @@
   if (fromHash) {
     Q.setToken(fromHash[1]);
     history.replaceState(null, '', location.pathname);
+    // Signed in from the "sign in first" prompt on another page -> go back to that page.
+    let back = '';
+    try { back = sessionStorage.getItem('quello-after-login') || ''; sessionStorage.removeItem('quello-after-login'); } catch (e) { /* ignore */ }
+    if (/^(index|about|terms|privacy)\.html(#[A-Za-z0-9_-]{1,40})?$/.test(back) && Q.tokenLooksValid(Q.getToken())) { location.replace(back); return; }
   }
   if (!Q.tokenLooksValid(Q.getToken())) {
     Q.clearToken();
