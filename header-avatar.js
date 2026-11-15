@@ -7,11 +7,11 @@
   var TOKEN_KEY = 'quello-dash-token';
   var LANG_KEY = 'quello-site-language-v2';
   var L = {
-    en: { dash: 'Dashboard', out: 'Log out', alt: 'Account' },
-    ru: { dash: 'Панель управления', out: 'Выйти', alt: 'Аккаунт' },
-    de: { dash: 'Dashboard', out: 'Abmelden', alt: 'Konto' },
-    fr: { dash: 'Tableau de bord', out: 'Se déconnecter', alt: 'Compte' },
-    it: { dash: 'Dashboard', out: 'Esci', alt: 'Account' }
+    en: { dash: 'Dashboard', docs: 'Documentation', out: 'Log out', alt: 'Account' },
+    ru: { dash: 'Панель управления', docs: 'Документация', out: 'Выйти', alt: 'Аккаунт' },
+    de: { dash: 'Dashboard', docs: 'Dokumentation', out: 'Abmelden', alt: 'Konto' },
+    fr: { dash: 'Tableau de bord', docs: 'Documentation', out: 'Se déconnecter', alt: 'Compte' },
+    it: { dash: 'Dashboard', docs: 'Documentazione', out: 'Esci', alt: 'Account' }
   };
 
   function lang() {
@@ -38,9 +38,24 @@
   }
 
   var ICON_DASH = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3z M13 3h8v5h-8z M13 10h8v11h-8z M3 13h8v8H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>';
+  var ICON_DOCS = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var ICON_OUT = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4M16 8l4 4-4 4M20 12H9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
   function esc(s) { var d = document.createElement('div'); d.textContent = String(s == null ? '' : s); return d.innerHTML; }
+
+  // The documentation link is shown in the dashboard's avatar menu.
+  function docsHref() {
+    var cfg = window.QUELLO_CONFIG || {};
+    return cfg.DOCS_URL || 'index.html#home';
+  }
+  function onDashboard() { return !!(document.body && document.body.dataset.page === 'dashboard'); }
+
+  function setLabels(w, t) {
+    ['dash', 'docs', 'out'].forEach(function (k) {
+      var el = w.querySelector('[data-ha="' + k + '"]');
+      if (el) el.textContent = t[k];
+    });
+  }
 
   function host() {
     return document.querySelector('.header-tools') ||
@@ -62,6 +77,9 @@
     var t = L[lang()];
     var url = avatarUrl(p);
     var name = p.name || 'Discord';
+    var docsItem = onDashboard()
+      ? '<a class="header-avatar-item" role="menuitem" href="' + esc(docsHref()) + '">' + ICON_DOCS + '<span data-ha="docs">' + esc(t.docs) + '</span></a>'
+      : '';
 
     var wrap = document.createElement('div');
     wrap.className = 'header-avatar';
@@ -73,6 +91,7 @@
       '<div class="header-avatar-menu" role="menu">' +
         '<div class="header-avatar-user"><img src="' + esc(url) + '" alt="" width="32" height="32" referrerpolicy="no-referrer"><span>' + esc(name) + '</span></div>' +
         '<a class="header-avatar-item" role="menuitem" href="dashboard.html">' + ICON_DASH + '<span data-ha="dash">' + esc(t.dash) + '</span></a>' +
+        docsItem +
         '<button class="header-avatar-item danger" role="menuitem" type="button" data-ha-out>' + ICON_OUT + '<span data-ha="out">' + esc(t.out) + '</span></button>' +
       '</div>';
     h.appendChild(wrap);   // last child = rightmost, after theme and language
@@ -83,8 +102,7 @@
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       if (open) {
         var tt = L[lang()];   // pick up a language change made since the page loaded
-        wrap.querySelector('[data-ha="dash"]').textContent = tt.dash;
-        wrap.querySelector('[data-ha="out"]').textContent = tt.out;
+        setLabels(wrap, tt);
       }
     }
     btn.addEventListener('click', function (e) { e.stopPropagation(); setOpen(!wrap.classList.contains('open')); });
@@ -107,9 +125,7 @@
   window.addEventListener('storage', function (e) { if (e.key === TOKEN_KEY) build(); });
   window.addEventListener('quello:languagechange', function () {
     var w = document.getElementById('headerAvatar'); if (!w) return;
-    var t = L[lang()];
-    w.querySelector('[data-ha="dash"]').textContent = t.dash;
-    w.querySelector('[data-ha="out"]').textContent = t.out;
+    setLabels(w, L[lang()]);
   });
   window.QuelloHeaderAvatar = { refresh: build };
 })();
