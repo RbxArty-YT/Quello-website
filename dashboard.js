@@ -137,6 +137,11 @@
             el('strong', { text: guild.name }),
             el('small', { text: !guild.configured ? t('pick_setup') : guild.access === 'moderator' ? t('pick_moderator') : t('pick_ready') }))));
       });
+      if (!serverQuery.trim()) {
+        grid.append(el('a', { class: 'server-card server-add', href: CFG.INVITE_URL || '#', target: '_blank', rel: 'noopener noreferrer' },
+          el('span', { class: 'server-add-icon', 'aria-hidden': 'true', text: '+' }),
+          el('div', null, el('strong', { text: t('menu_add') }), el('small', { text: t('add_hint') }))));
+      }
     };
     redrawPicker = draw;
 
@@ -152,7 +157,9 @@
     app.replaceChildren(
       el('header', { class: 'page-head' }, el('div', null,
         el('h1', { class: 'hero-gradient-text', text: t('pick_title') }),
-        el('p', { text: t('pick_lead') }))),
+        el('p', { text: t('pick_lead') })),
+        el('a', { class: 'button hero-primary add-server-btn', href: CFG.INVITE_URL || '#', target: '_blank', rel: 'noopener noreferrer' },
+          el('span', { class: 'add-server-plus', 'aria-hidden': 'true', text: '+' }), el('span', { text: t('add_short') }))),
       guilds.length > 1 ? search : null,
       grid);
   }

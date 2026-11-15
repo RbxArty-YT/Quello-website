@@ -176,3 +176,13 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
 .side-search{margin:0 0 8px;min-height:40px;font-size:14px}
 .side-empty{padding:6px 4px}
 .search-empty{grid-column:1/-1}
+
+/* Server picker: "Add to server" button + dashed add tile */
+.add-server-btn{margin-left:auto;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;text-decoration:none}
+.add-server-plus{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.2);font-size:16px;font-weight:800;line-height:1}
+.server-card.server-add{border-style:dashed;border-color:var(--line-strong);background:transparent;box-shadow:none;text-decoration:none}
+.server-card.server-add:hover{border-color:var(--accent);background:var(--surface-hover)}
+.server-add-icon{width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;border-radius:50%;border:2px dashed var(--accent-text);color:var(--accent-text);font-size:26px;font-weight:300;line-height:1;transition:transform .2s ease,background .2s ease}
+.server-card.server-add:hover .server-add-icon{transform:rotate(90deg);background:rgba(155,140,255,.1)}
+@media(max-width:560px){.add-server-btn{margin-left:0;width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.server-add-icon{transition:none}}
