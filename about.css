@@ -47,3 +47,20 @@ body{min-height:100vh;background:var(--bg);color:var(--text)}
 .header-language-menu button{width:100%;display:flex;align-items:center;gap:9px;padding:10px 11px;border:0;border-radius:9px;background:transparent;color:var(--text-2);font:inherit;font-size:13px;font-weight:650;text-align:left;cursor:pointer}
 .header-language-menu button:hover,.header-language-menu button.active{background:rgba(139,92,246,.16);color:var(--text-strong)}
 @media(max-width:560px){.about-nav-actions{justify-content:flex-start}.about-nav-actions .header-language{margin-left:auto}}
+
+/* Header buttons: Documentation (outlined) and Dashboard (brand gradient) */
+.about-nav-actions .about-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:9px 16px;border-radius:12px;font-size:13px;font-weight:700;line-height:1;white-space:nowrap;text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease}
+.about-nav-actions .about-btn svg{width:16px;height:16px;flex:none}
+.about-nav-actions .about-btn:hover{transform:translateY(-2px)}
+.about-nav-actions .about-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.about-nav-actions .about-btn-secondary{color:var(--text);background:var(--surface);border:1px solid var(--line-strong)}
+.about-nav-actions .about-btn-secondary:hover{border-color:var(--accent);background:var(--surface-3)}
+.about-nav-actions .about-btn-primary{color:#fff;border:0;background:var(--brand-gradient,linear-gradient(100deg,#7541d8,#c43c9b 72%,#d9364b));box-shadow:0 8px 22px rgba(139,92,246,.28)}
+.about-nav-actions .about-btn-primary:hover{box-shadow:0 12px 28px rgba(196,60,155,.38)}
+@media(max-width:560px){
+  .about-nav-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .about-nav-actions .about-btn{width:100%;min-height:42px;padding:10px 12px;font-size:13px}
+  .about-nav-actions .header-language{grid-column:1;margin-left:0}
+  .about-nav-actions .header-language-button{width:100%;justify-content:center}
+  .about-nav-actions .theme-toggle{grid-column:2;justify-self:end}
+}
