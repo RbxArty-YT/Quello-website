@@ -35,3 +35,15 @@ body{min-height:100vh;background:var(--bg);color:var(--text)}
 .about-role{background:var(--brand-gradient-text,none);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .about-card h1{font-family:inherit}
 .about-eyebrow,.about-role{display:block;width:fit-content;margin-left:auto;margin-right:auto}
+
+/* Language dropdown — same rules as the other pages (these lived in auth.css, which About does not load) */
+.about-nav-actions .header-language{position:relative;margin-left:0;z-index:60}
+.header-language-button{display:flex;align-items:center;gap:7px;min-height:40px;padding:8px 11px;border:1px solid var(--line-strong);border-radius:11px;background:var(--surface);color:var(--text);font:inherit;font-size:12px;font-weight:800;letter-spacing:.06em;cursor:pointer;transition:.16s ease}
+.header-language-button:hover,.header-language.open .header-language-button{background:var(--surface-3);border-color:var(--line-hover)}
+.header-language-arrow{font-size:14px;color:var(--text-4);line-height:1}
+.header-language-arrow svg{width:14px;height:14px;display:block}
+.header-language-menu{position:absolute;top:calc(100% + 9px);right:0;min-width:165px;padding:7px;border:1px solid var(--line-strong);border-radius:13px;background:var(--surface);box-shadow:var(--shadow-pop);opacity:0;visibility:hidden;transform:translateY(-5px);transition:.16s ease}
+.header-language.open .header-language-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.header-language-menu button{width:100%;display:flex;align-items:center;gap:9px;padding:10px 11px;border:0;border-radius:9px;background:transparent;color:var(--text-2);font:inherit;font-size:13px;font-weight:650;text-align:left;cursor:pointer}
+.header-language-menu button:hover,.header-language-menu button.active{background:rgba(139,92,246,.16);color:var(--text-strong)}
+@media(max-width:560px){.about-nav-actions{justify-content:flex-start}.about-nav-actions .header-language{margin-left:auto}}

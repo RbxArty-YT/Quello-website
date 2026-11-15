@@ -67,3 +67,75 @@ footer::before{background:linear-gradient(90deg,transparent,rgba(139,92,246,.6),
 :root[data-theme="light"] .q-spotlight-surface::before{
   background:radial-gradient(260px circle at var(--q-spot-x,50%) var(--q-spot-y,50%),rgba(128,94,220,.10),rgba(196,60,155,.05) 44%,transparent 72%)!important;
 }
+
+
+/* ===== v2: the violet -> pink -> red gradient on backgrounds, cards and surfaces ===== */
+:root{
+  /* neutral greys become violet-tinted, so every surface/input/menu follows the brand */
+  --bg:#110a22;--bg-deep:#0d071a;
+  --surface-sunken:#150c28;--surface:#1b1032;--surface-2:#1f1338;--surface-3:#24173f;
+  --surface-hover:#2b1c4a;--surface-active:#352358;
+  --line:#35244f;--line-strong:#46305f;--line-hover:#5d4380;
+  --nav-bg:rgba(20,10,40,.88);
+  --glow-1:rgba(124,77,255,.34);--glow-2:rgba(236,72,153,.26);--glow-3:rgba(251,75,93,.18);
+  --card-grad:linear-gradient(145deg,rgba(124,77,255,.20) 0%,rgba(196,60,155,.14) 58%,rgba(233,69,90,.14) 100%);
+  --card-border:color-mix(in srgb,#b06bff 30%,var(--line));
+  --page-grad:linear-gradient(160deg,#160a2e 0%,#1d0b31 46%,#2a0f26 100%);
+}
+:root[data-theme="light"]{
+  --bg:#f6f1fb;--bg-deep:#efe8f7;
+  --surface-sunken:#f3ecf8;--surface:#ffffff;--surface-2:#fbf7fe;--surface-3:#f6effb;
+  --surface-hover:#f0e6f8;--surface-active:#e8dbf4;
+  --line:#e6dbf0;--line-strong:#d9c9e8;--line-hover:#c3add8;
+  --nav-bg:rgba(255,255,255,.84);
+  --glow-1:rgba(124,77,255,.22);--glow-2:rgba(236,72,153,.18);--glow-3:rgba(251,75,93,.13);
+  --card-grad:linear-gradient(145deg,rgba(124,77,255,.10) 0%,rgba(196,60,155,.07) 58%,rgba(233,69,90,.08) 100%);
+  --card-border:color-mix(in srgb,#9b5fe0 26%,var(--line));
+  --page-grad:linear-gradient(160deg,#f3ecff 0%,#fbeaf6 52%,#ffe9ec 100%);
+}
+
+/* Page background: gradient base (the animated aurora in theme.css stays on top of it) */
+html{background:var(--bg)}
+body{background:var(--page-grad) fixed,var(--bg)!important}
+body::before{opacity:1}
+
+/* Navigation bars */
+.nav,.about-nav{
+  background:linear-gradient(100deg,rgba(124,77,255,.16),rgba(196,60,155,.10) 60%,rgba(233,69,90,.10)),var(--nav-bg)!important;
+  border-bottom-color:var(--card-border)!important;
+}
+
+/* Cards and panels */
+.builder-panel,.dash-card,.evolution-card,.faq details,.hero-feature,.item-card,.login-card,
+.login-points li,.server-card,.state-card,.user-card,.timeline article,.achievement,.log-row,
+.status-row,.permission-note,.notice,.save-bar,.tab-bar,.side-menu-head,.command-drawer-panel,
+.flow-step,.flow-language,.playground-meta span,.about-card,.about-socials a,.creator-card,.creator-note,
+.extra-card,.setup-step,.command-picker-trigger,.intent-button,.language-dropdown,.header-language-menu{
+  background:var(--card-grad),var(--surface)!important;
+  border-color:var(--card-border)!important;
+}
+.hero-feature:hover,.extra-card:hover,.item-card:hover,.server-card:hover,.dash-card:hover,.flow-language:hover,.about-socials a:hover{
+  border-color:color-mix(in srgb,#c43c9b 55%,var(--line))!important;
+}
+.flow-step.active,.flow-language.active{
+  background:linear-gradient(145deg,rgba(124,77,255,.32),rgba(196,60,155,.24) 60%,rgba(233,69,90,.22)),var(--surface)!important;
+}
+
+/* Inputs and small controls get a faint tint, not a full card gradient */
+.search-input,.select,.textarea,.flow-input,.state-control,.playground-select,.header-language-button,
+.language-switch,.side-language,.side-search-box,.menu-toggle,.menu-close,.theme-toggle{
+  background:linear-gradient(145deg,rgba(124,77,255,.12),rgba(196,60,155,.08)),var(--surface)!important;
+}
+.header-language-menu button:hover,.header-language-menu button.active{
+  background:linear-gradient(100deg,rgba(124,77,255,.26),rgba(236,72,153,.18))!important;
+}
+
+/* Side menu */
+.side-menu,.side-menu-panel,aside.side-menu{background:linear-gradient(170deg,rgba(124,77,255,.18),rgba(196,60,155,.10) 55%,rgba(233,69,90,.10)),var(--surface)!important}
+
+/* Footer */
+footer{background:linear-gradient(180deg,transparent,rgba(124,77,255,.10) 55%,rgba(233,69,90,.10))!important}
+
+/* Creator console panel */
+.creator-console-panel{background:linear-gradient(160deg,rgba(124,77,255,.22),rgba(196,60,155,.12) 55%,rgba(233,69,90,.12)),var(--surface)!important}
+.creator-fab{background:var(--brand-gradient)!important;box-shadow:0 8px 26px var(--brand-glow)!important}

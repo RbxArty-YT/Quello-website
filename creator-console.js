@@ -6,8 +6,8 @@
   const TOKEN_KEY = 'quello-dash-token';
   const LANG_KEY = 'quello-site-language-v2';
   const t = {
-    en: {button:'Creator Console',title:'Creator Console',sub:'Private workspace · Quello ecosystem',overview:'System Overview',appearance:'Appearance Lab',developer:'Developer Tools',localization:'Localization Lab',debug:'Console & Debug',experiments:'Experimental Features',close:'Close',refresh:'Refresh',logout:'Sign out',login:'Sign in with Discord',denied:'Creator access is not available for this account.',offline:'The Quello API is unavailable. Check API_BASE in site-config.js.',loading:'Loading creator data…',api:'API',bot:'Discord bot',ready:'Ready',notReady:'Not ready',version:'Version',guilds:'Servers',latency:'Gateway latency',uptime:'API uptime',theme:'Site theme',dark:'Dark',light:'Light',palette:'Brand palette',locale:'Current language',browser:'Browser',viewport:'Viewport',screen:'Screen',checks:'Diagnostics',run:'Run diagnostics',feature:'Experimental switches are local previews only.',status:'Status',enabled:'Enabled',disabled:'Disabled',passkey:'Passkey',totp:'TOTP',mfaNote:'Additional factors are not configured in this build. Creator endpoints still enforce the Discord owner ID server-side.',hidden:'The console is hidden from regular visitors. Use Ctrl + Shift + K or hold the Quello logo for 2 seconds.'},
-    ru: {button:'Консоль создателя',title:'Консоль создателя',sub:'Закрытое пространство · экосистема Quello',overview:'Обзор системы',appearance:'Лаборатория оформления',developer:'Инструменты разработчика',localization:'Лаборатория локализации',debug:'Консоль и отладка',experiments:'Экспериментальные функции',close:'Закрыть',refresh:'Обновить',logout:'Выйти',login:'Войти через Discord',denied:'Для этого аккаунта нет доступа создателя.',offline:'API Quello недоступен. Проверьте API_BASE в site-config.js.',loading:'Загрузка данных создателя…',api:'API',bot:'Discord-бот',ready:'Работает',notReady:'Не готов',version:'Версия',guilds:'Серверы',latency:'Задержка шлюза',uptime:'Время работы API',theme:'Тема сайта',dark:'Тёмная',light:'Светлая',palette:'Палитра бренда',locale:'Текущий язык',browser:'Браузер',viewport:'Размер окна',screen:'Экран',checks:'Диагностика',run:'Запустить диагностику',feature:'Экспериментальные переключатели — только локальный предпросмотр.',status:'Состояние',enabled:'Включено',disabled:'Выключено',passkey:'Passkey',totp:'TOTP',mfaNote:'Дополнительные факторы в этой сборке ещё не настроены. Доступ к API всё равно проверяется на сервере по Discord ID владельца.',hidden:'Консоль скрыта от обычных посетителей. Используйте Ctrl + Shift + K или удерживайте логотип Quello 2 секунды.'},
+    en: {signin:'Sign in with Discord first — redirecting…',hold:'Keep holding…',button:'Creator Console',title:'Creator Console',sub:'Private workspace · Quello ecosystem',overview:'System Overview',appearance:'Appearance Lab',developer:'Developer Tools',localization:'Localization Lab',debug:'Console & Debug',experiments:'Experimental Features',close:'Close',refresh:'Refresh',logout:'Sign out',login:'Sign in with Discord',denied:'Creator access is not available for this account.',offline:'The Quello API is unavailable. Check API_BASE in site-config.js.',loading:'Loading creator data…',api:'API',bot:'Discord bot',ready:'Ready',notReady:'Not ready',version:'Version',guilds:'Servers',latency:'Gateway latency',uptime:'API uptime',theme:'Site theme',dark:'Dark',light:'Light',palette:'Brand palette',locale:'Current language',browser:'Browser',viewport:'Viewport',screen:'Screen',checks:'Diagnostics',run:'Run diagnostics',feature:'Experimental switches are local previews only.',status:'Status',enabled:'Enabled',disabled:'Disabled',passkey:'Passkey',totp:'TOTP',mfaNote:'Additional factors are not configured in this build. Creator endpoints still enforce the Discord owner ID server-side.',hidden:'The console is hidden from regular visitors. Use Ctrl + Shift + K or hold the Quello logo for 2 seconds.'},
+    ru: {signin:'Сначала войдите через Discord — перенаправляю…',hold:'Держите…',button:'Консоль создателя',title:'Консоль создателя',sub:'Закрытое пространство · экосистема Quello',overview:'Обзор системы',appearance:'Лаборатория оформления',developer:'Инструменты разработчика',localization:'Лаборатория локализации',debug:'Консоль и отладка',experiments:'Экспериментальные функции',close:'Закрыть',refresh:'Обновить',logout:'Выйти',login:'Войти через Discord',denied:'Для этого аккаунта нет доступа создателя.',offline:'API Quello недоступен. Проверьте API_BASE в site-config.js.',loading:'Загрузка данных создателя…',api:'API',bot:'Discord-бот',ready:'Работает',notReady:'Не готов',version:'Версия',guilds:'Серверы',latency:'Задержка шлюза',uptime:'Время работы API',theme:'Тема сайта',dark:'Тёмная',light:'Светлая',palette:'Палитра бренда',locale:'Текущий язык',browser:'Браузер',viewport:'Размер окна',screen:'Экран',checks:'Диагностика',run:'Запустить диагностику',feature:'Экспериментальные переключатели — только локальный предпросмотр.',status:'Состояние',enabled:'Включено',disabled:'Выключено',passkey:'Passkey',totp:'TOTP',mfaNote:'Дополнительные факторы в этой сборке ещё не настроены. Доступ к API всё равно проверяется на сервере по Discord ID владельца.',hidden:'Консоль скрыта от обычных посетителей. Используйте Ctrl + Shift + K или удерживайте логотип Quello 2 секунды.'},
     de: {button:'Creator-Konsole',title:'Creator-Konsole',sub:'Privater Bereich · Quello-Ökosystem',overview:'Systemübersicht',appearance:'Design-Labor',developer:'Entwicklerwerkzeuge',localization:'Lokalisierungslabor',debug:'Konsole & Debug',experiments:'Experimentelle Funktionen',close:'Schließen',refresh:'Aktualisieren',logout:'Abmelden',login:'Mit Discord anmelden',denied:'Für dieses Konto ist kein Creator-Zugriff verfügbar.',offline:'Die Quello-API ist nicht erreichbar. Prüfe API_BASE in site-config.js.',loading:'Creator-Daten werden geladen…',api:'API',bot:'Discord-Bot',ready:'Bereit',notReady:'Nicht bereit',version:'Version',guilds:'Server',latency:'Gateway-Latenz',uptime:'API-Laufzeit',theme:'Website-Design',dark:'Dunkel',light:'Hell',palette:'Markenpalette',locale:'Aktuelle Sprache',browser:'Browser',viewport:'Ansichtsfenster',screen:'Bildschirm',checks:'Diagnose',run:'Diagnose starten',feature:'Experimentelle Schalter sind nur lokale Vorschauen.',status:'Status',enabled:'Aktiviert',disabled:'Deaktiviert',passkey:'Passkey',totp:'TOTP',mfaNote:'Zusätzliche Faktoren sind in diesem Build nicht eingerichtet. Creator-Endpunkte prüfen die Discord-Owner-ID weiterhin serverseitig.',hidden:'Die Konsole ist für normale Besucher verborgen. Ctrl + Shift + K drücken oder das Quello-Logo 2 Sekunden halten.'},
     fr: {button:'Console du créateur',title:'Console du créateur',sub:'Espace privé · écosystème Quello',overview:'Vue système',appearance:'Atelier visuel',developer:'Outils développeur',localization:'Atelier de localisation',debug:'Console et débogage',experiments:'Fonctionnalités expérimentales',close:'Fermer',refresh:'Actualiser',logout:'Déconnexion',login:'Se connecter avec Discord',denied:'Ce compte ne dispose pas des droits de créateur.',offline:'L’API Quello est inaccessible. Vérifiez API_BASE dans site-config.js.',loading:'Chargement des données…',api:'API',bot:'Bot Discord',ready:'Prêt',notReady:'Non prêt',version:'Version',guilds:'Serveurs',latency:'Latence passerelle',uptime:'Disponibilité API',theme:'Thème du site',dark:'Sombre',light:'Clair',palette:'Palette de marque',locale:'Langue actuelle',browser:'Navigateur',viewport:'Fenêtre',screen:'Écran',checks:'Diagnostics',run:'Lancer les diagnostics',feature:'Les options expérimentales sont des aperçus locaux uniquement.',status:'État',enabled:'Activé',disabled:'Désactivé',passkey:'Passkey',totp:'TOTP',mfaNote:'Les facteurs supplémentaires ne sont pas configurés dans cette version. Les points d’accès créateur vérifient toujours côté serveur l’ID Discord du propriétaire.',hidden:'La console est masquée aux visiteurs. Utilisez Ctrl + Shift + K ou maintenez le logo Quello pendant 2 secondes.'},
     it: {button:'Console del creatore',title:'Console del creatore',sub:'Spazio privato · ecosistema Quello',overview:'Panoramica sistema',appearance:'Laboratorio aspetto',developer:'Strumenti sviluppatore',localization:'Laboratorio localizzazione',debug:'Console e debug',experiments:'Funzioni sperimentali',close:'Chiudi',refresh:'Aggiorna',logout:'Esci',login:'Accedi con Discord',denied:'Questo account non dispone dei permessi creatore.',offline:'API Quello non raggiungibile. Controlla API_BASE in site-config.js.',loading:'Caricamento dati creatore…',api:'API',bot:'Bot Discord',ready:'Pronto',notReady:'Non pronto',version:'Versione',guilds:'Server',latency:'Latenza gateway',uptime:'Tempo attività API',theme:'Tema del sito',dark:'Scuro',light:'Chiaro',palette:'Palette del brand',locale:'Lingua corrente',browser:'Browser',viewport:'Finestra',screen:'Schermo',checks:'Diagnostica',run:'Esegui diagnostica',feature:'Le opzioni sperimentali sono solo anteprime locali.',status:'Stato',enabled:'Attivo',disabled:'Disattivato',passkey:'Passkey',totp:'TOTP',mfaNote:'I fattori aggiuntivi non sono configurati in questa build. Gli endpoint creatore verificano comunque lato server l’ID Discord del proprietario.',hidden:'La console è nascosta ai visitatori. Usa Ctrl + Shift + K o tieni premuto il logo Quello per 2 secondi.'}
@@ -116,10 +116,19 @@
     try {const d=await request('/api/creator/diagnostics');errorLog=d.checks.map(c=>`${c.status.toUpperCase()} · ${c.id}: ${c.detail}`);render();}
     catch(e){errorLog=[e.message];render();}
   }
+  let toastTimer = null;
+  function toast(msg) {
+    let n = document.querySelector('.creator-toast');
+    if (!n) { n = el('div', 'creator-toast'); n.setAttribute('role', 'status'); document.body.append(n); }
+    n.textContent = msg; n.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => n.classList.remove('show'), 3200);
+  }
   async function openConsole() {
-    try { const me=await request('/api/me'); if(!me.is_creator){alert(tr('denied'));return;} creator=true; }
-    catch(e){ if(!token()){location.href='login.html';return;} alert(e.message);return; }
-    makeDrawer();drawer.classList.add('open');document.body.classList.add('creator-console-open');active='overview';loadOverview();
+    if (!API || /example\.com/i.test(API)) { toast(tr('offline')); return; }
+    if (!token()) { toast(tr('signin')); setTimeout(() => { location.href = 'login.html'; }, 900); return; }
+    try { const me = await request('/api/me'); if (!me.is_creator) { toast(tr('denied')); return; } creator = true; }
+    catch (e) { toast(e.message || tr('offline')); return; }
+    makeDrawer(); drawer.classList.add('open'); document.body.classList.add('creator-console-open'); active = 'overview'; loadOverview();
   }
   function closeConsole(){if(drawer)drawer.classList.remove('open');document.body.classList.remove('creator-console-open');}
   async function verifyCreator() {
@@ -128,25 +137,31 @@
     catch(_){}
   }
   document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.shiftKey&&e.key.toLowerCase()==='k'){e.preventDefault();openConsole();}if(e.key==='Escape')closeConsole();});
-  // Touch devices: hold the Quello brand mark for two seconds. Uses touch events with a movement
-  // tolerance, blocks the long-press context menu / link navigation, and is not cancelled by a tiny finger drift.
-  function bindLongPress(logo) {
-    let timer = null, fired = false, sx = 0, sy = 0;
-    const point = e => (e.touches && e.touches[0]) || e;
-    const stop = () => { if (timer) clearTimeout(timer); timer = null; };
-    const start = e => {
-      fired = false; stop(); const p = point(e); sx = p.clientX; sy = p.clientY;
-      timer = setTimeout(() => { timer = null; fired = true; openConsole(); }, 2000);
+  // Touch devices: hold the Quello logo for two seconds. One delegated handler (capture phase) so it also works
+  // for the side-menu logo and re-rendered headers; the link/image long-press menu is blocked and the logo pulses while held.
+  function installLongPress() {
+    const SEL = '.brand, .side-brand, .about-brand';
+    let timer = null, fired = false, sx = 0, sy = 0, held = null, touched = false;
+    const stop = () => { clearTimeout(timer); timer = null; if (held) held.classList.remove('creator-holding'); held = null; };
+    const begin = (e, isTouch) => {
+      const h = e.target && e.target.closest ? e.target.closest(SEL) : null; if (!h) return;
+      const p = (e.touches && e.touches[0]) || e; fired = false; stop(); sx = p.clientX; sy = p.clientY; held = h;
+      if (isTouch) touched = true;
+      h.classList.add('creator-holding');
+      timer = setTimeout(() => {
+        timer = null; fired = true; if (held) held.classList.remove('creator-holding');
+        try { navigator.vibrate && navigator.vibrate(40); } catch (_) {}
+        openConsole();
+      }, 2000);
     };
-    const move = e => { const p = point(e); if (Math.abs(p.clientX - sx) > 14 || Math.abs(p.clientY - sy) > 14) stop(); };
-    logo.style.webkitTouchCallout = 'none'; logo.style.webkitUserSelect = 'none'; logo.style.userSelect = 'none';
-    logo.addEventListener('touchstart', start, { passive: true });
-    logo.addEventListener('touchmove', move, { passive: true });
-    ['touchend', 'touchcancel'].forEach(ev => logo.addEventListener(ev, stop));
-    logo.addEventListener('pointerdown', e => { if (e.pointerType === 'mouse') start(e); });
-    ['pointerup', 'pointerleave'].forEach(ev => logo.addEventListener(ev, e => { if (e.pointerType === 'mouse') stop(); }));
-    logo.addEventListener('contextmenu', e => { if (timer || fired) e.preventDefault(); });
-    logo.addEventListener('click', e => { if (fired) { e.preventDefault(); e.stopPropagation(); fired = false; } }, true);
+    document.addEventListener('touchstart', e => begin(e, true), { passive: true, capture: true });
+    document.addEventListener('touchmove', e => { if (!timer) return; const p = e.touches[0]; if (Math.abs(p.clientX - sx) > 18 || Math.abs(p.clientY - sy) > 18) stop(); }, { passive: true, capture: true });
+    ['touchend', 'touchcancel'].forEach(ev => document.addEventListener(ev, () => { stop(); }, { capture: true }));
+    document.addEventListener('pointerdown', e => { if (e.pointerType === 'mouse') begin(e, false); }, true);
+    ['pointerup', 'pointerleave'].forEach(ev => document.addEventListener(ev, e => { if (e.pointerType === 'mouse') stop(); }, true));
+    document.addEventListener('contextmenu', e => { if (e.target.closest && e.target.closest(SEL) && (timer || fired || touched)) e.preventDefault(); }, true);
+    document.addEventListener('dragstart', e => { if (e.target.closest && e.target.closest(SEL)) e.preventDefault(); }, true);
+    document.addEventListener('click', e => { if (fired && e.target.closest && e.target.closest(SEL)) { e.preventDefault(); e.stopPropagation(); fired = false; } }, true);
   }
   // A small round button for verified creators only, so the console is reachable on phones without a keyboard.
   function addFloatingButton() {
@@ -156,9 +171,9 @@
     b.addEventListener('click', openConsole);
     document.body.append(b);
   }
+  installLongPress();
   document.addEventListener('DOMContentLoaded', () => {
     verifyCreator();
-    document.querySelectorAll('.brand, .side-brand, .about-brand').forEach(bindLongPress);
   });
   window.addEventListener('error',e=>{errorLog.push(`${e.message} · ${e.filename||''}:${e.lineno||0}`);});
   window.addEventListener('unhandledrejection',e=>{errorLog.push(`Unhandled promise: ${String(e.reason)}`);});
