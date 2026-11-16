@@ -2,6 +2,7 @@
    Every page except the ones listed in OPEN needs a signed-in Discord session;
    visitors without one are sent to login.html. Runs synchronously in <head>
    so the protected page never flashes before the redirect.
+   Visitors who chose "Continue without signing in" on login.html may read the docs for the rest of the tab session.
    After signing in, dashboard.js returns the person to the page they asked for
    (via the "quello-after-login" key). */
 (function () {
@@ -11,6 +12,7 @@
   var OPEN = ['login.html', 'dashboard.html', 'about.html', 'privacy.html', 'terms.html'];
   var TOKEN_KEY = 'quello-dash-token';
   var AFTER_KEY = 'quello-after-login';
+  var GUEST_KEY = 'quello-guest';   // set by "Continue without signing in" on login.html (this tab only)
 
   var file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
   if (file.indexOf('.') === -1) file = 'index.html';   // "/", "/Quello-website/" -> index.html
@@ -25,6 +27,7 @@
     } catch (e) { return false; }
   }
   if (signedIn()) return;
+  try { if (sessionStorage.getItem(GUEST_KEY) === '1') return; } catch (e) { /* storage blocked */ }
 
   // Remember where the person was going (only simple #section anchors are kept).
   try {
