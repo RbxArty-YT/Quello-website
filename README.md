@@ -93,3 +93,15 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 ## Avatar menu
 - On the dashboard the avatar menu links to the documentation only; on every other page it links to the dashboard only. "Log out" is always there.
 - The Creator Console no longer adds a button to the About header; use the round ✦ button, the side menu, Ctrl + Shift + K, or hold the Quello logo.
+
+## Sign-in gate and localization audit (November 16, 2026)
+- New `login-gate.js` (loaded synchronously in the `<head>` of `index.html`): visitors without a valid Discord session are redirected to `login.html`. Open without signing in: `login.html`, `dashboard.html` (it handles its own sign-in), `about.html`, `privacy.html`, `terms.html`. After signing in, `dashboard.js` sends the person back to the page they asked for (`quello-after-login`).
+- To open another page without sign-in, add its file name to `OPEN` in `login-gate.js`; to protect a new page, include the script in its `<head>`.
+- Removed the "No thanks, open the documentation" button from `login.html` (it would only bounce back to the login page) and the stray `login-gate.js` tags from `about.html`, `privacy.html` and `terms.html`.
+- Localization (EN / RU / DE / FR / IT), applied by one override block after the last `Object.assign(translations.it, ...)` in `index.html`:
+  - Added keys that were missing from the live dictionary (`about_nav`, `evo_steps_link`, `nav_dashboard`; EN entries for `privacy_link` and `change7`-`change9`, so switching back to English now updates those texts).
+  - DE / FR / IT command texts brought in line with the bot: `/edit`, `/delete`, `/info` use message links (not IDs), Confirm / Cancel for `/edit`, `/delete`, `/reset`, `/reset_logs`, history filters, `/logs` and `/audit_log` filters, FAQ and troubleshooting answers, setup steps, permissions and overview texts.
+  - Terminology: German Eigentümer (not Besitzer), "Feinschliff" instead of "Politur", Russian "ветка" instead of "тред", Russian Playground naming and DISCORD-БОТ badge, Bot Owner / Server Owner translated in Russian, `change4_text` aligned across languages.
+  - Dashboard / login: German "deinen Avatar"; removed the unused `login_docs` string. Creator Console: `signin` and `hold` added for DE / FR / IT.
+  - Changelog dates now follow the selected language (`changelog-dates.js`); new changelog entry "Sign-in for the documentation & localization fixes".
+

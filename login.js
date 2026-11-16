@@ -1,4 +1,4 @@
-/* login.html: send people to Discord (via the bot's API) or straight to the docs. */
+/* login.html: send people to Discord (via the bot's API). */
 (function () {
   'use strict';
   const { CFG, API_BASE, API_UNSET, t, applyI18n, wireHeader, getToken, clearToken, tokenLooksValid } = window.Q;
@@ -12,9 +12,6 @@
     if (tokenLooksValid(existing)) { location.replace('dashboard.html'); return; }
     clearToken();
   }
-
-  const docsUrl = CFG.DOCS_URL || 'index.html#home';
-  document.getElementById('docsBtn').href = docsUrl;
 
   const discordBtn = document.getElementById('discordBtn');
   const errorBox = document.getElementById('loginError');
