@@ -1,7 +1,7 @@
 /* Quello legal pages — all text in en / ru / de / fr / it. */
 window.QUELLO_LEGAL = {
  "dates": {
-  "effective": "2026-11-17",
+  "effective": "2026-09-01",
   "updated": "2026-11-17"
  },
  "ui": {
