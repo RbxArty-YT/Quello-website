@@ -1,4 +1,3 @@
-
 /* Quello Hidden Creator Console — shared across Documentation, Dashboard and About. */
 (function () {
   'use strict';
@@ -248,7 +247,7 @@
   const lang = () =>
     (localStorage.getItem(LANG_KEY) ||
       document.documentElement.lang ||
-      'en').slice(0, 2);
+      'en').slice(0, 2).toLowerCase();
 
   const tr = key =>
     (t[lang()] || t.en)[key] || t.en[key] || key;
@@ -267,6 +266,8 @@
   let body = null;
   let active = 'overview';
   let errorLog = [];
+  let toastTimer = null;
+  let labelRefreshTimer = null;
 
   const el = (tag, cls, text) => {
     const n = document.createElement(tag);
@@ -297,37 +298,42 @@
       throw new Error(tr('denied'));
     }
 
-    let r;
+    let response;
 
     try {
-      r = await fetch(API + path, {
+      response = await fetch(API + path, {
         method: 'GET',
         mode: 'cors',
+        credentials: 'omit',
         headers: {
           'Authorization': 'Bearer ' + tk,
           'Accept': 'application/json'
         },
         cache: 'no-store'
       });
-    } catch (e) {
-      console.error('[Creator Console] Network error:', path, e);
+    } catch (error) {
+      console.error('[Quello Creator Console] Fetch failed:', path, error);
 
       throw new Error(
-        'Network error connecting to ' + API +
-        '. Check CORS, HTTPS and API availability.'
+        `Не удалось получить ответ от ${path}. ` +
+        'Возможны ограничения CORS/OPTIONS, сетевая ошибка или недоступность API.'
       );
     }
 
+    const raw = await response.text();
     let data = {};
 
     try {
-      data = await r.json();
-    } catch (_) {}
+      data = raw ? JSON.parse(raw) : {};
+    } catch (_) {
+      data = { message: raw.slice(0, 300) };
+    }
 
-    if (!r.ok) {
+    if (!response.ok) {
       throw new Error(
         data.message ||
-        `API error ${r.status}: ${r.statusText}`
+        data.error ||
+        `API error ${response.status}: ${response.statusText}`
       );
     }
 
@@ -382,7 +388,7 @@
     const close = el('button', 'creator-icon-button', '×');
     close.type = 'button';
     close.setAttribute('aria-label', tr('close'));
-    close.onclick = closeConsole;
+    close.addEventListener('click', closeConsole);
 
     head.append(identity, close);
 
@@ -398,14 +404,16 @@
     ];
 
     sections.forEach(([id, key]) => {
-      const b = el('button', 'creator-tab', tr(key));
-      b.type = 'button';
-      b.dataset.tab = id;
-      b.onclick = () => {
+      const button = el('button', 'creator-tab', tr(key));
+      button.type = 'button';
+      button.dataset.tab = id;
+
+      button.addEventListener('click', () => {
         active = id;
         render();
-      };
-      nav.append(b);
+      });
+
+      nav.append(button);
     });
 
     body = el('div', 'creator-console-content');
@@ -413,8 +421,8 @@
     panel.append(head, nav, body);
     drawer.append(panel);
 
-    drawer.addEventListener('click', e => {
-      if (e.target === drawer) closeConsole();
+    drawer.addEventListener('click', event => {
+      if (event.target === drawer) closeConsole();
     });
 
     document.body.append(drawer);
@@ -431,14 +439,13 @@
 
     return c;
   }
-
-  function render() {
-    if (!body) return;
+    function render() {
+    if (!body || !drawer) return;
 
     body.replaceChildren();
 
-    drawer.querySelectorAll('.creator-tab').forEach(b => {
-      b.classList.toggle('active', b.dataset.tab === active);
+    drawer.querySelectorAll('.creator-tab').forEach(button => {
+      button.classList.toggle('active', button.dataset.tab === active);
     });
 
     if (active === 'overview') {
@@ -470,12 +477,12 @@
       [
         ['Passkey', overview?.features?.passkey],
         ['TOTP', overview?.features?.totp]
-      ].forEach(([name, on]) => {
+      ].forEach(([name, enabled]) => {
         features.append(
           el(
             'p',
             '',
-            `${name}: ${on ? tr('enabled') : tr('disabled')}`
+            `${name}: ${enabled ? tr('enabled') : tr('disabled')}`
           )
         );
       });
@@ -485,7 +492,7 @@
 
       const refresh = el('button', 'creator-primary', tr('refresh'));
       refresh.type = 'button';
-      refresh.onclick = loadOverview;
+      refresh.addEventListener('click', loadOverview);
       body.append(refresh);
 
     } else if (active === 'appearance') {
@@ -497,30 +504,30 @@
       [
         ['dark', tr('dark')],
         ['light', tr('light')]
-      ].forEach(([v, label]) => {
-        const b = el('button', 'creator-secondary', label);
-        b.type = 'button';
+      ].forEach(([value, label]) => {
+        const button = el('button', 'creator-secondary', label);
+        button.type = 'button';
 
-        b.onclick = () => {
-          document.documentElement.dataset.theme = v;
+        button.addEventListener('click', () => {
+          document.documentElement.dataset.theme = value;
 
           try {
-            localStorage.setItem('quello-theme', v);
+            localStorage.setItem('quello-theme', value);
           } catch (_) {}
-        };
+        });
 
-        theme.append(b);
+        theme.append(button);
       });
 
       box.append(theme, el('h3', '', tr('palette')));
 
       const swatches = el('div', 'creator-swatches');
 
-      ['#8b5cf6', '#ec4899', '#fb4b5d'].forEach(c => {
-        const s = el('span', 'creator-swatch');
-        s.style.background = c;
-        s.title = c;
-        swatches.append(s);
+      ['#8b5cf6', '#ec4899', '#fb4b5d'].forEach(color => {
+        const swatch = el('span', 'creator-swatch');
+        swatch.style.background = color;
+        swatch.title = color;
+        swatches.append(swatch);
       });
 
       box.append(swatches);
@@ -562,19 +569,24 @@
 
       const langs = el('div', 'creator-button-row');
 
-      ['en', 'ru', 'de', 'fr', 'it'].forEach(l => {
-        const b = el('button', 'creator-secondary', l.toUpperCase());
-        b.type = 'button';
+      ['en', 'ru', 'de', 'fr', 'it'].forEach(language => {
+        const button = el(
+          'button',
+          'creator-secondary',
+          language.toUpperCase()
+        );
 
-        b.onclick = () => {
+        button.type = 'button';
+
+        button.addEventListener('click', () => {
           try {
-            localStorage.setItem(LANG_KEY, l);
+            localStorage.setItem(LANG_KEY, language);
           } catch (_) {}
 
           location.reload();
-        };
+        });
 
-        langs.append(b);
+        langs.append(button);
       });
 
       box.append(langs);
@@ -587,12 +599,12 @@
 
       const run = el('button', 'creator-primary', tr('run'));
       run.type = 'button';
-      run.onclick = loadDiagnostics;
+      run.addEventListener('click', loadDiagnostics);
 
       box.append(run);
 
-      errorLog.slice(-12).forEach(e => {
-        box.append(el('p', 'creator-log', e));
+      errorLog.slice(-20).forEach(entry => {
+        box.append(el('p', 'creator-log', entry));
       });
 
       body.append(box);
@@ -632,15 +644,21 @@
 
   async function loadOverview() {
     if (body) {
-      body.replaceChildren(el('p', 'creator-muted', tr('loading')));
+      body.replaceChildren(
+        el('p', 'creator-muted', tr('loading'))
+      );
     }
 
     try {
       overview = await request('/api/creator/overview');
       render();
-    } catch (e) {
+    } catch (error) {
+      console.error('[Quello Creator Console] Overview failed:', error);
+
       if (body) {
-        body.replaceChildren(el('p', 'creator-error', e.message));
+        body.replaceChildren(
+          el('p', 'creator-error', error.message)
+        );
       }
     }
   }
@@ -669,53 +687,9 @@
       return;
     }
 
-    // Проверка авторизации и базового API.
-    try {
-      const r = await fetch(API + '/api/me', {
-        method: 'GET',
-        mode: 'cors',
-        credentials: 'omit',
-        headers: {
-          'Authorization': 'Bearer ' + tk,
-          'Accept': 'application/json'
-        },
-        cache: 'no-store'
-      });
-
-      const me = await r.json().catch(() => ({}));
-
-      add(
-        r.ok ? 'PASS' : 'FAIL',
-        `/api/me: HTTP ${r.status}`
-      );
-
-      if (r.ok) {
-        add('INFO', `Bot owner: ${Boolean(me.is_bot_owner)}`);
-      } else {
-        add(
-          'INFO',
-          me.message || me.error || 'Authorization failed'
-        );
-
-        render();
-        return;
-      }
-
-    } catch (e) {
-      add('FAIL', `/api/me: ${e.name}: ${e.message}`);
-      render();
-      return;
-    }
-
-    // Отдельная проверка Creator API.
-    const endpoints = [
-      '/api/creator/overview',
-      '/api/creator/diagnostics'
-    ];
-
-    for (const path of endpoints) {
+    async function testEndpoint(path) {
       try {
-        const r = await fetch(API + path, {
+        const response = await fetch(API + path, {
           method: 'GET',
           mode: 'cors',
           credentials: 'omit',
@@ -726,51 +700,103 @@
           cache: 'no-store'
         });
 
-        const data = await r.json().catch(() => ({}));
+        const raw = await response.text();
+        let data = {};
+
+        try {
+          data = raw ? JSON.parse(raw) : {};
+        } catch (_) {
+          data = { message: raw.slice(0, 300) };
+        }
 
         add(
-          r.ok ? 'PASS' : 'FAIL',
-          `${path}: HTTP ${r.status}`
+          response.ok ? 'PASS' : 'FAIL',
+          `${path}: HTTP ${response.status}`
         );
 
-        if (!r.ok) {
+        if (!response.ok) {
           add(
             'INFO',
-            `${path} response: ${JSON.stringify(data).slice(0, 500)}`
+            `${path}: ${data.message || data.error || 'No error message'}`
           );
         } else {
           add('INFO', `${path}: valid response received`);
         }
 
-      } catch (e) {
+      } catch (error) {
+        console.error('[Quello Diagnostics]', path, error);
+
         add(
           'FAIL',
-          `${path}: ${e.name}: ${e.message}`
+          `${path}: ${error.name}: ${error.message}`
+        );
+
+        add(
+          'INFO',
+          'Browser could not expose the response. Possible CORS/OPTIONS or network failure.'
         );
       }
     }
 
+    try {
+      const response = await fetch(API + '/api/me', {
+        method: 'GET',
+        mode: 'cors',
+        credentials: 'omit',
+        headers: {
+          'Authorization': 'Bearer ' + tk,
+          'Accept': 'application/json'
+        },
+        cache: 'no-store'
+      });
+
+      const me = await response.json().catch(() => ({}));
+
+      add(
+        response.ok ? 'PASS' : 'FAIL',
+        `/api/me: HTTP ${response.status}`
+      );
+
+      if (!response.ok) {
+        add(
+          'INFO',
+          me.message || me.error || 'Authorization failed'
+        );
+
+        render();
+        return;
+      }
+
+      add('INFO', `Bot owner: ${Boolean(me.is_bot_owner)}`);
+
+    } catch (error) {
+      add('FAIL', `/api/me: ${error.name}: ${error.message}`);
+      render();
+      return;
+    }
+
+    await testEndpoint('/api/creator/overview');
+    await testEndpoint('/api/creator/diagnostics');
+
     render();
   }
 
-  let toastTimer = null;
+  function toast(message) {
+    let node = document.querySelector('.creator-toast');
 
-  function toast(msg) {
-    let n = document.querySelector('.creator-toast');
-
-    if (!n) {
-      n = el('div', 'creator-toast');
-      n.setAttribute('role', 'status');
-      document.body.append(n);
+    if (!node) {
+      node = el('div', 'creator-toast');
+      node.setAttribute('role', 'status');
+      document.body.append(node);
     }
 
-    n.textContent = msg;
-    n.classList.add('show');
+    node.textContent = message;
+    node.classList.add('show');
 
     clearTimeout(toastTimer);
 
     toastTimer = setTimeout(() => {
-      n.classList.remove('show');
+      node.classList.remove('show');
     }, 3200);
   }
 
@@ -800,8 +826,9 @@
 
       creator = true;
 
-    } catch (e) {
-      toast(e.message || tr('offline'));
+    } catch (error) {
+      console.error('[Quello Creator Console] Access check failed:', error);
+      toast(error.message || tr('offline'));
       return;
     }
 
@@ -811,6 +838,7 @@
     document.body.classList.add('creator-console-open');
 
     active = 'overview';
+    render();
     loadOverview();
   }
 
@@ -834,11 +862,18 @@
         addFloatingButton();
       }
 
-    } catch (_) {}
+    } catch (error) {
+      console.warn('[Quello Creator Console] Verification failed:', error);
+    }
   }
-  document.addEventListener('keydown', event => {
-    if (event.ctrlKey && event.shiftKey && event.code === 'KeyK') {
-      if (creator) openConsole();
+    document.addEventListener('keydown', event => {
+    if (
+      event.ctrlKey &&
+      event.shiftKey &&
+      event.code === 'KeyK' &&
+      creator
+    ) {
+      openConsole();
     }
 
     if (event.key === 'Escape' && drawer) {
@@ -847,111 +882,136 @@
   });
 
   function installLongPress() {
+    const LOGO_SELECTOR =
+      '.brand, .side-brand, .about-brand, .site-logo, .logo, .navbar-brand';
+
     let timer = null;
-    let triggered = false;
+    let activeTarget = null;
     let startX = 0;
     let startY = 0;
+    let triggered = false;
 
     const HOLD_TIME = 2000;
     const MOVE_LIMIT = 12;
 
-    function clearTimer() {
+    function clearHold() {
       if (timer) {
         clearTimeout(timer);
         timer = null;
       }
+
+      if (activeTarget) {
+        activeTarget.classList.remove('creator-holding');
+        activeTarget = null;
+      }
     }
 
-    function start(event) {
-      if (!creator || event.button > 0) return;
+    function startHold(target, x, y) {
+      if (!creator || !target) return;
 
-      const target = event.target;
-
-      if (
-        target.closest(
-          'button, a, input, textarea, select, [contenteditable="true"]'
-        )
-      ) {
-        return;
-      }
-
-      clearTimer();
+      clearHold();
       triggered = false;
 
-      startX = event.clientX || 0;
-      startY = event.clientY || 0;
+      activeTarget = target;
+      startX = x;
+      startY = y;
+
+      activeTarget.classList.add('creator-holding');
 
       timer = setTimeout(() => {
+        timer = null;
         triggered = true;
-        openConsole();
+
+        if (activeTarget) {
+          activeTarget.classList.remove('creator-holding');
+          activeTarget = null;
+        }
 
         if (navigator.vibrate) {
           navigator.vibrate(35);
         }
+
+        openConsole();
       }, HOLD_TIME);
     }
 
-    function move(event) {
+    function moveHold(x, y) {
       if (!timer) return;
-
-      const x = event.clientX || 0;
-      const y = event.clientY || 0;
 
       if (
         Math.abs(x - startX) > MOVE_LIMIT ||
         Math.abs(y - startY) > MOVE_LIMIT
       ) {
-        clearTimer();
+        clearHold();
       }
     }
 
-    function end() {
-      clearTimer();
-    }
+    document.addEventListener('touchstart', event => {
+      const target = event.target.closest(LOGO_SELECTOR);
+      if (!target) return;
 
-    document.addEventListener('pointerdown', start, true);
-    document.addEventListener('pointermove', move, true);
-    document.addEventListener('pointerup', end, true);
-    document.addEventListener('pointercancel', end, true);
+      const touch = event.touches[0];
+      if (!touch) return;
 
-    document.addEventListener('contextmenu', event => {
-      if (triggered) {
-        event.preventDefault();
-        triggered = false;
+      startHold(target, touch.clientX, touch.clientY);
+    }, { passive: true });
+
+    document.addEventListener('touchmove', event => {
+      const touch = event.touches[0];
+
+      if (touch) {
+        moveHold(touch.clientX, touch.clientY);
       }
+    }, { passive: true });
+
+    document.addEventListener('touchend', clearHold, { passive: true });
+    document.addEventListener('touchcancel', clearHold, { passive: true });
+
+    document.addEventListener('pointerdown', event => {
+      if (event.pointerType === 'touch' || event.button !== 0) return;
+
+      const target = event.target.closest(LOGO_SELECTOR);
+      if (!target) return;
+
+      startHold(target, event.clientX, event.clientY);
     }, true);
 
-    document.addEventListener('dragstart', event => {
-      if (triggered) {
-        event.preventDefault();
-        triggered = false;
-      }
+    document.addEventListener('pointermove', event => {
+      if (event.pointerType === 'touch') return;
+
+      moveHold(event.clientX, event.clientY);
     }, true);
+
+    document.addEventListener('pointerup', clearHold, true);
+    document.addEventListener('pointercancel', clearHold, true);
 
     document.addEventListener('click', event => {
-      if (triggered) {
-        event.preventDefault();
-        event.stopPropagation();
-        triggered = false;
-      }
+      if (!triggered) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+      triggered = false;
+    }, true);
+
+    document.addEventListener('contextmenu', event => {
+      if (!triggered) return;
+
+      event.preventDefault();
+      triggered = false;
     }, true);
   }
 
   function addFloatingButton() {
-    if (!creator || document.getElementById('quello-creator-floating')) {
+    if (!creator || document.querySelector('.creator-fab')) {
       return;
     }
 
-    const button = el(
-      'button',
-      'creator-floating-button',
-      'Q'
-    );
+    const button = el('button', 'creator-fab', '✦');
 
     button.id = 'quello-creator-floating';
     button.type = 'button';
-    button.title = tr('consoleTitle');
-    button.setAttribute('aria-label', tr('consoleTitle'));
+    button.title = tr('button');
+    button.setAttribute('aria-label', tr('button'));
 
     button.addEventListener('click', openConsole);
 
@@ -964,12 +1024,20 @@
     if (drawer) {
       drawer.remove();
       drawer = null;
+      body = null;
     }
 
-    const oldButton = document.getElementById('quello-creator-sidebar-button');
+    const oldButton = document.querySelector(
+      '[data-creator-console-entry]'
+    );
 
     if (oldButton) {
+      const divider = oldButton.previousElementSibling;
+      const label = divider?.previousElementSibling;
+
       oldButton.remove();
+      divider?.remove();
+      label?.remove();
     }
 
     if (creator) {
@@ -979,11 +1047,11 @@
 
     if (wasOpen) {
       makeDrawer();
+      drawer.classList.add('open');
+      document.body.classList.add('creator-console-open');
       render();
     }
   }
-
-  let labelRefreshTimer = null;
 
   function scheduleLabelRefresh() {
     clearTimeout(labelRefreshTimer);
@@ -1003,8 +1071,12 @@
   });
 
   window.addEventListener('storage', event => {
-    if (event.key === 'quello-dash-token') {
+    if (event.key === TOKEN_KEY) {
       verifyCreator();
+    }
+
+    if (event.key === LANG_KEY) {
+      scheduleLabelRefresh();
     }
   });
 
@@ -1015,11 +1087,17 @@
   });
 
   window.addEventListener('error', event => {
-    console.error('[Quello Creator Console] JavaScript error:', event.error || event.message);
+    console.error(
+      '[Quello Creator Console] JavaScript error:',
+      event.error || event.message
+    );
   });
 
   window.addEventListener('unhandledrejection', event => {
-    console.error('[Quello Creator Console] Unhandled promise rejection:', event.reason);
+    console.error(
+      '[Quello Creator Console] Unhandled promise rejection:',
+      event.reason
+    );
   });
 
   if (document.readyState !== 'loading') {
