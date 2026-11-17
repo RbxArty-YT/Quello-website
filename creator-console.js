@@ -19,14 +19,51 @@
   const el = (tag, cls, text) => { const n=document.createElement(tag); if(cls)n.className=cls; if(text!==undefined)n.textContent=text; return n; };
   const fmtTime = n => { const h=Math.floor(n/3600),m=Math.floor(n%3600/60),s=n%60; return [h,m,s].map(x=>String(x).padStart(2,'0')).join(':'); };
   async function request(path) {
-    const tk=token();
-    if(!API || /example\.com/i.test(API)) throw new Error(tr('offline'));
-    if(!tk) throw new Error(tr('denied'));
-    const r=await fetch(API+path,{headers:{Authorization:'Bearer '+tk}});
-    let data={}; try{data=await r.json();}catch(_){}
-    if(!r.ok) throw new Error(data.message || (r.status===403?tr('denied'):tr('offline')));
+    const tk = token();
+
+    if (!API || /example\.com/i.test(API)) {
+        throw new Error(tr('offline'));
+    }
+
+    if (!tk) {
+        throw new Error(tr('denied'));
+    }
+
+    let r;
+
+    try {
+        r = await fetch(API + path, {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                'Authorization': 'Bearer ' + tk,
+                'Accept': 'application/json'
+            },
+            cache: 'no-store'
+        });
+    } catch (e) {
+        console.error('[Creator Console] Network error:', path, e);
+        throw new Error(
+            'Network error connecting to ' + API +
+            '. Check CORS, HTTPS and API availability.'
+        );
+    }
+
+    let data = {};
+
+    try {
+        data = await r.json();
+    } catch (_) {}
+
+    if (!r.ok) {
+        throw new Error(
+            data.message ||
+            `API error ${r.status}: ${r.statusText}`
+        );
+    }
+
     return data;
-  }
+}
   function addSidebarButton() {
     const links=document.querySelector('.side-menu-links');
     if(!links) return;   // pages without a side menu (About, legal) get no header button — use the round ✦ button or hold the logo
