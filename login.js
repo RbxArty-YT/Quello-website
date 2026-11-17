@@ -1,4 +1,4 @@
-/* login.html: send people to Discord (via the bot's API) or straight to the docs. */
+/* login.html: send people to Discord (via the bot's API) or let them read the docs as a guest. */
 (function () {
   'use strict';
   const { CFG, API_BASE, API_UNSET, t, applyI18n, wireHeader, getToken, clearToken, tokenLooksValid } = window.Q;
@@ -13,8 +13,10 @@
     clearToken();
   }
 
-  const docsUrl = CFG.DOCS_URL || 'index.html#home';
-  document.getElementById('docsBtn').href = docsUrl;
+  // "Continue without signing in": remember the choice for this tab so login-gate.js lets the docs open.
+  document.getElementById('guestBtn').addEventListener('click', () => {
+    try { sessionStorage.setItem('quello-guest', '1'); } catch (e) { /* storage blocked */ }
+  });
 
   const discordBtn = document.getElementById('discordBtn');
   const errorBox = document.getElementById('loginError');

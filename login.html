@@ -7,6 +7,7 @@
   <meta name="referrer" content="no-referrer">
   <title>Quello — Sign in</title>
   <script src="auth-boot.js"></script>
+  <script src="theme-switch.js?v=1"></script>
   <link rel="preload" href="fonts/TwemojiCountryFlags.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css?v=7">
   <link rel="stylesheet" href="theme.css?v=4">
@@ -16,6 +17,9 @@
   <link rel="stylesheet" href="auth.css?v=1">
   <link rel="icon" type="image/png" href="quello-avatar.webp">
   <link rel="apple-touch-icon" href="quello-avatar.webp">
+  <link rel="stylesheet" href="creator-console.css?v=3">
+  <link rel="stylesheet" href="brand-gradient.css?v=5">
+  <link rel="stylesheet" href="header-avatar.css?v=1">
 </head>
 <body data-page="login" data-title-key="title_login">
   <nav class="nav">
@@ -58,14 +62,16 @@
       </ul>
       <div class="login-actions">
         <a class="button hero-primary" id="discordBtn" href="#"><span data-i18n="login_discord">Continue with Discord</span> <span aria-hidden="true">→</span></a>
-        <a class="button discord-button hero-secondary" id="docsBtn" href="index.html#home"><span aria-hidden="true">📖</span> <span data-i18n="login_docs">No thanks, open the documentation</span></a>
+        <a class="button discord-button hero-secondary" id="guestBtn" href="index.html#home"><span aria-hidden="true">📖</span> <span data-i18n="login_guest">Continue without signing in</span></a>
       </div>
       <p class="login-legal"><span data-i18n="login_legal">By signing in you accept the</span> <a href="terms.html" data-i18n="legal_terms">Terms of Service</a> <span data-i18n="legal_and">and</span> <a href="privacy.html" data-i18n="legal_privacy">Privacy Policy</a>.</p>
     </section>
   </main>
 
-  <script src="site-config.js"></script>
-  <script src="auth-common.js"></script>
+  <script src="site-config.js?v=2"></script>
+  <script src="auth-common.js?v=2"></script>
+  <script src="creator-console.js?v=5"></script>
   <script src="login.js"></script>
+  <script src="header-avatar.js?v=2"></script>
 </body>
 </html>
