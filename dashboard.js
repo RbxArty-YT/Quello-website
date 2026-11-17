@@ -384,10 +384,18 @@
       })));
     const panel = el('div', { class: 'tab-panel' });
 
+    const backButton = el('button', {
+      class: 'button dashboard-back-button', type: 'button',
+      text: '← ' + t('menu_switch'),
+      onclick: () => navigate(null),
+      'aria-label': t('menu_switch')
+    });
+
     app.replaceChildren(
-      el('header', { class: 'page-head' },
+      el('header', { class: 'page-head dashboard-guild-head' },
+        backButton,
         icon(guild, 56),
-        el('div', null, el('h1', { text: guild.name }), el('p', { text: t('kicker_dash') })),
+        el('div', { class: 'dashboard-guild-title' }, el('h1', { text: guild.name }), el('p', { text: t('kicker_dash') })),
         badges),
       bar, panel);
 
@@ -627,7 +635,10 @@
 
   /* ---------------------------------------------------------- tab: schedule */
   function renderSchedule(panel) {
-    const card = el('section', { class: 'dash-card wide' }, el('h2', { text: t('schedule_title') }), el('p', { class: 'hint', text: t('schedule_desc') }));
+    const card = el('section', { class: 'dash-card wide schedule-card' });
+    const status = el('span', { class: 'badge-pill schedule-status-pill', text: t('loading'), 'aria-live': 'polite' });
+    card.append(el('div', { class: 'schedule-card-head' }, el('h2', { text: t('schedule_title') }), status));
+    card.append(el('p', { class: 'hint', text: t('schedule_desc') }));
     card.append(el('p', { class: 'hint', text: t('schedule_owner') }));
     const enabled = el('input', { type: 'checkbox', id: 'scheduleEnabled' });
     const time = el('input', { class: 'input', type: 'time', id: 'scheduleTime', required: true });
@@ -637,7 +648,6 @@
       el('option', { value: '6', text: t('schedule_every_6') }),
       el('option', { value: '1', text: t('schedule_every_1') }));
     const timezone = el('input', { class: 'input', type: 'text', id: 'scheduleTimezone', maxlength: '80', autocomplete: 'off', placeholder: 'Europe/Helsinki' });
-    const status = el('span', { class: 'badge-pill', text: t('loading') });
     const saveSchedule = el('button', { class: 'button hero-primary', type: 'button', text: t('schedule_save') });
     const note = el('p', { class: 'hint', text: t('schedule_retry') });
     const form = el('div', { class: 'schedule-form' },
@@ -646,7 +656,7 @@
       field('schedule_interval', 'schedule_interval', null, interval, 'scheduleInterval'),
       field('schedule_timezone', 'schedule_timezone', 'schedule_timezone_hint', timezone, 'scheduleTimezone'),
       note, el('div', { class: 'btn-row' }, saveSchedule));
-    card.append(el('div', { class: 'schedule-status' }, status), form);
+    card.append(form);
     panel.append(card);
     saveSchedule.disabled = true;
     const scheduleSeq = ++viewSeq;

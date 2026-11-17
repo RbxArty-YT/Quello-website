@@ -307,7 +307,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "If generation or publication fails, Quello retries every five minutes for up to one hour. After that period, it attempts to notify the server owner in English."
+        "For temporary generation or publication errors, Quello retries every five minutes for up to one hour. Non-retryable API errors, including authentication, permission, or invalid-model errors, are not retried for the same slot; the slot is skipped and the server owner is notified. After repeated temporary failures, Quello also attempts to notify the server owner in English."
        ]
       ]
      ],
@@ -725,7 +725,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Bei Fehlern während der Generierung oder Veröffentlichung versucht Quello bis zu einer Stunde lang alle fünf Minuten erneut. Danach versucht der Bot, den Serverinhaber auf Englisch zu benachrichtigen."
+        "Bei vorübergehenden Fehlern während der Generierung oder Veröffentlichung versucht Quello bis zu einer Stunde lang alle fünf Minuten erneut. Nicht erneut ausführbare API-Fehler, etwa Authentifizierungs-, Berechtigungs- oder ungültige Modellfehler, werden für denselben Zeitplan nicht wiederholt; der Termin wird übersprungen und der Serverinhaber benachrichtigt. Nach wiederholten vorübergehenden Fehlern versucht Quello ebenfalls, den Serverinhaber auf Englisch zu benachrichtigen."
        ]
       ]
      ],
@@ -934,7 +934,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "En cas d’échec de génération ou de publication, Quello réessaie toutes les cinq minutes pendant une heure maximum. Ensuite, le bot tente d’avertir le propriétaire du serveur en anglais."
+        "En cas d’erreur temporaire de génération ou de publication, Quello réessaie toutes les cinq minutes pendant une heure maximum. Les erreurs API non réessayables, notamment d’authentification, d’autorisation ou de modèle invalide, ne sont pas répétées pour le même créneau : celui-ci est ignoré et le propriétaire du serveur est averti. Après des échecs temporaires répétés, Quello tente également de prévenir le propriétaire en anglais."
        ]
       ]
      ],
@@ -1143,7 +1143,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Se la generazione o la pubblicazione non riesce, Quello riprova ogni cinque minuti per un massimo di un’ora. In seguito, il bot tenta di avvisare il proprietario del server in inglese."
+        "In caso di errori temporanei durante la generazione o la pubblicazione, Quello riprova ogni cinque minuti per un massimo di un’ora. Gli errori API non ripetibili, inclusi quelli di autenticazione, autorizzazione o modello non valido, non vengono ritentati per lo stesso intervallo: l’intervallo viene saltato e il proprietario del server viene avvisato. Dopo ripetuti errori temporanei, Quello tenta inoltre di avvisare il proprietario in inglese."
        ]
       ]
      ],
@@ -1418,7 +1418,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "If generation or publication fails, Quello retries every five minutes for up to one hour. After the retry window, it attempts to notify the server owner by direct message in English."
+        "For temporary generation or publication errors, Quello retries every five minutes for up to one hour. Non-retryable API errors, including authentication, permission, or invalid-model errors, are not retried for the same slot; the slot is skipped and the server owner is notified. After repeated temporary failures, Quello also attempts to notify the server owner by direct message in English."
        ]
       ]
      ],
@@ -1964,7 +1964,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Bei einem Fehler während der Generierung oder Veröffentlichung versucht Quello bis zu einer Stunde lang alle fünf Minuten erneut. Danach versucht der Bot, den Serverinhaber per Direktnachricht auf Englisch zu benachrichtigen."
+        "Bei vorübergehenden Fehlern während der Generierung oder Veröffentlichung versucht Quello bis zu einer Stunde lang alle fünf Minuten erneut. Nicht erneut ausführbare API-Fehler, etwa Authentifizierungs-, Berechtigungs- oder ungültige Modellfehler, werden für denselben Zeitplan nicht wiederholt; der Termin wird übersprungen und der Serverinhaber benachrichtigt. Nach wiederholten vorübergehenden Fehlern versucht Quello ebenfalls, den Serverinhaber per Direktnachricht auf Englisch zu benachrichtigen."
        ]
       ]
      ],
@@ -2237,7 +2237,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "En cas d’échec de génération ou de publication, Quello réessaie toutes les cinq minutes pendant une heure maximum. Ensuite, le bot tente d’avertir le propriétaire du serveur par message privé en anglais."
+        "En cas d’erreur temporaire de génération ou de publication, Quello réessaie toutes les cinq minutes pendant une heure maximum. Les erreurs API non réessayables, notamment d’authentification, d’autorisation ou de modèle invalide, ne sont pas répétées pour le même créneau : celui-ci est ignoré et le propriétaire du serveur est averti. Après des échecs temporaires répétés, Quello tente également de prévenir le propriétaire par message privé en anglais."
        ]
       ]
      ],
@@ -2510,7 +2510,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Se la generazione o la pubblicazione non riesce, Quello riprova ogni cinque minuti per un massimo di un’ora. Al termine, il bot tenta di avvisare il proprietario del server con un messaggio diretto in inglese."
+        "In caso di errori temporanei durante la generazione o la pubblicazione, Quello riprova ogni cinque minuti per un massimo di un’ora. Gli errori API non ripetibili, inclusi quelli di autenticazione, autorizzazione o modello non valido, non vengono ritentati per lo stesso intervallo: l’intervallo viene saltato e il proprietario del server viene avvisato. Dopo ripetuti errori temporanei, Quello tenta inoltre di avvisare il proprietario con un messaggio diretto in inglese."
        ]
       ]
      ],
