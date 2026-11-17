@@ -29,15 +29,14 @@
       login_p1: 'Change roles, channels and language without slash commands.',
       login_p2: 'Only the server owner can edit a server.',
       login_p3: 'Quello only sees your Discord name, avatar and ID — never your password or messages.',
-      login_discord: 'Continue with Discord',
-      login_guest: 'Continue without signing in',
+      login_discord: 'Continue with Discord', login_docs: 'No thanks, open the documentation',
       login_legal: 'By signing in you accept the', legal_terms: 'Terms of Service', legal_and: 'and', legal_privacy: 'Privacy Policy',
       err_state: 'The sign-in link expired. Please try again.',
       err_auth: 'Discord sign-in failed. Please try again.',
       err_config: 'The dashboard is not configured yet: set API_BASE in site-config.js to your bot’s API address.',
       menu_open: 'Open menu', menu_close: 'Close menu', theme: 'Theme', language: 'Language',
       menu_server: 'SERVER', menu_account: 'ACCOUNT', menu_links: 'LINKS',
-      menu_switch: 'All servers', menu_docs: 'Documentation', menu_add: 'Add Quello to a server', about_creator: 'About the Creator', add_short: 'Add to server', add_hint: 'Invite the bot to another server', menu_logout: 'Log out',
+      menu_switch: 'All servers', menu_docs: 'Documentation', menu_add: 'Add Quello to a server', add_short: 'Add to server', add_hint: 'Invite the bot to another server', menu_logout: 'Log out',
       loading: 'Loading…', retry: 'Retry', reload: 'Reload',
       pick_title: 'Choose a server', pick_lead: 'Servers you own where Quello is installed.',
       pick_setup: 'Run /setup first', pick_ready: 'Ready to configure',
@@ -94,15 +93,14 @@
       login_p1: 'Меняйте роли, каналы и язык без слэш-команд.',
       login_p2: 'Редактировать сервер может только его владелец.',
       login_p3: 'Quello видит только ваше имя, аватар и ID в Discord — никаких паролей и сообщений.',
-      login_discord: 'Войти через Discord',
-      login_guest: 'Продолжить без входа',
+      login_discord: 'Войти через Discord', login_docs: 'Нет, перейти к документации',
       login_legal: 'Входя, вы принимаете', legal_terms: 'Условия использования', legal_and: 'и', legal_privacy: 'Политику конфиденциальности',
       err_state: 'Ссылка для входа устарела. Попробуйте ещё раз.',
       err_auth: 'Не удалось войти через Discord. Попробуйте ещё раз.',
       err_config: 'Панель ещё не настроена: впишите адрес API бота в API_BASE в файле site-config.js.',
       menu_open: 'Открыть меню', menu_close: 'Закрыть меню', theme: 'Тема', language: 'Язык',
       menu_server: 'СЕРВЕР', menu_account: 'АККАУНТ', menu_links: 'ССЫЛКИ',
-      menu_switch: 'Все серверы', menu_docs: 'Документация', menu_add: 'Добавить Quello на сервер', about_creator: 'О создателе', add_short: 'Добавить на сервер', add_hint: 'Пригласите бота на ещё один сервер', menu_logout: 'Выйти',
+      menu_switch: 'Все серверы', menu_docs: 'Документация', menu_add: 'Добавить Quello на сервер', add_short: 'Добавить на сервер', add_hint: 'Пригласите бота на ещё один сервер', menu_logout: 'Выйти',
       loading: 'Загрузка…', retry: 'Повторить', reload: 'Обновить',
       pick_title: 'Выберите сервер', pick_lead: 'Серверы, которыми вы владеете и где установлен Quello.',
       pick_setup: 'Сначала выполните /setup', pick_ready: 'Можно настраивать',
@@ -158,16 +156,15 @@
       login_lead: 'Verwalte die QOTD-Einstellungen deines Servers direkt auf der Website.',
       login_p1: 'Rollen, Kanäle und Sprache ohne Slash-Befehle ändern.',
       login_p2: 'Nur der Serverbesitzer kann einen Server bearbeiten.',
-      login_p3: 'Quello sieht nur deinen Discord-Namen, deinen Avatar und deine ID — nie dein Passwort oder deine Nachrichten.',
-      login_discord: 'Weiter mit Discord',
-      login_guest: 'Ohne Anmeldung fortfahren',
+      login_p3: 'Quello sieht nur deinen Discord-Namen, dein Avatar und deine ID — nie dein Passwort oder deine Nachrichten.',
+      login_discord: 'Weiter mit Discord', login_docs: 'Nein danke, zur Dokumentation',
       login_legal: 'Mit der Anmeldung akzeptierst du die', legal_terms: 'Nutzungsbedingungen', legal_and: 'und die', legal_privacy: 'Datenschutzerklärung',
       err_state: 'Der Anmeldelink ist abgelaufen. Bitte versuche es erneut.',
       err_auth: 'Die Discord-Anmeldung ist fehlgeschlagen. Bitte versuche es erneut.',
       err_config: 'Das Dashboard ist noch nicht eingerichtet (API-Adresse fehlt).',
       menu_open: 'Menü öffnen', menu_close: 'Menü schließen', theme: 'Design', language: 'Sprache',
       menu_server: 'SERVER', menu_account: 'KONTO', menu_links: 'LINKS',
-      menu_switch: 'Alle Server', menu_docs: 'Dokumentation', menu_add: 'Quello zu einem Server hinzufügen', about_creator: 'Über den Ersteller', add_short: 'Zum Server hinzufügen', add_hint: 'Lade den Bot auf einen weiteren Server ein', menu_logout: 'Abmelden',
+      menu_switch: 'Alle Server', menu_docs: 'Dokumentation', menu_add: 'Quello zu einem Server hinzufügen', add_short: 'Zum Server hinzufügen', add_hint: 'Lade den Bot auf einen weiteren Server ein', menu_logout: 'Abmelden',
       loading: 'Wird geladen…', retry: 'Erneut versuchen', reload: 'Neu laden',
       pick_title: 'Server auswählen', pick_lead: 'Server, die dir gehören und auf denen Quello installiert ist.',
       pick_setup: 'Zuerst /setup ausführen', pick_ready: 'Bereit zur Konfiguration',
@@ -253,15 +250,14 @@
       login_p1: 'Modifiez les rôles, salons et la langue sans commandes slash.',
       login_p2: 'Seul le propriétaire du serveur peut le modifier.',
       login_p3: 'Quello ne voit que votre nom Discord, votre avatar et votre ID — jamais votre mot de passe ni vos messages.',
-      login_discord: 'Continuer avec Discord',
-      login_guest: 'Continuer sans se connecter',
+      login_discord: 'Continuer avec Discord', login_docs: 'Non merci, ouvrir la documentation',
       login_legal: 'En vous connectant, vous acceptez les', legal_terms: 'Conditions d’utilisation', legal_and: 'et la', legal_privacy: 'Politique de confidentialité',
       err_state: 'Le lien de connexion a expiré. Veuillez réessayer.',
       err_auth: 'La connexion Discord a échoué. Veuillez réessayer.',
       err_config: 'Le tableau de bord n’est pas encore configuré (adresse de l’API manquante).',
       menu_open: 'Ouvrir le menu', menu_close: 'Fermer le menu', theme: 'Thème', language: 'Langue',
       menu_server: 'SERVEUR', menu_account: 'COMPTE', menu_links: 'LIENS',
-      menu_switch: 'Tous les serveurs', menu_docs: 'Documentation', menu_add: 'Ajouter Quello à un serveur', about_creator: 'À propos du créateur', add_short: 'Ajouter au serveur', add_hint: 'Invitez le bot sur un autre serveur', menu_logout: 'Se déconnecter',
+      menu_switch: 'Tous les serveurs', menu_docs: 'Documentation', menu_add: 'Ajouter Quello à un serveur', add_short: 'Ajouter au serveur', add_hint: 'Invitez le bot sur un autre serveur', menu_logout: 'Se déconnecter',
       loading: 'Chargement…', retry: 'Réessayer', reload: 'Recharger',
       pick_title: 'Choisissez un serveur', pick_lead: 'Les serveurs dont vous êtes propriétaire et où Quello est installé.',
       pick_setup: 'Lancez d’abord /setup', pick_ready: 'Prêt à configurer',
@@ -347,15 +343,14 @@
       login_p1: 'Cambia ruoli, canali e lingua senza comandi slash.',
       login_p2: 'Solo il proprietario del server può modificarlo.',
       login_p3: 'Quello vede solo il tuo nome Discord, l’avatar e l’ID — mai la password o i messaggi.',
-      login_discord: 'Continua con Discord',
-      login_guest: 'Continua senza accedere',
+      login_discord: 'Continua con Discord', login_docs: 'No grazie, apri la documentazione',
       login_legal: 'Accedendo accetti i', legal_terms: 'Termini di servizio', legal_and: 'e l’', legal_privacy: 'Informativa sulla privacy',
       err_state: 'Il link di accesso è scaduto. Riprova.',
       err_auth: 'Accesso con Discord non riuscito. Riprova.',
       err_config: 'La dashboard non è ancora configurata (manca l’indirizzo dell’API).',
       menu_open: 'Apri il menu', menu_close: 'Chiudi il menu', theme: 'Tema', language: 'Lingua',
       menu_server: 'SERVER', menu_account: 'ACCOUNT', menu_links: 'LINK',
-      menu_switch: 'Tutti i server', menu_docs: 'Documentazione', menu_add: 'Aggiungi Quello a un server', about_creator: 'Informazioni sul creatore', add_short: 'Aggiungi al server', add_hint: 'Invita il bot su un altro server', menu_logout: 'Esci',
+      menu_switch: 'Tutti i server', menu_docs: 'Documentazione', menu_add: 'Aggiungi Quello a un server', add_short: 'Aggiungi al server', add_hint: 'Invita il bot su un altro server', menu_logout: 'Esci',
       loading: 'Caricamento…', retry: 'Riprova', reload: 'Ricarica',
       pick_title: 'Scegli un server', pick_lead: 'I server di cui sei proprietario e dove Quello è installato.',
       pick_setup: 'Esegui prima /setup', pick_ready: 'Pronto da configurare',
@@ -435,6 +430,72 @@
     }
   };
 
+  Object.assign(DICT.en, {
+    login_p2: 'Choose a Discord server where you are the owner or have Administrator permission.',
+    pick_lead: 'Servers where Quello is installed and you are the owner or have Administrator permission.',
+    pick_setup: 'Complete initial setup', notconf_text: 'Configure Quello here. You no longer need to run /setup first.',
+    initial_setup_notice: 'Initial setup: choose the required manager role, channels, bot language and mention options. Review your choices, then confirm to save them.',
+    initial_setup_confirm: 'Confirm setup', initial_setup_cancel: 'Cancel', initial_setup_pending: 'Initial setup', tab_schedule: 'Scheduled QOTD', tab_leaderboard: 'Leaderboard', tab_statistics: 'Statistics',
+    schedule_title: 'Scheduled QOTD', schedule_intro: 'Automatically generate and publish one QOTD every day with Groq. The language follows this server’s main Quello language setting.',
+    schedule_enabled: 'Enable automatic daily QOTD', schedule_time: 'Publication time', schedule_time_hint: 'Local time in the selected timezone (24-hour clock).',
+    schedule_timezone: 'Timezone', schedule_timezone_hint: 'Use an IANA timezone, for example Asia/Yekaterinburg or Europe/Helsinki. Common zones are suggested as you type.',
+    schedule_save: 'Save schedule', schedule_saved: 'Scheduled QOTD settings saved.', schedule_retry_note: 'If Groq fails, Quello retries every 5 minutes for up to 1 hour, then sends the server owner an English notification. A QOTD already published today prevents any Groq request.',
+    leaderboard_responders: 'Participant leaderboard', leaderboard_creators: 'QOTD creators', leaderboard_empty: 'No leaderboard data yet.', leaderboard_answers: '{n} answers', leaderboard_questions: '{n} questions',
+    stat_total: 'All QOTDs', stat_english: 'English QOTDs', stat_russian: 'Russian QOTDs', stat_month: 'This month', stat_week: 'This week'
+  });
+  Object.assign(DICT.ru, {
+    login_p2: 'Выберите Discord-сервер, где вы владелец или имеете право Administrator.',
+    pick_lead: 'Серверы, где установлен Quello и где вы владелец или имеете право Administrator.',
+    pick_setup: 'Завершить первоначальную настройку', notconf_text: 'Настройте Quello прямо здесь. Сначала запускать /setup больше не нужно.',
+    initial_setup_notice: 'Первоначальная настройка: выберите обязательную роль менеджеров, каналы, язык бота и параметры упоминаний. Проверьте выбранные значения и подтвердите сохранение.',
+    initial_setup_confirm: 'Подтвердить настройку', initial_setup_cancel: 'Отмена', initial_setup_pending: 'Первоначальная настройка', tab_schedule: 'Запланированные QOTD', tab_leaderboard: 'Таблица лидеров', tab_statistics: 'Статистика',
+    schedule_title: 'Запланированные QOTD', schedule_intro: 'Автоматическая генерация и публикация одного QOTD каждый день через Groq. Язык берётся из основного языка Quello в настройках сервера.',
+    schedule_enabled: 'Включить ежедневные публикации', schedule_time: 'Время публикации', schedule_time_hint: 'Местное время в выбранном часовом поясе (24-часовой формат).',
+    schedule_timezone: 'Часовой пояс', schedule_timezone_hint: 'Укажите часовой пояс IANA, например Asia/Yekaterinburg или Europe/Helsinki. Распространённые зоны предлагаются при вводе.',
+    schedule_save: 'Сохранить расписание', schedule_saved: 'Настройки Scheduled QOTD сохранены.', schedule_retry_note: 'При ошибке Groq Quello повторяет запрос каждые 5 минут в течение часа, затем отправляет владельцу сервера уведомление на английском. Если QOTD уже опубликован сегодня, запрос к Groq не выполняется.',
+    leaderboard_responders: 'Рейтинг участников', leaderboard_creators: 'Создатели QOTD', leaderboard_empty: 'Пока нет данных для рейтинга.', leaderboard_answers: 'ответов: {n}', leaderboard_questions: 'вопросов: {n}',
+    stat_total: 'Всего QOTD', stat_english: 'Английские QOTD', stat_russian: 'Русские QOTD', stat_month: 'За этот месяц', stat_week: 'За эту неделю'
+  });
+  Object.assign(DICT.de, {
+    login_p2: 'Wähle einen Discord-Server, auf dem du Besitzer bist oder Administratorrechte hast.',
+    pick_lead: 'Server, auf denen Quello installiert ist und auf denen du Besitzer oder Administrator bist.',
+    pick_setup: 'Ersteinrichtung abschließen', notconf_text: 'Richte Quello direkt hier ein. /setup muss nicht zuerst ausgeführt werden.',
+    initial_setup_notice: 'Ersteinrichtung: Wähle die erforderliche Managerrolle, Kanäle, Bot-Sprache und Erwähnungsoptionen. Prüfe deine Auswahl und bestätige anschließend.',
+    initial_setup_confirm: 'Einrichtung bestätigen', initial_setup_cancel: 'Abbrechen', initial_setup_pending: 'Ersteinrichtung', tab_schedule: 'Geplante QOTD', tab_leaderboard: 'Bestenliste', tab_statistics: 'Statistiken',
+    schedule_title: 'Geplante QOTD', schedule_intro: 'Jeden Tag automatisch eine QOTD mit Groq erstellen und veröffentlichen. Die Sprache folgt der Hauptsprache von Quello in den Servereinstellungen.',
+    schedule_enabled: 'Tägliche QOTD aktivieren', schedule_time: 'Veröffentlichungszeit', schedule_time_hint: 'Ortszeit der ausgewählten Zeitzone (24-Stunden-Format).',
+    schedule_timezone: 'Zeitzone', schedule_timezone_hint: 'IANA-Zeitzone verwenden, z. B. Asia/Yekaterinburg oder Europe/Helsinki. Häufige Zonen werden beim Tippen vorgeschlagen.',
+    schedule_save: 'Zeitplan speichern', schedule_saved: 'Einstellungen für geplante QOTD gespeichert.', schedule_retry_note: 'Bei Groq-Fehlern versucht Quello es eine Stunde lang alle 5 Minuten erneut und sendet dem Serverbesitzer danach eine englische Nachricht. Wurde heute bereits eine QOTD veröffentlicht, wird Groq nicht aufgerufen.',
+    leaderboard_responders: 'Teilnehmer-Bestenliste', leaderboard_creators: 'QOTD-Ersteller', leaderboard_empty: 'Noch keine Ranglistendaten.', leaderboard_answers: '{n} Antworten', leaderboard_questions: '{n} Fragen',
+    stat_total: 'Alle QOTDs', stat_english: 'Englische QOTDs', stat_russian: 'Russische QOTDs', stat_month: 'Diesen Monat', stat_week: 'Diese Woche'
+  });
+  Object.assign(DICT.fr, {
+    login_p2: 'Choisissez un serveur Discord dont vous êtes propriétaire ou sur lequel vous avez la permission Administrateur.',
+    pick_lead: 'Serveurs où Quello est installé et dont vous êtes propriétaire ou administrateur.',
+    pick_setup: 'Terminer la configuration initiale', notconf_text: 'Configurez Quello ici. Il n’est plus nécessaire d’exécuter /setup au préalable.',
+    initial_setup_notice: 'Configuration initiale : choisissez le rôle de gestion requis, les salons, la langue du bot et les options de mention. Vérifiez vos choix puis confirmez.',
+    initial_setup_confirm: 'Confirmer la configuration', initial_setup_cancel: 'Annuler', initial_setup_pending: 'Configuration initiale', tab_schedule: 'QOTD programmés', tab_leaderboard: 'Classement', tab_statistics: 'Statistiques',
+    schedule_title: 'QOTD programmés', schedule_intro: 'Générez et publiez automatiquement un QOTD chaque jour avec Groq. La langue suit la langue principale de Quello configurée sur ce serveur.',
+    schedule_enabled: 'Activer les QOTD quotidiens', schedule_time: 'Heure de publication', schedule_time_hint: 'Heure locale du fuseau sélectionné (format 24 heures).',
+    schedule_timezone: 'Fuseau horaire', schedule_timezone_hint: 'Utilisez un fuseau IANA, par exemple Asia/Yekaterinburg ou Europe/Helsinki. Des zones courantes sont proposées pendant la saisie.',
+    schedule_save: 'Enregistrer le programme', schedule_saved: 'Paramètres des QOTD programmés enregistrés.', schedule_retry_note: 'En cas d’erreur Groq, Quello réessaie toutes les 5 minutes pendant une heure, puis envoie un message en anglais au propriétaire du serveur. Si un QOTD a déjà été publié aujourd’hui, aucun appel Groq n’est effectué.',
+    leaderboard_responders: 'Classement des participants', leaderboard_creators: 'Créateurs de QOTD', leaderboard_empty: 'Aucune donnée de classement pour le moment.', leaderboard_answers: '{n} réponses', leaderboard_questions: '{n} questions',
+    stat_total: 'Tous les QOTD', stat_english: 'QOTD en anglais', stat_russian: 'QOTD en russe', stat_month: 'Ce mois-ci', stat_week: 'Cette semaine'
+  });
+  Object.assign(DICT.it, {
+    login_p2: 'Scegli un server Discord di cui sei proprietario o in cui hai il permesso Amministratore.',
+    pick_lead: 'Server in cui Quello è installato e di cui sei proprietario o amministratore.',
+    pick_setup: 'Completa la configurazione iniziale', notconf_text: 'Configura Quello direttamente qui. Non è più necessario eseguire prima /setup.',
+    initial_setup_notice: 'Configurazione iniziale: scegli il ruolo manager obbligatorio, i canali, la lingua del bot e le opzioni di menzione. Controlla le scelte e conferma.',
+    initial_setup_confirm: 'Conferma configurazione', initial_setup_cancel: 'Annulla', initial_setup_pending: 'Configurazione iniziale', tab_schedule: 'QOTD programmati', tab_leaderboard: 'Classifica', tab_statistics: 'Statistiche',
+    schedule_title: 'QOTD programmati', schedule_intro: 'Genera e pubblica automaticamente un QOTD ogni giorno con Groq. La lingua segue la lingua principale di Quello configurata per questo server.',
+    schedule_enabled: 'Attiva QOTD giornalieri', schedule_time: 'Ora di pubblicazione', schedule_time_hint: 'Ora locale del fuso selezionato (formato 24 ore).',
+    schedule_timezone: 'Fuso orario', schedule_timezone_hint: 'Usa un fuso IANA, ad esempio Asia/Yekaterinburg o Europe/Helsinki. I fusi più comuni vengono suggeriti durante la digitazione.',
+    schedule_save: 'Salva programma', schedule_saved: 'Impostazioni dei QOTD programmati salvate.', schedule_retry_note: 'Se Groq restituisce un errore, Quello riprova ogni 5 minuti per un’ora, poi invia una notifica in inglese al proprietario del server. Se un QOTD è già stato pubblicato oggi, Groq non viene contattato.',
+    leaderboard_responders: 'Classifica partecipanti', leaderboard_creators: 'Creatori di QOTD', leaderboard_empty: 'Nessun dato disponibile per la classifica.', leaderboard_answers: '{n} risposte', leaderboard_questions: '{n} domande',
+    stat_total: 'Tutti i QOTD', stat_english: 'QOTD in inglese', stat_russian: 'QOTD in russo', stat_month: 'Questo mese', stat_week: 'Questa settimana'
+  });
+
   let lang = 'en';
   try { lang = localStorage.getItem(LANG_KEY) || 'en'; } catch (e) { /* storage blocked */ }
   if (!DICT[lang]) lang = 'en';
@@ -481,7 +542,6 @@
     if (themeToggle) {
       themeToggle.addEventListener('click', () => {
         const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
-        if (window.QThemeSwitch) { window.QThemeSwitch.set(next, themeToggle); return; }
         document.documentElement.dataset.theme = next;
         try { localStorage.setItem('quello-theme', next); } catch (e) { /* ignore */ }
       });

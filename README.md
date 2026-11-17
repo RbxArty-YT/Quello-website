@@ -17,7 +17,7 @@ Updated website for Quello.
 - Community Spotlight
 - Terms of Service and Privacy Policy
 
-The site intentionally does not include a Bot Status dashboard, public statistics dashboard, leaderboard dashboard, or QOTD showcase.
+The private Dashboard is integrated into this same website and uses the already-connected bot API. It provides server settings, initial setup, QOTD publishing, suggestions, logs, Scheduled QOTD, Leaderboard and Statistics; each server view is isolated by guild ID.
 
 
 Latest update: the site now combines the Quello avatar, slide-out navigation, interactive command exploration, guided QOTD building, setup progress, community highlights, and hidden extras.
@@ -66,42 +66,15 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 
 
 
-## Creator Console (November 15, 2026)
-- Added the shared Hidden Creator Console entry points: `Ctrl + Shift + K`, a 2-second press on the Quello logo, and a sidebar entry after creator verification.
-- Added the standalone `about.html` creator page and its EN / RU / DE / FR / IT copy.
-- Added the Violet → Magenta → Red brand tokens while retaining dark/light theme support.
-- The console uses the existing Dashboard session token and asks the existing API to verify creator access. It does not trust a client-side owner flag.
-- The bot API now exposes `/api/creator/overview` and `/api/creator/diagnostics`; both require a valid signed session and enforce `BOT_OWNER_ID` server-side.
-- Passkey and TOTP are explicitly reported as not configured in this build. Do not advertise them as active until WebAuthn/TOTP enrollment, secure secret storage, recovery and server-side verification have been implemented.
-- The uploaded website archive has `API_BASE` set to the example placeholder in `site-config.js`; set it to the real deployed Quello API origin before publishing this archive. Never put Discord client secrets or session signing secrets in the website repository.
-- The creator's personal avatar was not present in either supplied ZIP. `about.html` currently uses a styled initial placeholder; replace it with the previously selected creator avatar asset when that image is supplied in the project files.
+## Dashboard update (November 17, 2026)
+- Added first-time server configuration directly in the Dashboard for server owners and members with Discord Administrator permission; `/setup` remains an alternative.
+- Added Scheduled QOTD controls immediately after Settings, with daily time, IANA timezone and Groq retry behavior. The question language follows the server's main Quello language setting.
+- Added server-specific Leaderboard and Statistics tabs.
+- Updated Dashboard OAuth wording and permissions to use Discord `identify` + `guilds` scopes.
+- Updated all five site languages (EN/RU/DE/FR/IT), command documentation, FAQ, setup guidance, and Changelog.
 
-## Brand gradient and About page fixes (November 15, 2026)
-- `brand-gradient.css` is loaded last on every page and defines the single violet → pink → red brand gradient used for primary buttons, hero headings, switches, progress bar and scrollbar. Edit the `--brand-gradient*` variables there to change the look site-wide.
-- Leftover Discord-blue / cool-blue glows were removed from `theme.css`, `landing-redesign.css` and `motion-polish.css`.
-- `about.html` now shows `creator-avatar.png` (falls back to the letter badge if the file is missing), uses the shared theme toggle and follows the saved/system theme like the other pages, and has a tidy two-row header on phones.
 
-## Creator Console on phones
-- Verified creators get a small round ✦ button (bottom-right) on every page, plus the "Creator Console" entry in the side menu (☰) and in the About header.
-- Long-pressing the Quello logo for 2 seconds also works now (touch events, movement tolerance, context menu and link navigation suppressed).
-- The button only appears after `/api/me` confirms `is_creator`, so it needs a valid login (`quello-dash-token`) and a real `API_BASE`.
-
-## Terms of Service and Privacy Policy pages
-- `terms.html` and `privacy.html` share `legal.css`, `legal.js` and `legal-content.js`.
-- All text (en / ru / de / fr / it) lives in `legal-content.js`. The page follows the site language (`quello-site-language-v2`) and has its own language dropdown, theme toggle, contents list with scroll tracking, and summary cards. The English text inside the HTML files is only a no-JavaScript fallback: when you edit the policy, edit `legal-content.js` (and the dates in its `dates` object).
-
-## Avatar menu
-- On the dashboard the avatar menu links to the documentation only; on every other page it links to the dashboard only. "Log out" is always there.
-- The Creator Console no longer adds a button to the About header; use the round ✦ button, the side menu, Ctrl + Shift + K, or hold the Quello logo.
-
-## Sign-in gate and localization audit (November 16, 2026)
-- New `login-gate.js` (loaded synchronously in the `<head>` of `index.html`): visitors without a valid Discord session are redirected to `login.html`. Open without signing in: `login.html`, `dashboard.html` (it handles its own sign-in), `about.html`, `privacy.html`, `terms.html`. After signing in, `dashboard.js` sends the person back to the page they asked for (`quello-after-login`).
-- To open another page without sign-in, add its file name to `OPEN` in `login-gate.js`; to protect a new page, include the script in its `<head>`.
-- `login.html` has a "Continue without signing in" button (`login_guest`): it sets `quello-guest` in `sessionStorage` and opens `index.html#home`; `login-gate.js` lets that tab read the documentation until it is closed. The stray `login-gate.js` tags were removed from `about.html`, `privacy.html` and `terms.html`.
-- Localization (EN / RU / DE / FR / IT), applied by one override block after the last `Object.assign(translations.it, ...)` in `index.html`:
-  - Added keys that were missing from the live dictionary (`about_nav`, `evo_steps_link`, `nav_dashboard`; EN entries for `privacy_link` and `change7`-`change9`, so switching back to English now updates those texts).
-  - DE / FR / IT command texts brought in line with the bot: `/edit`, `/delete`, `/info` use message links (not IDs), Confirm / Cancel for `/edit`, `/delete`, `/reset`, `/reset_logs`, history filters, `/logs` and `/audit_log` filters, FAQ and troubleshooting answers, setup steps, permissions and overview texts.
-  - Terminology: German Eigentümer (not Besitzer), "Feinschliff" instead of "Politur", Russian "ветка" instead of "тред", Russian Playground naming and DISCORD-БОТ badge, Bot Owner / Server Owner translated in Russian, `change4_text` aligned across languages.
-  - Dashboard / login: German "deinen Avatar"; removed the unused `login_docs` string. Creator Console: `signin` and `hold` added for DE / FR / IT.
-  - Changelog dates now follow the selected language (`changelog-dates.js`); new changelog entry "Sign-in for the documentation & localization fixes".
-
+## Scheduled QOTD provider update (November 17, 2026)
+- Replaced the OpenAI provider with Groq for automatic question generation.
+- Default model: `openai/gpt-oss-120b`; the API uses Groq's OpenAI-compatible Chat Completions endpoint.
+- Updated all five website locales, command descriptions, FAQ, Dashboard settings text and the website Changelog.

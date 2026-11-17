@@ -10,15 +10,9 @@
   // If motion is disabled or IntersectionObserver is unavailable, leave content visible.
   if (motionPreference.matches || !('IntersectionObserver' in window)) return;
 
-  // Start a card's reveal only once a meaningful part of it is on screen (a quarter of its height, at most
-  // 160px), so tall cards at the bottom of a page fade in where the reader can see it instead of while
-  // only a thin sliver touches the bottom edge of the screen.
-  const THRESHOLDS = [0, .02, .04, .06, .08, .1, .15, .2, .25, .3, .4, .5, .75, 1];
   const observer = new IntersectionObserver((entries, activeObserver) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const needed = Math.min(entry.boundingClientRect.height * 0.25, 160);
-      if (entry.intersectionRect.height < needed) return;
       const element = entry.target;
       // Apply the visible state on a later frame so the browser paints the hidden
       // starting state first; otherwise the transition can be skipped entirely.
@@ -28,7 +22,7 @@
       }));
       activeObserver.unobserve(element);
     });
-  }, { threshold: THRESHOLDS, rootMargin: '0px 0px -6% 0px' });
+  }, { threshold: 0.04, rootMargin: '0px 0px -5% 0px' });
 
   targets.forEach((element, index) => {
     element.classList.remove('q-reveal', 'q-in');
