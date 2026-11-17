@@ -144,6 +144,7 @@
     catch(e){ if(body)body.replaceChildren(el('p','creator-error',e.message)); }
   }
   
+
 async function loadDiagnostics() {
     errorLog = [];
 
@@ -151,11 +152,76 @@ async function loadDiagnostics() {
         errorLog.push(`${status} · ${message}`);
     };
 
-    if (!API) {
-        add('FAIL', 'API_BASE is empty');
+    add('INFO', `API: ${API}`);
+    add('INFO', `Website origin: ${location.origin}`);
+
+    const tk = token();
+
+    if (!tk) {
+        add('FAIL', 'Discord access token not found');
         render();
         return;
     }
+
+    // Проверяем доступность API и CORS
+    try {
+        const r = await fetch(API + '/api/me', {
+            headers: {
+                'Authorization': 'Bearer ' + tk,
+                'Accept': 'application/json'
+            },
+            cache: 'no-store'
+        });
+
+        const me = await r.json().catch(() => ({}));
+
+        add(r.ok ? 'PASS' : 'FAIL', `/api/me: HTTP ${r.status}`);
+        add('INFO', `Bot owner: ${Boolean(me.is_bot_owner)}`);
+
+    } catch (e) {
+        add('FAIL', `/api/me: ${e.name}: ${e.message}`);
+        render();
+        return;
+    }
+
+    // Проверяем Creator endpoints
+    const endpoints = [
+        '/api/creator/overview',
+        '/api/creator/diagnostics'
+    ];
+
+    for (const path of endpoints) {
+        try {
+            const r = await fetch(API + path, {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer ' + tk,
+                    'Accept': 'application/json'
+                },
+                cache: 'no-store'
+            });
+
+            const data = await r.json().catch(() => ({}));
+
+            add(
+                r.ok ? 'PASS' : 'FAIL',
+                `${path}: HTTP ${r.status}`
+            );
+
+            if (!r.ok) {
+                add('INFO', `${path} response: ${JSON.stringify(data).slice(0, 500)}`);
+            } else {
+                add('INFO', `${path}: valid response received`);
+            }
+
+        } catch (e) {
+            add('FAIL', `${path}: ${e.name}: ${e.message}`);
+        }
+    }
+
+    render();
+}
+
 
     add('INFO', `API: ${API}`);
     add('INFO', `Website origin: ${location.origin}`);
