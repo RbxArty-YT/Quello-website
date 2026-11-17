@@ -631,7 +631,7 @@
     card.append(el('p', { class: 'hint', text: t('schedule_owner') }));
     const enabled = el('input', { type: 'checkbox', id: 'scheduleEnabled' });
     const time = el('input', { class: 'input', type: 'time', id: 'scheduleTime', required: true });
-    const interval = el('select', { class: 'input', id: 'scheduleInterval' },
+    const interval = el('select', { class: 'select', id: 'scheduleInterval' },
       el('option', { value: '24', text: t('schedule_every_24') }),
       el('option', { value: '12', text: t('schedule_every_12') }),
       el('option', { value: '6', text: t('schedule_every_6') }),
