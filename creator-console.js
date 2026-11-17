@@ -143,10 +143,100 @@
     try { overview=await request('/api/creator/overview');render(); }
     catch(e){ if(body)body.replaceChildren(el('p','creator-error',e.message)); }
   }
-  async function loadDiagnostics() {
-    try {const d=await request('/api/creator/diagnostics');errorLog=d.checks.map(c=>`${c.status.toUpperCase()} · ${c.id}: ${c.detail}`);render();}
-    catch(e){errorLog=[e.message];render();}
-  }
+  
+async function loadDiagnostics() {
+    errorLog = [];
+
+    const add = (status, message) => {
+        errorLog.push(`${status} · ${message}`);
+    };
+
+    if (!API) {
+        add('FAIL', 'API_BASE is empty');
+        render();
+        return;
+    }
+
+    add('INFO', `API: ${API}`);
+    add('INFO', `Website origin: ${location.origin}`);
+
+    // 1. Проверка HTTPS и сетевой доступности
+    try {
+        await fetch(API + '/api/me', {
+            method: 'GET',
+            mode: 'no-cors',
+            cache: 'no-store'
+        });
+
+        add('PASS', 'HTTPS / network connection established');
+    } catch (e) {
+        add('FAIL', `HTTPS / network: ${e.name}: ${e.message}`);
+        render();
+        return;
+    }
+
+    // 2. Проверка обычного CORS-запроса
+    try {
+        const r = await fetch(API + '/api/me', {
+            method: 'GET',
+            mode: 'cors',
+            credentials: 'omit',
+            cache: 'no-store'
+        });
+
+        add(
+            r.status === 401 ? 'PASS' : 'INFO',
+            `Simple CORS request: HTTP ${r.status}`
+        );
+    } catch (e) {
+        add('FAIL', `Simple CORS request: ${e.name}: ${e.message}`);
+        add('INFO', 'Possible CORS response-header or network issue');
+        render();
+        return;
+    }
+
+    // 3. Проверка запроса с Authorization.
+    // Браузер автоматически выполнит OPTIONS preflight.
+    const tk = token();
+
+    if (!tk) {
+        add('SKIP', 'No Discord access token found in localStorage');
+        render();
+        return;
+    }
+
+    try {
+        const r = await fetch(API + '/api/me', {
+            method: 'GET',
+            mode: 'cors',
+            credentials: 'omit',
+            headers: {
+                'Authorization': 'Bearer ' + tk,
+                'Accept': 'application/json'
+            },
+            cache: 'no-store'
+        });
+
+        let data = {};
+        try {
+            data = await r.json();
+        } catch (_) {}
+
+        if (r.ok) {
+            add('PASS', 'Authorization request succeeded');
+            add('INFO', `Bot owner: ${Boolean(data.is_bot_owner)}`);
+        } else {
+            add('INFO', `Authorization request: HTTP ${r.status}`);
+            add('INFO', data.message || data.error || 'API returned an error');
+        }
+    } catch (e) {
+        add('FAIL', `Authorization request: ${e.name}: ${e.message}`);
+        add('INFO', 'Possible OPTIONS preflight / Authorization CORS issue');
+    }
+
+    render();
+}
+
   let toastTimer = null;
   function toast(msg) {
     let n = document.querySelector('.creator-toast');
