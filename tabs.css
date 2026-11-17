@@ -1,0 +1,106 @@
+/* =========================================
+   QUELLO — TAB NAVIGATION
+   ========================================= */
+
+.site-tabs {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  border-top: 1px solid #252936;
+}
+
+.site-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tab button */
+
+.site-tab {
+  appearance: none;
+
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+
+  background: transparent;
+
+  color: #aeb4bf;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+
+  white-space: nowrap;
+
+  padding: 11px 14px;
+  min-height: 42px;
+
+  border-radius: 7px 7px 0 0;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.site-tab:hover {
+  color: #ffffff;
+  background: #1d2029;
+}
+
+.site-tab.active {
+  color: #ffffff;
+  background: #252936;
+}
+
+.site-tab:focus,
+.site-tab:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Content panels */
+
+[data-tab-panel][hidden] {
+  display: none !important;
+}
+
+.tab-panel-active {
+  animation: quelloTabFade 0.18s ease;
+}
+
+@keyframes quelloTabFade {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .site-tabs {
+    padding: 0 12px;
+    gap: 3px;
+  }
+
+  .site-tab {
+    font-size: 12px;
+    padding: 10px 11px;
+  }
+}
