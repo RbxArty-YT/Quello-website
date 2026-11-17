@@ -17,7 +17,7 @@ Updated website for Quello.
 - Community Spotlight
 - Terms of Service and Privacy Policy
 
-The site intentionally does not include a Bot Status dashboard, public statistics dashboard, leaderboard dashboard, or QOTD showcase.
+The public landing page does not expose private server statistics or leaderboards. Those server-specific tools are available only inside the Discord-authenticated Dashboard to users with the appropriate server access.
 
 
 Latest update: the site now combines the Quello avatar, slide-out navigation, interactive command exploration, guided QOTD building, setup progress, community highlights, and hidden extras.
@@ -73,7 +73,7 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 - The console uses the existing Dashboard session token and asks the existing API to verify creator access. It does not trust a client-side owner flag.
 - The bot API now exposes `/api/creator/overview` and `/api/creator/diagnostics`; both require a valid signed session and enforce `BOT_OWNER_ID` server-side.
 - Passkey and TOTP are explicitly reported as not configured in this build. Do not advertise them as active until WebAuthn/TOTP enrollment, secure secret storage, recovery and server-side verification have been implemented.
-- The uploaded website archive has `API_BASE` set to the example placeholder in `site-config.js`; set it to the real deployed Quello API origin before publishing this archive. Never put Discord client secrets or session signing secrets in the website repository.
+- The website archive has `API_BASE` configured as `https://qotd.xipho.ru` in `site-config.js`. Confirm that this is the intended production API origin before deployment. Never put Discord client secrets or session signing secrets in the website repository.
 - The creator's personal avatar was not present in either supplied ZIP. `about.html` currently uses a styled initial placeholder; replace it with the previously selected creator avatar asset when that image is supplied in the project files.
 
 ## Brand gradient and About page fixes (November 15, 2026)
@@ -105,3 +105,17 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
   - Dashboard / login: German "deinen Avatar"; removed the unused `login_docs` string. Creator Console: `signin` and `hold` added for DE / FR / IT.
   - Changelog dates now follow the selected language (`changelog-dates.js`); new changelog entry "Sign-in for the documentation & localization fixes".
 
+
+
+## Scheduled QOTD Dashboard and legal update (November 17, 2026)
+- Added owner-level Scheduled QOTD controls in the existing Dashboard: enabled state, first local publication time, IANA time zone, and 1 / 6 / 12 / 24-hour recurrence.
+- Added server leaderboard views for QOTD creators and responders, plus QOTD statistics, using the existing bot API endpoints.
+- Added localized Dashboard UI strings and documentation FAQ / changelog entries in EN / RU / DE / FR / IT.
+- Updated Privacy Policy and Terms of Service in all five languages to describe Discord OAuth `identify` + `guilds`, eligible-server permission checks, scheduled QOTD context sent to Groq, temporary pending-question storage, retry behavior, and AI-generated content limitations.
+- No API endpoint duplication was introduced. The site still requires the real deployed API origin in `site-config.js` before deployment.
+
+
+## AI QOTD scheduling and instant generation (November 17, 2026)
+- `/schedule_qotds` and the Dashboard now support a first publication time, IANA time zone, and recurring intervals of every 1, 6, 12, or 24 hours.
+- `/random_qotd` generates a question through the configured Groq model and publishes it immediately using the server's main Quello language.
+- Updated the command reference, Dashboard frequency selector, and AI-provider disclosures in the legal content.

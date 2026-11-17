@@ -53,3 +53,22 @@ body[data-page="dashboard"] .creator-fab{bottom:max(86px,calc(env(safe-area-inse
 .creator-toast{position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom));z-index:10000;max-width:min(92vw,420px);padding:12px 16px;border-radius:13px;background:linear-gradient(100deg,#7c4dff,#c43c9b 62%,#e9455a);color:#fff;font-size:13px;font-weight:650;text-align:center;box-shadow:0 12px 34px rgba(0,0,0,.4);transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
 .creator-toast.show{opacity:1;transform:translate(-50%,0)}
 @media(prefers-reduced-motion:reduce){.creator-holding{animation:none}}
+
+/* Dashboard feature panels: Scheduled QOTD, leaderboard and statistics. */
+.schedule-form { display:grid; gap:16px; margin-top:18px; }
+.schedule-form .field { min-width:0; }
+.schedule-form .input { width:100%; max-width:520px; }
+.schedule-toggle { display:flex; align-items:center; gap:12px; font-weight:650; cursor:pointer; }
+.schedule-toggle input { width:19px; height:19px; accent-color:var(--brand-purple, #9b5cff); }
+.schedule-status { display:flex; justify-content:flex-end; margin-top:14px; }
+.leader-row { display:grid; grid-template-columns:44px minmax(0,1fr) auto; align-items:center; gap:12px; padding:14px 16px; border:1px solid var(--line, rgba(255,255,255,.1)); border-radius:14px; background:var(--surface-soft, rgba(255,255,255,.035)); }
+.leader-rank { font-weight:800; color:var(--text-muted, #999); font-variant-numeric:tabular-nums; }
+.leader-person { min-width:0; display:grid; gap:3px; }
+.leader-person strong { overflow-wrap:anywhere; }
+.leader-person small { color:var(--text-muted, #999); overflow-wrap:anywhere; }
+.stats-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(165px,1fr)); gap:12px; margin-top:14px; }
+.stat-card { display:grid; gap:10px; padding:18px; border:1px solid var(--line, rgba(255,255,255,.1)); border-radius:15px; background:var(--surface-soft, rgba(255,255,255,.035)); }
+.stat-card span { color:var(--text-muted, #999); font-size:.9rem; }
+.stat-card strong { font-size:clamp(1.6rem,4vw,2.25rem); font-weight:800; font-variant-numeric:tabular-nums; }
+@media(max-width:600px){ .leader-row { grid-template-columns:32px minmax(0,1fr); } .leader-row .badge-pill { grid-column:2; justify-self:start; } .stats-head { align-items:flex-start; flex-wrap:wrap; } }

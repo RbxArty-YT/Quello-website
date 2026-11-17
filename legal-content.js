@@ -1,8 +1,8 @@
-/* Quello legal pages — all text in en / ru / de / fr / it. Edit here, not in the HTML. */
+/* Quello legal pages — all text in en / ru / de / fr / it. */
 window.QUELLO_LEGAL = {
  "dates": {
-  "effective": "2026-09-21",
-  "updated": "2026-11-15"
+  "effective": "2026-11-17",
+  "updated": "2026-11-17"
  },
  "ui": {
   "en": {
@@ -221,13 +221,13 @@ window.QUELLO_LEGAL = {
       [
        [
         "p",
-        "The Quello website may offer a dashboard where you sign in with Discord (the identify scope only) to manage the servers you are authorized for. What you can do depends on your role in the server:"
+        "The Quello website offers a dashboard where you sign in with Discord OAuth2 using the identify and guilds scopes. Quello reads your basic profile and server permission flags to identify servers where you are the owner or have Administrator permission. What you can do depends on your role in the server:"
        ],
        [
         "ul",
         [
-         "the server owner can change settings and use maintenance and lock modes;",
-         "the server owner and members who hold the allowed manager role can publish and edit QOTDs and review suggestions."
+         "the server owner, a Discord Administrator, or the Bot Owner can change settings, manage Scheduled QOTD (including its 1-, 6-, 12- or 24-hour interval), use maintenance and lock modes, and run /random_qotd for immediate AI-generated publication;",
+         "members who hold the configured allowed role can publish and edit QOTDs, review suggestions, and view leaderboards and statistics."
         ]
        ],
        [
@@ -291,6 +291,32 @@ window.QUELLO_LEGAL = {
        [
         "p",
         "For questions or concerns regarding Quello or these Terms, please contact the developer through the Bot’s official support channel."
+       ]
+      ]
+     ],
+     [
+      "Scheduled QOTD and AI-generated content",
+      [
+       [
+        "p",
+        "If enabled by a server owner, Scheduled QOTD generates and publishes questions at the configured interval (every 1, 6, 12 or 24 hours), using the server’s configured bot language and recent QOTD context. An authorized QOTD manager may also run /random_qotd to generate and publish a question immediately. Both features use Groq, an independent third-party service. The server owner is responsible for deciding whether these features are appropriate and for avoiding confidential or sensitive content in recent QOTDs sent as prompt context."
+       ],
+       [
+        "p",
+        "AI-generated questions may occasionally be unsuitable, inaccurate, repetitive, or unexpected. Quello does not guarantee that generated questions will be error-free or appropriate for every community. Server administrators can disable Scheduled QOTD at any time; /random_qotd only runs when an authorized member invokes it."
+       ],
+       [
+        "p",
+        "If generation or publication fails, Quello retries every five minutes for up to one hour. After that period, it attempts to notify the server owner in English."
+       ]
+      ]
+     ],
+     [
+      "Third-party services",
+      [
+       [
+        "p",
+        "Quello depends on Discord and may use third-party infrastructure and AI services, including Groq for scheduled and on-demand AI question generation. Your use of those services may also be subject to their separate terms and policies. Quello is not responsible for third-party services outside its control."
        ]
       ]
      ]
@@ -404,13 +430,13 @@ window.QUELLO_LEGAL = {
       [
        [
         "p",
-        "На сайте Quello может быть доступна панель управления, где вы входите через Discord (только область identify) и управляете серверами, к которым у вас есть доступ. Ваши возможности зависят от вашей роли на сервере:"
+        "На сайте Quello есть панель управления с входом через Discord OAuth2, использующим области identify и guilds. Quello получает базовый профиль и данные о разрешениях серверов, чтобы определить серверы, где вы владелец или имеете право Administrator. Ваши возможности зависят от роли на сервере:"
        ],
        [
         "ul",
         [
-         "владелец сервера может менять настройки и использовать режимы обслуживания и блокировки;",
-         "владелец сервера и участники с разрешённой ролью менеджера могут публиковать и редактировать QOTD и рассматривать предложения."
+         "владелец сервера, пользователь с правом Discord Administrator или Bot Owner может менять настройки, управлять Scheduled QOTD (интервал 1, 6, 12 или 24 часа), использовать режимы обслуживания и блокировки, а также запускать /random_qotd для мгновенной публикации вопроса, созданного ИИ;",
+         "участники с настроенной разрешённой ролью могут публиковать и редактировать QOTD, рассматривать предложения, а также просматривать рейтинги и статистику."
         ]
        ],
        [
@@ -474,6 +500,32 @@ window.QUELLO_LEGAL = {
        [
         "p",
         "По вопросам, связанным с Quello или этими Условиями, свяжитесь с разработчиком через официальный канал поддержки Бота."
+       ]
+      ]
+     ],
+     [
+      "Scheduled QOTD и контент, созданный ИИ",
+      [
+       [
+        "p",
+        "Если владелец сервера включает Scheduled QOTD, бот автоматически генерирует и публикует вопросы с выбранным интервалом (каждый час, каждые 6, 12 или 24 часа), используя основной язык бота и контекст недавних QOTD. Участник с правами управления QOTD также может запустить /random_qotd для мгновенной генерации и публикации. Обе функции используют Groq — независимый сторонний сервис. Владелец сервера должен учитывать передачу контекста недавних QOTD этому сервису и не допускать попадания туда конфиденциальных сведений."
+       ],
+       [
+        "p",
+        "Вопросы, созданные ИИ, могут оказаться неподходящими, неточными, повторяющимися или неожиданными. Quello не гарантирует безошибочность и уместность каждого вопроса. Администраторы могут отключить Scheduled QOTD; /random_qotd запускается только по запросу участника с соответствующими правами."
+       ],
+       [
+        "p",
+        "При ошибке генерации или публикации Quello повторяет попытку каждые пять минут в течение часа. После этого бот пытается уведомить владельца сервера на английском языке."
+       ]
+      ]
+     ],
+     [
+      "Сторонние сервисы",
+      [
+       [
+        "p",
+        "Работа Quello зависит от Discord и может использовать стороннюю инфраструктуру и ИИ-сервисы, включая Groq для генерации вопросов по расписанию. Использование этих сервисов также может регулироваться их отдельными условиями и политиками. Quello не отвечает за сторонние сервисы, которые не контролирует."
        ]
       ]
      ]
@@ -587,7 +639,7 @@ window.QUELLO_LEGAL = {
       [
        [
         "p",
-        "Die Quello-Website kann ein Dashboard bieten, in dem du dich mit Discord anmeldest (nur der Scope „identify“), um die Server zu verwalten, für die du berechtigt bist. Was du tun kannst, hängt von deiner Rolle auf dem Server ab:"
+        "Die Quello-Website bietet ein Dashboard mit Discord-OAuth2-Anmeldung über die Scopes identify und guilds. Quello liest dein Basisprofil und Server-Berechtigungsflags, um Server zu ermitteln, auf denen du Eigentümer bist oder Administratorrechte hast. Was du tun kannst, hängt von deiner Rolle auf dem Server ab:"
        ],
        [
         "ul",
@@ -657,6 +709,32 @@ window.QUELLO_LEGAL = {
        [
         "p",
         "Bei Fragen oder Anliegen zu Quello oder diesen Bedingungen wende dich bitte über den offiziellen Support-Kanal des Bots an den Entwickler."
+       ]
+      ]
+     ],
+     [
+      "Geplante QOTD und KI-generierte Inhalte",
+      [
+       [
+        "p",
+        "Wenn ein Serverinhaber Scheduled QOTD aktiviert, generiert und veröffentlicht der Bot Fragen im gewählten Intervall (alle 1, 6, 12 oder 24 Stunden) in der konfigurierten Bot-Sprache und unter Verwendung aktueller QOTDs als Kontext. Berechtigte QOTD-Manager können außerdem /random_qotd ausführen, um sofort eine Frage zu generieren und zu veröffentlichen. Beide Funktionen verwenden Groq, einen unabhängigen Drittanbieter. Der Serverinhaber sollte keine vertraulichen oder sensiblen Inhalte in aktuellen QOTDs bereitstellen, die als Kontext an Groq gesendet werden."
+       ],
+       [
+        "p",
+        "KI-generierte Fragen können ungeeignet, ungenau, wiederholt oder unerwartet sein. Quello garantiert keine Fehlerfreiheit oder Eignung für jede Community. Serveradministratoren können Scheduled QOTD jederzeit deaktivieren; /random_qotd wird nur auf Anfrage eines berechtigten Mitglieds ausgeführt."
+       ],
+       [
+        "p",
+        "Bei Fehlern während der Generierung oder Veröffentlichung versucht Quello bis zu einer Stunde lang alle fünf Minuten erneut. Danach versucht der Bot, den Serverinhaber auf Englisch zu benachrichtigen."
+       ]
+      ]
+     ],
+     [
+      "Drittanbieter",
+      [
+       [
+        "p",
+        "Quello ist von Discord abhängig und kann Drittanbieter-Infrastruktur und KI-Dienste verwenden, darunter Groq für die geplante Fragengenerierung. Für die Nutzung dieser Dienste können zusätzlich deren eigene Bedingungen und Richtlinien gelten. Quello ist nicht für Drittanbieter-Dienste verantwortlich, die außerhalb seiner Kontrolle liegen."
        ]
       ]
      ]
@@ -770,13 +848,13 @@ window.QUELLO_LEGAL = {
       [
        [
         "p",
-        "Le site web de Quello peut proposer un tableau de bord où vous vous connectez avec Discord (portée « identify » uniquement) pour gérer les serveurs pour lesquels vous êtes autorisé. Ce que vous pouvez faire dépend de votre rôle sur le serveur :"
+        "Le site web de Quello propose un tableau de bord avec une connexion Discord OAuth2 utilisant les scopes identify et guilds. Quello lit votre profil de base et les indicateurs d’autorisations des serveurs afin d’identifier les serveurs dont vous êtes propriétaire ou administrateur. Vos possibilités dépendent de votre rôle sur le serveur :"
        ],
        [
         "ul",
         [
-         "le propriétaire du serveur peut modifier les paramètres et utiliser les modes maintenance et verrouillage ;",
-         "le propriétaire du serveur et les membres disposant du rôle de gestionnaire autorisé peuvent publier et modifier des QOTD et examiner les suggestions."
+         "le propriétaire du serveur, un administrateur Discord ou le propriétaire du Bot peut modifier les paramètres, gérer Scheduled QOTD (intervalle de 1, 6, 12 ou 24 heures), utiliser les modes maintenance et verrouillage et lancer /random_qotd pour publier immédiatement une question générée par l’IA ;",
+         "les membres disposant d’un rôle autorisé configuré peuvent publier et modifier des QOTD, examiner les suggestions et consulter les classements et les statistiques."
         ]
        ],
        [
@@ -840,6 +918,32 @@ window.QUELLO_LEGAL = {
        [
         "p",
         "Pour toute question concernant Quello ou ces Conditions, veuillez contacter le développeur via le canal d’assistance officiel du Bot."
+       ]
+      ]
+     ],
+     [
+      "QOTD programmés et contenu généré par l’IA",
+      [
+       [
+        "p",
+        "Si le propriétaire d’un serveur active les QOTD programmés, Quello génère et publie des questions à l’intervalle choisi (toutes les 1, 6, 12 ou 24 heures), dans la langue configurée du bot et avec le contexte des QOTD récents. Un responsable QOTD autorisé peut également utiliser /random_qotd pour générer et publier immédiatement une question. Les deux fonctions utilisent Groq, un service tiers indépendant. Le propriétaire doit éviter que les QOTD récents transmis comme contexte contiennent des informations confidentielles ou sensibles."
+       ],
+       [
+        "p",
+        "Les questions générées par l’IA peuvent être inadaptées, inexactes, répétitives ou inattendues. Quello ne garantit pas qu’elles soient sans erreur ou adaptées à chaque communauté. Les administrateurs peuvent désactiver les QOTD programmés ; /random_qotd ne fonctionne que lorsqu’un membre autorisé le lance."
+       ],
+       [
+        "p",
+        "En cas d’échec de génération ou de publication, Quello réessaie toutes les cinq minutes pendant une heure maximum. Ensuite, le bot tente d’avertir le propriétaire du serveur en anglais."
+       ]
+      ]
+     ],
+     [
+      "Services tiers",
+      [
+       [
+        "p",
+        "Quello dépend de Discord et peut utiliser une infrastructure et des services d’IA tiers, notamment Groq pour la génération programmée de questions. L’utilisation de ces services peut également être soumise à leurs propres conditions et politiques. Quello n’est pas responsable des services tiers qu’il ne contrôle pas."
        ]
       ]
      ]
@@ -953,7 +1057,7 @@ window.QUELLO_LEGAL = {
       [
        [
         "p",
-        "Il sito web di Quello può offrire una dashboard in cui accedi con Discord (solo lo scope identify) per gestire i server per cui sei autorizzato. Ciò che puoi fare dipende dal tuo ruolo nel server:"
+        "Il sito web di Quello offre una dashboard con accesso Discord OAuth2 tramite gli scope identify e guilds. Quello legge il tuo profilo di base e i permessi dei server per identificare quelli di cui sei proprietario o amministratore. Le azioni disponibili dipendono dal tuo ruolo nel server:"
        ],
        [
         "ul",
@@ -1023,6 +1127,32 @@ window.QUELLO_LEGAL = {
        [
         "p",
         "Per domande o dubbi su Quello o su questi Termini, contatta lo sviluppatore tramite il canale di supporto ufficiale del Bot."
+       ]
+      ]
+     ],
+     [
+      "Scheduled QOTD e contenuti generati dall’IA",
+      [
+       [
+        "p",
+        "Se attivato dal proprietario del server, Scheduled QOTD genera e pubblica domande all’intervallo scelto (ogni 1, 6, 12 o 24 ore), usando la lingua configurata del bot e il contesto dei QOTD recenti. Un responsabile QOTD autorizzato può anche usare /random_qotd per generare e pubblicare subito una domanda. Entrambe le funzioni usano Groq, un servizio terzo indipendente. Il proprietario del server deve evitare che i QOTD recenti inviati come contesto contengano informazioni riservate o sensibili."
+       ],
+       [
+        "p",
+        "Le domande generate dall’IA possono essere inappropriate, inesatte, ripetitive o impreviste. Quello non garantisce che siano prive di errori o adatte a ogni community. Gli amministratori possono disattivare Scheduled QOTD; /random_qotd viene eseguito solo su richiesta di un membro autorizzato."
+       ],
+       [
+        "p",
+        "Se la generazione o la pubblicazione non riesce, Quello riprova ogni cinque minuti per un massimo di un’ora. In seguito, il bot tenta di avvisare il proprietario del server in inglese."
+       ]
+      ]
+     ],
+     [
+      "Servizi di terze parti",
+      [
+       [
+        "p",
+        "Quello dipende da Discord e può usare infrastrutture e servizi AI di terze parti, incluso Groq per la generazione programmata delle domande. L’uso di tali servizi può essere soggetto anche ai rispettivi termini e alle rispettive informative. Quello non è responsabile dei servizi di terze parti che non controlla."
        ]
       ]
      ]
@@ -1124,7 +1254,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "If you sign in to the website dashboard with Discord, Quello receives your Discord User ID, display name, and avatar through Discord OAuth2 (the identify scope only; no email, password, messages, or server list). The Discord access token is used once to read this profile and is then revoked on a best-effort basis."
+        "If you sign in to the website dashboard with Discord, Quello receives your Discord User ID, display name, and avatar through the identify scope, and requests the guilds scope to read your server list and permission flags. It uses those flags to identify servers where you are the owner or have Administrator permission. It does not request your email, password, or message history. The Discord access token is used for these requests and then revoked on a best-effort basis."
        ],
        [
         "p",
@@ -1133,8 +1263,8 @@ window.QUELLO_LEGAL = {
        [
         "ul",
         [
-         "the server owner (and the Bot’s developer) can view and change settings, use Maintenance and Lock, publish and edit QOTDs, review suggestions, and read the activity and audit logs;",
-         "members who hold the server’s allowed manager role can view settings, publish and edit QOTDs, and review suggestions."
+         "the server owner, a Discord Administrator, or the Bot’s developer can view and change settings, manage Scheduled QOTD, use Maintenance and Lock, publish and edit QOTDs, review suggestions, and read the activity and audit logs;",
+         "members who hold the server’s configured allowed role can view settings, publish and edit QOTDs, review suggestions, and view the leaderboard and statistics."
         ]
        ],
        [
@@ -1261,6 +1391,45 @@ window.QUELLO_LEGAL = {
         "For questions about this Privacy Policy, data processing, or deletion requests, please contact the developer through the Bot’s official support channel."
        ]
       ]
+     ],
+     [
+      "Dashboard OAuth permissions",
+      [
+       [
+        "p",
+        "Dashboard sign-in uses Discord OAuth2 with the identify and guilds scopes. Quello reads your basic profile and the list of servers and permission flags Discord returns, then keeps only server IDs where you are the owner or have the Administrator permission. This is used to show eligible servers and check access. The OAuth access token is revoked on a best-effort basis after the required data is read."
+       ],
+       [
+        "p",
+        "The signed dashboard session contains your user profile and the eligible server IDs so the API can enforce server access. The session is stored in your browser and expires according to the configured session lifetime (7 days by default)."
+       ]
+      ]
+     ],
+     [
+      "Scheduled QOTD and AI provider",
+      [
+       [
+        "p",
+        "When Scheduled QOTD is enabled, or an authorized member runs /random_qotd, Quello uses the server’s configured bot language (English or Russian) and recent QOTD question text to prepare a prompt for question generation. The generated question is saved temporarily as a pending item until publication succeeds or the retry window ends."
+       ],
+       [
+        "p",
+        "The prompt and recent-question context are sent to Groq through its API to generate a question. Groq is an independent third-party service and processes the submitted request under its own terms and privacy practices. Do not enable this feature if your server’s recent QOTDs contain information that should not be sent to an external AI provider. Quello’s prompt asks for a general, non-sensitive question and excludes private or sensitive disclosures."
+       ],
+       [
+        "p",
+        "If generation or publication fails, Quello retries every five minutes for up to one hour. After the retry window, it attempts to notify the server owner by direct message in English."
+       ]
+      ]
+     ],
+     [
+      "Automated decisions and controls",
+      [
+       [
+        "p",
+        "The /random_qotd command can also trigger an immediate AI-generated QOTD for an authorized member. Scheduled QOTD does not make decisions about individual members. Server owners can enable or disable the feature, set its first local publication time and IANA time zone, and choose a recurring interval of every 1, 6, 12 or 24 hours in the Dashboard. Authorized QOTD managers can also run /random_qotd for immediate AI generation and publication."
+       ]
+      ]
      ]
     ]
    },
@@ -1358,7 +1527,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Если вы входите в панель управления на сайте через Discord, Quello получает ваш Discord User ID, отображаемое имя и аватар через Discord OAuth2 (только область identify: без почты, пароля, сообщений и списка серверов). Токен доступа Discord используется один раз, чтобы прочитать этот профиль, после чего по возможности отзывается."
+        "Если вы входите в панель управления на сайте через Discord, Quello получает ваш Discord User ID, отображаемое имя и аватар через область identify, а также запрашивает область guilds для чтения списка серверов и флагов разрешений. Эти данные используются для определения серверов, где вы владелец или имеете право Administrator. Quello не запрашивает вашу почту, пароль или историю сообщений. Токен Discord используется для этих запросов и затем по возможности отзывается."
        ],
        [
         "p",
@@ -1367,8 +1536,8 @@ window.QUELLO_LEGAL = {
        [
         "ul",
         [
-         "владелец сервера (и разработчик Бота) может просматривать и менять настройки, использовать режимы обслуживания и блокировки, публиковать и редактировать QOTD, рассматривать предложения и читать журналы активности и аудита;",
-         "участники с разрешённой ролью менеджера на сервере могут просматривать настройки, публиковать и редактировать QOTD и рассматривать предложения."
+         "владелец сервера, пользователь с правом Discord Administrator или разработчик Бота может просматривать и менять настройки, управлять Scheduled QOTD, использовать режимы обслуживания и блокировки, публиковать и редактировать QOTD, рассматривать предложения и читать журналы активности и аудита;",
+         "участники с настроенной разрешённой ролью могут просматривать настройки, публиковать и редактировать QOTD, рассматривать предложения, а также просматривать рейтинг и статистику."
         ]
        ],
        [
@@ -1495,6 +1664,45 @@ window.QUELLO_LEGAL = {
         "По вопросам об этой Политике конфиденциальности, обработке данных или запросам на удаление свяжитесь с разработчиком через официальный канал поддержки Бота."
        ]
       ]
+     ],
+     [
+      "OAuth-разрешения панели управления",
+      [
+       [
+        "p",
+        "Вход в Dashboard использует Discord OAuth2 с разрешениями identify и guilds. Quello получает базовый профиль и список серверов с флагами разрешений, возвращаемый Discord, после чего оставляет только ID серверов, где пользователь является владельцем или имеет право Administrator. Это необходимо для отображения доступных серверов и проверки доступа. Токен OAuth отзывается после чтения необходимых данных, если это удаётся сделать."
+       ],
+       [
+        "p",
+        "Подписанная сессия Dashboard содержит профиль пользователя и ID доступных серверов, чтобы API мог проверять права доступа. Сессия хранится в браузере и истекает согласно настроенному сроку (по умолчанию 7 дней)."
+       ]
+      ]
+     ],
+     [
+      "Scheduled QOTD и поставщик ИИ",
+      [
+       [
+        "p",
+        "Когда включён Scheduled QOTD или участник с соответствующими правами запускает /random_qotd, Quello использует основной язык бота сервера (английский или русский) и текст недавних вопросов QOTD для подготовки запроса на генерацию. Сгенерированный вопрос временно сохраняется как ожидающий публикации до успешной отправки или завершения периода повторных попыток."
+       ],
+       [
+        "p",
+        "Запрос и контекст недавних вопросов передаются Groq через API для генерации вопроса. Groq — независимый сторонний сервис, который обрабатывает запрос согласно собственным условиям и политике конфиденциальности. Не включайте эту функцию, если среди недавних QOTD есть сведения, которые нельзя передавать внешнему поставщику ИИ. Запрос Quello просит создать общий вопрос без чувствительных тем и побуждения раскрывать личную информацию."
+       ],
+       [
+        "p",
+        "При ошибке генерации или публикации Quello повторяет попытку каждые пять минут в течение часа. После завершения этого периода бот пытается уведомить владельца сервера личным сообщением на английском языке."
+       ]
+      ]
+     ],
+     [
+      "Автоматизация и управление",
+      [
+       [
+        "p",
+        "Команда /random_qotd также позволяет участнику с соответствующими правами немедленно сгенерировать и опубликовать вопрос с помощью ИИ. Scheduled QOTD не принимает решений об отдельных участниках. Владелец сервера может включить или выключить функцию, задать время первой публикации и часовой пояс IANA, а также выбрать интервал: каждый час, каждые 6, 12 или 24 часа. Участники с правами управления QOTD также могут запускать /random_qotd для немедленной генерации и публикации."
+       ]
+      ]
      ]
     ]
    },
@@ -1592,7 +1800,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Wenn du dich mit Discord im Website-Dashboard anmeldest, erhält Quello deine Discord-Nutzer-ID, deinen Anzeigenamen und deinen Avatar über Discord OAuth2 (nur der Scope „identify“; keine E-Mail, kein Passwort, keine Nachrichten, keine Serverliste). Das Discord-Zugriffstoken wird einmalig zum Lesen dieses Profils verwendet und danach nach Möglichkeit widerrufen."
+        "Wenn du dich mit Discord im Website-Dashboard anmeldest, erhält Quello deine Discord-Nutzer-ID, deinen Anzeigenamen und deinen Avatar über den Scope identify und fordert zusätzlich den Scope guilds an, um deine Serverliste und Berechtigungsflags zu lesen. Damit werden Server ermittelt, auf denen du Eigentümer bist oder Administratorrechte hast. E-Mail-Adresse, Passwort oder Nachrichtenverlauf werden nicht angefordert. Das Discord-Zugriffstoken wird für diese Anfragen verwendet und anschließend nach Möglichkeit widerrufen."
        ],
        [
         "p",
@@ -1602,7 +1810,7 @@ window.QUELLO_LEGAL = {
         "ul",
         [
          "Der Serverinhaber (und der Entwickler des Bots) kann Einstellungen ansehen und ändern, Wartung und Sperre verwenden, QOTDs veröffentlichen und bearbeiten, Vorschläge prüfen sowie Aktivitäts- und Audit-Protokolle lesen.",
-         "Mitglieder mit der erlaubten Manager-Rolle des Servers können Einstellungen ansehen, QOTDs veröffentlichen und bearbeiten sowie Vorschläge prüfen."
+         "Mitglieder mit einer konfigurierten erlaubten Rolle können Einstellungen ansehen, QOTDs veröffentlichen und bearbeiten, Vorschläge prüfen sowie Bestenliste und Statistiken ansehen."
         ]
        ],
        [
@@ -1729,6 +1937,45 @@ window.QUELLO_LEGAL = {
         "Bei Fragen zu dieser Datenschutzerklärung, zur Datenverarbeitung oder zu Löschanfragen wende dich bitte über den offiziellen Support-Kanal des Bots an den Entwickler."
        ]
       ]
+     ],
+     [
+      "OAuth-Berechtigungen des Dashboards",
+      [
+       [
+        "p",
+        "Die Dashboard-Anmeldung verwendet Discord OAuth2 mit den Scopes identify und guilds. Quello liest das Basisprofil sowie die von Discord zurückgegebene Serverliste und Berechtigungsflags und behält anschließend nur Server-IDs, bei denen die Person Eigentümer ist oder Administratorrechte besitzt. Dies dient der Anzeige zugänglicher Server und der Zugriffskontrolle. Das OAuth-Zugriffstoken wird nach dem Abruf der benötigten Daten nach Möglichkeit widerrufen."
+       ],
+       [
+        "p",
+        "Die signierte Dashboard-Sitzung enthält das Nutzerprofil und die zugelassenen Server-IDs, damit die API den Zugriff prüfen kann. Die Sitzung wird im Browser gespeichert und läuft gemäß der konfigurierten Sitzungsdauer ab (standardmäßig 7 Tage)."
+       ]
+      ]
+     ],
+     [
+      "Geplante QOTD und KI-Anbieter",
+      [
+       [
+        "p",
+        "Wenn Scheduled QOTD aktiviert ist oder ein berechtigtes Mitglied /random_qotd ausführt, verwendet Quello die konfigurierte Bot-Sprache des Servers (Englisch oder Russisch) sowie aktuelle QOTD-Fragen als Kontext für die Generierung. Die generierte Frage wird vorübergehend gespeichert, bis die Veröffentlichung erfolgreich ist oder das Wiederholungsfenster endet."
+       ],
+       [
+        "p",
+        "Die Anfrage und der Kontext der letzten Fragen werden zur Generierung über die API an Groq gesendet. Groq ist ein unabhängiger Drittanbieter und verarbeitet die übermittelte Anfrage gemäß seinen eigenen Bedingungen und Datenschutzpraktiken. Aktiviere diese Funktion nicht, wenn aktuelle QOTDs Informationen enthalten, die nicht an einen externen KI-Anbieter übermittelt werden sollen. Die Quello-Anfrage verlangt eine allgemeine, nicht sensible Frage und soll nicht zur Offenlegung privater Erlebnisse auffordern."
+       ],
+       [
+        "p",
+        "Bei einem Fehler während der Generierung oder Veröffentlichung versucht Quello bis zu einer Stunde lang alle fünf Minuten erneut. Danach versucht der Bot, den Serverinhaber per Direktnachricht auf Englisch zu benachrichtigen."
+       ]
+      ]
+     ],
+     [
+      "Automatisierung und Kontrolle",
+      [
+       [
+        "p",
+        "Scheduled QOTD trifft keine Entscheidungen über einzelne Mitglieder. Serverinhaber können die Funktion im Dashboard aktivieren oder deaktivieren, die erste lokale Veröffentlichungszeit und IANA-Zeitzone festlegen und ein Intervall von 1, 6, 12 oder 24 Stunden wählen. Berechtigte QOTD-Manager können /random_qotd auch für eine sofortige KI-Generierung und Veröffentlichung verwenden."
+       ]
+      ]
      ]
     ]
    },
@@ -1826,7 +2073,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Si vous vous connectez au tableau de bord du site avec Discord, Quello reçoit votre identifiant d’utilisateur Discord, votre nom d’affichage et votre avatar via Discord OAuth2 (portée « identify » uniquement ; ni e-mail, ni mot de passe, ni messages, ni liste de serveurs). Le jeton d’accès Discord est utilisé une seule fois pour lire ce profil, puis révoqué dans la mesure du possible."
+        "Si vous vous connectez au tableau de bord du site avec Discord, Quello reçoit votre identifiant d’utilisateur Discord, votre nom d’affichage et votre avatar via le scope identify, et demande également le scope guilds pour lire votre liste de serveurs et les indicateurs d’autorisations. Ces données servent à identifier les serveurs dont vous êtes propriétaire ou administrateur. Votre e-mail, votre mot de passe et votre historique de messages ne sont pas demandés. Le jeton d’accès Discord est utilisé pour ces requêtes puis révoqué dans la mesure du possible."
        ],
        [
         "p",
@@ -1836,7 +2083,7 @@ window.QUELLO_LEGAL = {
         "ul",
         [
          "le propriétaire du serveur (et le développeur du Bot) peut consulter et modifier les paramètres, utiliser la maintenance et le verrouillage, publier et modifier des QOTD, examiner les suggestions et lire les journaux d’activité et d’audit ;",
-         "les membres disposant du rôle de gestionnaire autorisé du serveur peuvent consulter les paramètres, publier et modifier des QOTD et examiner les suggestions."
+         "les membres disposant d’un rôle autorisé configuré peuvent consulter les paramètres, publier et modifier des QOTD, examiner les suggestions et consulter le classement et les statistiques."
         ]
        ],
        [
@@ -1963,6 +2210,45 @@ window.QUELLO_LEGAL = {
         "Pour toute question sur cette Politique de confidentialité, le traitement des données ou les demandes de suppression, veuillez contacter le développeur via le canal d’assistance officiel du Bot."
        ]
       ]
+     ],
+     [
+      "Autorisations OAuth du tableau de bord",
+      [
+       [
+        "p",
+        "La connexion au tableau de bord utilise Discord OAuth2 avec les scopes identify et guilds. Quello lit le profil de base ainsi que la liste des serveurs et les indicateurs d’autorisations fournis par Discord, puis ne conserve que les identifiants des serveurs dont la personne est propriétaire ou administratrice. Ces données servent à afficher les serveurs accessibles et à contrôler les accès. Le jeton OAuth est révoqué au mieux après la lecture des données nécessaires."
+       ],
+       [
+        "p",
+        "La session signée du tableau de bord contient le profil utilisateur et les identifiants des serveurs autorisés afin que l’API puisse appliquer les contrôles d’accès. Elle est stockée dans le navigateur et expire selon la durée configurée (7 jours par défaut)."
+       ]
+      ]
+     ],
+     [
+      "QOTD programmés et fournisseur d’IA",
+      [
+       [
+        "p",
+        "Si le propriétaire d’un serveur active les QOTD programmés, Quello utilise la langue configurée du bot sur ce serveur (anglais ou russe) et le texte des questions QOTD récentes pour préparer une demande de génération. La question générée est temporairement conservée jusqu’à la réussite de la publication ou la fin de la période de nouvelles tentatives."
+       ],
+       [
+        "p",
+        "La demande et le contexte des questions récentes sont envoyés à Groq via son API afin de générer une question. Groq est un service tiers indépendant qui traite la demande selon ses propres conditions et pratiques de confidentialité. N’activez pas cette fonction si les QOTD récents contiennent des informations qui ne doivent pas être transmises à un fournisseur d’IA externe. La consigne de Quello demande une question générale et non sensible, sans inciter à révéler des expériences privées."
+       ],
+       [
+        "p",
+        "En cas d’échec de génération ou de publication, Quello réessaie toutes les cinq minutes pendant une heure maximum. Ensuite, le bot tente d’avertir le propriétaire du serveur par message privé en anglais."
+       ]
+      ]
+     ],
+     [
+      "Automatisation et contrôle",
+      [
+       [
+        "p",
+        "Les QOTD programmés ne prennent pas de décisions concernant des membres individuels. Le propriétaire du serveur peut activer ou désactiver la fonction, définir l’heure de la première publication et le fuseau IANA, puis choisir un intervalle de 1, 6, 12 ou 24 heures dans le tableau de bord. Les responsables QOTD autorisés peuvent aussi utiliser /random_qotd pour générer et publier immédiatement une question avec l’IA."
+       ]
+      ]
      ]
     ]
    },
@@ -2060,7 +2346,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Se accedi alla dashboard del sito con Discord, Quello riceve il tuo ID utente Discord, il nome visualizzato e l’avatar tramite Discord OAuth2 (solo lo scope identify; nessuna e-mail, password, messaggio o elenco di server). Il token di accesso Discord viene usato una sola volta per leggere questo profilo e poi revocato per quanto possibile."
+        "Se accedi alla dashboard del sito con Discord, Quello riceve il tuo ID utente Discord, il nome visualizzato e l’avatar tramite lo scope identify e richiede anche lo scope guilds per leggere l’elenco dei server e i relativi permessi. Questi dati servono a identificare i server di cui sei proprietario o amministratore. Non vengono richiesti email, password o cronologia dei messaggi. Il token di accesso Discord viene usato per queste richieste e poi revocato, per quanto possibile."
        ],
        [
         "p",
@@ -2195,6 +2481,45 @@ window.QUELLO_LEGAL = {
        [
         "p",
         "Per domande sulla presente Informativa sulla privacy, sul trattamento dei dati o richieste di cancellazione, contatta lo sviluppatore tramite il canale di supporto ufficiale del Bot."
+       ]
+      ]
+     ],
+     [
+      "Autorizzazioni OAuth della Dashboard",
+      [
+       [
+        "p",
+        "L’accesso alla Dashboard usa Discord OAuth2 con gli scope identify e guilds. Quello legge il profilo di base e l’elenco dei server con i relativi permessi restituiti da Discord, quindi conserva solo gli ID dei server in cui la persona è proprietaria o dispone del permesso Administrator. Questi dati servono a mostrare i server accessibili e verificare gli accessi. Il token OAuth viene revocato, quando possibile, dopo aver letto i dati necessari."
+       ],
+       [
+        "p",
+        "La sessione firmata della Dashboard contiene il profilo utente e gli ID dei server autorizzati, così l’API può applicare i controlli di accesso. La sessione è conservata nel browser e scade secondo la durata configurata (7 giorni per impostazione predefinita)."
+       ]
+      ]
+     ],
+     [
+      "QOTD programmati e provider AI",
+      [
+       [
+        "p",
+        "Quando Scheduled QOTD è attivo o un membro autorizzato esegue /random_qotd, Quello usa la lingua configurata del bot (inglese o russo) e il testo dei QOTD recenti come contesto per generare una domanda. La domanda generata viene salvata temporaneamente finché la pubblicazione non riesce o termina la finestra dei tentativi."
+       ],
+       [
+        "p",
+        "La richiesta e il contesto delle domande recenti vengono inviati a Groq tramite la sua API per generare una domanda. Groq è un servizio terzo indipendente e tratta la richiesta secondo i propri termini e pratiche sulla privacy. Non attivare questa funzione se i QOTD recenti contengono informazioni che non devono essere inviate a un provider AI esterno. La richiesta di Quello chiede una domanda generale e non sensibile, senza sollecitare la condivisione di esperienze private."
+       ],
+       [
+        "p",
+        "Se la generazione o la pubblicazione non riesce, Quello riprova ogni cinque minuti per un massimo di un’ora. Al termine, il bot tenta di avvisare il proprietario del server con un messaggio diretto in inglese."
+       ]
+      ]
+     ],
+     [
+      "Automazione e controllo",
+      [
+       [
+        "p",
+        "Scheduled QOTD non prende decisioni sui singoli membri. Il proprietario del server può attivare o disattivare la funzione, impostare l’orario della prima pubblicazione e il fuso IANA e scegliere un intervallo di 1, 6, 12 o 24 ore nella Dashboard. I responsabili QOTD autorizzati possono anche usare /random_qotd per generare e pubblicare subito una domanda con l’IA."
        ]
       ]
      ]

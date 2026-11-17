@@ -31,7 +31,7 @@
   // owner = server owner / bot owner; moderator = holds the server's allowed role.
   const isOwner = () => !!detail && detail.access === 'owner';
   const readOnly = () => !isOwner();
-  const allowedTabs = () => (isOwner() ? ['settings', 'qotds', 'suggestions', 'logs'] : ['settings', 'qotds', 'suggestions']);
+  const allowedTabs = () => (isOwner() ? ['settings', 'qotds', 'suggestions', 'schedule', 'leaderboard', 'statistics', 'logs'] : ['settings', 'qotds', 'suggestions', 'leaderboard', 'statistics']);
 
   /* ------------------------------------------------------------- helpers */
   function el(tag, props) {
@@ -391,7 +391,7 @@
         badges),
       bar, panel);
 
-    const renderers = { settings: renderSettings, qotds: renderQotds, suggestions: renderSuggestions, logs: renderLogs };
+    const renderers = { settings: renderSettings, qotds: renderQotds, suggestions: renderSuggestions, schedule: renderSchedule, leaderboard: renderLeaderboard, statistics: renderStatistics, logs: renderLogs };
     renderers[tab](panel);
     updateBar();
   }
@@ -427,11 +427,15 @@
     if (paused) compose.append(el('div', { class: 'ro-banner warn', role: 'note', text: '⏸ ' + t('qotd_paused') }));
 
     const publishBtn = el('button', { class: 'button hero-primary', type: 'button', text: t('qotd_publish') });
+    const randomBtn = el('button', { class: 'button ghost', type: 'button', text: '✨ ' + t('qotd_random') });
+    const randomNote = el('p', { class: 'hint', text: t('qotd_random_hint') });
+    randomBtn.disabled = paused || busy;
     const counter = el('span', { class: 'counter', text: '0/1500' });
     const question = el('textarea', { class: 'textarea', id: 'qotdQuestion', rows: '4', maxlength: '1500', placeholder: t('qotd_question_ph') });
     const sync = () => {
       counter.textContent = question.value.length + '/1500';
       publishBtn.disabled = paused || busy || !question.value.trim();
+      randomBtn.disabled = paused || busy;
     };
     question.addEventListener('input', sync);
 
@@ -468,7 +472,28 @@
       }
     });
 
+    randomBtn.addEventListener('click', async () => {
+      if (busy || paused) return;
+      if (!window.confirm(t('qotd_random_confirm'))) return;
+      busy = true;
+      randomBtn.disabled = true;
+      publishBtn.disabled = true;
+      randomBtn.textContent = '✨ ' + t('qotd_random_loading');
+      try {
+        const result = await guildApi('/qotds/random', { method: 'POST' });
+        toast(t('qotd_random_published', { n: result.qotd.number, channel: result.qotd.channel_name }) + (result.qotd.thread_created ? '' : ' ' + t('qotd_thread_missing')), 'ok');
+        reload();
+      } catch (error) { fail(error); }
+      finally {
+        busy = false;
+        randomBtn.textContent = '✨ ' + t('qotd_random');
+        randomBtn.disabled = paused;
+        sync();
+      }
+    });
+
     compose.append(
+      el('div', { class: 'btn-row' }, randomBtn), randomNote,
       el('div', { class: 'field' }, el('label', { for: 'qotdQuestion', text: t('qotd_question') }), question, counter),
       el('div', { class: 'compose-row' },
         el('div', { class: 'field' }, el('label', { for: 'qotdLanguage', text: t('qotd_language') }), language),
@@ -599,6 +624,103 @@
 
   /* ------------------------------------------------------------ tab: logs (owner) */
   let logKind = 'logs';
+
+  /* ---------------------------------------------------------- tab: schedule */
+  function renderSchedule(panel) {
+    const card = el('section', { class: 'dash-card wide' }, el('h2', { text: t('schedule_title') }), el('p', { class: 'hint', text: t('schedule_desc') }));
+    card.append(el('p', { class: 'hint', text: t('schedule_owner') }));
+    const enabled = el('input', { type: 'checkbox', id: 'scheduleEnabled' });
+    const time = el('input', { class: 'input', type: 'time', id: 'scheduleTime', required: true });
+    const interval = el('select', { class: 'input', id: 'scheduleInterval' },
+      el('option', { value: '24', text: t('schedule_every_24') }),
+      el('option', { value: '12', text: t('schedule_every_12') }),
+      el('option', { value: '6', text: t('schedule_every_6') }),
+      el('option', { value: '1', text: t('schedule_every_1') }));
+    const timezone = el('input', { class: 'input', type: 'text', id: 'scheduleTimezone', maxlength: '80', autocomplete: 'off', placeholder: 'Europe/Helsinki' });
+    const status = el('span', { class: 'badge-pill', text: t('loading') });
+    const saveSchedule = el('button', { class: 'button hero-primary', type: 'button', text: t('schedule_save') });
+    const note = el('p', { class: 'hint', text: t('schedule_retry') });
+    const form = el('div', { class: 'schedule-form' },
+      el('label', { class: 'schedule-toggle', for: 'scheduleEnabled' }, enabled, el('span', { text: t('schedule_enabled') })),
+      field('schedule_time', 'schedule_time', null, time, 'scheduleTime'),
+      field('schedule_interval', 'schedule_interval', null, interval, 'scheduleInterval'),
+      field('schedule_timezone', 'schedule_timezone', 'schedule_timezone_hint', timezone, 'scheduleTimezone'),
+      note, el('div', { class: 'btn-row' }, saveSchedule));
+    card.append(el('div', { class: 'schedule-status' }, status), form);
+    panel.append(card);
+    saveSchedule.disabled = true;
+    const scheduleSeq = ++viewSeq;
+    guildApi('/schedule').then(data => {
+      if (scheduleSeq !== viewSeq) return;
+      const schedule = data.schedule || {};
+      enabled.checked = !!schedule.enabled;
+      time.value = schedule.time || '10:00';
+      timezone.value = schedule.timezone || 'UTC';
+      interval.value = String(schedule.interval_hours || 24);
+      status.textContent = schedule.enabled ? t('schedule_status_on') : t('schedule_status_off');
+      status.className = 'badge-pill' + (schedule.enabled ? ' ok' : '');
+      saveSchedule.disabled = false;
+    }).catch(error => {
+      if (scheduleSeq !== viewSeq) return;
+      status.textContent = (error && error.message) || t('err_server');
+      status.className = 'badge-pill bad';
+      saveSchedule.disabled = true;
+    });
+    saveSchedule.addEventListener('click', async () => {
+      if (busy) return;
+      if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(time.value) || !/^[A-Za-z0-9_+-]+(?:\/[A-Za-z0-9_+.-]+)*$/.test(timezone.value.trim())) {
+        toast(t('schedule_invalid'), 'bad'); return;
+      }
+      busy = true; saveSchedule.disabled = true;
+      try {
+        const result = await guildApi('/schedule', { method: 'PATCH', body: { enabled: enabled.checked, time: time.value, timezone: timezone.value.trim(), interval_hours: Number(interval.value) } });
+        status.textContent = result.schedule.enabled ? t('schedule_status_on') : t('schedule_status_off');
+        status.className = 'badge-pill' + (result.schedule.enabled ? ' ok' : '');
+        toast(t('schedule_saved'), 'ok');
+      } catch (error) { fail(error); }
+      finally { busy = false; saveSchedule.disabled = false; }
+    });
+  }
+
+  /* -------------------------------------------------------- tab: leaderboard */
+  function renderLeaderboard(panel) {
+    const switcher = el('div', { class: 'sub-tabs', role: 'tablist' });
+    const list = el('div', { class: 'item-list' });
+    let kind = 'creators';
+    const draw = data => {
+      const rows = kind === 'creators' ? data.creators : data.responders;
+      list.replaceChildren();
+      if (!rows || !rows.length) { list.append(el('p', { class: 'empty-note', text: t('leader_empty') })); return; }
+      rows.forEach((row, index) => {
+        const count = Number(row.count) || 0;
+        const label = kind === 'creators' ? t('leader_count_qotd', { n: count }) : t('leader_count_answers', { n: count });
+        list.append(el('article', { class: 'leader-row' },
+          el('span', { class: 'leader-rank', text: String(index + 1).padStart(2, '0') }),
+          el('div', { class: 'leader-person' }, el('strong', { text: row.user_name || ('User ' + row.user_id) }), el('small', { text: row.user_id })),
+          el('span', { class: 'badge-pill', text: label })));
+      });
+    };
+    const load = () => loadInto(list, () => guildApi('/leaderboard'), draw);
+    ['creators', 'responders'].forEach(key => switcher.append(el('button', { class: 'tab small' + (key === kind ? ' active' : ''), type: 'button', role: 'tab', text: t(key === 'creators' ? 'leader_creators' : 'leader_responders'), onclick: () => { kind = key; switcher.querySelectorAll('button').forEach((b, i) => b.classList.toggle('active', i === (key === 'creators' ? 0 : 1))); load(); } })));
+    panel.append(switcher, list); load();
+  }
+
+  /* ---------------------------------------------------------- tab: statistics */
+  function renderStatistics(panel) {
+    const grid = el('div', { class: 'stats-grid' });
+    const refresh = el('button', { class: 'button ghost', type: 'button', text: t('stats_refresh') });
+    const wrap = el('section', { class: 'dash-card wide' }, el('div', { class: 'stats-head' }, el('h2', { text: t('tab_statistics') }), refresh), grid);
+    panel.append(wrap);
+    const load = () => loadInto(grid, () => guildApi('/statistics'), data => {
+      const st = data.statistics || {};
+      const values = [
+        ['stats_total', st.total], ['stats_month', st.month_total], ['stats_week', st.week_total],
+        ['stats_english', st.english], ['stats_russian', st.russian],
+      ];
+      grid.replaceChildren(...values.map(([key, value]) => el('article', { class: 'stat-card' }, el('span', { text: t(key) },), el('strong', { text: String(Number(value) || 0) }))));
+    });
+    refresh.addEventListener('click', load); load();
+  }
 
   function renderLogs(panel) {
     const kinds = ['logs', 'audit'];
@@ -736,7 +858,7 @@
   const hashFor = (id, name) => '#g=' + id + (name && name !== 'settings' ? '&t=' + name : '');
 
   function parseRoute() {
-    const match = /^#g=(\d{1,20})(?:&t=(settings|qotds|suggestions|logs))?$/.exec(location.hash);
+    const match = /^#g=(\d{1,20})(?:&t=(settings|qotds|suggestions|schedule|leaderboard|statistics|logs))?$/.exec(location.hash);
     return match ? { id: match[1], tab: match[2] || 'settings' } : null;
   }
 
