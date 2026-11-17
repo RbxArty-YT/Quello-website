@@ -120,14 +120,14 @@
   async function openConsole() {
     if (!API || /example\.com/i.test(API)) { toast(tr('offline')); return; }
     if (!token()) { toast(tr('signin')); setTimeout(() => { location.href = 'login.html'; }, 900); return; }
-    try { const me = await request('/api/me'); if (!me.is_creator) { toast(tr('denied')); return; } creator = true; }
+    try { const me = await request('/api/me'); if (!me.is_bot_owner) { toast(tr('denied')); return; } creator = true; }
     catch (e) { toast(e.message || tr('offline')); return; }
     makeDrawer(); drawer.classList.add('open'); document.body.classList.add('creator-console-open'); active = 'overview'; loadOverview();
   }
   function closeConsole(){if(drawer)drawer.classList.remove('open');document.body.classList.remove('creator-console-open');}
   async function verifyCreator() {
     if(!token())return;
-    try {const me=await request('/api/me');if(me.is_creator){creator=true;addSidebarButton();addFloatingButton();}}
+    try {const me=await request('/api/me');if(me.is_bot_owner){creator=true;addSidebarButton();addFloatingButton();}}
     catch(_){}
   }
   document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.shiftKey&&e.key.toLowerCase()==='k'){e.preventDefault();openConsole();}if(e.key==='Escape')closeConsole();});
