@@ -23,11 +23,11 @@
   --discord-bg:#1e1f22;--discord-embed:#2b2d31;
   --line:#252936;--line-strong:#303441;--line-hover:#3d4252;--line-soft:rgba(255,255,255,.07);
   --text:#f2f3f5;--text-strong:#fff;--text-2:#c9ccd1;--text-3:#b5bac1;--text-4:#8e9297;
-  --accent:#8b5cf6;--accent-2:#e044b8;--accent-text:#c69aff;--on-accent:#fff;
+  --accent:#5865f2;--accent-2:#b48cff;--accent-text:#9da6ff;--on-accent:#fff;
   --nav-bg:rgba(17,19,26,.9);
   --shadow-pop:0 18px 45px rgba(0,0,0,.45);
   --shadow-card:0 1px 0 rgba(255,255,255,.02);
-  --glow-1:rgba(139,92,246,.24);--glow-2:rgba(224,68,184,.18);--glow-3:rgba(255,77,109,.10);
+  --glow-1:rgba(88,101,242,.22);--glow-2:rgba(180,140,255,.14);--glow-3:rgba(46,204,170,.08);
   color-scheme:dark;
 }
 :root[data-theme="light"]{
@@ -37,17 +37,17 @@
   --discord-bg:#ffffff;--discord-embed:#f2f3f5;
   --line:#e2e5ee;--line-strong:#d5d9e4;--line-hover:#bfc4d4;--line-soft:rgba(15,17,23,.08);
   --text:#1d2130;--text-strong:#0e1018;--text-2:#363b4b;--text-3:#525869;--text-4:#666c7d;
-  --accent:#8b5cf6;--accent-2:#cf369e;--accent-text:#4651d1;--on-accent:#fff;
+  --accent:#5865f2;--accent-2:#7b4dff;--accent-text:#4651d1;--on-accent:#fff;
   --nav-bg:rgba(255,255,255,.82);
   --shadow-pop:0 18px 45px rgba(30,35,60,.16);
   --shadow-card:0 1px 2px rgba(30,35,60,.05),0 6px 20px rgba(30,35,60,.04);
-  --glow-1:rgba(139,92,246,.16);--glow-2:rgba(224,68,184,.18);--glow-3:rgba(255,77,109,.08);
+  --glow-1:rgba(88,101,242,.16);--glow-2:rgba(180,140,255,.14);--glow-3:rgba(46,204,170,.10);
   color-scheme:light;
 }
 
 body{font-family:var(--font-ui);background:var(--bg);transition:background-color .35s ease,color .35s ease}
 .language-option{font-family:var(--font-ui)!important}
-::selection{background:rgba(139,92,246,.35)}
+::selection{background:rgba(88,101,242,.35)}
 
 /* Soft animated aurora behind the page */
 body::before{
@@ -139,23 +139,23 @@ body::before{
 
 /* ---------- Hero ---------- */
 .hero-avatar{cursor:pointer;animation:q-float 5s ease-in-out infinite;transition:box-shadow .3s ease}
-.hero-avatar:hover{box-shadow:0 14px 45px rgba(139,92,246,.5)}
+.hero-avatar:hover{box-shadow:0 14px 45px rgba(88,101,242,.5)}
 .hero-avatar.boop{animation:q-boop .45s cubic-bezier(.3,1.8,.5,1)}
 .hero-avatar.spin{animation:q-spin 1s cubic-bezier(.5,0,.2,1)}
 @keyframes q-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes q-boop{0%{transform:scale(1)}35%{transform:scale(.86) rotate(-8deg)}100%{transform:scale(1)}}
 @keyframes q-spin{0%{transform:rotate(0) scale(1)}50%{transform:rotate(200deg) scale(1.2)}100%{transform:rotate(360deg) scale(1)}}
 .hero h1{
-  background:linear-gradient(100deg,var(--text-strong) 8%,#8b5cf6 34%,#e044b8 58%,#ff4d6d 76%,var(--text-strong) 94%);
+  background:linear-gradient(100deg,var(--text-strong) 20%,var(--accent-text) 45%,var(--accent-2) 55%,var(--text-strong) 80%);
   background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
   animation:q-shine 9s ease-in-out infinite;letter-spacing:-.02em;
 }
 @keyframes q-shine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
-.badge{box-shadow:0 6px 20px rgba(139,92,246,.35)}
+.badge{box-shadow:0 6px 20px rgba(88,101,242,.35)}
 
 /* Buttons: sheen on hover + click ripple */
 .button,.primary-button{position:relative;overflow:hidden;isolation:isolate;transition:transform .18s ease,box-shadow .18s ease,opacity .15s ease}
-.button:hover,.primary-button:hover{transform:translateY(-2px);opacity:1;box-shadow:0 10px 26px rgba(139,92,246,.38)}
+.button:hover,.primary-button:hover{transform:translateY(-2px);opacity:1;box-shadow:0 10px 26px rgba(88,101,242,.38)}
 .button:active,.primary-button:active{transform:translateY(0) scale(.98)}
 .button::after,.primary-button::after{
   content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
@@ -282,7 +282,7 @@ pre,code{overflow-wrap:anywhere}
 .language-switch.side-language{box-shadow:inset 0 0 0 1px var(--line-strong)!important}
 .language-switch.side-language:hover,.language-picker.open .language-switch.side-language{box-shadow:inset 0 0 0 1px var(--accent)!important}
 .flow-language.active{box-shadow:inset 0 0 0 1.5px var(--accent),0 0 0 3px rgba(88,101,242,.15)}
-.flow-step.active{box-shadow:inset 0 0 0 1px var(--accent),0 0 18px rgba(139,92,246,.3)}
+.flow-step.active{box-shadow:inset 0 0 0 1px var(--accent),0 0 18px rgba(88,101,242,.3)}
 .secondary-button{transition:background .16s ease,box-shadow .16s ease,transform .16s ease}
 .secondary-button:hover{background:var(--surface-hover);transform:translateY(-1px)}
 .button,.primary-button,.secondary-button,.flow-language{cursor:pointer;font-family:inherit}
@@ -301,7 +301,7 @@ html body button:focus-visible,html body a:focus-visible{outline:2px solid var(-
   --q-glass-bg: rgba(255,255,255,.82);
   --q-glass-line: rgba(105,86,210,.20);
   --q-glass-shadow: 0 14px 36px rgba(49,55,105,.09), 0 2px 8px rgba(49,55,105,.035);
-  --q-focus: #8b5cf6;
+  --q-focus: #6552d9;
   --q-glass-hover-line: rgba(105,86,210,.42);
   --q-glass-hover-shadow: 0 18px 42px rgba(55,52,120,.12), 0 0 0 1px rgba(123,77,255,.08), 0 0 26px rgba(123,77,255,.08);
 }
@@ -324,7 +324,7 @@ html body button:focus-visible,html body a:focus-visible{outline:2px solid var(-
   opacity: .75;
 }
 :root[data-theme="light"] .hero-redesign h1 {
-  background-image: linear-gradient(100deg,#292033 8%,#8b5cf6 32%,#e044b8 58%,#ff4d6d 78%,#292033 94%);
+  background-image: linear-gradient(100deg,#22233a 12%,#6352d9 43%,#8b5be7 58%,#22233a 88%);
   background-size: 240% 100%;
 }
 :root[data-theme="light"] .hero-orbit {
@@ -401,7 +401,7 @@ html body button:focus-visible,html body a:focus-visible{outline:2px solid var(-
   box-shadow: 0 8px 24px rgba(94,76,194,.12), inset 0 0 0 1px rgba(91,84,148,.18);
 }
 :root[data-theme="light"] :where(a,button,input,select,textarea,[tabindex]):focus-visible {
-  outline-color: #8b5cf6 !important;
+  outline-color: #6552d9 !important;
   box-shadow: 0 0 0 4px rgba(101,82,217,.16) !important;
 }
 
@@ -437,7 +437,7 @@ html body button:focus-visible,html body a:focus-visible{outline:2px solid var(-
 :root[data-theme="light"] .builder-panel textarea::placeholder,
 :root[data-theme="light"] .flow-input::placeholder { color:#77788c; opacity:1; }
 :root[data-theme="light"] .hero-tagline { color:#28263d; }
-:root[data-theme="light"] .hero-gradient-text { background-image:linear-gradient(105deg,#292033 8%,#8b5cf6 36%,#e044b8 66%,#ff4d6d 90%); }
+:root[data-theme="light"] .hero-gradient-text { background-image:linear-gradient(105deg,#29263f 8%,#6752d3 48%,#8c62dc 82%); }
 
 
 /* HARD OVERRIDE: ensure the hero QOTD question remains readable in light mode.

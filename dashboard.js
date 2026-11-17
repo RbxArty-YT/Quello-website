@@ -23,7 +23,7 @@
   let serverQuery = '';     // text typed in the server search boxes
   let redrawPicker = null;  // redraws the picker's grid while the picker is on screen
   let pickerBox = null;     // the picker's search input, kept in sync with the side-menu one
-  let tab = 'settings';     // settings | schedule | leaderboard | statistics | qotds | suggestions | logs
+  let tab = 'settings';     // settings | qotds | suggestions | logs
   let viewSeq = 0;          // drops answers that arrive after the person moved on
   let rerender = () => {};  // re-draws the current view (language change)
   let toastTimer = null;
@@ -31,7 +31,7 @@
   // owner = server owner / bot owner; moderator = holds the server's allowed role.
   const isOwner = () => !!detail && detail.access === 'owner';
   const readOnly = () => !isOwner();
-  const allowedTabs = () => (isOwner() ? ['settings', 'schedule', 'leaderboard', 'statistics', 'qotds', 'suggestions', 'logs'] : ['settings', 'leaderboard', 'statistics', 'qotds', 'suggestions']);
+  const allowedTabs = () => (isOwner() ? ['settings', 'qotds', 'suggestions', 'logs'] : ['settings', 'qotds', 'suggestions']);
 
   /* ------------------------------------------------------------- helpers */
   function el(tag, props) {
@@ -177,9 +177,7 @@
   function updateBar() {
     const count = Object.keys(pending).length;
     saveBar.classList.toggle('show', count > 0 && !!current && tab === 'settings' && !readOnly());
-    saveCount.textContent = !detail?.configured ? t('initial_setup_pending') : t('unsaved', { n: count });
-    saveBtn.textContent = !detail?.configured ? t('initial_setup_confirm') : t('save');
-    discardBtn.textContent = !detail?.configured ? t('initial_setup_cancel') : t('discard');
+    saveCount.textContent = t('unsaved', { n: count });
   }
 
   function field(key, labelKey, hintKey, control, controlId) {
@@ -366,12 +364,12 @@
     crumb.classList.remove('is-hidden');
     renderServerList();
 
-    if (!detail.configured && !isOwner()) {
-      app.replaceChildren(stateCard(t('notconf_title'), t('notconf_text')));
+    if (!detail.configured) {
+      app.replaceChildren(stateCard(t('notconf_title'), t('notconf_text'),
+        el('button', { class: 'button hero-primary', type: 'button', text: t('reload'), onclick: () => openGuild(guildId, tab, true) })));
       updateBar();
       return;
     }
-    if (!detail.configured) tab = 'settings';
     if (!allowedTabs().includes(tab)) tab = 'settings';
 
     const badges = el('div', { class: 'badges' });
@@ -393,7 +391,7 @@
         badges),
       bar, panel);
 
-    const renderers = { settings: renderSettings, schedule: renderSchedule, leaderboard: renderLeaderboard, statistics: renderStatistics, qotds: renderQotds, suggestions: renderSuggestions, logs: renderLogs };
+    const renderers = { settings: renderSettings, qotds: renderQotds, suggestions: renderSuggestions, logs: renderLogs };
     renderers[tab](panel);
     updateBar();
   }
@@ -401,93 +399,25 @@
   /* ------------------------------------------------------------ tab: settings */
   function renderSettings(panel) {
     const card = (titleKey, ...children) => el('section', { class: 'dash-card' }, el('h2', { text: t(titleKey) }), ...children);
-    if (!detail.configured) panel.append(el('div', { class: 'ro-banner', role: 'note', text: t('initial_setup_notice') }));
     if (readOnly()) panel.append(el('div', { class: 'ro-banner', role: 'note', text: '👁 ' + t('ro_banner') }));
-    const cards = [
-      card('sec_roles',
-        roleField('allowed_role', 'f_allowed_role', 'h_allowed_role', false),
-        roleField('mention_role', 'f_mention_role', 'h_mention_role', true)),
-      card('sec_channels',
-        channelField('english_channel', 'f_english_channel', 'h_english_channel'),
-        channelField('russian_channel', 'f_russian_channel', 'h_russian_channel')),
-      card('sec_mentions',
-        toggleField('mention_everyone', 'f_everyone'),
-        toggleField('mention_here', 'f_here'),
-        el('p', { class: 'hint', text: t('h_mentions') })),
-      card('sec_language', languageField()),
-    ];
-    if (detail.configured) cards.push(el('section', { class: 'dash-card wide state-card-controls' },
-      el('h2', { text: t('sec_status') }),
-      el('div', { class: 'state-controls' },
-        statusSwitch('maintenance', 'st_maintenance', 'h_maintenance_control'),
-        statusSwitch('lock', 'st_lock', 'h_lock_control'))));
-    panel.append(el('div', { class: 'dash-grid' }, ...cards));
-  }
-
-  /* --------------------------------------------------------- tab: Scheduled QOTD */
-  function renderSchedule(panel) {
-    const card = el('section', { class: 'dash-card wide' }, el('h2', { text: t('schedule_title') }), el('p', { class: 'hint', text: t('schedule_intro') }));
-    const enabled = el('input', { type: 'checkbox', id: 'scheduleEnabled', role: 'switch' });
-    const time = el('input', { class: 'input', type: 'time', id: 'scheduleTime', value: '10:00' });
-    const zone = el('input', { class: 'input', type: 'text', id: 'scheduleZone', placeholder: 'Asia/Yekaterinburg', autocomplete: 'off', list: 'scheduleTimezoneOptions', spellcheck: 'false' });
-    const timezoneOptions = el('datalist', { id: 'scheduleTimezoneOptions' },
-      ...['UTC', 'Europe/Helsinki', 'Europe/Moscow', 'Asia/Yekaterinburg', 'Asia/Tokyo', 'America/New_York', 'America/Los_Angeles'].map(value => el('option', { value })));
-    const saveSchedule = el('button', { class: 'button hero-primary', type: 'button', text: t('schedule_save') });
-    const note = el('p', { class: 'hint', text: t('schedule_retry_note') });
-    [enabled, time, zone].forEach(input => { input.disabled = readOnly(); });
-    saveSchedule.disabled = readOnly();
-    card.append(
-      el('div', { class: 'field' }, el('div', { class: 'switch-row' }, el('label', { for: 'scheduleEnabled', text: t('schedule_enabled') }), el('span', { class: 'switch' }, enabled, el('span', { class: 'switch-ui', 'aria-hidden': 'true' })))),
-      field('schedule-time', 'schedule_time', 'schedule_time_hint', time, 'scheduleTime'),
-      field('schedule-zone', 'schedule_timezone', 'schedule_timezone_hint', zone, 'scheduleZone'),
-      timezoneOptions, note, saveSchedule
-    );
-    panel.append(card);
-    guildApi('/schedule').then(data => {
-      enabled.checked = !!data.schedule.enabled;
-      time.value = data.schedule.time || '10:00';
-      zone.value = data.schedule.timezone || 'UTC';
-    }).catch(fail);
-    saveSchedule.addEventListener('click', async () => {
-      if (busy || readOnly()) return;
-      busy = true; saveSchedule.disabled = true;
-      try {
-        await guildApi('/schedule', { method: 'PATCH', body: { enabled: enabled.checked, time: time.value, timezone: zone.value.normalize('NFKC').replace(/[\u200B-\u200D\uFEFF]/g, '').trim() } });
-        toast(t('schedule_saved'), 'ok');
-      } catch (error) { fail(error); }
-      finally { busy = false; saveSchedule.disabled = readOnly(); }
-    });
-  }
-
-  /* ------------------------------------------------------------- tab: leaderboard */
-  function renderLeaderboard(panel) {
-    const grid = el('div', { class: 'dash-grid' });
-    const responders = el('section', { class: 'dash-card' }, el('h2', { text: t('leaderboard_responders') }));
-    const creators = el('section', { class: 'dash-card' }, el('h2', { text: t('leaderboard_creators') }));
-    grid.append(responders, creators); panel.append(grid);
-    guildApi('/leaderboard').then(data => {
-      if (!data.responders.length) responders.append(el('p', { class: 'empty-note', text: t('leaderboard_empty') }));
-      data.responders.forEach((item, index) => responders.append(el('div', { class: 'log-row' }, el('strong', { text: `${index + 1}. ${who(item.user_name, item.user_id)}` }), el('span', { class: 'badge-pill', text: t('leaderboard_answers', { n: item.count }) }))));
-      data.creators.forEach((item, index) => creators.append(el('div', { class: 'log-row' }, el('strong', { text: `${index + 1}. ${who(item.user_name, item.user_id)}` }), el('span', { class: 'badge-pill', text: t('leaderboard_questions', { n: item.count }) }))));
-      if (!data.creators.length) creators.append(el('p', { class: 'empty-note', text: t('leaderboard_empty') }));
-    }).catch(fail);
-  }
-
-  /* -------------------------------------------------------------- tab: statistics */
-  function renderStatistics(panel) {
-    const loading = el('div', { class: 'panel-loading' }, el('div', { class: 'spinner', role: 'status', 'aria-label': t('loading') }));
-    panel.append(loading);
-    guildApi('/statistics').then(data => {
-      const s = data.statistics;
-      const values = [
-        ['stat_total', s.total], ['stat_english', s.english], ['stat_russian', s.russian],
-        ['stat_month', s.month_total], ['stat_week', s.week_total],
-      ];
-      panel.replaceChildren(el('div', { class: 'dash-grid' }, ...values.map(([key, value]) =>
-        el('section', { class: 'dash-card stat-card' },
-          el('p', { class: 'hint', text: t(key) }),
-          el('strong', { class: 'stat-value', text: String(value || 0) })) )));
-    }).catch(error => { panel.replaceChildren(stateCard(null, error.message || t('err_server'))); });
+    panel.append(
+      el('div', { class: 'dash-grid' },
+        card('sec_roles',
+          roleField('allowed_role', 'f_allowed_role', 'h_allowed_role', false),
+          roleField('mention_role', 'f_mention_role', 'h_mention_role', true)),
+        card('sec_channels',
+          channelField('english_channel', 'f_english_channel', 'h_english_channel'),
+          channelField('russian_channel', 'f_russian_channel', 'h_russian_channel')),
+        card('sec_mentions',
+          toggleField('mention_everyone', 'f_everyone'),
+          toggleField('mention_here', 'f_here'),
+          el('p', { class: 'hint', text: t('h_mentions') })),
+        card('sec_language', languageField()),
+        el('section', { class: 'dash-card wide state-card-controls' },
+          el('h2', { text: t('sec_status') }),
+          el('div', { class: 'state-controls' },
+            statusSwitch('maintenance', 'st_maintenance', 'h_maintenance_control'),
+            statusSwitch('lock', 'st_lock', 'h_lock_control')))));
   }
 
   /* ------------------------------------------------------------ tab: QOTDs */
@@ -736,7 +666,7 @@
       return;
     }
     if (guildId !== id) return; // the person moved on while loading
-    current = detail.config || { mention_role: null, allowed_role: null, english_channel: null, russian_channel: null, bot_language: 'en', mention_everyone: false, mention_here: false, maintenance: false, lock: false };
+    current = detail.config;
     renderGuild();
   }
 
@@ -757,7 +687,6 @@
       const result = await api('/api/guilds/' + encodeURIComponent(guildId) + '/config', { method: 'PATCH', body: pending });
       current = result.config;
       detail.config = result.config;
-      detail.configured = true;
       pending = {};
       renderGuild();
       toast(t('saved'), 'ok');
@@ -766,6 +695,7 @@
     } finally {
       busy = false;
       saveBtn.disabled = false;
+      saveBtn.textContent = t('save');
       updateBar();
     }
   }
@@ -806,7 +736,7 @@
   const hashFor = (id, name) => '#g=' + id + (name && name !== 'settings' ? '&t=' + name : '');
 
   function parseRoute() {
-    const match = /^#g=(\d{1,20})(?:&t=(settings|schedule|leaderboard|statistics|qotds|suggestions|logs))?$/.exec(location.hash);
+    const match = /^#g=(\d{1,20})(?:&t=(settings|qotds|suggestions|logs))?$/.exec(location.hash);
     return match ? { id: match[1], tab: match[2] || 'settings' } : null;
   }
 

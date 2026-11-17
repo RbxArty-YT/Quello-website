@@ -17,7 +17,7 @@ Updated website for Quello.
 - Community Spotlight
 - Terms of Service and Privacy Policy
 
-The private Dashboard is integrated into this same website and uses the already-connected bot API. It provides server settings, initial setup, QOTD publishing, suggestions, logs, Scheduled QOTD, Leaderboard and Statistics; each server view is isolated by guild ID.
+The site intentionally does not include a Bot Status dashboard, public statistics dashboard, leaderboard dashboard, or QOTD showcase.
 
 
 Latest update: the site now combines the Quello avatar, slide-out navigation, interactive command exploration, guided QOTD building, setup progress, community highlights, and hidden extras.
@@ -64,17 +64,3 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 - Privacy Policy: added the withdrawn status, the stored rejection reason and the direct message to the author.
 - Same override mechanism as before: the new strings sit in a block after the last `Object.assign(translations.it, ...)`.
 
-
-
-## Dashboard update (November 17, 2026)
-- Added first-time server configuration directly in the Dashboard for server owners and members with Discord Administrator permission; `/setup` remains an alternative.
-- Added Scheduled QOTD controls immediately after Settings, with daily time, IANA timezone and Groq retry behavior. The question language follows the server's main Quello language setting.
-- Added server-specific Leaderboard and Statistics tabs.
-- Updated Dashboard OAuth wording and permissions to use Discord `identify` + `guilds` scopes.
-- Updated all five site languages (EN/RU/DE/FR/IT), command documentation, FAQ, setup guidance, and Changelog.
-
-
-## Scheduled QOTD provider update (November 17, 2026)
-- Replaced the OpenAI provider with Groq for automatic question generation.
-- Default model: `openai/gpt-oss-120b`; the API uses Groq's OpenAI-compatible Chat Completions endpoint.
-- Updated all five website locales, command descriptions, FAQ, Dashboard settings text and the website Changelog.
