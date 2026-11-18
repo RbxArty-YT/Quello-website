@@ -723,6 +723,8 @@
           add('INFO', `${path}: valid response received`);
         }
 
+        return response.ok ? data : null;
+
       } catch (error) {
         console.error('[Quello Diagnostics]', path, error);
 
@@ -736,6 +738,8 @@
           'Browser could not expose the response. Possible CORS/OPTIONS or network failure.'
         );
       }
+
+      return null;
     }
 
     try {
@@ -776,7 +780,44 @@
     }
 
     await testEndpoint('/api/creator/overview');
-    await testEndpoint('/api/creator/diagnostics');
+    const diag = await testEndpoint('/api/creator/diagnostics');
+
+    if (diag && diag.checks) {
+      Object.entries(diag.checks).forEach(([name, check]) => {
+        if (name === 'schedules') return;
+        add(check.ok === false ? 'FAIL' : 'PASS', `check ${name}`);
+      });
+
+      const sch = diag.checks.schedules;
+
+      if (sch && sch.ok && sch.data) {
+        add(
+          sch.data.llm_key_configured ? 'PASS' : 'FAIL',
+          `LLM key: ${sch.data.llm_key_configured ? 'configured' : 'MISSING (GROQ_API_KEY)'} · ${sch.data.llm_host}`
+        );
+
+        if (!sch.data.guilds.length) {
+          add('INFO', 'No servers have scheduled QOTD enabled');
+        }
+
+        sch.data.guilds.forEach(g => {
+          add(
+            'INFO',
+            `Schedule ${g.guild}: next ${g.next_run_at || 'not set'} · every ${g.interval_hours}h · retries ${g.retry_count}`
+          );
+
+          if (!g.configured) add('FAIL', `${g.guild}: /setup not completed`);
+          if (g.maintenance) add('FAIL', `${g.guild}: maintenance mode blocks publishing`);
+          if (g.lock) add('FAIL', `${g.guild}: lock mode blocks publishing`);
+
+          (g.errors || []).forEach(e => {
+            add('FAIL', `${g.guild} · ${e.name} · ${e.created_at}: ${e.details}`);
+          });
+        });
+      } else if (sch) {
+        add('FAIL', 'schedules check failed: ' + (sch.error || 'unknown'));
+      }
+    }
 
     render();
   }
