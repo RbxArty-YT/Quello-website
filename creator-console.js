@@ -1035,10 +1035,18 @@
     }, true);
 
     document.addEventListener('contextmenu', event => {
-      if (!triggered) return;
+      if (triggered) {
+        event.preventDefault();
+        triggered = false;
+        return;
+      }
 
-      event.preventDefault();
-      triggered = false;
+      // Mobile browsers open the link/image menu after ~0.5 s of holding,
+      // long before the 2 s timer fires; block it on the logo for the creator
+      // so the hold can finish. Everyone else keeps the normal browser menu.
+      if (creator && event.target.closest && event.target.closest(LOGO_SELECTOR)) {
+        event.preventDefault();
+      }
     }, true);
   }
 
