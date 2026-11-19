@@ -2,7 +2,7 @@
 window.QUELLO_LEGAL = {
  "dates": {
   "effective": "2026-09-01",
-  "updated": "2026-11-17"
+  "updated": "2026-11-19"
  },
  "ui": {
   "en": {
@@ -226,7 +226,7 @@ window.QUELLO_LEGAL = {
        [
         "ul",
         [
-         "the server owner, a Discord Administrator, or the Bot Owner can change settings, manage Scheduled QOTD (including its 1-, 6-, 12- or 24-hour interval), use maintenance and lock modes, and run /random_qotd for immediate AI-generated publication;",
+         "the server owner, a Discord Administrator, or the Bot Owner can complete a server’s initial setup, change settings, manage Scheduled QOTD (including its 1-, 6-, 12- or 24-hour interval), use maintenance and lock modes, and run /random_qotd for immediate AI-generated publication;",
          "members who hold the configured allowed role can publish and edit QOTDs, review suggestions, and view leaderboards and statistics."
         ]
        ],
@@ -435,7 +435,7 @@ window.QUELLO_LEGAL = {
        [
         "ul",
         [
-         "владелец сервера, пользователь с правом Discord Administrator или Bot Owner может менять настройки, управлять Scheduled QOTD (интервал 1, 6, 12 или 24 часа), использовать режимы обслуживания и блокировки, а также запускать /random_qotd для мгновенной публикации вопроса, созданного ИИ;",
+         "владелец сервера, пользователь с правом Discord Administrator или Bot Owner может выполнить первоначальную настройку сервера, менять настройки, управлять Scheduled QOTD (интервал 1, 6, 12 или 24 часа), использовать режимы обслуживания и блокировки, а также запускать /random_qotd для мгновенной публикации вопроса, созданного ИИ;",
          "участники с настроенной разрешённой ролью могут публиковать и редактировать QOTD, рассматривать предложения, а также просматривать рейтинги и статистику."
         ]
        ],
@@ -644,7 +644,7 @@ window.QUELLO_LEGAL = {
        [
         "ul",
         [
-         "Der Serverinhaber kann Einstellungen ändern sowie Wartungs- und Sperrmodi verwenden.",
+         "Der Serverinhaber oder ein Discord-Administrator kann die Ersteinrichtung durchführen, Einstellungen ändern sowie Wartungs- und Sperrmodi verwenden.",
          "Der Serverinhaber und Mitglieder mit der erlaubten Manager-Rolle können QOTDs veröffentlichen und bearbeiten sowie Vorschläge prüfen."
         ]
        ],
@@ -853,7 +853,7 @@ window.QUELLO_LEGAL = {
        [
         "ul",
         [
-         "le propriétaire du serveur, un administrateur Discord ou le propriétaire du Bot peut modifier les paramètres, gérer Scheduled QOTD (intervalle de 1, 6, 12 ou 24 heures), utiliser les modes maintenance et verrouillage et lancer /random_qotd pour publier immédiatement une question générée par l’IA ;",
+         "le propriétaire du serveur, un administrateur Discord ou le propriétaire du Bot peut effectuer la configuration initiale du serveur, modifier les paramètres, gérer Scheduled QOTD (intervalle de 1, 6, 12 ou 24 heures), utiliser les modes maintenance et verrouillage et lancer /random_qotd pour publier immédiatement une question générée par l’IA ;",
          "les membres disposant d’un rôle autorisé configuré peuvent publier et modifier des QOTD, examiner les suggestions et consulter les classements et les statistiques."
         ]
        ],
@@ -1062,7 +1062,7 @@ window.QUELLO_LEGAL = {
        [
         "ul",
         [
-         "il proprietario del server può modificare le impostazioni e usare le modalità di manutenzione e di blocco;",
+         "il proprietario del server o un amministratore Discord può eseguire la configurazione iniziale, modificare le impostazioni e usare le modalità di manutenzione e di blocco;",
          "il proprietario del server e i membri con il ruolo di gestore consentito possono pubblicare e modificare i QOTD ed esaminare i suggerimenti."
         ]
        ],
@@ -1263,7 +1263,7 @@ window.QUELLO_LEGAL = {
        [
         "ul",
         [
-         "the server owner, a Discord Administrator, or the Bot’s developer can view and change settings, manage Scheduled QOTD, use Maintenance and Lock, publish and edit QOTDs, review suggestions, and read the activity and audit logs;",
+         "the server owner, a Discord Administrator, or the Bot’s developer can complete a server’s initial setup (without /setup), view and change settings, manage Scheduled QOTD, use Maintenance and Lock, publish and edit QOTDs, review suggestions, and read the activity and audit logs;",
          "members who hold the server’s configured allowed role can view settings, publish and edit QOTDs, review suggestions, and view the leaderboard and statistics."
         ]
        ],
@@ -1273,7 +1273,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Changes made from the dashboard (including publishing, editing, approving or rejecting) are recorded in the normal QOTD logs and the audit log with your User ID and are marked as made from the web, like the same actions made with slash commands."
+        "Changes made from the dashboard (including initial setup, publishing, editing, approving or rejecting) are recorded in the normal QOTD logs and the audit log with your User ID and are marked as made from the web, like the same actions made with slash commands."
        ]
       ]
      ],
@@ -1414,7 +1414,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "The prompt and recent-question context are sent to Groq through its API to generate a question. Groq is an independent third-party service and processes the submitted request under its own terms and privacy practices. Do not enable this feature if your server’s recent QOTDs contain information that should not be sent to an external AI provider. Quello’s prompt asks for a general, non-sensitive question and excludes private or sensitive disclosures."
+        "The prompt and recent-question context are sent to Groq through its API to generate a question. Groq is an independent third-party service and processes the submitted request under its own terms and privacy practices. Do not enable this feature if your server’s recent QOTDs contain information that should not be sent to an external AI provider. Quello’s prompt asks for a short, funny, absurd and friendly question without insults or toxicity. It does not filter the recent-question context before sending it, so server owners remain responsible for what is sent."
        ],
        [
         "p",
@@ -1536,7 +1536,7 @@ window.QUELLO_LEGAL = {
        [
         "ul",
         [
-         "владелец сервера, пользователь с правом Discord Administrator или разработчик Бота может просматривать и менять настройки, управлять Scheduled QOTD, использовать режимы обслуживания и блокировки, публиковать и редактировать QOTD, рассматривать предложения и читать журналы активности и аудита;",
+         "владелец сервера, пользователь с правом Discord Administrator или разработчик Бота может выполнить первоначальную настройку сервера (без команды /setup), просматривать и менять настройки, управлять Scheduled QOTD, использовать режимы обслуживания и блокировки, публиковать и редактировать QOTD, рассматривать предложения и читать журналы активности и аудита;",
          "участники с настроенной разрешённой ролью могут просматривать настройки, публиковать и редактировать QOTD, рассматривать предложения, а также просматривать рейтинг и статистику."
         ]
        ],
@@ -1546,7 +1546,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Изменения, сделанные из панели управления (включая публикацию, редактирование, одобрение и отклонение), записываются в обычные журналы QOTD и журнал аудита с вашим User ID и помечаются как сделанные через веб, так же как и те же действия, выполненные слэш-командами."
+        "Изменения, сделанные из панели управления (включая первоначальную настройку, публикацию, редактирование, одобрение и отклонение), записываются в обычные журналы QOTD и журнал аудита с вашим User ID и помечаются как сделанные через веб, так же как и те же действия, выполненные слэш-командами."
        ]
       ]
      ],
@@ -1687,7 +1687,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Запрос и контекст недавних вопросов передаются Groq через API для генерации вопроса. Groq — независимый сторонний сервис, который обрабатывает запрос согласно собственным условиям и политике конфиденциальности. Не включайте эту функцию, если среди недавних QOTD есть сведения, которые нельзя передавать внешнему поставщику ИИ. Запрос Quello просит создать общий вопрос без чувствительных тем и побуждения раскрывать личную информацию."
+        "Запрос и контекст недавних вопросов передаются Groq через API для генерации вопроса. Groq — независимый сторонний сервис, который обрабатывает запрос согласно собственным условиям и политике конфиденциальности. Не включайте эту функцию, если среди недавних QOTD есть сведения, которые нельзя передавать внешнему поставщику ИИ. Запрос Quello просит создать короткий, смешной, абсурдный и дружелюбный вопрос без оскорблений и токсичности. Контекст недавних вопросов перед отправкой не фильтруется, поэтому ответственность за передаваемые данные остаётся за владельцами серверов."
        ],
        [
         "p",
@@ -1809,7 +1809,7 @@ window.QUELLO_LEGAL = {
        [
         "ul",
         [
-         "Der Serverinhaber (und der Entwickler des Bots) kann Einstellungen ansehen und ändern, Wartung und Sperre verwenden, QOTDs veröffentlichen und bearbeiten, Vorschläge prüfen sowie Aktivitäts- und Audit-Protokolle lesen.",
+         "Der Serverinhaber, ein Discord-Administrator (und der Entwickler des Bots) kann die Ersteinrichtung eines Servers (ohne /setup) durchführen, Einstellungen ansehen und ändern, Wartung und Sperre verwenden, QOTDs veröffentlichen und bearbeiten, Vorschläge prüfen sowie Aktivitäts- und Audit-Protokolle lesen.",
          "Mitglieder mit einer konfigurierten erlaubten Rolle können Einstellungen ansehen, QOTDs veröffentlichen und bearbeiten, Vorschläge prüfen sowie Bestenliste und Statistiken ansehen."
         ]
        ],
@@ -1819,7 +1819,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Änderungen über das Dashboard (einschließlich Veröffentlichen, Bearbeiten, Genehmigen oder Ablehnen) werden mit deiner Nutzer-ID in den normalen QOTD-Protokollen und im Audit-Protokoll festgehalten und als über das Web erfolgt gekennzeichnet, ebenso wie dieselben Aktionen per Slash-Befehl."
+        "Änderungen über das Dashboard (einschließlich Ersteinrichtung, Veröffentlichen, Bearbeiten, Genehmigen oder Ablehnen) werden mit deiner Nutzer-ID in den normalen QOTD-Protokollen und im Audit-Protokoll festgehalten und als über das Web erfolgt gekennzeichnet, ebenso wie dieselben Aktionen per Slash-Befehl."
        ]
       ]
      ],
@@ -1960,7 +1960,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Die Anfrage und der Kontext der letzten Fragen werden zur Generierung über die API an Groq gesendet. Groq ist ein unabhängiger Drittanbieter und verarbeitet die übermittelte Anfrage gemäß seinen eigenen Bedingungen und Datenschutzpraktiken. Aktiviere diese Funktion nicht, wenn aktuelle QOTDs Informationen enthalten, die nicht an einen externen KI-Anbieter übermittelt werden sollen. Die Quello-Anfrage verlangt eine allgemeine, nicht sensible Frage und soll nicht zur Offenlegung privater Erlebnisse auffordern."
+        "Die Anfrage und der Kontext der letzten Fragen werden zur Generierung über die API an Groq gesendet. Groq ist ein unabhängiger Drittanbieter und verarbeitet die übermittelte Anfrage gemäß seinen eigenen Bedingungen und Datenschutzpraktiken. Aktiviere diese Funktion nicht, wenn aktuelle QOTDs Informationen enthalten, die nicht an einen externen KI-Anbieter übermittelt werden sollen. Die Quello-Anfrage verlangt eine kurze, lustige, absurde und freundliche Frage ohne Beleidigungen oder Toxizität. Der Kontext der letzten Fragen wird vor dem Senden nicht gefiltert; für die übermittelten Inhalte bleiben daher die Serverinhaber verantwortlich."
        ],
        [
         "p",
@@ -2082,7 +2082,7 @@ window.QUELLO_LEGAL = {
        [
         "ul",
         [
-         "le propriétaire du serveur (et le développeur du Bot) peut consulter et modifier les paramètres, utiliser la maintenance et le verrouillage, publier et modifier des QOTD, examiner les suggestions et lire les journaux d’activité et d’audit ;",
+         "le propriétaire du serveur, un administrateur Discord (et le développeur du Bot) peut effectuer la configuration initiale d’un serveur (sans /setup), consulter et modifier les paramètres, utiliser la maintenance et le verrouillage, publier et modifier des QOTD, examiner les suggestions et lire les journaux d’activité et d’audit ;",
          "les membres disposant d’un rôle autorisé configuré peuvent consulter les paramètres, publier et modifier des QOTD, examiner les suggestions et consulter le classement et les statistiques."
         ]
        ],
@@ -2092,7 +2092,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Les modifications effectuées depuis le tableau de bord (y compris publier, modifier, approuver ou refuser) sont consignées dans les journaux QOTD habituels et le journal d’audit avec votre identifiant d’utilisateur et sont signalées comme effectuées depuis le web, comme les mêmes actions réalisées avec des commandes slash."
+        "Les modifications effectuées depuis le tableau de bord (y compris la configuration initiale, publier, modifier, approuver ou refuser) sont consignées dans les journaux QOTD habituels et le journal d’audit avec votre identifiant d’utilisateur et sont signalées comme effectuées depuis le web, comme les mêmes actions réalisées avec des commandes slash."
        ]
       ]
      ],
@@ -2233,7 +2233,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "La demande et le contexte des questions récentes sont envoyés à Groq via son API afin de générer une question. Groq est un service tiers indépendant qui traite la demande selon ses propres conditions et pratiques de confidentialité. N’activez pas cette fonction si les QOTD récents contiennent des informations qui ne doivent pas être transmises à un fournisseur d’IA externe. La consigne de Quello demande une question générale et non sensible, sans inciter à révéler des expériences privées."
+        "La demande et le contexte des questions récentes sont envoyés à Groq via son API afin de générer une question. Groq est un service tiers indépendant qui traite la demande selon ses propres conditions et pratiques de confidentialité. N’activez pas cette fonction si les QOTD récents contiennent des informations qui ne doivent pas être transmises à un fournisseur d’IA externe. La consigne de Quello demande une question courte, drôle, absurde et amicale, sans insultes ni toxicité. Le contexte des questions récentes n’est pas filtré avant l’envoi ; les propriétaires de serveur restent donc responsables des contenus transmis."
        ],
        [
         "p",
@@ -2355,7 +2355,7 @@ window.QUELLO_LEGAL = {
        [
         "ul",
         [
-         "il proprietario del server (e lo sviluppatore del Bot) può visualizzare e modificare le impostazioni, usare Manutenzione e Blocco, pubblicare e modificare QOTD, esaminare i suggerimenti e leggere i log di attività e di audit;",
+         "il proprietario del server, un amministratore Discord (e lo sviluppatore del Bot) può eseguire la configurazione iniziale di un server (senza /setup), visualizzare e modificare le impostazioni, usare Manutenzione e Blocco, pubblicare e modificare QOTD, esaminare i suggerimenti e leggere i log di attività e di audit;",
          "i membri con il ruolo di gestore consentito del server possono visualizzare le impostazioni, pubblicare e modificare QOTD ed esaminare i suggerimenti."
         ]
        ],
@@ -2365,7 +2365,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "Le modifiche fatte dalla dashboard (inclusi pubblicare, modificare, approvare o rifiutare) sono registrate nei log QOTD normali e nel log di audit con il tuo ID utente e contrassegnate come effettuate dal web, come le stesse azioni compiute con i comandi slash."
+        "Le modifiche fatte dalla dashboard (inclusa la configurazione iniziale, pubblicare, modificare, approvare o rifiutare) sono registrate nei log QOTD normali e nel log di audit con il tuo ID utente e contrassegnate come effettuate dal web, come le stesse azioni compiute con i comandi slash."
        ]
       ]
      ],
@@ -2506,7 +2506,7 @@ window.QUELLO_LEGAL = {
        ],
        [
         "p",
-        "La richiesta e il contesto delle domande recenti vengono inviati a Groq tramite la sua API per generare una domanda. Groq è un servizio terzo indipendente e tratta la richiesta secondo i propri termini e pratiche sulla privacy. Non attivare questa funzione se i QOTD recenti contengono informazioni che non devono essere inviate a un provider AI esterno. La richiesta di Quello chiede una domanda generale e non sensibile, senza sollecitare la condivisione di esperienze private."
+        "La richiesta e il contesto delle domande recenti vengono inviati a Groq tramite la sua API per generare una domanda. Groq è un servizio terzo indipendente e tratta la richiesta secondo i propri termini e pratiche sulla privacy. Non attivare questa funzione se i QOTD recenti contengono informazioni che non devono essere inviate a un provider AI esterno. La richiesta di Quello chiede una domanda breve, divertente, assurda e amichevole, senza insulti né tossicità. Il contesto delle domande recenti non viene filtrato prima dell’invio; i proprietari dei server restano quindi responsabili di ciò che viene trasmesso."
        ],
        [
         "p",
