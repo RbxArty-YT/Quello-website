@@ -364,9 +364,12 @@
     crumb.classList.remove('is-hidden');
     renderServerList();
 
+    if (!detail.configured && isOwner()) { renderSetup(guild); return; }
     if (!detail.configured) {
       app.replaceChildren(stateCard(t('notconf_title'), t('notconf_text'),
-        el('button', { class: 'button hero-primary', type: 'button', text: t('reload'), onclick: () => openGuild(guildId, tab, true) })));
+        el('div', { style: 'display:grid;gap:12px;width:100%' },
+          el('button', { class: 'button hero-primary', type: 'button', text: t('reload'), onclick: () => openGuild(guildId, tab, true) }),
+          el('button', { class: 'button dashboard-back-button', type: 'button', text: '← ' + t('menu_switch'), onclick: () => navigate(null), 'aria-label': t('menu_switch') }))));
       updateBar();
       return;
     }
@@ -404,6 +407,21 @@
     updateBar();
   }
 
+  /* ------------------------------------------------------------ first-time setup (replaces /setup) */
+  function renderSetup(guild) {
+    tab = 'settings';
+    const panel = el('div', { class: 'tab-panel' });
+    app.replaceChildren(
+      el('header', { class: 'page-head dashboard-guild-head' },
+        el('button', { class: 'button dashboard-back-button', type: 'button', text: '← ' + t('menu_switch'), onclick: () => navigate(null), 'aria-label': t('menu_switch') }),
+        icon(guild, 56),
+        el('div', { class: 'dashboard-guild-title' }, el('h1', { text: guild.name }), el('p', { text: t('setup_title') }))),
+      panel);
+    panel.append(el('div', { class: 'ro-banner', role: 'note', text: '✨ ' + t('setup_text') }));
+    renderSettings(panel);
+    updateBar();
+  }
+
   /* ------------------------------------------------------------ tab: settings */
   function renderSettings(panel) {
     const card = (titleKey, ...children) => el('section', { class: 'dash-card' }, el('h2', { text: t(titleKey) }), ...children);
@@ -421,11 +439,11 @@
           toggleField('mention_here', 'f_here'),
           el('p', { class: 'hint', text: t('h_mentions') })),
         card('sec_language', languageField()),
-        el('section', { class: 'dash-card wide state-card-controls' },
+        detail.configured ? el('section', { class: 'dash-card wide state-card-controls' },
           el('h2', { text: t('sec_status') }),
           el('div', { class: 'state-controls' },
             statusSwitch('maintenance', 'st_maintenance', 'h_maintenance_control'),
-            statusSwitch('lock', 'st_lock', 'h_lock_control')))));
+            statusSwitch('lock', 'st_lock', 'h_lock_control'))) : null));
   }
 
   /* ------------------------------------------------------------ tab: QOTDs */
@@ -798,7 +816,10 @@
       return;
     }
     if (guildId !== id) return; // the person moved on while loading
-    current = detail.config;
+    current = detail.config || {
+      allowed_role: null, mention_role: null, english_channel: null, russian_channel: null,
+      bot_language: 'en', mention_everyone: false, mention_here: false, maintenance: false, lock: false,
+    };
     renderGuild();
   }
 
@@ -812,6 +833,7 @@
 
   async function save() {
     if (busy || !isDirty() || !guildId || readOnly()) return;
+    if (!detail.configured && !pending.allowed_role) { toast(t('setup_role_required'), 'bad'); return; }
     busy = true;
     saveBtn.disabled = true;
     saveBtn.textContent = t('saving');
@@ -819,6 +841,9 @@
       const result = await api('/api/guilds/' + encodeURIComponent(guildId) + '/config', { method: 'PATCH', body: pending });
       current = result.config;
       detail.config = result.config;
+      detail.configured = true;
+      const known = guilds.find(g => g.id === guildId);
+      if (known) known.configured = true;
       pending = {};
       renderGuild();
       toast(t('saved'), 'ok');
