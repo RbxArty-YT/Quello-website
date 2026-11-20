@@ -432,8 +432,8 @@
           roleField('allowed_role', 'f_allowed_role', 'h_allowed_role', false),
           roleField('mention_role', 'f_mention_role', 'h_mention_role', true)),
         card('sec_channels',
-          channelField('english_channel', 'f_english_channel', 'h_english_channel'),
-          channelField('russian_channel', 'f_russian_channel', 'h_russian_channel')),
+          channelField('qotd_channel', 'f_qotd_channel', 'h_qotd_channel'),
+          channelField('announcement_channel', 'f_announcement_channel', 'h_announcement_channel')),
         card('sec_mentions',
           toggleField('mention_everyone', 'f_everyone'),
           toggleField('mention_here', 'f_here'),
@@ -465,11 +465,7 @@
     };
     question.addEventListener('input', sync);
 
-    const language = el('select', { class: 'select', id: 'qotdLanguage' },
-      el('option', { value: 'en', text: t('lang_en') }), el('option', { value: 'ru', text: t('lang_ru') }));
-    language.value = current.bot_language === 'ru' ? 'ru' : 'en';
-
-    const channel = el('select', { class: 'select', id: 'qotdChannel' }, el('option', { value: '', text: t('qotd_channel_default') }));
+        const channel = el('select', { class: 'select', id: 'qotdChannel' }, el('option', { value: '', text: t('qotd_channel_default') }));
     channelOptions(channel);
     const note = el('p', { class: 'hint channel-note is-hidden' });
     bindChannelWarning(channel, note);
@@ -485,7 +481,7 @@
       publishBtn.disabled = true;
       publishBtn.textContent = t('qotd_publishing');
       try {
-        const result = await guildApi('/qotds', { method: 'POST', body: { question: question.value, language: language.value, channel: channel.value || null } });
+        const result = await guildApi('/qotds', { method: 'POST', body: { question: question.value, channel: channel.value || null } });
         question.value = '';
         toast(t('qotd_published', { n: result.qotd.number, channel: result.qotd.channel_name }) + (result.qotd.thread_created ? '' : ' ' + t('qotd_thread_missing')), 'ok');
         reload();
@@ -521,9 +517,7 @@
     compose.append(
       el('div', { class: 'btn-row' }, randomBtn), randomNote,
       el('div', { class: 'field' }, el('label', { for: 'qotdQuestion', text: t('qotd_question') }), question, counter),
-      el('div', { class: 'compose-row' },
-        el('div', { class: 'field' }, el('label', { for: 'qotdLanguage', text: t('qotd_language') }), language),
-        el('div', { class: 'field' }, el('label', { for: 'qotdChannel', text: t('qotd_channel') }), channel, note)),
+      el('div', { class: 'field' }, el('label', { for: 'qotdChannel', text: t('qotd_channel') }), channel, note),
       el('div', { class: 'btn-row' }, publishBtn));
     sync();
 
@@ -817,8 +811,8 @@
     }
     if (guildId !== id) return; // the person moved on while loading
     current = detail.config || {
-      allowed_role: null, mention_role: null, english_channel: null, russian_channel: null,
-      bot_language: 'en', mention_everyone: false, mention_here: false, maintenance: false, lock: false,
+      allowed_role: null, mention_role: null, qotd_channel: null,
+      announcement_channel: null, bot_language: 'en', mention_everyone: false, mention_here: false, maintenance: false, lock: false,
     };
     renderGuild();
   }

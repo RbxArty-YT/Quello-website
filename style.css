@@ -294,3 +294,13 @@ button:focus-visible {
 /* Completed checklist items are visually subdued. */
 .setup-checklist label:has(input:checked){opacity:.48;color:var(--text-4);}
 .setup-checklist label:has(input:checked) span{color:var(--text-4);}
+
+/* Compact, accessible changelog expansion */
+.timeline-extra{display:grid;gap:18px}
+.timeline-extra[hidden]{display:none!important}
+.timeline-extra:not([hidden]) article{animation:changelogReveal .28s ease both}
+.changelog-toggle{display:inline-flex;align-items:center;justify-content:center;margin-top:18px;min-height:42px;padding:10px 16px;cursor:pointer;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.changelog-toggle:hover{transform:translateY(-1px);border-color:var(--accent)}
+.changelog-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@keyframes changelogReveal{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.timeline-extra:not([hidden]) article{animation:none}.changelog-toggle{transition:none}}

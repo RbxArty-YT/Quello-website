@@ -1,4 +1,4 @@
-/* Hidden Creator Console */
+/* Hidden Admin Console */
 .creator-console-open{overflow:hidden}
 .creator-console-overlay{position:fixed;inset:0;z-index:9998;display:flex;justify-content:flex-end;background:rgba(5,6,14,.62);backdrop-filter:blur(9px);opacity:0;visibility:hidden;transition:opacity .24s ease,visibility .24s ease}
 .creator-console-overlay.open{opacity:1;visibility:visible}
@@ -109,3 +109,18 @@ body[data-page="dashboard"] .schedule-form .field { display:grid; gap:8px; }
 body[data-page="dashboard"] .schedule-form .field label { color:var(--text-2); font-size:13px; font-weight:750; letter-spacing:.015em; }
 body[data-page="dashboard"] .schedule-form .input { max-width:100%; }
 :root[data-theme="light"] body[data-page="dashboard"] .dash-card input[type="time"] { color-scheme:light; }
+
+/* Admin Console announcement composer and per-announcement actions. */
+.creator-form-field{display:grid;gap:7px;margin:12px 0;color:var(--text-2);font-size:13px;font-weight:650}
+.creator-form-control{box-sizing:border-box;width:100%;min-width:0;min-height:44px;padding:11px 13px;border:1px solid var(--line-strong);border-radius:11px;background:var(--surface-sunken);color:var(--text-strong);font:inherit;font-size:14px;outline:none}
+.creator-form-control:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
+.creator-form-field textarea,.creator-announcement-field-row textarea{min-height:96px;resize:vertical}
+.creator-announcement-fields{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.creator-announcement-fields h4{margin:0 0 10px;color:var(--text-strong);font-size:14px}
+.creator-announcement-field-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) auto auto;align-items:center;gap:8px;margin:9px 0}
+.creator-inline-label{display:flex;align-items:center;gap:5px;color:var(--text-2);font-size:12px;white-space:nowrap}
+.creator-inline-label input{accent-color:var(--accent)}
+.creator-announcement-card{display:grid;gap:7px;padding:13px 0;border-top:1px solid var(--line)}
+.creator-announcement-card strong{color:var(--text-strong);overflow-wrap:anywhere}
+.creator-announcement-card small{font-size:11px}
+@media(max-width:560px){.creator-announcement-field-row{grid-template-columns:1fr 1fr}.creator-announcement-field-row .creator-inline-label{grid-column:1}.creator-announcement-field-row button{grid-column:2;justify-self:end}}

@@ -66,11 +66,11 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 
 
 
-## Creator Console (November 15, 2026)
-- Added the shared Hidden Creator Console entry points: `Ctrl + Shift + K`, a 2-second press on the Quello logo, and a sidebar entry after creator verification.
+## Admin Console (November 15, 2026)
+- Added the shared Hidden Admin Console entry points: `Ctrl + Shift + K`, a 2-second press on the Quello logo, and a sidebar entry after admin verification.
 - Added the standalone `about.html` creator page and its EN / RU / DE / FR / IT copy.
 - Added the Violet → Magenta → Red brand tokens while retaining dark/light theme support.
-- The console uses the existing Dashboard session token and asks the existing API to verify creator access. It does not trust a client-side owner flag.
+- The console uses the existing Dashboard session token and asks the existing API to verify admin access. It does not trust a client-side owner flag.
 - The bot API now exposes `/api/creator/overview` and `/api/creator/diagnostics`; both require a valid signed session and enforce `BOT_OWNER_ID` server-side.
 - Passkey and TOTP are explicitly reported as not configured in this build. Do not advertise them as active until WebAuthn/TOTP enrollment, secure secret storage, recovery and server-side verification have been implemented.
 - The website archive has `API_BASE` configured as `https://qotd.xipho.ru` in `site-config.js`. Confirm that this is the intended production API origin before deployment. Never put Discord client secrets or session signing secrets in the website repository.
@@ -81,8 +81,8 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 - Leftover Discord-blue / cool-blue glows were removed from `theme.css`, `landing-redesign.css` and `motion-polish.css`.
 - `about.html` now shows `creator-avatar.png` (falls back to the letter badge if the file is missing), uses the shared theme toggle and follows the saved/system theme like the other pages, and has a tidy two-row header on phones.
 
-## Creator Console on phones
-- Verified creators get a small round ✦ button (bottom-right) on every page, plus the "Creator Console" entry in the side menu (☰) and in the About header.
+## Admin Console on phones
+- Verified creators get a small round ✦ button (bottom-right) on every page, plus the "Admin Console" entry in the side menu (☰) and in the About header.
 - Long-pressing the Quello logo for 2 seconds also works now (touch events, movement tolerance, context menu and link navigation suppressed).
 - The button only appears after `/api/me` confirms `is_creator`, so it needs a valid login (`quello-dash-token`) and a real `API_BASE`.
 
@@ -92,7 +92,7 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 
 ## Avatar menu
 - On the dashboard the avatar menu links to the documentation only; on every other page it links to the dashboard only. "Log out" is always there.
-- The Creator Console no longer adds a button to the About header; use the round ✦ button, the side menu, Ctrl + Shift + K, or hold the Quello logo.
+- The Admin Console no longer adds a button to the About header; use the round ✦ button, the side menu, Ctrl + Shift + K, or hold the Quello logo.
 
 ## Sign-in gate and localization audit (November 16, 2026)
 - New `login-gate.js` (loaded synchronously in the `<head>` of `index.html`): visitors without a valid Discord session are redirected to `login.html`. Open without signing in: `login.html`, `dashboard.html` (it handles its own sign-in), `about.html`, `privacy.html`, `terms.html`. After signing in, `dashboard.js` sends the person back to the page they asked for (`quello-after-login`).
@@ -102,7 +102,7 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
   - Added keys that were missing from the live dictionary (`about_nav`, `evo_steps_link`, `nav_dashboard`; EN entries for `privacy_link` and `change7`-`change9`, so switching back to English now updates those texts).
   - DE / FR / IT command texts brought in line with the bot: `/edit`, `/delete`, `/info` use message links (not IDs), Confirm / Cancel for `/edit`, `/delete`, `/reset`, `/reset_logs`, history filters, `/logs` and `/audit_log` filters, FAQ and troubleshooting answers, setup steps, permissions and overview texts.
   - Terminology: German Eigentümer (not Besitzer), "Feinschliff" instead of "Politur", Russian "ветка" instead of "тред", Russian Playground naming and DISCORD-БОТ badge, Bot Owner / Server Owner translated in Russian, `change4_text` aligned across languages.
-  - Dashboard / login: German "deinen Avatar"; removed the unused `login_docs` string. Creator Console: `signin` and `hold` added for DE / FR / IT.
+  - Dashboard / login: German "deinen Avatar"; removed the unused `login_docs` string. Admin Console: `signin` and `hold` added for DE / FR / IT.
   - Changelog dates now follow the selected language (`changelog-dates.js`); new changelog entry "Sign-in for the documentation & localization fixes".
 
 
@@ -119,3 +119,21 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 - `/schedule_qotds` and the Dashboard now support a first publication time, IANA time zone, and recurring intervals of every 1, 6, 12, or 24 hours.
 - `/random_qotd` generates a question through the configured Groq model and publishes it immediately using the server's main Quello language.
 - Updated the command reference, Dashboard frequency selector, and AI-provider disclosures in the legal content.
+
+
+## Admin Console rename and legal synchronization (November 20, 2026)
+
+- Renamed the shared hidden Creator Console to **Admin Console** in all user-facing EN / RU / DE / FR / IT labels, prompts, access messages, diagnostics, and maintainer documentation.
+- Preserved the existing technical asset filenames, CSS classes, data attributes, and `/api/creator/*` routes to avoid breaking selectors or API contracts.
+- Preserved the existing Discord OAuth2 sign-in flow and server-side `BOT_OWNER_ID` enforcement.
+- Updated the Terms of Service and Privacy Policy in all five languages to describe the diagnostic-only Discord Developer Team metadata check.
+- Updated the legal effective date to September 13, 2026 and the last-updated date to November 20, 2026.
+
+
+## Global announcements (November 20, 2026)
+- Discord Administrators (the Discord server permission, not the Developer Portal team role) can use `/setup`, `/config`, `/maintenance`, `/lock`, `/schedule_qotds`, and `/schedule_config`. This does not grant QOTD Manager or owner-only slash-command access.
+- Server owners can optionally set an Announcement Channel in `/setup` or the Dashboard. Quello requires View Channel, Send Messages and Embed Links in that channel.
+- The Bot Owner can create global announcement Embeds in the website Admin Console. Title or description is required; color, URL, image, thumbnail, author, footer and up to 25 custom fields are optional.
+- Each successful Discord delivery is tracked by guild, channel and message ID. The Admin Console provides Edit and Delete actions beside every managed announcement; changes are applied to the published copies. A partial Discord/API failure is reported without silently discarding the remaining delivery records.
+- The announcement API endpoints are protected server-side by the existing `BOT_OWNER_ID` check. The feature does not grant access to Developer Team members or alter server roles.
+- Terms of Service and Privacy Policy now describe global announcement publishing and the stored campaign/delivery metadata in EN / RU / DE / FR / IT.

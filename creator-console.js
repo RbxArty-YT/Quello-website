@@ -1,4 +1,4 @@
-/* Quello Hidden Creator Console — shared across Documentation, Dashboard and About. */
+/* Quello Hidden Admin Console — shared across Documentation, Dashboard and About. */
 (function () {
   'use strict';
 
@@ -11,10 +11,12 @@
     en: {
       signin:'Sign in with Discord first — redirecting…',
       hold:'Keep holding…',
-      button:'Creator Console',
-      title:'Creator Console',
+      button:'Admin Console',
+      section:'ADMIN',
+      title:'Admin Console',
       sub:'Private workspace · Quello ecosystem',
       overview:'System Overview',
+      announcements:'Announcements', newAnnouncement:'New announcement', editAnnouncement:'Edit announcement', titleField:'Title', descriptionField:'Description', colorField:'Embed color (optional)', urlField:'Link URL (optional)', imageField:'Image URL (optional)', thumbnailField:'Thumbnail URL (optional)', authorField:'Author (optional)', footerField:'Footer (optional)', extraFields:'Additional fields', addField:'Add field', fieldName:'Field name', fieldValue:'Field value', inlineField:'Inline', publishAnnouncement:'Publish to configured servers', saveChanges:'Save changes', cancelEdit:'Cancel', edit:'Edit', delete:'Delete', noAnnouncements:'No announcements yet.', confirmDelete:'Delete this announcement from every server where it was published?', announcementPublished:'Announcement published. Sent: {sent}; failed: {failed}; skipped: {skipped}.', announcementUpdated:'Announcement updated on {updated} servers; {failed} failed.', announcementDeleted:'Announcement deleted from {deleted} servers.', announcementPartialDelete:'Some copies could not be deleted. Fix permissions and retry.', optionalChannelNote:'Only servers with an Announcement Channel configured receive announcements.',
       appearance:'Appearance Lab',
       developer:'Developer Tools',
       localization:'Localization Lab',
@@ -24,9 +26,9 @@
       refresh:'Refresh',
       logout:'Sign out',
       login:'Sign in with Discord',
-      denied:'Creator access is not available for this account.',
+      denied:'Admin access is not available for this account.',
       offline:'The Quello API is unavailable. Check API_BASE in site-config.js.',
-      loading:'Loading creator data…',
+      loading:'Loading admin data…',
       api:'API',
       bot:'Discord bot',
       ready:'Ready',
@@ -51,17 +53,19 @@
       disabled:'Disabled',
       passkey:'Passkey',
       totp:'TOTP',
-      mfaNote:'Additional factors are not configured in this build. Creator endpoints still enforce the Discord owner ID server-side.',
+      mfaNote:'Additional factors are not configured in this build. Admin Console endpoints still enforce the configured BOT_OWNER_ID server-side.',
       hidden:'The console is hidden from regular visitors. Use Ctrl + Shift + K or hold the Quello logo for 2 seconds.'
     },
 
     ru: {
       signin:'Сначала войдите через Discord — перенаправляю…',
       hold:'Держите…',
-      button:'Консоль создателя',
-      title:'Консоль создателя',
+      button:'Панель администратора',
+      section:'АДМИНИСТРАТОР',
+      title:'Панель администратора',
       sub:'Закрытое пространство · экосистема Quello',
       overview:'Обзор системы',
+      announcements:'Объявления', newAnnouncement:'Новое объявление', editAnnouncement:'Редактирование объявления', titleField:'Заголовок', descriptionField:'Описание', colorField:'Цвет Embed (необязательно)', urlField:'Ссылка (необязательно)', imageField:'URL изображения (необязательно)', thumbnailField:'URL миниатюры (необязательно)', authorField:'Автор (необязательно)', footerField:'Подпись (необязательно)', extraFields:'Дополнительные поля', addField:'Добавить поле', fieldName:'Название поля', fieldValue:'Значение поля', inlineField:'В строку', publishAnnouncement:'Опубликовать на настроенных серверах', saveChanges:'Сохранить изменения', cancelEdit:'Отмена', edit:'Изменить', delete:'Удалить', noAnnouncements:'Объявлений пока нет.', confirmDelete:'Удалить это объявление на всех серверах, где оно опубликовано?', announcementPublished:'Объявление опубликовано. Отправлено: {sent}; ошибок: {failed}; пропущено: {skipped}.', announcementUpdated:'Объявление обновлено на {updated} серверах; ошибок: {failed}.', announcementDeleted:'Объявление удалено на {deleted} серверах.', announcementPartialDelete:'Некоторые копии удалить не удалось. Проверь права и повтори попытку.', optionalChannelNote:'Объявления получают только серверы с настроенным каналом объявлений.',
       appearance:'Лаборатория оформления',
       developer:'Инструменты разработчика',
       localization:'Лаборатория локализации',
@@ -71,9 +75,9 @@
       refresh:'Обновить',
       logout:'Выйти',
       login:'Войти через Discord',
-      denied:'Для этого аккаунта нет доступа создателя.',
+      denied:'Для этого аккаунта нет доступа к панели администратора.',
       offline:'API Quello недоступен. Проверьте API_BASE в site-config.js.',
-      loading:'Загрузка данных создателя…',
+      loading:'Загрузка данных панели администратора…',
       api:'API',
       bot:'Discord-бот',
       ready:'Работает',
@@ -98,17 +102,19 @@
       disabled:'Выключено',
       passkey:'Passkey',
       totp:'TOTP',
-      mfaNote:'Дополнительные факторы в этой сборке ещё не настроены. Доступ к API всё равно проверяется на сервере по Discord ID владельца.',
+      mfaNote:'Дополнительные факторы в этой сборке ещё не настроены. Доступ к Admin Console по-прежнему проверяется на сервере по BOT_OWNER_ID.',
       hidden:'Консоль скрыта от обычных посетителей. Используйте Ctrl + Shift + K или удерживайте логотип Quello 2 секунды.'
     },
 
     de: {
       signin:'Bitte zuerst mit Discord anmelden — Weiterleitung…',
       hold:'Weiter gedrückt halten…',
-      button:'Creator-Konsole',
-      title:'Creator-Konsole',
+      button:'Admin-Konsole',
+      section:'ADMIN',
+      title:'Admin-Konsole',
       sub:'Privater Bereich · Quello-Ökosystem',
       overview:'Systemübersicht',
+      announcements:'Ankündigungen', newAnnouncement:'Neue Ankündigung', editAnnouncement:'Ankündigung bearbeiten', titleField:'Titel', descriptionField:'Beschreibung', colorField:'Embed-Farbe (optional)', urlField:'Link-URL (optional)', imageField:'Bild-URL (optional)', thumbnailField:'Thumbnail-URL (optional)', authorField:'Autor (optional)', footerField:'Fußzeile (optional)', extraFields:'Zusätzliche Felder', addField:'Feld hinzufügen', fieldName:'Feldname', fieldValue:'Feldwert', inlineField:'Inline', publishAnnouncement:'Auf konfigurierten Servern veröffentlichen', saveChanges:'Änderungen speichern', cancelEdit:'Abbrechen', edit:'Bearbeiten', delete:'Löschen', noAnnouncements:'Noch keine Ankündigungen.', confirmDelete:'Diese Ankündigung auf allen Servern löschen, auf denen sie veröffentlicht wurde?', announcementPublished:'Ankündigung veröffentlicht. Gesendet: {sent}; fehlgeschlagen: {failed}; übersprungen: {skipped}.', announcementUpdated:'Auf {updated} Servern aktualisiert; {failed} fehlgeschlagen.', announcementDeleted:'Auf {deleted} Servern gelöscht.', announcementPartialDelete:'Einige Kopien konnten nicht gelöscht werden. Berechtigungen prüfen und erneut versuchen.', optionalChannelNote:'Nur Server mit konfiguriertem Ankündigungskanal erhalten Ankündigungen.',
       appearance:'Design-Labor',
       developer:'Entwicklerwerkzeuge',
       localization:'Lokalisierungslabor',
@@ -118,9 +124,9 @@
       refresh:'Aktualisieren',
       logout:'Abmelden',
       login:'Mit Discord anmelden',
-      denied:'Für dieses Konto ist kein Creator-Zugriff verfügbar.',
+      denied:'Für dieses Konto ist kein Admin-Zugriff verfügbar.',
       offline:'Die Quello-API ist nicht erreichbar. Prüfe API_BASE in site-config.js.',
-      loading:'Creator-Daten werden geladen…',
+      loading:'Admin-Daten werden geladen…',
       api:'API',
       bot:'Discord-Bot',
       ready:'Bereit',
@@ -145,17 +151,19 @@
       disabled:'Deaktiviert',
       passkey:'Passkey',
       totp:'TOTP',
-      mfaNote:'Zusätzliche Faktoren sind in diesem Build nicht eingerichtet. Creator-Endpunkte prüfen die Discord-Owner-ID weiterhin serverseitig.',
+      mfaNote:'Zusätzliche Faktoren sind in diesem Build nicht eingerichtet. Admin-Endpunkte prüfen BOT_OWNER_ID weiterhin serverseitig.',
       hidden:'Die Konsole ist für normale Besucher verborgen. Ctrl + Shift + K drücken oder das Quello-Logo 2 Sekunden halten.'
     },
 
     fr: {
       signin:'Connectez-vous d’abord avec Discord — redirection…',
       hold:'Maintenez appuyé…',
-      button:'Console du créateur',
-      title:'Console du créateur',
+      button:'Console d’administration',
+      section:'ADMIN',
+      title:'Console d’administration',
       sub:'Espace privé · écosystème Quello',
       overview:'Vue système',
+      announcements:'Annonces', newAnnouncement:'Nouvelle annonce', editAnnouncement:'Modifier l’annonce', titleField:'Titre', descriptionField:'Description', colorField:'Couleur Embed (facultatif)', urlField:'URL du lien (facultatif)', imageField:'URL de l’image (facultatif)', thumbnailField:'URL de la miniature (facultatif)', authorField:'Auteur (facultatif)', footerField:'Pied de page (facultatif)', extraFields:'Champs supplémentaires', addField:'Ajouter un champ', fieldName:'Nom du champ', fieldValue:'Valeur du champ', inlineField:'En ligne', publishAnnouncement:'Publier sur les serveurs configurés', saveChanges:'Enregistrer', cancelEdit:'Annuler', edit:'Modifier', delete:'Supprimer', noAnnouncements:'Aucune annonce pour le moment.', confirmDelete:'Supprimer cette annonce de tous les serveurs où elle a été publiée ?', announcementPublished:'Annonce publiée. Envoyées : {sent} ; échecs : {failed} ; ignorées : {skipped}.', announcementUpdated:'Annonce mise à jour sur {updated} serveurs ; {failed} échecs.', announcementDeleted:'Annonce supprimée sur {deleted} serveurs.', announcementPartialDelete:'Certaines copies n’ont pas pu être supprimées. Vérifiez les permissions et réessayez.', optionalChannelNote:'Seuls les serveurs ayant configuré un salon d’annonces les reçoivent.',
       appearance:'Atelier visuel',
       developer:'Outils développeur',
       localization:'Atelier de localisation',
@@ -165,9 +173,9 @@
       refresh:'Actualiser',
       logout:'Déconnexion',
       login:'Se connecter avec Discord',
-      denied:'Ce compte ne dispose pas des droits de créateur.',
+      denied:'Ce compte ne dispose pas des droits d’administration.',
       offline:'L’API Quello est inaccessible. Vérifiez API_BASE dans site-config.js.',
-      loading:'Chargement des données…',
+      loading:'Chargement des données administrateur…',
       api:'API',
       bot:'Bot Discord',
       ready:'Prêt',
@@ -192,17 +200,19 @@
       disabled:'Désactivé',
       passkey:'Passkey',
       totp:'TOTP',
-      mfaNote:'Les facteurs supplémentaires ne sont pas configurés dans cette version. Les points d’accès créateur vérifient toujours côté serveur l’ID Discord du propriétaire.',
+      mfaNote:'Les facteurs supplémentaires ne sont pas configurés dans cette version. Les points d’accès Admin Console vérifient toujours BOT_OWNER_ID côté serveur.',
       hidden:'La console est masquée aux visiteurs. Utilisez Ctrl + Shift + K ou maintenez le logo Quello pendant 2 secondes.'
     },
 
     it: {
       signin:'Accedi prima con Discord — reindirizzamento…',
       hold:'Continua a tenere premuto…',
-      button:'Console del creatore',
-      title:'Console del creatore',
+      button:'Console di amministrazione',
+      section:'ADMIN',
+      title:'Console di amministrazione',
       sub:'Spazio privato · ecosistema Quello',
       overview:'Panoramica sistema',
+      announcements:'Annunci', newAnnouncement:'Nuovo annuncio', editAnnouncement:'Modifica annuncio', titleField:'Titolo', descriptionField:'Descrizione', colorField:'Colore Embed (facoltativo)', urlField:'URL del collegamento (facoltativo)', imageField:'URL immagine (facoltativo)', thumbnailField:'URL miniatura (facoltativo)', authorField:'Autore (facoltativo)', footerField:'Piè di pagina (facoltativo)', extraFields:'Campi aggiuntivi', addField:'Aggiungi campo', fieldName:'Nome campo', fieldValue:'Valore campo', inlineField:'In linea', publishAnnouncement:'Pubblica sui server configurati', saveChanges:'Salva modifiche', cancelEdit:'Annulla', edit:'Modifica', delete:'Elimina', noAnnouncements:'Nessun annuncio al momento.', confirmDelete:'Eliminare questo annuncio da tutti i server in cui è stato pubblicato?', announcementPublished:'Annuncio pubblicato. Inviati: {sent}; non riusciti: {failed}; ignorati: {skipped}.', announcementUpdated:'Annuncio aggiornato su {updated} server; {failed} errori.', announcementDeleted:'Annuncio eliminato da {deleted} server.', announcementPartialDelete:'Impossibile eliminare alcune copie. Controlla i permessi e riprova.', optionalChannelNote:'Gli annunci vengono inviati solo ai server con un canale annunci configurato.',
       appearance:'Laboratorio aspetto',
       developer:'Strumenti sviluppatore',
       localization:'Laboratorio localizzazione',
@@ -212,9 +222,9 @@
       refresh:'Aggiorna',
       logout:'Esci',
       login:'Accedi con Discord',
-      denied:'Questo account non dispone dei permessi creatore.',
+      denied:'Questo account non dispone dei permessi di amministrazione.',
       offline:'API Quello non raggiungibile. Controlla API_BASE in site-config.js.',
-      loading:'Caricamento dati creatore…',
+      loading:'Caricamento dati amministratore…',
       api:'API',
       bot:'Bot Discord',
       ready:'Pronto',
@@ -239,7 +249,7 @@
       disabled:'Disattivato',
       passkey:'Passkey',
       totp:'TOTP',
-      mfaNote:'I fattori aggiuntivi non sono configurati in questa build. Gli endpoint creatore verificano comunque lato server l’ID Discord del proprietario.',
+      mfaNote:'I fattori aggiuntivi non sono configurati in questa build. Gli endpoint Admin Console verificano comunque BOT_OWNER_ID lato server.',
       hidden:'La console è nascosta ai visitatori. Usa Ctrl + Shift + K o tieni premuto il logo Quello per 2 secondi.'
     }
   };
@@ -262,6 +272,8 @@
 
   let creator = false;
   let overview = null;
+  let announcements = [];
+  let editingAnnouncement = null;
   let drawer = null;
   let body = null;
   let active = 'overview';
@@ -287,7 +299,7 @@
       .join(':');
   };
 
-  async function request(path) {
+  async function request(path, options = {}) {
     const tk = token();
 
     if (!API || /example\.com/i.test(API)) {
@@ -301,18 +313,21 @@
     let response;
 
     try {
+      const headers = {
+        'Authorization': 'Bearer ' + tk,
+        'Accept': 'application/json'
+      };
+      if (options.body !== undefined) headers['Content-Type'] = 'application/json';
       response = await fetch(API + path, {
-        method: 'GET',
+        method: options.method || 'GET',
         mode: 'cors',
         credentials: 'omit',
-        headers: {
-          'Authorization': 'Bearer ' + tk,
-          'Accept': 'application/json'
-        },
+        headers,
+        body: options.body === undefined ? undefined : JSON.stringify(options.body),
         cache: 'no-store'
       });
     } catch (error) {
-      console.error('[Quello Creator Console] Fetch failed:', path, error);
+      console.error('[Quello Admin Console] Fetch failed:', path, error);
 
       throw new Error(
         `Не удалось получить ответ от ${path}. ` +
@@ -346,7 +361,7 @@
     if (links.querySelector('[data-creator-console-entry]')) return;
 
     const divider = el('div', 'side-divider');
-    const label = el('div', 'side-section-label', 'CREATOR');
+    const label = el('div', 'side-section-label', tr('section'));
     const button = el('button', 'side-action creator-console-entry');
 
     button.type = 'button';
@@ -396,6 +411,7 @@
 
     const sections = [
       ['overview', 'overview'],
+      ['announcements', 'announcements'],
       ['appearance', 'appearance'],
       ['developer', 'developer'],
       ['localization', 'localization'],
@@ -410,7 +426,8 @@
 
       button.addEventListener('click', () => {
         active = id;
-        render();
+        if (id === 'announcements') loadAnnouncements();
+        else render();
       });
 
       nav.append(button);
@@ -453,7 +470,7 @@
       const bot = overview?.bot || {};
 
       grid.append(
-        card(tr('api'), 'ONLINE', 'Creator API responded'),
+        card(tr('api'), 'ONLINE', 'Admin API responded'),
         card(
           tr('bot'),
           bot.ready ? tr('ready') : tr('notReady'),
@@ -494,6 +511,9 @@
       refresh.type = 'button';
       refresh.addEventListener('click', loadOverview);
       body.append(refresh);
+
+    } else if (active === 'announcements') {
+      renderAnnouncements();
 
     } else if (active === 'appearance') {
       const box = el('article', 'creator-note');
@@ -642,6 +662,141 @@
     }
   }
 
+  function renderAnnouncements() {
+    if (!body) return;
+    body.replaceChildren();
+    const form = el('article', 'creator-note');
+    form.append(el('h3', '', editingAnnouncement ? tr('editAnnouncement') : tr('newAnnouncement')));
+    form.append(el('p', 'creator-muted', tr('optionalChannelNote')));
+
+    const controls = {};
+    const addInput = (key, label, value, type = 'text', multiline = false) => {
+      const wrap = el('label', 'creator-form-field');
+      wrap.append(el('span', '', label));
+      const control = multiline ? el('textarea', 'creator-form-control') : el('input', 'creator-form-control');
+      if (!multiline) control.type = type;
+      control.value = value || '';
+      control.maxLength = key === 'description' ? 4096 : 500;
+      controls[key] = control;
+      wrap.append(control);
+      form.append(wrap);
+    };
+    const p = editingAnnouncement?.payload || {};
+    addInput('title', tr('titleField'), p.title || '');
+    addInput('description', tr('descriptionField'), p.description || '', 'text', true);
+    addInput('color', tr('colorField'), p.color ? '#' + Number(p.color).toString(16).padStart(6, '0') : '');
+    addInput('url', tr('urlField'), p.url || '', 'url');
+    addInput('image', tr('imageField'), p.image || '', 'url');
+    addInput('thumbnail', tr('thumbnailField'), p.thumbnail || '', 'url');
+    addInput('author', tr('authorField'), p.author || '');
+    addInput('footer', tr('footerField'), p.footer || '');
+
+    const fieldsBox = el('div', 'creator-announcement-fields');
+    fieldsBox.append(el('h4', '', tr('extraFields')));
+    const fieldRows = [];
+    const addFieldRow = (item = {}) => {
+      const row = el('div', 'creator-announcement-field-row');
+      const name = el('input', 'creator-form-control'); name.placeholder = tr('fieldName'); name.value = item.name || ''; name.maxLength = 256;
+      const value = el('textarea', 'creator-form-control'); value.placeholder = tr('fieldValue'); value.value = item.value || ''; value.maxLength = 1024;
+      const inlineLabel = el('label', 'creator-inline-label');
+      const inline = el('input'); inline.type = 'checkbox'; inline.checked = !!item.inline;
+      inlineLabel.append(inline, el('span', '', tr('inlineField')));
+      const remove = el('button', 'creator-secondary', '×'); remove.type = 'button'; remove.setAttribute('aria-label', tr('delete'));
+      remove.addEventListener('click', () => { row.remove(); const index = fieldRows.indexOf(row); if (index >= 0) fieldRows.splice(index, 1); });
+      row.append(name, value, inlineLabel, remove);
+      fieldRows.push(row); fieldsBox.append(row);
+    };
+    (p.fields || []).forEach(addFieldRow);
+    const addField = el('button', 'creator-secondary', tr('addField')); addField.type = 'button'; addField.addEventListener('click', () => addFieldRow());
+    fieldsBox.append(addField); form.append(fieldsBox);
+
+    const actions = el('div', 'creator-button-row');
+    const save = el('button', 'creator-primary', editingAnnouncement ? tr('saveChanges') : tr('publishAnnouncement'));
+    save.type = 'button';
+    save.addEventListener('click', async () => {
+      const fields = fieldRows.map(row => {
+        const inputs = row.querySelectorAll('input,textarea');
+        return { name: inputs[0].value.trim(), value: inputs[1].value.trim(), inline: inputs[2].checked };
+      }).filter(item => item.name || item.value);
+      const payload = {
+        title: controls.title.value.trim() || null,
+        description: controls.description.value.trim() || null,
+        color: controls.color.value.trim() || null,
+        url: controls.url.value.trim() || null,
+        image: controls.image.value.trim() || null,
+        thumbnail: controls.thumbnail.value.trim() || null,
+        author: controls.author.value.trim() || null,
+        footer: controls.footer.value.trim() || null,
+        fields
+      };
+      if (!payload.title && !payload.description) { toast(tr('titleField') + ' / ' + tr('descriptionField')); return; }
+      save.disabled = true;
+      try {
+        if (editingAnnouncement) {
+          const result = await request('/api/creator/announcements/' + editingAnnouncement.id, { method: 'PATCH', body: payload });
+          toast(tr('announcementUpdated').replace('{updated}', result.updated).replace('{failed}', result.failed));
+          editingAnnouncement = null;
+        } else {
+          const result = await request('/api/creator/announcements', { method: 'POST', body: payload });
+          toast(tr('announcementPublished').replace('{sent}', result.counts.sent).replace('{failed}', result.counts.failed).replace('{skipped}', result.counts.skipped));
+        }
+        await loadAnnouncements();
+      } catch (error) { toast(error.message || tr('offline')); save.disabled = false; }
+    });
+    actions.append(save);
+    if (editingAnnouncement) {
+      const cancel = el('button', 'creator-secondary', tr('cancelEdit')); cancel.type = 'button';
+      cancel.addEventListener('click', () => { editingAnnouncement = null; renderAnnouncements(); });
+      actions.append(cancel);
+    }
+    form.append(actions);
+    body.append(form);
+
+    const list = el('section', 'creator-note');
+    list.append(el('h3', '', tr('announcements')));
+    if (!announcements.length) list.append(el('p', 'creator-muted', tr('noAnnouncements')));
+    announcements.forEach(item => {
+      const cardNode = el('article', 'creator-announcement-card');
+      const payload = item.payload || {};
+      cardNode.append(el('strong', '', payload.title || payload.description || ('#' + item.id)));
+      const delivery = item.deliveries || [];
+      const sent = delivery.filter(x => x.status === 'sent').length;
+      const failed = delivery.filter(x => x.status !== 'sent').length;
+      cardNode.append(el('small', 'creator-muted', `#${item.id} · ${sent} sent · ${failed} unavailable`));
+      delivery.filter(x => x.status !== 'sent').forEach(copy => {
+        const where = copy.guild_name || copy.guild_id;
+        cardNode.append(el('small', 'creator-error', `${where}: ${copy.status}${copy.error ? ' · ' + copy.error : ''}`));
+      });
+      const row = el('div', 'creator-button-row');
+      const edit = el('button', 'creator-secondary', tr('edit')); edit.type = 'button';
+      edit.addEventListener('click', () => { editingAnnouncement = item; renderAnnouncements(); });
+      const remove = el('button', 'creator-secondary', tr('delete')); remove.type = 'button';
+      remove.addEventListener('click', async () => {
+        if (!window.confirm(tr('confirmDelete'))) return;
+        remove.disabled = true;
+        try {
+          const result = await request('/api/creator/announcements/' + item.id, { method: 'DELETE' });
+          if (result.removed) { toast(tr('announcementDeleted').replace('{deleted}', result.deleted)); await loadAnnouncements(); }
+          else { toast(tr('announcementPartialDelete')); await loadAnnouncements(); }
+        } catch (error) { toast(error.message || tr('offline')); remove.disabled = false; }
+      });
+      row.append(edit, remove); cardNode.append(row); list.append(cardNode);
+    });
+    const refresh = el('button', 'creator-secondary', tr('refresh')); refresh.type = 'button'; refresh.addEventListener('click', loadAnnouncements);
+    list.append(refresh); body.append(list);
+  }
+
+  async function loadAnnouncements() {
+    if (body) body.replaceChildren(el('p', 'creator-muted', tr('loading')));
+    try {
+      const data = await request('/api/creator/announcements');
+      announcements = data.announcements || [];
+      renderAnnouncements();
+    } catch (error) {
+      if (body) body.replaceChildren(el('p', 'creator-error', error.message));
+    }
+  }
+
   async function loadOverview() {
     if (body) {
       body.replaceChildren(
@@ -653,7 +808,7 @@
       overview = await request('/api/creator/overview');
       render();
     } catch (error) {
-      console.error('[Quello Creator Console] Overview failed:', error);
+      console.error('[Quello Admin Console] Overview failed:', error);
 
       if (body) {
         body.replaceChildren(
@@ -868,7 +1023,7 @@
       creator = true;
 
     } catch (error) {
-      console.error('[Quello Creator Console] Access check failed:', error);
+      console.error('[Quello Admin Console] Access check failed:', error);
       toast(error.message || tr('offline'));
       return;
     }
@@ -904,7 +1059,7 @@
       }
 
     } catch (error) {
-      console.warn('[Quello Creator Console] Verification failed:', error);
+      console.warn('[Quello Admin Console] Verification failed:', error);
     }
   }
     document.addEventListener('keydown', event => {
@@ -1137,14 +1292,14 @@
 
   window.addEventListener('error', event => {
     console.error(
-      '[Quello Creator Console] JavaScript error:',
+      '[Quello Admin Console] JavaScript error:',
       event.error || event.message
     );
   });
 
   window.addEventListener('unhandledrejection', event => {
     console.error(
-      '[Quello Creator Console] Unhandled promise rejection:',
+      '[Quello Admin Console] Unhandled promise rejection:',
       event.reason
     );
   });
