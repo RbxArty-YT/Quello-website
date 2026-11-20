@@ -363,11 +363,13 @@
     }
 
     if (!response.ok) {
-      throw new Error(
+      const error = new Error(
         data.message ||
         data.error ||
         `API error ${response.status}: ${response.statusText}`
       );
+      error.status = response.status;
+      throw error;
     }
 
     return data;
@@ -1099,18 +1101,18 @@
   }
 
   async function openConsole() {
-    if (!API || /example\.com/i.test(API)) {
-      toast(tr('offline'));
+    // The logo gesture is available to everyone; authentication and role checks
+    // happen here, after the gesture, rather than hiding the gesture itself.
+    if (!token()) {
+      toast(tr('signin'));
+      setTimeout(() => {
+        location.href = 'login.html';
+      }, 700);
       return;
     }
 
-    if (!token()) {
-      toast(tr('signin'));
-
-      setTimeout(() => {
-        location.href = 'login.html';
-      }, 900);
-
+    if (!API || /example\.com/i.test(API)) {
+      toast(tr('offline'));
       return;
     }
 
@@ -1126,6 +1128,17 @@
 
     } catch (error) {
       console.error('[Quello Admin Console] Access check failed:', error);
+      // A missing/expired login is different from a valid account without a role.
+      if (error.status === 401) {
+        try { localStorage.removeItem(TOKEN_KEY); } catch (_) {}
+        toast(tr('signin'));
+        setTimeout(() => { location.href = 'login.html'; }, 700);
+        return;
+      }
+      if (error.status === 403) {
+        toast(tr('denied'));
+        return;
+      }
       toast(error.message || tr('offline'));
       return;
     }
@@ -1208,7 +1221,9 @@
     }
 
     function startHold(target, x, y, pointerId = null, touchId = null) {
-      if (!creator || !target) return;
+      // Do not gate the gesture on creator status. openConsole() performs
+      // the authoritative sign-in and permission checks after the hold.
+      if (!target) return;
 
       clearHold();
       triggered = false;
@@ -1316,8 +1331,9 @@
         triggered = false;
         return;
       }
-      // Suppress the native image/link callout so a 2-second hold can complete.
-      if (creator && target) event.preventDefault();
+      // Suppress the native image/link callout for every visitor so the
+      // 2-second hold can complete before Chrome opens its link context menu.
+      if (target) event.preventDefault();
     }, true);
 
     const cancelForInterruption = () => {
