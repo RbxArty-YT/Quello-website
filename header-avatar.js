@@ -4,6 +4,13 @@
 (function () {
   'use strict';
 
+  // Keep long-pressing the brand/logo from opening the browser's link context menu on mobile.
+  document.addEventListener('contextmenu', function (event) {
+    if (event.target && event.target.closest && event.target.closest('a.brand')) {
+      event.preventDefault();
+    }
+  });
+
   var TOKEN_KEY = 'quello-dash-token';
   var LANG_KEY = 'quello-site-language-v2';
   var L = {

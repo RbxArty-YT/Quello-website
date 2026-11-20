@@ -40,3 +40,17 @@
 .nav-inner>.header-avatar{margin-left:auto}
 .about-nav-actions>.header-avatar{margin-left:0}
 @media(max-width:560px){.about-nav-actions>.header-avatar{flex:none}}
+
+
+/* Prevent the mobile browser's native link/image callout when the Quello brand is long-pressed.
+   Normal taps and navigation remain unchanged. */
+.brand{
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  user-select:none;
+}
+.brand img{
+  -webkit-user-drag:none;
+  user-drag:none;
+  pointer-events:none;
+}
