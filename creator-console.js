@@ -15,7 +15,8 @@
       section:'ADMIN',
       title:'Admin Console',
       sub:'Private workspace · Quello ecosystem',
-      overview:'System Overview',
+      overview:'System Overview', ownerActions:'Owner Actions',
+      developerTeamActions:'Developer Actions',
       announcements:'Announcements', newAnnouncement:'New announcement', editAnnouncement:'Edit announcement', titleField:'Title', descriptionField:'Description', colorField:'Embed color (optional)', urlField:'Link URL (optional)', imageField:'Image URL (optional)', thumbnailField:'Thumbnail URL (optional)', authorField:'Author (optional)', footerField:'Footer (optional)', extraFields:'Additional fields', addField:'Add field', fieldName:'Field name', fieldValue:'Field value', inlineField:'Inline', publishAnnouncement:'Publish to configured servers', saveChanges:'Save changes', cancelEdit:'Cancel', edit:'Edit', delete:'Delete', noAnnouncements:'No announcements yet.', confirmDelete:'Delete this announcement from every server where it was published?', announcementPublished:'Announcement published. Sent: {sent}; failed: {failed}; skipped: {skipped}.', announcementUpdated:'Announcement updated on {updated} servers; {failed} failed.', announcementDeleted:'Announcement deleted from {deleted} servers.', announcementPartialDelete:'Some copies could not be deleted. Fix permissions and retry.', optionalChannelNote:'Only servers with an Announcement Channel configured receive announcements.',
       appearance:'Appearance Lab',
       developer:'Developer Tools',
@@ -64,7 +65,8 @@
       section:'АДМИНИСТРАТОР',
       title:'Панель администратора',
       sub:'Закрытое пространство · экосистема Quello',
-      overview:'Обзор системы',
+      overview:'Обзор системы', ownerActions:'Действия владельца',
+      developerTeamActions:'Действия разработчика',
       announcements:'Объявления', newAnnouncement:'Новое объявление', editAnnouncement:'Редактирование объявления', titleField:'Заголовок', descriptionField:'Описание', colorField:'Цвет Embed (необязательно)', urlField:'Ссылка (необязательно)', imageField:'URL изображения (необязательно)', thumbnailField:'URL миниатюры (необязательно)', authorField:'Автор (необязательно)', footerField:'Подпись (необязательно)', extraFields:'Дополнительные поля', addField:'Добавить поле', fieldName:'Название поля', fieldValue:'Значение поля', inlineField:'В строку', publishAnnouncement:'Опубликовать на настроенных серверах', saveChanges:'Сохранить изменения', cancelEdit:'Отмена', edit:'Изменить', delete:'Удалить', noAnnouncements:'Объявлений пока нет.', confirmDelete:'Удалить это объявление на всех серверах, где оно опубликовано?', announcementPublished:'Объявление опубликовано. Отправлено: {sent}; ошибок: {failed}; пропущено: {skipped}.', announcementUpdated:'Объявление обновлено на {updated} серверах; ошибок: {failed}.', announcementDeleted:'Объявление удалено на {deleted} серверах.', announcementPartialDelete:'Некоторые копии удалить не удалось. Проверь права и повтори попытку.', optionalChannelNote:'Объявления получают только серверы с настроенным каналом объявлений.',
       appearance:'Лаборатория оформления',
       developer:'Инструменты разработчика',
@@ -113,7 +115,8 @@
       section:'ADMIN',
       title:'Admin-Konsole',
       sub:'Privater Bereich · Quello-Ökosystem',
-      overview:'Systemübersicht',
+      overview:'Systemübersicht', ownerActions:'Owner-Aktionen',
+      developerTeamActions:'Entwickleraktionen',
       announcements:'Ankündigungen', newAnnouncement:'Neue Ankündigung', editAnnouncement:'Ankündigung bearbeiten', titleField:'Titel', descriptionField:'Beschreibung', colorField:'Embed-Farbe (optional)', urlField:'Link-URL (optional)', imageField:'Bild-URL (optional)', thumbnailField:'Thumbnail-URL (optional)', authorField:'Autor (optional)', footerField:'Fußzeile (optional)', extraFields:'Zusätzliche Felder', addField:'Feld hinzufügen', fieldName:'Feldname', fieldValue:'Feldwert', inlineField:'Inline', publishAnnouncement:'Auf konfigurierten Servern veröffentlichen', saveChanges:'Änderungen speichern', cancelEdit:'Abbrechen', edit:'Bearbeiten', delete:'Löschen', noAnnouncements:'Noch keine Ankündigungen.', confirmDelete:'Diese Ankündigung auf allen Servern löschen, auf denen sie veröffentlicht wurde?', announcementPublished:'Ankündigung veröffentlicht. Gesendet: {sent}; fehlgeschlagen: {failed}; übersprungen: {skipped}.', announcementUpdated:'Auf {updated} Servern aktualisiert; {failed} fehlgeschlagen.', announcementDeleted:'Auf {deleted} Servern gelöscht.', announcementPartialDelete:'Einige Kopien konnten nicht gelöscht werden. Berechtigungen prüfen und erneut versuchen.', optionalChannelNote:'Nur Server mit konfiguriertem Ankündigungskanal erhalten Ankündigungen.',
       appearance:'Design-Labor',
       developer:'Entwicklerwerkzeuge',
@@ -162,7 +165,8 @@
       section:'ADMIN',
       title:'Console d’administration',
       sub:'Espace privé · écosystème Quello',
-      overview:'Vue système',
+      overview:'Vue système', ownerActions:'Actions du propriétaire',
+      developerTeamActions:'Actions développeur',
       announcements:'Annonces', newAnnouncement:'Nouvelle annonce', editAnnouncement:'Modifier l’annonce', titleField:'Titre', descriptionField:'Description', colorField:'Couleur Embed (facultatif)', urlField:'URL du lien (facultatif)', imageField:'URL de l’image (facultatif)', thumbnailField:'URL de la miniature (facultatif)', authorField:'Auteur (facultatif)', footerField:'Pied de page (facultatif)', extraFields:'Champs supplémentaires', addField:'Ajouter un champ', fieldName:'Nom du champ', fieldValue:'Valeur du champ', inlineField:'En ligne', publishAnnouncement:'Publier sur les serveurs configurés', saveChanges:'Enregistrer', cancelEdit:'Annuler', edit:'Modifier', delete:'Supprimer', noAnnouncements:'Aucune annonce pour le moment.', confirmDelete:'Supprimer cette annonce de tous les serveurs où elle a été publiée ?', announcementPublished:'Annonce publiée. Envoyées : {sent} ; échecs : {failed} ; ignorées : {skipped}.', announcementUpdated:'Annonce mise à jour sur {updated} serveurs ; {failed} échecs.', announcementDeleted:'Annonce supprimée sur {deleted} serveurs.', announcementPartialDelete:'Certaines copies n’ont pas pu être supprimées. Vérifiez les permissions et réessayez.', optionalChannelNote:'Seuls les serveurs ayant configuré un salon d’annonces les reçoivent.',
       appearance:'Atelier visuel',
       developer:'Outils développeur',
@@ -211,7 +215,8 @@
       section:'ADMIN',
       title:'Console di amministrazione',
       sub:'Spazio privato · ecosistema Quello',
-      overview:'Panoramica sistema',
+      overview:'Panoramica sistema', ownerActions:'Azioni proprietario',
+      developerTeamActions:'Azioni sviluppatore',
       announcements:'Annunci', newAnnouncement:'Nuovo annuncio', editAnnouncement:'Modifica annuncio', titleField:'Titolo', descriptionField:'Descrizione', colorField:'Colore Embed (facoltativo)', urlField:'URL del collegamento (facoltativo)', imageField:'URL immagine (facoltativo)', thumbnailField:'URL miniatura (facoltativo)', authorField:'Autore (facoltativo)', footerField:'Piè di pagina (facoltativo)', extraFields:'Campi aggiuntivi', addField:'Aggiungi campo', fieldName:'Nome campo', fieldValue:'Valore campo', inlineField:'In linea', publishAnnouncement:'Pubblica sui server configurati', saveChanges:'Salva modifiche', cancelEdit:'Annulla', edit:'Modifica', delete:'Elimina', noAnnouncements:'Nessun annuncio al momento.', confirmDelete:'Eliminare questo annuncio da tutti i server in cui è stato pubblicato?', announcementPublished:'Annuncio pubblicato. Inviati: {sent}; non riusciti: {failed}; ignorati: {skipped}.', announcementUpdated:'Annuncio aggiornato su {updated} server; {failed} errori.', announcementDeleted:'Annuncio eliminato da {deleted} server.', announcementPartialDelete:'Impossibile eliminare alcune copie. Controlla i permessi e riprova.', optionalChannelNote:'Gli annunci vengono inviati solo ai server con un canale annunci configurato.',
       appearance:'Laboratorio aspetto',
       developer:'Strumenti sviluppatore',
@@ -277,6 +282,7 @@
   let drawer = null;
   let body = null;
   let active = 'overview';
+  let accessRole = null;
   let errorLog = [];
   let toastTimer = null;
   let labelRefreshTimer = null;
@@ -286,6 +292,18 @@
     if (cls) n.className = cls;
     if (text !== undefined) n.textContent = text;
     return n;
+  };
+
+  const ownerText = (key) => {
+    const language = lang();
+    const words = {
+      en:{teamRole:'Developer Team role',teamScope:'Developer Actions scope',teamScopeDescription:'Accepted Developer Team Admins and Developers can view runtime status and run technical diagnostics. Global owner controls, announcements and session revocation remain restricted to the Bot Owner and verified Team Owner.',ownerActions:'Owner Actions',technical:'Technical Work Mode',sessions:'Dashboard Sessions',enabled:'Enabled',disabled:'Disabled',reason:'Reason for technical work',end:'End time (Unix timestamp, optional)',turnOn:'Enable mode',turnOff:'Disable mode',refresh:'Refresh',revoke:'End session',none:'No active Dashboard sessions.',until:'Ends',user:'User',expires:'Expires',confirm:'End this user session? ',saved:'Technical Work Mode updated.'},
+      ru:{teamRole:'Роль в Developer Team',teamScope:'Область Developer Actions',teamScopeDescription:'Принятые участники Developer Team с ролями Admin и Developer могут просматривать состояние системы и запускать техническую диагностику. Глобальное управление, объявления и завершение сессий доступны Bot Owner и подтверждённому владельцу команды.',ownerActions:'Действия владельца',technical:'Режим технических работ',sessions:'Сессии Dashboard',enabled:'Включён',disabled:'Выключен',reason:'Причина технических работ',end:'Время окончания (Unix timestamp, необязательно)',turnOn:'Включить режим',turnOff:'Выключить режим',refresh:'Обновить',revoke:'Завершить сессию',none:'Активных сессий Dashboard нет.',until:'До',user:'Пользователь',expires:'Истекает',confirm:'Завершить эту сессию пользователя?',saved:'Режим технических работ обновлён.'},
+      de:{teamRole:'Developer-Team-Rolle',teamScope:'Umfang der Entwickleraktionen',teamScopeDescription:'Angenommene Admins und Entwickler des Developer Teams können den Laufzeitstatus einsehen und technische Diagnosen ausführen. Globale Steuerung, Ankündigungen und Sitzungswiderruf bleiben dem Bot Owner und dem verifizierten Team Owner vorbehalten.',ownerActions:'Owner-Aktionen',technical:'Wartungsmodus',sessions:'Dashboard-Sitzungen',enabled:'Aktiviert',disabled:'Deaktiviert',reason:'Grund der Wartungsarbeiten',end:'Endzeit (Unix-Zeitstempel, optional)',turnOn:'Aktivieren',turnOff:'Deaktivieren',refresh:'Aktualisieren',revoke:'Sitzung beenden',none:'Keine aktiven Dashboard-Sitzungen.',until:'Bis',user:'Benutzer',expires:'Läuft ab',confirm:'Diese Sitzung beenden?',saved:'Wartungsmodus aktualisiert.'},
+      fr:{teamRole:'Rôle Developer Team',teamScope:'Portée des actions développeur',teamScopeDescription:'Les Admin et Developer acceptés de la Developer Team peuvent consulter l’état d’exécution et lancer des diagnostics techniques. Les contrôles globaux, annonces et révocations de session restent réservés au Bot Owner et au Team Owner vérifié.',ownerActions:'Actions du propriétaire',technical:'Mode maintenance',sessions:'Sessions Dashboard',enabled:'Activé',disabled:'Désactivé',reason:'Motif de maintenance',end:'Heure de fin (horodatage Unix, facultatif)',turnOn:'Activer',turnOff:'Désactiver',refresh:'Actualiser',revoke:'Terminer la session',none:'Aucune session Dashboard active.',until:'Jusqu’à',user:'Utilisateur',expires:'Expire',confirm:'Terminer cette session ?',saved:'Mode maintenance mis à jour.'},
+      it:{teamRole:'Ruolo Developer Team',teamScope:'Ambito Developer Actions',teamScopeDescription:'Gli Admin e i Developer accettati del Developer Team possono visualizzare lo stato operativo ed eseguire diagnostica tecnica. I controlli globali, gli annunci e la revoca delle sessioni restano riservati al Bot Owner e al Team Owner verificato.',ownerActions:'Azioni proprietario',technical:'Modalità manutenzione',sessions:'Sessioni Dashboard',enabled:'Attiva',disabled:'Disattiva',reason:'Motivo della manutenzione',end:'Ora di fine (timestamp Unix, facoltativo)',turnOn:'Attiva modalità',turnOff:'Disattiva modalità',refresh:'Aggiorna',revoke:'Termina sessione',none:'Nessuna sessione Dashboard attiva.',until:'Fino a',user:'Utente',expires:'Scade',confirm:'Terminare questa sessione?',saved:'Modalità manutenzione aggiornata.'}
+    };
+    return (words[language] || words.en)[key] || words.en[key] || key;
   };
 
   const fmtTime = n => {
@@ -412,6 +430,8 @@
     const sections = [
       ['overview', 'overview'],
       ['announcements', 'announcements'],
+      ['owner-actions', 'ownerActions'],
+      ['team-actions', 'developerTeamActions'],
       ['appearance', 'appearance'],
       ['developer', 'developer'],
       ['localization', 'localization'],
@@ -420,6 +440,8 @@
     ];
 
     sections.forEach(([id, key]) => {
+      if (accessRole !== 'bot_owner' && id !== 'team-actions') return;
+      if (accessRole === 'bot_owner' && id === 'team-actions') return;
       const button = el('button', 'creator-tab', tr(key));
       button.type = 'button';
       button.dataset.tab = id;
@@ -427,6 +449,8 @@
       button.addEventListener('click', () => {
         active = id;
         if (id === 'announcements') loadAnnouncements();
+        else if (id === 'owner-actions') loadOwnerActions();
+        else if (id === 'team-actions') loadTeamActions();
         else render();
       });
 
@@ -515,6 +539,12 @@
     } else if (active === 'announcements') {
       renderAnnouncements();
 
+    } else if (active === 'owner-actions') {
+      loadOwnerActions();
+      return;
+    } else if (active === 'team-actions') {
+      loadTeamActions();
+      return;
     } else if (active === 'appearance') {
       const box = el('article', 'creator-note');
       box.append(el('h3', '', tr('theme')));
@@ -797,6 +827,36 @@
     }
   }
 
+  async function loadOwnerActions() {
+    if (!body) return;
+    body.replaceChildren(el('p', 'creator-muted', tr('loading')));
+    try {
+      const [work, sessions] = await Promise.all([
+        request('/api/creator/technical-work'), request('/api/creator/sessions')
+      ]);
+      body.replaceChildren();
+      const state = work.technical_work || {};
+      const box = el('article', 'creator-note');
+      box.append(el('h3', '', ownerText('technical')));
+      box.append(el('p', 'creator-muted', `${ownerText('status')}: ${state.enabled ? ownerText('enabled') : ownerText('disabled')}`));
+      if (state.reason) box.append(el('p', '', state.reason));
+      if (state.ends_at) box.append(el('p', 'creator-muted', `${ownerText('until')}: ${new Date(state.ends_at * 1000).toLocaleString()}`));
+      const reason = el('input', 'creator-input'); reason.type='text'; reason.maxLength=300; reason.placeholder=ownerText('reason'); reason.value=state.reason || '';
+      const end = el('input', 'creator-input'); end.type='number'; end.placeholder=ownerText('end'); end.value=state.ends_at || '';
+      const actions=el('div','creator-button-row');
+      const on=el('button','creator-primary',ownerText('turnOn')); on.type='button';
+      on.addEventListener('click',async()=>{try{await request('/api/creator/technical-work',{method:'PATCH',body:{enabled:true,reason:reason.value,ends_at:end.value?Number(end.value):null}});toast(ownerText('saved'));loadOwnerActions();}catch(e){toast(e.message);}});
+      const off=el('button','creator-secondary',ownerText('turnOff')); off.type='button';
+      off.addEventListener('click',async()=>{try{await request('/api/creator/technical-work',{method:'PATCH',body:{enabled:false}});toast(ownerText('saved'));loadOwnerActions();}catch(e){toast(e.message);}});
+      actions.append(on,off); box.append(reason,end,actions); body.append(box);
+      const sessionBox=el('article','creator-note'); sessionBox.append(el('h3','',ownerText('sessions')));
+      const list=sessions.sessions||[];
+      if(!list.length) sessionBox.append(el('p','creator-muted',ownerText('none')));
+      list.forEach(item=>{const row=el('div','creator-session-row');row.append(el('strong','',`${item.name} (${item.uid})`),el('small','creator-muted',`${ownerText('expires')}: ${new Date(item.expires_at*1000).toLocaleString()}`));const revoke=el('button','creator-secondary',ownerText('revoke'));revoke.type='button';revoke.addEventListener('click',async()=>{if(!confirm(ownerText('confirm')))return;try{await request('/api/creator/sessions',{method:'DELETE',body:{session_id:item.sid}});loadOwnerActions();}catch(e){toast(e.message);}});row.append(revoke);sessionBox.append(row);});
+      const refresh=el('button','creator-secondary',ownerText('refresh'));refresh.type='button';refresh.addEventListener('click',loadOwnerActions);sessionBox.append(refresh);body.append(sessionBox);
+    } catch (error) { body.replaceChildren(el('p','creator-error',error.message || tr('offline'))); }
+  }
+
   async function loadOverview() {
     if (body) {
       body.replaceChildren(
@@ -815,6 +875,48 @@
           el('p', 'creator-error', error.message)
         );
       }
+    }
+  }
+
+  async function loadTeamActions() {
+    if (!body) return;
+    body.replaceChildren(el('p', 'creator-muted', tr('loading')));
+    try {
+      const data = await request('/api/creator/developer/overview');
+      const grid = el('div', 'creator-card-grid');
+      grid.append(
+        card(ownerText('teamRole'), data.access_role || '—', 'Discord Developer Team'),
+        card(tr('version'), data.version || '—', 'APP_VERSION'),
+        card(tr('bot'), data.bot_ready ? tr('ready') : tr('notReady'), 'Gateway status'),
+        card(tr('guilds'), data.guild_count ?? '—', 'Discord cache'),
+        card(tr('latency'), data.latency_ms == null ? '—' : `${data.latency_ms} ms`, 'Gateway')
+      );
+      body.replaceChildren(grid);
+      const note = el('article', 'creator-note');
+      note.append(el('h3', '', ownerText('teamScope')));
+      note.append(el('p', 'creator-muted', ownerText('teamScopeDescription')));
+      const run = el('button', 'creator-primary', tr('run'));
+      run.type = 'button';
+      run.addEventListener('click', async () => {
+        run.disabled = true;
+        try {
+          const report = await request('/api/creator/diagnostics');
+          const details = el('article', 'creator-note');
+          details.append(el('h3', '', tr('checks')));
+          Object.entries(report.checks || {}).forEach(([name, result]) => {
+            details.append(el('p', result.ok ? 'creator-log' : 'creator-error', `${name}: ${result.ok ? 'OK' : 'FAILED'}${result.error ? ` (${result.error})` : ''}`));
+          });
+          body.append(details);
+        } catch (error) {
+          toast(error.message || tr('offline'));
+        } finally {
+          run.disabled = false;
+        }
+      });
+      note.append(run);
+      body.append(note);
+    } catch (error) {
+      body.replaceChildren(el('p', 'creator-error', error.message || tr('offline')));
     }
   }
 
@@ -1014,8 +1116,8 @@
 
     try {
       const me = await request('/api/me');
-
-      if (!me.is_bot_owner) {
+      accessRole = me.access_role === 'owner' ? 'bot_owner' : (me.access_role || (me.is_bot_owner ? 'bot_owner' : null));
+      if (!['bot_owner', 'admin', 'developer'].includes(accessRole)) {
         toast(tr('denied'));
         return;
       }
@@ -1033,7 +1135,7 @@
     drawer.classList.add('open');
     document.body.classList.add('creator-console-open');
 
-    active = 'overview';
+    active = accessRole === 'bot_owner' ? 'overview' : 'team-actions';
     render();
     loadOverview();
   }
@@ -1052,8 +1154,10 @@
     try {
       const me = await request('/api/me');
 
-      if (me.is_bot_owner) {
+      const role = me.access_role === 'owner' ? 'bot_owner' : (me.access_role || (me.is_bot_owner ? 'bot_owner' : ''));
+      if (['bot_owner', 'admin', 'developer'].includes(role)) {
         creator = true;
+        accessRole = role;
         addSidebarButton();
         addFloatingButton();
       }
@@ -1083,126 +1187,147 @@
 
     let timer = null;
     let activeTarget = null;
+    let activePointerId = null;
+    let activeTouchId = null;
     let startX = 0;
     let startY = 0;
     let triggered = false;
 
     const HOLD_TIME = 2000;
-    const MOVE_LIMIT = 12;
+    const MOVE_LIMIT = 14;
 
     function clearHold() {
-      if (timer) {
+      if (timer !== null) {
         clearTimeout(timer);
         timer = null;
       }
-
-      if (activeTarget) {
-        activeTarget.classList.remove('creator-holding');
-        activeTarget = null;
-      }
+      if (activeTarget) activeTarget.classList.remove('creator-holding');
+      activeTarget = null;
+      activePointerId = null;
+      activeTouchId = null;
     }
 
-    function startHold(target, x, y) {
+    function startHold(target, x, y, pointerId = null, touchId = null) {
       if (!creator || !target) return;
 
       clearHold();
       triggered = false;
-
       activeTarget = target;
+      activePointerId = pointerId;
+      activeTouchId = touchId;
       startX = x;
       startY = y;
-
       activeTarget.classList.add('creator-holding');
 
       timer = setTimeout(() => {
         timer = null;
         triggered = true;
-
-        if (activeTarget) {
-          activeTarget.classList.remove('creator-holding');
-          activeTarget = null;
-        }
-
+        if (activeTarget) activeTarget.classList.remove('creator-holding');
+        activeTarget = null;
+        activePointerId = null;
+        activeTouchId = null;
         if (navigator.vibrate) {
-          navigator.vibrate(35);
+          try { navigator.vibrate(35); } catch (_) {}
         }
-
         openConsole();
       }, HOLD_TIME);
     }
 
     function moveHold(x, y) {
-      if (!timer) return;
-
-      if (
-        Math.abs(x - startX) > MOVE_LIMIT ||
-        Math.abs(y - startY) > MOVE_LIMIT
-      ) {
+      if (timer === null) return;
+      if (Math.abs(x - startX) > MOVE_LIMIT || Math.abs(y - startY) > MOVE_LIMIT) {
         clearHold();
       }
     }
 
-    document.addEventListener('touchstart', event => {
-      const target = event.target.closest(LOGO_SELECTOR);
-      if (!target) return;
+    function findLogo(event) {
+      const target = event.target;
+      return target && typeof target.closest === 'function'
+        ? target.closest(LOGO_SELECTOR)
+        : null;
+    }
 
-      const touch = event.touches[0];
-      if (!touch) return;
+    // Prefer Pointer Events on current iOS Safari and Android browsers.
+    // This avoids duplicate touch + pointer timers on hybrid devices.
+    if ('PointerEvent' in window) {
+      document.addEventListener('pointerdown', event => {
+        if (!event.isPrimary || event.button !== 0) return;
+        const target = findLogo(event);
+        if (!target) return;
+        startHold(target, event.clientX, event.clientY, event.pointerId);
+      }, true);
 
-      startHold(target, touch.clientX, touch.clientY);
-    }, { passive: true });
+      document.addEventListener('pointermove', event => {
+        if (activePointerId === null || event.pointerId !== activePointerId) return;
+        moveHold(event.clientX, event.clientY);
+      }, true);
 
-    document.addEventListener('touchmove', event => {
-      const touch = event.touches[0];
+      const finishPointer = event => {
+        if (activePointerId !== null && event.pointerId === activePointerId) clearHold();
+      };
+      document.addEventListener('pointerup', finishPointer, true);
+      document.addEventListener('pointercancel', finishPointer, true);
+    } else {
+      // Fallback for older iOS Safari / Android WebViews without Pointer Events.
+      document.addEventListener('touchstart', event => {
+        if (event.touches.length !== 1) {
+          clearHold();
+          return;
+        }
+        const target = findLogo(event);
+        if (!target) return;
+        const touch = event.touches[0];
+        startHold(target, touch.clientX, touch.clientY, null, touch.identifier);
+      }, { passive: true });
 
-      if (touch) {
-        moveHold(touch.clientX, touch.clientY);
-      }
-    }, { passive: true });
+      document.addEventListener('touchmove', event => {
+        if (activeTouchId === null) return;
+        if (event.touches.length !== 1) {
+          clearHold();
+          return;
+        }
+        const touch = Array.from(event.touches).find(item => item.identifier === activeTouchId);
+        if (touch) moveHold(touch.clientX, touch.clientY);
+        else clearHold();
+      }, { passive: true });
 
-    document.addEventListener('touchend', clearHold, { passive: true });
-    document.addEventListener('touchcancel', clearHold, { passive: true });
-
-    document.addEventListener('pointerdown', event => {
-      if (event.pointerType === 'touch' || event.button !== 0) return;
-
-      const target = event.target.closest(LOGO_SELECTOR);
-      if (!target) return;
-
-      startHold(target, event.clientX, event.clientY);
-    }, true);
-
-    document.addEventListener('pointermove', event => {
-      if (event.pointerType === 'touch') return;
-
-      moveHold(event.clientX, event.clientY);
-    }, true);
-
-    document.addEventListener('pointerup', clearHold, true);
-    document.addEventListener('pointercancel', clearHold, true);
+      const finishTouch = event => {
+        if (activeTouchId === null) return;
+        const ended = Array.from(event.changedTouches || []).some(
+          item => item.identifier === activeTouchId
+        );
+        if (ended) clearHold();
+      };
+      document.addEventListener('touchend', finishTouch, { passive: true });
+      document.addEventListener('touchcancel', finishTouch, { passive: true });
+    }
 
     document.addEventListener('click', event => {
       if (!triggered) return;
-
       event.preventDefault();
       event.stopPropagation();
       triggered = false;
     }, true);
 
     document.addEventListener('contextmenu', event => {
+      const target = findLogo(event);
       if (triggered) {
         event.preventDefault();
         triggered = false;
         return;
       }
-
-      // Mobile browsers open the link/image menu after ~0.5 s of holding,
-      // long before the 2 s timer fires; block it on the logo for the creator
-      // so the hold can finish. Everyone else keeps the normal browser menu.
-      if (creator && event.target.closest && event.target.closest(LOGO_SELECTOR)) {
-        event.preventDefault();
-      }
+      // Suppress the native image/link callout so a 2-second hold can complete.
+      if (creator && target) event.preventDefault();
     }, true);
+
+    const cancelForInterruption = () => {
+      clearHold();
+      triggered = false;
+    };
+    window.addEventListener('blur', cancelForInterruption);
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) cancelForInterruption();
+    });
   }
 
   function addFloatingButton() {

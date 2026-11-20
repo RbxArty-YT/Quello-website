@@ -46,8 +46,8 @@ body[data-page="dashboard"] .creator-fab{bottom:max(86px,calc(env(safe-area-inse
 @media(max-width:560px){.creator-console-panel{width:100%;border-left:0;padding-bottom:calc(24px + env(safe-area-inset-bottom))}.creator-icon-button{width:44px;height:44px}.creator-tab,.creator-secondary,.creator-primary{min-height:44px}}
 
 /* Long-press feedback on the logo + toast */
-.brand,.side-brand,.about-brand{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
-.brand img,.side-brand img,.about-brand img{-webkit-user-drag:none;-webkit-touch-callout:none}
+.brand,.side-brand,.about-brand,.site-logo,.logo,.navbar-brand{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.brand img,.side-brand img,.about-brand img,.site-logo img,.logo img,.navbar-brand img{-webkit-user-drag:none;-webkit-touch-callout:none}
 .creator-holding{animation:creator-hold 2s linear forwards}
 @keyframes creator-hold{0%{transform:scale(1);filter:none}60%{transform:scale(1.04)}100%{transform:scale(1.09);filter:drop-shadow(0 0 14px rgba(236,72,153,.75))}}
 .creator-toast{position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom));z-index:10000;max-width:min(92vw,420px);padding:12px 16px;border-radius:13px;background:linear-gradient(100deg,#7c4dff,#c43c9b 62%,#e9455a);color:#fff;font-size:13px;font-weight:650;text-align:center;box-shadow:0 12px 34px rgba(0,0,0,.4);transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
@@ -124,3 +124,8 @@ body[data-page="dashboard"] .schedule-form .input { max-width:100%; }
 .creator-announcement-card strong{color:var(--text-strong);overflow-wrap:anywhere}
 .creator-announcement-card small{font-size:11px}
 @media(max-width:560px){.creator-announcement-field-row{grid-template-columns:1fr 1fr}.creator-announcement-field-row .creator-inline-label{grid-column:1}.creator-announcement-field-row button{grid-column:2;justify-self:end}}
+
+/* Owner Actions: operational controls and active dashboard sessions */
+.creator-input{display:block;width:100%;box-sizing:border-box;margin:10px 0;padding:12px 14px;border:1px solid var(--creator-border,rgba(255,255,255,.14));border-radius:12px;background:var(--creator-surface,rgba(255,255,255,.05));color:inherit;font:inherit;min-width:0}
+.creator-session-row{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:13px 0;border-bottom:1px solid var(--creator-border,rgba(255,255,255,.1))}
+.creator-session-row strong,.creator-session-row small{display:block;overflow-wrap:anywhere}
