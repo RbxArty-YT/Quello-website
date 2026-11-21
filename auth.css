@@ -109,6 +109,7 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
 .toast.show{opacity:1;transform:translateY(0)}
 .toast.ok{border-color:rgba(35,165,90,.55)}
 .toast.bad{border-color:rgba(237,66,69,.55)}
+.toast.warn{border-color:rgba(240,177,50,.6)}
 
 @media(max-width:820px){.dash-grid{grid-template-columns:1fr}.auth-main{padding:36px 16px 96px}.page-head h1{font-size:26px}.badges{margin-left:0}.dash-crumb{max-width:28vw}}
 @media(max-width:480px){.login-card{padding:28px 20px 24px}.login-card h1{font-size:28px}}

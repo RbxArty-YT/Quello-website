@@ -1,4 +1,4 @@
-/* Quello Hidden Admin Console — shared across Documentation, Dashboard and About. */
+/* Quello Hidden Admin Panel — shared across Documentation, Dashboard and About. */
 (function () {
   'use strict';
 
@@ -11,9 +11,9 @@
     en: {
       signin:'Sign in with Discord first — redirecting…',
       hold:'Keep holding…',
-      button:'Admin Console',
+      button:'Admin Panel',
       section:'ADMIN',
-      title:'Admin Console',
+      title:'Admin Panel',
       sub:'Private workspace · Quello ecosystem',
       overview:'System Overview', ownerActions:'Owner Actions',
       developerTeamActions:'Developer Actions',
@@ -30,6 +30,7 @@
       denied:'Admin access is not available for this account.',
       offline:'The Quello API is unavailable. Check API_BASE in site-config.js.',
       loading:'Loading admin data…',
+      devTeam:'Developer Team',
       api:'API',
       bot:'Discord bot',
       ready:'Ready',
@@ -54,16 +55,16 @@
       disabled:'Disabled',
       passkey:'Passkey',
       totp:'TOTP',
-      mfaNote:'Additional factors are not configured in this build. Admin Console endpoints still enforce the configured BOT_OWNER_ID server-side.',
+      mfaNote:'Additional factors are not configured in this build. Admin Panel endpoints still verify Bot Owner, Developer Team Owner, Admin or Developer access server-side.',
       hidden:'The console is hidden from regular visitors. Use Ctrl + Shift + K or hold the Quello logo for 2 seconds.'
     },
 
     ru: {
       signin:'Сначала войдите через Discord — перенаправляю…',
       hold:'Держите…',
-      button:'Панель администратора',
+      button:'Админ панель',
       section:'АДМИНИСТРАТОР',
-      title:'Панель администратора',
+      title:'Админ панель',
       sub:'Закрытое пространство · экосистема Quello',
       overview:'Обзор системы', ownerActions:'Действия владельца',
       developerTeamActions:'Действия разработчика',
@@ -77,9 +78,10 @@
       refresh:'Обновить',
       logout:'Выйти',
       login:'Войти через Discord',
-      denied:'Для этого аккаунта нет доступа к панели администратора.',
+      denied:'Для этого аккаунта нет доступа к Админ панели.',
       offline:'API Quello недоступен. Проверьте API_BASE в site-config.js.',
-      loading:'Загрузка данных панели администратора…',
+      loading:'Загрузка данных Админ панели…',
+      devTeam:'Команда разработчиков',
       api:'API',
       bot:'Discord-бот',
       ready:'Работает',
@@ -104,16 +106,16 @@
       disabled:'Выключено',
       passkey:'Passkey',
       totp:'TOTP',
-      mfaNote:'Дополнительные факторы в этой сборке ещё не настроены. Доступ к Admin Console по-прежнему проверяется на сервере по BOT_OWNER_ID.',
+      mfaNote:'Дополнительные факторы в этой сборке ещё не настроены. Доступ к Админ панели по-прежнему проверяется на сервере: Bot Owner, владелец Developer Team, Admin или Developer.',
       hidden:'Консоль скрыта от обычных посетителей. Используйте Ctrl + Shift + K или удерживайте логотип Quello 2 секунды.'
     },
 
     de: {
       signin:'Bitte zuerst mit Discord anmelden — Weiterleitung…',
       hold:'Weiter gedrückt halten…',
-      button:'Admin-Konsole',
+      button:'Admin-Panel',
       section:'ADMIN',
-      title:'Admin-Konsole',
+      title:'Admin-Panel',
       sub:'Privater Bereich · Quello-Ökosystem',
       overview:'Systemübersicht', ownerActions:'Owner-Aktionen',
       developerTeamActions:'Entwickleraktionen',
@@ -130,6 +132,7 @@
       denied:'Für dieses Konto ist kein Admin-Zugriff verfügbar.',
       offline:'Die Quello-API ist nicht erreichbar. Prüfe API_BASE in site-config.js.',
       loading:'Admin-Daten werden geladen…',
+      devTeam:'Developer-Team',
       api:'API',
       bot:'Discord-Bot',
       ready:'Bereit',
@@ -154,16 +157,16 @@
       disabled:'Deaktiviert',
       passkey:'Passkey',
       totp:'TOTP',
-      mfaNote:'Zusätzliche Faktoren sind in diesem Build nicht eingerichtet. Admin-Endpunkte prüfen BOT_OWNER_ID weiterhin serverseitig.',
+      mfaNote:'Zusätzliche Faktoren sind in diesem Build nicht konfiguriert. Der Zugriff auf das Admin-Panel wird weiterhin serverseitig für Bot Owner, Developer-Team-Owner, Admin oder Developer geprüft.',
       hidden:'Die Konsole ist für normale Besucher verborgen. Ctrl + Shift + K drücken oder das Quello-Logo 2 Sekunden halten.'
     },
 
     fr: {
       signin:'Connectez-vous d’abord avec Discord — redirection…',
       hold:'Maintenez appuyé…',
-      button:'Console d’administration',
+      button:'Panneau d’administration',
       section:'ADMIN',
-      title:'Console d’administration',
+      title:'Panneau d’administration',
       sub:'Espace privé · écosystème Quello',
       overview:'Vue système', ownerActions:'Actions du propriétaire',
       developerTeamActions:'Actions développeur',
@@ -180,6 +183,7 @@
       denied:'Ce compte ne dispose pas des droits d’administration.',
       offline:'L’API Quello est inaccessible. Vérifiez API_BASE dans site-config.js.',
       loading:'Chargement des données administrateur…',
+      devTeam:'Équipe de développeurs',
       api:'API',
       bot:'Bot Discord',
       ready:'Prêt',
@@ -204,16 +208,16 @@
       disabled:'Désactivé',
       passkey:'Passkey',
       totp:'TOTP',
-      mfaNote:'Les facteurs supplémentaires ne sont pas configurés dans cette version. Les points d’accès Admin Console vérifient toujours BOT_OWNER_ID côté serveur.',
+      mfaNote:'Les facteurs supplémentaires ne sont pas configurés dans cette version. Les points d’accès du panneau d’administration vérifient toujours côté serveur le Bot Owner, le Team Owner, les Admin et les Developer.',
       hidden:'La console est masquée aux visiteurs. Utilisez Ctrl + Shift + K ou maintenez le logo Quello pendant 2 secondes.'
     },
 
     it: {
       signin:'Accedi prima con Discord — reindirizzamento…',
       hold:'Continua a tenere premuto…',
-      button:'Console di amministrazione',
+      button:'Pannello di amministrazione',
       section:'ADMIN',
-      title:'Console di amministrazione',
+      title:'Pannello di amministrazione',
       sub:'Spazio privato · ecosistema Quello',
       overview:'Panoramica sistema', ownerActions:'Azioni proprietario',
       developerTeamActions:'Azioni sviluppatore',
@@ -230,6 +234,7 @@
       denied:'Questo account non dispone dei permessi di amministrazione.',
       offline:'API Quello non raggiungibile. Controlla API_BASE in site-config.js.',
       loading:'Caricamento dati amministratore…',
+      devTeam:'Team di sviluppatori',
       api:'API',
       bot:'Bot Discord',
       ready:'Pronto',
@@ -254,7 +259,7 @@
       disabled:'Disattivato',
       passkey:'Passkey',
       totp:'TOTP',
-      mfaNote:'I fattori aggiuntivi non sono configurati in questa build. Gli endpoint Admin Console verificano comunque BOT_OWNER_ID lato server.',
+      mfaNote:'I fattori aggiuntivi non sono configurati in questa build. Gli endpoint del pannello di amministrazione verificano comunque lato server Bot Owner, Team Owner, Admin o Developer.',
       hidden:'La console è nascosta ai visitatori. Usa Ctrl + Shift + K o tieni premuto il logo Quello per 2 secondi.'
     }
   };
@@ -297,11 +302,11 @@
   const ownerText = (key) => {
     const language = lang();
     const words = {
-      en:{teamRole:'Developer Team role',teamScope:'Developer Actions scope',teamScopeDescription:'Accepted Developer Team Admins and Developers can view runtime status and run technical diagnostics. Global owner controls, announcements and session revocation remain restricted to the Bot Owner and verified Team Owner.',ownerActions:'Owner Actions',technical:'Technical Work Mode',sessions:'Dashboard Sessions',enabled:'Enabled',disabled:'Disabled',reason:'Reason for technical work',end:'End time (Unix timestamp, optional)',turnOn:'Enable mode',turnOff:'Disable mode',refresh:'Refresh',revoke:'End session',none:'No active Dashboard sessions.',until:'Ends',user:'User',expires:'Expires',confirm:'End this user session? ',saved:'Technical Work Mode updated.'},
-      ru:{teamRole:'Роль в Developer Team',teamScope:'Область Developer Actions',teamScopeDescription:'Принятые участники Developer Team с ролями Admin и Developer могут просматривать состояние системы и запускать техническую диагностику. Глобальное управление, объявления и завершение сессий доступны Bot Owner и подтверждённому владельцу команды.',ownerActions:'Действия владельца',technical:'Режим технических работ',sessions:'Сессии Dashboard',enabled:'Включён',disabled:'Выключен',reason:'Причина технических работ',end:'Время окончания (Unix timestamp, необязательно)',turnOn:'Включить режим',turnOff:'Выключить режим',refresh:'Обновить',revoke:'Завершить сессию',none:'Активных сессий Dashboard нет.',until:'До',user:'Пользователь',expires:'Истекает',confirm:'Завершить эту сессию пользователя?',saved:'Режим технических работ обновлён.'},
-      de:{teamRole:'Developer-Team-Rolle',teamScope:'Umfang der Entwickleraktionen',teamScopeDescription:'Angenommene Admins und Entwickler des Developer Teams können den Laufzeitstatus einsehen und technische Diagnosen ausführen. Globale Steuerung, Ankündigungen und Sitzungswiderruf bleiben dem Bot Owner und dem verifizierten Team Owner vorbehalten.',ownerActions:'Owner-Aktionen',technical:'Wartungsmodus',sessions:'Dashboard-Sitzungen',enabled:'Aktiviert',disabled:'Deaktiviert',reason:'Grund der Wartungsarbeiten',end:'Endzeit (Unix-Zeitstempel, optional)',turnOn:'Aktivieren',turnOff:'Deaktivieren',refresh:'Aktualisieren',revoke:'Sitzung beenden',none:'Keine aktiven Dashboard-Sitzungen.',until:'Bis',user:'Benutzer',expires:'Läuft ab',confirm:'Diese Sitzung beenden?',saved:'Wartungsmodus aktualisiert.'},
-      fr:{teamRole:'Rôle Developer Team',teamScope:'Portée des actions développeur',teamScopeDescription:'Les Admin et Developer acceptés de la Developer Team peuvent consulter l’état d’exécution et lancer des diagnostics techniques. Les contrôles globaux, annonces et révocations de session restent réservés au Bot Owner et au Team Owner vérifié.',ownerActions:'Actions du propriétaire',technical:'Mode maintenance',sessions:'Sessions Dashboard',enabled:'Activé',disabled:'Désactivé',reason:'Motif de maintenance',end:'Heure de fin (horodatage Unix, facultatif)',turnOn:'Activer',turnOff:'Désactiver',refresh:'Actualiser',revoke:'Terminer la session',none:'Aucune session Dashboard active.',until:'Jusqu’à',user:'Utilisateur',expires:'Expire',confirm:'Terminer cette session ?',saved:'Mode maintenance mis à jour.'},
-      it:{teamRole:'Ruolo Developer Team',teamScope:'Ambito Developer Actions',teamScopeDescription:'Gli Admin e i Developer accettati del Developer Team possono visualizzare lo stato operativo ed eseguire diagnostica tecnica. I controlli globali, gli annunci e la revoca delle sessioni restano riservati al Bot Owner e al Team Owner verificato.',ownerActions:'Azioni proprietario',technical:'Modalità manutenzione',sessions:'Sessioni Dashboard',enabled:'Attiva',disabled:'Disattiva',reason:'Motivo della manutenzione',end:'Ora di fine (timestamp Unix, facoltativo)',turnOn:'Attiva modalità',turnOff:'Disattiva modalità',refresh:'Aggiorna',revoke:'Termina sessione',none:'Nessuna sessione Dashboard attiva.',until:'Fino a',user:'Utente',expires:'Scade',confirm:'Terminare questa sessione?',saved:'Modalità manutenzione aggiornata.'}
+      en:{teamRole:'Developer Team role',teamScope:'Developer Actions scope',teamScopeDescription:'The Bot Owner, the verified Team Owner and accepted Team Admins and Developers all have System Overview, Announcements, Owner Actions and Developer Actions. Access is verified server-side against the Discord Developer Team.',ownerActions:'Owner Actions',technical:'Technical Work Mode',sessions:'Dashboard Sessions',enabled:'Enabled',disabled:'Disabled',reason:'Reason for technical work',end:'End time (Unix timestamp, optional)',turnOn:'Enable mode',turnOff:'Disable mode',refresh:'Refresh',revoke:'End session',none:'No active Dashboard sessions.',until:'Ends',user:'User',expires:'Expires',confirm:'End this user session? ',saved:'Technical Work Mode updated.',duration:'Duration',noEnd:'Until I disable it',remaining:'Remaining',unitMin:'min',unitHour:'h',unitDay:'d',failedSessions:'Dashboard sessions could not be loaded.',colName:'Nickname',colRole:'Role',colStatus:'Status',statusPending:'Pending acceptance',roleOwner:'Owner',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Read-only',teamEmpty:'No Developer Team is set up for this application.',teamHint:'Members as listed in the Discord Developer Portal.',endAll:'End all sessions of this user',thisSession:'This session',confirmEnd:'Tap again to confirm',signedIn:'Signed in',ended:'Session ended.',endedMany:'Sessions ended: ',nothingEnded:'That session had already ended.'},
+      ru:{teamRole:'Роль в Developer Team',teamScope:'Область Developer Actions',teamScopeDescription:'Bot Owner, подтверждённый владелец команды, а также принятые Admin и Developer из Developer Team имеют доступ к обзору системы, объявлениям, действиям владельца и действиям разработчика. Доступ проверяется на сервере по Discord Developer Team.',ownerActions:'Действия владельца',technical:'Режим технических работ',sessions:'Сессии Dashboard',enabled:'Включён',disabled:'Выключен',reason:'Причина технических работ',end:'Время окончания (Unix timestamp, необязательно)',turnOn:'Включить режим',turnOff:'Выключить режим',refresh:'Обновить',revoke:'Завершить сессию',none:'Активных сессий Dashboard нет.',until:'До',user:'Пользователь',expires:'Истекает',confirm:'Завершить эту сессию пользователя?',saved:'Режим технических работ обновлён.',duration:'Длительность',noEnd:'Пока я не выключу',remaining:'Осталось',unitMin:'мин',unitHour:'ч',unitDay:'д',failedSessions:'Не удалось загрузить сессии Dashboard.',colName:'Ник',colRole:'Роль',colStatus:'Статус',statusPending:'Ожидает принятия',roleOwner:'Владелец',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Только чтение',teamEmpty:'Для этого приложения не настроена команда разработчиков.',teamHint:'Участники как в Discord Developer Portal.',endAll:'Завершить все сессии пользователя',thisSession:'Эта сессия',confirmEnd:'Нажмите ещё раз для подтверждения',signedIn:'Вход',ended:'Сессия завершена.',endedMany:'Завершено сессий: ',nothingEnded:'Эта сессия уже была завершена.'},
+      de:{teamRole:'Developer-Team-Rolle',teamScope:'Umfang der Entwickleraktionen',teamScopeDescription:'Bot Owner, verifizierter Team Owner sowie akzeptierte Admins und Developer des Teams haben Zugriff auf Systemübersicht, Ankündigungen, Owner-Aktionen und Entwickleraktionen. Der Zugriff wird serverseitig anhand des Discord Developer Teams geprüft.',ownerActions:'Owner-Aktionen',technical:'Wartungsmodus',sessions:'Dashboard-Sitzungen',enabled:'Aktiviert',disabled:'Deaktiviert',reason:'Grund der Wartungsarbeiten',end:'Endzeit (Unix-Zeitstempel, optional)',turnOn:'Aktivieren',turnOff:'Deaktivieren',refresh:'Aktualisieren',revoke:'Sitzung beenden',none:'Keine aktiven Dashboard-Sitzungen.',until:'Bis',user:'Benutzer',expires:'Läuft ab',confirm:'Diese Sitzung beenden?',saved:'Wartungsmodus aktualisiert.',duration:'Dauer',noEnd:'Bis ich es deaktiviere',remaining:'Verbleibend',unitMin:'Min.',unitHour:'Std.',unitDay:'Tg.',failedSessions:'Dashboard-Sitzungen konnten nicht geladen werden.',colName:'Nickname',colRole:'Rolle',colStatus:'Status',statusPending:'Wartet auf Annahme',roleOwner:'Owner',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Nur Lesen',teamEmpty:'Für diese Anwendung ist kein Developer Team eingerichtet.',teamHint:'Mitglieder wie im Discord Developer Portal aufgeführt.',endAll:'Alle Sitzungen dieses Nutzers beenden',thisSession:'Diese Sitzung',confirmEnd:'Zum Bestätigen erneut tippen',signedIn:'Angemeldet',ended:'Sitzung beendet.',endedMany:'Beendete Sitzungen: ',nothingEnded:'Diese Sitzung war bereits beendet.'},
+      fr:{teamRole:'Rôle Developer Team',teamScope:'Portée des actions développeur',teamScopeDescription:'Le Bot Owner, le Team Owner vérifié ainsi que les Admin et Developer acceptés ont accès à l’aperçu du système, aux annonces, aux actions du propriétaire et aux actions développeur. L’accès est vérifié côté serveur via la Developer Team Discord.',ownerActions:'Actions du propriétaire',technical:'Mode maintenance',sessions:'Sessions Dashboard',enabled:'Activé',disabled:'Désactivé',reason:'Motif de maintenance',end:'Heure de fin (horodatage Unix, facultatif)',turnOn:'Activer',turnOff:'Désactiver',refresh:'Actualiser',revoke:'Terminer la session',none:'Aucune session Dashboard active.',until:'Jusqu’à',user:'Utilisateur',expires:'Expire',confirm:'Terminer cette session ?',saved:'Mode maintenance mis à jour.',duration:'Durée',noEnd:'Jusqu’à désactivation manuelle',remaining:'Restant',unitMin:'min',unitHour:'h',unitDay:'j',failedSessions:'Impossible de charger les sessions Dashboard.',colName:'Pseudo',colRole:'Rôle',colStatus:'Statut',statusPending:'En attente d’acceptation',roleOwner:'Propriétaire',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Lecture seule',teamEmpty:'Aucune Developer Team n’est configurée pour cette application.',teamHint:'Membres tels que listés dans le Discord Developer Portal.',endAll:'Terminer toutes les sessions de cet utilisateur',thisSession:'Cette session',confirmEnd:'Touchez à nouveau pour confirmer',signedIn:'Connexion',ended:'Session terminée.',endedMany:'Sessions terminées : ',nothingEnded:'Cette session était déjà terminée.'},
+      it:{teamRole:'Ruolo Developer Team',teamScope:'Ambito Developer Actions',teamScopeDescription:'Bot Owner, Team Owner verificato e Admin e Developer accettati hanno accesso a panoramica del sistema, annunci, azioni proprietario e azioni sviluppatore. L’accesso è verificato lato server tramite il Developer Team Discord.',ownerActions:'Azioni proprietario',technical:'Modalità manutenzione',sessions:'Sessioni Dashboard',enabled:'Attiva',disabled:'Disattiva',reason:'Motivo della manutenzione',end:'Ora di fine (timestamp Unix, facoltativo)',turnOn:'Attiva modalità',turnOff:'Disattiva modalità',refresh:'Aggiorna',revoke:'Termina sessione',none:'Nessuna sessione Dashboard attiva.',until:'Fino a',user:'Utente',expires:'Scade',confirm:'Terminare questa sessione?',saved:'Modalità manutenzione aggiornata.',duration:'Durata',noEnd:'Finché non la disattivo',remaining:'Rimanente',unitMin:'min',unitHour:'h',unitDay:'g',failedSessions:'Impossibile caricare le sessioni Dashboard.',colName:'Nickname',colRole:'Ruolo',colStatus:'Stato',statusPending:'In attesa di accettazione',roleOwner:'Proprietario',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Sola lettura',teamEmpty:'Nessun Developer Team configurato per questa applicazione.',teamHint:'Membri come elencati nel Discord Developer Portal.',endAll:'Termina tutte le sessioni di questo utente',thisSession:'Questa sessione',confirmEnd:'Tocca di nuovo per confermare',signedIn:'Accesso',ended:'Sessione terminata.',endedMany:'Sessioni terminate: ',nothingEnded:'Questa sessione era già terminata.'}
     };
     return (words[language] || words.en)[key] || words.en[key] || key;
   };
@@ -345,12 +350,9 @@
         cache: 'no-store'
       });
     } catch (error) {
-      console.error('[Quello Admin Console] Fetch failed:', path, error);
+      console.error('[Quello Admin Panel] Fetch failed:', path, error);
 
-      throw new Error(
-        `Не удалось получить ответ от ${path}. ` +
-        'Возможны ограничения CORS/OPTIONS, сетевая ошибка или недоступность API.'
-      );
+      throw new Error(tr('offline'));
     }
 
     const raw = await response.text();
@@ -434,6 +436,7 @@
       ['announcements', 'announcements'],
       ['owner-actions', 'ownerActions'],
       ['team-actions', 'developerTeamActions'],
+      ['team', 'devTeam'],
       ['appearance', 'appearance'],
       ['developer', 'developer'],
       ['localization', 'localization'],
@@ -441,18 +444,23 @@
       ['experiments', 'experiments']
     ];
 
+    // Every Admin Panel role (Bot Owner, Team Owner, Admin, Developer) gets
+    // System Overview, Announcements, Owner Actions and Developer Actions. The
+    // purely local preview tools stay with the owner-level roles.
+    const sharedTabs = ['overview', 'announcements', 'owner-actions', 'team-actions', 'team'];
     sections.forEach(([id, key]) => {
-      if (accessRole !== 'bot_owner' && id !== 'team-actions') return;
-      if (accessRole === 'bot_owner' && id === 'team-actions') return;
+      if (accessRole !== 'bot_owner' && !sharedTabs.includes(id)) return;
       const button = el('button', 'creator-tab', tr(key));
       button.type = 'button';
       button.dataset.tab = id;
 
       button.addEventListener('click', () => {
         active = id;
+        markActiveTab();
         if (id === 'announcements') loadAnnouncements();
         else if (id === 'owner-actions') loadOwnerActions();
         else if (id === 'team-actions') loadTeamActions();
+        else if (id === 'team') loadTeam();
         else render();
       });
 
@@ -482,14 +490,18 @@
 
     return c;
   }
-    function render() {
-    if (!body || !drawer) return;
-
-    body.replaceChildren();
-
+    function markActiveTab() {
+    if (!drawer) return;
     drawer.querySelectorAll('.creator-tab').forEach(button => {
       button.classList.toggle('active', button.dataset.tab === active);
     });
+  }
+
+  function render() {
+    if (!body || !drawer) return;
+
+    body.replaceChildren();
+    markActiveTab();
 
     if (active === 'overview') {
       const grid = el('div', 'creator-card-grid');
@@ -546,6 +558,9 @@
       return;
     } else if (active === 'team-actions') {
       loadTeamActions();
+      return;
+    } else if (active === 'team') {
+      loadTeam();
       return;
     } else if (active === 'appearance') {
       const box = el('article', 'creator-note');
@@ -829,34 +844,209 @@
     }
   }
 
+  const TECHNICAL_DURATIONS = [15, 30, 60, 120, 360, 720, 1440, 4320, 10080];
+
+  function durationLabel(minutes) {
+    if (minutes % 1440 === 0) return `${minutes / 1440} ${ownerText('unitDay')}`;
+    if (minutes % 60 === 0) return `${minutes / 60} ${ownerText('unitHour')}`;
+    return `${minutes} ${ownerText('unitMin')}`;
+  }
+
+  function remainingLabel(endsAt, serverTime) {
+    const seconds = Math.max(0, Number(endsAt) - Number(serverTime || Math.floor(Date.now() / 1000)));
+    const minutes = Math.ceil(seconds / 60);
+    if (minutes >= 1440) return `${Math.floor(minutes / 1440)} ${ownerText('unitDay')} ${Math.floor(minutes % 1440 / 60)} ${ownerText('unitHour')}`;
+    if (minutes >= 60) return `${Math.floor(minutes / 60)} ${ownerText('unitHour')} ${minutes % 60} ${ownerText('unitMin')}`;
+    return `${minutes} ${ownerText('unitMin')}`;
+  }
+
+  async function sendTechnicalWork(payload) {
+    try {
+      await request('/api/creator/technical-work', { method: 'PATCH', body: payload });
+      toast(ownerText('saved'));
+    } catch (error) {
+      toast(error.message || tr('offline'));
+    }
+    loadOwnerActions();
+  }
+
   async function loadOwnerActions() {
     if (!body) return;
     body.replaceChildren(el('p', 'creator-muted', tr('loading')));
+    let work;
+    let sessions = null;
     try {
-      const [work, sessions] = await Promise.all([
-        request('/api/creator/technical-work'), request('/api/creator/sessions')
-      ]);
+      work = await request('/api/creator/technical-work');
+    } catch (error) {
+      body.replaceChildren(el('p', 'creator-error', error.message || tr('offline')));
+      return;
+    }
+    try {
+      sessions = await request('/api/creator/sessions');
+    } catch (error) {
+      console.error('[Quello Admin Panel] Sessions failed:', error);
+    }
+
+    body.replaceChildren();
+    const state = work.technical_work || {};
+    const box = el('article', 'creator-note');
+    box.append(el('h3', '', ownerText('technical')));
+    box.append(el('p', 'creator-muted', `${tr('status')}: ${state.enabled ? ownerText('enabled') : ownerText('disabled')}`));
+    if (state.enabled && state.reason) box.append(el('p', '', state.reason));
+    if (state.enabled && state.ends_at) {
+      box.append(el('p', 'creator-muted',
+        `${ownerText('until')}: ${new Date(state.ends_at * 1000).toLocaleString()} · ${ownerText('remaining')}: ${remainingLabel(state.ends_at, work.server_time)}`));
+    }
+
+    const reason = el('input', 'creator-input');
+    reason.type = 'text';
+    reason.maxLength = 300;
+    reason.placeholder = ownerText('reason');
+    reason.value = state.enabled ? (state.reason || '') : '';
+
+    const durationLabelNode = el('label', 'creator-form-field');
+    durationLabelNode.append(el('span', '', ownerText('duration')));
+    const duration = el('select', 'creator-input');
+    const noEnd = el('option', '', ownerText('noEnd'));
+    noEnd.value = '';
+    duration.append(noEnd);
+    TECHNICAL_DURATIONS.forEach(minutes => {
+      const option = el('option', '', durationLabel(minutes));
+      option.value = String(minutes);
+      duration.append(option);
+    });
+    durationLabelNode.append(duration);
+
+    const actions = el('div', 'creator-button-row');
+    const on = el('button', 'creator-primary', ownerText('turnOn'));
+    on.type = 'button';
+    on.addEventListener('click', () => {
+      const text = reason.value.trim();
+      if (!text) { toast(ownerText('reason')); reason.focus(); return; }
+      on.disabled = true;
+      const payload = { enabled: true, reason: text };
+      if (duration.value) payload.duration_minutes = Number(duration.value);
+      sendTechnicalWork(payload);
+    });
+    const off = el('button', 'creator-secondary', ownerText('turnOff'));
+    off.type = 'button';
+    off.disabled = !state.enabled;
+    off.addEventListener('click', () => { off.disabled = true; sendTechnicalWork({ enabled: false }); });
+    actions.append(on, off);
+    box.append(reason, durationLabelNode, actions);
+    body.append(box);
+
+    const sessionBox = el('article', 'creator-note');
+    sessionBox.append(el('h3', '', ownerText('sessions')));
+    if (sessions === null) {
+      sessionBox.append(el('p', 'creator-error', ownerText('failedSessions')));
+    } else {
+      const list = sessions.sessions || [];
+      if (!list.length) sessionBox.append(el('p', 'creator-muted', ownerText('none')));
+      const groups = new Map();
+      list.forEach(item => {
+        if (!groups.has(item.uid)) groups.set(item.uid, []);
+        groups.get(item.uid).push(item);
+      });
+      groups.forEach((items, uid) => {
+        const group = el('div', 'creator-session-group');
+        const head = el('div', 'creator-session-row');
+        head.append(el('strong', '', `${items[0].name} (${uid})`));
+        if (items.length > 1) {
+          head.append(confirmButton(ownerText('endAll'), () => endSessions({ user_id: uid })));
+        }
+        group.append(head);
+        items.forEach(item => {
+          const row = el('div', 'creator-session-row');
+          const info = el('div');
+          info.append(el('small', 'creator-muted',
+            `${ownerText('signedIn')}: ${new Date(item.created_at * 1000).toLocaleString()} · ${ownerText('expires')}: ${new Date(item.expires_at * 1000).toLocaleString()}`));
+          if (item.current) info.append(el('span', 'creator-badge', ownerText('thisSession')));
+          row.append(info, confirmButton(ownerText('revoke'), () => endSessions({ session_id: item.sid })));
+          group.append(row);
+        });
+        sessionBox.append(group);
+      });
+    }
+    const refresh = el('button', 'creator-secondary', ownerText('refresh'));
+    refresh.type = 'button';
+    refresh.addEventListener('click', loadOwnerActions);
+    sessionBox.append(refresh);
+    body.append(sessionBox);
+  }
+
+  // Two-step button: the first tap arms it, the second tap within 4 seconds runs it.
+  // (window.confirm() is silently blocked in some browsers, which made ending
+  // sessions look like it did nothing.)
+  function confirmButton(label, action) {
+    const button = el('button', 'creator-secondary', label);
+    button.type = 'button';
+    let armed = null;
+    button.addEventListener('click', () => {
+      if (!armed) {
+        button.textContent = ownerText('confirmEnd');
+        button.classList.add('creator-danger');
+        armed = setTimeout(() => { armed = null; button.textContent = label; button.classList.remove('creator-danger'); }, 4000);
+        return;
+      }
+      clearTimeout(armed);
+      armed = null;
+      button.disabled = true;
+      action();
+    });
+    return button;
+  }
+
+  async function endSessions(payload) {
+    try {
+      const result = await request('/api/creator/sessions', { method: 'DELETE', body: payload });
+      if (payload.user_id) toast(ownerText('endedMany') + (result.ended || 0));
+      else toast(result.revoked ? ownerText('ended') : ownerText('nothingEnded'));
+    } catch (error) {
+      toast(error.message || tr('offline'));
+    }
+    loadOwnerActions();
+  }
+
+  async function loadTeam() {
+    if (!body) return;
+    body.replaceChildren(el('p', 'creator-muted', tr('loading')));
+    try {
+      const data = await request('/api/creator/team');
       body.replaceChildren();
-      const state = work.technical_work || {};
       const box = el('article', 'creator-note');
-      box.append(el('h3', '', ownerText('technical')));
-      box.append(el('p', 'creator-muted', `${ownerText('status')}: ${state.enabled ? ownerText('enabled') : ownerText('disabled')}`));
-      if (state.reason) box.append(el('p', '', state.reason));
-      if (state.ends_at) box.append(el('p', 'creator-muted', `${ownerText('until')}: ${new Date(state.ends_at * 1000).toLocaleString()}`));
-      const reason = el('input', 'creator-input'); reason.type='text'; reason.maxLength=300; reason.placeholder=ownerText('reason'); reason.value=state.reason || '';
-      const end = el('input', 'creator-input'); end.type='number'; end.placeholder=ownerText('end'); end.value=state.ends_at || '';
-      const actions=el('div','creator-button-row');
-      const on=el('button','creator-primary',ownerText('turnOn')); on.type='button';
-      on.addEventListener('click',async()=>{try{await request('/api/creator/technical-work',{method:'PATCH',body:{enabled:true,reason:reason.value,ends_at:end.value?Number(end.value):null}});toast(ownerText('saved'));loadOwnerActions();}catch(e){toast(e.message);}});
-      const off=el('button','creator-secondary',ownerText('turnOff')); off.type='button';
-      off.addEventListener('click',async()=>{try{await request('/api/creator/technical-work',{method:'PATCH',body:{enabled:false}});toast(ownerText('saved'));loadOwnerActions();}catch(e){toast(e.message);}});
-      actions.append(on,off); box.append(reason,end,actions); body.append(box);
-      const sessionBox=el('article','creator-note'); sessionBox.append(el('h3','',ownerText('sessions')));
-      const list=sessions.sessions||[];
-      if(!list.length) sessionBox.append(el('p','creator-muted',ownerText('none')));
-      list.forEach(item=>{const row=el('div','creator-session-row');row.append(el('strong','',`${item.name} (${item.uid})`),el('small','creator-muted',`${ownerText('expires')}: ${new Date(item.expires_at*1000).toLocaleString()}`));const revoke=el('button','creator-secondary',ownerText('revoke'));revoke.type='button';revoke.addEventListener('click',async()=>{if(!confirm(ownerText('confirm')))return;try{await request('/api/creator/sessions',{method:'DELETE',body:{session_id:item.sid}});loadOwnerActions();}catch(e){toast(e.message);}});row.append(revoke);sessionBox.append(row);});
-      const refresh=el('button','creator-secondary',ownerText('refresh'));refresh.type='button';refresh.addEventListener('click',loadOwnerActions);sessionBox.append(refresh);body.append(sessionBox);
-    } catch (error) { body.replaceChildren(el('p','creator-error',error.message || tr('offline'))); }
+      box.append(el('h3', '', tr('devTeam')), el('p', 'creator-muted', ownerText('teamHint')));
+      const members = data.members || [];
+      if (!members.length) {
+        box.append(el('p', 'creator-muted', ownerText('teamEmpty')));
+      } else {
+        const wrap = el('div', 'creator-table-wrap');
+        const table = el('table', 'creator-table');
+        const head = el('tr');
+        ['colName', 'colRole', 'colStatus'].forEach(key => head.append(el('th', '', ownerText(key))));
+        const thead = el('thead');
+        thead.append(head);
+        table.append(thead);
+        const tbody = el('tbody');
+        const roleLabel = { owner: 'roleOwner', admin: 'roleAdmin', developer: 'roleDeveloper', read_only: 'roleReadOnly' };
+        members.forEach(member => {
+          const row = el('tr');
+          const roleKey = roleLabel[member.role];
+          row.append(
+            el('td', '', member.name),
+            el('td', '', roleKey ? ownerText(roleKey) : member.role),
+            el('td', member.status === 'invited' ? 'creator-pending' : '', member.status === 'invited' ? ownerText('statusPending') : '')
+          );
+          tbody.append(row);
+        });
+        table.append(tbody);
+        wrap.append(table);
+        box.append(wrap);
+      }
+      body.append(box);
+    } catch (error) {
+      body.replaceChildren(el('p', 'creator-error', error.message || tr('offline')));
+    }
   }
 
   async function loadOverview() {
@@ -870,7 +1060,7 @@
       overview = await request('/api/creator/overview');
       render();
     } catch (error) {
-      console.error('[Quello Admin Console] Overview failed:', error);
+      console.error('[Quello Admin Panel] Overview failed:', error);
 
       if (body) {
         body.replaceChildren(
@@ -1127,7 +1317,7 @@
       creator = true;
 
     } catch (error) {
-      console.error('[Quello Admin Console] Access check failed:', error);
+      console.error('[Quello Admin Panel] Access check failed:', error);
       // A missing/expired login is different from a valid account without a role.
       if (error.status === 401) {
         try { localStorage.removeItem(TOKEN_KEY); } catch (_) {}
@@ -1148,7 +1338,7 @@
     drawer.classList.add('open');
     document.body.classList.add('creator-console-open');
 
-    active = accessRole === 'bot_owner' ? 'overview' : 'team-actions';
+    active = 'overview';
     render();
     loadOverview();
   }
@@ -1176,7 +1366,7 @@
       }
 
     } catch (error) {
-      console.warn('[Quello Admin Console] Verification failed:', error);
+      console.warn('[Quello Admin Panel] Verification failed:', error);
     }
   }
     document.addEventListener('keydown', event => {
@@ -1433,14 +1623,14 @@
 
   window.addEventListener('error', event => {
     console.error(
-      '[Quello Admin Console] JavaScript error:',
+      '[Quello Admin Panel] JavaScript error:',
       event.error || event.message
     );
   });
 
   window.addEventListener('unhandledrejection', event => {
     console.error(
-      '[Quello Admin Console] Unhandled promise rejection:',
+      '[Quello Admin Panel] Unhandled promise rejection:',
       event.reason
     );
   });

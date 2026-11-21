@@ -137,3 +137,21 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 - Each successful Discord delivery is tracked by guild, channel and message ID. The Admin Console provides Edit and Delete actions beside every managed announcement; changes are applied to the published copies. A partial Discord/API failure is reported without silently discarding the remaining delivery records.
 - The announcement API endpoints are protected server-side by the existing `BOT_OWNER_ID` check. The feature does not grant access to Developer Team members or alter server roles.
 - Terms of Service and Privacy Policy now describe global announcement publishing and the stored campaign/delivery metadata in EN / RU / DE / FR / IT.
+
+
+## Admin Console roles, Technical Work Mode, legal update (November 21, 2026)
+
+- Admin Console tabs: System Overview, Announcements, Owner Actions and Developer Actions are shown to all four roles (Bot Owner, Team Owner, Admin, Developer); the local preview tools (Appearance, Developer, Localization, Debug, Experiments) remain for the owner-level roles. Tab highlighting now updates for every tab.
+- Owner Actions: Technical Work Mode uses a duration selector (`duration_minutes`) and shows the remaining time; the session list loads independently of the Technical Work Mode state. New strings exist in EN / RU / DE / FR / IT.
+- Dashboard: the API helper shows a localized message when the bot is in Technical Work Mode (`err_technical`).
+- Terms of Service and Privacy Policy (all five languages): Admin Console access by the four roles, announcements by authorized console users, Technical Work Mode, Dashboard session records stored in the bot database, Developer Team data used for access decisions, and the new QOTD prompt description. The static English fallback in `terms.html` / `privacy.html` was regenerated from `legal-content.js`, and the "last updated" date is November 21, 2026.
+- Changelog: added the November 21 entry; the earlier "Admin Console authorization" entry used the same i18n key (`change21`) as the November 17 entry and overwrote its text, so it now uses `change26`, and the November 17 entry has its own translations.
+
+
+## Admin Panel rename, Developer Team tab, QOTD delete (November 21, 2026, later)
+
+- User-facing name changed from Admin Console to **Admin Panel** in all five languages (creator-console.js, Terms, Privacy, regenerated static pages). Older changelog entries keep the name used at the time.
+- New **Developer Team** tab in the panel for all four roles: nickname | role | status, where status shows “Pending acceptance” only for invited members. Data comes from `GET /api/creator/team`.
+- Owner Actions: sessions are grouped by user with “End all sessions of this user”, a “This session” badge and a two-step confirm button (no `window.confirm`). The hard-coded Russian fetch-error text in the panel was replaced with the localized message.
+- Server Dashboard → QOTD list: new **Delete** button next to “Open in Discord” and “Edit”, with an in-card confirmation and a localized warning if the Discord message could not be removed. Strings added in EN / RU / DE / FR / IT.
+- Legal text and the November 21 changelog entry updated accordingly.

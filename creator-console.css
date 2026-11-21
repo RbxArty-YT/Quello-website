@@ -1,4 +1,4 @@
-/* Hidden Admin Console */
+/* Hidden Admin Panel */
 .creator-console-open{overflow:hidden}
 .creator-console-overlay{position:fixed;inset:0;z-index:9998;display:flex;justify-content:flex-end;background:rgba(5,6,14,.62);backdrop-filter:blur(9px);opacity:0;visibility:hidden;transition:opacity .24s ease,visibility .24s ease}
 .creator-console-overlay.open{opacity:1;visibility:visible}
@@ -110,7 +110,7 @@ body[data-page="dashboard"] .schedule-form .field label { color:var(--text-2); f
 body[data-page="dashboard"] .schedule-form .input { max-width:100%; }
 :root[data-theme="light"] body[data-page="dashboard"] .dash-card input[type="time"] { color-scheme:light; }
 
-/* Admin Console announcement composer and per-announcement actions. */
+/* Admin Panel announcement composer and per-announcement actions. */
 .creator-form-field{display:grid;gap:7px;margin:12px 0;color:var(--text-2);font-size:13px;font-weight:650}
 .creator-form-control{box-sizing:border-box;width:100%;min-width:0;min-height:44px;padding:11px 13px;border:1px solid var(--line-strong);border-radius:11px;background:var(--surface-sunken);color:var(--text-strong);font:inherit;font-size:14px;outline:none}
 .creator-form-control:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
@@ -129,3 +129,16 @@ body[data-page="dashboard"] .schedule-form .input { max-width:100%; }
 .creator-input{display:block;width:100%;box-sizing:border-box;margin:10px 0;padding:12px 14px;border:1px solid var(--creator-border,rgba(255,255,255,.14));border-radius:12px;background:var(--creator-surface,rgba(255,255,255,.05));color:inherit;font:inherit;min-width:0}
 .creator-session-row{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:13px 0;border-bottom:1px solid var(--creator-border,rgba(255,255,255,.1))}
 .creator-session-row strong,.creator-session-row small{display:block;overflow-wrap:anywhere}
+
+select.creator-input option{background:var(--surface-2,#1b1b24);color:var(--text-strong,#fff)}
+
+.creator-session-group{margin:10px 0 4px;padding:2px 14px;border:1px solid var(--creator-border,rgba(255,255,255,.12));border-radius:14px}
+.creator-session-group>.creator-session-row:first-child{border-bottom:1px solid var(--creator-border,rgba(255,255,255,.12))}
+.creator-session-group>.creator-session-row:last-child{border-bottom:0}
+.creator-badge{display:inline-block;margin-top:4px;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:600;background:rgba(88,101,242,.18);color:inherit}
+.creator-secondary.creator-danger{border-color:rgba(237,66,69,.7);color:#ed4245}
+.creator-table-wrap{margin-top:10px;overflow-x:auto}
+.creator-table{width:100%;border-collapse:collapse;font-size:14px}
+.creator-table th,.creator-table td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--creator-border,rgba(255,255,255,.1));overflow-wrap:anywhere}
+.creator-table th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;opacity:.7;font-weight:600}
+.creator-pending{color:#f0b132;font-weight:600}

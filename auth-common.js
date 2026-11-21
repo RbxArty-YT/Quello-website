@@ -44,6 +44,7 @@
       pick_empty_title: 'No servers yet', pick_empty_text: 'Quello is not in a server you own. Add it first, then come back.',
       err_network: 'Can’t reach the Quello API. Check your connection and try again.',
       err_server: 'Something went wrong on the server. Try again in a moment.',
+      err_technical: 'Quello is temporarily unavailable for technical work.',
       err_session: 'Your session expired. Please sign in again.',
       err_notfound: 'This server is not available to you.',
       notconf_title: 'This server isn’t set up yet', notconf_text: 'Run /setup in Discord first, then reload this page.',
@@ -76,6 +77,7 @@
       qotd_published: 'QOTD #{n} published in #{channel}.', qotd_thread_missing: 'No discussion thread could be created.',
       qotd_paused: 'Publishing is paused: maintenance mode or the QOTD lock is on.',
       qotd_recent: 'Recent QOTDs', qotd_empty: 'No QOTDs yet.', qotd_title_line: 'QOTD #{n}',
+      qotd_delete: 'Delete', qotd_delete_confirm: 'Delete QOTD #{n}? Its Discord message and the answers counted for it will be removed. This cannot be undone.', qotd_delete_yes: 'Yes, delete', qotd_deleted: 'QOTD #{n} deleted.', qotd_deleted_partial: 'QOTD #{n} was removed, but Quello could not delete its Discord message. Delete it in Discord manually.',
       qotd_edit: 'Edit', qotd_open: 'Open in Discord', qotd_save: 'Save', qotd_cancel: 'Cancel', qotd_edited: 'QOTD #{n} updated.',
       sug_title: 'Waiting for review', sug_total: '{n} total', sug_empty: 'Nothing to review right now.',
       sug_from: 'From {name}', sug_approve: 'Approve & publish', sug_reject: 'Reject',
@@ -110,6 +112,7 @@
       pick_empty_title: 'Серверов пока нет', pick_empty_text: 'Quello не добавлен ни на один ваш сервер. Добавьте его и возвращайтесь.',
       err_network: 'Не удаётся связаться с API Quello. Проверьте соединение и попробуйте снова.',
       err_server: 'Ошибка на сервере. Попробуйте чуть позже.',
+      err_technical: 'Quello временно недоступен из-за технических работ.',
       err_session: 'Сессия истекла. Войдите снова.',
       err_notfound: 'Этот сервер вам недоступен.',
       notconf_title: 'Сервер ещё не настроен', notconf_text: 'Сначала выполните /setup в Discord, затем обновите страницу.',
@@ -142,6 +145,7 @@
       qotd_published: 'QOTD #{n} опубликован в #{channel}.', qotd_thread_missing: 'Тред для обсуждения создать не удалось.',
       qotd_paused: 'Публикация приостановлена: включён режим обслуживания или блокировка QOTD.',
       qotd_recent: 'Недавние QOTD', qotd_empty: 'QOTD пока нет.', qotd_title_line: 'QOTD #{n}',
+      qotd_delete: 'Удалить', qotd_delete_confirm: 'Удалить QOTD #{n}? Сообщение в Discord и засчитанные для него ответы будут удалены. Это нельзя отменить.', qotd_delete_yes: 'Да, удалить', qotd_deleted: 'QOTD #{n} удалён.', qotd_deleted_partial: 'QOTD #{n} удалён, но Quello не смог удалить его сообщение в Discord. Удалите его в Discord вручную.',
       qotd_edit: 'Изменить', qotd_open: 'Открыть в Discord', qotd_save: 'Сохранить', qotd_cancel: 'Отмена', qotd_edited: 'QOTD #{n} обновлён.',
       sug_title: 'Ожидают проверки', sug_total: 'всего {n}', sug_empty: 'Сейчас нечего проверять.',
       sug_from: 'От {name}', sug_approve: 'Одобрить и опубликовать', sug_reject: 'Отклонить',
@@ -176,6 +180,7 @@
       pick_empty_title: 'Noch keine Server', pick_empty_text: 'Quello ist auf keinem deiner Server. Füge es hinzu und komm zurück.',
       err_network: 'Die Quello-API ist nicht erreichbar. Prüfe deine Verbindung und versuche es erneut.',
       err_server: 'Auf dem Server ist etwas schiefgelaufen. Versuche es gleich noch einmal.',
+      err_technical: 'Quello ist wegen Wartungsarbeiten vorübergehend nicht verfügbar.',
       err_session: 'Deine Sitzung ist abgelaufen. Bitte melde dich erneut an.',
       err_notfound: 'Dieser Server ist für dich nicht verfügbar.',
       notconf_title: 'Dieser Server ist noch nicht eingerichtet', notconf_text: 'Führe zuerst /setup in Discord aus und lade diese Seite neu.',
@@ -222,6 +227,7 @@
       qotd_recent: 'Letzte QOTDs',
       qotd_empty: 'Noch keine QOTDs.',
       qotd_title_line: 'QOTD #{n}',
+      qotd_delete: 'Löschen', qotd_delete_confirm: 'QOTD #{n} löschen? Die Discord-Nachricht und die dafür gezählten Antworten werden entfernt. Das kann nicht rückgängig gemacht werden.', qotd_delete_yes: 'Ja, löschen', qotd_deleted: 'QOTD #{n} gelöscht.', qotd_deleted_partial: 'QOTD #{n} wurde entfernt, aber Quello konnte die Discord-Nachricht nicht löschen. Lösche sie manuell in Discord.',
       qotd_edit: 'Bearbeiten',
       qotd_open: 'In Discord öffnen',
       qotd_save: 'Speichern',
@@ -271,6 +277,7 @@
       pick_empty_title: 'Aucun serveur pour l’instant', pick_empty_text: 'Quello n’est sur aucun de vos serveurs. Ajoutez-le puis revenez.',
       err_network: 'Impossible de joindre l’API Quello. Vérifiez votre connexion et réessayez.',
       err_server: 'Une erreur est survenue côté serveur. Réessayez dans un instant.',
+      err_technical: 'Quello est temporairement indisponible pour cause de maintenance.',
       err_session: 'Votre session a expiré. Veuillez vous reconnecter.',
       err_notfound: 'Ce serveur n’est pas disponible pour vous.',
       notconf_title: 'Ce serveur n’est pas encore configuré', notconf_text: 'Lancez d’abord /setup dans Discord, puis rechargez cette page.',
@@ -317,6 +324,7 @@
       qotd_recent: 'QOTD récents',
       qotd_empty: 'Aucun QOTD pour le moment.',
       qotd_title_line: 'QOTD #{n}',
+      qotd_delete: 'Supprimer', qotd_delete_confirm: 'Supprimer le QOTD #{n} ? Son message Discord et les réponses comptées seront supprimés. Action irréversible.', qotd_delete_yes: 'Oui, supprimer', qotd_deleted: 'QOTD #{n} supprimé.', qotd_deleted_partial: 'Le QOTD #{n} a été supprimé, mais Quello n’a pas pu supprimer son message Discord. Supprimez-le manuellement dans Discord.',
       qotd_edit: 'Modifier',
       qotd_open: 'Ouvrir dans Discord',
       qotd_save: 'Enregistrer',
@@ -366,6 +374,7 @@
       pick_empty_title: 'Ancora nessun server', pick_empty_text: 'Quello non è in nessun tuo server. Aggiungilo e poi torna qui.',
       err_network: 'Impossibile raggiungere l’API di Quello. Controlla la connessione e riprova.',
       err_server: 'Qualcosa è andato storto sul server. Riprova tra un momento.',
+      err_technical: 'Quello è temporaneamente non disponibile per manutenzione.',
       err_session: 'La sessione è scaduta. Accedi di nuovo.',
       err_notfound: 'Questo server non è disponibile per te.',
       notconf_title: 'Questo server non è ancora configurato', notconf_text: 'Esegui prima /setup in Discord, poi ricarica questa pagina.',
@@ -412,6 +421,7 @@
       qotd_recent: 'QOTD recenti',
       qotd_empty: 'Ancora nessun QOTD.',
       qotd_title_line: 'QOTD #{n}',
+      qotd_delete: 'Elimina', qotd_delete_confirm: 'Eliminare il QOTD #{n}? Il messaggio Discord e le risposte conteggiate verranno rimossi. Non si può annullare.', qotd_delete_yes: 'Sì, elimina', qotd_deleted: 'QOTD #{n} eliminato.', qotd_deleted_partial: 'Il QOTD #{n} è stato rimosso, ma Quello non ha potuto eliminare il messaggio Discord. Eliminalo manualmente in Discord.',
       qotd_edit: 'Modifica',
       qotd_open: 'Apri in Discord',
       qotd_save: 'Salva',
@@ -721,6 +731,9 @@
       throw new ApiFailure('unauthorized', t('err_session'), 401);
     }
     if (!response.ok) {
+      if (data && data.error === 'technical_work') {
+        throw new ApiFailure('technical_work', t('err_technical') + (data.message && data.message !== 'Quello is temporarily unavailable for technical work.' ? ' ' + data.message : ''), response.status);
+      }
       throw new ApiFailure((data && data.error) || 'server_error', (data && data.message) || t('err_server'), response.status);
     }
     return data;

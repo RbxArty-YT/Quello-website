@@ -153,7 +153,7 @@ body::before{opacity:1}
 /* Footer */
 footer{background:linear-gradient(180deg,transparent,rgba(124,77,255,.10) 55%,rgba(233,69,90,.10))!important}
 
-/* Admin Console panel */
+/* Admin Panel panel */
 .creator-console-panel{background:linear-gradient(160deg,rgba(124,77,255,.22),rgba(196,60,155,.12) 55%,rgba(233,69,90,.12)),var(--surface)!important}
 .creator-fab{background:var(--brand-gradient)!important;box-shadow:0 8px 26px var(--brand-glow)!important}
 

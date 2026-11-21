@@ -541,7 +541,32 @@
       const actions = el('div', { class: 'btn-row' });
       if (q.url) actions.append(el('a', { class: 'button ghost', href: q.url, target: '_blank', rel: 'noopener noreferrer', text: t('qotd_open') + ' ↗' }));
       if (q.editable) actions.append(el('button', { class: 'button ghost', type: 'button', text: '✏️ ' + t('qotd_edit'), onclick: drawEdit }));
+      actions.append(el('button', { class: 'button danger', type: 'button', text: '🗑 ' + t('qotd_delete'), onclick: drawDelete }));
       card.replaceChildren(meta(), el('p', { class: 'item-text', text: q.question }), actions);
+    }
+
+    function drawDelete() {
+      const yes = el('button', { class: 'button danger', type: 'button', text: t('qotd_delete_yes') });
+      yes.addEventListener('click', async () => {
+        if (busy) return;
+        busy = true;
+        yes.disabled = true;
+        try {
+          const result = await guildApi('/qotds/' + encodeURIComponent(q.id), { method: 'DELETE' });
+          const done = result && result.deleted;
+          toast(t(done && done.discord_message_deleted === false ? 'qotd_deleted_partial' : 'qotd_deleted', { n: q.number }),
+            done && done.discord_message_deleted === false ? 'warn' : 'ok');
+          card.remove();
+        } catch (error) {
+          fail(error);
+          yes.disabled = false;
+        } finally {
+          busy = false;
+        }
+      });
+      card.replaceChildren(meta(), el('p', { class: 'item-text', text: q.question }),
+        el('p', { class: 'empty-note', text: t('qotd_delete_confirm', { n: q.number }) }),
+        el('div', { class: 'btn-row' }, yes, el('button', { class: 'button ghost', type: 'button', text: t('qotd_cancel'), onclick: draw })));
     }
 
     function drawEdit() {

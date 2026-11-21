@@ -2,7 +2,7 @@
 window.QUELLO_LEGAL = {
   "dates": {
     "effective": "2026-09-13",
-    "updated": "2026-11-20"
+    "updated": "2026-11-21"
   },
   "ui": {
     "en": {
@@ -250,6 +250,10 @@ window.QUELLO_LEGAL = {
               [
                 "p",
                 "Quello is provided on an “AS IS” and “AS AVAILABLE” basis. We do not guarantee continuous availability, error-free operation, compatibility with future Discord changes, or that data will never be lost due to technical failures."
+              ],
+              [
+                "p",
+                "Quello may be placed in Technical Work Mode by an authorized Admin Panel user. While it is on, ordinary commands and the Dashboard are paused on every server, and Scheduled QOTD publication is paused as well, until the mode is switched off or its end time passes."
               ]
             ]
           ],
@@ -325,15 +329,15 @@ window.QUELLO_LEGAL = {
             ]
           ],
           [
-            "Developer Team diagnostics",
+            "Developer Team and Admin Panel access",
             [
               [
                 "p",
-                "Quello may read limited Discord Developer Team metadata when the bot starts to verify the application’s team configuration and produce aggregate diagnostics."
+                "Quello reads Discord Developer Team metadata to verify who may use the Admin Panel. Access is granted to the Bot Owner, the verified Developer Team Owner, and accepted Developer Team members with the Admin or Developer role. Read-only members, pending invitations and everyone else have no Admin Panel access."
               ],
               [
                 "note",
-                "In this release, Developer Team information is diagnostic only. It does not grant team members access to the Admin Console or change existing permissions. Existing BOT_OWNER_ID and server permission checks remain in effect."
+                "All four roles can use System Overview, Announcements, Owner Actions (including Technical Work Mode and Dashboard session management) and Developer Actions. Access is checked on the server for every request. You are responsible for actions you take in the Admin Panel, which may only be used to operate and support Quello."
               ]
             ]
           ],
@@ -342,7 +346,7 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Quello’s Bot Owner may create global announcements through the Admin Console. An announcement is published only to Discord servers that have configured an optional Announcement Channel. The Bot Owner can edit or delete a managed announcement; edits and deletions are applied to the copies Quello successfully published."
+                "Authorized Admin Panel users (the Bot Owner, the verified Team Owner, and Team Admins and Developers) may create global announcements through the Admin Panel. An announcement is published only to Discord servers that have configured an optional Announcement Channel. Authorized Admin Panel users can edit or delete a managed announcement; edits and deletions are applied to the copies Quello successfully published."
               ]
             ]
           ]
@@ -485,6 +489,10 @@ window.QUELLO_LEGAL = {
               [
                 "p",
                 "Quello предоставляется на условиях «КАК ЕСТЬ» и «ПО МЕРЕ ДОСТУПНОСТИ». Мы не гарантируем непрерывную доступность, отсутствие ошибок, совместимость с будущими изменениями Discord, а также то, что данные никогда не будут утрачены из-за технических сбоев."
+              ],
+              [
+                "p",
+                "Авторизованный пользователь Админ панели может включить для Quello режим технических работ. Пока он включён, обычные команды и Dashboard приостановлены на всех серверах, а публикация Scheduled QOTD также приостанавливается — до выключения режима или наступления времени его окончания."
               ]
             ]
           ],
@@ -560,15 +568,15 @@ window.QUELLO_LEGAL = {
             ]
           ],
           [
-            "Диагностика Developer Team",
+            "Доступ к Developer Team и Админ панели",
             [
               [
                 "p",
-                "При запуске Quello может получать ограниченные сведения о Discord Developer Team, чтобы проверить конфигурацию команды приложения и сформировать общую диагностическую сводку."
+                "Quello получает сведения о Discord Developer Team, чтобы проверить, кому разрешён доступ к Админ панели. Доступ получают Bot Owner, подтверждённый владелец Developer Team и принятые участники команды с ролью Admin или Developer. Участники Read-only, ожидающие приглашения и все остальные доступа к панели не имеют."
               ],
               [
                 "note",
-                "В этой версии сведения о Developer Team используются только для диагностики. Они не предоставляют участникам команды доступ к панели администратора и не меняют существующие права. Проверки BOT_OWNER_ID и разрешений сервера остаются без изменений."
+                "Все четыре роли могут пользоваться обзором системы, объявлениями, действиями владельца (включая режим технических работ и управление сессиями Dashboard) и действиями разработчика. Доступ проверяется на сервере при каждом запросе. За действия в Админ панели отвечает тот, кто их совершает; использовать её можно только для эксплуатации и поддержки Quello."
               ]
             ]
           ],
@@ -577,7 +585,7 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Владелец бота Quello может создавать глобальные объявления через панель администратора. Объявление публикуется только на тех серверах Discord, где настроен необязательный канал объявлений. Владелец бота может редактировать или удалять объявление; изменения и удаление применяются к копиям, которые Quello успешно опубликовал."
+                "Авторизованные пользователи Админ панели (Bot Owner, подтверждённый владелец команды, а также Admin и Developer из Developer Team) могут создавать глобальные объявления через Админ панель. Объявление публикуется только на тех серверах Discord, где настроен необязательный канал объявлений. Авторизованные пользователи панели могут редактировать и удалять объявления; изменения и удаление применяются к копиям, которые Quello успешно опубликовал."
               ]
             ]
           ]
@@ -720,6 +728,10 @@ window.QUELLO_LEGAL = {
               [
                 "p",
                 "Quello wird „WIE BESEHEN“ und „WIE VERFÜGBAR“ bereitgestellt. Wir garantieren weder ständige Verfügbarkeit noch Fehlerfreiheit, noch Kompatibilität mit künftigen Discord-Änderungen, noch dass Daten durch technische Ausfälle niemals verloren gehen."
+              ],
+              [
+                "p",
+                "Ein autorisierter Nutzer des Admin-Panels kann Quello in den Wartungsmodus versetzen. Solange er aktiv ist, sind normale Befehle und das Dashboard auf allen Servern pausiert, ebenso die Veröffentlichung von Scheduled QOTD – bis der Modus deaktiviert wird oder seine Endzeit erreicht ist."
               ]
             ]
           ],
@@ -795,15 +807,15 @@ window.QUELLO_LEGAL = {
             ]
           ],
           [
-            "Diagnose des Developer-Teams",
+            "Developer-Team- und Admin-Panel-Zugriff",
             [
               [
                 "p",
-                "Beim Start kann Quello begrenzte Metadaten des Discord-Developer-Teams abrufen, um die Teamkonfiguration der Anwendung zu prüfen und eine zusammengefasste Diagnose zu erstellen."
+                "Quello liest Metadaten des Discord Developer Teams, um zu prüfen, wer das Admin-Panel nutzen darf. Zugriff haben der Bot Owner, der verifizierte Team Owner sowie akzeptierte Teammitglieder mit der Rolle Admin oder Developer. Read-only-Mitglieder, ausstehende Einladungen und alle anderen haben keinen Zugriff."
               ],
               [
                 "note",
-                "In dieser Version dienen die Developer-Team-Daten nur der Diagnose. Sie gewähren Teammitgliedern keinen Zugriff auf die Admin-Konsole und ändern keine bestehenden Berechtigungen. Die Prüfungen von BOT_OWNER_ID und Serverberechtigungen bleiben unverändert."
+                "Alle vier Rollen können Systemübersicht, Ankündigungen, Owner-Aktionen (einschließlich Wartungsmodus und Verwaltung von Dashboard-Sitzungen) und Entwickleraktionen nutzen. Der Zugriff wird bei jeder Anfrage serverseitig geprüft. Für Aktionen im Admin-Panel bist du selbst verantwortlich; sie darf nur für Betrieb und Support von Quello genutzt werden."
               ]
             ]
           ],
@@ -812,7 +824,7 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Der Bot-Inhaber von Quello kann globale Ankündigungen über die Admin-Konsole erstellen. Eine Ankündigung wird nur auf Discord-Servern veröffentlicht, auf denen ein optionaler Ankündigungskanal eingerichtet wurde. Der Bot-Inhaber kann eine verwaltete Ankündigung bearbeiten oder löschen; Änderungen und Löschungen werden auf die von Quello erfolgreich veröffentlichten Kopien angewendet."
+                "Autorisierte Nutzer des Admin-Panels (Bot Owner, verifizierter Team Owner sowie Team-Admins und Developer) können globale Ankündigungen über das Admin-Panel erstellen. Eine Ankündigung wird nur auf Discord-Servern veröffentlicht, auf denen ein optionaler Ankündigungskanal konfiguriert ist. Autorisierte Nutzer können eine verwaltete Ankündigung bearbeiten oder löschen; Änderungen und Löschungen werden auf die von Quello erfolgreich veröffentlichten Kopien angewendet."
               ]
             ]
           ]
@@ -955,6 +967,10 @@ window.QUELLO_LEGAL = {
               [
                 "p",
                 "Quello est fourni « EN L’ÉTAT » et « SELON DISPONIBILITÉ ». Nous ne garantissons ni une disponibilité continue, ni un fonctionnement sans erreur, ni la compatibilité avec les futures évolutions de Discord, ni que les données ne seront jamais perdues en raison de défaillances techniques."
+              ],
+              [
+                "p",
+                "Un utilisateur autorisé du panneau d’administration peut placer Quello en mode maintenance. Tant qu’il est actif, les commandes ordinaires et le Dashboard sont suspendus sur tous les serveurs, de même que la publication des Scheduled QOTD, jusqu’à la désactivation du mode ou l’heure de fin prévue."
               ]
             ]
           ],
@@ -1030,15 +1046,15 @@ window.QUELLO_LEGAL = {
             ]
           ],
           [
-            "Diagnostic de l’équipe de développeurs",
+            "Accès Developer Team et panneau d’administration",
             [
               [
                 "p",
-                "Au démarrage, Quello peut récupérer des métadonnées limitées de l’équipe de développeurs Discord afin de vérifier la configuration de l’équipe de l’application et de produire un diagnostic agrégé."
+                "Quello lit les métadonnées de la Developer Team Discord pour vérifier qui peut utiliser le panneau d’administration. L’accès est accordé au Bot Owner, au Team Owner vérifié et aux membres acceptés de la Developer Team ayant le rôle Admin ou Developer. Les membres Read-only, les invitations en attente et toute autre personne n’ont aucun accès."
               ],
               [
                 "note",
-                "Dans cette version, les informations de l’équipe servent uniquement au diagnostic. Elles ne donnent pas aux membres de l’équipe accès à l’Admin Console et ne modifient aucun droit existant. Les vérifications BOT_OWNER_ID et des autorisations du serveur restent inchangées."
+                "Les quatre rôles peuvent utiliser l’aperçu du système, les annonces, les actions du propriétaire (y compris le mode maintenance et la gestion des sessions Dashboard) et les actions développeur. L’accès est vérifié côté serveur à chaque requête. Vous êtes responsable de vos actions dans le panneau d’administration, qui ne doit servir qu’à l’exploitation et au support de Quello."
               ]
             ]
           ],
@@ -1047,7 +1063,7 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Le propriétaire du bot Quello peut créer des annonces globales via l’Admin Console. Une annonce est publiée uniquement sur les serveurs Discord qui ont configuré un salon d’annonces facultatif. Le propriétaire du bot peut modifier ou supprimer une annonce gérée ; les modifications et suppressions sont appliquées aux copies publiées avec succès par Quello."
+                "Les utilisateurs autorisés du panneau d’administration (Bot Owner, Team Owner vérifié, ainsi que les Admin et Developer de la Team) peuvent créer des annonces globales via le panneau d’administration. Une annonce est publiée uniquement sur les serveurs Discord ayant configuré un canal d’annonces facultatif. Les utilisateurs autorisés peuvent modifier ou supprimer une annonce gérée ; les modifications et suppressions sont appliquées aux copies publiées avec succès par Quello."
               ]
             ]
           ]
@@ -1190,6 +1206,10 @@ window.QUELLO_LEGAL = {
               [
                 "p",
                 "Quello è fornito «COSÌ COM’È» e «SECONDO DISPONIBILITÀ». Non garantiamo disponibilità continua, assenza di errori, compatibilità con future modifiche di Discord, né che i dati non vadano mai persi a causa di guasti tecnici."
+              ],
+              [
+                "p",
+                "Un utente autorizzato del pannello di amministrazione può mettere Quello in modalità manutenzione. Finché è attiva, i comandi ordinari e la Dashboard sono sospesi su tutti i server, così come la pubblicazione degli Scheduled QOTD, fino alla disattivazione della modalità o al raggiungimento dell’ora di fine."
               ]
             ]
           ],
@@ -1265,15 +1285,15 @@ window.QUELLO_LEGAL = {
             ]
           ],
           [
-            "Diagnostica del Developer Team",
+            "Accesso Developer Team e pannello di amministrazione",
             [
               [
                 "p",
-                "All’avvio, Quello può recuperare metadati limitati del Discord Developer Team per verificare la configurazione del team dell’applicazione e produrre una diagnostica aggregata."
+                "Quello legge i metadati del Developer Team Discord per verificare chi può usare il pannello di amministrazione. L’accesso è concesso al Bot Owner, al Team Owner verificato e ai membri accettati del Developer Team con ruolo Admin o Developer. I membri Read-only, gli inviti in sospeso e tutti gli altri non hanno accesso."
               ],
               [
                 "note",
-                "In questa versione, le informazioni del Developer Team sono usate solo per la diagnostica. Non concedono ai membri del team l’accesso alla Admin Console e non modificano le autorizzazioni esistenti. I controlli BOT_OWNER_ID e dei permessi del server restano invariati."
+                "Tutti e quattro i ruoli possono usare panoramica del sistema, annunci, azioni proprietario (inclusa la modalità manutenzione e la gestione delle sessioni Dashboard) e azioni sviluppatore. L’accesso è verificato lato server a ogni richiesta. Sei responsabile delle azioni svolte nel pannello di amministrazione, da usare solo per gestire e supportare Quello."
               ]
             ]
           ],
@@ -1282,7 +1302,7 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Il proprietario del bot Quello può creare annunci globali tramite la Admin Console. Un annuncio viene pubblicato solo sui server Discord che hanno configurato un canale annunci facoltativo. Il proprietario del bot può modificare o eliminare un annuncio gestito; le modifiche e le eliminazioni vengono applicate alle copie pubblicate correttamente da Quello."
+                "Gli utenti autorizzati del pannello di amministrazione (Bot Owner, Team Owner verificato, Admin e Developer del Team) possono creare annunci globali tramite il pannello di amministrazione. Un annuncio viene pubblicato solo sui server Discord che hanno configurato un canale annunci facoltativo. Gli utenti autorizzati possono modificare o eliminare un annuncio gestito; modifiche ed eliminazioni vengono applicate alle copie pubblicate con successo da Quello."
               ]
             ]
           ]
@@ -1399,7 +1419,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Your profile details are kept in a signed session token stored in your browser until it expires (7 days by default) or you log out; they are not stored in the Bot database. The website also keeps your language and theme choices in your browser."
+                "Your profile details are kept in a signed session token stored in your browser until it expires (7 days by default) or you log out; the Bot database keeps only a session record for this purpose (see “Dashboard sessions and Technical Work Mode”). The website also keeps your language and theme choices in your browser."
               ],
               [
                 "p",
@@ -1544,7 +1564,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "The prompt and recent-question context are sent to Groq through its API to generate a question. Groq is an independent third-party service and processes the submitted request under its own terms and privacy practices. Do not enable this feature if your server’s recent QOTDs contain information that should not be sent to an external AI provider. Quello’s prompt asks for a short, funny, absurd and friendly question without insults or toxicity. It does not filter the recent-question context before sending it, so server owners remain responsible for what is sent."
+                "The prompt and recent-question context are sent to Groq through its API to generate a question. Groq is an independent third-party service and processes the submitted request under its own terms and privacy practices. Do not enable this feature if your server’s recent QOTDs contain information that should not be sent to an external AI provider. Quello’s prompt asks for one short, original, witty and sometimes provocative question and tells the model to avoid clichés and repeats of recent questions. It does not filter the recent-question context before sending it, so server owners remain responsible for what is sent."
               ],
               [
                 "p",
@@ -1566,11 +1586,11 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "When the bot starts, it requests the application’s Developer Team information from Discord through the bot’s application information endpoint. The information used for diagnostics includes the team owner ID and the listed members’ team roles (Admin, Developer, or Read Only) and membership states (accepted or invited)."
+                "The bot requests the application’s Developer Team information from Discord through the application information endpoint. It uses the team owner ID and the listed members’ roles (Admin, Developer or Read Only), user IDs and membership states (accepted or invited) to decide who may use the Admin Panel, and for aggregate startup diagnostics."
               ],
               [
                 "p",
-                "Quello compares the team owner ID with the existing BOT_OWNER_ID setting and calculates aggregate member and role counts. In this release, this information is used only for startup diagnostics and does not grant or change permissions. Individual member IDs and names are not written to logs or saved in the database; diagnostic results contain aggregate counts and verification status only."
+                "When you use the Dashboard, your Discord User ID is compared with the Bot Owner ID and with this team information; the verified Team Owner and accepted Admin and Developer members receive Admin Panel access. Results are cached in memory for a few seconds. Team member IDs and names are not written to logs or saved in the database; diagnostics contain aggregate counts and verification status only. The Admin Panel shows authorized users the team’s member names, roles and invitation status as returned by Discord; these are not stored."
               ]
             ]
           ],
@@ -1579,7 +1599,20 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "When the Bot Owner creates a global announcement, Quello stores the announcement content and optional embed fields, the creator’s Discord user ID, and the Discord guild, channel and message IDs for each successful delivery. The content is sent to Discord and is visible to members who can access the destination channel; Discord controls channel visibility. Delivery status and limited error type information may also be stored so the Admin Console can display delivery results and manage the published copies. This information remains in the bot database while the announcement is managed. Deleting an announcement through the Admin Console removes its published messages where Discord permits and deletes its stored campaign and delivery records when all deletions succeed."
+                "When an authorized Admin Panel user (Bot Owner, Team Owner, Admin or Developer) creates a global announcement, Quello stores the announcement content and optional embed fields, the creator’s Discord user ID, and the Discord guild, channel and message IDs for each successful delivery. The content is sent to Discord and is visible to members who can access the destination channel; Discord controls channel visibility. Delivery status and limited error type information may also be stored so the Admin Panel can display delivery results and manage the published copies. This information remains in the bot database while the announcement is managed. Deleting an announcement through the Admin Panel removes its published messages where Discord permits and deletes its stored campaign and delivery records when all deletions succeed."
+              ]
+            ]
+          ],
+          [
+            "Dashboard sessions and Technical Work Mode",
+            [
+              [
+                "p",
+                "When you sign in to the Dashboard, the Bot database stores a session record: a session ID, your Discord User ID, display name and avatar hash, the creation and expiry times, and whether it was ended. It is used so that a session can be ended before it expires, and it is deleted once it has expired or been ended. Authorized Admin Panel users can list active sessions and end a single session or all sessions of a user."
+              ],
+              [
+                "p",
+                "Technical Work Mode stores only an on/off flag, the reason text entered by the authorized user, an optional end time and the time of the last change. The reason is shown to people who are blocked while the mode is on, so it must not contain personal data."
               ]
             ]
           ]
@@ -1694,7 +1727,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Данные вашего профиля хранятся в подписанном токене сессии в вашем браузере, пока он не истечёт (по умолчанию 7 дней) или вы не выйдете; в базе данных Бота они не хранятся. Сайт также сохраняет в вашем браузере выбранные язык и тему."
+                "Данные вашего профиля хранятся в подписанном токене сессии в вашем браузере, пока он не истечёт (по умолчанию 7 дней) или вы не выйдете; в базе данных Бота для этой цели хранится только запись о сессии (см. раздел «Сессии Dashboard и режим технических работ»). Сайт также сохраняет в вашем браузере выбранные язык и тему."
               ],
               [
                 "p",
@@ -1839,7 +1872,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Запрос и контекст недавних вопросов передаются Groq через API для генерации вопроса. Groq — независимый сторонний сервис, который обрабатывает запрос согласно собственным условиям и политике конфиденциальности. Не включайте эту функцию, если среди недавних QOTD есть сведения, которые нельзя передавать внешнему поставщику ИИ. Запрос Quello просит создать короткий, смешной, абсурдный и дружелюбный вопрос без оскорблений и токсичности. Контекст недавних вопросов перед отправкой не фильтруется, поэтому ответственность за передаваемые данные остаётся за владельцами серверов."
+                "Запрос и контекст недавних вопросов передаются Groq через API для генерации вопроса. Groq — независимый сторонний сервис, который обрабатывает запрос согласно собственным условиям и политике конфиденциальности. Не включайте эту функцию, если среди недавних QOTD есть сведения, которые нельзя передавать внешнему поставщику ИИ. Запрос Quello просит создать один короткий, оригинальный, остроумный и порой провокационный вопрос, избегая шаблонности и повторов недавних вопросов. Контекст недавних вопросов перед отправкой не фильтруется, поэтому ответственность за передаваемые данные остаётся за владельцами серверов."
               ],
               [
                 "p",
@@ -1861,11 +1894,11 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "При запуске Бот запрашивает у Discord сведения о Developer Team приложения через endpoint информации о приложении. Для диагностики используются ID владельца команды, роли перечисленных участников (Admin, Developer или Read Only) и состояния их членства (принятое приглашение или ожидающее приглашение)."
+                "Бот запрашивает у Discord сведения о Developer Team приложения через endpoint информации о приложении. ID владельца команды, роли участников (Admin, Developer или Read Only), их ID и состояния членства (принятое или ожидающее приглашение) используются, чтобы определить, кому разрешён доступ к Админ панели, а также для общей диагностики при запуске."
               ],
               [
                 "p",
-                "Quello сравнивает ID владельца команды с существующей настройкой BOT_OWNER_ID и рассчитывает общее количество участников и распределение по ролям. В этой версии сведения используются только для диагностики при запуске и не предоставляют и не изменяют права доступа. ID и имена отдельных участников не записываются в журналы и не сохраняются в базе данных; результаты диагностики содержат только общие количества и статус проверки."
+                "Когда вы пользуетесь Dashboard, ваш Discord User ID сравнивается с ID Bot Owner и с этими сведениями о команде; подтверждённый владелец команды и принятые участники с ролями Admin и Developer получают доступ к Админ панели. Результаты на несколько секунд кэшируются в памяти. ID и имена участников команды не записываются в журналы и не сохраняются в базе данных; результаты диагностики содержат только общие количества и статус проверки. Админ панель показывает авторизованным пользователям имена участников команды, их роли и статус приглашения, полученные от Discord; эти сведения не сохраняются."
               ]
             ]
           ],
@@ -1874,7 +1907,20 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Когда владелец бота создаёт глобальное объявление, Quello сохраняет его содержимое и необязательные поля Embed, Discord User ID создателя, а также ID серверов, каналов и сообщений для каждой успешной публикации. Содержимое отправляется в Discord и доступно участникам, которые могут просматривать целевой канал; видимость канала контролируется Discord. Также могут сохраняться статус доставки и ограниченная информация о типе ошибки, чтобы Admin Console могла показывать результаты и управлять опубликованными копиями. Эти сведения остаются в базе данных бота, пока объявление находится под управлением. При удалении через Admin Console Quello удаляет опубликованные сообщения, если Discord это позволяет, а после успешного удаления всех копий — запись объявления и сведения о доставках."
+                "Когда авторизованный пользователь Админ панели (Bot Owner, владелец команды, Admin или Developer) создаёт глобальное объявление, Quello сохраняет его содержимое и необязательные поля Embed, Discord User ID создателя, а также ID серверов, каналов и сообщений для каждой успешной публикации. Содержимое отправляется в Discord и доступно участникам, которые могут просматривать целевой канал; видимость канала контролируется Discord. Также могут сохраняться статус доставки и ограниченная информация о типе ошибки, чтобы Админ панель могла показывать результаты и управлять опубликованными копиями. Эти сведения остаются в базе данных бота, пока объявление находится под управлением. При удалении через Админ панель Quello удаляет опубликованные сообщения, если Discord это позволяет, а после успешного удаления всех копий — запись объявления и сведения о доставках."
+              ]
+            ]
+          ],
+          [
+            "Сессии Dashboard и режим технических работ",
+            [
+              [
+                "p",
+                "Когда вы входите в Dashboard, в базе данных Бота сохраняется запись о сессии: ID сессии, ваш Discord User ID, отображаемое имя и хеш аватара, время создания и истечения, а также признак завершения. Она нужна, чтобы сессию можно было завершить до истечения срока, и удаляется после истечения или завершения. Авторизованные пользователи Админ панели могут просматривать активные сессии и завершать одну сессию или все сессии пользователя."
+              ],
+              [
+                "p",
+                "Режим технических работ хранит только флаг «включён/выключен», текст причины, введённый авторизованным пользователем, необязательное время окончания и время последнего изменения. Причина показывается людям, которым доступ ограничен, пока режим включён, поэтому она не должна содержать персональных данных."
               ]
             ]
           ]
@@ -1989,7 +2035,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Deine Profildaten werden in einem signierten Sitzungstoken in deinem Browser gespeichert, bis es abläuft (standardmäßig nach 7 Tagen) oder du dich abmeldest; in der Datenbank des Bots werden sie nicht gespeichert. Die Website speichert außerdem deine Sprach- und Designauswahl in deinem Browser."
+                "Deine Profildaten werden in einem signierten Sitzungstoken in deinem Browser gespeichert, bis es abläuft (standardmäßig nach 7 Tagen) oder du dich abmeldest; die Datenbank des Bots speichert dafür nur einen Sitzungseintrag (siehe „Dashboard-Sitzungen und Wartungsmodus“). Die Website speichert außerdem deine Sprach- und Designauswahl in deinem Browser."
               ],
               [
                 "p",
@@ -2134,7 +2180,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Die Anfrage und der Kontext der letzten Fragen werden zur Generierung über die API an Groq gesendet. Groq ist ein unabhängiger Drittanbieter und verarbeitet die übermittelte Anfrage gemäß seinen eigenen Bedingungen und Datenschutzpraktiken. Aktiviere diese Funktion nicht, wenn aktuelle QOTDs Informationen enthalten, die nicht an einen externen KI-Anbieter übermittelt werden sollen. Die Quello-Anfrage verlangt eine kurze, lustige, absurde und freundliche Frage ohne Beleidigungen oder Toxizität. Der Kontext der letzten Fragen wird vor dem Senden nicht gefiltert; für die übermittelten Inhalte bleiben daher die Serverinhaber verantwortlich."
+                "Die Anfrage und der Kontext der letzten Fragen werden zur Generierung über die API an Groq gesendet. Groq ist ein unabhängiger Drittanbieter und verarbeitet die übermittelte Anfrage gemäß seinen eigenen Bedingungen und Datenschutzpraktiken. Aktiviere diese Funktion nicht, wenn aktuelle QOTDs Informationen enthalten, die nicht an einen externen KI-Anbieter übermittelt werden sollen. Die Quello-Anfrage verlangt eine einzelne, kurze, originelle, witzige und mitunter provokante Frage und weist das Modell an, Klischees und Wiederholungen aktueller Fragen zu vermeiden. Der Kontext der letzten Fragen wird vor dem Senden nicht gefiltert; für die übermittelten Inhalte bleiben daher die Serverinhaber verantwortlich."
               ],
               [
                 "p",
@@ -2152,15 +2198,15 @@ window.QUELLO_LEGAL = {
             ]
           ],
           [
-            "Discord-Developer-Team-Daten",
+            "Daten des Discord Developer Teams",
             [
               [
                 "p",
-                "Beim Start ruft der Bot über den Application-Information-Endpunkt die Informationen des Discord-Developer-Teams der Anwendung ab. Für die Diagnose werden die Team-Owner-ID, die Teamrollen der aufgeführten Mitglieder (Admin, Developer oder Read Only) und deren Mitgliedschaftsstatus (angenommen oder eingeladen) verwendet."
+                "Der Bot fragt bei Discord über den Endpunkt für Anwendungsinformationen die Developer-Team-Informationen der Anwendung ab. Die Team-Owner-ID sowie Rollen (Admin, Developer oder Read Only), Benutzer-IDs und Mitgliedschaftsstatus (akzeptiert oder eingeladen) der aufgeführten Mitglieder dienen dazu, zu entscheiden, wer das Admin-Panel nutzen darf, sowie für aggregierte Start-Diagnosen."
               ],
               [
                 "p",
-                "Quello vergleicht die Team-Owner-ID mit der bestehenden Einstellung BOT_OWNER_ID und ermittelt zusammengefasste Mitglieder- und Rollenzahlen. In dieser Version dienen diese Informationen ausschließlich der Startdiagnose und gewähren oder ändern keine Berechtigungen. IDs und Namen einzelner Mitglieder werden weder protokolliert noch in der Datenbank gespeichert; die Diagnose protokolliert nur Gesamtzahlen und den Prüfstatus."
+                "Wenn du das Dashboard nutzt, wird deine Discord-Benutzer-ID mit der Bot-Owner-ID und diesen Team-Informationen abgeglichen; der verifizierte Team Owner sowie akzeptierte Admins und Developer erhalten Zugriff auf das Admin-Panel. Ergebnisse werden einige Sekunden im Arbeitsspeicher zwischengespeichert. IDs und Namen von Teammitgliedern werden weder protokolliert noch in der Datenbank gespeichert; Diagnosen enthalten nur aggregierte Zahlen und den Prüfstatus. Das Admin-Panel zeigt autorisierten Nutzern Namen, Rollen und Einladungsstatus der Teammitglieder, wie von Discord geliefert; sie werden nicht gespeichert."
               ]
             ]
           ],
@@ -2169,7 +2215,20 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Wenn der Bot-Inhaber eine globale Ankündigung erstellt, speichert Quello den Inhalt und optionale Embed-Felder, die Discord-Benutzer-ID des Erstellers sowie die Discord-Server-, Kanal- und Nachrichten-IDs jeder erfolgreichen Veröffentlichung. Der Inhalt wird an Discord gesendet und ist für Mitglieder sichtbar, die auf den Zielkanal zugreifen können; Discord steuert die Sichtbarkeit des Kanals. Außerdem können Zustellstatus und begrenzte Informationen zum Fehlertyp gespeichert werden, damit die Admin-Konsole Ergebnisse anzeigen und veröffentlichte Kopien verwalten kann. Diese Informationen bleiben in der Bot-Datenbank, solange die Ankündigung verwaltet wird. Beim Löschen über die Admin-Konsole entfernt Quello die veröffentlichten Nachrichten, soweit Discord dies zulässt, und löscht nach erfolgreicher Entfernung aller Kopien den gespeicherten Ankündigungs- und Zustellungsdatensatz."
+                "Wenn ein autorisierter Nutzer des Admin-Panels (Bot Owner, Team Owner, Admin oder Developer) eine globale Ankündigung erstellt, speichert Quello den Inhalt und optionale Embed-Felder, die Discord-Benutzer-ID des Erstellers sowie die Discord-Server-, Kanal- und Nachrichten-IDs jeder erfolgreichen Veröffentlichung. Der Inhalt wird an Discord gesendet und ist für Mitglieder sichtbar, die auf den Zielkanal zugreifen können; Discord steuert die Sichtbarkeit des Kanals. Außerdem können Zustellstatus und begrenzte Informationen zum Fehlertyp gespeichert werden, damit das Admin-Panel Ergebnisse anzeigen und veröffentlichte Kopien verwalten kann. Diese Informationen bleiben in der Bot-Datenbank, solange die Ankündigung verwaltet wird. Beim Löschen über das Admin-Panel entfernt Quello die veröffentlichten Nachrichten, soweit Discord dies zulässt, und löscht nach erfolgreicher Entfernung aller Kopien den gespeicherten Ankündigungs- und Zustellungsdatensatz."
+              ]
+            ]
+          ],
+          [
+            "Dashboard-Sitzungen und Wartungsmodus",
+            [
+              [
+                "p",
+                "Wenn du dich im Dashboard anmeldest, speichert die Datenbank des Bots einen Sitzungseintrag: Sitzungs-ID, deine Discord-Benutzer-ID, Anzeigename und Avatar-Hash, Erstellungs- und Ablaufzeit sowie ob die Sitzung beendet wurde. Er dient dazu, eine Sitzung vor Ablauf beenden zu können, und wird nach Ablauf oder Beendigung gelöscht. Autorisierte Nutzer des Admin-Panels können aktive Sitzungen auflisten und eine einzelne Sitzung oder alle Sitzungen eines Nutzers beenden."
+              ],
+              [
+                "p",
+                "Der Wartungsmodus speichert nur ein Ein/Aus-Kennzeichen, den vom autorisierten Nutzer eingegebenen Grundtext, eine optionale Endzeit und den Zeitpunkt der letzten Änderung. Der Grund wird Personen angezeigt, die bei aktivem Modus gesperrt sind, und darf daher keine personenbezogenen Daten enthalten."
               ]
             ]
           ]
@@ -2284,7 +2343,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Les détails de votre profil sont conservés dans un jeton de session signé stocké dans votre navigateur jusqu’à son expiration (7 jours par défaut) ou jusqu’à votre déconnexion ; ils ne sont pas stockés dans la base de données du Bot. Le site conserve aussi dans votre navigateur vos choix de langue et de thème."
+                "Les détails de votre profil sont conservés dans un jeton de session signé stocké dans votre navigateur jusqu’à son expiration (7 jours par défaut) ou jusqu’à votre déconnexion ; la base de données du Bot ne conserve à cette fin qu’un enregistrement de session (voir « Sessions Dashboard et mode maintenance »). Le site conserve aussi dans votre navigateur vos choix de langue et de thème."
               ],
               [
                 "p",
@@ -2429,7 +2488,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "La demande et le contexte des questions récentes sont envoyés à Groq via son API afin de générer une question. Groq est un service tiers indépendant qui traite la demande selon ses propres conditions et pratiques de confidentialité. N’activez pas cette fonction si les QOTD récents contiennent des informations qui ne doivent pas être transmises à un fournisseur d’IA externe. La consigne de Quello demande une question courte, drôle, absurde et amicale, sans insultes ni toxicité. Le contexte des questions récentes n’est pas filtré avant l’envoi ; les propriétaires de serveur restent donc responsables des contenus transmis."
+                "La demande et le contexte des questions récentes sont envoyés à Groq via son API afin de générer une question. Groq est un service tiers indépendant qui traite la demande selon ses propres conditions et pratiques de confidentialité. N’activez pas cette fonction si les QOTD récents contiennent des informations qui ne doivent pas être transmises à un fournisseur d’IA externe. La consigne de Quello demande une seule question courte, originale, pleine d’esprit et parfois provocatrice, en évitant les clichés et les répétitions des questions récentes. Le contexte des questions récentes n’est pas filtré avant l’envoi ; les propriétaires de serveur restent donc responsables des contenus transmis."
               ],
               [
                 "p",
@@ -2447,15 +2506,15 @@ window.QUELLO_LEGAL = {
             ]
           ],
           [
-            "Données de l’équipe de développeurs Discord",
+            "Données de la Developer Team Discord",
             [
               [
                 "p",
-                "Au démarrage, le bot demande à Discord les informations de l’équipe de développeurs de l’application via le point d’accès d’informations de l’application. Les données utilisées pour le diagnostic comprennent l’identifiant du propriétaire de l’équipe, les rôles des membres répertoriés (Admin, Developer ou Read Only) et leur état d’adhésion (accepté ou invitation en attente)."
+                "Le bot demande à Discord les informations de la Developer Team de l’application via le point d’accès des informations d’application. L’identifiant du propriétaire de l’équipe ainsi que les rôles (Admin, Developer ou Read Only), identifiants et états d’adhésion (accepté ou invité) des membres servent à décider qui peut utiliser le panneau d’administration, et à des diagnostics agrégés au démarrage."
               ],
               [
                 "p",
-                "Quello compare l’identifiant du propriétaire de l’équipe au paramètre BOT_OWNER_ID existant et calcule des totaux agrégés par membre et par rôle. Dans cette version, ces informations servent uniquement au diagnostic au démarrage et n’accordent ni ne modifient aucun droit. Les identifiants et noms individuels ne sont ni consignés ni enregistrés dans la base de données ; seuls les totaux et l’état de vérification sont journalisés."
+                "Lorsque vous utilisez le Dashboard, votre identifiant utilisateur Discord est comparé à celui du Bot Owner et à ces informations d’équipe ; le Team Owner vérifié ainsi que les membres Admin et Developer acceptés obtiennent l’accès au panneau d’administration. Les résultats sont mis en cache en mémoire quelques secondes. Les identifiants et noms des membres de l’équipe ne sont ni écrits dans les journaux ni enregistrés dans la base de données ; les diagnostics ne contiennent que des totaux agrégés et l’état de la vérification. Le panneau d’administration affiche aux utilisateurs autorisés les noms, rôles et statuts d’invitation des membres de l’équipe tels que fournis par Discord ; ils ne sont pas stockés."
               ]
             ]
           ],
@@ -2464,7 +2523,20 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Lorsque le propriétaire du bot crée une annonce globale, Quello stocke son contenu et ses champs Embed facultatifs, l’identifiant Discord de son créateur ainsi que les identifiants Discord du serveur, du salon et du message pour chaque publication réussie. Le contenu est envoyé à Discord et visible par les membres pouvant accéder au salon de destination ; Discord contrôle la visibilité du salon. L’état de livraison et des informations limitées sur le type d’erreur peuvent également être conservés afin que l’Admin Console affiche les résultats et gère les copies publiées. Ces informations restent dans la base de données du bot tant que l’annonce est gérée. Lorsqu’une annonce est supprimée via l’Admin Console, Quello supprime les messages publiés dans la mesure où Discord le permet, puis supprime l’enregistrement de campagne et de livraison lorsque toutes les suppressions ont réussi."
+                "Lorsqu’un utilisateur autorisé du panneau d’administration (Bot Owner, Team Owner, Admin ou Developer) crée une annonce globale, Quello stocke son contenu et ses champs Embed facultatifs, l’identifiant Discord de son créateur ainsi que les identifiants Discord du serveur, du salon et du message pour chaque publication réussie. Le contenu est envoyé à Discord et visible par les membres pouvant accéder au salon de destination ; Discord contrôle la visibilité du salon. L’état de livraison et des informations limitées sur le type d’erreur peuvent également être conservés afin que le panneau d’administration affiche les résultats et gère les copies publiées. Ces informations restent dans la base de données du bot tant que l’annonce est gérée. Lorsqu’une annonce est supprimée via le panneau d’administration, Quello supprime les messages publiés dans la mesure où Discord le permet, puis supprime l’enregistrement de campagne et de livraison lorsque toutes les suppressions ont réussi."
+              ]
+            ]
+          ],
+          [
+            "Sessions Dashboard et mode maintenance",
+            [
+              [
+                "p",
+                "Lorsque vous vous connectez au Dashboard, la base de données du Bot enregistre une session : identifiant de session, votre identifiant utilisateur Discord, nom d’affichage et hachage d’avatar, heures de création et d’expiration, et indication de fin anticipée. Elle permet de mettre fin à une session avant son expiration et est supprimée une fois expirée ou terminée. Les utilisateurs autorisés du panneau d’administration peuvent lister les sessions actives et mettre fin à une session ou à toutes les sessions d’un utilisateur."
+              ],
+              [
+                "p",
+                "Le mode maintenance ne conserve qu’un indicateur activé/désactivé, le motif saisi par l’utilisateur autorisé, une heure de fin facultative et l’heure de la dernière modification. Le motif est affiché aux personnes bloquées pendant que le mode est actif ; il ne doit donc contenir aucune donnée personnelle."
               ]
             ]
           ]
@@ -2579,7 +2651,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "I dati del tuo profilo sono conservati in un token di sessione firmato memorizzato nel browser fino alla scadenza (7 giorni per impostazione predefinita) o fino al logout; non sono salvati nel database del Bot. Il sito conserva inoltre nel browser le tue scelte di lingua e tema."
+                "I dati del tuo profilo sono conservati in un token di sessione firmato memorizzato nel browser fino alla scadenza (7 giorni per impostazione predefinita) o fino al logout; il database del Bot conserva a questo scopo solo un record di sessione (vedi «Sessioni Dashboard e modalità manutenzione»). Il sito conserva inoltre nel browser le tue scelte di lingua e tema."
               ],
               [
                 "p",
@@ -2724,7 +2796,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "La richiesta e il contesto delle domande recenti vengono inviati a Groq tramite la sua API per generare una domanda. Groq è un servizio terzo indipendente e tratta la richiesta secondo i propri termini e pratiche sulla privacy. Non attivare questa funzione se i QOTD recenti contengono informazioni che non devono essere inviate a un provider AI esterno. La richiesta di Quello chiede una domanda breve, divertente, assurda e amichevole, senza insulti né tossicità. Il contesto delle domande recenti non viene filtrato prima dell’invio; i proprietari dei server restano quindi responsabili di ciò che viene trasmesso."
+                "La richiesta e il contesto delle domande recenti vengono inviati a Groq tramite la sua API per generare una domanda. Groq è un servizio terzo indipendente e tratta la richiesta secondo i propri termini e pratiche sulla privacy. Non attivare questa funzione se i QOTD recenti contengono informazioni che non devono essere inviate a un provider AI esterno. La richiesta di Quello chiede una sola domanda breve, originale, spiritosa e a volte provocatoria, evitando cliché e ripetizioni delle domande recenti. Il contesto delle domande recenti non viene filtrato prima dell’invio; i proprietari dei server restano quindi responsabili di ciò che viene trasmesso."
               ],
               [
                 "p",
@@ -2742,15 +2814,15 @@ window.QUELLO_LEGAL = {
             ]
           ],
           [
-            "Dati del Discord Developer Team",
+            "Dati del Developer Team Discord",
             [
               [
                 "p",
-                "All’avvio, il bot richiede a Discord le informazioni sul Developer Team dell’applicazione tramite l’endpoint delle informazioni dell’applicazione. I dati usati per la diagnostica includono l’ID del proprietario del team, i ruoli dei membri elencati (Admin, Developer o Read Only) e il loro stato di appartenenza (accettato o invitato)."
+                "Il bot richiede a Discord le informazioni sul Developer Team dell’applicazione tramite l’endpoint delle informazioni applicazione. L’ID del proprietario del team e i ruoli (Admin, Developer o Read Only), gli ID utente e gli stati di appartenenza (accettato o invitato) dei membri elencati servono a stabilire chi può usare il pannello di amministrazione e per diagnostica aggregata all’avvio."
               ],
               [
                 "p",
-                "Quello confronta l’ID del proprietario del team con l’impostazione BOT_OWNER_ID esistente e calcola conteggi aggregati dei membri e dei ruoli. In questa versione, queste informazioni vengono usate solo per la diagnostica all’avvio e non concedono né modificano autorizzazioni. Gli ID e i nomi dei singoli membri non vengono registrati nei log né salvati nel database; i risultati registrano solo conteggi aggregati e stato della verifica."
+                "Quando usi la Dashboard, il tuo ID utente Discord viene confrontato con l’ID del Bot Owner e con queste informazioni del team; il Team Owner verificato e i membri Admin e Developer accettati ricevono l’accesso al pannello di amministrazione. I risultati sono memorizzati in cache per pochi secondi. ID e nomi dei membri del team non vengono scritti nei log né salvati nel database; la diagnostica contiene solo conteggi aggregati e lo stato della verifica. Il pannello di amministrazione mostra agli utenti autorizzati nomi, ruoli e stato dell’invito dei membri del team come restituiti da Discord; non vengono memorizzati."
               ]
             ]
           ],
@@ -2759,7 +2831,20 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Quando il proprietario del bot crea un annuncio globale, Quello memorizza il contenuto e i campi Embed facoltativi, l’ID utente Discord del creatore e gli ID Discord del server, del canale e del messaggio per ogni pubblicazione riuscita. Il contenuto viene inviato a Discord ed è visibile ai membri che possono accedere al canale di destinazione; Discord controlla la visibilità del canale. Possono essere memorizzati anche lo stato della consegna e informazioni limitate sul tipo di errore, affinché la Admin Console possa mostrare i risultati e gestire le copie pubblicate. Queste informazioni restano nel database del bot finché l’annuncio è gestito. Quando un annuncio viene eliminato tramite la Admin Console, Quello rimuove i messaggi pubblicati nei limiti consentiti da Discord e cancella il record della campagna e delle consegne quando tutte le eliminazioni riescono."
+                "Quando un utente autorizzato del pannello di amministrazione (Bot Owner, Team Owner, Admin o Developer) crea un annuncio globale, Quello memorizza il contenuto e i campi Embed facoltativi, l’ID utente Discord del creatore e gli ID Discord del server, del canale e del messaggio per ogni pubblicazione riuscita. Il contenuto viene inviato a Discord ed è visibile ai membri che possono accedere al canale di destinazione; Discord controlla la visibilità del canale. Possono essere memorizzati anche lo stato della consegna e informazioni limitate sul tipo di errore, affinché il pannello di amministrazione possa mostrare i risultati e gestire le copie pubblicate. Queste informazioni restano nel database del bot finché l’annuncio è gestito. Quando un annuncio viene eliminato tramite il pannello di amministrazione, Quello rimuove i messaggi pubblicati nei limiti consentiti da Discord e cancella il record della campagna e delle consegne quando tutte le eliminazioni riescono."
+              ]
+            ]
+          ],
+          [
+            "Sessioni Dashboard e modalità manutenzione",
+            [
+              [
+                "p",
+                "Quando accedi alla Dashboard, il database del Bot memorizza un record di sessione: ID sessione, il tuo ID utente Discord, nome visualizzato e hash dell’avatar, orari di creazione e scadenza e se è stata terminata. Serve a poter terminare una sessione prima della scadenza e viene eliminato dopo la scadenza o la terminazione. Gli utenti autorizzati del pannello di amministrazione possono elencare le sessioni attive e terminare una singola sessione o tutte le sessioni di un utente."
+              ],
+              [
+                "p",
+                "La modalità manutenzione memorizza solo un indicatore attivo/non attivo, il motivo inserito dall’utente autorizzato, un’ora di fine facoltativa e l’ora dell’ultima modifica. Il motivo viene mostrato alle persone bloccate mentre la modalità è attiva e non deve quindi contenere dati personali."
               ]
             ]
           ]
