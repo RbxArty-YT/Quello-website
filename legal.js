@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello — Terms / Privacy pages: language, theme, table of contents, scroll spy. */
 (function () {
   'use strict';

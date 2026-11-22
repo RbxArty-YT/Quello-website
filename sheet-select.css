@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Dashboard: custom bottom-sheet pickers (replaces native <select> popups).
    Reuses the Command Playground drawer styles from style.css. */
 select.sheet-native{display:none !important}

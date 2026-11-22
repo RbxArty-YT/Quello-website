@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello Dashboard refinements: compact server breadcrumb, unified controls and schedule layout. */
 body[data-page="dashboard"] .nav-inner { min-width:0; }
 body[data-page="dashboard"] .brand { flex:0 0 auto; }

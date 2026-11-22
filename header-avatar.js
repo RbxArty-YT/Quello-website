@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello — shows the signed-in person's Discord avatar at the far right of the header.
    Reads the session token that dashboard sign-in already stores (no API call needed:
    the token carries the Discord ID and avatar hash). Does nothing for signed-out visitors. */

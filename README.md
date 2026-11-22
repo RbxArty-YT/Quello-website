@@ -155,3 +155,22 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 - Owner Actions: sessions are grouped by user with “End all sessions of this user”, a “This session” badge and a two-step confirm button (no `window.confirm`). The hard-coded Russian fetch-error text in the panel was replaced with the localized message.
 - Server Dashboard → QOTD list: new **Delete** button next to “Open in Discord” and “Edit”, with an in-card confirmation and a localized warning if the Discord message could not be removed. Strings added in EN / RU / DE / FR / IT.
 - Legal text and the November 21 changelog entry updated accordingly.
+
+
+## Early Access v2.534.9.1 implementation notes (November 22, 2026)
+
+- Copyright notices and a link to the project `LICENSE` were added to the website. Terms of Service and Privacy Policy were not changed for this work.
+- Admin Panel now has separate Global Logs and Global Audit Logs views. Global access is enforced server-side for the Bot Owner only.
+- Removed the Appearance Lab, Localization Lab, Experiment Features, and Developer Tools tabs from the Admin Panel interface.
+- Added the public Roadmap section with the requested planned features. `Configuration Profiles` is intentionally excluded.
+- Dashboard now supports resetting the server-language QOTD counter without deleting QOTD history or published questions, and clearing normal Logs without changing Audit Logs.
+- Full integration and responsive-browser verification remain pending.
+
+
+
+### Early Access v2.534.9.1 follow-up verification (November 22, 2026)
+
+- Fixed the legacy unique QOTD-number index migration so counter resets can reuse `#1` while retaining every historical QOTD row, published message reference and answer record. QOTDs remain addressable by their internal database IDs.
+- Updated the static HTML fallback command documentation to match the current `/qotd` and `/setup` option names and automatic channel selection.
+- German, French and Italian bot localization was expanded to cover at least 96% of the 312 interface keys; placeholder parity and translation-coverage checks pass.
+- Browser-based responsive verification and full API integration testing still require the deployment/browser environment. The full Python suite also requires the pinned `disnake` and `aiosqlite` dependencies.

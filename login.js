@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* login.html: send people to Discord (via the bot's API) or let them read the docs as a guest. */
 (function () {
   'use strict';

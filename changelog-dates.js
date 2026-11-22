@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello — shows the changelog dates in the selected site language
    (the HTML keeps the English date, e.g. "NOVEMBER 16, 2026", as the source). */
 (function () {

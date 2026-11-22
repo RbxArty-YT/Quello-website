@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Hidden Admin Panel */
 .creator-console-open{overflow:hidden}
 .creator-console-overlay{position:fixed;inset:0;z-index:9998;display:flex;justify-content:flex-end;background:rgba(5,6,14,.62);backdrop-filter:blur(9px);opacity:0;visibility:hidden;transition:opacity .24s ease,visibility .24s ease}

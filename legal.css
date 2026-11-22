@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello — Terms of Service & Privacy Policy pages */
 body[data-page="legal"]{min-height:100vh;background:var(--bg);color:var(--text);margin:0}
 .legal-nav{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px clamp(16px,4vw,48px);padding-top:max(12px,env(safe-area-inset-top));background:var(--nav-bg);border-bottom:1px solid var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}

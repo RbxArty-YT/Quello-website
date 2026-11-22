@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello — shared helpers for login.html and dashboard.html:
    translations (same five languages and storage key as the main site),
    theme toggle, language menu, session token and API calls. */
@@ -55,7 +56,7 @@
       f_announcement_channel: 'Announcement channel', h_announcement_channel: 'Optional. Global Quello announcements will be posted here. Quello needs Embed Links permission.',
       f_everyone: 'Mention @everyone', f_here: 'Mention @here', h_mentions: 'Choose whether new QOTDs ping everyone or only active members.',
       f_language: 'Bot language', h_language: 'Language of the bot’s messages in this server.',
-      lang_en: 'English', lang_ru: 'Русский', opt_none: '— None —', opt_missing: 'Not found',
+      lang_en: 'English', lang_ru: 'Русский', lang_de: 'Deutsch', lang_fr: 'Français', lang_it: 'Italiano', opt_none: '— None —', opt_missing: 'Not found',
       st_maintenance: 'Maintenance mode', st_lock: 'QOTD creation lock', st_on: 'On', st_off: 'Off',
       h_maintenance_control: 'Temporarily pause QOTD publishing on this server.', h_lock_control: 'Prevent new QOTD creation without enabling maintenance.',
       state_enabled: '{name} enabled.', state_disabled: '{name} disabled.', state_failed: 'Could not update state: {msg}',
@@ -123,7 +124,7 @@
       f_announcement_channel: 'Канал объявлений', h_announcement_channel: 'Необязательно. Здесь будут публиковаться глобальные объявления Quello. Боту нужно право Embed Links.',
       f_everyone: 'Упоминать @everyone', f_here: 'Упоминать @here', h_mentions: 'Выберите, будут ли новые QOTD упоминать всех или только участников онлайн.',
       f_language: 'Язык бота', h_language: 'Язык сообщений бота на этом сервере.',
-      lang_en: 'English', lang_ru: 'Русский', opt_none: '— Нет —', opt_missing: 'Не найдено',
+      lang_en: 'English', lang_ru: 'Русский', lang_de: 'Deutsch', lang_fr: 'Français', lang_it: 'Italiano', opt_none: '— Нет —', opt_missing: 'Не найдено',
       st_maintenance: 'Режим обслуживания', st_lock: 'Блокировка создания QOTD', st_on: 'Вкл', st_off: 'Выкл',
       h_maintenance_control: 'Временно приостановить публикацию QOTD на этом сервере.', h_lock_control: 'Запретить создание новых QOTD без включения обслуживания.',
       state_enabled: '{name}: включено.', state_disabled: '{name}: выключено.', state_failed: 'Не удалось изменить состояние: {msg}',
@@ -191,7 +192,7 @@
       f_announcement_channel: 'Ankündigungskanal', h_announcement_channel: 'Optional. Globale Quello-Ankündigungen werden hier veröffentlicht. Der Bot benötigt Embed Links.',
       f_everyone: '@everyone erwähnen', f_here: '@here erwähnen', h_mentions: 'Lege fest, ob neue QOTDs alle oder nur aktive Mitglieder erwähnen.',
       f_language: 'Bot-Sprache', h_language: 'Sprache der Bot-Nachrichten auf diesem Server.',
-      lang_en: 'English', lang_ru: 'Русский', opt_none: '— Keine —', opt_missing: 'Nicht gefunden',
+      lang_en: 'English', lang_ru: 'Русский', lang_de: 'Deutsch', lang_fr: 'Français', lang_it: 'Italiano', opt_none: '— Keine —', opt_missing: 'Nicht gefunden',
       st_maintenance: 'Wartungsmodus', st_lock: 'QOTD-Erstellung gesperrt', st_on: 'An', st_off: 'Aus',
       h_maintenance_control: 'Die Veröffentlichung von QOTD auf diesem Server vorübergehend pausieren.', h_lock_control: 'Neue QOTD-Erstellungen verhindern, ohne den Wartungsmodus zu aktivieren.',
       state_enabled: '{name} aktiviert.', state_disabled: '{name} deaktiviert.', state_failed: 'Status konnte nicht geändert werden: {msg}',
@@ -288,7 +289,7 @@
       f_announcement_channel: 'Salon des annonces', h_announcement_channel: 'Facultatif. Les annonces globales de Quello y seront publiées. Le bot doit avoir la permission Embed Links.',
       f_everyone: 'Mentionner @everyone', f_here: 'Mentionner @here', h_mentions: 'Choisissez si les nouveaux QOTD mentionnent tout le monde ou seulement les membres actifs.',
       f_language: 'Langue du bot', h_language: 'Langue des messages du bot sur ce serveur.',
-      lang_en: 'English', lang_ru: 'Русский', opt_none: '— Aucun —', opt_missing: 'Introuvable',
+      lang_en: 'English', lang_ru: 'Русский', lang_de: 'Deutsch', lang_fr: 'Français', lang_it: 'Italiano', opt_none: '— Aucun —', opt_missing: 'Introuvable',
       st_maintenance: 'Mode maintenance', st_lock: 'Verrouillage des QOTD', st_on: 'Activé', st_off: 'Désactivé',
       h_maintenance_control: 'Suspendre temporairement la publication des QOTD sur ce serveur.', h_lock_control: 'Empêcher la création de nouveaux QOTD sans activer la maintenance.',
       state_enabled: '{name} activé.', state_disabled: '{name} désactivé.', state_failed: 'Impossible de modifier l’état : {msg}',
@@ -385,7 +386,7 @@
       f_announcement_channel: 'Canale annunci', h_announcement_channel: 'Facoltativo. Qui verranno pubblicati gli annunci globali di Quello. Il bot deve avere il permesso Embed Links.',
       f_everyone: 'Menziona @everyone', f_here: 'Menziona @here', h_mentions: 'Scegli se i nuovi QOTD menzionano tutti o solo i membri attivi.',
       f_language: 'Lingua del bot', h_language: 'Lingua dei messaggi del bot in questo server.',
-      lang_en: 'English', lang_ru: 'Русский', opt_none: '— Nessuno —', opt_missing: 'Non trovato',
+      lang_en: 'English', lang_ru: 'Русский', lang_de: 'Deutsch', lang_fr: 'Français', lang_it: 'Italiano', opt_none: '— Nessuno —', opt_missing: 'Non trovato',
       st_maintenance: 'Modalità manutenzione', st_lock: 'Blocco creazione QOTD', st_on: 'Attivo', st_off: 'Disattivo',
       h_maintenance_control: 'Sospendi temporaneamente la pubblicazione dei QOTD su questo server.', h_lock_control: 'Impedisci la creazione di nuovi QOTD senza attivare la manutenzione.',
       state_enabled: '{name} attivata.', state_disabled: '{name} disattivata.', state_failed: 'Impossibile modificare lo stato: {msg}',
@@ -483,6 +484,7 @@
       stats_week: "This week",
       stats_english: "English QOTDs",
       stats_russian: "Russian QOTDs",
+      stats_german: "German QOTDs", stats_french: "French QOTDs", stats_italian: "Italian QOTDs",
       stats_empty: "No statistics available yet.",
       stats_refresh: "Refresh"
   });
@@ -518,6 +520,7 @@
       stats_week: "За неделю",
       stats_english: "Английские QOTD",
       stats_russian: "Русские QOTD",
+      stats_german: "Немецкие QOTD", stats_french: "Французские QOTD", stats_italian: "Итальянские QOTD",
       stats_empty: "Статистика пока недоступна.",
       stats_refresh: "Обновить"
   });
@@ -553,6 +556,7 @@
       stats_week: "Diese Woche",
       stats_english: "Englische QOTDs",
       stats_russian: "Russische QOTDs",
+      stats_german: "Deutsche QOTDs", stats_french: "Französische QOTDs", stats_italian: "Italienische QOTDs",
       stats_empty: "Noch keine Statistiken verfügbar.",
       stats_refresh: "Aktualisieren"
   });
@@ -588,6 +592,7 @@
       stats_week: "Cette semaine",
       stats_english: "QOTD en anglais",
       stats_russian: "QOTD en russe",
+      stats_german: "QOTD en allemand", stats_french: "QOTD en français", stats_italian: "QOTD en italien",
       stats_empty: "Aucune statistique disponible pour le moment.",
       stats_refresh: "Actualiser"
   });
@@ -623,8 +628,50 @@
       stats_week: "Questa settimana",
       stats_english: "QOTD in inglese",
       stats_russian: "QOTD in russo",
+      stats_german: "QOTD in tedesco", stats_french: "QOTD in francese", stats_italian: "QOTD in italiano",
       stats_empty: "Nessuna statistica disponibile.",
       stats_refresh: "Aggiorna"
+  });
+
+  Object.assign(DICT.en, {
+    stats_reset_counter: 'Reset QOTD counter',
+    stats_reset_counter_confirm: 'Reset the QOTD counter for this server’s configured language? QOTD history and published questions will remain unchanged.',
+    stats_reset_counter_done: 'QOTD counter reset. History and published questions were preserved.',
+    logs_reset_button: 'Reset normal Logs',
+    logs_reset_confirm: 'Delete all normal Logs for this server? Audit Logs will not be changed.',
+    logs_reset_done: 'Normal Logs cleared. Audit Logs were preserved.'
+  });
+  Object.assign(DICT.ru, {
+    stats_reset_counter: 'Сбросить счётчик QOTD',
+    stats_reset_counter_confirm: 'Сбросить счётчик QOTD для основного языка сервера? История и опубликованные вопросы останутся без изменений.',
+    stats_reset_counter_done: 'Счётчик QOTD сброшен. История и опубликованные вопросы сохранены.',
+    logs_reset_button: 'Сбросить обычные Logs',
+    logs_reset_confirm: 'Удалить все обычные Logs этого сервера? Audit Logs не будут затронуты.',
+    logs_reset_done: 'Обычные Logs очищены. Audit Logs сохранены.'
+  });
+  Object.assign(DICT.de, {
+    stats_reset_counter: 'QOTD-Zähler zurücksetzen',
+    stats_reset_counter_confirm: 'Den QOTD-Zähler für die konfigurierte Serversprache zurücksetzen? Verlauf und veröffentlichte Fragen bleiben erhalten.',
+    stats_reset_counter_done: 'QOTD-Zähler zurückgesetzt. Verlauf und veröffentlichte Fragen wurden beibehalten.',
+    logs_reset_button: 'Normale Logs zurücksetzen',
+    logs_reset_confirm: 'Alle normalen Logs dieses Servers löschen? Audit Logs bleiben unverändert.',
+    logs_reset_done: 'Normale Logs gelöscht. Audit Logs wurden beibehalten.'
+  });
+  Object.assign(DICT.fr, {
+    stats_reset_counter: 'Réinitialiser le compteur QOTD',
+    stats_reset_counter_confirm: 'Réinitialiser le compteur QOTD pour la langue configurée du serveur ? L’historique et les questions publiées seront conservés.',
+    stats_reset_counter_done: 'Compteur QOTD réinitialisé. L’historique et les questions publiées ont été conservés.',
+    logs_reset_button: 'Réinitialiser les journaux normaux',
+    logs_reset_confirm: 'Supprimer tous les journaux normaux de ce serveur ? Les Audit Logs ne seront pas modifiés.',
+    logs_reset_done: 'Journaux normaux supprimés. Les Audit Logs ont été conservés.'
+  });
+  Object.assign(DICT.it, {
+    stats_reset_counter: 'Reimposta il contatore QOTD',
+    stats_reset_counter_confirm: 'Reimpostare il contatore QOTD per la lingua configurata del server? Cronologia e domande pubblicate resteranno invariate.',
+    stats_reset_counter_done: 'Contatore QOTD reimpostato. Cronologia e domande pubblicate sono state conservate.',
+    logs_reset_button: 'Reimposta i log normali',
+    logs_reset_confirm: 'Eliminare tutti i log normali di questo server? Gli Audit Logs non verranno modificati.',
+    logs_reset_done: 'Log normali eliminati. Gli Audit Logs sono stati conservati.'
   });
 
   let lang = 'en';

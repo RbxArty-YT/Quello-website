@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello legal pages — all text in en / ru / de / fr / it. */
 window.QUELLO_LEGAL = {
   "dates": {

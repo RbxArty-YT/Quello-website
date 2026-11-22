@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* dashboard.html: server picker + settings editor.
    All data from the API is inserted with textContent / DOM nodes (never innerHTML). */
 (function () {
@@ -282,7 +283,7 @@
   }
 
   function languageField() {
-    const options = [{ value: 'en', label: t('lang_en') }, { value: 'ru', label: t('lang_ru') }];
+    const options = ['en', 'ru', 'de', 'fr', 'it'].map(code => ({ value: code, label: t('lang_' + code) }));
     const { id, control } = selectControl('bot_language', options, false);
     return field('bot_language', 'f_language', 'h_language', control, id);
   }
@@ -330,7 +331,7 @@
     return isNaN(date.getTime()) ? String(value) : date.toLocaleString(document.documentElement.lang || undefined, { dateStyle: 'medium', timeStyle: 'short' });
   }
   const who = (name, id) => name || ('ID ' + id);
-  const langName = code => t(code === 'ru' ? 'lang_ru' : 'lang_en');
+  const langName = code => t('lang_' + (['en', 'ru', 'de', 'fr', 'it'].includes(code) ? code : 'en'));
 
   function fail(error) {
     if (error && error.code === 'unauthorized') return;
@@ -756,17 +757,35 @@
   function renderStatistics(panel) {
     const grid = el('div', { class: 'stats-grid' });
     const refresh = el('button', { class: 'button ghost', type: 'button', text: t('stats_refresh') });
-    const wrap = el('section', { class: 'dash-card wide' }, el('div', { class: 'stats-head' }, el('h2', { text: t('tab_statistics') }), refresh), grid);
+    const resetCounter = el('button', { class: 'button danger', type: 'button', text: t('stats_reset_counter') });
+    const controls = el('div', { class: 'btn-row' }, refresh);
+    if (isOwner()) controls.append(resetCounter);
+    const wrap = el('section', { class: 'dash-card wide' }, el('div', { class: 'stats-head' }, el('h2', { text: t('tab_statistics') }), controls), grid);
     panel.append(wrap);
     const load = () => loadInto(grid, () => guildApi('/statistics'), data => {
       const st = data.statistics || {};
       const values = [
         ['stats_total', st.total], ['stats_month', st.month_total], ['stats_week', st.week_total],
         ['stats_english', st.english], ['stats_russian', st.russian],
+        ['stats_german', st.german], ['stats_french', st.french], ['stats_italian', st.italian],
       ];
       grid.replaceChildren(...values.map(([key, value]) => el('article', { class: 'stat-card' }, el('span', { text: t(key) },), el('strong', { text: String(Number(value) || 0) }))));
     });
-    refresh.addEventListener('click', load); load();
+    refresh.addEventListener('click', load);
+    resetCounter.addEventListener('click', async () => {
+      if (busy || !window.confirm(t('stats_reset_counter_confirm'))) return;
+      busy = true; resetCounter.disabled = true;
+      try {
+        await guildApi('/counter/reset', { method: 'POST' });
+        toast(t('stats_reset_counter_done'), 'ok');
+        load();
+      } catch (error) {
+        fail(error);
+      } finally {
+        busy = false; resetCounter.disabled = false;
+      }
+    });
+    load();
   }
 
   function renderLogs(panel) {
@@ -775,7 +794,23 @@
       el('button', { class: 'tab small' + (kind === logKind ? ' active' : ''), type: 'button', role: 'tab', text: t('logs_' + kind),
         onclick: () => { logKind = kind; renderGuild(); } })));
     const list = el('div', { class: 'item-list' });
-    panel.append(switcher, list);
+    const controls = el('div', { class: 'btn-row' }, switcher);
+    if (logKind === 'logs' && isOwner()) {
+      const resetLogs = el('button', { class: 'button danger', type: 'button', text: t('logs_reset_button') });
+      resetLogs.addEventListener('click', async () => {
+        if (busy || !window.confirm(t('logs_reset_confirm'))) return;
+        busy = true; resetLogs.disabled = true;
+        try {
+          const result = await guildApi('/logs/reset', { method: 'POST' });
+          toast(t('logs_reset_done') + ` (${result.deleted})`, 'ok');
+          renderGuild();
+        } catch (error) {
+          fail(error); resetLogs.disabled = false;
+        } finally { busy = false; }
+      });
+      controls.append(resetLogs);
+    }
+    panel.append(controls, list);
 
     const PAGE = 25;
     let offset = 0;

@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello Hidden Admin Panel — shared across Documentation, Dashboard and About. */
 (function () {
   'use strict';
@@ -56,6 +57,7 @@
       passkey:'Passkey',
       totp:'TOTP',
       mfaNote:'Additional factors are not configured in this build. Admin Panel endpoints still verify Bot Owner, Developer Team Owner, Admin or Developer access server-side.',
+      globalLogs:'Global Logs', globalAudit:'Global Audit Logs', guild:'Server', action:'Action', event:'Event', status:'Status', user:'User', details:'Details', time:'Time', noEntries:'No log entries.', loadMore:'Load more',
       hidden:'The console is hidden from regular visitors. Use Ctrl + Shift + K or hold the Quello logo for 2 seconds.'
     },
 
@@ -107,6 +109,7 @@
       passkey:'Passkey',
       totp:'TOTP',
       mfaNote:'Дополнительные факторы в этой сборке ещё не настроены. Доступ к Админ панели по-прежнему проверяется на сервере: Bot Owner, владелец Developer Team, Admin или Developer.',
+      globalLogs:'Глобальные логи', globalAudit:'Глобальный аудит', guild:'Сервер', action:'Действие', event:'Событие', status:'Статус', user:'Пользователь', details:'Подробности', time:'Время', noEntries:'Записей нет.', loadMore:'Загрузить ещё',
       hidden:'Консоль скрыта от обычных посетителей. Используйте Ctrl + Shift + K или удерживайте логотип Quello 2 секунды.'
     },
 
@@ -158,6 +161,7 @@
       passkey:'Passkey',
       totp:'TOTP',
       mfaNote:'Zusätzliche Faktoren sind in diesem Build nicht konfiguriert. Der Zugriff auf das Admin-Panel wird weiterhin serverseitig für Bot Owner, Developer-Team-Owner, Admin oder Developer geprüft.',
+      globalLogs:'Globale Logs', globalAudit:'Globales Audit-Protokoll', guild:'Server', action:'Aktion', event:'Ereignis', status:'Status', user:'Benutzer', details:'Details', time:'Zeit', noEntries:'Keine Logeinträge.', loadMore:'Mehr laden',
       hidden:'Die Konsole ist für normale Besucher verborgen. Ctrl + Shift + K drücken oder das Quello-Logo 2 Sekunden halten.'
     },
 
@@ -209,6 +213,7 @@
       passkey:'Passkey',
       totp:'TOTP',
       mfaNote:'Les facteurs supplémentaires ne sont pas configurés dans cette version. Les points d’accès du panneau d’administration vérifient toujours côté serveur le Bot Owner, le Team Owner, les Admin et les Developer.',
+      globalLogs:'Journaux globaux', globalAudit:'Audit global', guild:'Serveur', action:'Action', event:'Événement', status:'Statut', user:'Utilisateur', details:'Détails', time:'Heure', noEntries:'Aucune entrée de journal.', loadMore:'Charger plus',
       hidden:'La console est masquée aux visiteurs. Utilisez Ctrl + Shift + K ou maintenez le logo Quello pendant 2 secondes.'
     },
 
@@ -260,6 +265,7 @@
       passkey:'Passkey',
       totp:'TOTP',
       mfaNote:'I fattori aggiuntivi non sono configurati in questa build. Gli endpoint del pannello di amministrazione verificano comunque lato server Bot Owner, Team Owner, Admin o Developer.',
+      globalLogs:'Log globali', globalAudit:'Audit globale', guild:'Server', action:'Azione', event:'Evento', status:'Stato', user:'Utente', details:'Dettagli', time:'Ora', noEntries:'Nessuna voce di log.', loadMore:'Carica altro',
       hidden:'La console è nascosta ai visitatori. Usa Ctrl + Shift + K o tieni premuto il logo Quello per 2 secondi.'
     }
   };
@@ -437,16 +443,14 @@
       ['owner-actions', 'ownerActions'],
       ['team-actions', 'developerTeamActions'],
       ['team', 'devTeam'],
-      ['appearance', 'appearance'],
-      ['developer', 'developer'],
-      ['localization', 'localization'],
-      ['debug', 'debug'],
-      ['experiments', 'experiments']
+      ['global-logs', 'globalLogs'],
+      ['global-audit', 'globalAudit'],
+      ['debug', 'debug']
     ];
 
-    // Every Admin Panel role (Bot Owner, Team Owner, Admin, Developer) gets
-    // System Overview, Announcements, Owner Actions and Developer Actions. The
-    // purely local preview tools stay with the owner-level roles.
+    // Every Admin Panel role gets the shared workspace tabs. Global Logs and
+    // Global Audit Logs are rendered only for the actual Bot Owner; the API
+    // independently enforces this restriction.
     const sharedTabs = ['overview', 'announcements', 'owner-actions', 'team-actions', 'team'];
     sections.forEach(([id, key]) => {
       if (accessRole !== 'bot_owner' && !sharedTabs.includes(id)) return;
@@ -461,6 +465,8 @@
         else if (id === 'owner-actions') loadOwnerActions();
         else if (id === 'team-actions') loadTeamActions();
         else if (id === 'team') loadTeam();
+        else if (id === 'global-logs') loadGlobalLogView('logs');
+        else if (id === 'global-audit') loadGlobalLogView('audit');
         else render();
       });
 
@@ -562,103 +568,6 @@
     } else if (active === 'team') {
       loadTeam();
       return;
-    } else if (active === 'appearance') {
-      const box = el('article', 'creator-note');
-      box.append(el('h3', '', tr('theme')));
-
-      const theme = el('div', 'creator-button-row');
-
-      [
-        ['dark', tr('dark')],
-        ['light', tr('light')]
-      ].forEach(([value, label]) => {
-        const button = el('button', 'creator-secondary', label);
-        button.type = 'button';
-
-        button.addEventListener('click', () => {
-          document.documentElement.dataset.theme = value;
-
-          try {
-            localStorage.setItem('quello-theme', value);
-          } catch (_) {}
-        });
-
-        theme.append(button);
-      });
-
-      box.append(theme, el('h3', '', tr('palette')));
-
-      const swatches = el('div', 'creator-swatches');
-
-      ['#8b5cf6', '#ec4899', '#fb4b5d'].forEach(color => {
-        const swatch = el('span', 'creator-swatch');
-        swatch.style.background = color;
-        swatch.title = color;
-        swatches.append(swatch);
-      });
-
-      box.append(swatches);
-      body.append(box);
-
-    } else if (active === 'developer') {
-      const grid = el('div', 'creator-card-grid');
-
-      grid.append(
-        card(tr('browser'), navigator.userAgent, navigator.platform || ''),
-        card(
-          tr('viewport'),
-          `${innerWidth} × ${innerHeight}`,
-          devicePixelRatio + '× DPR'
-        ),
-        card(
-          tr('screen'),
-          `${screen.width} × ${screen.height}`,
-          `${screen.colorDepth}-bit`
-        ),
-        card(
-          'Online',
-          navigator.onLine ? 'Yes' : 'No',
-          'Navigator status'
-        )
-      );
-
-      body.append(grid);
-
-    } else if (active === 'localization') {
-      const current = lang().toUpperCase();
-      const box = el('article', 'creator-note');
-
-      box.append(
-        el('h3', '', tr('locale')),
-        el('p', 'creator-card-value', current),
-        el('p', 'creator-muted', 'EN · RU · DE · FR · IT')
-      );
-
-      const langs = el('div', 'creator-button-row');
-
-      ['en', 'ru', 'de', 'fr', 'it'].forEach(language => {
-        const button = el(
-          'button',
-          'creator-secondary',
-          language.toUpperCase()
-        );
-
-        button.type = 'button';
-
-        button.addEventListener('click', () => {
-          try {
-            localStorage.setItem(LANG_KEY, language);
-          } catch (_) {}
-
-          location.reload();
-        });
-
-        langs.append(button);
-      });
-
-      box.append(langs);
-      body.append(box);
-
     } else if (active === 'debug') {
       const box = el('article', 'creator-note');
 
@@ -677,35 +586,7 @@
       body.append(box);
 
     } else {
-      const box = el('article', 'creator-note');
-
-      box.append(
-        el('h3', '', tr('experiments')),
-        el('p', 'creator-muted', tr('feature'))
-      );
-
-      [
-        'Orbit accents',
-        'Glass reflections',
-        'Particle layer'
-      ].forEach(name => {
-        const row = el('label', 'creator-toggle-row');
-        const input = el('input');
-
-        input.type = 'checkbox';
-
-        input.addEventListener('change', () => {
-          document.documentElement.classList.toggle(
-            'creator-preview-' + name.toLowerCase().replaceAll(' ', '-'),
-            input.checked
-          );
-        });
-
-        row.append(input, el('span', '', name));
-        box.append(row);
-      });
-
-      body.append(box);
+      body.append(el('p', 'creator-muted', tr('denied')));
     }
   }
 
@@ -1049,6 +930,43 @@
     }
   }
 
+  async function loadGlobalLogView(kind, offset = 0, accumulated = []) {
+    if (!body) return;
+    body.replaceChildren(el('p', 'creator-muted', tr('loading')));
+    const audit = kind === 'audit';
+    const endpoint = audit ? '/api/creator/global-audit' : '/api/creator/global-logs';
+    try {
+      const data = await request(`${endpoint}?limit=50&offset=${offset}`);
+      const items = accumulated.concat(data.items || []);
+      body.replaceChildren();
+      const wrap = el('div', 'creator-table-wrap');
+      const table = el('table', 'creator-table');
+      const headers = audit ? ['time', 'guild', 'event', 'status', 'user', 'details'] : ['time', 'guild', 'action', 'user', 'details'];
+      const headRow = el('tr');
+      headers.forEach(key => headRow.append(el('th', '', tr(key))));
+      const thead = el('thead'); thead.append(headRow); table.append(thead);
+      const tbody = el('tbody');
+      items.forEach(item => {
+        const row = el('tr');
+        const values = audit
+          ? [item.created_at, item.guild_name, `${item.type || ''} / ${item.name || ''}`, item.status, item.user_name || item.user_id || '—', item.details || '—']
+          : [item.created_at, item.guild_name, item.action, item.user_name || item.user_id || '—', item.details || '—'];
+        values.forEach(value => row.append(el('td', '', String(value ?? '—'))));
+        tbody.append(row);
+      });
+      table.append(tbody); wrap.append(table); body.append(wrap);
+      if (!items.length) body.append(el('p', 'creator-muted', tr('noEntries')));
+      if (items.length < Number(data.total || 0)) {
+        const more = el('button', 'creator-secondary', tr('loadMore'));
+        more.type = 'button';
+        more.addEventListener('click', () => loadGlobalLogView(kind, items.length, items));
+        body.append(more);
+      }
+    } catch (error) {
+      body.replaceChildren(el('p', 'creator-error', error.message || tr('offline')));
+    }
+  }
+
   async function loadOverview() {
     if (body) {
       body.replaceChildren(
@@ -1308,8 +1226,8 @@
 
     try {
       const me = await request('/api/me');
-      accessRole = me.access_role === 'owner' ? 'bot_owner' : (me.access_role || (me.is_bot_owner ? 'bot_owner' : null));
-      if (!['bot_owner', 'admin', 'developer'].includes(accessRole)) {
+      accessRole = me.is_bot_owner ? 'bot_owner' : (me.access_role || null);
+      if (!['bot_owner', 'owner', 'admin', 'developer'].includes(accessRole)) {
         toast(tr('denied'));
         return;
       }
@@ -1357,8 +1275,8 @@
     try {
       const me = await request('/api/me');
 
-      const role = me.access_role === 'owner' ? 'bot_owner' : (me.access_role || (me.is_bot_owner ? 'bot_owner' : ''));
-      if (['bot_owner', 'admin', 'developer'].includes(role)) {
+      const role = me.is_bot_owner ? 'bot_owner' : (me.access_role || '');
+      if (['bot_owner', 'owner', 'admin', 'developer'].includes(role)) {
         creator = true;
         accessRole = role;
         addSidebarButton();

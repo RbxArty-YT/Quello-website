@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello website — dashboard settings.
    API_BASE is the public HTTPS address of the bot's API (the Cloudflare Tunnel
    hostname from the bot's DASHBOARD_PUBLIC_URL). Nothing secret goes here. */

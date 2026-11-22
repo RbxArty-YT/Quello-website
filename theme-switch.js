@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello — one shared, smooth light/dark switch for every page.
    Why it was janky: on a theme change ~40 rules transitioned colours at once, the endless background animations kept
    running, and the circle reveal had to snapshot a page with a heavy fixed gradient. This helper

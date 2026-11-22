@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* QUELLO MOTION POLISH — layered hero, calm global transitions, mobile-safe effects */
 :root { --q-motion-ease: cubic-bezier(.22,.75,.25,1); }
 html { scroll-behavior:smooth; }

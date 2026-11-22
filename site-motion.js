@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 (() => {
   'use strict';
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');

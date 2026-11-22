@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Dashboard: turns every <select class="select"> into a styled bottom sheet
    (same look as the Command Playground picker). The native <select> stays in
    the DOM, hidden, so dashboard.js keeps reading .value and 'change' events. */

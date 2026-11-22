@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello — sign-in gate.
    Every page except the ones listed in OPEN needs a signed-in Discord session;
    visitors without one are sent to login.html. Runs synchronously in <head>

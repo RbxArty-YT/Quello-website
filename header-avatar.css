@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello — Discord avatar in the top-right of every page (shown only when signed in).
    It is the last element of the header, to the right of the theme and language buttons. */
 .header-avatar{position:relative;flex:0 0 auto;margin-left:8px;z-index:70}

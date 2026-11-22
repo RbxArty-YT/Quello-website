@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello — one brand gradient (violet -> pink -> red) for the whole site.
    Loaded LAST on every page so it wins over the older per-page stylesheets. */
 :root{

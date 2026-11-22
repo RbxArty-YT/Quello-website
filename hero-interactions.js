@@ -1,3 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
 (() => {
   'use strict';
   const card = document.querySelector('.qotd-floating-card');
