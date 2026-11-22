@@ -282,7 +282,3 @@ img, svg, video, canvas { max-width:100%; }
   .hero-orbit-one,.hero-orbit-two { animation:none !important; }
 }
 
-
-/* Roadmap */
-.roadmap-intro{max-width:760px;color:var(--muted);line-height:1.7;margin:0 0 22px}.roadmap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.roadmap-card{min-width:0;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--surface);display:flex;flex-direction:column;gap:12px}.roadmap-card h3{font-size:1rem;line-height:1.35;margin:0}.roadmap-status{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);padding:5px 9px;border:1px solid var(--line);border-radius:999px}
-@media(max-width:600px){.roadmap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.roadmap-card{padding:14px}}

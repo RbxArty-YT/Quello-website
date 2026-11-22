@@ -902,9 +902,10 @@
         box.append(el('p', 'creator-muted', ownerText('teamEmpty')));
       } else {
         const wrap = el('div', 'creator-table-wrap');
-        const table = el('table', 'creator-table');
+        const table = el('table', 'creator-table creator-team-table');
         const head = el('tr');
-        ['colName', 'colRole', 'colStatus'].forEach(key => head.append(el('th', '', ownerText(key))));
+        const teamColumns = ['colName', 'colRole', 'colStatus'];
+        teamColumns.forEach(key => head.append(el('th', '', ownerText(key))));
         const thead = el('thead');
         thead.append(head);
         table.append(thead);
@@ -913,11 +914,12 @@
         members.forEach(member => {
           const row = el('tr');
           const roleKey = roleLabel[member.role];
-          row.append(
+          const cells = [
             el('td', '', member.name),
             el('td', '', roleKey ? ownerText(roleKey) : member.role),
             el('td', member.status === 'invited' ? 'creator-pending' : '', member.status === 'invited' ? ownerText('statusPending') : '')
-          );
+          ];
+          cells.forEach((cell, index) => { cell.dataset.label = ownerText(teamColumns[index]); row.append(cell); });
           tbody.append(row);
         });
         table.append(tbody);
@@ -939,8 +941,8 @@
       const data = await request(`${endpoint}?limit=50&offset=${offset}`);
       const items = accumulated.concat(data.items || []);
       body.replaceChildren();
-      const wrap = el('div', 'creator-table-wrap');
-      const table = el('table', 'creator-table');
+      const wrap = el('div', 'creator-table-wrap creator-log-wrap');
+      const table = el('table', `creator-table creator-log-table${audit ? ' creator-audit-table' : ''}`);
       const headers = audit ? ['time', 'guild', 'event', 'status', 'user', 'details'] : ['time', 'guild', 'action', 'user', 'details'];
       const headRow = el('tr');
       headers.forEach(key => headRow.append(el('th', '', tr(key))));
@@ -951,7 +953,13 @@
         const values = audit
           ? [item.created_at, item.guild_name, `${item.type || ''} / ${item.name || ''}`, item.status, item.user_name || item.user_id || '—', item.details || '—']
           : [item.created_at, item.guild_name, item.action, item.user_name || item.user_id || '—', item.details || '—'];
-        values.forEach(value => row.append(el('td', '', String(value ?? '—'))));
+        values.forEach((value, index) => {
+          const cell = el('td', '', String(value ?? '—'));
+          cell.dataset.label = tr(headers[index]);
+          if (headers[index] === 'details') cell.classList.add('creator-details-cell');
+          if (headers[index] === 'time') cell.classList.add('creator-time-cell');
+          row.append(cell);
+        });
         tbody.append(row);
       });
       table.append(tbody); wrap.append(table); body.append(wrap);

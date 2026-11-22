@@ -181,9 +181,6 @@ html{overflow-x:clip;touch-action:pan-y pinch-zoom}
         <a class="side-action" href="#home">
           <span class="side-action-icon">📖</span><span data-i18n="side_documentation">Documentation</span>
         </a>
-        <a class="side-action" href="#roadmap">
-          <span class="side-action-icon">🗺️</span><span data-i18n="roadmap_nav">Roadmap</span>
-        </a>
         <a class="side-action" href="https://discord.gg/rYqGXWRbfJ" target="_blank" rel="noopener noreferrer">
           <span class="side-action-icon">🆘</span><span data-i18n="side_support">Support</span>
         </a>
@@ -633,29 +630,6 @@ html{overflow-x:clip;touch-action:pan-y pinch-zoom}
       <button class="secondary-button changelog-toggle" id="changelogToggle" type="button" data-i18n="changelog_show_all" aria-expanded="false" aria-controls="changelogExtra">Show all updates</button>
     </section>
 
-    <section class="section" id="roadmap">
-      <div class="section-heading"><div><span class="eyebrow" data-i18n="eyebrow_roadmap">PLANNED DEVELOPMENT</span><h2 data-i18n="roadmap_title">Roadmap</h2></div></div>
-      <p class="roadmap-intro" data-i18n="roadmap_intro">These features are planned for future development. Their scope and release timing may change as work progresses.</p>
-      <div class="roadmap-grid">
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>Advanced Analytics</h3></article>
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>QOTD Calendar</h3></article>
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>Moderation Center</h3></article>
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>System Monitoring</h3></article>
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>Global Audit Explorer</h3></article>
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>Feature Management</h3></article>
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>Backup Manager</h3></article>
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>Notification Center</h3></article>
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>API Explorer</h3></article>
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>Error Tracker</h3></article>
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>Maintenance Planner</h3></article>
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>Announcement Templates</h3></article>
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>QOTD Export</h3></article>
-        <article class="roadmap-card"><span class="roadmap-status" data-i18n="roadmap_planned">Planned</span><h3>Localization Manager</h3></article>
-      </div>
-    </section>
-
-    
-
     <section class="community" id="community">
       <div class="community-box discord-embed">
         <div class="embed-accent"></div>
@@ -819,11 +793,6 @@ html{overflow-x:clip;touch-action:pan-y pinch-zoom}
     Object.assign(translations.fr, {change28_title:'Journaux globaux, commandes mises à jour et protection des droits d’auteur',change28_text:'Des Global Logs et Global Audit Logs distincts ont été ajoutés à l’Admin Panel ; leur accès global est réservé au Bot Owner. Les laboratoires et outils de développement demandés ont été supprimés. La licence propriétaire Quello LICENSE et les avis de droit d’auteur dans le code source ont été ajoutés. La version passe à Early Access v2.534.9.1, le choix du salon de /qotd est simplifié, les paramètres de rôle de /setup sont renommés et /help reçoit un lien vers le Dashboard. Le Dashboard permet de réinitialiser le compteur QOTD sans supprimer l’historique ni les questions publiées et d’effacer les journaux normaux sans toucher aux Audit Logs.'});
     Object.assign(translations.it, {change28_title:'Log globali, comandi aggiornati e protezione del copyright',change28_text:'Nell’Admin Panel sono stati aggiunti Global Logs e Global Audit Logs separati; l’accesso globale è riservato esclusivamente al Bot Owner. Sono stati rimossi i laboratori e gli strumenti per sviluppatori richiesti. Sono stati aggiunti la licenza proprietaria Quello LICENSE e gli avvisi di copyright nel codice sorgente. La versione è aggiornata a Early Access v2.534.9.1, la scelta del canale di /qotd è semplificata, i parametri dei ruoli di /setup sono rinominati e /help include un collegamento alla Dashboard. La Dashboard consente di reimpostare il contatore QOTD senza eliminare cronologia o domande pubblicate e di cancellare i log normali senza modificare gli Audit Logs.'});
 
-    Object.assign(translations.en, {eyebrow_roadmap:'PLANNED DEVELOPMENT',roadmap_title:'Roadmap',roadmap_intro:'These features are planned for future development. Their scope and release timing may change as work progresses.',roadmap_planned:'Planned',roadmap_nav:'Roadmap'});
-    Object.assign(translations.ru, {eyebrow_roadmap:'ПЛАНЫ РАЗРАБОТКИ',roadmap_title:'Дорожная карта',roadmap_intro:'Эти функции запланированы для будущей разработки. Их состав и сроки выхода могут измениться по мере работы.',roadmap_planned:'Запланировано',roadmap_nav:'Дорожная карта'});
-    Object.assign(translations.de, {eyebrow_roadmap:'GEPLANTE ENTWICKLUNG',roadmap_title:'Roadmap',roadmap_intro:'Diese Funktionen sind für die zukünftige Entwicklung geplant. Umfang und Veröffentlichungszeitpunkt können sich im Laufe der Arbeit ändern.',roadmap_planned:'Geplant',roadmap_nav:'Roadmap'});
-    Object.assign(translations.fr, {eyebrow_roadmap:'DÉVELOPPEMENT PRÉVU',roadmap_title:'Feuille de route',roadmap_intro:'Ces fonctionnalités sont prévues pour un développement futur. Leur portée et leur date de sortie peuvent évoluer au fil du travail.',roadmap_planned:'Prévu',roadmap_nav:'Feuille de route'});
-    Object.assign(translations.it, {eyebrow_roadmap:'SVILUPPO PIANIFICATO',roadmap_title:'Roadmap',roadmap_intro:'Queste funzionalità sono pianificate per lo sviluppo futuro. Ambito e tempi di rilascio possono cambiare durante il lavoro.',roadmap_planned:'Pianificato',roadmap_nav:'Roadmap'});
 
     // Final command documentation overrides for Early Access v2.534.9.1.
     Object.assign(translations.en, {
