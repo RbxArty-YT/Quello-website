@@ -8,6 +8,17 @@
   const TOKEN_KEY = 'quello-dash-token';
   const LANG_KEY = 'quello-site-language-v2';
 
+  document.addEventListener('click', event => {
+    if (event.target.closest('.creator-filter-select')) return;
+    document.querySelectorAll('.creator-filter-select.is-open').forEach(item => {
+      item.classList.remove('is-open');
+      const menu = item.querySelector('.creator-filter-select-menu');
+      const trigger = item.querySelector('.creator-filter-select-trigger');
+      if (menu) menu.hidden = true;
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
   const t = {
     en: {
       signin:'Sign in with Discord first — redirecting…',
@@ -959,13 +970,86 @@
       filterBox.append(el('h3', '', tr('filters')));
       const controls = {};
       const addSelect = (key, label, options) => {
-        const wrap = el('label', 'creator-filter-field');
+        const wrap = el('div', 'creator-filter-field');
         wrap.append(el('span', '', label));
-        const select = el('select', 'creator-input');
+        // Keep a real select as the source of truth while presenting a fully styled Quello menu.
+        const select = el('select', 'creator-input creator-filter-native-select');
+        select.tabIndex = -1;
+        select.setAttribute('aria-hidden', 'true');
         options.forEach(([value, title]) => {
           const option = el('option', '', title); option.value = value; select.append(option);
         });
-        select.value = state[key]; controls[key] = select; wrap.append(select); filterBox.append(wrap);
+        select.value = state[key];
+        controls[key] = select;
+
+        const dropdown = el('div', 'creator-filter-select');
+        const trigger = el('button', 'creator-filter-select-trigger');
+        trigger.type = 'button';
+        trigger.setAttribute('aria-haspopup', 'listbox');
+        trigger.setAttribute('aria-expanded', 'false');
+        const selectedText = el('span', 'creator-filter-select-value', options.find(([value]) => value === select.value)?.[1] || options[0][1]);
+        const chevron = el('span', 'creator-filter-select-chevron', '⌄');
+        chevron.setAttribute('aria-hidden', 'true');
+        trigger.append(selectedText, chevron);
+        const menu = el('div', 'creator-filter-select-menu');
+        menu.setAttribute('role', 'listbox');
+        menu.hidden = true;
+        options.forEach(([value, title]) => {
+          const optionButton = el('button', 'creator-filter-select-option', title);
+          optionButton.type = 'button';
+          optionButton.setAttribute('role', 'option');
+          optionButton.setAttribute('aria-selected', String(value === select.value));
+          if (value === select.value) optionButton.classList.add('is-selected');
+          optionButton.addEventListener('click', () => {
+            select.value = value;
+            selectedText.textContent = title;
+            menu.querySelectorAll('.creator-filter-select-option').forEach(item => {
+              const active = item === optionButton;
+              item.classList.toggle('is-selected', active);
+              item.setAttribute('aria-selected', String(active));
+            });
+            dropdown.classList.remove('is-open');
+            trigger.setAttribute('aria-expanded', 'false');
+            menu.hidden = true;
+            select.dispatchEvent(new Event('change', { bubbles: true }));
+            trigger.focus();
+          });
+          menu.append(optionButton);
+        });
+        trigger.addEventListener('click', () => {
+          const opening = menu.hidden;
+          document.querySelectorAll('.creator-filter-select.is-open').forEach(item => {
+            item.classList.remove('is-open');
+            const itemMenu = item.querySelector('.creator-filter-select-menu');
+            const itemTrigger = item.querySelector('.creator-filter-select-trigger');
+            if (itemMenu) itemMenu.hidden = true;
+            if (itemTrigger) itemTrigger.setAttribute('aria-expanded', 'false');
+          });
+          if (opening) {
+            dropdown.classList.add('is-open');
+            menu.hidden = false;
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+        dropdown.append(trigger, menu);
+        select.addEventListener('change', () => {
+          const current = options.find(([value]) => value === select.value);
+          if (current) selectedText.textContent = current[1];
+          menu.querySelectorAll('.creator-filter-select-option').forEach(item => {
+            const active = item.textContent === selectedText.textContent;
+            item.classList.toggle('is-selected', active);
+            item.setAttribute('aria-selected', String(active));
+          });
+        });
+        trigger.addEventListener('keydown', event => {
+          if (event.key === 'Escape') {
+            dropdown.classList.remove('is-open');
+            menu.hidden = true;
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+        wrap.append(select, dropdown);
+        filterBox.append(wrap);
       };
       const addText = (key, label, placeholder = '') => {
         const wrap = el('label', 'creator-filter-field');
@@ -1036,7 +1120,10 @@
         control.addEventListener('change', renderRows);
       });
       clear.addEventListener('click', () => {
-        Object.entries(controls).forEach(([key, control]) => { control.value = (key === 'action' || key === 'status') ? 'all' : ''; });
+        Object.entries(controls).forEach(([key, control]) => {
+          control.value = (key === 'action' || key === 'status') ? 'all' : '';
+          if (control.tagName === 'SELECT') control.dispatchEvent(new Event('change', { bubbles: true }));
+        });
         renderRows();
       });
       more.addEventListener('click', () => loadGlobalLogView(kind, items.length, items, state));

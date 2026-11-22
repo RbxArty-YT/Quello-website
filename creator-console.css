@@ -332,3 +332,75 @@ select.creator-input option{background:var(--surface-2,#1b1b24);color:var(--text
   .creator-log-filters { grid-template-columns:minmax(0,1fr); }
 }
 .creator-console-overlay .creator-console-panel table.creator-team-table thead { display:none !important; }
+
+
+/* Quello custom filter dropdowns — replaces native browser select styling. */
+.creator-console-overlay .creator-filter-field { position:relative; }
+.creator-console-overlay .creator-filter-native-select {
+  position:absolute !important; width:1px !important; height:1px !important;
+  padding:0 !important; margin:0 !important; opacity:0 !important;
+  pointer-events:none !important; overflow:hidden !important;
+}
+.creator-console-overlay .creator-filter-select { position:relative; min-width:0; z-index:2; }
+.creator-console-overlay .creator-filter-select.is-open { z-index:30; }
+.creator-console-overlay .creator-filter-select-trigger {
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  width:100%; min-height:44px; margin:0; padding:10px 13px;
+  border:1px solid var(--line,rgba(255,255,255,.13)); border-radius:12px;
+  background:var(--surface,rgba(255,255,255,.055)); color:var(--text-strong,#fff);
+  font:inherit; font-size:13px; font-weight:650; text-align:left; cursor:pointer;
+  transition:border-color .18s ease,background .18s ease,box-shadow .18s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.creator-console-overlay .creator-filter-select-trigger:hover,
+.creator-console-overlay .creator-filter-select.is-open .creator-filter-select-trigger {
+  border-color:var(--accent,#8b7cff); background:var(--surface-2,rgba(255,255,255,.09));
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--accent,#8b7cff) 15%,transparent);
+}
+.creator-console-overlay .creator-filter-select-trigger:focus-visible,
+.creator-console-overlay .creator-filter-select-option:focus-visible {
+  outline:2px solid var(--accent,#8b7cff); outline-offset:2px;
+}
+.creator-console-overlay .creator-filter-select-value { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.creator-console-overlay .creator-filter-select-chevron {
+  flex:0 0 auto; color:var(--text-2,#aaa); font-size:19px; line-height:12px;
+  transform:translateY(-2px); transition:transform .18s ease,color .18s ease;
+}
+.creator-console-overlay .creator-filter-select.is-open .creator-filter-select-chevron {
+  transform:rotate(180deg) translateY(-1px); color:var(--accent,#a99cff);
+}
+.creator-console-overlay .creator-filter-select-menu {
+  position:absolute; top:calc(100% + 7px); left:0; right:0; z-index:50;
+  display:flex; flex-direction:column; gap:3px; max-height:250px; overflow-y:auto;
+  padding:6px; border:1px solid var(--line,rgba(255,255,255,.15)); border-radius:14px;
+  background:var(--surface-2,#191923); color:var(--text-strong,#fff);
+  box-shadow:0 16px 42px rgba(0,0,0,.38),0 2px 8px rgba(0,0,0,.18);
+  transform-origin:top center; animation:quello-filter-menu-in .16s ease-out;
+  overscroll-behavior:contain;
+}
+.creator-console-overlay .creator-filter-select-menu[hidden] { display:none !important; }
+.creator-console-overlay .creator-filter-select-option {
+  display:flex; align-items:center; width:100%; min-height:38px; padding:9px 11px;
+  border:0; border-radius:9px; background:transparent; color:var(--text-2,#c4c4ce);
+  font:inherit; font-size:13px; text-align:left; cursor:pointer;
+  transition:background .15s ease,color .15s ease;
+}
+.creator-console-overlay .creator-filter-select-option:hover,
+.creator-console-overlay .creator-filter-select-option.is-selected {
+  background:color-mix(in srgb,var(--accent,#8b7cff) 17%,transparent);
+  color:var(--text-strong,#fff);
+}
+.creator-console-overlay .creator-filter-select-option.is-selected { font-weight:750; }
+@keyframes quello-filter-menu-in {
+  from { opacity:0; transform:translateY(-5px) scale(.985); }
+  to { opacity:1; transform:translateY(0) scale(1); }
+}
+@media(max-width:560px) {
+  .creator-console-overlay .creator-filter-select-menu { max-height:220px; }
+  .creator-console-overlay .creator-filter-select-trigger { min-height:46px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .creator-console-overlay .creator-filter-select-menu,
+  .creator-console-overlay .creator-filter-select-trigger,
+  .creator-console-overlay .creator-filter-select-chevron { animation:none !important; transition:none !important; }
+}
