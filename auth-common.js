@@ -24,7 +24,7 @@
   const DICT = {
     en: {
       title_login: 'Quello — Sign in', title_dashboard: 'Quello — Dashboard',
-      nav_docs: 'Documentation', badge: 'DISCORD BOT', kicker_dash: 'Dashboard', members_count: '{n} members',
+      nav_docs: 'Documentation', badge: 'DISCORD BOT', kicker_dash: 'Dashboard',
       login_title: 'Sign in to Quello',
       login_lead: 'Manage your server’s QOTD settings right from the website.',
       login_p1: 'Change roles, channels and language without slash commands.',
@@ -92,7 +92,7 @@
     },
     ru: {
       title_login: 'Quello — Вход', title_dashboard: 'Quello — Панель управления',
-      nav_docs: 'Документация', badge: 'DISCORD-БОТ', kicker_dash: 'Панель управления', members_count: '{n} участников',
+      nav_docs: 'Документация', badge: 'DISCORD-БОТ', kicker_dash: 'Панель управления',
       login_title: 'Вход в Quello',
       login_lead: 'Управляйте настройками QOTD вашего сервера прямо с сайта.',
       login_p1: 'Меняйте роли, каналы и язык без слэш-команд.',
@@ -160,7 +160,7 @@
     },
     de: {
       title_login: 'Quello — Anmelden', title_dashboard: 'Quello — Dashboard',
-      nav_docs: 'Dokumentation', badge: 'DISCORD-BOT', kicker_dash: 'Dashboard', members_count: '{n} Mitglieder',
+      nav_docs: 'Dokumentation', badge: 'DISCORD-BOT', kicker_dash: 'Dashboard',
       login_title: 'Bei Quello anmelden',
       login_lead: 'Verwalte die QOTD-Einstellungen deines Servers direkt auf der Website.',
       login_p1: 'Rollen, Kanäle und Sprache ohne Slash-Befehle ändern.',
@@ -257,7 +257,7 @@
     },
     fr: {
       title_login: 'Quello — Connexion', title_dashboard: 'Quello — Tableau de bord',
-      nav_docs: 'Documentation', badge: 'BOT DISCORD', kicker_dash: 'Tableau de bord', members_count: '{n} membres',
+      nav_docs: 'Documentation', badge: 'BOT DISCORD', kicker_dash: 'Tableau de bord',
       login_title: 'Connexion à Quello',
       login_lead: 'Gérez les réglages QOTD de votre serveur directement depuis le site.',
       login_p1: 'Modifiez les rôles, salons et la langue sans commandes slash.',
@@ -354,7 +354,7 @@
     },
     it: {
       title_login: 'Quello — Accedi', title_dashboard: 'Quello — Dashboard',
-      nav_docs: 'Documentazione', badge: 'BOT DISCORD', kicker_dash: 'Dashboard', members_count: '{n} membri',
+      nav_docs: 'Documentazione', badge: 'BOT DISCORD', kicker_dash: 'Dashboard',
       login_title: 'Accedi a Quello',
       login_lead: 'Gestisci le impostazioni QOTD del tuo server direttamente dal sito.',
       login_p1: 'Cambia ruoli, canali e lingua senza comandi slash.',
@@ -635,7 +635,7 @@
 
   Object.assign(DICT.en, {
     stats_reset_counter: 'Reset QOTD counter',
-    stats_reset_counter_confirm: 'Reset the QOTD counter for this server’s configured language? QOTD history and published questions will remain unchanged.',
+    stats_reset_counter_confirm: 'Reset the shared QOTD counter for all languages on this server? QOTD history and published questions will remain unchanged.',
     stats_reset_counter_done: 'QOTD counter reset. History and published questions were preserved.',
     logs_reset_button: 'Reset normal Logs',
     logs_reset_confirm: 'Delete all normal Logs for this server? Audit Logs will not be changed.',
@@ -643,7 +643,7 @@
   });
   Object.assign(DICT.ru, {
     stats_reset_counter: 'Сбросить счётчик QOTD',
-    stats_reset_counter_confirm: 'Сбросить счётчик QOTD для основного языка сервера? История и опубликованные вопросы останутся без изменений.',
+    stats_reset_counter_confirm: 'Сбросить общий счётчик QOTD для всех языков сервера? История и опубликованные вопросы останутся без изменений.',
     stats_reset_counter_done: 'Счётчик QOTD сброшен. История и опубликованные вопросы сохранены.',
     logs_reset_button: 'Сбросить обычные Logs',
     logs_reset_confirm: 'Удалить все обычные Logs этого сервера? Audit Logs не будут затронуты.',
@@ -651,7 +651,7 @@
   });
   Object.assign(DICT.de, {
     stats_reset_counter: 'QOTD-Zähler zurücksetzen',
-    stats_reset_counter_confirm: 'Den QOTD-Zähler für die konfigurierte Serversprache zurücksetzen? Verlauf und veröffentlichte Fragen bleiben erhalten.',
+    stats_reset_counter_confirm: 'Den gemeinsamen QOTD-Zähler für alle Sprachen dieses Servers zurücksetzen? Verlauf und veröffentlichte Fragen bleiben erhalten.',
     stats_reset_counter_done: 'QOTD-Zähler zurückgesetzt. Verlauf und veröffentlichte Fragen wurden beibehalten.',
     logs_reset_button: 'Normale Logs zurücksetzen',
     logs_reset_confirm: 'Alle normalen Logs dieses Servers löschen? Audit Logs bleiben unverändert.',
@@ -659,7 +659,7 @@
   });
   Object.assign(DICT.fr, {
     stats_reset_counter: 'Réinitialiser le compteur QOTD',
-    stats_reset_counter_confirm: 'Réinitialiser le compteur QOTD pour la langue configurée du serveur ? L’historique et les questions publiées seront conservés.',
+    stats_reset_counter_confirm: 'Réinitialiser le compteur QOTD commun à toutes les langues du serveur ? L’historique et les questions publiées seront conservés.',
     stats_reset_counter_done: 'Compteur QOTD réinitialisé. L’historique et les questions publiées ont été conservés.',
     logs_reset_button: 'Réinitialiser les journaux normaux',
     logs_reset_confirm: 'Supprimer tous les journaux normaux de ce serveur ? Les Audit Logs ne seront pas modifiés.',
@@ -667,7 +667,7 @@
   });
   Object.assign(DICT.it, {
     stats_reset_counter: 'Reimposta il contatore QOTD',
-    stats_reset_counter_confirm: 'Reimpostare il contatore QOTD per la lingua configurata del server? Cronologia e domande pubblicate resteranno invariate.',
+    stats_reset_counter_confirm: 'Reimpostare il contatore QOTD condiviso tra tutte le lingue del server? Cronologia e domande pubblicate resteranno invariate.',
     stats_reset_counter_done: 'Contatore QOTD reimpostato. Cronologia e domande pubblicate sono state conservate.',
     logs_reset_button: 'Reimposta i log normali',
     logs_reset_confirm: 'Eliminare tutti i log normali di questo server? Gli Audit Logs non verranno modificati.',
