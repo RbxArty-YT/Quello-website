@@ -399,7 +399,13 @@
       el('header', { class: 'page-head dashboard-guild-head' },
         backButton,
         icon(guild, 56),
-        el('div', { class: 'dashboard-guild-title' }, el('h1', { text: guild.name }), el('p', { text: t('kicker_dash') })),
+        el('div', { class: 'dashboard-guild-title' },
+          el('h1', { text: guild.name }),
+          el('p', { class: 'dashboard-guild-subtitle' },
+            el('span', { text: t('kicker_dash') }),
+            guild.member_count != null ? el('span', { class: 'dashboard-member-count', text: t('members_count', { n: new Intl.NumberFormat().format(Number(guild.member_count) || 0) }) }) : null
+          )
+        ),
         badges),
       bar, panel);
 

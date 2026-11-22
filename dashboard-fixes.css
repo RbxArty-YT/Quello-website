@@ -55,6 +55,23 @@ body[data-page="dashboard"] .dashboard-guild-title {
 body[data-page="dashboard"] .dashboard-guild-title h1 {
   overflow-wrap:anywhere;
 }
+body[data-page="dashboard"] .dashboard-guild-subtitle {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+}
+body[data-page="dashboard"] .dashboard-member-count {
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:3px 9px;
+  border:1px solid var(--line, rgba(255,255,255,.12));
+  border-radius:999px;
+  font-size:.78em;
+  font-weight:600;
+  line-height:1.4;
+}
 @media (max-width:640px) {
   body[data-page="dashboard"] .dashboard-guild-head {
     gap:12px;
