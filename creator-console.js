@@ -910,9 +910,13 @@
         box.append(el('p', 'creator-muted', ownerText('teamEmpty')));
       } else {
         const wrap = el('div', 'creator-table-wrap');
-        const table = el('table', 'creator-table');
+        const table = el('table', 'creator-table creator-team-table');
         const head = el('tr');
-        ['colName', 'colRole', 'colStatus'].forEach(key => head.append(el('th', '', ownerText(key))));
+        ['colName', 'colRole', 'colStatus'].forEach(key => {
+          const cell = el('th', '', ownerText(key));
+          cell.setAttribute('scope', 'col');
+          head.append(cell);
+        });
         const thead = el('thead');
         thead.append(head);
         table.append(thead);

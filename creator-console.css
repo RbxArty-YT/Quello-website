@@ -144,123 +144,28 @@ select.creator-input option{background:var(--surface-2,#1b1b24);color:var(--text
 .creator-table th{font-size:12px;letter-spacing:.04em;text-transform:uppercase;opacity:.7;font-weight:600}
 .creator-pending{color:#f0b132;font-weight:600}
 
-/* v2 mobile Admin Panel layout: force card rendering on narrow viewports. */
-@media screen and (max-width: 700px) {
-  .creator-console-overlay .creator-console-panel .creator-table-wrap {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    overflow: visible !important;
-    margin-top: 14px !important;
-  }
-  .creator-console-overlay .creator-console-panel table.creator-table,
-  .creator-console-overlay .creator-console-panel table.creator-table tbody {
-    display: block !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    table-layout: auto !important;
-    border: 0 !important;
-  }
-  .creator-console-overlay .creator-console-panel table.creator-table thead {
-    display: none !important;
-  }
-  .creator-console-overlay .creator-console-panel table.creator-table tbody {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 12px !important;
-  }
-  .creator-console-overlay .creator-console-panel table.creator-table tbody tr {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-    padding: 10px 13px !important;
-    border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--line)) !important;
-    border-radius: 15px !important;
-    background: linear-gradient(145deg, color-mix(in srgb, var(--surface-2) 96%, #7541d8 4%), color-mix(in srgb, var(--surface) 94%, #ec4899 6%)) !important;
-    box-shadow: 0 7px 20px rgba(0,0,0,.10) !important;
-  }
-  .creator-console-overlay .creator-console-panel table.creator-table tbody td {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    gap: 4px !important;
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: none !important;
-    box-sizing: border-box !important;
-    padding: 9px 5px !important;
-    border: 0 !important;
-    white-space: normal !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-    overflow-wrap: anywhere !important;
-    word-break: normal !important;
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-  }
-  .creator-console-overlay .creator-console-panel table.creator-table tbody td::before {
-    content: attr(data-label) !important;
-    display: block !important;
-    color: var(--text-3) !important;
-    font-size: 9px !important;
-    line-height: 1.3 !important;
-    font-weight: 800 !important;
-    letter-spacing: .07em !important;
-    text-transform: uppercase !important;
-    overflow-wrap: normal !important;
-  }
-  .creator-console-overlay .creator-console-panel table.creator-team-table tbody td:first-child {
-    grid-column: 1 / -1 !important;
-    color: var(--text-strong) !important;
-    font-size: 14px !important;
-    font-weight: 750 !important;
-  }
-  .creator-console-overlay .creator-console-panel table.creator-team-table tbody td:nth-child(2),
-  .creator-console-overlay .creator-console-panel table.creator-team-table tbody td:nth-child(3) {
-    grid-column: auto !important;
-  }
-  .creator-console-overlay .creator-console-panel table.creator-log-table tbody td.creator-details-cell {
-    grid-column: 1 / -1 !important;
-    margin-top: 4px !important;
-    padding-top: 12px !important;
-    border-top: 1px solid var(--line) !important;
-  }
-  .creator-console-overlay .creator-console-panel table.creator-log-table tbody td.creator-time-cell {
-    font-variant-numeric: tabular-nums !important;
-  }
-}
 
-@media screen and (max-width: 380px) {
-  .creator-console-overlay .creator-console-panel table.creator-table tbody tr {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-  .creator-console-overlay .creator-console-panel table.creator-team-table tbody td:first-child,
-  .creator-console-overlay .creator-console-panel table.creator-log-table tbody td.creator-details-cell {
-    grid-column: 1 !important;
-  }
-  .creator-console-overlay .creator-console-panel table.creator-team-table tbody td:nth-child(2),
-  .creator-console-overlay .creator-console-panel table.creator-team-table tbody td:nth-child(3) {
-    grid-column: 1 !important;
-  }
+/* Keep Developer Team column captions visible in every viewport and theme. */
+.creator-table.creator-team-table thead {
+  display: table-header-group !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
-
-/* Announcement preview: Discord-like embed shown before publishing. */
-.creator-preview-overlay{position:fixed;inset:0;z-index:10050;display:grid;place-items:center;padding:18px;background:rgba(7,5,15,.78);backdrop-filter:blur(8px)}
-.creator-preview-dialog{width:min(680px,100%);max-height:min(88vh,900px);overflow:auto;border:1px solid var(--line-strong);border-radius:18px;background:var(--surface,#21182f);box-shadow:0 24px 80px rgba(0,0,0,.45);padding:16px}
-.creator-preview-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;color:var(--text-strong)}
-.creator-preview-stage{padding:18px;border-radius:13px;background:#313338;color:#dbdee1}
-.creator-preview-embed{position:relative;max-width:100%;min-height:72px;padding:14px 16px;border-left:4px solid var(--preview-accent);border-radius:4px;background:#2b2d31;overflow:hidden;overflow-wrap:anywhere}
-.creator-preview-author{font-size:12px;font-weight:700;margin-bottom:8px;color:#f2f3f5}
-.creator-preview-title{display:inline-block;color:#00a8fc;font-size:16px;font-weight:700;margin-bottom:8px}
-.creator-preview-description{margin:4px 0 12px;white-space:pre-wrap;line-height:1.45;font-size:14px}
-.creator-preview-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;margin:12px 0}
-.creator-preview-field{min-width:0;overflow-wrap:anywhere}.creator-preview-field strong{display:block;font-size:13px;color:#f2f3f5}.creator-preview-field p{margin:4px 0 0;white-space:pre-wrap;font-size:14px;line-height:1.4}.creator-preview-field.is-inline{grid-column:span 1}
-.creator-preview-image{display:block;width:100%;max-height:360px;object-fit:contain;object-position:left center;margin-top:12px;border-radius:5px}
-.creator-preview-thumbnail{display:block;width:80px;height:80px;object-fit:cover;border-radius:6px;margin:10px 0 0 auto}
-.creator-preview-footer{margin-top:12px;padding-top:8px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;color:#b5bac1;white-space:pre-wrap}
-@media(max-width:560px){.creator-preview-overlay{padding:10px}.creator-preview-dialog{padding:12px;border-radius:15px}.creator-preview-stage{padding:10px}.creator-preview-fields{grid-template-columns:1fr}.creator-preview-field.is-inline{grid-column:auto}}
-.creator-preview-thumbnail{position:absolute;top:12px;right:12px;margin:0;width:80px;height:80px}
+.creator-table.creator-team-table thead tr {
+  display: table-row !important;
+  visibility: visible !important;
+}
+.creator-table.creator-team-table thead th {
+  display: table-cell !important;
+  visibility: visible !important;
+  color: var(--text-strong, var(--text, #f5f5f7)) !important;
+  opacity: 1 !important;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line-strong, rgba(255,255,255,.24));
+}
