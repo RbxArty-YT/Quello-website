@@ -24,7 +24,7 @@
   const DICT = {
     en: {
       title_login: 'Quello — Sign in', title_dashboard: 'Quello — Dashboard',
-      nav_docs: 'Documentation', badge: 'DISCORD BOT', kicker_dash: 'Dashboard', members_count: '{n} membri', members_count: '{n} Mitglieder', members_count: '{n} members',
+      nav_docs: 'Documentation', badge: 'DISCORD BOT', kicker_dash: 'Dashboard', members_count: '{n} members',
       login_title: 'Sign in to Quello',
       login_lead: 'Manage your server’s QOTD settings right from the website.',
       login_p1: 'Change roles, channels and language without slash commands.',
@@ -160,7 +160,7 @@
     },
     de: {
       title_login: 'Quello — Anmelden', title_dashboard: 'Quello — Dashboard',
-      nav_docs: 'Dokumentation', badge: 'DISCORD-BOT', kicker_dash: 'Dashboard',
+      nav_docs: 'Dokumentation', badge: 'DISCORD-BOT', kicker_dash: 'Dashboard', members_count: '{n} Mitglieder',
       login_title: 'Bei Quello anmelden',
       login_lead: 'Verwalte die QOTD-Einstellungen deines Servers direkt auf der Website.',
       login_p1: 'Rollen, Kanäle und Sprache ohne Slash-Befehle ändern.',
@@ -354,7 +354,7 @@
     },
     it: {
       title_login: 'Quello — Accedi', title_dashboard: 'Quello — Dashboard',
-      nav_docs: 'Documentazione', badge: 'BOT DISCORD', kicker_dash: 'Dashboard',
+      nav_docs: 'Documentazione', badge: 'BOT DISCORD', kicker_dash: 'Dashboard', members_count: '{n} membri',
       login_title: 'Accedi a Quello',
       login_lead: 'Gestisci le impostazioni QOTD del tuo server direttamente dal sito.',
       login_p1: 'Cambia ruoli, canali e lingua senza comandi slash.',
