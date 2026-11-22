@@ -247,3 +247,20 @@ select.creator-input option{background:var(--surface-2,#1b1b24);color:var(--text
     grid-column: 1 !important;
   }
 }
+
+/* Announcement preview: Discord-like embed shown before publishing. */
+.creator-preview-overlay{position:fixed;inset:0;z-index:10050;display:grid;place-items:center;padding:18px;background:rgba(7,5,15,.78);backdrop-filter:blur(8px)}
+.creator-preview-dialog{width:min(680px,100%);max-height:min(88vh,900px);overflow:auto;border:1px solid var(--line-strong);border-radius:18px;background:var(--surface,#21182f);box-shadow:0 24px 80px rgba(0,0,0,.45);padding:16px}
+.creator-preview-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;color:var(--text-strong)}
+.creator-preview-stage{padding:18px;border-radius:13px;background:#313338;color:#dbdee1}
+.creator-preview-embed{position:relative;max-width:100%;min-height:72px;padding:14px 16px;border-left:4px solid var(--preview-accent);border-radius:4px;background:#2b2d31;overflow:hidden;overflow-wrap:anywhere}
+.creator-preview-author{font-size:12px;font-weight:700;margin-bottom:8px;color:#f2f3f5}
+.creator-preview-title{display:inline-block;color:#00a8fc;font-size:16px;font-weight:700;margin-bottom:8px}
+.creator-preview-description{margin:4px 0 12px;white-space:pre-wrap;line-height:1.45;font-size:14px}
+.creator-preview-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px;margin:12px 0}
+.creator-preview-field{min-width:0;overflow-wrap:anywhere}.creator-preview-field strong{display:block;font-size:13px;color:#f2f3f5}.creator-preview-field p{margin:4px 0 0;white-space:pre-wrap;font-size:14px;line-height:1.4}.creator-preview-field.is-inline{grid-column:span 1}
+.creator-preview-image{display:block;width:100%;max-height:360px;object-fit:contain;object-position:left center;margin-top:12px;border-radius:5px}
+.creator-preview-thumbnail{display:block;width:80px;height:80px;object-fit:cover;border-radius:6px;margin:10px 0 0 auto}
+.creator-preview-footer{margin-top:12px;padding-top:8px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;color:#b5bac1;white-space:pre-wrap}
+@media(max-width:560px){.creator-preview-overlay{padding:10px}.creator-preview-dialog{padding:12px;border-radius:15px}.creator-preview-stage{padding:10px}.creator-preview-fields{grid-template-columns:1fr}.creator-preview-field.is-inline{grid-column:auto}}
+.creator-preview-thumbnail{position:absolute;top:12px;right:12px;margin:0;width:80px;height:80px}

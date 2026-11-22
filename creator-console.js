@@ -18,7 +18,7 @@
       sub:'Private workspace · Quello ecosystem',
       overview:'System Overview', ownerActions:'Owner Actions',
       developerTeamActions:'Developer Actions',
-      announcements:'Announcements', newAnnouncement:'New announcement', editAnnouncement:'Edit announcement', titleField:'Title', descriptionField:'Description', colorField:'Embed color (optional)', urlField:'Link URL (optional)', imageField:'Image URL (optional)', thumbnailField:'Thumbnail URL (optional)', authorField:'Author (optional)', footerField:'Footer (optional)', extraFields:'Additional fields', addField:'Add field', fieldName:'Field name', fieldValue:'Field value', inlineField:'Inline', publishAnnouncement:'Publish to configured servers', saveChanges:'Save changes', cancelEdit:'Cancel', edit:'Edit', delete:'Delete', noAnnouncements:'No announcements yet.', confirmDelete:'Delete this announcement from every server where it was published?', announcementPublished:'Announcement published. Sent: {sent}; failed: {failed}; skipped: {skipped}.', announcementUpdated:'Announcement updated on {updated} servers; {failed} failed.', announcementDeleted:'Announcement deleted from {deleted} servers.', announcementPartialDelete:'Some copies could not be deleted. Fix permissions and retry.', optionalChannelNote:'Only servers with an Announcement Channel configured receive announcements.',
+      announcements:'Announcements', newAnnouncement:'New announcement', editAnnouncement:'Edit announcement', titleField:'Title', descriptionField:'Description', colorField:'Embed color (optional)', urlField:'Link URL (optional)', imageField:'Image URL (optional)', thumbnailField:'Thumbnail URL (optional)', authorField:'Author (optional)', footerField:'Footer (optional)', extraFields:'Additional fields', addField:'Add field', fieldName:'Field name', fieldValue:'Field value', inlineField:'Inline', publishAnnouncement:'Publish to configured servers', saveChanges:'Save changes', cancelEdit:'Cancel', edit:'Edit', delete:'Delete', noAnnouncements:'No announcements yet.', confirmDelete:'Delete this announcement from every server where it was published?', announcementPublished:'Announcement published. Sent: {sent}; failed: {failed}; skipped: {skipped}.', announcementUpdated:'Announcement updated on {updated} servers; {failed} failed.', announcementDeleted:'Announcement deleted from {deleted} servers.', announcementPartialDelete:'Some copies could not be deleted. Fix permissions and retry.', optionalChannelNote:'Only servers with an Announcement Channel configured receive announcements.', preview:'Preview', closePreview:'Close preview', previewEmpty:'Your announcement preview will appear here.',
       appearance:'Appearance Lab',
       developer:'Developer Tools',
       localization:'Localization Lab',
@@ -70,7 +70,7 @@
       sub:'Закрытое пространство · экосистема Quello',
       overview:'Обзор системы', ownerActions:'Действия владельца',
       developerTeamActions:'Действия разработчика',
-      announcements:'Объявления', newAnnouncement:'Новое объявление', editAnnouncement:'Редактирование объявления', titleField:'Заголовок', descriptionField:'Описание', colorField:'Цвет Embed (необязательно)', urlField:'Ссылка (необязательно)', imageField:'URL изображения (необязательно)', thumbnailField:'URL миниатюры (необязательно)', authorField:'Автор (необязательно)', footerField:'Подпись (необязательно)', extraFields:'Дополнительные поля', addField:'Добавить поле', fieldName:'Название поля', fieldValue:'Значение поля', inlineField:'В строку', publishAnnouncement:'Опубликовать на настроенных серверах', saveChanges:'Сохранить изменения', cancelEdit:'Отмена', edit:'Изменить', delete:'Удалить', noAnnouncements:'Объявлений пока нет.', confirmDelete:'Удалить это объявление на всех серверах, где оно опубликовано?', announcementPublished:'Объявление опубликовано. Отправлено: {sent}; ошибок: {failed}; пропущено: {skipped}.', announcementUpdated:'Объявление обновлено на {updated} серверах; ошибок: {failed}.', announcementDeleted:'Объявление удалено на {deleted} серверах.', announcementPartialDelete:'Некоторые копии удалить не удалось. Проверь права и повтори попытку.', optionalChannelNote:'Объявления получают только серверы с настроенным каналом объявлений.',
+      announcements:'Объявления', newAnnouncement:'Новое объявление', editAnnouncement:'Редактирование объявления', titleField:'Заголовок', descriptionField:'Описание', colorField:'Цвет Embed (необязательно)', urlField:'Ссылка (необязательно)', imageField:'URL изображения (необязательно)', thumbnailField:'URL миниатюры (необязательно)', authorField:'Автор (необязательно)', footerField:'Подпись (необязательно)', extraFields:'Дополнительные поля', addField:'Добавить поле', fieldName:'Название поля', fieldValue:'Значение поля', inlineField:'В строку', publishAnnouncement:'Опубликовать на настроенных серверах', saveChanges:'Сохранить изменения', cancelEdit:'Отмена', edit:'Изменить', delete:'Удалить', noAnnouncements:'Объявлений пока нет.', confirmDelete:'Удалить это объявление на всех серверах, где оно опубликовано?', announcementPublished:'Объявление опубликовано. Отправлено: {sent}; ошибок: {failed}; пропущено: {skipped}.', announcementUpdated:'Объявление обновлено на {updated} серверах; ошибок: {failed}.', announcementDeleted:'Объявление удалено на {deleted} серверах.', announcementPartialDelete:'Некоторые копии удалить не удалось. Проверь права и повтори попытку.', optionalChannelNote:'Объявления получают только серверы с настроенным каналом объявлений.', preview:'Предпросмотр', closePreview:'Закрыть', previewEmpty:'Здесь будет показан предпросмотр объявления.',
       appearance:'Лаборатория оформления',
       developer:'Инструменты разработчика',
       localization:'Лаборатория локализации',
@@ -122,7 +122,7 @@
       sub:'Privater Bereich · Quello-Ökosystem',
       overview:'Systemübersicht', ownerActions:'Owner-Aktionen',
       developerTeamActions:'Entwickleraktionen',
-      announcements:'Ankündigungen', newAnnouncement:'Neue Ankündigung', editAnnouncement:'Ankündigung bearbeiten', titleField:'Titel', descriptionField:'Beschreibung', colorField:'Embed-Farbe (optional)', urlField:'Link-URL (optional)', imageField:'Bild-URL (optional)', thumbnailField:'Thumbnail-URL (optional)', authorField:'Autor (optional)', footerField:'Fußzeile (optional)', extraFields:'Zusätzliche Felder', addField:'Feld hinzufügen', fieldName:'Feldname', fieldValue:'Feldwert', inlineField:'Inline', publishAnnouncement:'Auf konfigurierten Servern veröffentlichen', saveChanges:'Änderungen speichern', cancelEdit:'Abbrechen', edit:'Bearbeiten', delete:'Löschen', noAnnouncements:'Noch keine Ankündigungen.', confirmDelete:'Diese Ankündigung auf allen Servern löschen, auf denen sie veröffentlicht wurde?', announcementPublished:'Ankündigung veröffentlicht. Gesendet: {sent}; fehlgeschlagen: {failed}; übersprungen: {skipped}.', announcementUpdated:'Auf {updated} Servern aktualisiert; {failed} fehlgeschlagen.', announcementDeleted:'Auf {deleted} Servern gelöscht.', announcementPartialDelete:'Einige Kopien konnten nicht gelöscht werden. Berechtigungen prüfen und erneut versuchen.', optionalChannelNote:'Nur Server mit konfiguriertem Ankündigungskanal erhalten Ankündigungen.',
+      announcements:'Ankündigungen', newAnnouncement:'Neue Ankündigung', editAnnouncement:'Ankündigung bearbeiten', titleField:'Titel', descriptionField:'Beschreibung', colorField:'Embed-Farbe (optional)', urlField:'Link-URL (optional)', imageField:'Bild-URL (optional)', thumbnailField:'Thumbnail-URL (optional)', authorField:'Autor (optional)', footerField:'Fußzeile (optional)', extraFields:'Zusätzliche Felder', addField:'Feld hinzufügen', fieldName:'Feldname', fieldValue:'Feldwert', inlineField:'Inline', publishAnnouncement:'Auf konfigurierten Servern veröffentlichen', saveChanges:'Änderungen speichern', cancelEdit:'Abbrechen', edit:'Bearbeiten', delete:'Löschen', noAnnouncements:'Noch keine Ankündigungen.', confirmDelete:'Diese Ankündigung auf allen Servern löschen, auf denen sie veröffentlicht wurde?', announcementPublished:'Ankündigung veröffentlicht. Gesendet: {sent}; fehlgeschlagen: {failed}; übersprungen: {skipped}.', announcementUpdated:'Auf {updated} Servern aktualisiert; {failed} fehlgeschlagen.', announcementDeleted:'Auf {deleted} Servern gelöscht.', announcementPartialDelete:'Einige Kopien konnten nicht gelöscht werden. Berechtigungen prüfen und erneut versuchen.', optionalChannelNote:'Nur Server mit konfiguriertem Ankündigungskanal erhalten Ankündigungen.', preview:'Vorschau', closePreview:'Schließen', previewEmpty:'Hier wird die Vorschau der Ankündigung angezeigt.',
       appearance:'Design-Labor',
       developer:'Entwicklerwerkzeuge',
       localization:'Lokalisierungslabor',
@@ -174,7 +174,7 @@
       sub:'Espace privé · écosystème Quello',
       overview:'Vue système', ownerActions:'Actions du propriétaire',
       developerTeamActions:'Actions développeur',
-      announcements:'Annonces', newAnnouncement:'Nouvelle annonce', editAnnouncement:'Modifier l’annonce', titleField:'Titre', descriptionField:'Description', colorField:'Couleur Embed (facultatif)', urlField:'URL du lien (facultatif)', imageField:'URL de l’image (facultatif)', thumbnailField:'URL de la miniature (facultatif)', authorField:'Auteur (facultatif)', footerField:'Pied de page (facultatif)', extraFields:'Champs supplémentaires', addField:'Ajouter un champ', fieldName:'Nom du champ', fieldValue:'Valeur du champ', inlineField:'En ligne', publishAnnouncement:'Publier sur les serveurs configurés', saveChanges:'Enregistrer', cancelEdit:'Annuler', edit:'Modifier', delete:'Supprimer', noAnnouncements:'Aucune annonce pour le moment.', confirmDelete:'Supprimer cette annonce de tous les serveurs où elle a été publiée ?', announcementPublished:'Annonce publiée. Envoyées : {sent} ; échecs : {failed} ; ignorées : {skipped}.', announcementUpdated:'Annonce mise à jour sur {updated} serveurs ; {failed} échecs.', announcementDeleted:'Annonce supprimée sur {deleted} serveurs.', announcementPartialDelete:'Certaines copies n’ont pas pu être supprimées. Vérifiez les permissions et réessayez.', optionalChannelNote:'Seuls les serveurs ayant configuré un salon d’annonces les reçoivent.',
+      announcements:'Annonces', newAnnouncement:'Nouvelle annonce', editAnnouncement:'Modifier l’annonce', titleField:'Titre', descriptionField:'Description', colorField:'Couleur Embed (facultatif)', urlField:'URL du lien (facultatif)', imageField:'URL de l’image (facultatif)', thumbnailField:'URL de la miniature (facultatif)', authorField:'Auteur (facultatif)', footerField:'Pied de page (facultatif)', extraFields:'Champs supplémentaires', addField:'Ajouter un champ', fieldName:'Nom du champ', fieldValue:'Valeur du champ', inlineField:'En ligne', publishAnnouncement:'Publier sur les serveurs configurés', saveChanges:'Enregistrer', cancelEdit:'Annuler', edit:'Modifier', delete:'Supprimer', noAnnouncements:'Aucune annonce pour le moment.', confirmDelete:'Supprimer cette annonce de tous les serveurs où elle a été publiée ?', announcementPublished:'Annonce publiée. Envoyées : {sent} ; échecs : {failed} ; ignorées : {skipped}.', announcementUpdated:'Annonce mise à jour sur {updated} serveurs ; {failed} échecs.', announcementDeleted:'Annonce supprimée sur {deleted} serveurs.', announcementPartialDelete:'Certaines copies n’ont pas pu être supprimées. Vérifiez les permissions et réessayez.', optionalChannelNote:'Seuls les serveurs ayant configuré un salon d’annonces les reçoivent.', preview:'Aperçu', closePreview:'Fermer', previewEmpty:'L’aperçu de l’annonce apparaîtra ici.',
       appearance:'Atelier visuel',
       developer:'Outils développeur',
       localization:'Atelier de localisation',
@@ -226,7 +226,7 @@
       sub:'Spazio privato · ecosistema Quello',
       overview:'Panoramica sistema', ownerActions:'Azioni proprietario',
       developerTeamActions:'Azioni sviluppatore',
-      announcements:'Annunci', newAnnouncement:'Nuovo annuncio', editAnnouncement:'Modifica annuncio', titleField:'Titolo', descriptionField:'Descrizione', colorField:'Colore Embed (facoltativo)', urlField:'URL del collegamento (facoltativo)', imageField:'URL immagine (facoltativo)', thumbnailField:'URL miniatura (facoltativo)', authorField:'Autore (facoltativo)', footerField:'Piè di pagina (facoltativo)', extraFields:'Campi aggiuntivi', addField:'Aggiungi campo', fieldName:'Nome campo', fieldValue:'Valore campo', inlineField:'In linea', publishAnnouncement:'Pubblica sui server configurati', saveChanges:'Salva modifiche', cancelEdit:'Annulla', edit:'Modifica', delete:'Elimina', noAnnouncements:'Nessun annuncio al momento.', confirmDelete:'Eliminare questo annuncio da tutti i server in cui è stato pubblicato?', announcementPublished:'Annuncio pubblicato. Inviati: {sent}; non riusciti: {failed}; ignorati: {skipped}.', announcementUpdated:'Annuncio aggiornato su {updated} server; {failed} errori.', announcementDeleted:'Annuncio eliminato da {deleted} server.', announcementPartialDelete:'Impossibile eliminare alcune copie. Controlla i permessi e riprova.', optionalChannelNote:'Gli annunci vengono inviati solo ai server con un canale annunci configurato.',
+      announcements:'Annunci', newAnnouncement:'Nuovo annuncio', editAnnouncement:'Modifica annuncio', titleField:'Titolo', descriptionField:'Descrizione', colorField:'Colore Embed (facoltativo)', urlField:'URL del collegamento (facoltativo)', imageField:'URL immagine (facoltativo)', thumbnailField:'URL miniatura (facoltativo)', authorField:'Autore (facoltativo)', footerField:'Piè di pagina (facoltativo)', extraFields:'Campi aggiuntivi', addField:'Aggiungi campo', fieldName:'Nome campo', fieldValue:'Valore campo', inlineField:'In linea', publishAnnouncement:'Pubblica sui server configurati', saveChanges:'Salva modifiche', cancelEdit:'Annulla', edit:'Modifica', delete:'Elimina', noAnnouncements:'Nessun annuncio al momento.', confirmDelete:'Eliminare questo annuncio da tutti i server in cui è stato pubblicato?', announcementPublished:'Annuncio pubblicato. Inviati: {sent}; non riusciti: {failed}; ignorati: {skipped}.', announcementUpdated:'Annuncio aggiornato su {updated} server; {failed} errori.', announcementDeleted:'Annuncio eliminato da {deleted} server.', announcementPartialDelete:'Impossibile eliminare alcune copie. Controlla i permessi e riprova.', optionalChannelNote:'Gli annunci vengono inviati solo ai server con un canale annunci configurato.', preview:'Anteprima', closePreview:'Chiudi', previewEmpty:'Qui verrà mostrata l’anteprima dell’annuncio.',
       appearance:'Laboratorio aspetto',
       developer:'Strumenti sviluppatore',
       localization:'Laboratorio localizzazione',
@@ -639,14 +639,12 @@
     fieldsBox.append(addField); form.append(fieldsBox);
 
     const actions = el('div', 'creator-button-row');
-    const save = el('button', 'creator-primary', editingAnnouncement ? tr('saveChanges') : tr('publishAnnouncement'));
-    save.type = 'button';
-    save.addEventListener('click', async () => {
+    const collectPayload = () => {
       const fields = fieldRows.map(row => {
         const inputs = row.querySelectorAll('input,textarea');
         return { name: inputs[0].value.trim(), value: inputs[1].value.trim(), inline: inputs[2].checked };
       }).filter(item => item.name || item.value);
-      const payload = {
+      return {
         title: controls.title.value.trim() || null,
         description: controls.description.value.trim() || null,
         color: controls.color.value.trim() || null,
@@ -657,6 +655,57 @@
         footer: controls.footer.value.trim() || null,
         fields
       };
+    };
+    const preview = el('button', 'creator-secondary', tr('preview'));
+    preview.type = 'button';
+    preview.addEventListener('click', () => {
+      const payload = collectPayload();
+      const overlay = el('div', 'creator-preview-overlay');
+      const dialog = el('section', 'creator-preview-dialog');
+      dialog.setAttribute('role', 'dialog'); dialog.setAttribute('aria-modal', 'true');
+      dialog.setAttribute('aria-label', tr('preview'));
+      const header = el('div', 'creator-preview-header');
+      header.append(el('strong', '', tr('preview')));
+      const close = el('button', 'creator-secondary', '×'); close.type = 'button';
+      close.setAttribute('aria-label', tr('closePreview'));
+      const dismiss = () => { overlay.remove(); document.removeEventListener('keydown', onKey); };
+      close.addEventListener('click', dismiss); header.append(close); dialog.append(header);
+      const stage = el('div', 'creator-preview-stage');
+      const embed = el('article', 'creator-preview-embed');
+      let color = payload.color || '#5865f2';
+      if (/^[0-9a-f]{6}$/i.test(color)) color = '#' + color;
+      if (!/^#[0-9a-f]{6}$/i.test(color)) color = '#5865f2';
+      embed.style.setProperty('--preview-accent', color);
+      if (payload.author) embed.append(el('div', 'creator-preview-author', payload.author));
+      if (payload.title) {
+        const title = el('strong', 'creator-preview-title', payload.title);
+        if (payload.url && /^https?:\/\//i.test(payload.url)) { const link = el('a', ''); link.href = payload.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.append(title); embed.append(link); }
+        else embed.append(title);
+      }
+      if (payload.description) embed.append(el('p', 'creator-preview-description', payload.description));
+      if (payload.fields.length) {
+        const fields = el('div', 'creator-preview-fields');
+        payload.fields.forEach(item => {
+          const field = el('div', 'creator-preview-field'); field.classList.toggle('is-inline', !!item.inline);
+          field.append(el('strong', '', item.name || '\u200b'), el('p', '', item.value || '\u200b')); fields.append(field);
+        });
+        embed.append(fields);
+      }
+      const imageUrl = payload.image && /^https?:\/\//i.test(payload.image) ? payload.image : '';
+      if (imageUrl) { const image = el('img', 'creator-preview-image'); image.src = imageUrl; image.alt = ''; image.loading = 'lazy'; embed.append(image); }
+      if (payload.thumbnail && /^https?:\/\//i.test(payload.thumbnail)) { const thumb = el('img', 'creator-preview-thumbnail'); thumb.src = payload.thumbnail; thumb.alt = ''; thumb.loading = 'lazy'; embed.append(thumb); }
+      if (payload.footer) embed.append(el('div', 'creator-preview-footer', payload.footer));
+      if (!payload.title && !payload.description && !payload.author && !payload.footer && !payload.fields.length && !imageUrl) embed.append(el('p', 'creator-muted', tr('previewEmpty')));
+      stage.append(embed); dialog.append(stage); overlay.append(dialog);
+      overlay.addEventListener('click', event => { if (event.target === overlay) dismiss(); });
+      const onKey = event => { if (event.key === 'Escape') dismiss(); };
+      document.addEventListener('keydown', onKey);
+      document.body.append(overlay); close.focus();
+    });
+    const save = el('button', 'creator-primary', editingAnnouncement ? tr('saveChanges') : tr('publishAnnouncement'));
+    save.type = 'button';
+    save.addEventListener('click', async () => {
+      const payload = collectPayload();
       if (!payload.title && !payload.description) { toast(tr('titleField') + ' / ' + tr('descriptionField')); return; }
       save.disabled = true;
       try {
@@ -671,7 +720,7 @@
         await loadAnnouncements();
       } catch (error) { toast(error.message || tr('offline')); save.disabled = false; }
     });
-    actions.append(save);
+    actions.append(preview, save);
     if (editingAnnouncement) {
       const cancel = el('button', 'creator-secondary', tr('cancelEdit')); cancel.type = 'button';
       cancel.addEventListener('click', () => { editingAnnouncement = null; renderAnnouncements(); });
