@@ -57,7 +57,7 @@
       passkey:'Passkey',
       totp:'TOTP',
       mfaNote:'Additional factors are not configured in this build. Admin Panel endpoints still verify Bot Owner, Developer Team Owner, Admin or Developer access server-side.',
-      globalLogs:'Global Logs', globalAudit:'Global Audit Logs', guild:'Server', action:'Action', event:'Event', status:'Status', user:'User', details:'Details', time:'Time', noEntries:'No log entries.', loadMore:'Load more',
+      globalLogs:'Global Logs', globalAudit:'Global Audit Logs', guild:'Server', action:'Action', event:'Event', status:'Status', user:'User', details:'Details', time:'Time', noEntries:'No log entries.', loadMore:'Load more', filters:'Filters', filterAction:'Action', filterStatus:'Status', filterEvent:'Event / command', filterUser:'User ID or name', filterQotd:'QOTD ID', all:'All', clearFilters:'Clear filters', showingFiltered:'Showing {shown} of {total} loaded entries', created:'Created', edited:'Edited', deleted:'Deleted', counterReset:'Counter reset', configChanged:'Config changed', attempt:'Attempt', success:'Success', error:'Error', deniedStatus:'Denied',
       hidden:'The console is hidden from regular visitors. Use Ctrl + Shift + K or hold the Quello logo for 2 seconds.'
     },
 
@@ -109,7 +109,7 @@
       passkey:'Passkey',
       totp:'TOTP',
       mfaNote:'Дополнительные факторы в этой сборке ещё не настроены. Доступ к Админ панели по-прежнему проверяется на сервере: Bot Owner, владелец Developer Team, Admin или Developer.',
-      globalLogs:'Глобальные логи', globalAudit:'Глобальный аудит', guild:'Сервер', action:'Действие', event:'Событие', status:'Статус', user:'Пользователь', details:'Подробности', time:'Время', noEntries:'Записей нет.', loadMore:'Загрузить ещё',
+      globalLogs:'Глобальные логи', globalAudit:'Глобальный аудит', guild:'Сервер', action:'Действие', event:'Событие', status:'Статус', user:'Пользователь', details:'Подробности', time:'Время', noEntries:'Записей нет.', loadMore:'Загрузить ещё', filters:'Фильтры', filterAction:'Действие', filterStatus:'Статус', filterEvent:'Событие / команда', filterUser:'ID или имя пользователя', filterQotd:'ID QOTD', all:'Все', clearFilters:'Сбросить фильтры', showingFiltered:'Показано {shown} из {total} загруженных записей', created:'Создано', edited:'Изменено', deleted:'Удалено', counterReset:'Сброс счётчика', configChanged:'Настройки изменены', attempt:'Попытка', success:'Успешно', error:'Ошибка', deniedStatus:'Отказано',
       hidden:'Консоль скрыта от обычных посетителей. Используйте Ctrl + Shift + K или удерживайте логотип Quello 2 секунды.'
     },
 
@@ -161,7 +161,7 @@
       passkey:'Passkey',
       totp:'TOTP',
       mfaNote:'Zusätzliche Faktoren sind in diesem Build nicht konfiguriert. Der Zugriff auf das Admin-Panel wird weiterhin serverseitig für Bot Owner, Developer-Team-Owner, Admin oder Developer geprüft.',
-      globalLogs:'Globale Logs', globalAudit:'Globales Audit-Protokoll', guild:'Server', action:'Aktion', event:'Ereignis', status:'Status', user:'Benutzer', details:'Details', time:'Zeit', noEntries:'Keine Logeinträge.', loadMore:'Mehr laden',
+      globalLogs:'Globale Logs', globalAudit:'Globales Audit-Protokoll', guild:'Server', action:'Aktion', event:'Ereignis', status:'Status', user:'Benutzer', details:'Details', time:'Zeit', noEntries:'Keine Logeinträge.', loadMore:'Mehr laden', filters:'Filter', filterAction:'Aktion', filterStatus:'Status', filterEvent:'Ereignis / Befehl', filterUser:'Benutzer-ID oder Name', filterQotd:'QOTD-ID', all:'Alle', clearFilters:'Filter zurücksetzen', showingFiltered:'{shown} von {total} geladenen Einträgen angezeigt', created:'Erstellt', edited:'Bearbeitet', deleted:'Gelöscht', counterReset:'Zähler zurückgesetzt', configChanged:'Konfiguration geändert', attempt:'Versuch', success:'Erfolgreich', error:'Fehler', deniedStatus:'Verweigert',
       hidden:'Die Konsole ist für normale Besucher verborgen. Ctrl + Shift + K drücken oder das Quello-Logo 2 Sekunden halten.'
     },
 
@@ -213,7 +213,7 @@
       passkey:'Passkey',
       totp:'TOTP',
       mfaNote:'Les facteurs supplémentaires ne sont pas configurés dans cette version. Les points d’accès du panneau d’administration vérifient toujours côté serveur le Bot Owner, le Team Owner, les Admin et les Developer.',
-      globalLogs:'Journaux globaux', globalAudit:'Audit global', guild:'Serveur', action:'Action', event:'Événement', status:'Statut', user:'Utilisateur', details:'Détails', time:'Heure', noEntries:'Aucune entrée de journal.', loadMore:'Charger plus',
+      globalLogs:'Journaux globaux', globalAudit:'Audit global', guild:'Serveur', action:'Action', event:'Événement', status:'Statut', user:'Utilisateur', details:'Détails', time:'Heure', noEntries:'Aucune entrée de journal.', loadMore:'Charger plus', filters:'Filtres', filterAction:'Action', filterStatus:'Statut', filterEvent:'Événement / commande', filterUser:'ID ou nom utilisateur', filterQotd:'ID QOTD', all:'Tous', clearFilters:'Effacer les filtres', showingFiltered:'{shown} entrées affichées sur {total} chargées', created:'Créé', edited:'Modifié', deleted:'Supprimé', counterReset:'Compteur réinitialisé', configChanged:'Configuration modifiée', attempt:'Tentative', success:'Réussi', error:'Erreur', deniedStatus:'Refusé',
       hidden:'La console est masquée aux visiteurs. Utilisez Ctrl + Shift + K ou maintenez le logo Quello pendant 2 secondes.'
     },
 
@@ -265,7 +265,7 @@
       passkey:'Passkey',
       totp:'TOTP',
       mfaNote:'I fattori aggiuntivi non sono configurati in questa build. Gli endpoint del pannello di amministrazione verificano comunque lato server Bot Owner, Team Owner, Admin o Developer.',
-      globalLogs:'Log globali', globalAudit:'Audit globale', guild:'Server', action:'Azione', event:'Evento', status:'Stato', user:'Utente', details:'Dettagli', time:'Ora', noEntries:'Nessuna voce di log.', loadMore:'Carica altro',
+      globalLogs:'Log globali', globalAudit:'Audit globale', guild:'Server', action:'Azione', event:'Evento', status:'Stato', user:'Utente', details:'Dettagli', time:'Ora', noEntries:'Nessuna voce di log.', loadMore:'Carica altro', filters:'Filtri', filterAction:'Azione', filterStatus:'Stato', filterEvent:'Evento / comando', filterUser:'ID o nome utente', filterQotd:'ID QOTD', all:'Tutti', clearFilters:'Azzera filtri', showingFiltered:'Visualizzate {shown} voci su {total} caricate', created:'Creato', edited:'Modificato', deleted:'Eliminato', counterReset:'Contatore azzerato', configChanged:'Configurazione modificata', attempt:'Tentativo', success:'Riuscito', error:'Errore', deniedStatus:'Negato',
       hidden:'La console è nascosta ai visitatori. Usa Ctrl + Shift + K o tieni premuto il logo Quello per 2 secondi.'
     }
   };
@@ -925,11 +925,13 @@
         members.forEach(member => {
           const row = el('tr');
           const roleKey = roleLabel[member.role];
-          row.append(
+          const teamColumns = ['colName', 'colRole', 'colStatus'];
+          const cells = [
             el('td', '', member.name),
             el('td', '', roleKey ? ownerText(roleKey) : member.role),
             el('td', member.status === 'invited' ? 'creator-pending' : '', member.status === 'invited' ? ownerText('statusPending') : '')
-          );
+          ];
+          cells.forEach((cell, index) => { cell.dataset.label = ownerText(teamColumns[index]); row.append(cell); });
           tbody.append(row);
         });
         table.append(tbody);
@@ -942,38 +944,103 @@
     }
   }
 
-  async function loadGlobalLogView(kind, offset = 0, accumulated = []) {
+  async function loadGlobalLogView(kind, offset = 0, accumulated = [], filterState = null) {
     if (!body) return;
     body.replaceChildren(el('p', 'creator-muted', tr('loading')));
     const audit = kind === 'audit';
     const endpoint = audit ? '/api/creator/global-audit' : '/api/creator/global-logs';
+    const state = filterState || { action: 'all', status: 'all', event: '', user: '', qotd: '' };
     try {
       const data = await request(`${endpoint}?limit=50&offset=${offset}`);
       const items = accumulated.concat(data.items || []);
       body.replaceChildren();
-      const wrap = el('div', 'creator-table-wrap');
-      const table = el('table', 'creator-table');
-      const headers = audit ? ['time', 'guild', 'event', 'status', 'user', 'details'] : ['time', 'guild', 'action', 'user', 'details'];
-      const headRow = el('tr');
-      headers.forEach(key => headRow.append(el('th', '', tr(key))));
-      const thead = el('thead'); thead.append(headRow); table.append(thead);
-      const tbody = el('tbody');
-      items.forEach(item => {
-        const row = el('tr');
-        const values = audit
-          ? [item.created_at, item.guild_name, `${item.type || ''} / ${item.name || ''}`, item.status, item.user_name || item.user_id || '—', item.details || '—']
-          : [item.created_at, item.guild_name, item.action, item.user_name || item.user_id || '—', item.details || '—'];
-        values.forEach(value => row.append(el('td', '', String(value ?? '—'))));
-        tbody.append(row);
-      });
-      table.append(tbody); wrap.append(table); body.append(wrap);
-      if (!items.length) body.append(el('p', 'creator-muted', tr('noEntries')));
-      if (items.length < Number(data.total || 0)) {
-        const more = el('button', 'creator-secondary', tr('loadMore'));
-        more.type = 'button';
-        more.addEventListener('click', () => loadGlobalLogView(kind, items.length, items));
-        body.append(more);
+
+      const filterBox = el('section', 'creator-log-filters');
+      filterBox.append(el('h3', '', tr('filters')));
+      const controls = {};
+      const addSelect = (key, label, options) => {
+        const wrap = el('label', 'creator-filter-field');
+        wrap.append(el('span', '', label));
+        const select = el('select', 'creator-input');
+        options.forEach(([value, title]) => {
+          const option = el('option', '', title); option.value = value; select.append(option);
+        });
+        select.value = state[key]; controls[key] = select; wrap.append(select); filterBox.append(wrap);
+      };
+      const addText = (key, label, placeholder = '') => {
+        const wrap = el('label', 'creator-filter-field');
+        wrap.append(el('span', '', label));
+        const input = el('input', 'creator-input'); input.type = 'search'; input.value = state[key]; input.placeholder = placeholder || label;
+        controls[key] = input; wrap.append(input); filterBox.append(wrap);
+      };
+      if (audit) {
+        addSelect('status', tr('filterStatus'), [['all', tr('all')], ['attempt', tr('attempt')], ['success', tr('success')], ['error', tr('error')], ['denied', tr('deniedStatus')]]);
+        addText('event', tr('filterEvent'));
+      } else {
+        addSelect('action', tr('filterAction'), [['all', tr('all')], ['create', tr('created')], ['edit', tr('edited')], ['delete', tr('deleted')], ['reset', tr('counterReset')], ['config', tr('configChanged')]]);
+        addText('qotd', tr('filterQotd'));
       }
+      addText('user', tr('filterUser'));
+      const clear = el('button', 'creator-secondary', tr('clearFilters')); clear.type = 'button';
+      filterBox.append(clear); body.append(filterBox);
+
+      const wrap = el('div', 'creator-table-wrap creator-log-wrap');
+      const table = el('table', `creator-table creator-log-table${audit ? ' creator-audit-table' : ''}`);
+      const headers = audit ? ['time', 'guild', 'event', 'status', 'user', 'details'] : ['time', 'guild', 'action', 'user', 'details'];
+      const headRow = el('tr'); headers.forEach(key => headRow.append(el('th', '', tr(key))));
+      const thead = el('thead'); thead.append(headRow); table.append(thead);
+      const tbody = el('tbody'); table.append(tbody); wrap.append(table); body.append(wrap);
+      const count = el('p', 'creator-muted creator-filter-count'); body.append(count);
+      const empty = el('p', 'creator-muted');
+      const more = el('button', 'creator-secondary', tr('loadMore')); more.type = 'button';
+      body.append(more);
+
+      const normalize = value => String(value ?? '').toLocaleLowerCase();
+      const renderRows = () => {
+        Object.keys(state).forEach(key => { if (controls[key]) state[key] = controls[key].value.trim(); });
+        const filtered = items.filter(item => {
+          const userValue = normalize(`${item.user_name || ''} ${item.user_id || ''}`);
+          if (state.user && !userValue.includes(normalize(state.user))) return false;
+          if (audit) {
+            if (state.status !== 'all' && normalize(item.status) !== state.status) return false;
+            const eventValue = normalize(`${item.type || ''} ${item.name || ''} ${item.event || ''}`);
+            if (state.event && !eventValue.includes(normalize(state.event))) return false;
+          } else {
+            if (state.action !== 'all' && normalize(item.action) !== state.action) return false;
+            const qotdValue = normalize(`${item.qotd_id || ''} ${item.qotd_number || ''} ${item.details || ''}`);
+            if (state.qotd && !qotdValue.includes(normalize(state.qotd).replace(/^#/, ''))) return false;
+          }
+          return true;
+        });
+        tbody.replaceChildren();
+        filtered.forEach(item => {
+          const row = el('tr');
+          const values = audit
+            ? [item.created_at, item.guild_name, `${item.type || ''} / ${item.name || ''}`, item.status, item.user_name || item.user_id || '—', item.details || '—']
+            : [item.created_at, item.guild_name, item.action, item.user_name || item.user_id || '—', item.details || '—'];
+          values.forEach((value, index) => {
+            const cell = el('td', '', String(value ?? '—')); cell.dataset.label = tr(headers[index]);
+            if (headers[index] === 'details') cell.classList.add('creator-details-cell');
+            if (headers[index] === 'time') cell.classList.add('creator-time-cell');
+            row.append(cell);
+          });
+          tbody.append(row);
+        });
+        empty.textContent = tr('noEntries');
+        if (!filtered.length) body.insertBefore(empty, more); else empty.remove();
+        count.textContent = tr('showingFiltered').replace('{shown}', filtered.length).replace('{total}', items.length);
+        more.hidden = items.length >= Number(data.total || 0);
+      };
+      Object.values(controls).forEach(control => {
+        control.addEventListener('input', renderRows);
+        control.addEventListener('change', renderRows);
+      });
+      clear.addEventListener('click', () => {
+        Object.entries(controls).forEach(([key, control]) => { control.value = (key === 'action' || key === 'status') ? 'all' : ''; });
+        renderRows();
+      });
+      more.addEventListener('click', () => loadGlobalLogView(kind, items.length, items, state));
+      renderRows();
     } catch (error) {
       body.replaceChildren(el('p', 'creator-error', error.message || tr('offline')));
     }
