@@ -18,7 +18,7 @@
       sub:'Private workspace · Quello ecosystem',
       overview:'System Overview', ownerActions:'Owner Actions',
       developerTeamActions:'Developer Actions',
-      announcements:'Announcements', newAnnouncement:'New announcement', editAnnouncement:'Edit announcement', titleField:'Title', descriptionField:'Description', colorField:'Embed color (optional)', urlField:'Link URL (optional)', imageField:'Image URL (optional)', thumbnailField:'Thumbnail URL (optional)', authorField:'Author (optional)', footerField:'Footer (optional)', extraFields:'Additional fields', addField:'Add field', fieldName:'Field name', fieldValue:'Field value', inlineField:'Inline', publishAnnouncement:'Publish to configured servers', saveChanges:'Save changes', cancelEdit:'Cancel', edit:'Edit', delete:'Delete', noAnnouncements:'No announcements yet.', confirmDelete:'Delete this announcement from every server where it was published?', announcementPublished:'Announcement published. Sent: {sent}; failed: {failed}; skipped: {skipped}.', announcementUpdated:'Announcement updated on {updated} servers; {failed} failed.', announcementDeleted:'Announcement deleted from {deleted} servers.', announcementPartialDelete:'Some copies could not be deleted. Fix permissions and retry.', optionalChannelNote:'Only servers with an Announcement Channel configured receive announcements.', preview:'Preview', closePreview:'Close preview', previewEmpty:'Your announcement preview will appear here.',
+      announcements:'Announcements', newAnnouncement:'New announcement', editAnnouncement:'Edit announcement', titleField:'Title', descriptionField:'Description', colorField:'Embed color (optional)', urlField:'Link URL (optional)', imageField:'Image URL (optional)', thumbnailField:'Thumbnail URL (optional)', authorField:'Author (optional)', footerField:'Footer (optional)', extraFields:'Additional fields', addField:'Add field', fieldName:'Field name', fieldValue:'Field value', inlineField:'Inline', publishAnnouncement:'Publish to configured servers', saveChanges:'Save changes', cancelEdit:'Cancel', edit:'Edit', delete:'Delete', noAnnouncements:'No announcements yet.', confirmDelete:'Delete this announcement from every server where it was published?', announcementPublished:'Announcement published. Sent: {sent}; failed: {failed}; skipped: {skipped}.', announcementUpdated:'Announcement updated on {updated} servers; {failed} failed.', announcementDeleted:'Announcement deleted from {deleted} servers.', announcementPartialDelete:'Some copies could not be deleted. Fix permissions and retry.', optionalChannelNote:'Only servers with an Announcement Channel configured receive announcements.',
       appearance:'Appearance Lab',
       developer:'Developer Tools',
       localization:'Localization Lab',
@@ -70,7 +70,7 @@
       sub:'Закрытое пространство · экосистема Quello',
       overview:'Обзор системы', ownerActions:'Действия владельца',
       developerTeamActions:'Действия разработчика',
-      announcements:'Объявления', newAnnouncement:'Новое объявление', editAnnouncement:'Редактирование объявления', titleField:'Заголовок', descriptionField:'Описание', colorField:'Цвет Embed (необязательно)', urlField:'Ссылка (необязательно)', imageField:'URL изображения (необязательно)', thumbnailField:'URL миниатюры (необязательно)', authorField:'Автор (необязательно)', footerField:'Подпись (необязательно)', extraFields:'Дополнительные поля', addField:'Добавить поле', fieldName:'Название поля', fieldValue:'Значение поля', inlineField:'В строку', publishAnnouncement:'Опубликовать на настроенных серверах', saveChanges:'Сохранить изменения', cancelEdit:'Отмена', edit:'Изменить', delete:'Удалить', noAnnouncements:'Объявлений пока нет.', confirmDelete:'Удалить это объявление на всех серверах, где оно опубликовано?', announcementPublished:'Объявление опубликовано. Отправлено: {sent}; ошибок: {failed}; пропущено: {skipped}.', announcementUpdated:'Объявление обновлено на {updated} серверах; ошибок: {failed}.', announcementDeleted:'Объявление удалено на {deleted} серверах.', announcementPartialDelete:'Некоторые копии удалить не удалось. Проверь права и повтори попытку.', optionalChannelNote:'Объявления получают только серверы с настроенным каналом объявлений.', preview:'Предпросмотр', closePreview:'Закрыть', previewEmpty:'Здесь будет показан предпросмотр объявления.',
+      announcements:'Объявления', newAnnouncement:'Новое объявление', editAnnouncement:'Редактирование объявления', titleField:'Заголовок', descriptionField:'Описание', colorField:'Цвет Embed (необязательно)', urlField:'Ссылка (необязательно)', imageField:'URL изображения (необязательно)', thumbnailField:'URL миниатюры (необязательно)', authorField:'Автор (необязательно)', footerField:'Подпись (необязательно)', extraFields:'Дополнительные поля', addField:'Добавить поле', fieldName:'Название поля', fieldValue:'Значение поля', inlineField:'В строку', publishAnnouncement:'Опубликовать на настроенных серверах', saveChanges:'Сохранить изменения', cancelEdit:'Отмена', edit:'Изменить', delete:'Удалить', noAnnouncements:'Объявлений пока нет.', confirmDelete:'Удалить это объявление на всех серверах, где оно опубликовано?', announcementPublished:'Объявление опубликовано. Отправлено: {sent}; ошибок: {failed}; пропущено: {skipped}.', announcementUpdated:'Объявление обновлено на {updated} серверах; ошибок: {failed}.', announcementDeleted:'Объявление удалено на {deleted} серверах.', announcementPartialDelete:'Некоторые копии удалить не удалось. Проверь права и повтори попытку.', optionalChannelNote:'Объявления получают только серверы с настроенным каналом объявлений.',
       appearance:'Лаборатория оформления',
       developer:'Инструменты разработчика',
       localization:'Лаборатория локализации',
@@ -122,7 +122,7 @@
       sub:'Privater Bereich · Quello-Ökosystem',
       overview:'Systemübersicht', ownerActions:'Owner-Aktionen',
       developerTeamActions:'Entwickleraktionen',
-      announcements:'Ankündigungen', newAnnouncement:'Neue Ankündigung', editAnnouncement:'Ankündigung bearbeiten', titleField:'Titel', descriptionField:'Beschreibung', colorField:'Embed-Farbe (optional)', urlField:'Link-URL (optional)', imageField:'Bild-URL (optional)', thumbnailField:'Thumbnail-URL (optional)', authorField:'Autor (optional)', footerField:'Fußzeile (optional)', extraFields:'Zusätzliche Felder', addField:'Feld hinzufügen', fieldName:'Feldname', fieldValue:'Feldwert', inlineField:'Inline', publishAnnouncement:'Auf konfigurierten Servern veröffentlichen', saveChanges:'Änderungen speichern', cancelEdit:'Abbrechen', edit:'Bearbeiten', delete:'Löschen', noAnnouncements:'Noch keine Ankündigungen.', confirmDelete:'Diese Ankündigung auf allen Servern löschen, auf denen sie veröffentlicht wurde?', announcementPublished:'Ankündigung veröffentlicht. Gesendet: {sent}; fehlgeschlagen: {failed}; übersprungen: {skipped}.', announcementUpdated:'Auf {updated} Servern aktualisiert; {failed} fehlgeschlagen.', announcementDeleted:'Auf {deleted} Servern gelöscht.', announcementPartialDelete:'Einige Kopien konnten nicht gelöscht werden. Berechtigungen prüfen und erneut versuchen.', optionalChannelNote:'Nur Server mit konfiguriertem Ankündigungskanal erhalten Ankündigungen.', preview:'Vorschau', closePreview:'Schließen', previewEmpty:'Hier wird die Vorschau der Ankündigung angezeigt.',
+      announcements:'Ankündigungen', newAnnouncement:'Neue Ankündigung', editAnnouncement:'Ankündigung bearbeiten', titleField:'Titel', descriptionField:'Beschreibung', colorField:'Embed-Farbe (optional)', urlField:'Link-URL (optional)', imageField:'Bild-URL (optional)', thumbnailField:'Thumbnail-URL (optional)', authorField:'Autor (optional)', footerField:'Fußzeile (optional)', extraFields:'Zusätzliche Felder', addField:'Feld hinzufügen', fieldName:'Feldname', fieldValue:'Feldwert', inlineField:'Inline', publishAnnouncement:'Auf konfigurierten Servern veröffentlichen', saveChanges:'Änderungen speichern', cancelEdit:'Abbrechen', edit:'Bearbeiten', delete:'Löschen', noAnnouncements:'Noch keine Ankündigungen.', confirmDelete:'Diese Ankündigung auf allen Servern löschen, auf denen sie veröffentlicht wurde?', announcementPublished:'Ankündigung veröffentlicht. Gesendet: {sent}; fehlgeschlagen: {failed}; übersprungen: {skipped}.', announcementUpdated:'Auf {updated} Servern aktualisiert; {failed} fehlgeschlagen.', announcementDeleted:'Auf {deleted} Servern gelöscht.', announcementPartialDelete:'Einige Kopien konnten nicht gelöscht werden. Berechtigungen prüfen und erneut versuchen.', optionalChannelNote:'Nur Server mit konfiguriertem Ankündigungskanal erhalten Ankündigungen.',
       appearance:'Design-Labor',
       developer:'Entwicklerwerkzeuge',
       localization:'Lokalisierungslabor',
@@ -174,7 +174,7 @@
       sub:'Espace privé · écosystème Quello',
       overview:'Vue système', ownerActions:'Actions du propriétaire',
       developerTeamActions:'Actions développeur',
-      announcements:'Annonces', newAnnouncement:'Nouvelle annonce', editAnnouncement:'Modifier l’annonce', titleField:'Titre', descriptionField:'Description', colorField:'Couleur Embed (facultatif)', urlField:'URL du lien (facultatif)', imageField:'URL de l’image (facultatif)', thumbnailField:'URL de la miniature (facultatif)', authorField:'Auteur (facultatif)', footerField:'Pied de page (facultatif)', extraFields:'Champs supplémentaires', addField:'Ajouter un champ', fieldName:'Nom du champ', fieldValue:'Valeur du champ', inlineField:'En ligne', publishAnnouncement:'Publier sur les serveurs configurés', saveChanges:'Enregistrer', cancelEdit:'Annuler', edit:'Modifier', delete:'Supprimer', noAnnouncements:'Aucune annonce pour le moment.', confirmDelete:'Supprimer cette annonce de tous les serveurs où elle a été publiée ?', announcementPublished:'Annonce publiée. Envoyées : {sent} ; échecs : {failed} ; ignorées : {skipped}.', announcementUpdated:'Annonce mise à jour sur {updated} serveurs ; {failed} échecs.', announcementDeleted:'Annonce supprimée sur {deleted} serveurs.', announcementPartialDelete:'Certaines copies n’ont pas pu être supprimées. Vérifiez les permissions et réessayez.', optionalChannelNote:'Seuls les serveurs ayant configuré un salon d’annonces les reçoivent.', preview:'Aperçu', closePreview:'Fermer', previewEmpty:'L’aperçu de l’annonce apparaîtra ici.',
+      announcements:'Annonces', newAnnouncement:'Nouvelle annonce', editAnnouncement:'Modifier l’annonce', titleField:'Titre', descriptionField:'Description', colorField:'Couleur Embed (facultatif)', urlField:'URL du lien (facultatif)', imageField:'URL de l’image (facultatif)', thumbnailField:'URL de la miniature (facultatif)', authorField:'Auteur (facultatif)', footerField:'Pied de page (facultatif)', extraFields:'Champs supplémentaires', addField:'Ajouter un champ', fieldName:'Nom du champ', fieldValue:'Valeur du champ', inlineField:'En ligne', publishAnnouncement:'Publier sur les serveurs configurés', saveChanges:'Enregistrer', cancelEdit:'Annuler', edit:'Modifier', delete:'Supprimer', noAnnouncements:'Aucune annonce pour le moment.', confirmDelete:'Supprimer cette annonce de tous les serveurs où elle a été publiée ?', announcementPublished:'Annonce publiée. Envoyées : {sent} ; échecs : {failed} ; ignorées : {skipped}.', announcementUpdated:'Annonce mise à jour sur {updated} serveurs ; {failed} échecs.', announcementDeleted:'Annonce supprimée sur {deleted} serveurs.', announcementPartialDelete:'Certaines copies n’ont pas pu être supprimées. Vérifiez les permissions et réessayez.', optionalChannelNote:'Seuls les serveurs ayant configuré un salon d’annonces les reçoivent.',
       appearance:'Atelier visuel',
       developer:'Outils développeur',
       localization:'Atelier de localisation',
@@ -226,7 +226,7 @@
       sub:'Spazio privato · ecosistema Quello',
       overview:'Panoramica sistema', ownerActions:'Azioni proprietario',
       developerTeamActions:'Azioni sviluppatore',
-      announcements:'Annunci', newAnnouncement:'Nuovo annuncio', editAnnouncement:'Modifica annuncio', titleField:'Titolo', descriptionField:'Descrizione', colorField:'Colore Embed (facoltativo)', urlField:'URL del collegamento (facoltativo)', imageField:'URL immagine (facoltativo)', thumbnailField:'URL miniatura (facoltativo)', authorField:'Autore (facoltativo)', footerField:'Piè di pagina (facoltativo)', extraFields:'Campi aggiuntivi', addField:'Aggiungi campo', fieldName:'Nome campo', fieldValue:'Valore campo', inlineField:'In linea', publishAnnouncement:'Pubblica sui server configurati', saveChanges:'Salva modifiche', cancelEdit:'Annulla', edit:'Modifica', delete:'Elimina', noAnnouncements:'Nessun annuncio al momento.', confirmDelete:'Eliminare questo annuncio da tutti i server in cui è stato pubblicato?', announcementPublished:'Annuncio pubblicato. Inviati: {sent}; non riusciti: {failed}; ignorati: {skipped}.', announcementUpdated:'Annuncio aggiornato su {updated} server; {failed} errori.', announcementDeleted:'Annuncio eliminato da {deleted} server.', announcementPartialDelete:'Impossibile eliminare alcune copie. Controlla i permessi e riprova.', optionalChannelNote:'Gli annunci vengono inviati solo ai server con un canale annunci configurato.', preview:'Anteprima', closePreview:'Chiudi', previewEmpty:'Qui verrà mostrata l’anteprima dell’annuncio.',
+      announcements:'Annunci', newAnnouncement:'Nuovo annuncio', editAnnouncement:'Modifica annuncio', titleField:'Titolo', descriptionField:'Descrizione', colorField:'Colore Embed (facoltativo)', urlField:'URL del collegamento (facoltativo)', imageField:'URL immagine (facoltativo)', thumbnailField:'URL miniatura (facoltativo)', authorField:'Autore (facoltativo)', footerField:'Piè di pagina (facoltativo)', extraFields:'Campi aggiuntivi', addField:'Aggiungi campo', fieldName:'Nome campo', fieldValue:'Valore campo', inlineField:'In linea', publishAnnouncement:'Pubblica sui server configurati', saveChanges:'Salva modifiche', cancelEdit:'Annulla', edit:'Modifica', delete:'Elimina', noAnnouncements:'Nessun annuncio al momento.', confirmDelete:'Eliminare questo annuncio da tutti i server in cui è stato pubblicato?', announcementPublished:'Annuncio pubblicato. Inviati: {sent}; non riusciti: {failed}; ignorati: {skipped}.', announcementUpdated:'Annuncio aggiornato su {updated} server; {failed} errori.', announcementDeleted:'Annuncio eliminato da {deleted} server.', announcementPartialDelete:'Impossibile eliminare alcune copie. Controlla i permessi e riprova.', optionalChannelNote:'Gli annunci vengono inviati solo ai server con un canale annunci configurato.',
       appearance:'Laboratorio aspetto',
       developer:'Strumenti sviluppatore',
       localization:'Laboratorio localizzazione',
@@ -308,11 +308,11 @@
   const ownerText = (key) => {
     const language = lang();
     const words = {
-      en:{teamRole:'Developer Team role',teamScope:'Developer Actions scope',teamScopeDescription:'The Bot Owner, the verified Team Owner and accepted Team Admins and Developers all have System Overview, Announcements, Owner Actions and Developer Actions. Access is verified server-side against the Discord Developer Team.',ownerActions:'Owner Actions',technical:'Technical Work Mode',sessions:'Dashboard Sessions',enabled:'Enabled',disabled:'Disabled',reason:'Reason for technical work',end:'End time (Unix timestamp, optional)',turnOn:'Enable mode',turnOff:'Disable mode',refresh:'Refresh',revoke:'End session',none:'No active Dashboard sessions.',until:'Ends',user:'User',expires:'Expires',confirm:'End this user session? ',saved:'Technical Work Mode updated.',duration:'Duration',noEnd:'Until I disable it',remaining:'Remaining',unitMin:'min',unitHour:'h',unitDay:'d',failedSessions:'Dashboard sessions could not be loaded.',colName:'Nickname',colRole:'Role',colStatus:'Status',statusPending:'Pending acceptance',roleOwner:'Owner',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Read-only',teamEmpty:'No Developer Team is set up for this application.',teamHint:'Members as listed in the Discord Developer Portal.',endAll:'End all sessions of this user',thisSession:'This session',confirmEnd:'Tap again to confirm',signedIn:'Signed in',ended:'Session ended.',endedMany:'Sessions ended: ',nothingEnded:'That session had already ended.'},
-      ru:{teamRole:'Роль в Developer Team',teamScope:'Область Developer Actions',teamScopeDescription:'Bot Owner, подтверждённый владелец команды, а также принятые Admin и Developer из Developer Team имеют доступ к обзору системы, объявлениям, действиям владельца и действиям разработчика. Доступ проверяется на сервере по Discord Developer Team.',ownerActions:'Действия владельца',technical:'Режим технических работ',sessions:'Сессии Dashboard',enabled:'Включён',disabled:'Выключен',reason:'Причина технических работ',end:'Время окончания (Unix timestamp, необязательно)',turnOn:'Включить режим',turnOff:'Выключить режим',refresh:'Обновить',revoke:'Завершить сессию',none:'Активных сессий Dashboard нет.',until:'До',user:'Пользователь',expires:'Истекает',confirm:'Завершить эту сессию пользователя?',saved:'Режим технических работ обновлён.',duration:'Длительность',noEnd:'Пока я не выключу',remaining:'Осталось',unitMin:'мин',unitHour:'ч',unitDay:'д',failedSessions:'Не удалось загрузить сессии Dashboard.',colName:'Ник',colRole:'Роль',colStatus:'Статус',statusPending:'Ожидает принятия',roleOwner:'Владелец',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Только чтение',teamEmpty:'Для этого приложения не настроена команда разработчиков.',teamHint:'Участники как в Discord Developer Portal.',endAll:'Завершить все сессии пользователя',thisSession:'Эта сессия',confirmEnd:'Нажмите ещё раз для подтверждения',signedIn:'Вход',ended:'Сессия завершена.',endedMany:'Завершено сессий: ',nothingEnded:'Эта сессия уже была завершена.'},
-      de:{teamRole:'Developer-Team-Rolle',teamScope:'Umfang der Entwickleraktionen',teamScopeDescription:'Bot Owner, verifizierter Team Owner sowie akzeptierte Admins und Developer des Teams haben Zugriff auf Systemübersicht, Ankündigungen, Owner-Aktionen und Entwickleraktionen. Der Zugriff wird serverseitig anhand des Discord Developer Teams geprüft.',ownerActions:'Owner-Aktionen',technical:'Wartungsmodus',sessions:'Dashboard-Sitzungen',enabled:'Aktiviert',disabled:'Deaktiviert',reason:'Grund der Wartungsarbeiten',end:'Endzeit (Unix-Zeitstempel, optional)',turnOn:'Aktivieren',turnOff:'Deaktivieren',refresh:'Aktualisieren',revoke:'Sitzung beenden',none:'Keine aktiven Dashboard-Sitzungen.',until:'Bis',user:'Benutzer',expires:'Läuft ab',confirm:'Diese Sitzung beenden?',saved:'Wartungsmodus aktualisiert.',duration:'Dauer',noEnd:'Bis ich es deaktiviere',remaining:'Verbleibend',unitMin:'Min.',unitHour:'Std.',unitDay:'Tg.',failedSessions:'Dashboard-Sitzungen konnten nicht geladen werden.',colName:'Nickname',colRole:'Rolle',colStatus:'Status',statusPending:'Wartet auf Annahme',roleOwner:'Owner',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Nur Lesen',teamEmpty:'Für diese Anwendung ist kein Developer Team eingerichtet.',teamHint:'Mitglieder wie im Discord Developer Portal aufgeführt.',endAll:'Alle Sitzungen dieses Nutzers beenden',thisSession:'Diese Sitzung',confirmEnd:'Zum Bestätigen erneut tippen',signedIn:'Angemeldet',ended:'Sitzung beendet.',endedMany:'Beendete Sitzungen: ',nothingEnded:'Diese Sitzung war bereits beendet.'},
-      fr:{teamRole:'Rôle Developer Team',teamScope:'Portée des actions développeur',teamScopeDescription:'Le Bot Owner, le Team Owner vérifié ainsi que les Admin et Developer acceptés ont accès à l’aperçu du système, aux annonces, aux actions du propriétaire et aux actions développeur. L’accès est vérifié côté serveur via la Developer Team Discord.',ownerActions:'Actions du propriétaire',technical:'Mode maintenance',sessions:'Sessions Dashboard',enabled:'Activé',disabled:'Désactivé',reason:'Motif de maintenance',end:'Heure de fin (horodatage Unix, facultatif)',turnOn:'Activer',turnOff:'Désactiver',refresh:'Actualiser',revoke:'Terminer la session',none:'Aucune session Dashboard active.',until:'Jusqu’à',user:'Utilisateur',expires:'Expire',confirm:'Terminer cette session ?',saved:'Mode maintenance mis à jour.',duration:'Durée',noEnd:'Jusqu’à désactivation manuelle',remaining:'Restant',unitMin:'min',unitHour:'h',unitDay:'j',failedSessions:'Impossible de charger les sessions Dashboard.',colName:'Pseudo',colRole:'Rôle',colStatus:'Statut',statusPending:'En attente d’acceptation',roleOwner:'Propriétaire',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Lecture seule',teamEmpty:'Aucune Developer Team n’est configurée pour cette application.',teamHint:'Membres tels que listés dans le Discord Developer Portal.',endAll:'Terminer toutes les sessions de cet utilisateur',thisSession:'Cette session',confirmEnd:'Touchez à nouveau pour confirmer',signedIn:'Connexion',ended:'Session terminée.',endedMany:'Sessions terminées : ',nothingEnded:'Cette session était déjà terminée.'},
-      it:{teamRole:'Ruolo Developer Team',teamScope:'Ambito Developer Actions',teamScopeDescription:'Bot Owner, Team Owner verificato e Admin e Developer accettati hanno accesso a panoramica del sistema, annunci, azioni proprietario e azioni sviluppatore. L’accesso è verificato lato server tramite il Developer Team Discord.',ownerActions:'Azioni proprietario',technical:'Modalità manutenzione',sessions:'Sessioni Dashboard',enabled:'Attiva',disabled:'Disattiva',reason:'Motivo della manutenzione',end:'Ora di fine (timestamp Unix, facoltativo)',turnOn:'Attiva modalità',turnOff:'Disattiva modalità',refresh:'Aggiorna',revoke:'Termina sessione',none:'Nessuna sessione Dashboard attiva.',until:'Fino a',user:'Utente',expires:'Scade',confirm:'Terminare questa sessione?',saved:'Modalità manutenzione aggiornata.',duration:'Durata',noEnd:'Finché non la disattivo',remaining:'Rimanente',unitMin:'min',unitHour:'h',unitDay:'g',failedSessions:'Impossibile caricare le sessioni Dashboard.',colName:'Nickname',colRole:'Ruolo',colStatus:'Stato',statusPending:'In attesa di accettazione',roleOwner:'Proprietario',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Sola lettura',teamEmpty:'Nessun Developer Team configurato per questa applicazione.',teamHint:'Membri come elencati nel Discord Developer Portal.',endAll:'Termina tutte le sessioni di questo utente',thisSession:'Questa sessione',confirmEnd:'Tocca di nuovo per confermare',signedIn:'Accesso',ended:'Sessione terminata.',endedMany:'Sessioni terminate: ',nothingEnded:'Questa sessione era già terminata.'}
+      en:{teamRole:'Developer Team role',teamScope:'Developer Actions scope',teamScopeDescription:'The Bot Owner, the verified Team Owner and accepted Team Admins and Developers all have System Overview, Announcements, Owner Actions and Developer Actions. Access is verified server-side against the Discord Developer Team.',ownerActions:'Owner Actions',technical:'Technical Work Mode',sessions:'Dashboard Sessions',enabled:'Enabled',disabled:'Disabled',reason:'Reason for technical work',end:'End time (Unix timestamp, optional)',turnOn:'Enable mode',turnOff:'Disable mode',refresh:'Refresh',revoke:'End session',none:'No active Dashboard sessions.',until:'Ends',user:'User',expires:'Expires',confirm:'End this user session? ',saved:'Technical Work Mode updated.',duration:'Duration',noEnd:'Until I disable it',remaining:'Remaining',unitMin:'min',unitHour:'h',unitDay:'d',failedSessions:'Dashboard sessions could not be loaded.',colName:'Nickname',colRole:'Role',colStatus:'Status',statusPending:'Pending acceptance',roleOwner:'Owner',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Read-only',teamEmpty:'No Developer Team is set up for this application.',teamHint:'Members as listed in the Discord Developer Portal.',endAll:'End all sessions of this user',thisSession:'This session',confirmEnd:'Tap again to confirm',signedIn:'Signed in',ended:'Session ended.',endedMany:'Sessions ended: ',endEveryone:'End all Dashboard sessions',confirmEveryone:'End every active Dashboard session? This will also sign you out.',everyoneEnded:'All active sessions ended: ',nothingEnded:'That session had already ended.'},
+      ru:{teamRole:'Роль в Developer Team',teamScope:'Область Developer Actions',teamScopeDescription:'Bot Owner, подтверждённый владелец команды, а также принятые Admin и Developer из Developer Team имеют доступ к обзору системы, объявлениям, действиям владельца и действиям разработчика. Доступ проверяется на сервере по Discord Developer Team.',ownerActions:'Действия владельца',technical:'Режим технических работ',sessions:'Сессии Dashboard',enabled:'Включён',disabled:'Выключен',reason:'Причина технических работ',end:'Время окончания (Unix timestamp, необязательно)',turnOn:'Включить режим',turnOff:'Выключить режим',refresh:'Обновить',revoke:'Завершить сессию',none:'Активных сессий Dashboard нет.',until:'До',user:'Пользователь',expires:'Истекает',confirm:'Завершить эту сессию пользователя?',saved:'Режим технических работ обновлён.',duration:'Длительность',noEnd:'Пока я не выключу',remaining:'Осталось',unitMin:'мин',unitHour:'ч',unitDay:'д',failedSessions:'Не удалось загрузить сессии Dashboard.',colName:'Ник',colRole:'Роль',colStatus:'Статус',statusPending:'Ожидает принятия',roleOwner:'Владелец',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Только чтение',teamEmpty:'Для этого приложения не настроена команда разработчиков.',teamHint:'Участники как в Discord Developer Portal.',endAll:'Завершить все сессии пользователя',thisSession:'Эта сессия',confirmEnd:'Нажмите ещё раз для подтверждения',signedIn:'Вход',ended:'Сессия завершена.',endedMany:'Завершено сессий: ',endEveryone:'Разлогинить всех',confirmEveryone:'Завершить ВСЕ активные сессии Dashboard? Вы также выйдете из панели.',everyoneEnded:'Завершено всех сессий: ',nothingEnded:'Эта сессия уже была завершена.'},
+      de:{teamRole:'Developer-Team-Rolle',teamScope:'Umfang der Entwickleraktionen',teamScopeDescription:'Bot Owner, verifizierter Team Owner sowie akzeptierte Admins und Developer des Teams haben Zugriff auf Systemübersicht, Ankündigungen, Owner-Aktionen und Entwickleraktionen. Der Zugriff wird serverseitig anhand des Discord Developer Teams geprüft.',ownerActions:'Owner-Aktionen',technical:'Wartungsmodus',sessions:'Dashboard-Sitzungen',enabled:'Aktiviert',disabled:'Deaktiviert',reason:'Grund der Wartungsarbeiten',end:'Endzeit (Unix-Zeitstempel, optional)',turnOn:'Aktivieren',turnOff:'Deaktivieren',refresh:'Aktualisieren',revoke:'Sitzung beenden',none:'Keine aktiven Dashboard-Sitzungen.',until:'Bis',user:'Benutzer',expires:'Läuft ab',confirm:'Diese Sitzung beenden?',saved:'Wartungsmodus aktualisiert.',duration:'Dauer',noEnd:'Bis ich es deaktiviere',remaining:'Verbleibend',unitMin:'Min.',unitHour:'Std.',unitDay:'Tg.',failedSessions:'Dashboard-Sitzungen konnten nicht geladen werden.',colName:'Nickname',colRole:'Rolle',colStatus:'Status',statusPending:'Wartet auf Annahme',roleOwner:'Owner',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Nur Lesen',teamEmpty:'Für diese Anwendung ist kein Developer Team eingerichtet.',teamHint:'Mitglieder wie im Discord Developer Portal aufgeführt.',endAll:'Alle Sitzungen dieses Nutzers beenden',thisSession:'Diese Sitzung',confirmEnd:'Zum Bestätigen erneut tippen',signedIn:'Angemeldet',ended:'Sitzung beendet.',endedMany:'Beendete Sitzungen: ',endEveryone:'Alle Dashboard-Sitzungen beenden',confirmEveryone:'Alle aktiven Dashboard-Sitzungen beenden? Du wirst ebenfalls abgemeldet.',everyoneEnded:'Alle Sitzungen beendet: ',nothingEnded:'Diese Sitzung war bereits beendet.'},
+      fr:{teamRole:'Rôle Developer Team',teamScope:'Portée des actions développeur',teamScopeDescription:'Le Bot Owner, le Team Owner vérifié ainsi que les Admin et Developer acceptés ont accès à l’aperçu du système, aux annonces, aux actions du propriétaire et aux actions développeur. L’accès est vérifié côté serveur via la Developer Team Discord.',ownerActions:'Actions du propriétaire',technical:'Mode maintenance',sessions:'Sessions Dashboard',enabled:'Activé',disabled:'Désactivé',reason:'Motif de maintenance',end:'Heure de fin (horodatage Unix, facultatif)',turnOn:'Activer',turnOff:'Désactiver',refresh:'Actualiser',revoke:'Terminer la session',none:'Aucune session Dashboard active.',until:'Jusqu’à',user:'Utilisateur',expires:'Expire',confirm:'Terminer cette session ?',saved:'Mode maintenance mis à jour.',duration:'Durée',noEnd:'Jusqu’à désactivation manuelle',remaining:'Restant',unitMin:'min',unitHour:'h',unitDay:'j',failedSessions:'Impossible de charger les sessions Dashboard.',colName:'Pseudo',colRole:'Rôle',colStatus:'Statut',statusPending:'En attente d’acceptation',roleOwner:'Propriétaire',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Lecture seule',teamEmpty:'Aucune Developer Team n’est configurée pour cette application.',teamHint:'Membres tels que listés dans le Discord Developer Portal.',endAll:'Terminer toutes les sessions de cet utilisateur',thisSession:'Cette session',confirmEnd:'Touchez à nouveau pour confirmer',signedIn:'Connexion',ended:'Session terminée.',endedMany:'Sessions terminées : ',endEveryone:'Terminer toutes les sessions',confirmEveryone:'Terminer toutes les sessions Dashboard actives ? Vous serez également déconnecté.',everyoneEnded:'Toutes les sessions terminées : ',nothingEnded:'Cette session était déjà terminée.'},
+      it:{teamRole:'Ruolo Developer Team',teamScope:'Ambito Developer Actions',teamScopeDescription:'Bot Owner, Team Owner verificato e Admin e Developer accettati hanno accesso a panoramica del sistema, annunci, azioni proprietario e azioni sviluppatore. L’accesso è verificato lato server tramite il Developer Team Discord.',ownerActions:'Azioni proprietario',technical:'Modalità manutenzione',sessions:'Sessioni Dashboard',enabled:'Attiva',disabled:'Disattiva',reason:'Motivo della manutenzione',end:'Ora di fine (timestamp Unix, facoltativo)',turnOn:'Attiva modalità',turnOff:'Disattiva modalità',refresh:'Aggiorna',revoke:'Termina sessione',none:'Nessuna sessione Dashboard attiva.',until:'Fino a',user:'Utente',expires:'Scade',confirm:'Terminare questa sessione?',saved:'Modalità manutenzione aggiornata.',duration:'Durata',noEnd:'Finché non la disattivo',remaining:'Rimanente',unitMin:'min',unitHour:'h',unitDay:'g',failedSessions:'Impossibile caricare le sessioni Dashboard.',colName:'Nickname',colRole:'Ruolo',colStatus:'Stato',statusPending:'In attesa di accettazione',roleOwner:'Proprietario',roleAdmin:'Admin',roleDeveloper:'Developer',roleReadOnly:'Sola lettura',teamEmpty:'Nessun Developer Team configurato per questa applicazione.',teamHint:'Membri come elencati nel Discord Developer Portal.',endAll:'Termina tutte le sessioni di questo utente',thisSession:'Questa sessione',confirmEnd:'Tocca di nuovo per confermare',signedIn:'Accesso',ended:'Sessione terminata.',endedMany:'Sessioni terminate: ',endEveryone:'Termina tutte le sessioni Dashboard',confirmEveryone:'Terminare tutte le sessioni Dashboard attive? Verrai disconnesso anche tu.',everyoneEnded:'Tutte le sessioni terminate: ',nothingEnded:'Questa sessione era già terminata.'}
     };
     return (words[language] || words.en)[key] || words.en[key] || key;
   };
@@ -639,12 +639,14 @@
     fieldsBox.append(addField); form.append(fieldsBox);
 
     const actions = el('div', 'creator-button-row');
-    const collectPayload = () => {
+    const save = el('button', 'creator-primary', editingAnnouncement ? tr('saveChanges') : tr('publishAnnouncement'));
+    save.type = 'button';
+    save.addEventListener('click', async () => {
       const fields = fieldRows.map(row => {
         const inputs = row.querySelectorAll('input,textarea');
         return { name: inputs[0].value.trim(), value: inputs[1].value.trim(), inline: inputs[2].checked };
       }).filter(item => item.name || item.value);
-      return {
+      const payload = {
         title: controls.title.value.trim() || null,
         description: controls.description.value.trim() || null,
         color: controls.color.value.trim() || null,
@@ -655,57 +657,6 @@
         footer: controls.footer.value.trim() || null,
         fields
       };
-    };
-    const preview = el('button', 'creator-secondary', tr('preview'));
-    preview.type = 'button';
-    preview.addEventListener('click', () => {
-      const payload = collectPayload();
-      const overlay = el('div', 'creator-preview-overlay');
-      const dialog = el('section', 'creator-preview-dialog');
-      dialog.setAttribute('role', 'dialog'); dialog.setAttribute('aria-modal', 'true');
-      dialog.setAttribute('aria-label', tr('preview'));
-      const header = el('div', 'creator-preview-header');
-      header.append(el('strong', '', tr('preview')));
-      const close = el('button', 'creator-secondary', '×'); close.type = 'button';
-      close.setAttribute('aria-label', tr('closePreview'));
-      const dismiss = () => { overlay.remove(); document.removeEventListener('keydown', onKey); };
-      close.addEventListener('click', dismiss); header.append(close); dialog.append(header);
-      const stage = el('div', 'creator-preview-stage');
-      const embed = el('article', 'creator-preview-embed');
-      let color = payload.color || '#5865f2';
-      if (/^[0-9a-f]{6}$/i.test(color)) color = '#' + color;
-      if (!/^#[0-9a-f]{6}$/i.test(color)) color = '#5865f2';
-      embed.style.setProperty('--preview-accent', color);
-      if (payload.author) embed.append(el('div', 'creator-preview-author', payload.author));
-      if (payload.title) {
-        const title = el('strong', 'creator-preview-title', payload.title);
-        if (payload.url && /^https?:\/\//i.test(payload.url)) { const link = el('a', ''); link.href = payload.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.append(title); embed.append(link); }
-        else embed.append(title);
-      }
-      if (payload.description) embed.append(el('p', 'creator-preview-description', payload.description));
-      if (payload.fields.length) {
-        const fields = el('div', 'creator-preview-fields');
-        payload.fields.forEach(item => {
-          const field = el('div', 'creator-preview-field'); field.classList.toggle('is-inline', !!item.inline);
-          field.append(el('strong', '', item.name || '\u200b'), el('p', '', item.value || '\u200b')); fields.append(field);
-        });
-        embed.append(fields);
-      }
-      const imageUrl = payload.image && /^https?:\/\//i.test(payload.image) ? payload.image : '';
-      if (imageUrl) { const image = el('img', 'creator-preview-image'); image.src = imageUrl; image.alt = ''; image.loading = 'lazy'; embed.append(image); }
-      if (payload.thumbnail && /^https?:\/\//i.test(payload.thumbnail)) { const thumb = el('img', 'creator-preview-thumbnail'); thumb.src = payload.thumbnail; thumb.alt = ''; thumb.loading = 'lazy'; embed.append(thumb); }
-      if (payload.footer) embed.append(el('div', 'creator-preview-footer', payload.footer));
-      if (!payload.title && !payload.description && !payload.author && !payload.footer && !payload.fields.length && !imageUrl) embed.append(el('p', 'creator-muted', tr('previewEmpty')));
-      stage.append(embed); dialog.append(stage); overlay.append(dialog);
-      overlay.addEventListener('click', event => { if (event.target === overlay) dismiss(); });
-      const onKey = event => { if (event.key === 'Escape') dismiss(); };
-      document.addEventListener('keydown', onKey);
-      document.body.append(overlay); close.focus();
-    });
-    const save = el('button', 'creator-primary', editingAnnouncement ? tr('saveChanges') : tr('publishAnnouncement'));
-    save.type = 'button';
-    save.addEventListener('click', async () => {
-      const payload = collectPayload();
       if (!payload.title && !payload.description) { toast(tr('titleField') + ' / ' + tr('descriptionField')); return; }
       save.disabled = true;
       try {
@@ -720,7 +671,7 @@
         await loadAnnouncements();
       } catch (error) { toast(error.message || tr('offline')); save.disabled = false; }
     });
-    actions.append(preview, save);
+    actions.append(save);
     if (editingAnnouncement) {
       const cancel = el('button', 'creator-secondary', tr('cancelEdit')); cancel.type = 'button';
       cancel.addEventListener('click', () => { editingAnnouncement = null; renderAnnouncements(); });
@@ -872,6 +823,9 @@
       sessionBox.append(el('p', 'creator-error', ownerText('failedSessions')));
     } else {
       const list = sessions.sessions || [];
+      if (list.length) {
+        sessionBox.append(confirmButton(ownerText('endEveryone'), () => endSessions({ all: true })));
+      }
       if (!list.length) sessionBox.append(el('p', 'creator-muted', ownerText('none')));
       const groups = new Map();
       list.forEach(item => {
@@ -930,6 +884,11 @@
   async function endSessions(payload) {
     try {
       const result = await request('/api/creator/sessions', { method: 'DELETE', body: payload });
+      if (payload.all) {
+        toast(ownerText('everyoneEnded') + (result.ended || 0));
+        setTimeout(() => { try { localStorage.removeItem(TOKEN_KEY); } catch (_) {} location.reload(); }, 900);
+        return;
+      }
       if (payload.user_id) toast(ownerText('endedMany') + (result.ended || 0));
       else toast(result.revoked ? ownerText('ended') : ownerText('nothingEnded'));
     } catch (error) {
@@ -951,10 +910,9 @@
         box.append(el('p', 'creator-muted', ownerText('teamEmpty')));
       } else {
         const wrap = el('div', 'creator-table-wrap');
-        const table = el('table', 'creator-table creator-team-table');
+        const table = el('table', 'creator-table');
         const head = el('tr');
-        const teamColumns = ['colName', 'colRole', 'colStatus'];
-        teamColumns.forEach(key => head.append(el('th', '', ownerText(key))));
+        ['colName', 'colRole', 'colStatus'].forEach(key => head.append(el('th', '', ownerText(key))));
         const thead = el('thead');
         thead.append(head);
         table.append(thead);
@@ -963,12 +921,11 @@
         members.forEach(member => {
           const row = el('tr');
           const roleKey = roleLabel[member.role];
-          const cells = [
+          row.append(
             el('td', '', member.name),
             el('td', '', roleKey ? ownerText(roleKey) : member.role),
             el('td', member.status === 'invited' ? 'creator-pending' : '', member.status === 'invited' ? ownerText('statusPending') : '')
-          ];
-          cells.forEach((cell, index) => { cell.dataset.label = ownerText(teamColumns[index]); row.append(cell); });
+          );
           tbody.append(row);
         });
         table.append(tbody);
@@ -990,8 +947,8 @@
       const data = await request(`${endpoint}?limit=50&offset=${offset}`);
       const items = accumulated.concat(data.items || []);
       body.replaceChildren();
-      const wrap = el('div', 'creator-table-wrap creator-log-wrap');
-      const table = el('table', `creator-table creator-log-table${audit ? ' creator-audit-table' : ''}`);
+      const wrap = el('div', 'creator-table-wrap');
+      const table = el('table', 'creator-table');
       const headers = audit ? ['time', 'guild', 'event', 'status', 'user', 'details'] : ['time', 'guild', 'action', 'user', 'details'];
       const headRow = el('tr');
       headers.forEach(key => headRow.append(el('th', '', tr(key))));
@@ -1002,13 +959,7 @@
         const values = audit
           ? [item.created_at, item.guild_name, `${item.type || ''} / ${item.name || ''}`, item.status, item.user_name || item.user_id || '—', item.details || '—']
           : [item.created_at, item.guild_name, item.action, item.user_name || item.user_id || '—', item.details || '—'];
-        values.forEach((value, index) => {
-          const cell = el('td', '', String(value ?? '—'));
-          cell.dataset.label = tr(headers[index]);
-          if (headers[index] === 'details') cell.classList.add('creator-details-cell');
-          if (headers[index] === 'time') cell.classList.add('creator-time-cell');
-          row.append(cell);
-        });
+        values.forEach(value => row.append(el('td', '', String(value ?? '—'))));
         tbody.append(row);
       });
       table.append(tbody); wrap.append(table); body.append(wrap);
