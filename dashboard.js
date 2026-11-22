@@ -765,9 +765,9 @@
     const load = () => loadInto(grid, () => guildApi('/statistics'), data => {
       const st = data.statistics || {};
       const values = [
-        ['stats_total', st.total], ['stats_month', st.month_total], ['stats_week', st.week_total],
-        ['stats_english', st.english], ['stats_russian', st.russian],
-        ['stats_german', st.german], ['stats_french', st.french], ['stats_italian', st.italian],
+        ['stats_total', st.total],
+        ['stats_month', st.month_total],
+        ['stats_week', st.week_total],
       ];
       grid.replaceChildren(...values.map(([key, value]) => el('article', { class: 'stat-card' }, el('span', { text: t(key) },), el('strong', { text: String(Number(value) || 0) }))));
     });
