@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- Copyright (c) 2026 Quello. All rights reserved. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f1117">
+  <meta name="description" content="Explore the global Quello QOTD creator, responder and streak leaderboards.">
+  <title>Global Leaderboard — Quello</title>
+  <link rel="icon" href="quello-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="theme.css?v=1">
+  <link rel="stylesheet" href="brand-gradient.css?v=1">
+  <link rel="stylesheet" href="global-leaderboard.css?v=1">
+  <script>
+    (function(){try{var t=localStorage.getItem('quello-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
+  </script>
+  <script src="site-config.js?v=1"></script>
+  <script src="global-leaderboard.js?v=1" defer></script>
+</head>
+<body class="global-leaderboard-page">
+  <main class="global-board-shell">
+    <header class="global-board-header">
+      <a class="global-board-brand" href="index.html" aria-label="Quello home">
+        <img src="quello-mark.svg" alt="" width="38" height="38">
+        <span>Quello</span>
+      </a>
+      <div class="global-board-actions">
+        <label class="sr-only" for="boardLanguage">Language</label>
+        <select id="boardLanguage" aria-label="Language">
+          <option value="en">English</option><option value="ru">Русский</option>
+          <option value="de">Deutsch</option><option value="fr">Français</option><option value="it">Italiano</option>
+        </select>
+        <button class="global-board-refresh" id="boardRefresh" type="button">↻ Refresh</button>
+      </div>
+    </header>
+
+    <section class="global-board-hero">
+      <span class="global-board-eyebrow" id="boardEyebrow">COMMUNITY RANKINGS</span>
+      <h1 id="boardTitle">Global Leaderboard</h1>
+      <p id="boardIntro">See the most active QOTD creators and participants across all Quello servers.</p>
+      <p class="global-board-updated" id="boardUpdated" aria-live="polite">Loading global statistics…</p>
+    </section>
+
+    <section class="global-board-grid" aria-label="Global rankings">
+      <article class="global-board-card">
+        <div class="global-board-card-head"><span>✦</span><div><h2 id="creatorsTitle">Question creators</h2><p id="creatorsSubtitle">Most published QOTDs</p></div></div>
+        <ol class="global-board-list" id="creatorsList"><li class="global-board-placeholder">Loading…</li></ol>
+      </article>
+      <article class="global-board-card">
+        <div class="global-board-card-head"><span>◈</span><div><h2 id="respondersTitle">QOTD responders</h2><p id="respondersSubtitle">Most answered QOTDs</p></div></div>
+        <ol class="global-board-list" id="respondersList"><li class="global-board-placeholder">Loading…</li></ol>
+      </article>
+      <article class="global-board-card">
+        <div class="global-board-card-head"><span>⌁</span><div><h2 id="streaksTitle">Current streak</h2><p id="streaksSubtitle">Consecutive active days</p></div></div>
+        <ol class="global-board-list" id="streaksList"><li class="global-board-placeholder">Loading…</li></ol>
+      </article>
+    </section>
+
+    <footer class="global-board-footer">
+      <a href="index.html" id="backHome">← Back to Quello</a>
+      <span id="boardScope">Global statistics across all Quello servers</span>
+    </footer>
+  </main>
+</body>
+</html>

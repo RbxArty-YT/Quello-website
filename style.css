@@ -305,3 +305,4 @@ button:focus-visible {
 .changelog-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @keyframes changelogReveal{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.timeline-extra:not([hidden]) article{animation:none}.changelog-toggle{transition:none}}
+

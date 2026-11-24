@@ -3,7 +3,7 @@
 window.QUELLO_LEGAL = {
   "dates": {
     "effective": "2026-09-13",
-    "updated": "2026-11-21"
+    "updated": "2026-11-25"
   },
   "ui": {
     "en": {
@@ -157,7 +157,7 @@ window.QUELLO_LEGAL = {
                   "managing counters and viewing history, statistics, normal QOTD logs, and detailed interaction audit logs;",
                   "configuring channels and roles, and enabling maintenance or QOTD lock modes;",
                   "accepting and reviewing member-submitted question suggestions;",
-                  "showing personal and server participation statistics;",
+                  "showing personal and server participation statistics, plus public global leaderboards;",
                   "a website with documentation and a sign-in dashboard for managing server settings and QOTDs; and other related features."
                 ]
               ],
@@ -350,6 +350,23 @@ window.QUELLO_LEGAL = {
                 "Authorized Admin Panel users (the Bot Owner, the verified Team Owner, and Team Admins and Developers) may create global announcements through the Admin Panel. An announcement is published only to Discord servers that have configured an optional Announcement Channel. Authorized Admin Panel users can edit or delete a managed announcement; edits and deletions are applied to the copies Quello successfully published."
               ]
             ]
+          ],
+          [
+            "Daily QOTD publication limit",
+            [
+              [
+                "p",
+                "To keep publishing fair, each regular member may publish one QOTD per UTC calendar day across all Discord servers using the same Quello service. The limit resets at 00:00 UTC."
+              ],
+              [
+                "p",
+                "A scheduled publication also uses the daily allowance of the user who most recently saved that schedule. For schedules created before this attribution was introduced, the server owner is used until an authorized user saves the schedule again."
+              ],
+              [
+                "p",
+                "The Bot Owner and the owner of the server where a QOTD is published may bypass this limit. The limit is based on the publishing user’s Discord User ID and the QOTD publication record."
+              ]
+            ]
           ]
         ]
       },
@@ -396,7 +413,7 @@ window.QUELLO_LEGAL = {
                   "управления счётчиками и просмотра истории, статистики, обычных журналов QOTD и подробного журнала аудита взаимодействий;",
                   "настройки каналов и ролей, а также включения режима обслуживания или блокировки QOTD;",
                   "приёма и рассмотрения вопросов, предложенных участниками;",
-                  "показа личной и серверной статистики участия;",
+                  "показа личной и серверной статистики участия, а также публичных глобальных рейтингов;",
                   "веб-сайта с документацией и панелью управления с входом для управления настройками сервера и QOTD, а также других связанных функций."
                 ]
               ],
@@ -589,6 +606,23 @@ window.QUELLO_LEGAL = {
                 "Авторизованные пользователи Админ панели (Bot Owner, подтверждённый владелец команды, а также Admin и Developer из Developer Team) могут создавать глобальные объявления через Админ панель. Объявление публикуется только на тех серверах Discord, где настроен необязательный канал объявлений. Авторизованные пользователи панели могут редактировать и удалять объявления; изменения и удаление применяются к копиям, которые Quello успешно опубликовал."
               ]
             ]
+          ],
+          [
+            "Дневное ограничение публикаций QOTD",
+            [
+              [
+                "p",
+                "Для справедливого использования каждый обычный участник может публиковать один QOTD за календарный день UTC на всех Discord-серверах, использующих одну службу Quello. Ограничение сбрасывается в 00:00 UTC."
+              ],
+              [
+                "p",
+                "Запланированная публикация также расходует дневной лимит пользователя, который последним сохранил это расписание. Для расписаний, созданных до появления такой привязки, используется владелец сервера — до следующего сохранения расписания уполномоченным пользователем."
+              ],
+              [
+                "p",
+                "Bot Owner и владелец сервера, на котором публикуется QOTD, могут обходить это ограничение. Лимит определяется по Discord User ID публикующего пользователя и записи о публикации QOTD."
+              ]
+            ]
           ]
         ]
       },
@@ -635,7 +669,7 @@ window.QUELLO_LEGAL = {
                   "die Verwaltung von Zählern und die Ansicht von Verlauf, Statistiken, normalen QOTD-Protokollen und detaillierten Audit-Protokollen von Interaktionen;",
                   "die Konfiguration von Kanälen und Rollen sowie die Aktivierung von Wartungs- oder QOTD-Sperrmodi;",
                   "die Annahme und Prüfung von Fragevorschlägen der Mitglieder;",
-                  "die Anzeige persönlicher und serverweiter Teilnahmestatistiken;",
+                  "die Anzeige persönlicher und serverweiter Teilnahmestatistiken sowie öffentlicher globaler Ranglisten;",
                   "eine Website mit Dokumentation und einem Dashboard mit Anmeldung zur Verwaltung von Servereinstellungen und QOTDs sowie weitere zugehörige Funktionen."
                 ]
               ],
@@ -828,6 +862,23 @@ window.QUELLO_LEGAL = {
                 "Autorisierte Nutzer des Admin-Panels (Bot Owner, verifizierter Team Owner sowie Team-Admins und Developer) können globale Ankündigungen über das Admin-Panel erstellen. Eine Ankündigung wird nur auf Discord-Servern veröffentlicht, auf denen ein optionaler Ankündigungskanal konfiguriert ist. Autorisierte Nutzer können eine verwaltete Ankündigung bearbeiten oder löschen; Änderungen und Löschungen werden auf die von Quello erfolgreich veröffentlichten Kopien angewendet."
               ]
             ]
+          ],
+          [
+            "Tägliches QOTD-Veröffentlichungslimit",
+            [
+              [
+                "p",
+                "Für eine faire Nutzung darf jedes reguläre Mitglied pro UTC-Kalendertag über alle Discord-Server hinweg, die denselben Quello-Dienst verwenden, ein QOTD veröffentlichen. Das Limit wird um 00:00 UTC zurückgesetzt."
+              ],
+              [
+                "p",
+                "Eine geplante Veröffentlichung verbraucht ebenfalls das Tageskontingent des Nutzers, der den Zeitplan zuletzt gespeichert hat. Bei älteren Zeitplänen wird bis zum nächsten Speichern durch einen berechtigten Nutzer der Serverinhaber verwendet."
+              ],
+              [
+                "p",
+                "Der Bot Owner und der Eigentümer des Servers, auf dem das QOTD veröffentlicht wird, können dieses Limit umgehen. Das Limit basiert auf der Discord User ID des veröffentlichenden Nutzers und dem QOTD-Veröffentlichungsdatensatz."
+              ]
+            ]
           ]
         ]
       },
@@ -874,7 +925,7 @@ window.QUELLO_LEGAL = {
                   "gérer des compteurs et consulter l’historique, les statistiques, les journaux QOTD habituels et les journaux d’audit détaillés des interactions ;",
                   "configurer les salons et les rôles, et activer les modes maintenance ou verrouillage QOTD ;",
                   "recevoir et examiner les suggestions de questions soumises par les membres ;",
-                  "afficher des statistiques de participation personnelles et du serveur ;",
+                  "afficher des statistiques de participation personnelles et du serveur, ainsi que des classements mondiaux publics ;",
                   "un site web avec documentation et un tableau de bord avec connexion pour gérer les paramètres du serveur et les QOTD, ainsi que d’autres fonctionnalités associées."
                 ]
               ],
@@ -1067,6 +1118,23 @@ window.QUELLO_LEGAL = {
                 "Les utilisateurs autorisés du panneau d’administration (Bot Owner, Team Owner vérifié, ainsi que les Admin et Developer de la Team) peuvent créer des annonces globales via le panneau d’administration. Une annonce est publiée uniquement sur les serveurs Discord ayant configuré un canal d’annonces facultatif. Les utilisateurs autorisés peuvent modifier ou supprimer une annonce gérée ; les modifications et suppressions sont appliquées aux copies publiées avec succès par Quello."
               ]
             ]
+          ],
+          [
+            "Limite quotidienne de publication des QOTD",
+            [
+              [
+                "p",
+                "Pour garantir une utilisation équitable, chaque membre ordinaire peut publier un QOTD par jour calendaire UTC sur l’ensemble des serveurs Discord utilisant le même service Quello. La limite est réinitialisée à 00:00 UTC."
+              ],
+              [
+                "p",
+                "Une publication programmée utilise également le quota quotidien de la personne qui a enregistré le programme en dernier. Pour les programmes créés avant cette attribution, le propriétaire du serveur est utilisé jusqu’à ce qu’un utilisateur autorisé enregistre à nouveau le programme."
+              ],
+              [
+                "p",
+                "Le Bot Owner et le propriétaire du serveur sur lequel le QOTD est publié peuvent contourner cette limite. Celle-ci repose sur le Discord User ID de l’utilisateur qui publie et sur l’enregistrement de publication du QOTD."
+              ]
+            ]
           ]
         ]
       },
@@ -1113,7 +1181,7 @@ window.QUELLO_LEGAL = {
                   "gestire i contatori e consultare cronologia, statistiche, log QOTD normali e log di audit dettagliati delle interazioni;",
                   "configurare canali e ruoli e attivare le modalità di manutenzione o di blocco QOTD;",
                   "ricevere ed esaminare i suggerimenti di domande inviati dai membri;",
-                  "mostrare statistiche di partecipazione personali e del server;",
+                  "mostrare statistiche di partecipazione personali e del server, oltre alle classifiche globali pubbliche;",
                   "un sito web con documentazione e una dashboard con accesso per gestire le impostazioni del server e i QOTD, oltre ad altre funzioni correlate."
                 ]
               ],
@@ -1306,6 +1374,23 @@ window.QUELLO_LEGAL = {
                 "Gli utenti autorizzati del pannello di amministrazione (Bot Owner, Team Owner verificato, Admin e Developer del Team) possono creare annunci globali tramite il pannello di amministrazione. Un annuncio viene pubblicato solo sui server Discord che hanno configurato un canale annunci facoltativo. Gli utenti autorizzati possono modificare o eliminare un annuncio gestito; modifiche ed eliminazioni vengono applicate alle copie pubblicate con successo da Quello."
               ]
             ]
+          ],
+          [
+            "Limite giornaliero di pubblicazione QOTD",
+            [
+              [
+                "p",
+                "Per garantire un uso equo, ogni membro normale può pubblicare un QOTD per giorno di calendario UTC su tutti i server Discord che utilizzano lo stesso servizio Quello. Il limite si azzera alle 00:00 UTC."
+              ],
+              [
+                "p",
+                "Una pubblicazione programmata utilizza anche la quota giornaliera dell’utente che ha salvato il programma più di recente. Per i programmi creati prima di questa attribuzione viene utilizzato il proprietario del server finché un utente autorizzato non salva nuovamente il programma."
+              ],
+              [
+                "p",
+                "Il Bot Owner e il proprietario del server in cui viene pubblicato il QOTD possono ignorare questo limite. Il limite si basa sul Discord User ID dell’utente che pubblica e sul record di pubblicazione del QOTD."
+              ]
+            ]
           ]
         ]
       }
@@ -1398,6 +1483,22 @@ window.QUELLO_LEGAL = {
               [
                 "p",
                 "Personal statistics shown by /me and /question_week are calculated from the records described above."
+              ],
+              [
+                "h3",
+                "Achievements and progress"
+              ],
+              [
+                "p",
+                "Quello stores each achievement unlocked by a member on a server and the unlock date. Achievement progress is calculated from unique QOTD participation records and UTC answer streaks. Server administrators can enable or disable achievement categories, and each member can turn achievement-unlock direct messages on or off. Achievement tracking does not store the text of discussion messages."
+              ],
+              [
+                "h3",
+                "Public Global Leaderboard"
+              ],
+              [
+                "p",
+                "The public Global Leaderboard displays your Discord display name and avatar together with your QOTD creation count, answer count and current answer streak. Rankings combine records from all servers using the same Quello database and can be viewed without signing in. QOTD message text is not displayed."
               ],
               [
                 "h3",
@@ -1616,6 +1717,23 @@ window.QUELLO_LEGAL = {
                 "Technical Work Mode stores only an on/off flag, the reason text entered by the authorized user, an optional end time and the time of the last change. The reason is shown to people who are blocked while the mode is on, so it must not contain personal data."
               ]
             ]
+          ],
+          [
+            "Daily publication limit",
+            [
+              [
+                "p",
+                "To enforce the one-QOTD-per-day limit, Quello uses the author’s Discord User ID and the UTC date/time already stored with each published QOTD. The check is global across servers using the same Quello database and resets at 00:00 UTC."
+              ],
+              [
+                "p",
+                "Scheduled QOTD uses the Discord User ID of the person who most recently saved the schedule as its publishing identity, so the publication is counted against that person’s daily allowance. For schedules created before this attribution was introduced, the server owner is used until an authorized user saves the schedule again."
+              ],
+              [
+                "note",
+                "No separate profile, location, or message-content data is needed to calculate this limit."
+              ]
+            ]
           ]
         ]
       },
@@ -1706,6 +1824,22 @@ window.QUELLO_LEGAL = {
               [
                 "p",
                 "Личная статистика, показываемая командами /me и /question_week, рассчитывается по описанным выше записям."
+              ],
+              [
+                "h3",
+                "Достижения и прогресс"
+              ],
+              [
+                "p",
+                "Quello сохраняет открытые участником достижения на сервере и дату их открытия. Прогресс рассчитывается по уникальным ответам на QOTD и сериям ответов по UTC. Администраторы сервера могут включать и отключать категории достижений, а каждый участник может включать или отключать личные сообщения об открытии достижений. Текст сообщений в обсуждениях не сохраняется для системы достижений."
+              ],
+              [
+                "h3",
+                "Публичная глобальная таблица лидеров"
+              ],
+              [
+                "p",
+                "Публичная глобальная таблица лидеров показывает ваше отображаемое имя Discord и аватар вместе с количеством созданных вами QOTD, ответов и текущей серией ответов. Рейтинги объединяют записи всех серверов, использующих одну базу данных Quello, и доступны без входа на сайт. Текст сообщений QOTD не публикуется."
               ],
               [
                 "h3",
@@ -1924,6 +2058,23 @@ window.QUELLO_LEGAL = {
                 "Режим технических работ хранит только флаг «включён/выключен», текст причины, введённый авторизованным пользователем, необязательное время окончания и время последнего изменения. Причина показывается людям, которым доступ ограничен, пока режим включён, поэтому она не должна содержать персональных данных."
               ]
             ]
+          ],
+          [
+            "Дневное ограничение публикаций",
+            [
+              [
+                "p",
+                "Для применения ограничения «один QOTD в день» Quello использует Discord User ID автора и дату/время UTC, уже сохранённые в записи каждого опубликованного QOTD. Проверка действует глобально между серверами, использующими одну базу Quello, и сбрасывается в 00:00 UTC."
+              ],
+              [
+                "p",
+                "Для Scheduled QOTD в качестве автора публикации используется Discord User ID пользователя, который последним сохранил расписание; публикация учитывается в его дневном лимите. Для расписаний, созданных до появления такой привязки, используется владелец сервера — до следующего сохранения расписания уполномоченным пользователем."
+              ],
+              [
+                "note",
+                "Для расчёта этого лимита не требуются дополнительные данные профиля, местоположения или содержимое сообщений."
+              ]
+            ]
           ]
         ]
       },
@@ -2014,6 +2165,22 @@ window.QUELLO_LEGAL = {
               [
                 "p",
                 "Persönliche Statistiken, die von /me und /question_week angezeigt werden, werden aus den oben beschriebenen Datensätzen berechnet."
+              ],
+              [
+                "h3",
+                "Erfolge und Fortschritt"
+              ],
+              [
+                "p",
+                "Quello speichert die auf einem Server freigeschalteten Erfolge eines Mitglieds und das Freischaltdatum. Der Fortschritt wird anhand eindeutiger QOTD-Teilnahmen und UTC-Antwortserien berechnet. Serveradministratoren können Erfolgskategorien aktivieren oder deaktivieren; jedes Mitglied kann Direktnachrichten zu freigeschalteten Erfolgen ein- oder ausschalten. Der Text von Diskussionsnachrichten wird für das Erfolgssystem nicht gespeichert."
+              ],
+              [
+                "h3",
+                "Öffentliche globale Bestenliste"
+              ],
+              [
+                "p",
+                "Die öffentliche globale Bestenliste zeigt deinen Discord-Anzeigenamen und Avatar zusammen mit der Anzahl deiner erstellten QOTDs, Antworten und deiner aktuellen Antwortserie. Die Ranglisten kombinieren Datensätze aller Server, die dieselbe Quello-Datenbank verwenden, und sind ohne Anmeldung sichtbar. QOTD-Nachrichtentexte werden nicht angezeigt."
               ],
               [
                 "h3",
@@ -2232,6 +2399,23 @@ window.QUELLO_LEGAL = {
                 "Der Wartungsmodus speichert nur ein Ein/Aus-Kennzeichen, den vom autorisierten Nutzer eingegebenen Grundtext, eine optionale Endzeit und den Zeitpunkt der letzten Änderung. Der Grund wird Personen angezeigt, die bei aktivem Modus gesperrt sind, und darf daher keine personenbezogenen Daten enthalten."
               ]
             ]
+          ],
+          [
+            "Tägliches Veröffentlichungslimit",
+            [
+              [
+                "p",
+                "Zur Durchsetzung des Limits von einem QOTD pro Tag verwendet Quello die Discord User ID des Autors und das UTC-Datum bzw. die UTC-Zeit, die bereits beim veröffentlichten QOTD gespeichert sind. Die Prüfung gilt serverübergreifend für dieselbe Quello-Datenbank und wird um 00:00 UTC zurückgesetzt."
+              ],
+              [
+                "p",
+                "Bei Scheduled QOTD wird die Discord User ID der Person, die den Zeitplan zuletzt gespeichert hat, als Veröffentlichungsidentität verwendet. Die Veröffentlichung wird daher auf das Tageskontingent dieser Person angerechnet. Bei älteren Zeitplänen wird bis zum nächsten Speichern durch einen berechtigten Nutzer der Serverinhaber verwendet."
+              ],
+              [
+                "note",
+                "Für die Berechnung dieses Limits sind keine zusätzlichen Profil-, Standort- oder Nachrichteninhaltsdaten erforderlich."
+              ]
+            ]
           ]
         ]
       },
@@ -2322,6 +2506,22 @@ window.QUELLO_LEGAL = {
               [
                 "p",
                 "Les statistiques personnelles affichées par /me et /question_week sont calculées à partir des enregistrements décrits ci-dessus."
+              ],
+              [
+                "h3",
+                "Succès et progression"
+              ],
+              [
+                "p",
+                "Quello enregistre les succès débloqués par un membre sur un serveur ainsi que leur date de déblocage. La progression est calculée à partir des participations uniques aux QOTD et des séries de réponses en UTC. Les administrateurs du serveur peuvent activer ou désactiver les catégories de succès, et chaque membre peut activer ou désactiver les messages privés de déblocage. Le texte des messages de discussion n’est pas enregistré pour le système de succès."
+              ],
+              [
+                "h3",
+                "Classement mondial public"
+              ],
+              [
+                "p",
+                "Le classement mondial public affiche votre nom Discord et votre avatar, ainsi que votre nombre de QOTD créés, de réponses et votre série actuelle de réponses. Les classements regroupent les données de tous les serveurs utilisant la même base de données Quello et sont accessibles sans connexion. Le texte des messages QOTD n’est pas affiché."
               ],
               [
                 "h3",
@@ -2540,6 +2740,23 @@ window.QUELLO_LEGAL = {
                 "Le mode maintenance ne conserve qu’un indicateur activé/désactivé, le motif saisi par l’utilisateur autorisé, une heure de fin facultative et l’heure de la dernière modification. Le motif est affiché aux personnes bloquées pendant que le mode est actif ; il ne doit donc contenir aucune donnée personnelle."
               ]
             ]
+          ],
+          [
+            "Limite quotidienne de publication",
+            [
+              [
+                "p",
+                "Pour appliquer la limite d’un QOTD par jour, Quello utilise le Discord User ID de l’auteur et la date/heure UTC déjà enregistrée avec chaque QOTD publié. La vérification est globale entre les serveurs utilisant la même base de données Quello et est réinitialisée à 00:00 UTC."
+              ],
+              [
+                "p",
+                "Pour Scheduled QOTD, le Discord User ID de la personne ayant enregistré le programme en dernier sert d’identité de publication ; la publication est donc décomptée de son quota quotidien. Pour les programmes créés avant cette attribution, le propriétaire du serveur est utilisé jusqu’à ce qu’un utilisateur autorisé enregistre à nouveau le programme."
+              ],
+              [
+                "note",
+                "Aucune donnée supplémentaire de profil, de localisation ou de contenu de message n’est nécessaire pour calculer cette limite."
+              ]
+            ]
           ]
         ]
       },
@@ -2630,6 +2847,22 @@ window.QUELLO_LEGAL = {
               [
                 "p",
                 "Le statistiche personali mostrate da /me e /question_week sono calcolate a partire dai record descritti sopra."
+              ],
+              [
+                "h3",
+                "Obiettivi e progressi"
+              ],
+              [
+                "p",
+                "Quello memorizza gli obiettivi sbloccati da un membro su un server e la relativa data di sblocco. I progressi sono calcolati in base alle partecipazioni QOTD uniche e alle serie di risposte UTC. Gli amministratori del server possono attivare o disattivare le categorie di obiettivi e ogni membro può attivare o disattivare i messaggi diretti relativi agli obiettivi sbloccati. Il testo dei messaggi di discussione non viene memorizzato dal sistema degli obiettivi."
+              ],
+              [
+                "h3",
+                "Classifica globale pubblica"
+              ],
+              [
+                "p",
+                "La classifica globale pubblica mostra il tuo nome visualizzato e il tuo avatar Discord insieme al numero di QOTD creati, risposte e alla tua serie attuale di risposte. Le classifiche combinano i dati di tutti i server che utilizzano lo stesso database Quello e sono consultabili senza effettuare l’accesso. Il testo dei messaggi QOTD non viene mostrato."
               ],
               [
                 "h3",
@@ -2846,6 +3079,23 @@ window.QUELLO_LEGAL = {
               [
                 "p",
                 "La modalità manutenzione memorizza solo un indicatore attivo/non attivo, il motivo inserito dall’utente autorizzato, un’ora di fine facoltativa e l’ora dell’ultima modifica. Il motivo viene mostrato alle persone bloccate mentre la modalità è attiva e non deve quindi contenere dati personali."
+              ]
+            ]
+          ],
+          [
+            "Limite giornaliero di pubblicazione",
+            [
+              [
+                "p",
+                "Per applicare il limite di un QOTD al giorno, Quello utilizza il Discord User ID dell’autore e la data/ora UTC già salvata con ogni QOTD pubblicato. Il controllo è globale tra i server che utilizzano lo stesso database Quello e si azzera alle 00:00 UTC."
+              ],
+              [
+                "p",
+                "Per Scheduled QOTD viene utilizzato come identità di pubblicazione il Discord User ID della persona che ha salvato il programma più di recente; la pubblicazione viene quindi conteggiata nella quota giornaliera di quella persona. Per i programmi creati prima di questa attribuzione viene utilizzato il proprietario del server finché un utente autorizzato non salva nuovamente il programma."
+              ],
+              [
+                "note",
+                "Per calcolare questo limite non sono necessari ulteriori dati del profilo, della posizione o del contenuto dei messaggi."
               ]
             ]
           ]

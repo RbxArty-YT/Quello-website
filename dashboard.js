@@ -748,10 +748,15 @@
       rows.forEach((row, index) => {
         const count = Number(row.count) || 0;
         const label = kind === 'creators' ? t('leader_count_qotd', { n: count }) : t('leader_count_answers', { n: count });
-        list.append(el('article', { class: 'leader-row' },
-          el('span', { class: 'leader-rank', text: String(index + 1).padStart(2, '0') }),
-          el('div', { class: 'leader-person' }, el('strong', { text: row.user_name || ('User ' + row.user_id) }), el('small', { text: row.user_id })),
-          el('span', { class: 'badge-pill', text: label })));
+        const card = el('article', { class: 'leader-row' + (row.banner ? ' has-profile-banner' : '') });
+        if (row.banner && /^https:\/\/cdn\.discordapp\.com\/banners\//.test(row.banner)) {
+          card.style.backgroundImage = 'linear-gradient(90deg,rgba(12,14,22,.90),rgba(12,14,22,.72)),url("' + row.banner.replace(/["\\]/g, '') + '")';
+        }
+        const identity = el('div', { class: 'leader-person' });
+        if (row.avatar) identity.append(el('img', { class: 'leader-avatar', src: row.avatar, alt: '', loading: 'lazy', referrerpolicy: 'no-referrer' }));
+        identity.append(el('div', null, el('strong', { text: row.user_name || ('User ' + row.user_id) }), el('small', { text: row.user_id })));
+        card.append(el('span', { class: 'leader-rank', text: String(index + 1).padStart(2, '0') }), identity, el('span', { class: 'badge-pill', text: label }));
+        list.append(card);
       });
     };
     const load = () => loadInto(list, () => guildApi('/leaderboard'), draw);
@@ -929,6 +934,13 @@
     card.replaceChildren(
       el('img', { class: 'avatar-round', src: me.avatar, alt: '', width: 38, height: 38, referrerpolicy: 'no-referrer' }),
       el('div', null, el('strong', { text: me.name }), el('small', { text: 'Discord' })));
+    if (me.banner && /^https:\/\/cdn\.discordapp\.com\/banners\//.test(me.banner)) {
+      card.style.backgroundImage = 'linear-gradient(90deg,rgba(12,14,22,.88),rgba(12,14,22,.72)),url("' + me.banner.replace(/[\"\\]/g, '') + '")';
+      card.classList.add('has-profile-banner');
+    } else {
+      card.style.backgroundImage = '';
+      card.classList.remove('has-profile-banner');
+    }
     card.classList.remove('is-hidden');
   }
 

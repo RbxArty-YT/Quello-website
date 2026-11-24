@@ -404,3 +404,14 @@ select.creator-input option{background:var(--surface-2,#1b1b24);color:var(--text
   .creator-console-overlay .creator-filter-select-trigger,
   .creator-console-overlay .creator-filter-select-chevron { animation:none !important; transition:none !important; }
 }
+
+/* Discord profile banners are shared across all user identity cards. */
+.leader-row.has-profile-banner { background-size:cover; background-position:center; background-repeat:no-repeat; border-color:rgba(255,255,255,.16); }
+.leader-row.has-profile-banner .leader-rank,.leader-row.has-profile-banner .leader-person strong,.leader-row.has-profile-banner .leader-person small { color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.82); }
+.leader-person { display:flex; align-items:center; gap:11px; min-width:0; }
+.leader-person > div { display:grid; gap:3px; min-width:0; }
+.leader-avatar,.creator-team-avatar { width:38px; height:38px; border-radius:50%; object-fit:cover; flex:0 0 auto; border:1px solid rgba(255,255,255,.25); }
+.creator-team-table tbody tr.has-profile-banner { background-size:cover; background-position:center; background-repeat:no-repeat; border-radius:12px; }
+.creator-team-table tbody tr.has-profile-banner td { color:#fff !important; text-shadow:0 1px 4px rgba(0,0,0,.82); }
+.creator-team-person { display:flex !important; align-items:center; gap:10px !important; }
+.creator-team-person::before { display:none !important; }

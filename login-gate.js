@@ -10,7 +10,7 @@
   'use strict';
 
   // Pages anyone can open without signing in.
-  var OPEN = ['login.html', 'dashboard.html', 'about.html', 'privacy.html', 'terms.html'];
+  var OPEN = ['login.html', 'dashboard.html', 'about.html', 'privacy.html', 'terms.html', 'global-leaderboard.html'];
   var TOKEN_KEY = 'quello-dash-token';
   var AFTER_KEY = 'quello-after-login';
   var GUEST_KEY = 'quello-guest';   // set by "Continue without signing in" on login.html (this tab only)

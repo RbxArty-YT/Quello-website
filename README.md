@@ -16,6 +16,7 @@ Updated website for Quello.
 - Did You Know tips, Random QOTD, achievements, and a Quello easter egg
 - Community Spotlight
 - Terms of Service and Privacy Policy
+- Public Global Leaderboard page with creator, responder and current-streak rankings across all Quello servers
 
 The public landing page does not expose private server statistics or leaderboards. Those server-specific tools are available only inside the Discord-authenticated Dashboard to users with the appropriate server access.
 
@@ -162,7 +163,6 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 - Copyright notices and a link to the project `LICENSE` were added to the website. Terms of Service and Privacy Policy were not changed for this work.
 - Admin Panel now has separate Global Logs and Global Audit Logs views. Global access is enforced server-side for the Bot Owner only.
 - Removed the Appearance Lab, Localization Lab, Experiment Features, and Developer Tools tabs from the Admin Panel interface.
-- Added the public Roadmap section with the requested planned features. `Configuration Profiles` is intentionally excluded.
 - Dashboard now supports resetting the server-language QOTD counter without deleting QOTD history or published questions, and clearing normal Logs without changing Audit Logs.
 - Full integration and responsive-browser verification remain pending.
 
@@ -174,3 +174,8 @@ Latest update: the site now combines the Quello avatar, slide-out navigation, in
 - Updated the static HTML fallback command documentation to match the current `/qotd` and `/setup` option names and automatic channel selection.
 - German, French and Italian bot localization was expanded to cover at least 96% of the 312 interface keys; placeholder parity and translation-coverage checks pass.
 - Browser-based responsive verification and full API integration testing still require the deployment/browser environment. The full Python suite also requires the pinned `disnake` and `aiosqlite` dependencies.
+
+## Global Leaderboard
+- `global-leaderboard.html` is a public, read-only page and is exempt from the sign-in gate.
+- It loads the three global top-10 rankings from the bot API's `/public/global-leaderboard` endpoint and supports EN / RU / DE / FR / IT.
+- The endpoint aggregates only the QOTD and answer records in the bot's shared SQLite database; separate bot deployments do not share rankings automatically.

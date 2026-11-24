@@ -64,3 +64,32 @@ body{min-height:100vh;background:var(--bg);color:var(--text)}
   .about-nav-actions .header-language{flex:none;margin-left:auto}
   .about-nav-actions .theme-toggle{flex:none}
 }
+
+
+/* Official brand marks for creator social links */
+.about-socials .about-social-link{gap:10px;min-height:44px}
+.about-socials .about-social-link img{display:block;width:20px;height:20px;flex:0 0 20px;object-fit:contain}
+.about-socials .about-social-link span{color:inherit;font-size:13px}
+.about-socials .about-social-discord img{filter:none}
+.about-socials .about-social-telegram img{filter:none}
+.about-socials .about-social-tiktok img{filter:var(--social-logo-filter,none)}
+:root[data-theme="dark"] .about-socials .about-social-tiktok img{filter:invert(1)}
+.about-socials .about-social-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+
+/* Creator profile: personality and interests */
+.about-extra{margin-top:30px;padding:clamp(24px,4vw,38px);border:1px solid var(--line);border-radius:26px;background:color-mix(in srgb,var(--surface) 88%,transparent);box-shadow:0 18px 55px rgba(0,0,0,.10)}
+.about-section-heading{text-align:center;margin:0 auto 24px;max-width:620px}
+.about-section-heading h2{margin:8px 0 9px;font-size:clamp(24px,3.5vw,32px);letter-spacing:-.03em;color:var(--text-strong)}
+.about-section-heading>p:last-child{margin:0;color:var(--text-2);font-size:14px;line-height:1.7}
+.about-info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.about-info-card{min-width:0;padding:22px;border:1px solid var(--line);border-radius:19px;background:var(--surface-2);text-align:left}
+.about-info-card h3{margin:10px 0 9px;color:var(--text-strong);font-size:17px}
+.about-info-card>p{margin:0;color:var(--text-2);font-size:13px;line-height:1.75}
+.about-info-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:rgba(139,92,246,.14);color:var(--accent-text);font-size:21px}
+.about-tags,.about-favorites-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.about-tags span,.about-favorites-list span{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--text-2);font-size:11px;font-weight:650}
+.about-favorites-card{grid-column:1/-1}
+.about-note{margin:18px 0 0;text-align:center;color:var(--text-3);font-size:12px;line-height:1.6}
+:root[data-theme="light"] .about-extra{box-shadow:0 18px 55px rgba(40,25,80,.07)}
+@media(max-width:620px){.about-extra{padding:22px 16px;border-radius:21px}.about-info-grid{grid-template-columns:1fr}.about-favorites-card{grid-column:auto}.about-info-card{padding:19px}}

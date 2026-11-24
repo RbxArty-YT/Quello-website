@@ -937,8 +937,17 @@
           const row = el('tr');
           const roleKey = roleLabel[member.role];
           const teamColumns = ['colName', 'colRole', 'colStatus'];
+          const nameCell = el('td', 'creator-team-person');
+          if (member.avatar) {
+            const avatar = el('img', 'creator-team-avatar'); avatar.src = member.avatar; avatar.alt = ''; avatar.loading = 'lazy'; avatar.referrerPolicy = 'no-referrer'; nameCell.append(avatar);
+          }
+          nameCell.append(el('span', '', member.name));
+          if (member.banner && /^https:\/\/cdn\.discordapp\.com\/banners\//.test(member.banner)) {
+            row.classList.add('has-profile-banner');
+            row.style.backgroundImage = 'linear-gradient(90deg,rgba(12,14,22,.90),rgba(12,14,22,.76)),url("' + member.banner.replace(/["\\]/g, '') + '")';
+          }
           const cells = [
-            el('td', '', member.name),
+            nameCell,
             el('td', '', roleKey ? ownerText(roleKey) : member.role),
             el('td', member.status === 'invited' ? 'creator-pending' : '', member.status === 'invited' ? ownerText('statusPending') : '')
           ];
