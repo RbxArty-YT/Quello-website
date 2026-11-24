@@ -162,6 +162,10 @@ window.QUELLO_LEGAL = {
                 ]
               ],
               [
+                "p",
+                "Quello also offers server-specific QOTD categories, achievements, a public global leaderboard, opt-in public profiles, an opt-in Server Discovery directory and the signed-in Feedback Center."
+              ],
+              [
                 "note",
                 "Features may be changed, suspended, or removed at any time."
               ]
@@ -367,6 +371,27 @@ window.QUELLO_LEGAL = {
                 "The Bot Owner and the owner of the server where a QOTD is published may bypass this limit. The limit is based on the publishing user’s Discord User ID and the QOTD publication record."
               ]
             ]
+          ],
+          [
+            "Optional community features",
+            [
+              [
+                "p",
+                "QOTD categories are scoped to individual Discord servers. Server members with the configured QOTD manager role, the Bot Owner or the Server Owner may manage categories through the available bot controls. Categories can be attached to manual, random and scheduled QOTDs."
+              ],
+              [
+                "p",
+                "Public profiles are private by default and become visible only when the account owner opts in. The profile owner controls whether answer counts, created-question counts and achievement information are shown. Discord profile banners are displayed only when Discord makes a banner available."
+              ],
+              [
+                "p",
+                "Server Discovery is an optional directory. A server owner or Discord administrator controls whether a listing is public and is responsible for the description and invite link they submit. Public listings may show the server name, icon, member count, category, description and invite URL."
+              ],
+              [
+                "p",
+                "The Feedback Center lets signed-in users submit ideas, bug reports and other feedback and exchange replies with the Quello team. The team may update a feedback item’s status. Submitting feedback does not guarantee that a suggestion will be accepted or implemented, or that a response will arrive within a particular time."
+              ]
+            ]
           ]
         ]
       },
@@ -416,6 +441,10 @@ window.QUELLO_LEGAL = {
                   "показа личной и серверной статистики участия, а также публичных глобальных рейтингов;",
                   "веб-сайта с документацией и панелью управления с входом для управления настройками сервера и QOTD, а также других связанных функций."
                 ]
+              ],
+              [
+                "p",
+                "Quello также предлагает категории QOTD для серверов, достижения, публичную глобальную таблицу лидеров, добровольные публичные профили, добровольный каталог Server Discovery и Центр обратной связи для вошедших пользователей."
               ],
               [
                 "note",
@@ -623,6 +652,27 @@ window.QUELLO_LEGAL = {
                 "Bot Owner и владелец сервера, на котором публикуется QOTD, могут обходить это ограничение. Лимит определяется по Discord User ID публикующего пользователя и записи о публикации QOTD."
               ]
             ]
+          ],
+          [
+            "Дополнительные функции сообщества",
+            [
+              [
+                "p",
+                "Категории QOTD относятся к отдельным серверам Discord. Управлять ими могут участники с настроенной ролью QOTD Manager, Bot Owner или владелец сервера через доступные инструменты бота. Категории можно назначать обычным, случайным и запланированным QOTD."
+              ],
+              [
+                "p",
+                "Публичные профили по умолчанию закрыты и становятся видимыми только после добровольного включения владельцем аккаунта. Владелец профиля управляет отображением количества ответов, созданных вопросов и достижений. Баннер Discord отображается только в том случае, если Discord предоставляет его."
+              ],
+              [
+                "p",
+                "Server Discovery — необязательный каталог. Владелец сервера или Discord-администратор управляет публичностью карточки и отвечает за отправленные описание и ссылку-приглашение. В публичной карточке могут отображаться название сервера, значок, количество участников, категория, описание и ссылка-приглашение."
+              ],
+              [
+                "p",
+                "Центр обратной связи позволяет вошедшим пользователям отправлять идеи, сообщения об ошибках и другие отзывы, а также обмениваться ответами с командой Quello. Команда может менять статус обращения. Отправка отзыва не гарантирует, что предложение будет принято или реализовано, и не гарантирует ответ в определённый срок."
+              ]
+            ]
           ]
         ]
       },
@@ -672,6 +722,10 @@ window.QUELLO_LEGAL = {
                   "die Anzeige persönlicher und serverweiter Teilnahmestatistiken sowie öffentlicher globaler Ranglisten;",
                   "eine Website mit Dokumentation und einem Dashboard mit Anmeldung zur Verwaltung von Servereinstellungen und QOTDs sowie weitere zugehörige Funktionen."
                 ]
+              ],
+              [
+                "p",
+                "Quello bietet außerdem serverspezifische QOTD-Kategorien, Erfolge, eine öffentliche globale Bestenliste, freiwillig öffentliche Profile, ein optionales Server-Discovery-Verzeichnis und ein Feedback-Center für angemeldete Nutzer."
               ],
               [
                 "note",
@@ -879,6 +933,27 @@ window.QUELLO_LEGAL = {
                 "Der Bot Owner und der Eigentümer des Servers, auf dem das QOTD veröffentlicht wird, können dieses Limit umgehen. Das Limit basiert auf der Discord User ID des veröffentlichenden Nutzers und dem QOTD-Veröffentlichungsdatensatz."
               ]
             ]
+          ],
+          [
+            "Optionale Community-Funktionen",
+            [
+              [
+                "p",
+                "QOTD-Kategorien gelten jeweils nur für einen Discord-Server. Mitglieder mit der konfigurierten QOTD-Manager-Rolle, der Bot Owner oder der Serverinhaber können Kategorien über die verfügbaren Bot-Funktionen verwalten. Kategorien können manuellen, zufälligen und geplanten QOTDs zugewiesen werden."
+              ],
+              [
+                "p",
+                "Öffentliche Profile sind standardmäßig privat und werden erst sichtbar, wenn der Kontoinhaber dies ausdrücklich aktiviert. Der Profilinhaber bestimmt, ob Antwortzahlen, erstellte Fragen und Erfolgsinformationen angezeigt werden. Discord-Profilbanner werden nur angezeigt, wenn Discord eines bereitstellt."
+              ],
+              [
+                "p",
+                "Server Discovery ist ein optionales Verzeichnis. Der Serverinhaber oder ein Discord-Administrator entscheidet, ob ein Eintrag öffentlich ist, und ist für die eingereichte Beschreibung und den Einladungslink verantwortlich. Öffentliche Einträge können Servername, Symbol, Mitgliederzahl, Kategorie, Beschreibung und Einladungs-URL anzeigen."
+              ],
+              [
+                "p",
+                "Über das Feedback-Center können angemeldete Nutzer Ideen, Fehlerberichte und sonstiges Feedback einreichen und mit dem Quello-Team antworten. Das Team kann den Status eines Eintrags ändern. Das Einreichen von Feedback garantiert weder die Annahme oder Umsetzung eines Vorschlags noch eine Antwort innerhalb einer bestimmten Frist."
+              ]
+            ]
           ]
         ]
       },
@@ -928,6 +1003,10 @@ window.QUELLO_LEGAL = {
                   "afficher des statistiques de participation personnelles et du serveur, ainsi que des classements mondiaux publics ;",
                   "un site web avec documentation et un tableau de bord avec connexion pour gérer les paramètres du serveur et les QOTD, ainsi que d’autres fonctionnalités associées."
                 ]
+              ],
+              [
+                "p",
+                "Quello propose également des catégories QOTD par serveur, des succès, un classement mondial public, des profils publics facultatifs, un annuaire Server Discovery facultatif et un centre de retours réservé aux utilisateurs connectés."
               ],
               [
                 "note",
@@ -1135,6 +1214,27 @@ window.QUELLO_LEGAL = {
                 "Le Bot Owner et le propriétaire du serveur sur lequel le QOTD est publié peuvent contourner cette limite. Celle-ci repose sur le Discord User ID de l’utilisateur qui publie et sur l’enregistrement de publication du QOTD."
               ]
             ]
+          ],
+          [
+            "Fonctionnalités communautaires facultatives",
+            [
+              [
+                "p",
+                "Les catégories QOTD sont propres à chaque serveur Discord. Les membres disposant du rôle de gestion QOTD configuré, le Bot Owner ou le propriétaire du serveur peuvent gérer les catégories avec les commandes disponibles. Les catégories peuvent être associées aux QOTD manuels, aléatoires et programmés."
+              ],
+              [
+                "p",
+                "Les profils publics sont privés par défaut et ne deviennent visibles que si leur propriétaire l’active volontairement. Le propriétaire du profil contrôle l’affichage du nombre de réponses, des questions créées et des succès. Les bannières de profil Discord ne sont affichées que si Discord en fournit une."
+              ],
+              [
+                "p",
+                "La découverte de serveurs est un annuaire facultatif. Le propriétaire du serveur ou un administrateur Discord décide si une fiche est publique et répond de la description et du lien d’invitation fournis. Les fiches publiques peuvent afficher le nom du serveur, son icône, le nombre de membres, la catégorie, la description et le lien d’invitation."
+              ],
+              [
+                "p",
+                "Le centre de retours permet aux utilisateurs connectés d’envoyer des idées, des rapports de bogues et d’autres commentaires, puis d’échanger des réponses avec l’équipe Quello. L’équipe peut modifier le statut d’un retour. L’envoi d’un commentaire ne garantit ni son acceptation ou sa mise en œuvre, ni une réponse dans un délai précis."
+              ]
+            ]
           ]
         ]
       },
@@ -1184,6 +1284,10 @@ window.QUELLO_LEGAL = {
                   "mostrare statistiche di partecipazione personali e del server, oltre alle classifiche globali pubbliche;",
                   "un sito web con documentazione e una dashboard con accesso per gestire le impostazioni del server e i QOTD, oltre ad altre funzioni correlate."
                 ]
+              ],
+              [
+                "p",
+                "Quello offre inoltre categorie QOTD per server, traguardi, una classifica globale pubblica, profili pubblici facoltativi, una directory Server Discovery facoltativa e un Centro feedback per gli utenti autenticati."
               ],
               [
                 "note",
@@ -1391,6 +1495,27 @@ window.QUELLO_LEGAL = {
                 "Il Bot Owner e il proprietario del server in cui viene pubblicato il QOTD possono ignorare questo limite. Il limite si basa sul Discord User ID dell’utente che pubblica e sul record di pubblicazione del QOTD."
               ]
             ]
+          ],
+          [
+            "Funzioni community facoltative",
+            [
+              [
+                "p",
+                "Le categorie QOTD sono specifiche per ciascun server Discord. Possono gestirle i membri con il ruolo QOTD manager configurato, il Bot Owner o il proprietario del server tramite i controlli disponibili del bot. Le categorie possono essere assegnate ai QOTD manuali, casuali e programmati."
+              ],
+              [
+                "p",
+                "I profili pubblici sono privati per impostazione predefinita e diventano visibili solo quando il proprietario dell’account sceglie di renderli pubblici. Il proprietario del profilo controlla se mostrare il numero di risposte, le domande create e le informazioni sui traguardi. I banner del profilo Discord vengono mostrati solo quando Discord ne rende disponibile uno."
+              ],
+              [
+                "p",
+                "La Server Discovery è una directory facoltativa. Il proprietario del server o un amministratore Discord decide se una scheda è pubblica ed è responsabile della descrizione e del link d’invito inviati. Le schede pubbliche possono mostrare nome del server, icona, numero di membri, categoria, descrizione e link d’invito."
+              ],
+              [
+                "p",
+                "Il Centro feedback consente agli utenti autenticati di inviare idee, segnalazioni di bug e altri feedback e di scambiare risposte con il team Quello. Il team può aggiornare lo stato di una segnalazione. L’invio di feedback non garantisce che una proposta venga accettata o realizzata, né che si riceva una risposta entro un periodo specifico."
+              ]
+            ]
           ]
         ]
       }
@@ -1583,6 +1708,10 @@ window.QUELLO_LEGAL = {
                   "Interaction IDs used to prevent duplicate actions are removed after about 30 days.",
                   "Deleting a QOTD with /delete removes its record and its recorded answers from the active database."
                 ]
+              ],
+              [
+                "p",
+                "Public-profile visibility settings remain stored when a profile is made private. Disabled Server Discovery listings are removed from the public directory, but their saved settings remain stored. Feedback items and replies remain in the database while managed by the service; the current implementation does not define an automatic expiry period for them."
               ]
             ]
           ],
@@ -1732,6 +1861,47 @@ window.QUELLO_LEGAL = {
               [
                 "note",
                 "No separate profile, location, or message-content data is needed to calculate this limit."
+              ]
+            ]
+          ],
+          [
+            "Public profiles, Server Discovery and Feedback Center",
+            [
+              [
+                "h3",
+                "QOTD categories"
+              ],
+              [
+                "p",
+                "Server-specific QOTD categories are stored with the server ID, category name, creator’s Discord User ID and creation time. Published QOTDs may reference a category ID. Category names are used to organize questions and are not displayed as personal profile data."
+              ],
+              [
+                "h3",
+                "Public profiles and Discord profile banners"
+              ],
+              [
+                "p",
+                "The banner image is retrieved from Discord when available; Quello does not upload or create a separate copy of the image. Where supported, the same banner may be used as the background of a user card in the Dashboard, Admin Panel, public profile or leaderboard. If no banner is available, the existing default card or profile background is used."
+              ],
+              [
+                "p",
+                "You can make your profile private and control whether answers, created questions and achievements are shown. When a profile is made private, its public endpoint stops returning the profile. Your privacy settings remain stored so you can change them later."
+              ],
+              [
+                "h3",
+                "Opt-in Server Discovery"
+              ],
+              [
+                "p",
+                "Server Discovery is optional. A server owner or Discord administrator can enable or disable a public server listing. For a listing, Quello stores the server ID, description, category, invite URL, the Discord User ID of the person who last changed it and the update time. While enabled, the public directory may display the server name, icon, member count, description, category and invite URL. Disabling a listing removes it from the public directory, but its saved listing settings remain in the database."
+              ],
+              [
+                "h3",
+                "Feedback Center"
+              ],
+              [
+                "p",
+                "When you submit feedback while signed in, Quello stores your Discord User ID and display name, the feedback category, title, description, status and creation/update times. Replies are stored with the author’s User ID and display name, whether the author is a Quello team member, the reply text and its time. You can view your own feedback items; authorized Quello team members can view feedback across users, reply and update its status. Do not include passwords or other sensitive information in feedback."
               ]
             ]
           ]
@@ -1924,6 +2094,10 @@ window.QUELLO_LEGAL = {
                   "ID взаимодействий, предотвращающие повторные действия, удаляются примерно через 30 дней.",
                   "Удаление QOTD командой /delete убирает его запись и записанные ответы из активной базы данных."
                 ]
+              ],
+              [
+                "p",
+                "Настройки публичного профиля сохраняются после его закрытия. Отключённые карточки Server Discovery исчезают из публичного каталога, но сохранённые настройки остаются в базе данных. Обращения и ответы Центра обратной связи хранятся в базе, пока обрабатываются сервисом; текущая реализация не задаёт для них автоматический срок удаления."
               ]
             ]
           ],
@@ -2073,6 +2247,47 @@ window.QUELLO_LEGAL = {
               [
                 "note",
                 "Для расчёта этого лимита не требуются дополнительные данные профиля, местоположения или содержимое сообщений."
+              ]
+            ]
+          ],
+          [
+            "Публичные профили, каталог серверов и центр обратной связи",
+            [
+              [
+                "h3",
+                "Категории QOTD"
+              ],
+              [
+                "p",
+                "Категории QOTD хранятся отдельно для каждого сервера вместе с ID сервера, названием категории, Discord User ID создателя и временем создания. Опубликованные вопросы могут ссылаться на ID категории. Названия категорий используются для организации вопросов и не отображаются как личные данные профиля."
+              ],
+              [
+                "h3",
+                "Публичные профили и баннеры Discord"
+              ],
+              [
+                "p",
+                "Изображение баннера запрашивается у Discord, если оно доступно; Quello не загружает и не создаёт отдельную копию изображения. В поддерживаемых разделах этот же баннер может использоваться как фон карточки пользователя в Dashboard, Admin Panel, публичном профиле или таблице лидеров. Если баннер недоступен, используется стандартный фон карточки или профиля."
+              ],
+              [
+                "p",
+                "Можно закрыть профиль и отдельно управлять отображением ответов, созданных вопросов и достижений. После закрытия профиль перестаёт возвращаться публичным API. Настройки конфиденциальности сохраняются, чтобы их можно было изменить позднее."
+              ],
+              [
+                "h3",
+                "Добровольный каталог серверов"
+              ],
+              [
+                "p",
+                "Каталог серверов является необязательным. Владелец сервера или Discord-администратор может включить или отключить публичную карточку сервера. Для неё Quello хранит ID сервера, описание, категорию, ссылку-приглашение, Discord User ID последнего редактора и время изменения. Пока карточка включена, публичный каталог может показывать название сервера, значок, количество участников, описание, категорию и ссылку-приглашение. После отключения карточка исчезает из публичного каталога, но её настройки остаются в базе данных."
+              ],
+              [
+                "h3",
+                "Центр обратной связи"
+              ],
+              [
+                "p",
+                "При отправке обратной связи после входа через Discord Quello сохраняет ваш Discord User ID и отображаемое имя, категорию, заголовок, описание, статус и время создания/изменения обращения. Ответы сохраняются вместе с User ID и именем автора, отметкой о принадлежности к команде Quello, текстом ответа и временем. Вы можете просматривать собственные обращения; уполномоченные участники команды Quello могут просматривать обращения всех пользователей, отвечать и менять их статус. Не указывайте в обращениях пароли и другие чувствительные сведения."
               ]
             ]
           ]
@@ -2265,6 +2480,10 @@ window.QUELLO_LEGAL = {
                   "Interaktions-IDs zur Vermeidung doppelter Aktionen werden nach etwa 30 Tagen entfernt.",
                   "Das Löschen eines QOTD mit /delete entfernt dessen Datensatz und die erfassten Antworten aus der aktiven Datenbank."
                 ]
+              ],
+              [
+                "p",
+                "Einstellungen zur Sichtbarkeit eines öffentlichen Profils bleiben gespeichert, wenn das Profil privat geschaltet wird. Deaktivierte Server-Discovery-Einträge werden aus dem öffentlichen Verzeichnis entfernt, ihre Einstellungen bleiben jedoch gespeichert. Feedback-Einträge und Antworten bleiben in der Datenbank, solange sie vom Dienst verwaltet werden; die aktuelle Implementierung legt dafür keine automatische Ablaufzeit fest."
               ]
             ]
           ],
@@ -2414,6 +2633,47 @@ window.QUELLO_LEGAL = {
               [
                 "note",
                 "Für die Berechnung dieses Limits sind keine zusätzlichen Profil-, Standort- oder Nachrichteninhaltsdaten erforderlich."
+              ]
+            ]
+          ],
+          [
+            "Öffentliche Profile, Server Discovery und Feedback-Center",
+            [
+              [
+                "h3",
+                "QOTD-Kategorien"
+              ],
+              [
+                "p",
+                "Serverspezifische QOTD-Kategorien werden zusammen mit der Server-ID, dem Kategorienamen, der Discord-User-ID des Erstellers und dem Erstellungszeitpunkt gespeichert. Veröffentlichte QOTDs können auf eine Kategorie-ID verweisen. Kategorienamen dienen zur Organisation von Fragen und werden nicht als persönliche Profildaten angezeigt."
+              ],
+              [
+                "h3",
+                "Öffentliche Profile und Discord-Profilbanner"
+              ],
+              [
+                "p",
+                "Das Bannerbild wird bei Verfügbarkeit von Discord abgerufen; Quello lädt keine separate Bildkopie hoch und erstellt keine. Wo unterstützt, kann dasselbe Banner als Hintergrund einer Benutzerkarte im Dashboard, Admin Panel, öffentlichen Profil oder in Bestenlisten dienen. Ist kein Banner verfügbar, wird der vorhandene Standardhintergrund der Karte oder des Profils verwendet."
+              ],
+              [
+                "p",
+                "Du kannst dein Profil privat schalten und separat festlegen, ob Antworten, erstellte Fragen und Erfolge angezeigt werden. Bei einem privaten Profil liefert der öffentliche Endpunkt das Profil nicht mehr aus. Deine Datenschutzeinstellungen bleiben gespeichert, damit du sie später ändern kannst."
+              ],
+              [
+                "h3",
+                "Freiwilliges Serververzeichnis"
+              ],
+              [
+                "p",
+                "Server Discovery ist optional. Der Serverinhaber oder ein Discord-Administrator kann einen öffentlichen Eintrag aktivieren oder deaktivieren. Quello speichert dafür die Server-ID, Beschreibung, Kategorie, Einladungs-URL, die Discord-User-ID der letzten bearbeitenden Person und den Änderungszeitpunkt. Solange der Eintrag aktiviert ist, kann das öffentliche Verzeichnis Servername, Symbol, Mitgliederzahl, Beschreibung, Kategorie und Einladungs-URL anzeigen. Nach der Deaktivierung verschwindet der Eintrag aus dem öffentlichen Verzeichnis; seine gespeicherten Einstellungen bleiben jedoch in der Datenbank."
+              ],
+              [
+                "h3",
+                "Feedback-Center"
+              ],
+              [
+                "p",
+                "Wenn du angemeldet Feedback sendest, speichert Quello deine Discord-User-ID und deinen Anzeigenamen, Kategorie, Titel, Beschreibung, Status sowie Erstellungs- und Änderungszeitpunkte. Antworten werden mit der User-ID und dem Namen des Autors, einer Kennzeichnung als Quello-Teammitglied, dem Antworttext und dem Zeitpunkt gespeichert. Du kannst deine eigenen Einträge ansehen; autorisierte Quello-Teammitglieder können alle Einträge einsehen, antworten und ihren Status ändern. Gib in Feedback keine Passwörter oder anderen sensiblen Informationen an."
               ]
             ]
           ]
@@ -2606,6 +2866,10 @@ window.QUELLO_LEGAL = {
                   "Les ID d’interaction servant à éviter les actions en double sont supprimés au bout d’environ 30 jours.",
                   "La suppression d’un QOTD avec /delete retire son enregistrement et ses réponses enregistrées de la base de données active."
                 ]
+              ],
+              [
+                "p",
+                "Les réglages de visibilité d’un profil restent enregistrés lorsque celui-ci est rendu privé. Les fiches Server Discovery désactivées sont retirées de l’annuaire public, mais leurs paramètres restent enregistrés. Les retours et leurs réponses restent dans la base de données tant qu’ils sont gérés par le service ; l’implémentation actuelle ne prévoit pas de durée d’expiration automatique pour ces éléments."
               ]
             ]
           ],
@@ -2755,6 +3019,47 @@ window.QUELLO_LEGAL = {
               [
                 "note",
                 "Aucune donnée supplémentaire de profil, de localisation ou de contenu de message n’est nécessaire pour calculer cette limite."
+              ]
+            ]
+          ],
+          [
+            "Profils publics, découverte de serveurs et centre de retours",
+            [
+              [
+                "h3",
+                "Catégories QOTD"
+              ],
+              [
+                "p",
+                "Les catégories QOTD propres à chaque serveur sont enregistrées avec l’identifiant du serveur, le nom de la catégorie, l’identifiant Discord de son créateur et la date de création. Les QOTD publiés peuvent référencer un identifiant de catégorie. Les noms de catégories servent à organiser les questions et ne sont pas affichés comme données personnelles de profil."
+              ],
+              [
+                "h3",
+                "Profils publics et bannières Discord"
+              ],
+              [
+                "p",
+                "L’image de bannière est récupérée auprès de Discord lorsqu’elle est disponible ; Quello ne téléverse ni ne crée de copie distincte de cette image. Lorsque cette fonction est prise en charge, la même bannière peut servir d’arrière-plan à une carte utilisateur dans le Dashboard, l’Admin Panel, le profil public ou les classements. Si aucune bannière n’est disponible, l’arrière-plan standard de la carte ou du profil est conservé."
+              ],
+              [
+                "p",
+                "Vous pouvez rendre votre profil privé et choisir séparément d’afficher ou non vos réponses, vos questions publiées et vos succès. Une fois le profil rendu privé, le point d’accès public ne renvoie plus le profil. Vos réglages de confidentialité restent enregistrés afin que vous puissiez les modifier ultérieurement."
+              ],
+              [
+                "h3",
+                "Annuaire facultatif des serveurs"
+              ],
+              [
+                "p",
+                "La découverte de serveurs est facultative. Le propriétaire du serveur ou un administrateur Discord peut activer ou désactiver une fiche publique. Quello conserve pour cette fiche l’identifiant du serveur, sa description, sa catégorie, son lien d’invitation, l’identifiant Discord de la dernière personne ayant effectué une modification et la date de mise à jour. Tant que la fiche est activée, l’annuaire public peut afficher le nom du serveur, son icône, le nombre de membres, sa description, sa catégorie et son lien d’invitation. La désactivation retire la fiche de l’annuaire public, mais ses paramètres restent enregistrés dans la base de données."
+              ],
+              [
+                "h3",
+                "Centre de retours"
+              ],
+              [
+                "p",
+                "Lorsque vous envoyez un retour après connexion, Quello conserve votre identifiant Discord et votre nom d’affichage, la catégorie, le titre, la description, le statut et les dates de création et de mise à jour. Les réponses sont enregistrées avec l’identifiant et le nom de leur auteur, une indication précisant s’il fait partie de l’équipe Quello, le texte de la réponse et sa date. Vous pouvez consulter vos propres retours ; les membres autorisés de l’équipe Quello peuvent consulter tous les retours, répondre et modifier leur statut. N’incluez pas de mots de passe ni d’autres informations sensibles dans vos retours."
               ]
             ]
           ]
@@ -2947,6 +3252,10 @@ window.QUELLO_LEGAL = {
                   "Gli ID delle interazioni usati per evitare azioni duplicate vengono rimossi dopo circa 30 giorni.",
                   "L’eliminazione di un QOTD con /delete rimuove il suo record e le risposte registrate dal database attivo."
                 ]
+              ],
+              [
+                "p",
+                "Le impostazioni di visibilità del profilo restano salvate quando il profilo viene reso privato. Le schede Server Discovery disattivate vengono rimosse dalla directory pubblica, ma le impostazioni restano nel database. I feedback e le risposte restano nel database mentre sono gestiti dal servizio; l’implementazione attuale non definisce una scadenza automatica."
               ]
             ]
           ],
@@ -3096,6 +3405,47 @@ window.QUELLO_LEGAL = {
               [
                 "note",
                 "Per calcolare questo limite non sono necessari ulteriori dati del profilo, della posizione o del contenuto dei messaggi."
+              ]
+            ]
+          ],
+          [
+            "Profili pubblici, scoperta dei server e Centro feedback",
+            [
+              [
+                "h3",
+                "Categorie QOTD"
+              ],
+              [
+                "p",
+                "Le categorie QOTD specifiche di ciascun server vengono salvate insieme all’ID del server, al nome della categoria, al Discord User ID di chi l’ha creata e alla data di creazione. I QOTD pubblicati possono fare riferimento a un ID di categoria. I nomi delle categorie servono a organizzare le domande e non vengono mostrati come dati personali del profilo."
+              ],
+              [
+                "h3",
+                "Profili pubblici e banner Discord"
+              ],
+              [
+                "p",
+                "L’immagine del banner viene recuperata da Discord quando disponibile; Quello non carica né crea una copia separata dell’immagine. Dove supportato, lo stesso banner può essere usato come sfondo di una scheda utente nella Dashboard, nell’Admin Panel, nel profilo pubblico o nelle classifiche. Se il banner non è disponibile, viene mantenuto lo sfondo predefinito della scheda o del profilo."
+              ],
+              [
+                "p",
+                "Puoi rendere privato il profilo e scegliere separatamente se mostrare risposte, domande create e traguardi. Quando il profilo diventa privato, l’endpoint pubblico non lo restituisce più. Le impostazioni di privacy restano salvate così puoi modificarle in seguito."
+              ],
+              [
+                "h3",
+                "Directory facoltativa dei server"
+              ],
+              [
+                "p",
+                "La Server Discovery è facoltativa. Il proprietario del server o un amministratore Discord può abilitare o disabilitare una scheda pubblica. Quello salva l’ID del server, la descrizione, la categoria, il link d’invito, il Discord User ID dell’ultima persona che ha modificato la scheda e l’ora dell’aggiornamento. Quando è abilitata, la directory pubblica può mostrare nome del server, icona, numero di membri, descrizione, categoria e link d’invito. Disabilitando la scheda, questa scompare dalla directory pubblica, ma le sue impostazioni restano nel database."
+              ],
+              [
+                "h3",
+                "Centro feedback"
+              ],
+              [
+                "p",
+                "Quando invii un feedback dopo aver effettuato l’accesso, Quello salva il tuo Discord User ID e nome visualizzato, categoria, titolo, descrizione, stato e orari di creazione/aggiornamento. Le risposte vengono salvate con User ID e nome dell’autore, indicazione se appartiene al team Quello, testo della risposta e orario. Puoi vedere i tuoi feedback; i membri autorizzati del team Quello possono vedere tutti i feedback, rispondere e aggiornarne lo stato. Non inserire password o altre informazioni sensibili nei feedback."
               ]
             ]
           ]
