@@ -8,7 +8,7 @@ const slug=params.get('game')||'';
 const game=DATA[slug];
 const CHARS={
 'dishonored':[['Corvo Attano','corvo-attano']],
-'metro':[['Colonel Miller','colonel-miller'],['Artyom','artyom']],
+'metro':[['Colonel Melnik','colonel-melnik'],['Artyom','artyom']],
 'tomb-raider':[['Lara Croft','lara-croft']],
 'undertale':[['Asriel','asriel'],['Sans','sans']],
 'portal':[['GLaDOS','glados']],
@@ -16,8 +16,7 @@ const CHARS={
 'demon-slayer':[['Kaigaku','kaigaku'],['Akaza','akaza']],
 'doors':[['Seek','seek'],['Groundskeeper','groundskeeper'],['Dread','dread'],['Mischievous Light','mischievous-light']],
 'horizon-zero-dawn':[['Aloy','aloy']],
-'horizon-forbidden-west':[['Aloy','aloy']],
-'doctor-strange':[['Doctor Strange','doctor-strange']]
+'horizon-forbidden-west':[['Aloy','aloy']]
 };
 const LANG_INDEX={en:0,ru:1,de:2,fr:3,it:4};
 function charUrl(id){return 'character.html?id='+encodeURIComponent(id)}
