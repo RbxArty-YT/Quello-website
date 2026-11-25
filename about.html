@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="creator-console.css?v=7"><link rel="stylesheet" href="about.css?v=7">
   <link rel="stylesheet" href="brand-gradient.css?v=5">
   <link rel="stylesheet" href="header-avatar.css?v=1">
-  <link rel="stylesheet" href="universe.css?v=6">
+  <link rel="stylesheet" href="universe.css?v=7">
 </head>
 <body>
   <header class="about-nav">
@@ -125,22 +125,28 @@
   <script>
   (function(){
     const icons=document.querySelectorAll('.about-favorite-icon');
-    const setImage=(box,src)=>{
+    const json=async url=>{try{const r=await fetch(url,{mode:'cors',cache:'force-cache'});return r.ok?await r.json():null}catch(e){return null}};
+    const image=(box,src)=>{
       if(!src)return;
-      const img=box.querySelector('img');
-      const fallback=box.querySelector('.about-favorite-fallback');
+      const img=box.querySelector('img'),fallback=box.querySelector('.about-favorite-fallback');
+      img.referrerPolicy='no-referrer';
       img.onload=()=>{box.classList.add('has-image');if(fallback)fallback.hidden=true;};
       img.onerror=()=>{box.classList.remove('has-image');if(fallback)fallback.hidden=false;};
-      img.referrerPolicy='no-referrer';
       img.src=src;
     };
-    icons.forEach(box=>{
+    const robloxIds=async place=>{
+      const r=await json('https://apis.roblox.com/universes/v1/places/'+encodeURIComponent(place)+'/universe');
+      return r&&r.universeId?String(r.universeId):null;
+    };
+    const robloxIcon=async place=>{
+      const universe=await robloxIds(place);if(!universe)return null;
+      const r=await json('https://thumbnails.roblox.com/v1/games/icons?universeIds='+encodeURIComponent(universe)+'&size=512x512&format=Png&isCircular=false');
+      return r&&r.data&&r.data[0]&&r.data[0].imageUrl||null;
+    };
+    icons.forEach(async box=>{
       const place=box.dataset.robloxPlace;
-      if(place){
-        const url='https://thumbnails.roblox.com/v1/places/gameicons?placeIds='+encodeURIComponent(place)+'&size=512x512&format=Png&isCircular=false';
-        fetch(url,{mode:'cors',cache:'force-cache'}).then(r=>r.ok?r.json():null)
-          .then(j=>setImage(box,j&&j.data&&j.data[0]&&j.data[0].imageUrl)).catch(()=>{});
-      }else setImage(box,box.dataset.gameArt);
+      if(place){image(box,await robloxIcon(place));return;}
+      image(box,box.dataset.gameArt);
     });
   })();
   </script>

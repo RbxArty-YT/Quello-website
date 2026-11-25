@@ -178,3 +178,12 @@
 .universe-icon-fallback{font-size:1.8rem}
 @media(max-width:760px){.universe-icon{flex-basis:54px;width:54px;height:54px;border-radius:14px}.universe-icon-image{padding:3px}}
 @media(max-width:390px){.universe-icon{flex-basis:48px;width:48px;height:48px}}
+
+
+/* Ensure real artwork fully replaces emoji fallbacks once loaded. */
+.about-favorite-icon.has-image .about-favorite-fallback,
+.universe-icon.has-image .universe-icon-fallback { display:none !important; }
+.about-favorite-icon .about-favorite-fallback[hidden],
+.universe-icon .universe-icon-fallback[hidden] { display:none !important; }
+.about-favorite-icon img { position:relative; z-index:2; }
+.about-favorite-icon:not(.has-image) img { visibility:hidden; }
