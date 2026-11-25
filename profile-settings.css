@@ -1,1 +1,13 @@
-.profile-settings{max-width:760px;margin:8vh auto;padding:20px}.profile-settings-card{padding:clamp(22px,5vw,40px);border:1px solid var(--glass-border,rgba(255,255,255,.14));border-radius:22px;background:var(--glass-bg,rgba(255,255,255,.05));box-shadow:0 24px 80px rgba(0,0,0,.18)}.profile-settings-card h1{margin:10px 0}.profile-settings-card>p{opacity:.72}.privacy-option{display:flex;align-items:flex-start;gap:13px;padding:16px 0;border-bottom:1px solid var(--glass-border,rgba(255,255,255,.1));cursor:pointer}.privacy-option input{width:19px;height:19px;margin-top:2px;accent-color:#9275ff}.privacy-option strong,.privacy-option small{display:block}.privacy-option small{opacity:.65;margin-top:4px}.profile-settings-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}.profile-settings-actions a{color:var(--accent,#a894ff)}#privacyStatus{min-height:1.5em;margin-top:16px}.is-hidden{display:none!important}
+/* Profile privacy settings — shared Quello account UI. */
+.profile-settings{max-width:820px;margin-top:24px}
+.profile-settings-card{padding:clamp(22px,4vw,40px)}
+.profile-settings-card h1{margin:0;color:var(--text-strong);font-size:clamp(27px,4vw,40px);letter-spacing:-.035em}
+.profile-settings-card>p{color:var(--text-2);line-height:1.7}
+.privacy-option{display:flex;align-items:flex-start;gap:14px;padding:17px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.privacy-option:first-of-type{margin-top:18px;border-top:1px solid var(--line)}
+.privacy-option input{width:19px;height:19px;flex:none;margin:3px 0 0;accent-color:var(--accent)}
+.privacy-option span{min-width:0}.privacy-option strong,.privacy-option small{display:block}
+.privacy-option strong{color:var(--text-strong);font-size:14px}.privacy-option small{margin-top:5px;color:var(--text-3);font-size:12px;line-height:1.55}
+.profile-settings-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:24px}
+.profile-settings-actions a{color:var(--accent-text);font-size:13px;font-weight:700;text-decoration:none}.profile-settings-actions a:hover{text-decoration:underline}
+#privacyStatus{margin:12px 0 0}.is-hidden{display:none!important}

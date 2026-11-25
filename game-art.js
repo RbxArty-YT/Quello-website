@@ -118,12 +118,6 @@
       }
       const url = urls[index++];
       img.onload = () => {
-        // Choose fit by the real proportions: wide logos stay whole, square/portrait art fills the tile.
-        if (box && img.naturalWidth && img.naturalHeight) {
-          const ratio = img.naturalWidth / img.naturalHeight;
-          box.dataset.fit = ratio > 1.3 ? 'contain' : 'cover';
-          box.dataset.pos = ratio < 0.85 ? 'top' : 'center';
-        }
         if (box) box.classList.add('has-image');
         if (fallback) fallback.hidden = true;
       };
@@ -194,27 +188,12 @@
       } else img.style.display = 'none';
       return;
     }
-    const key = gameKeyFromLink(location.href);
-    const urls = [];
-    const steamId = STEAM[key];
-    const compact = window.matchMedia && window.matchMedia('(max-width: 760px)').matches;
-    if (steamId) {
-      const base = 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/' + steamId + '/';
-      // Wide (about 3.1:1) library hero is crisp on desktop; the 2.1:1 header crops less on a phone.
-      if (compact) urls.push(base + 'header.jpg', base + 'library_hero.jpg');
-      else urls.push(base + 'library_hero.jpg', base + 'header.jpg');
-    }
-    if (game.img && !urls.includes(game.img)) urls.push(game.img);
-    if (!urls.length) { img.style.display = 'none'; return; }
-    let index = 0;
-    img.referrerPolicy = 'no-referrer';
-    const tryNext = () => {
-      if (index >= urls.length) { img.style.display = 'none'; return; }
-      img.src = urls[index++];
-    };
-    img.onload = () => { img.style.display = 'block'; };
-    img.onerror = tryNext;
-    tryNext();
+    if (game.img) {
+      img.referrerPolicy = 'no-referrer';
+      img.onload = () => { img.style.display = 'block'; };
+      img.onerror = () => { img.style.display = 'none'; };
+      img.src = game.img;
+    } else img.style.display = 'none';
   }
 
   window.QuelloGameArt = { loadUniverseIcon, loadUniverseBanner };
