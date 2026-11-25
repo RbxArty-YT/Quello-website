@@ -187,3 +187,26 @@
 .universe-icon .universe-icon-fallback[hidden] { display:none !important; }
 .about-favorite-icon img { position:relative; z-index:2; }
 .about-favorite-icon:not(.has-image) img { visibility:hidden; }
+
+
+/* Roblox artwork: square launcher icon + separate wide experience banner. */
+.about-favorite-link.roblox-has-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-image: linear-gradient(90deg, rgba(12,9,20,.94) 0%, rgba(12,9,20,.78) 58%, rgba(12,9,20,.62) 100%), var(--roblox-banner) !important;
+  background-size: cover !important;
+  background-position: center 42% !important;
+  border-color: rgba(255,255,255,.18);
+}
+.about-favorite-link.roblox-has-banner > span { position: relative; z-index: 1; }
+.about-favorite-link.roblox-has-banner .about-favorite-icon {
+  background: rgba(8,7,13,.82) !important;
+  border-color: rgba(255,255,255,.28) !important;
+  box-shadow: 0 3px 14px rgba(0,0,0,.35);
+}
+.about-favorite-link.roblox-has-banner > span:not(.about-favorite-icon):not(.about-favorite-platform) {
+  text-shadow: 0 1px 5px rgba(0,0,0,.85);
+}
+.about-favorite-icon img { object-fit: contain !important; }
+.universe-icon-image { object-fit: contain !important; }
