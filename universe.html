@@ -1,0 +1,35 @@
+<!doctype html>
+<!-- Copyright (c) 2026 Quello. All rights reserved. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#100b1c">
+  <title>Game & Universe — Quello</title>
+  <script src="auth-boot.js"></script><script src="theme-switch.js?v=1"></script>
+  <link rel="icon" href="quello-avatar.webp" type="image/webp">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="brand-gradient.css?v=5"><link rel="stylesheet" href="header-avatar.css?v=1">
+  <link rel="stylesheet" href="about.css?v=7"><link rel="stylesheet" href="universe.css?v=1">
+</head>
+<body class="universe-page">
+  <header class="about-nav universe-nav">
+    <a class="about-brand" href="index.html"><img src="quello-avatar.webp" alt="Quello"><span>Quello</span></a>
+    <div class="about-nav-actions">
+      <div class="header-language" id="headerLanguage"><button class="header-language-button" id="headerLanguageButton" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language"><span class="flag" id="headerLanguageFlag">🇬🇧</span><span id="headerLanguageCode">EN</span><span class="header-language-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button><div class="header-language-menu" id="headerLanguageMenu" role="listbox" aria-label="Language"><button type="button" data-header-language="en" role="option"><span class="flag">🇬🇧</span> <span>English</span></button><button type="button" data-header-language="ru" role="option"><span class="flag">🇷🇺</span> <span>Русский</span></button><button type="button" data-header-language="de" role="option"><span class="flag">🇩🇪</span> <span>Deutsch</span></button><button type="button" data-header-language="fr" role="option"><span class="flag">🇫🇷</span> <span>Français</span></button><button type="button" data-header-language="it" role="option"><span class="flag">🇮🇹</span> <span>Italiano</span></button></div></div>
+      <button class="theme-toggle" id="aboutTheme" type="button" aria-label="Toggle light / dark theme" title="Theme"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.6 14.4A8.6 8.6 0 0 1 9.6 3.4a.7.7 0 0 0-.9-.9 9.9 9.9 0 1 0 12.8 12.8.7.7 0 0 0-.9-.9Z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l-1.4-1.4"/></g></svg></button>
+    </div>
+  </header>
+  <main class="universe-shell">
+    <nav class="universe-subnav"><a class="universe-back" href="about.html" data-i18n="back">← Back to About Creator</a></nav>
+    <article class="universe-card" aria-live="polite">
+      <section class="universe-hero" id="universeHero">
+        <img class="universe-hero-image" id="universeHeroImage" alt="" fetchpriority="high">
+        <div class="universe-hero-shade"></div>
+        <div class="universe-hero-content"><span class="universe-kicker" id="universeKicker">GAME & UNIVERSE</span><div class="universe-title-row"><span class="universe-icon" id="universeIcon" aria-hidden="true">✦</span><div><h1 id="universeTitle">Loading…</h1><p id="universeSubtitle"></p></div></div><div class="universe-tags" id="universeTags"></div></div>
+      </section>
+      <section class="universe-details"><div class="universe-overview"><p class="universe-section-label" data-i18n="overviewLabel">OVERVIEW</p><h2 data-i18n="aboutTitle">About this world</h2><p id="universeDescription"></p></div><aside class="universe-facts"><p class="universe-section-label" data-i18n="factsLabel">AT A GLANCE</p><div class="universe-fact"><span data-i18n="typeLabel">Type</span><strong id="universeType"></strong></div><div class="universe-fact"><span data-i18n="studioLabel">Studio / Creator</span><strong id="universeStudio"></strong></div><div class="universe-fact"><span data-i18n="platformLabel">Platform</span><strong id="universePlatform"></strong></div></aside></section>
+    </article>
+    <p class="universe-footnote" data-i18n="footnote">This page is part of the Quello website. Game and universe names are shown for informational purposes.</p>
+  </main>
+  <script src="universe.js?v=1" defer></script><script src="site-config.js?v=2"></script><script src="header-avatar.js?v=2"></script>
+</body></html>

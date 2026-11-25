@@ -16,3 +16,10 @@
 .global-board-brand{margin-right:auto}
 .global-board-footer{display:flex;align-items:center;justify-content:flex-start;gap:12px;padding:22px 0 8px;border-top:1px solid var(--line);margin-top:34px;color:var(--text-2);font-size:.9rem}
 @media(max-width:620px){.global-board-header{align-items:center;gap:10px}.global-board-back{order:0}.global-board-brand{order:1;margin-right:auto}.global-board-actions{order:2;width:100%;justify-content:flex-end}.global-board-footer{margin-top:24px;padding-top:18px}}
+
+/* Back navigation sits on its own row directly below the site header. */
+.global-board-header{flex-wrap:nowrap;justify-content:space-between}
+.global-board-subnav{display:flex;align-items:center;justify-content:flex-start;padding:12px 0 0}
+.global-board-back{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;min-height:40px;padding:10px 15px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--text-strong);text-decoration:none;white-space:nowrap;font-size:.9rem;font-weight:700;transition:transform .18s,border-color .18s,background .18s}
+.global-board-back:hover{transform:translateY(-2px);border-color:var(--accent);background:var(--surface-2)}
+@media(max-width:620px){.global-board-header{align-items:center;gap:10px}.global-board-actions{width:auto;justify-content:flex-end}.global-board-subnav{padding-top:10px}.global-board-back{min-height:38px;padding:9px 12px;font-size:.84rem}}
