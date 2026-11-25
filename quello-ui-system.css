@@ -175,3 +175,13 @@ input[type="range"]::-moz-range-thumb{width:12px;height:12px;border:3px solid va
 
 /* Official Quello brand mark: circular, contained, never confused with a Discord user avatar. */
 :where(.q-account-brand img,.global-board-brand img){border-radius:50%!important;object-fit:contain!important}
+
+/* Dashboard-style return action used by account pages. */
+.q-account-actions .dashboard-back-button{
+  min-height:40px;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:9px 15px;border:0!important;border-radius:13px;
+  background:var(--brand-flow,linear-gradient(100deg,#7c4dff,#c43c9b 62%,#e9455a))!important;
+  background-size:220% 100%!important;color:#fff!important;font-weight:750;text-decoration:none;
+  box-shadow:0 7px 22px var(--brand-glow,rgba(196,60,155,.25)),inset 0 1px 0 rgba(255,255,255,.18);
+}
+.q-account-actions .dashboard-back-button:hover{filter:brightness(1.08);transform:translateY(-2px);color:#fff!important}

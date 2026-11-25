@@ -7,6 +7,7 @@
   const API = String(CFG.API_BASE || '').replace(/\/+$/, '');
   const TOKEN_KEY = 'quello-dash-token';
   const LANG_KEY = 'quello-site-language-v2';
+  let creatorFilterMenuSequence = 0;
 
   document.addEventListener('click', event => {
     if (event.target.closest('.creator-filter-select')) return;
@@ -1001,7 +1002,10 @@
         chevron.setAttribute('aria-hidden', 'true');
         trigger.append(selectedText, chevron);
         const menu = el('div', 'creator-filter-select-menu');
+        menu.id = 'creator-filter-menu-' + (++creatorFilterMenuSequence);
         menu.setAttribute('role', 'listbox');
+        menu.setAttribute('aria-label', label);
+        trigger.setAttribute('aria-controls', menu.id);
         menu.hidden = true;
         options.forEach(([value, title]) => {
           const optionButton = el('button', 'creator-filter-select-option', title);
@@ -1025,8 +1029,13 @@
           });
           menu.append(optionButton);
         });
-        trigger.addEventListener('click', () => {
-          const opening = menu.hidden;
+        const closeFilterMenu = (restoreFocus = false) => {
+          dropdown.classList.remove('is-open');
+          menu.hidden = true;
+          trigger.setAttribute('aria-expanded', 'false');
+          if (restoreFocus) trigger.focus();
+        };
+        const openFilterMenu = (focusSelected = false) => {
           document.querySelectorAll('.creator-filter-select.is-open').forEach(item => {
             item.classList.remove('is-open');
             const itemMenu = item.querySelector('.creator-filter-select-menu');
@@ -1034,11 +1043,32 @@
             if (itemMenu) itemMenu.hidden = true;
             if (itemTrigger) itemTrigger.setAttribute('aria-expanded', 'false');
           });
-          if (opening) {
-            dropdown.classList.add('is-open');
-            menu.hidden = false;
-            trigger.setAttribute('aria-expanded', 'true');
+          dropdown.classList.add('is-open');
+          menu.hidden = false;
+          trigger.setAttribute('aria-expanded', 'true');
+          if (focusSelected) {
+            const selected = menu.querySelector('[aria-selected="true"]') || menu.querySelector('.creator-filter-select-option');
+            if (selected) selected.focus();
           }
+        };
+        trigger.addEventListener('click', () => {
+          if (menu.hidden) openFilterMenu(false);
+          else closeFilterMenu();
+        });
+        menu.addEventListener('keydown', event => {
+          const choices = Array.from(menu.querySelectorAll('.creator-filter-select-option:not(:disabled)'));
+          if (!choices.length) return;
+          const current = choices.indexOf(document.activeElement);
+          let next = current;
+          if (event.key === 'ArrowDown') next = (current + 1 + choices.length) % choices.length;
+          else if (event.key === 'ArrowUp') next = (current - 1 + choices.length) % choices.length;
+          else if (event.key === 'Home') next = 0;
+          else if (event.key === 'End') next = choices.length - 1;
+          else if (event.key === 'Escape') { event.preventDefault(); closeFilterMenu(true); return; }
+          else if (event.key === 'Tab') { closeFilterMenu(); return; }
+          else return;
+          event.preventDefault();
+          choices[next].focus();
         });
         dropdown.append(trigger, menu);
         select.addEventListener('change', () => {
@@ -1051,10 +1081,11 @@
           });
         });
         trigger.addEventListener('keydown', event => {
-          if (event.key === 'Escape') {
-            dropdown.classList.remove('is-open');
-            menu.hidden = true;
-            trigger.setAttribute('aria-expanded', 'false');
+          if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openFilterMenu(true);
+          } else if (event.key === 'Escape') {
+            closeFilterMenu();
           }
         });
         wrap.append(select, dropdown);
@@ -1634,7 +1665,7 @@
       return;
     }
 
-    const button = el('button', 'creator-fab', '✦');
+    const button = el('button', 'creator-fab', '✦ ' + tr('button'));
 
     button.id = 'quello-creator-floating';
     button.type = 'button';
@@ -1711,7 +1742,9 @@
   installLongPress();
 
   document.addEventListener('DOMContentLoaded', () => {
-    verifyCreator();
+    verifyCreator().then(() => {
+      if (location.hash === '#admin-panel' && creator) openConsole();
+    });
   });
 
   window.addEventListener('error', event => {
@@ -1729,7 +1762,9 @@
   });
 
   if (document.readyState !== 'loading') {
-    verifyCreator();
+    verifyCreator().then(() => {
+      if (location.hash === '#admin-panel' && creator) openConsole();
+    });
   }
 
 })();
