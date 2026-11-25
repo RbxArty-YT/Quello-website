@@ -1,151 +1,77 @@
 /* Copyright (c) 2026 Quello. All rights reserved. */
-/* One shared interaction and component language for every Quello website page. */
-:root{
-  --q-control-radius:12px;
-  --q-panel-radius:20px;
-  --q-control-height:42px;
-  --q-control-border:var(--line-strong);
-  --q-control-bg:var(--surface);
-  --q-control-hover:var(--surface-hover);
-  --q-control-shadow:var(--shadow-card);
-}
+/* QUELLO DESIGN SYSTEM — shared controls, overlays, states and avatar language. */
+:root{--q-control-radius:13px;--q-panel-radius:21px;--q-control-height:42px;--q-control-border:var(--line-strong);--q-control-bg:var(--surface);--q-control-hover:var(--surface-hover);--q-control-shadow:var(--shadow-card);--q-glass:linear-gradient(145deg,color-mix(in srgb,var(--surface) 92%,white 2%),var(--surface-2))}
+:where(button,input,select,textarea,a,[role="button"],[role="option"],[role="menuitem"],summary){-webkit-tap-highlight-color:transparent}
+:where(button,a,[role="button"],[role="option"],[role="menuitem"],summary):focus-visible,:where(input,select,textarea):focus-visible{outline:2px solid var(--accent)!important;outline-offset:3px!important}
+:where(button:not(.command-option):not(.header-avatar-btn):not(.site-tab):not(.badge):not(.pill),.button,.primary-button,.about-back,.about-socials a,.q-account-button,.q-account-back,.character-back,.character-footer a,.global-board-back,a[class*="back-button"],button[class*="back-button"]){border-radius:var(--q-control-radius);font-family:var(--font-ui,Arial,sans-serif);transition:background-color .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease,opacity .18s ease}
+:where(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),textarea){border:1px solid var(--q-control-border);border-radius:var(--q-control-radius);background:linear-gradient(145deg,var(--surface),var(--surface-2));color:var(--text);font:inherit;box-shadow:inset 0 1px 0 rgba(255,255,255,.025);transition:border-color .18s ease,box-shadow .18s ease,background .18s ease}
+:where(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),textarea):hover{border-color:var(--line-hover)}
+:where(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),textarea):focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 16%,transparent)}
+:where(input,textarea)::placeholder{color:var(--text-4);opacity:1}
+:where(input[type="checkbox"],input[type="radio"],input[type="range"]){accent-color:var(--accent)}
+:where(button:not(:disabled),.button,a[class*="back"],.q-account-button):active{transform:translateY(0) scale(.985)}
+:where(button:disabled,input:disabled,select:disabled,textarea:disabled,[aria-disabled="true"]){cursor:not-allowed!important;opacity:.52}
+:where(button:not(:disabled),a,.q-account-button):hover{transition-duration:.16s}
+:where(.q-account-back,.about-back,.universe-back,.about-btn-secondary,.legal-btn:not(.primary),.character-back,.character-footer a,.global-board-back,a[class*="back-button"],button[class*="back-button"]){display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:var(--q-control-height);padding:9px 14px;border:1px solid var(--q-control-border);background:var(--q-glass);color:var(--text-strong);font:700 13px/1.25 var(--font-ui,Arial,sans-serif);text-decoration:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.035),var(--q-control-shadow)}
+:where(.q-account-back,.about-back,.universe-back,.about-btn-secondary,.legal-btn:not(.primary),.character-back,.character-footer a,.global-board-back,a[class*="back-button"],button[class*="back-button"]):hover{transform:translateY(-1px);border-color:var(--accent);background:var(--surface-hover);color:var(--text-strong);text-decoration:none;box-shadow:0 8px 22px color-mix(in srgb,var(--accent) 14%,transparent)}
+/* Shared glass treatment for every menu, drawer, dialog and popover family. */
+:where(.header-language-menu,.header-avatar-menu,.language-dropdown,.language-picker,.side-menu,.side-menu-panel,.command-drawer-panel,.dropdown-menu,.profile-menu,.creator-filter-select-menu,.qotd-menu,[role="dialog"],[role="menu"],[role="listbox"],[popover],.modal-panel,.modal-content,.popover-panel){border-color:var(--line-strong);background:var(--q-glass);color:var(--text);box-shadow:var(--shadow-pop);-webkit-backdrop-filter:blur(22px) saturate(135%);backdrop-filter:blur(22px) saturate(135%)}
+:where(.header-language-menu,.header-avatar-menu,.language-dropdown,.language-picker,.dropdown-menu,.profile-menu,.creator-filter-select-menu,.qotd-menu,[role="menu"],[role="listbox"],.popover-panel){border:1px solid var(--line-strong);border-radius:16px}
+:where(.side-menu,.command-drawer-panel,.modal-panel,[role="dialog"],.modal-content){border:1px solid var(--line-strong);border-radius:var(--q-panel-radius)}
+:where(.menu-overlay,.command-drawer-backdrop,.modal-backdrop,[data-overlay]){backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+:where(.header-language-menu button,.header-avatar-item,.side-menu-links a,.dropdown-menu a,.dropdown-menu button,[role="menu"] a,[role="menu"] button,[role="listbox"] [role="option"]){border-radius:11px;color:var(--text-2);transition:background .16s ease,color .16s ease,transform .16s ease}
+:where(.header-language-menu button,.header-avatar-item,.side-menu-links a,.dropdown-menu a,.dropdown-menu button,[role="menu"] a,[role="menu"] button,[role="listbox"] [role="option"]):hover{background:var(--surface-hover);color:var(--text-strong)}
+:where(details){border-color:var(--line)}
+:where(details>summary){cursor:pointer;transition:color .16s ease,background .16s ease,border-color .16s ease}
+:where(details>summary):focus-visible{border-radius:11px}
+:where(.q-account-card,.q-account-hero,.character-card,.profile-stat,.global-board-card,.about-extra,.about-character-section,.server-card,.discovery-listing){border-color:var(--line);box-shadow:var(--q-control-shadow)}
+:where(.q-account-card,.global-board-card,.about-extra,.about-character-section,.server-card,.discovery-listing){border-radius:var(--q-panel-radius)}
+/* One consistent Discord account avatar treatment wherever user avatars appear. */
+.q-discord-avatar,.header-avatar-btn img,.header-avatar-user img,.global-board-avatar,#profileAvatar{display:block;flex:none;object-fit:cover;background:var(--surface-active);border:1px solid color-mix(in srgb,var(--accent) 38%,var(--line));box-shadow:0 0 0 2px var(--surface),0 0 0 3px color-mix(in srgb,var(--accent) 65%,var(--accent-2))}
+.header-avatar-btn img,.header-avatar-user img,.global-board-avatar,#profileAvatar{border-radius:50%}
+.header-avatar-btn img{width:100%;height:100%;box-shadow:none;border:0}
+.header-avatar-user img{width:32px;height:32px;box-shadow:none;border:1px solid var(--line)}
+.global-board-avatar{width:36px;height:36px}
+#profileAvatar{width:88px;height:88px;border-radius:26px}
+.header-avatar{z-index:90}
+.header-avatar-menu{z-index:100}
+.q-account-actions>.header-avatar,.global-board-actions>.header-avatar{margin-left:2px}
+@media(hover:hover){:where(.q-account-button,.button,.about-socials a,.character-back,.character-footer a,.global-board-back):hover{transform:translateY(-1px)}}
+@media(max-width:620px){.q-account-actions{gap:6px;flex-wrap:wrap;justify-content:flex-end}.q-account-actions>.header-avatar{margin-left:0}.global-board-actions>.header-avatar{margin-left:0}.global-board-avatar{width:32px;height:32px}}
 
-/* Shared focus, motion and geometry. Keep each component's existing role/colour. */
-:where(button,input,select,textarea,a):focus-visible{
-  outline:2px solid var(--accent)!important;
-  outline-offset:3px;
-}
-:where(button,a,[role="button"],[role="menuitem"]){
-  -webkit-tap-highlight-color:transparent;
-}
-:where(button,.button,.about-back,.about-socials a,.q-account-button,.q-account-back,
-       .character-back,.character-footer a,.global-board-back,a[class*="back-button"],
-       button[class*="back-button"]){
-  border-radius:var(--q-control-radius);
-  transition:background-color .18s ease,border-color .18s ease,color .18s ease,
-             box-shadow .18s ease,transform .18s ease,opacity .18s ease;
-}
-:where(input:not([type="checkbox"]):not([type="radio"]),select,textarea){
-  border-color:var(--q-control-border);
-  border-radius:var(--q-control-radius);
-  background-color:var(--q-control-bg);
-  color:var(--text);
-  accent-color:var(--accent);
-}
-:where(input:not([type="checkbox"]):not([type="radio"]),select,textarea):hover{
-  border-color:var(--line-hover);
-}
-:where(input:not([type="checkbox"]):not([type="radio"]),select,textarea):focus{
-  border-color:var(--accent);
-  box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 16%,transparent);
-}
-:where(input,select,textarea)::placeholder{color:var(--text-4);opacity:1}
 
-/* Back links are controls too: no more plain, unrelated text links between pages. */
-:where(.q-account-back,.character-back,.character-footer a,.global-board-back,
-       a[class*="back-button"],button[class*="back-button"]){
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  min-height:var(--q-control-height);
-  padding:9px 14px;
-  border:1px solid var(--q-control-border);
-  background:var(--q-control-bg);
-  color:var(--text-strong);
-  font:700 13px/1.25 var(--font-ui,Arial,sans-serif);
-  text-decoration:none;
-}
-:where(.q-account-back,.character-back,.character-footer a,.global-board-back,
-       a[class*="back-button"],button[class*="back-button"]):hover{
-  transform:translateY(-1px);
-  border-color:var(--accent);
-  background:var(--q-control-hover);
-  color:var(--text-strong);
-  text-decoration:none;
-}
+:where(.about-back,.universe-back,.about-btn,.legal-btn,.global-board-refresh,.discovery-refresh,.discovery-filter){min-height:40px;border-radius:13px;font-family:var(--font-ui,Arial,sans-serif);font-weight:700;transition:background .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease}
+:where(.about-back,.universe-back,.about-btn-secondary,.legal-btn:not(.primary)){display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 14px;border:1px solid var(--line-strong);background:linear-gradient(145deg,var(--surface),var(--surface-2));color:var(--text-strong);text-decoration:none}
+:where(.about-back,.universe-back,.about-btn-secondary,.legal-btn:not(.primary)):hover{border-color:var(--accent);background:var(--surface-hover);color:var(--text-strong);transform:translateY(-1px);text-decoration:none}
+:where(.q-account-footer a,.discovery-footer a){text-decoration:none}
+:where(.q-account-footer a:not(.q-account-back)){display:inline-flex;align-items:center;min-height:40px;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--accent-text);font-weight:700}
+:where(.q-account-footer a:not(.q-account-back)):hover{border-color:var(--accent);background:var(--surface-hover);color:var(--text-strong)}
 
-/* Shared popover/dropdown surface. Positioning and open/close mechanics stay local. */
-:where(.header-language-menu,.header-avatar-menu,.language-dropdown,
-       .side-menu,.command-drawer-panel,.dropdown-menu,.profile-menu,
-       [role="dialog"],.modal-panel){
-  border-color:var(--line-strong);
-  background-color:var(--surface);
-  color:var(--text);
-  box-shadow:var(--shadow-pop);
-}
-:where(.header-language-menu,.header-avatar-menu,.language-dropdown,
-       .dropdown-menu,.profile-menu){
-  border:1px solid var(--line-strong);
-  border-radius:14px;
-}
-:where(.header-language-menu button,.header-avatar-item,.side-menu-links a,
-       .dropdown-menu a,.dropdown-menu button){
-  border-radius:10px;
-  color:var(--text-2);
-  transition:background-color .16s ease,color .16s ease,transform .16s ease;
-}
-:where(.header-language-menu button,.header-avatar-item,.side-menu-links a,
-       .dropdown-menu a,.dropdown-menu button):hover{
-  background:var(--surface-hover);
-  color:var(--text-strong);
-}
-:where(.side-menu,.command-drawer-panel,.modal-panel,[role="dialog"]){
-  border:1px solid var(--line-strong);
-}
-:where(.side-menu,.command-drawer-panel,.modal-panel){
-  border-radius:var(--q-panel-radius);
-}
-:where(.menu-overlay,.command-drawer-backdrop,.modal-backdrop){
-  -webkit-backdrop-filter:blur(5px);
-  backdrop-filter:blur(5px);
-}
 
-/* Consistent card outlines without flattening each page's individual layout. */
-:where(.q-account-card,.q-account-hero,.character-card,.profile-stat,
-       .global-board-card,.about-extra,.about-character-section){
-  border-color:var(--line);
-  box-shadow:var(--q-control-shadow);
-}
-:where(.q-account-card,.global-board-card,.about-extra,.about-character-section){
-  border-radius:var(--q-panel-radius);
-}
+/* Tabs and segmented choices share one restrained glass-and-accent language. */
+:where(.site-tab,.legal-tab,.tab,.creator-tab,.sub-tabs button,.discovery-filter){border-radius:12px;transition:background .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease}
+:where(.site-tab,.legal-tab,.tab,.creator-tab,.sub-tabs button):hover{background:var(--surface-hover);color:var(--text-strong)}
+:where(.site-tab.active,.legal-tab.active,.tab.active,.creator-tab.active){color:var(--accent-text)}
+:where(.discovery-filter.is-active,.discovery-filter[aria-pressed="true"]){border-color:color-mix(in srgb,var(--accent) 55%,var(--line));background:color-mix(in srgb,var(--accent) 14%,var(--surface));color:var(--accent-text);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 12%,transparent)}
 
-@media(hover:hover){
-  :where(.q-account-button,.button,.about-socials a,.character-back,
-         .character-footer a,.global-board-back):hover{transform:translateY(-1px)}
-}
-@media(prefers-reduced-motion:reduce){
-  :where(button,a,input,select,textarea){transition:none!important;scroll-behavior:auto!important}
-}
+/* OS-independent checkbox, radio and range controls. Existing .switch components keep their custom track. */
+input[type="checkbox"]:not(.switch input){appearance:none;-webkit-appearance:none;width:18px;height:18px;min-width:18px;min-height:18px;margin:0;border:1.5px solid var(--line-hover);border-radius:6px;background:var(--surface-2);display:inline-grid;place-content:center;vertical-align:middle;cursor:pointer;transition:background .16s ease,border-color .16s ease,box-shadow .16s ease}
+input[type="checkbox"]:not(.switch input)::after{content:"";width:8px;height:4px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) scale(0);transform-origin:center;transition:transform .12s ease}
+input[type="checkbox"]:not(.switch input):checked{border-color:var(--accent);background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 3px 12px color-mix(in srgb,var(--accent) 24%,transparent)}
+input[type="checkbox"]:not(.switch input):checked::after{transform:rotate(-45deg) scale(1)}
+input[type="checkbox"]:not(.switch input):focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+input[type="radio"]{appearance:none;-webkit-appearance:none;width:18px;height:18px;min-width:18px;min-height:18px;margin:0;border:1.5px solid var(--line-hover);border-radius:50%;background:var(--surface-2);display:inline-grid;place-content:center;cursor:pointer;transition:border-color .16s ease,box-shadow .16s ease}
+input[type="radio"]::after{content:"";width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));transform:scale(0);transition:transform .12s ease}
+input[type="radio"]:checked{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 13%,transparent)}
+input[type="radio"]:checked::after{transform:scale(1)}
+input[type="range"]{appearance:none;-webkit-appearance:none;width:100%;height:6px;border:0;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));cursor:pointer;accent-color:var(--accent)}
+input[type="range"]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:17px;height:17px;border:3px solid var(--surface);border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 1px var(--accent),0 3px 12px rgba(0,0,0,.25)}
+input[type="range"]::-moz-range-thumb{width:12px;height:12px;border:3px solid var(--surface);border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 1px var(--accent),0 3px 12px rgba(0,0,0,.25)}
+/* Creator Console's bespoke filter select uses the same glass surface as the shared picker. */
+.creator-console-overlay .creator-filter-select-trigger{min-height:42px;border:1px solid var(--line-strong);border-radius:13px;background:linear-gradient(145deg,var(--surface),var(--surface-2));color:var(--text-strong);box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 5px 16px rgba(0,0,0,.07)}
+.creator-console-overlay .creator-filter-select-trigger:hover,.creator-console-overlay .creator-filter-select.is-open .creator-filter-select-trigger{border-color:var(--accent);background:var(--surface-hover);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
+.creator-console-overlay .creator-filter-select-menu{border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line-strong));border-radius:15px;background:linear-gradient(145deg,var(--surface),var(--surface-2));box-shadow:var(--shadow-pop);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);padding:6px}
+.creator-console-overlay .creator-filter-select-option{min-height:38px;border-radius:10px;color:var(--text-2);transition:background .16s ease,color .16s ease}
+.creator-console-overlay .creator-filter-select-option:hover,.creator-console-overlay .creator-filter-select-option.is-selected{background:color-mix(in srgb,var(--accent) 13%,var(--surface));color:var(--accent-text)}
 
-/* Geometry overrides intentionally have enough weight to normalize older page styles. */
-button:not(.command-option):not(.header-avatar-btn):not(.site-tab):not(.badge):not(.pill),
-.button,.about-back,.about-socials a,.q-account-button,.q-account-back,
-.character-back,.character-footer a,.global-board-back,
-a[class*="back-button"],button[class*="back-button"]{
-  border-radius:12px;
-}
-button:not(.command-option):not(.header-avatar-btn):not(.site-tab):not(.badge):not(.pill){
-  font-family:var(--font-ui,Arial,sans-serif);
-}
-.q-account-back,.character-back,.character-footer a,.global-board-back,
-a[class*="back-button"],button[class*="back-button"]{
-  min-height:42px;
-  padding:9px 14px;
-  border:1px solid var(--line-strong);
-  background:var(--surface);
-  color:var(--text-strong);
-  font-size:13px;
-  font-weight:700;
-  line-height:1.25;
-  text-decoration:none;
-}
-.q-account-back:hover,.character-back:hover,.character-footer a:hover,.global-board-back:hover,
-a[class*="back-button"]:hover,button[class*="back-button"]:hover{
-  transform:translateY(-1px);
-  border-color:var(--accent);
-  background:var(--surface-hover);
-  color:var(--text-strong);
-  text-decoration:none;
-}
+@media(prefers-reduced-motion:reduce){:where(button,a,input,select,textarea,summary,[role="button"]){transition:none!important;scroll-behavior:auto!important;animation:none!important}}

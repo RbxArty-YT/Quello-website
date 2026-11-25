@@ -62,6 +62,8 @@
     return document.querySelector('.header-tools') ||
            document.querySelector('.about-nav-actions') ||
            document.querySelector('.legal-nav-actions') ||
+           document.querySelector('.global-board-actions') ||
+           document.querySelector('.q-account-actions') ||
            document.querySelector('.nav-inner');
   }
 
@@ -89,15 +91,27 @@
     wrap.id = 'headerAvatar';
     wrap.innerHTML =
       '<button class="header-avatar-btn" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="' + esc(t.alt + ': ' + name) + '" title="' + esc(name) + '">' +
-        '<img src="' + esc(url) + '" alt="" width="40" height="40" referrerpolicy="no-referrer" decoding="async">' +
+        '<img class="q-discord-avatar" src="' + esc(url) + '" alt="" width="40" height="40" referrerpolicy="no-referrer" decoding="async">' +
       '</button>' +
       '<div class="header-avatar-menu" role="menu">' +
-        '<div class="header-avatar-user"><img src="' + esc(url) + '" alt="" width="32" height="32" referrerpolicy="no-referrer"><span>' + esc(name) + '</span></div>' +
+        '<div class="header-avatar-user"><img class="q-discord-avatar" src="' + esc(url) + '" alt="" width="32" height="32" referrerpolicy="no-referrer"><span>' + esc(name) + '</span></div>' +
         linkItem +
         '<button class="header-avatar-item danger" role="menuitem" type="button" data-ha-out>' + ICON_OUT + '<span data-ha="out">' + esc(t.out) + '</span></button>' +
       '</div>';
     h.appendChild(wrap);   // last child = rightmost, after theme and language
 
+    var avatarImages = wrap.querySelectorAll('img');
+    avatarImages.forEach(function (img) { img.onerror = function () {
+      if (!img.dataset.fallbackApplied) {
+        img.dataset.fallbackApplied = '1';
+        var index = 0;
+        try { index = Number((BigInt(p.uid) >> 22n) % 6n); } catch (e) { index = 0; }
+        img.src = 'https://cdn.discordapp.com/embed/avatars/' + index + '.png';
+      } else {
+        img.onerror = null;
+        img.src = 'quello-avatar.webp';
+      }
+    }; });
     var btn = wrap.querySelector('.header-avatar-btn');
     function setOpen(open) {
       wrap.classList.toggle('open', open);

@@ -41,3 +41,11 @@
 .nav-inner>.header-avatar{margin-left:auto}
 .about-nav-actions>.header-avatar{margin-left:0}
 @media(max-width:560px){.about-nav-actions>.header-avatar{flex:none}}
+
+/* Unified account-avatar placement across landing, dashboard, account, legal and directory headers. */
+.header-avatar{align-self:center}
+.header-avatar-btn{display:grid;place-items:center}
+.header-avatar-menu{z-index:10060;border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line-strong));background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 94%,white 2%),var(--surface-2));-webkit-backdrop-filter:blur(22px) saturate(135%);backdrop-filter:blur(22px) saturate(135%)}
+.header-avatar-user{min-width:0}
+.header-avatar-item{min-height:40px}
+@media(max-width:620px){.header-avatar-menu{right:0;min-width:min(220px,calc(100vw - 28px))}}
