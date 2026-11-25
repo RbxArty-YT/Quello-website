@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="creator-console.css?v=7"><link rel="stylesheet" href="about.css?v=7">
   <link rel="stylesheet" href="brand-gradient.css?v=5">
   <link rel="stylesheet" href="header-avatar.css?v=1">
-  <link rel="stylesheet" href="universe.css?v=5">
+  <link rel="stylesheet" href="universe.css?v=6">
 </head>
 <body>
   <header class="about-nav">
@@ -88,7 +88,7 @@
             <a class="about-favorite-link" href="universe.html?game=foundation"><span class="about-favorite-icon" data-roblox-place="18186775539"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">🏗️</span></span><span>Foundation</span><span class="about-favorite-platform">ROBLOX</span></a>
             <a class="about-favorite-link" href="universe.html?game=grace"><span class="about-favorite-icon" data-roblox-place="138837502355157"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">👁️</span></span><span>Grace</span><span class="about-favorite-platform">ROBLOX</span></a>
             <a class="about-favorite-link" href="universe.html?game=fisch"><span class="about-favorite-icon" data-roblox-place="16732694052"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">🎣</span></span><span>Fisch</span><span class="about-favorite-platform">ROBLOX</span></a>
-            <a class="about-favorite-link" href="universe.html?game=growth-of-giggle-rp"><span class="about-favorite-icon" data-roblox-place="86987168805667"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">😄</span></span><span>Growth of Giggle RP</span><span class="about-favorite-platform">YOUTUBE</span></a>
+            <a class="about-favorite-link" href="universe.html?game=growth-of-giggle-rp"><span class="about-favorite-icon" data-game-art="https://unavatar.io/youtube/UC8tOyxdey3zEPIiEdGNp3Zg"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">😄</span></span><span>Growth of Giggle RP</span><span class="about-favorite-platform">YOUTUBE</span></a>
           </div>
         </article>
       </div>
@@ -125,15 +125,22 @@
   <script>
   (function(){
     const icons=document.querySelectorAll('.about-favorite-icon');
-    icons.forEach(box=>{
+    const setImage=(box,src)=>{
+      if(!src)return;
       const img=box.querySelector('img');
       const fallback=box.querySelector('.about-favorite-fallback');
-      const show=src=>{if(!src)return;img.onload=()=>{box.classList.add('has-image');fallback.hidden=true};img.onerror=()=>{box.classList.remove('has-image');fallback.hidden=false};img.src=src;};
+      img.onload=()=>{box.classList.add('has-image');if(fallback)fallback.hidden=true;};
+      img.onerror=()=>{box.classList.remove('has-image');if(fallback)fallback.hidden=false;};
+      img.referrerPolicy='no-referrer';
+      img.src=src;
+    };
+    icons.forEach(box=>{
       const place=box.dataset.robloxPlace;
       if(place){
-        fetch('https://thumbnails.roblox.com/v1/places/gameicons?placeIds='+encodeURIComponent(place)+'&size=512x512&format=Png&isCircular=false')
-          .then(r=>r.ok?r.json():null).then(j=>show(j&&j.data&&j.data[0]&&j.data[0].imageUrl)).catch(()=>{});
-      }else show(box.dataset.gameArt);
+        const url='https://thumbnails.roblox.com/v1/places/gameicons?placeIds='+encodeURIComponent(place)+'&size=512x512&format=Png&isCircular=false';
+        fetch(url,{mode:'cors',cache:'force-cache'}).then(r=>r.ok?r.json():null)
+          .then(j=>setImage(box,j&&j.data&&j.data[0]&&j.data[0].imageUrl)).catch(()=>{});
+      }else setImage(box,box.dataset.gameArt);
     });
   })();
   </script>
