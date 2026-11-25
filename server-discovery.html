@@ -1,5 +1,91 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Server Discovery — Quello</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="server-discovery.css"><link rel="stylesheet" href="quello-ui-system.css?v=1"></head>
-<body><main class="discovery-shell"><header class="discovery-header"><a href="index.html">← Quello</a><p class="eyebrow">QUELLO COMMUNITY</p><h1>Server Discovery</h1><p>Find Discord communities that choose to be listed by their owners.</p></header>
-<section class="discovery-controls"><input id="searchServers" type="search" maxlength="80" placeholder="Search servers…" aria-label="Search servers"><select id="filterCategory" aria-label="Filter by category"><option value="">All categories</option></select><button id="refreshServers" type="button">Refresh</button></section><p id="discoveryStatus" role="status" aria-live="polite">Loading servers…</p><section id="serverResults" class="server-grid" aria-live="polite"></section>
-<section class="discovery-manage"><h2>Manage your listings</h2><p>Only server owners and Discord administrators can publish or edit a listing. Listing is optional and disabled by default.</p><div id="manageListings"><a href="login.html?next=server-discovery.html">Sign in with Discord to manage your servers</a></div></section></main><script src="site-config.js"></script><script src="auth-common.js"></script><script src="server-discovery.js"></script></body></html>
+<!-- Copyright (c) 2026 Quello. All rights reserved. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0f1117">
+  <meta name="description" content="Discover Discord communities listed by their owners on Quello.">
+  <title>Server Discovery — Quello</title>
+  <link rel="icon" href="quello-mark.svg" type="image/svg+xml">
+  <script>(function(){try{var t=localStorage.getItem('quello-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="theme.css?v=5">
+  <link rel="stylesheet" href="brand-gradient.css?v=2">
+  <link rel="stylesheet" href="account-pages.css?v=2">
+  <link rel="stylesheet" href="server-discovery.css?v=4">
+  <link rel="stylesheet" href="quello-ui-system.css?v=2">
+  <script src="site-config.js?v=2"></script>
+  <script src="theme-switch.js?v=1"></script>
+</head>
+<body class="q-account-page discovery-page">
+  <header class="q-account-header discovery-topbar">
+    <a class="q-account-brand" href="index.html"><img src="quello-mark.svg" alt=""><span>Quello</span></a>
+    <div class="q-account-actions">
+      <label class="discovery-sr-only" for="accountLanguage" data-i18n="language">Language</label>
+      <select id="accountLanguage" class="q-account-language" aria-label="Language">
+        <option value="en">🇬🇧 English</option><option value="ru">🇷🇺 Русский</option><option value="de">🇩🇪 Deutsch</option><option value="fr">🇫🇷 Français</option><option value="it">🇮🇹 Italiano</option>
+      </select>
+      <button id="accountTheme" class="q-account-theme" type="button" aria-label="Toggle theme" title="Theme">◐</button>
+    </div>
+  </header>
+
+  <main class="q-account-main discovery-main">
+    <section class="q-account-hero discovery-hero">
+      <div class="discovery-hero-orbit discovery-orbit-one" aria-hidden="true"></div>
+      <div class="discovery-hero-orbit discovery-orbit-two" aria-hidden="true"></div>
+      <div class="discovery-hero-copy">
+        <span class="q-account-eyebrow" data-i18n="eyebrow">THE QUELLO COMMUNITY</span>
+        <h1 data-i18n="title">Find your next community.</h1>
+        <p data-i18n="intro">Explore Discord servers whose owners have chosen to share them with the Quello community.</p>
+        <div class="discovery-hero-meta"><span class="discovery-live-dot"></span><span data-i18n="optIn">Owner-listed communities · Opt-in directory</span></div>
+      </div>
+      <div class="discovery-hero-mark" aria-hidden="true"><span>Q</span><i></i><b></b></div>
+    </section>
+
+    <section class="discovery-explore" aria-labelledby="exploreTitle">
+      <div class="discovery-section-heading">
+        <div><span class="q-account-eyebrow" data-i18n="directoryLabel">EXPLORE</span><h2 id="exploreTitle" data-i18n="directoryTitle">Community directory</h2><p data-i18n="directoryIntro">Search by server name or description, or narrow the list by category.</p></div>
+        <div class="discovery-total"><strong id="serverCount">—</strong><span data-i18n="listedServers">listed servers</span></div>
+      </div>
+
+      <div class="discovery-toolbar q-account-card">
+        <label class="discovery-search"><span class="discovery-search-icon" aria-hidden="true">⌕</span><span class="discovery-sr-only" data-i18n="searchLabel">Search servers</span><input id="searchServers" type="search" maxlength="80" autocomplete="off" placeholder="Search communities…" data-i18n-placeholder="searchPlaceholder"></label>
+        <button id="refreshServers" class="q-account-button discovery-refresh" type="button"><span aria-hidden="true">↻</span><span data-i18n="refresh">Refresh</span></button>
+      </div>
+      <div id="categoryFilters" class="discovery-categories" role="group" aria-label="Filter by category">
+        <button class="discovery-filter is-active" type="button" data-category="" aria-pressed="true" data-i18n="allCategories">All communities</button>
+        <button class="discovery-filter" type="button" data-category="community" aria-pressed="false" data-i18n="community">Community</button>
+        <button class="discovery-filter" type="button" data-category="gaming" aria-pressed="false" data-i18n="gaming">Gaming</button>
+        <button class="discovery-filter" type="button" data-category="technology" aria-pressed="false" data-i18n="technology">Technology</button>
+        <button class="discovery-filter" type="button" data-category="creative" aria-pressed="false" data-i18n="creative">Creative</button>
+        <button class="discovery-filter" type="button" data-category="education" aria-pressed="false" data-i18n="education">Education</button>
+        <button class="discovery-filter" type="button" data-category="other" aria-pressed="false" data-i18n="other">Other</button>
+      </div>
+
+      <div id="discoveryStatus" class="discovery-status" role="status" aria-live="polite"><span class="discovery-spinner" aria-hidden="true"></span><span data-i18n="loading">Loading communities…</span></div>
+      <section id="serverResults" class="discovery-grid" aria-label="Listed Discord communities" aria-live="polite"></section>
+      <section id="discoveryEmpty" class="discovery-empty q-account-card" hidden>
+        <div class="discovery-empty-icon" aria-hidden="true">⌕</div><h3 id="emptyTitle">No communities found</h3><p id="emptyText">Try another search or choose a different category.</p><button id="clearFilters" class="q-account-button" type="button" data-i18n="clearFilters">Clear filters</button>
+      </section>
+    </section>
+
+    <section class="discovery-owner q-account-card" aria-labelledby="ownerTitle">
+      <div class="discovery-owner-art" aria-hidden="true"><span>✦</span><i></i></div>
+      <div class="discovery-owner-copy"><span class="q-account-eyebrow" data-i18n="forOwners">FOR SERVER OWNERS</span><h2 id="ownerTitle" data-i18n="ownerTitle">Bring your community to Quello.</h2><p data-i18n="ownerIntro">Choose which of your servers appear in the directory. Listings are optional and stay private until you publish them.</p></div>
+      <div class="discovery-owner-action" id="ownerAction"><a class="q-account-button primary" href="login.html?next=server-discovery.html" data-i18n="signInManage">Sign in to manage listings</a></div>
+    </section>
+
+    <section class="discovery-management" aria-labelledby="manageTitle">
+      <div class="discovery-section-heading"><div><span class="q-account-eyebrow" data-i18n="yourServers">YOUR COMMUNITIES</span><h2 id="manageTitle" data-i18n="manageTitle">Manage your listings</h2><p data-i18n="manageIntro">Only the server owner or a Discord administrator can manage a listing.</p></div></div>
+      <div id="manageListings" class="discovery-manage-grid"><div class="discovery-manage-placeholder q-account-card"><span class="discovery-spinner" aria-hidden="true"></span><span data-i18n="checkingSession">Checking your session…</span></div></div>
+    </section>
+
+    <footer class="q-account-footer discovery-footer"><a class="q-account-back" href="index.html" data-i18n="backToQuello">← Back to Quello</a><span data-i18n="footerNote">Server listings are submitted and controlled by their owners.</span></footer>
+  </main>
+  <div id="discoveryToast" class="discovery-toast" role="status" aria-live="polite"></div>
+  <script src="auth-common.js?v=4"></script>
+  <script src="account-pages.js?v=2"></script>
+  <script src="server-discovery.js?v=4"></script>
+</body>
+</html>
