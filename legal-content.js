@@ -360,15 +360,15 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "To keep publishing fair, each regular member may publish one QOTD per UTC calendar day across all Discord servers using the same Quello service. The limit resets at 00:00 UTC."
+                "Each Discord server may publish a maximum of one QOTD per UTC calendar day, shared by all members of that server. If any member publishes a QOTD, no other member of that server can publish another until the limit resets at 00:00 UTC. The limit is independent for each server and is enforced using the UTC date, regardless of local time zones."
               ],
               [
                 "p",
-                "A scheduled publication also uses the daily allowance of the user who most recently saved that schedule. For schedules created before this attribution was introduced, the server owner is used until an authorized user saves the schedule again."
+                "Manual, scheduled, random and approved-suggestion publications all use the same server-wide daily allowance."
               ],
               [
                 "p",
-                "The Bot Owner and the owner of the server where a QOTD is published may bypass this limit. The limit is based on the publishing user’s Discord User ID and the QOTD publication record."
+                "The limit applies to all members and authorized users without an owner bypass. It is enforced against the server ID and the UTC date of the QOTD publication record."
               ]
             ]
           ],
@@ -641,15 +641,15 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Для справедливого использования каждый обычный участник может публиковать один QOTD за календарный день UTC на всех Discord-серверах, использующих одну службу Quello. Ограничение сбрасывается в 00:00 UTC."
+                "На каждом Discord-сервере можно опубликовать не более одного QOTD за календарные сутки UTC. Лимит общий для всех участников этого сервера: если любой участник уже опубликовал QOTD, остальные не смогут опубликовать новый до сброса в 00:00 UTC. Ограничение действует независимо для каждого сервера и не зависит от местных часовых поясов."
               ],
               [
                 "p",
-                "Запланированная публикация также расходует дневной лимит пользователя, который последним сохранил это расписание. Для расписаний, созданных до появления такой привязки, используется владелец сервера — до следующего сохранения расписания уполномоченным пользователем."
+                "Ручные, запланированные, случайные публикации и публикации одобренных предложений используют один и тот же общий дневной лимит сервера."
               ],
               [
                 "p",
-                "Bot Owner и владелец сервера, на котором публикуется QOTD, могут обходить это ограничение. Лимит определяется по Discord User ID публикующего пользователя и записи о публикации QOTD."
+                "Ограничение действует для всех участников и пользователей с правами управления, без исключений для владельцев. Проверка выполняется по ID Discord-сервера и UTC-дате записи о публикации QOTD."
               ]
             ]
           ],
@@ -922,15 +922,15 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Für eine faire Nutzung darf jedes reguläre Mitglied pro UTC-Kalendertag über alle Discord-Server hinweg, die denselben Quello-Dienst verwenden, ein QOTD veröffentlichen. Das Limit wird um 00:00 UTC zurückgesetzt."
+                "Auf jedem Discord-Server darf pro UTC-Kalendertag höchstens ein QOTD veröffentlicht werden. Das Limit gilt gemeinsam für alle Mitglieder dieses Servers: Sobald ein Mitglied ein QOTD veröffentlicht hat, können die anderen bis zur Zurücksetzung um 00:00 UTC keines mehr veröffentlichen. Das Limit gilt unabhängig pro Server und richtet sich nicht nach lokalen Zeitzonen."
               ],
               [
                 "p",
-                "Eine geplante Veröffentlichung verbraucht ebenfalls das Tageskontingent des Nutzers, der den Zeitplan zuletzt gespeichert hat. Bei älteren Zeitplänen wird bis zum nächsten Speichern durch einen berechtigten Nutzer der Serverinhaber verwendet."
+                "Manuelle, geplante, zufällige und aus genehmigten Vorschlägen erstellte Veröffentlichungen verwenden alle dasselbe serverweite Tageslimit."
               ],
               [
                 "p",
-                "Der Bot Owner und der Eigentümer des Servers, auf dem das QOTD veröffentlicht wird, können dieses Limit umgehen. Das Limit basiert auf der Discord User ID des veröffentlichenden Nutzers und dem QOTD-Veröffentlichungsdatensatz."
+                "Das Limit gilt ohne Ausnahme auch für Mitglieder mit Verwaltungsrechten und Serverinhaber. Geprüft werden die Discord-Server-ID und das UTC-Datum des QOTD-Veröffentlichungsdatensatzes."
               ]
             ]
           ],
@@ -1203,15 +1203,15 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Pour garantir une utilisation équitable, chaque membre ordinaire peut publier un QOTD par jour calendaire UTC sur l’ensemble des serveurs Discord utilisant le même service Quello. La limite est réinitialisée à 00:00 UTC."
+                "Chaque serveur Discord peut publier au maximum un QOTD par jour calendaire UTC. Cette limite est commune à tous les membres du serveur : dès qu’un membre publie un QOTD, les autres ne peuvent plus en publier avant la réinitialisation à 00:00 UTC. La limite est indépendante pour chaque serveur et ne dépend pas des fuseaux horaires locaux."
               ],
               [
                 "p",
-                "Une publication programmée utilise également le quota quotidien de la personne qui a enregistré le programme en dernier. Pour les programmes créés avant cette attribution, le propriétaire du serveur est utilisé jusqu’à ce qu’un utilisateur autorisé enregistre à nouveau le programme."
+                "Les publications manuelles, programmées, aléatoires et issues de suggestions approuvées utilisent toutes la même limite quotidienne à l’échelle du serveur."
               ],
               [
                 "p",
-                "Le Bot Owner et le propriétaire du serveur sur lequel le QOTD est publié peuvent contourner cette limite. Celle-ci repose sur le Discord User ID de l’utilisateur qui publie et sur l’enregistrement de publication du QOTD."
+                "La limite s’applique à tous les membres et utilisateurs autorisés, sans exception pour les propriétaires. Elle est vérifiée à partir de l’identifiant du serveur Discord et de la date UTC de l’enregistrement de publication du QOTD."
               ]
             ]
           ],
@@ -1484,15 +1484,15 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Per garantire un uso equo, ogni membro normale può pubblicare un QOTD per giorno di calendario UTC su tutti i server Discord che utilizzano lo stesso servizio Quello. Il limite si azzera alle 00:00 UTC."
+                "Ogni server Discord può pubblicare al massimo un QOTD per giorno di calendario UTC. Il limite è condiviso da tutti i membri del server: quando un membro pubblica un QOTD, gli altri non possono pubblicarne un altro fino al ripristino alle 00:00 UTC. Il limite è indipendente per ogni server e non dipende dai fusi orari locali."
               ],
               [
                 "p",
-                "Una pubblicazione programmata utilizza anche la quota giornaliera dell’utente che ha salvato il programma più di recente. Per i programmi creati prima di questa attribuzione viene utilizzato il proprietario del server finché un utente autorizzato non salva nuovamente il programma."
+                "Le pubblicazioni manuali, programmate, casuali e quelle derivanti da suggerimenti approvati utilizzano tutte lo stesso limite giornaliero condiviso a livello di server."
               ],
               [
                 "p",
-                "Il Bot Owner e il proprietario del server in cui viene pubblicato il QOTD possono ignorare questo limite. Il limite si basa sul Discord User ID dell’utente che pubblica e sul record di pubblicazione del QOTD."
+                "Il limite si applica a tutti i membri e agli utenti autorizzati, senza eccezioni per i proprietari. Il controllo usa l’ID del server Discord e la data UTC del record di pubblicazione del QOTD."
               ]
             ]
           ],
@@ -1852,11 +1852,11 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "To enforce the one-QOTD-per-day limit, Quello uses the author’s Discord User ID and the UTC date/time already stored with each published QOTD. The check is global across servers using the same Quello database and resets at 00:00 UTC."
+                "To enforce the one-QOTD-per-server-per-UTC-day limit, Quello uses the Discord server ID and the UTC date/time already stored with each published QOTD. The check is performed separately for each server; local time zones are ignored, and the limit resets at 00:00 UTC."
               ],
               [
                 "p",
-                "Scheduled QOTD uses the Discord User ID of the person who most recently saved the schedule as its publishing identity, so the publication is counted against that person’s daily allowance. For schedules created before this attribution was introduced, the server owner is used until an authorized user saves the schedule again."
+                "Scheduled QOTD uses the same shared daily publication allowance as manual, random and approved-suggestion QOTDs. The allowance is enforced for the server, not against an individual member."
               ],
               [
                 "note",
@@ -2238,11 +2238,11 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Для применения ограничения «один QOTD в день» Quello использует Discord User ID автора и дату/время UTC, уже сохранённые в записи каждого опубликованного QOTD. Проверка действует глобально между серверами, использующими одну базу Quello, и сбрасывается в 00:00 UTC."
+                "Для применения ограничения «один QOTD в сутки на сервер» Quello использует ID Discord-сервера и UTC-дату/время, уже сохранённые в записи опубликованного QOTD. Проверка выполняется отдельно для каждого сервера; местный часовой пояс не учитывается, а лимит сбрасывается в 00:00 UTC."
               ],
               [
                 "p",
-                "Для Scheduled QOTD в качестве автора публикации используется Discord User ID пользователя, который последним сохранил расписание; публикация учитывается в его дневном лимите. Для расписаний, созданных до появления такой привязки, используется владелец сервера — до следующего сохранения расписания уполномоченным пользователем."
+                "Для проверки лимита не используется отдельный лимит участника или дополнительные данные пользователя: все способы публикации учитываются в общем дневном лимите соответствующего сервера."
               ],
               [
                 "note",
@@ -2624,11 +2624,11 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Zur Durchsetzung des Limits von einem QOTD pro Tag verwendet Quello die Discord User ID des Autors und das UTC-Datum bzw. die UTC-Zeit, die bereits beim veröffentlichten QOTD gespeichert sind. Die Prüfung gilt serverübergreifend für dieselbe Quello-Datenbank und wird um 00:00 UTC zurückgesetzt."
+                "Zur Durchsetzung des Limits von einem QOTD pro Server und UTC-Tag verwendet Quello die Discord-Server-ID und das UTC-Datum bzw. die UTC-Zeit, die bereits beim veröffentlichten QOTD gespeichert sind. Die Prüfung erfolgt für jeden Server separat; lokale Zeitzonen werden nicht berücksichtigt. Das Limit wird um 00:00 UTC zurückgesetzt."
               ],
               [
                 "p",
-                "Bei Scheduled QOTD wird die Discord User ID der Person, die den Zeitplan zuletzt gespeichert hat, als Veröffentlichungsidentität verwendet. Die Veröffentlichung wird daher auf das Tageskontingent dieser Person angerechnet. Bei älteren Zeitplänen wird bis zum nächsten Speichern durch einen berechtigten Nutzer der Serverinhaber verwendet."
+                "Für die Prüfung des Limits wird kein persönliches Tageskontingent und keine zusätzliche Nutzerinformation verwendet: Alle Veröffentlichungsarten zählen zum gemeinsamen Tageslimit des jeweiligen Servers."
               ],
               [
                 "note",
@@ -3010,11 +3010,11 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Pour appliquer la limite d’un QOTD par jour, Quello utilise le Discord User ID de l’auteur et la date/heure UTC déjà enregistrée avec chaque QOTD publié. La vérification est globale entre les serveurs utilisant la même base de données Quello et est réinitialisée à 00:00 UTC."
+                "Pour appliquer la limite d’un QOTD par serveur et par jour UTC, Quello utilise l’identifiant du serveur Discord et la date/heure UTC déjà enregistrée avec chaque QOTD publié. La vérification est effectuée séparément pour chaque serveur ; les fuseaux horaires locaux ne sont pas pris en compte. La limite est réinitialisée à 00:00 UTC."
               ],
               [
                 "p",
-                "Pour Scheduled QOTD, le Discord User ID de la personne ayant enregistré le programme en dernier sert d’identité de publication ; la publication est donc décomptée de son quota quotidien. Pour les programmes créés avant cette attribution, le propriétaire du serveur est utilisé jusqu’à ce qu’un utilisateur autorisé enregistre à nouveau le programme."
+                "Scheduled QOTD utilise la même limite quotidienne partagée que les publications manuelles, aléatoires et issues de suggestions approuvées. La limite est appliquée au serveur et non à un membre individuel."
               ],
               [
                 "note",
@@ -3396,11 +3396,11 @@ window.QUELLO_LEGAL = {
             [
               [
                 "p",
-                "Per applicare il limite di un QOTD al giorno, Quello utilizza il Discord User ID dell’autore e la data/ora UTC già salvata con ogni QOTD pubblicato. Il controllo è globale tra i server che utilizzano lo stesso database Quello e si azzera alle 00:00 UTC."
+                "Per applicare il limite di un QOTD per server e per giorno UTC, Quello utilizza l’ID del server Discord e la data/ora UTC già salvata con ogni QOTD pubblicato. Il controllo viene eseguito separatamente per ogni server; i fusi orari locali non vengono considerati. Il limite si azzera alle 00:00 UTC."
               ],
               [
                 "p",
-                "Per Scheduled QOTD viene utilizzato come identità di pubblicazione il Discord User ID della persona che ha salvato il programma più di recente; la pubblicazione viene quindi conteggiata nella quota giornaliera di quella persona. Per i programmi creati prima di questa attribuzione viene utilizzato il proprietario del server finché un utente autorizzato non salva nuovamente il programma."
+                "Per verificare il limite non viene utilizzata una quota personale né vengono richiesti dati aggiuntivi dell’utente: tutti i tipi di pubblicazione rientrano nel limite giornaliero condiviso del server interessato."
               ],
               [
                 "note",
