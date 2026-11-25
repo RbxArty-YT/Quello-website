@@ -1,0 +1,81 @@
+/* Quello About Creator — mini music player (theme-aware: uses the site colour tokens) */
+.about-music{margin-top:14px;padding:22px;border:1px solid var(--line);border-radius:19px;background:var(--surface-2);text-align:left}
+.about-music-head{margin:0 0 16px}
+.about-music-head .about-eyebrow{margin:0}
+.about-music-head h3{margin:8px 0 6px;color:var(--text-strong);font-size:17px}
+.about-music-head p:last-child{margin:0;color:var(--text-2);font-size:13px;line-height:1.7}
+
+.mp-card{display:grid;grid-template-columns:112px minmax(0,1fr);gap:18px;align-items:center}
+.mp-cover{position:relative;width:112px;height:112px;overflow:hidden;border-radius:20px;border:1px solid var(--line-strong);background:linear-gradient(145deg,#2a1f47,#120d20);box-shadow:0 10px 26px rgba(40,25,80,.22);aspect-ratio:1/1;transition:box-shadow .3s ease,transform .3s ease}
+.mp-cover img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .2s ease}
+.mp-cover.has-image img{opacity:1}
+.mp-cover-fallback{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:2.4rem}
+.mp-cover.has-image .mp-cover-fallback{display:none}
+.about-music.is-playing .mp-cover{box-shadow:0 12px 34px rgba(139,92,246,.45),0 0 0 3px rgba(139,92,246,.28)}
+
+.mp-main{min-width:0;display:flex;flex-direction:column;gap:12px}
+.mp-meta{min-width:0}
+.mp-title{display:block;color:var(--text-strong);font-size:1.05rem;line-height:1.3;font-weight:800;overflow-wrap:anywhere}
+.mp-artist{margin:3px 0 0;color:var(--text-3);font-size:.86rem;line-height:1.4;overflow-wrap:anywhere}
+.mp-error{min-height:0;margin:4px 0 0;color:var(--accent-red);font-size:.8rem}
+.mp-error:empty{display:none}
+
+.mp-progress{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;color:var(--text-3);font-size:.76rem;font-variant-numeric:tabular-nums}
+.mp-progress input[type=range]{--p:0%;width:100%;height:28px;margin:0;background:transparent;cursor:pointer;-webkit-appearance:none;appearance:none;touch-action:pan-y}
+.mp-progress input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+.mp-progress input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:999px;background:linear-gradient(90deg,#8b5cf6 0%,#ec4899 var(--p),var(--line-strong) var(--p))}
+.mp-progress input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:16px;height:16px;margin-top:-5px;border:2px solid #fff;border-radius:50%;background:#8b5cf6;box-shadow:0 1px 6px rgba(0,0,0,.35)}
+.mp-progress input[type=range]::-moz-range-track{height:6px;border-radius:999px;background:var(--line-strong)}
+.mp-progress input[type=range]::-moz-range-progress{height:6px;border-radius:999px;background:linear-gradient(90deg,#8b5cf6,#ec4899)}
+.mp-progress input[type=range]::-moz-range-thumb{width:12px;height:12px;border:2px solid #fff;border-radius:50%;background:#8b5cf6;box-shadow:0 1px 6px rgba(0,0,0,.35)}
+
+.mp-controls{display:flex;align-items:center;gap:10px}
+.mp-btn{display:grid;place-items:center;flex:0 0 auto;width:44px;height:44px;padding:0;border:1px solid var(--line-strong);border-radius:50%;background:var(--surface);color:var(--text);cursor:pointer;transition:transform .15s ease,border-color .15s ease,background .15s ease}
+@media(hover:hover){.mp-btn:hover{border-color:var(--accent);transform:translateY(-1px)}.mp-item:hover{background:var(--surface-hover)}}
+.mp-btn:active{transform:scale(.96)}
+.mp-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mp-btn svg{width:20px;height:20px;fill:currentColor}
+.mp-btn-play{width:54px;height:54px;border:0;background:linear-gradient(100deg,#7541d8,#c43c9b 72%,#d9364b);color:#fff;box-shadow:0 8px 22px rgba(139,92,246,.35)}
+@media(hover:hover){.mp-btn-play:hover{border:0;filter:brightness(1.08)}}
+.mp-btn-play svg{width:24px;height:24px}
+.mp-btn-play .mp-i-pause,.about-music.is-playing .mp-btn-play .mp-i-play{display:none}
+.about-music.is-playing .mp-btn-play .mp-i-pause{display:block}
+.mp-count{margin-left:auto;color:var(--text-3);font-size:.78rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.mp-list{display:grid;gap:4px;margin:16px 0 0;padding:6px;list-style:none;max-height:300px;overflow:auto;overscroll-behavior:contain;border:1px solid var(--line);border-radius:15px;background:var(--surface)}
+.mp-list[hidden]{display:none}
+.mp-item{display:flex;align-items:center;gap:12px;width:100%;min-height:52px;padding:6px 10px 6px 6px;border:0;border-radius:11px;background:transparent;color:var(--text);text-align:left;cursor:pointer;font:inherit}
+
+.mp-item:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.mp-item img{flex:0 0 40px;width:40px;height:40px;border-radius:9px;object-fit:cover;background:#2a1f47}
+.mp-item-text{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:1px}
+.mp-item-text strong{font-size:.88rem;line-height:1.3;overflow-wrap:anywhere}
+.mp-item-text small{color:var(--text-3);font-size:.74rem;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mp-item-dur{flex:0 0 auto;color:var(--text-3);font-size:.74rem;font-variant-numeric:tabular-nums}
+.mp-list li.is-current .mp-item{background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.mp-list li.is-current .mp-item-text strong{color:var(--accent-text)}
+.mp-list li.is-playing .mp-item-dur::before{content:"▶ ";color:var(--accent-text)}
+
+:root[data-theme="light"] .about-music{box-shadow:0 12px 36px rgba(40,25,80,.06)}
+:root[data-theme="light"] .mp-btn:not(.mp-btn-play){box-shadow:0 2px 8px rgba(40,25,80,.08)}
+
+@media(max-width:620px){
+  .about-music{padding:18px 16px;border-radius:17px}
+  .mp-card{grid-template-columns:84px minmax(0,1fr);gap:14px;align-items:start}
+  .mp-cover{width:84px;height:84px;border-radius:16px}
+  .mp-main{gap:10px}
+  .mp-title{font-size:.98rem}
+  .mp-artist{font-size:.8rem}
+}
+@media(max-width:420px){
+  /* Narrow phones: cover on top-left with the text, controls and progress use the full width */
+  .mp-card{grid-template-columns:64px minmax(0,1fr);gap:12px}
+  .mp-cover{width:64px;height:64px;border-radius:13px}
+  .mp-main{display:contents}
+  .mp-meta{grid-column:2;grid-row:1;align-self:center}
+  .mp-progress{grid-column:1/-1;grid-row:2}
+  .mp-controls{grid-column:1/-1;grid-row:3;justify-content:center;gap:14px}
+  .mp-count{display:none}
+  .mp-list{max-height:260px}
+}
+@media(prefers-reduced-motion:reduce){.mp-cover,.mp-btn,.mp-cover img{transition:none}.mp-btn:hover{transform:none}}

@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="creator-console.css?v=7"><link rel="stylesheet" href="about.css?v=7">
   <link rel="stylesheet" href="brand-gradient.css?v=5">
   <link rel="stylesheet" href="header-avatar.css?v=1">
-  <link rel="stylesheet" href="universe.css?v=9">
+  <link rel="stylesheet" href="universe.css?v=10">
+  <link rel="stylesheet" href="music-player.css?v=1">
 </head>
 <body>
   <header class="about-nav">
@@ -92,6 +93,29 @@
           </div>
         </article>
       </div>
+      <section class="about-music" id="aboutMusic" aria-label="Music player">
+        <div class="about-music-head">
+          <p class="about-eyebrow" data-mp-i18n="eyebrow">MUSIC</p>
+          <h3 data-mp-i18n="title">What I listen to</h3>
+          <p data-mp-i18n="intro">A small playlist of tracks I like. Press play to start — nothing plays automatically.</p>
+        </div>
+        <div class="mp-card">
+          <div class="mp-cover" id="mpCover"><img alt="" width="112" height="112" decoding="async"><span class="mp-cover-fallback" aria-hidden="true">♪</span></div>
+          <div class="mp-main">
+            <div class="mp-meta"><strong class="mp-title" id="mpTitle">—</strong><p class="mp-artist" id="mpArtist"></p><p class="mp-error" id="mpError" role="status"></p></div>
+            <div class="mp-progress"><span id="mpCur">0:00</span><input id="mpSeek" type="range" min="0" max="1000" step="1" value="0" aria-label="Track progress"><span id="mpDur">0:00</span></div>
+            <div class="mp-controls">
+              <button class="mp-btn" id="mpPrev" type="button" aria-label="Previous track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2.4v14H6zM20 5.5v13a.8.8 0 0 1-1.25.66L9.6 12.66a.8.8 0 0 1 0-1.32l9.15-6.5A.8.8 0 0 1 20 5.5Z"/></svg></button>
+              <button class="mp-btn mp-btn-play" id="mpPlay" type="button" aria-label="Play" aria-pressed="false"><svg class="mp-i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6a.9.9 0 0 0 1.38.76l10.7-6.8a.9.9 0 0 0 0-1.52L9.38 4.44A.9.9 0 0 0 8 5.2Z"/></svg><svg class="mp-i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5h3.6v15H7zM13.4 4.5H17v15h-3.6z"/></svg></button>
+              <button class="mp-btn" id="mpNext" type="button" aria-label="Next track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.6 5H18v14h-2.4zM4 5.5v13a.8.8 0 0 0 1.25.66l9.15-6.5a.8.8 0 0 0 0-1.32l-9.15-6.5A.8.8 0 0 0 4 5.5Z"/></svg></button>
+              <span class="mp-count" id="mpCount" aria-hidden="true">1 / 17</span>
+              <button class="mp-btn" id="mpListToggle" type="button" aria-expanded="false" aria-controls="mpList" aria-label="Tracklist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v2.2H4zM4 10.9h16v2.2H4zM4 15.8h10v2.2H4z"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <ol class="mp-list" id="mpList" hidden></ol>
+        <audio id="mpAudio" preload="none"></audio>
+      </section>
       <p class="about-note" data-i18n="aboutNote">This page is a small snapshot, not a complete description — interests and projects keep evolving.</p>
     </section>
   </main>
@@ -122,6 +146,7 @@
   </script>
   <script src="site-config.js?v=2"></script><script src="creator-console.js?v=12"></script>
   <script src="header-avatar.js?v=2"></script>
-  <script src="game-art.js?v=9" defer></script>
+  <script src="game-art.js?v=10" defer></script>
+  <script src="music-player.js?v=1" defer></script>
 
 </body></html>
