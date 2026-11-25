@@ -16,15 +16,16 @@
   }
   async function loadPublic() {
     status.textContent = 'Loading servers…';
-    try { const data = await fetch(`${Q.API_BASE}/public/server-discovery`).then(r => { if (!r.ok) throw Error('Could not load the directory.'); return r.json(); });
-      servers = data.servers || []; (data.categories || []).forEach(c => { if (!category.querySelector(`option[value="${c}"]`)) category.add(new Option(labels[c] || c, c)); }); render(); status.textContent = `${servers.length} listed server${servers.length === 1 ? '' : 's'}`;
+    try { if (!Q.API_BASE) throw Error('Server Discovery is temporarily unavailable: the Quello API address is not configured.');
+      const data = await fetch(`${Q.API_BASE}/public/server-discovery`, {headers:{Accept:'application/json'}, cache:'no-store'}).then(r => { if (!r.ok) throw Error(`Could not load the directory (HTTP ${r.status}).`); return r.json(); });
+      servers = Array.isArray(data.servers) ? data.servers : []; (data.categories || []).forEach(c => { if (!category.querySelector(`option[value="${c}"]`)) category.add(new Option(labels[c] || c, c)); }); render(); status.textContent = `${servers.length} listed server${servers.length === 1 ? '' : 's'}`;
     } catch (e) { status.textContent = e.message; }
   }
   function renderManage(items) {
     manage.innerHTML = items.length ? items.map(s => `<form class="listing-editor" data-guild="${esc(s.guild_id)}"><h3>${esc(s.name)}</h3><label class="inline"><input type="checkbox" name="enabled" ${s.enabled?'checked':''}> Publish this server in Server Discovery</label><label>Description<textarea name="description" maxlength="500">${esc(s.description)}</textarea></label><label>Category<select name="category">${Object.entries(labels).map(([v,l])=>`<option value="${v}" ${s.category===v?'selected':''}>${l}</option>`).join('')}</select></label><label>Discord invite URL<input name="invite_url" type="url" maxlength="200" value="${esc(s.invite_url)}" placeholder="https://discord.gg/…"></label><button type="submit">Save listing</button><small class="save-status" role="status"></small></form>`).join('') : '<p>No manageable servers with Quello are available on this account.</p>';
   }
   async function loadManage() {
-    if (!Q.getToken()) return;
+    if (!Q.getToken()) { manage.innerHTML = '<a href="login.html?next=server-discovery.html">Sign in with Discord to manage your servers</a>'; return; }
     try { const data = await Q.api('/api/server-discovery'); renderManage(data.servers || []); }
     catch (e) { manage.textContent = e.message || 'Could not load your servers.'; }
   }
