@@ -19,7 +19,7 @@
     status.textContent = 'Loading servers…';
     try { if (!Q.API_BASE) throw Error('Server Discovery is temporarily unavailable: the Quello API address is not configured.');
       const data = await fetch(`${Q.API_BASE}/public/server-discovery`, {headers:{Accept:'application/json'}, cache:'no-store'}).then(r => { if (!r.ok) throw Error(`Could not load the directory (HTTP ${r.status}).`); return r.json(); });
-      servers = Array.isArray(data.servers) ? data.servers.filter(s => s && typeof s.name === 'string') : []; (Array.isArray(data.categories) ? data.categories : []).forEach(c => { if (!category.querySelector(`option[value="${c}"]`)) category.add(new Option(labels[c] || c, c)); }); render(); status.textContent = `${servers.length} listed server${servers.length === 1 ? '' : 's'}`;
+      servers = Array.isArray(data.servers) ? data.servers.filter(s => s && typeof s.name === 'string') : []; (Array.isArray(data.categories) ? data.categories : []).forEach(c => { const value=String(c); const exists=Array.from(category.options).some(option => option.value===value); if (!exists && /^[a-z0-9_-]{1,32}$/i.test(value)) category.add(new Option(labels[value] || value, value)); }); render(); status.textContent = `${servers.length} listed server${servers.length === 1 ? '' : 's'}`;
     } catch (e) { servers = []; render(); status.textContent = e.message || 'Server Discovery is temporarily unavailable.'; }
   }
   function renderManage(items) {
