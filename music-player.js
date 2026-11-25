@@ -19,7 +19,7 @@
     { file: 'Oh Dam - LSplash.mp3', cover: 'lsplash-oh-dam', title: 'Oh Dam', artist: 'LSplash', dur: 186 },
     { file: 'tobyfox - SAVE the World.mp3', cover: 'toby-fox-save-the-world', title: 'SAVE the World', artist: 'Toby Fox', dur: 113 },
     { file: 'undertale_098. Battle Against a True Hero.mp3', cover: 'toby-fox-battle-against-a-true-hero', title: 'Battle Against a True Hero', artist: 'Toby Fox', dur: 157 },
-    { file: 'Dutch Melrose - Runrunrun.m4a', cover: 'dutch-melrose-runrunrun', title: 'Runrunrun', artist: 'Dutch Melrose', dur: 141 },
+    { file: 'Dutch Melrose - Runrunrun.mp3', cover: 'dutch-melrose-runrunrun', title: 'Runrunrun', artist: 'Dutch Melrose', dur: 141 },
     { file: 'Lady Gaga - Americano.mp3', cover: 'lady-gaga-americano', title: 'Americano', artist: 'Lady Gaga', dur: 247 },
     { file: 'The Living Tombstone - Fight Til I m Good Enough (feat Allanah Fitzgerald Elsie Lovelock MichaelK).mp3', cover: 'living-tombstone-fight-til-im-good-enough', title: 'Fight Til I’m Good Enough', artist: 'The Living Tombstone feat. Allanah Fitzgerald, Elsie Lovelock & MichaelK', dur: 210 },
     { file: 'MaxNRG - Arkan.mp3', cover: 'maxnrg-arkan', title: 'Arkan', artist: 'MaxNRG', dur: 320 },
