@@ -8,7 +8,7 @@
   // `file` is relative to music/, `cover` to music/covers/, `dur` is seconds (shown until metadata loads).
   const TRACKS = [
     { file: 'Автоспорт - Я не буду спать.mp3', cover: 'avtosport-ya-ne-budu-spat', title: 'Я не буду спать', artist: 'Автоспорт', dur: 198 },
-    { file: 'Автоспорт - Пожалуйста, Только Не Домой.m4a', cover: 'avtosport-pozhaluysta-tolko-ne-domoy', title: 'Пожалуйста, Только Не Домой', artist: 'Автоспорт', dur: 185 },
+    { file: 'Автоспорт - Пожалуйста, Только Не Домой.mp3', cover: 'avtosport-pozhaluysta-tolko-ne-domoy', title: 'Пожалуйста, Только Не Домой', artist: 'Автоспорт', dur: 185 },
     { file: 'Rebzyyx feat. hoshie star - all I want is you (1).mp3', cover: 'rebzyyx-all-i-want-is-you', title: 'all I want is you', artist: 'Rebzyyx feat. hoshie star', dur: 151 },
     { file: 'iGottic - Evil Barzil.mp3', cover: 'igottic-evil-barzil', title: 'Evil Barzil', artist: 'iGottic', dur: 116 },
     { file: 'iGottic - Final Showdown.mp3', cover: 'igottic-final-showdown', title: 'Final Showdown', artist: 'iGottic', dur: 122 },
