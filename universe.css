@@ -169,3 +169,12 @@
   .about-favorite-link > span:not(.about-favorite-icon):not(.about-favorite-platform) { font-size: .84rem; }
   .about-favorite-platform { font-size: .58rem !important; }
 }
+
+/* Consistent real game artwork in About Creator cards and universe hero icons. */
+.about-favorite-icon img{object-fit:contain!important;object-position:center!important;padding:3px!important;background:rgba(0,0,0,.12)}
+.universe-icon{display:grid;place-items:center;flex:0 0 76px;width:76px;height:76px;isolation:isolate;background:rgba(10,8,18,.72);border:1px solid rgba(255,255,255,.18);box-shadow:0 8px 24px rgba(0,0,0,.24)}
+.universe-icon-image{z-index:2;display:block;width:100%;height:100%;object-fit:contain!important;object-position:center!important;padding:5px;box-sizing:border-box;background:rgba(10,8,18,.22)}
+.universe-icon.has-image .universe-icon-fallback{display:none}
+.universe-icon-fallback{font-size:1.8rem}
+@media(max-width:760px){.universe-icon{flex-basis:54px;width:54px;height:54px;border-radius:14px}.universe-icon-image{padding:3px}}
+@media(max-width:390px){.universe-icon{flex-basis:48px;width:48px;height:48px}}
