@@ -2,7 +2,7 @@
 .q-account-page{min-height:100vh;color:var(--text);background:var(--bg);margin:0}
 .q-account-header{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:16px;width:min(1160px,calc(100% - 36px));margin:0 auto;padding:18px 0}
 .q-account-brand{display:inline-flex;align-items:center;gap:11px;color:var(--text-strong);font-size:20px;font-weight:850;text-decoration:none;letter-spacing:-.035em}
-.q-account-brand img{width:38px;height:38px;border-radius:13px;object-fit:cover;box-shadow:0 0 24px var(--glow-1)}
+.q-account-brand img{width:38px;height:38px;border-radius:50%;object-fit:contain;box-shadow:0 0 24px var(--glow-1)}
 .q-account-actions{display:flex;align-items:center;gap:9px}
 .q-account-back,.q-account-language{min-height:40px;padding:9px 13px;border:1px solid var(--line-strong);border-radius:12px;background:var(--surface);color:var(--text);font:600 13px var(--font-ui,Arial,sans-serif);text-decoration:none}
 .q-account-back{display:inline-flex;align-items:center;gap:7px;transition:transform .18s,border-color .18s,background .18s}

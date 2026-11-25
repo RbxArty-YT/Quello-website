@@ -172,3 +172,6 @@ input[type="range"]::-moz-range-thumb{width:12px;height:12px;border:3px solid va
   .builder-panel .toggle-row{width:100%;}
   .setup-checklist label{min-height:44px;}
 }
+
+/* Official Quello brand mark: circular, contained, never confused with a Discord user avatar. */
+:where(.q-account-brand img,.global-board-brand img){border-radius:50%!important;object-fit:contain!important}
