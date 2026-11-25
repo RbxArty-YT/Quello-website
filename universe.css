@@ -230,3 +230,16 @@
 @media (max-width: 760px) {
   .about-favorite-link.roblox-has-banner .about-favorite-icon { flex-basis: 50px !important; width: 50px !important; height: 50px !important; }
 }
+
+/* Larger artwork icons: About Creator and individual universe pages. */
+.about-favorite-icon{width:72px!important;height:72px!important;flex-basis:72px!important;border-radius:17px!important;font-size:1.8rem!important}
+.universe-icon{width:96px!important;height:96px!important;flex-basis:96px!important;border-radius:23px!important}
+.universe-icon-image{padding:5px!important}
+@media(max-width:760px){
+ .about-favorite-icon{width:62px!important;height:62px!important;flex-basis:62px!important;border-radius:15px!important}
+ .universe-icon{width:76px!important;height:76px!important;flex-basis:76px!important;border-radius:19px!important}
+}
+@media(max-width:390px){
+ .about-favorite-icon{width:56px!important;height:56px!important;flex-basis:56px!important}
+ .universe-icon{width:68px!important;height:68px!important;flex-basis:68px!important}
+}
