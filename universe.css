@@ -210,3 +210,23 @@
 }
 .about-favorite-icon img { object-fit: contain !important; }
 .universe-icon-image { object-fit: contain !important; }
+
+
+/* v9 artwork layout: square shortcut-style icons; wide artwork remains a separate banner. */
+.about-favorite-icon,
+.universe-icon { aspect-ratio: 1 / 1; }
+.about-favorite-icon img,
+.universe-icon-image { object-fit: contain !important; object-position: center !important; }
+.about-favorite-link.roblox-has-banner {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+.about-favorite-link.roblox-has-banner .about-favorite-icon {
+  flex: 0 0 62px !important;
+  width: 62px !important;
+  height: 62px !important;
+}
+@media (max-width: 760px) {
+  .about-favorite-link.roblox-has-banner .about-favorite-icon { flex-basis: 50px !important; width: 50px !important; height: 50px !important; }
+}

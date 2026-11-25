@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="creator-console.css?v=7"><link rel="stylesheet" href="about.css?v=7">
   <link rel="stylesheet" href="brand-gradient.css?v=5">
   <link rel="stylesheet" href="header-avatar.css?v=1">
-  <link rel="stylesheet" href="universe.css?v=8">
+  <link rel="stylesheet" href="universe.css?v=9">
 </head>
 <body>
   <header class="about-nav">
@@ -122,95 +122,6 @@
   </script>
   <script src="site-config.js?v=2"></script><script src="creator-console.js?v=12"></script>
   <script src="header-avatar.js?v=2"></script>
-  <script>
-  (function(){
-    const cards=document.querySelectorAll('.about-favorite-icon');
-    const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-    async function getJson(url){
-      try{
-        const response=await fetch(url,{mode:'cors',credentials:'omit',cache:'no-store'});
-        if(!response.ok)return null;
-        return await response.json();
-      }catch(error){return null;}
-    }
-    async function getUniverseId(place){
-      const endpoints=[
-        'https://apis.roblox.com/universes/v1/places/'+encodeURIComponent(place)+'/universe',
-        'https://games.roblox.com/v1/games/multiget-place-details?placeIds='+encodeURIComponent(place)
-      ];
-      for(const endpoint of endpoints){
-        const data=await getJson(endpoint);
-        const id=data&&(data.universeId||(Array.isArray(data)&&data[0]&&data[0].universeId));
-        if(id)return String(id);
-      }
-      return null;
-    }
-    async function getRobloxIcon(place){
-      const endpoint='https://thumbnails.roblox.com/v1/places/gameicons?placeIds='+encodeURIComponent(place)+'&returnPolicy=PlaceHolder&size=512x512&format=Png&isCircular=false';
-      for(let attempt=0;attempt<3;attempt++){
-        const data=await getJson(endpoint);
-        const item=data&&Array.isArray(data.data)&&data.data.find(x=>String(x.targetId)===String(place))||data&&data.data&&data.data[0];
-        if(item&&item.state==='Completed'&&item.imageUrl)return item.imageUrl;
-        if(item&&item.imageUrl&&item.state!=='Pending')return item.imageUrl;
-        await wait(650);
-      }
-      const universe=await getUniverseId(place);
-      if(!universe)return null;
-      const data=await getJson('https://thumbnails.roblox.com/v1/games/icons?universeIds='+encodeURIComponent(universe)+'&size=512x512&format=Png&isCircular=false');
-      const item=data&&data.data&&data.data[0];
-      return item&&item.imageUrl||null;
-    }
-    async function getRobloxBanner(place){
-      const universe=await getUniverseId(place);
-      if(!universe)return null;
-      const urls=[
-        'https://thumbnails.roblox.com/v1/games/'+encodeURIComponent(universe)+'/thumbnails?size=768x432&format=Png&isCircular=false&sortOrder=Asc&limit=10',
-        'https://thumbnails.roblox.com/v1/games/multiget/thumbnails?universeIds='+encodeURIComponent(universe)+'&countPerUniverse=1&defaults=true&size=768x432&format=Png&isCircular=false'
-      ];
-      for(const url of urls){
-        for(let attempt=0;attempt<2;attempt++){
-          const data=await getJson(url);
-          const row=data&&data.data&&data.data[0];
-          const image=row&&(row.imageUrl||(row.thumbnails&&row.thumbnails[0]&&row.thumbnails[0].imageUrl));
-          if(image)return image;
-          await wait(550);
-        }
-      }
-      return null;
-    }
-    function showImage(box,url){
-      if(!url)return;
-      const img=box.querySelector('img');
-      const fallback=box.querySelector('.about-favorite-fallback');
-      if(!img)return;
-      img.referrerPolicy='no-referrer';
-      img.onload=()=>{box.classList.add('has-image');if(fallback)fallback.hidden=true;};
-      img.onerror=()=>{box.classList.remove('has-image');if(fallback)fallback.hidden=false;};
-      img.loading='eager';
-      img.src=url;
-    }
-    function setBanner(link,url){
-      if(!url)return;
-      const preload=new Image();
-      preload.referrerPolicy='no-referrer';
-      preload.onload=()=>{
-        link.style.setProperty('--roblox-banner','url("'+url.replace(/"/g,'%22')+'")');
-        link.classList.add('roblox-has-banner');
-      };
-      preload.src=url;
-    }
-    cards.forEach(async box=>{
-      const link=box.closest('.about-favorite-link');
-      const place=box.dataset.robloxPlace;
-      if(place){
-        const [icon,banner]=await Promise.all([getRobloxIcon(place),getRobloxBanner(place)]);
-        showImage(box,icon);
-        if(link)setBanner(link,banner);
-        return;
-      }
-      showImage(box,box.dataset.gameArt);
-    });
-  })();
-  </script>
+  <script src="game-art.js?v=9" defer></script>
 
 </body></html>
