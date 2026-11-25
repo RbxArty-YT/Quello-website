@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="style.css?v=9">
   <link rel="stylesheet" href="theme.css?v=5">
   <link rel="stylesheet" href="brand-gradient.css?v=2">
-  <link rel="stylesheet" href="account-pages.css?v=2">
+  <link rel="stylesheet" href="account-pages.css?v=3">
   <link rel="stylesheet" href="server-discovery.css?v=4">
   <link rel="stylesheet" href="quello-ui-system.css?v=4">
   <script src="site-config.js?v=2"></script>
@@ -22,12 +22,9 @@
 </head>
 <body class="q-account-page discovery-page">
   <header class="q-account-header discovery-topbar">
-    <a class="q-account-brand" href="index.html"><img src="quello-mark.svg" alt=""><span>Quello</span></a>
+    <a class="q-account-brand" href="index.html"><img src="quello-avatar.webp" alt=""><span>Quello</span></a>
     <div class="q-account-actions"><a class="q-account-back" href="dashboard.html" id="discoveryDashboard" data-i18n="backToDashboard">← Back to Dashboard</a>
-      <label class="discovery-sr-only" for="accountLanguage" data-i18n="language">Language</label>
-      <select id="accountLanguage" class="q-account-language" aria-label="Language">
-        <option value="en">🇬🇧 English</option><option value="ru">🇷🇺 Русский</option><option value="de">🇩🇪 Deutsch</option><option value="fr">🇫🇷 Français</option><option value="it">🇮🇹 Italiano</option>
-      </select>
+      <div class="header-language" id="headerLanguage"><button class="header-language-button" id="headerLanguageButton" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="flag" id="headerLanguageFlag">🇬🇧</span><span id="headerLanguageCode">EN</span><span class="header-language-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button><div class="header-language-menu" id="headerLanguageMenu" role="listbox" aria-label="Language"><button type="button" data-header-language="en" role="option"><span class="flag">🇬🇧</span> <span>English</span></button><button type="button" data-header-language="ru" role="option"><span class="flag">🇷🇺</span> <span>Русский</span></button><button type="button" data-header-language="de" role="option"><span class="flag">🇩🇪</span> <span>Deutsch</span></button><button type="button" data-header-language="fr" role="option"><span class="flag">🇫🇷</span> <span>Français</span></button><button type="button" data-header-language="it" role="option"><span class="flag">🇮🇹</span> <span>Italiano</span></button></div></div><select id="accountLanguage" class="q-account-language q-language-source" aria-label="Language" data-native-select hidden><option value="en">English</option><option value="ru">Русский</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="it">Italiano</option></select>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light / dark theme" title="Theme"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.6 14.4A8.6 8.6 0 0 1 9.6 3.4a.7.7 0 0 0-.9-.9 9.9 9.9 0 1 0 12.8 12.8.7.7 0 0 0-.9-.9Z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></svg></button>
     </div>
   </header>
@@ -83,13 +80,13 @@
       <div id="manageListings" class="discovery-manage-grid"><div class="discovery-manage-placeholder q-account-card"><span class="discovery-spinner" aria-hidden="true"></span><span data-i18n="checkingSession">Checking your session…</span></div></div>
     </section>
 
-    <footer class="q-account-footer discovery-footer"><a class="q-account-back" href="index.html" data-i18n="backToQuello">← Back to Quello</a><span data-i18n="footerNote">Server listings are submitted and controlled by their owners.</span></footer>
+    
   </main>
   <div id="discoveryToast" class="discovery-toast" role="status" aria-live="polite"></div>
   <script src="auth-common.js?v=4"></script>
-  <script src="account-pages.js?v=2"></script>
+  <script src="account-pages.js?v=3"></script>
   <script src="server-discovery.js?v=4"></script>
-  <script src="sheet-select.js?v=2"></script>
+  <script src="sheet-select.js?v=3"></script>
   <script src="header-avatar.js?v=4"></script>
 </body>
 </html>

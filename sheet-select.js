@@ -142,8 +142,8 @@
   }
   function scan(node) {
     if (!node || node.nodeType !== 1) return;
-    if (node.matches && node.matches('select:not([multiple]):not([data-native-select]):not(.creator-filter-native-select)')) enhance(node);
-    if (node.querySelectorAll) node.querySelectorAll('select:not([multiple]):not([data-native-select]):not(.creator-filter-native-select)').forEach(enhance);
+    if (node.matches && node.matches('select:not([multiple]):not([data-native-select]):not(.creator-filter-native-select):not(.q-language-source):not(.q-account-language)')) enhance(node);
+    if (node.querySelectorAll) node.querySelectorAll('select:not([multiple]):not([data-native-select]):not(.creator-filter-native-select):not(.q-language-source):not(.q-account-language)').forEach(enhance);
   }
   function start() {
     scan(document.body);
