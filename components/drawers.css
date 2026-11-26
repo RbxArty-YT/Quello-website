@@ -1,0 +1,26 @@
+/* Shared Quello drawer surface */
+body.q-sample-drawer-active{overflow:hidden}
+.q-sample-drawer-overlay{
+  position:fixed;inset:0;z-index:9990;display:flex;
+  background:rgba(5,7,13,.62);backdrop-filter:blur(5px);
+  opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease;
+}
+.q-sample-drawer-overlay[hidden]{display:none}
+.q-sample-drawer-overlay.is-open{opacity:1;visibility:visible}
+.q-sample-drawer-panel{
+  display:flex;flex-direction:column;min-height:0;overflow:hidden;
+  border:1px solid color-mix(in srgb,var(--accent) 32%,var(--line-strong));
+  background:linear-gradient(155deg,color-mix(in srgb,var(--accent) 8%,var(--surface)),var(--surface) 52%,color-mix(in srgb,var(--accent-2) 5%,var(--surface)));
+  color:var(--text);box-shadow:var(--shadow-pop);
+  transition:transform .24s cubic-bezier(.2,.8,.2,1);
+}
+.q-sample-drawer-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--surface-2) 84%,transparent)}
+.q-sample-drawer-eyebrow{display:block;color:var(--text-4);font-size:10px;font-weight:850;letter-spacing:.15em}
+.q-sample-drawer-title{margin:4px 0 0;color:var(--text-strong);font-size:20px;line-height:1.25}
+.q-sample-drawer-close{display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;border:1px solid var(--line-strong);border-radius:12px;background:var(--surface-3);color:var(--text-strong);font-size:25px;line-height:1;cursor:pointer}
+.q-sample-drawer-close:hover{border-color:var(--accent);background:var(--surface-hover)}
+.q-sample-drawer-content{min-height:0;overflow:auto;padding:18px 22px 24px}
+.q-sample-option{display:flex;align-items:center;gap:12px;width:100%;min-height:52px;margin:4px 0;padding:11px 13px;border:1px solid transparent;border-radius:13px;background:transparent;color:var(--text-2);font:inherit;text-align:left;cursor:pointer}
+.q-sample-option:hover,.q-sample-option[aria-selected="true"]{border-color:color-mix(in srgb,var(--accent) 42%,var(--line));background:color-mix(in srgb,var(--accent) 12%,var(--surface));color:var(--text-strong)}
+.q-sample-option small{display:block;color:var(--text-4);font-size:11px}
+@media(prefers-reduced-motion:reduce){.q-sample-drawer-overlay,.q-sample-drawer-panel{transition:none!important}}

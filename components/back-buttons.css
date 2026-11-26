@@ -1,0 +1,14 @@
+/* Quello reusable back-button samples */
+.q-sample-back{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:42px;
+  max-width:100%;padding:9px 15px;border:1px solid var(--line-strong);border-radius:13px;
+  background:linear-gradient(145deg,var(--surface),var(--surface-2));color:var(--text-2);
+  font:750 13px/1.2 var(--font-ui,Arial,sans-serif);text-decoration:none;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease,color .18s ease;
+}
+.q-sample-back:hover{transform:translateY(-2px);border-color:var(--accent);background:var(--surface-hover);color:var(--text-strong)}
+.q-sample-back:active{transform:translateY(0) scale(.985)}
+.q-sample-back .q-sample-back-arrow{font-size:17px;line-height:1;color:var(--accent-text)}
+.q-sample-back.is-primary{border-color:transparent;background:var(--brand-flow,linear-gradient(100deg,#7c4dff,#c43c9b 62%,#e9455a));color:#fff}
+.q-sample-back.is-primary .q-sample-back-arrow{color:#fff}
+@media(prefers-reduced-motion:reduce){.q-sample-back{transition:none}}

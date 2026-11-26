@@ -1,0 +1,30 @@
+/* Quello Admin Panel visual sample only. No API or permission logic lives here. */
+.q-sample-admin{display:grid;grid-template-columns:190px minmax(0,1fr);min-height:390px;overflow:hidden;border:1px solid var(--line-strong);border-radius:22px;background:var(--surface);box-shadow:var(--shadow-pop)}
+.q-sample-admin-sidebar{padding:17px 12px;border-right:1px solid var(--line);background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 8%,var(--surface)),var(--surface))}
+.q-sample-admin-brand{display:flex;align-items:center;gap:10px;padding:4px 7px 17px;border-bottom:1px solid var(--line)}
+.q-sample-admin-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:var(--brand-flow,linear-gradient(100deg,#7c4dff,#c43c9b 62%,#e9455a));color:white;font-weight:900}
+.q-sample-admin-brand strong,.q-sample-admin-brand small{display:block}
+.q-sample-admin-brand small{color:var(--text-4);font-size:10px}
+.q-sample-admin-nav{display:grid;gap:5px;margin-top:15px}
+.q-sample-admin-tab{width:100%;padding:10px 11px;border:1px solid transparent;border-radius:11px;background:transparent;color:var(--text-3);font:700 12px var(--font-ui,Arial,sans-serif);text-align:left;cursor:pointer}
+.q-sample-admin-tab:hover,.q-sample-admin-tab[aria-current="page"]{border-color:color-mix(in srgb,var(--accent) 30%,var(--line));background:color-mix(in srgb,var(--accent) 12%,var(--surface));color:var(--accent-text)}
+.q-sample-admin-main{min-width:0;padding:22px}
+.q-sample-admin-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:20px}
+.q-sample-admin-top h3{margin:0;color:var(--text-strong);font-size:20px}
+.q-sample-admin-status{padding:5px 9px;border:1px solid color-mix(in srgb,#22c55e 30%,var(--line));border-radius:999px;background:color-mix(in srgb,#22c55e 9%,var(--surface));color:#22c55e;font-size:10px;font-weight:850}
+.q-sample-admin-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.q-sample-admin-card{min-width:0;padding:15px;border:1px solid var(--line);border-radius:14px;background:var(--surface-2)}
+.q-sample-admin-card small{display:block;color:var(--text-4);font-size:10px;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
+.q-sample-admin-card strong{display:block;margin-top:7px;color:var(--text-strong);font-size:23px}
+.q-sample-admin-note{margin-top:15px;padding:14px;border:1px solid var(--line);border-radius:13px;background:var(--surface-sunken);color:var(--text-3);font-size:12px}
+.q-sample-admin-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.q-sample-admin-actions button{min-height:38px;padding:8px 12px;border:1px solid var(--line-strong);border-radius:11px;background:var(--surface-2);color:var(--text-2);font:700 12px var(--font-ui,Arial,sans-serif);cursor:pointer}
+.q-sample-admin-actions button:hover{border-color:var(--accent);color:var(--text-strong)}
+@media(max-width:620px){
+  .q-sample-admin{grid-template-columns:1fr}
+  .q-sample-admin-sidebar{border-right:0;border-bottom:1px solid var(--line)}
+  .q-sample-admin-nav{display:flex;overflow:auto;padding-bottom:3px}
+  .q-sample-admin-tab{width:auto;white-space:nowrap}
+  .q-sample-admin-main{padding:17px}
+  .q-sample-admin-cards{grid-template-columns:1fr}
+}

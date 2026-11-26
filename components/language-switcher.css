@@ -1,0 +1,6 @@
+/* Quello language switcher sample */
+.q-sample-language-trigger{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:8px 12px;border:1px solid var(--line-strong);border-radius:13px;background:linear-gradient(145deg,var(--surface),var(--surface-2));color:var(--text-strong);font:800 12px var(--font-ui,Arial,sans-serif);cursor:pointer}
+.q-sample-language-trigger:hover{border-color:var(--accent);background:var(--surface-hover)}
+.q-sample-language-flag{font-size:18px;line-height:1}
+.q-sample-language-code{letter-spacing:.08em}
+.q-sample-language-check{margin-left:auto;color:var(--accent-text);font-weight:900}

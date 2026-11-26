@@ -1,0 +1,15 @@
+/* Quello UI component samples page */
+.q-samples-wrap{width:min(1120px,calc(100% - 40px));margin:0 auto;padding:42px 0 80px}
+.q-samples-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:30px}
+.q-samples-head h1{margin:0;color:var(--text-strong);font-size:clamp(30px,5vw,48px);line-height:1.1}
+.q-samples-head p{max-width:680px;margin:10px 0 0;color:var(--text-3)}
+.q-samples-section{margin-top:24px;padding:22px;border:1px solid var(--line);border-radius:20px;background:var(--surface)}
+.q-samples-section h2{margin:0 0 7px;color:var(--text-strong);font-size:20px}
+.q-samples-section>p{margin:0 0 18px;color:var(--text-3);font-size:13px}
+.q-samples-controls{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.q-samples-divider{height:1px;margin:20px 0;background:var(--line)}
+.q-samples-label{display:block;margin-bottom:9px;color:var(--text-4);font-size:10px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+.q-samples-footer{margin-top:28px;color:var(--text-4);font-size:11px}
+.q-samples-open{min-height:42px;padding:9px 14px;border:1px solid var(--line-strong);border-radius:13px;background:var(--surface-2);color:var(--text-strong);font:700 13px var(--font-ui,Arial,sans-serif);cursor:pointer}
+.q-samples-open:hover{border-color:var(--accent);background:var(--surface-hover)}
+@media(max-width:600px){.q-samples-wrap{width:calc(100% - 28px);padding-top:28px}.q-samples-head{display:block}.q-samples-section{padding:17px}}
