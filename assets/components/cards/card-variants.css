@@ -1,5 +1,39 @@
 /* Copyright (c) 2026 Quello. All rights reserved. */
-.q-card--info{border-style:solid}
-.q-card--dashboard{padding:18px}
-.q-card--game,.q-card--universe{overflow:hidden;padding:0}
-.q-card--profile{text-align:center;align-items:center}
+/* Quello card tiers. Cards of one type look identical on every page.
+   The "html body" prefix lets the library win over legacy per-page rules without !important. */
+
+/* 1) Shell — the large page container of a section (About, Universe, Character, About extras). */
+html body :is(.q-card--shell,.about-card,.about-extra,.universe-card,.character-card){
+  --q-shell-radius:26px;
+  border-radius:var(--q-shell-radius);
+}
+
+/* 2) Content card — information panels, account/leaderboard/discovery/evolution cards. */
+html body :is(.q-card--content,.about-info-card,.global-board-card,.q-account-card,.evolution-card,.discovery-server-card,.dash-card){
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:var(--surface);
+  box-shadow:var(--q-control-shadow);
+}
+html body :is(.q-card--content,.about-info-card,.global-board-card,.evolution-card){padding:22px}
+
+/* 3) Compact item — list rows and small tiles (servers, characters, items). */
+html body :is(.q-card--compact,.about-character-card,.universe-char,.server-card,.item-card,.user-card){
+  border-radius:16px;
+  box-shadow:var(--q-control-shadow);
+}
+
+/* Interactive cards react the same way everywhere. */
+html body :is(a.q-card--compact,a.about-character-card,a.universe-char,a.server-card,button.server-card,.q-card--interactive){
+  transition:transform var(--q-dur,.18s) var(--q-ease,ease),border-color var(--q-dur,.18s),background var(--q-dur,.18s);
+}
+@media(hover:hover){
+  html body :is(a.q-card--compact,a.about-character-card,a.universe-char,a.server-card,button.server-card,.q-card--interactive):hover{transform:translateY(-2px);border-color:var(--accent)}
+}
+html body :is(a.q-card--compact,a.about-character-card,a.universe-char,a.server-card,button.server-card,.q-card--interactive):active{transform:scale(.99)}
+
+@media(max-width:620px){
+  html body :is(.q-card--shell,.about-card,.about-extra,.universe-card,.character-card){--q-shell-radius:22px}
+  html body :is(.q-card--content,.about-info-card,.global-board-card,.evolution-card){padding:18px}
+}
+@media(prefers-reduced-motion:reduce){html body :is(a.about-character-card,a.universe-char,a.server-card,button.server-card,.q-card--interactive){transition:none}}
