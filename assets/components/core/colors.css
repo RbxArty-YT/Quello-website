@@ -1,0 +1,3 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+/* Semantic colour aliases built on the existing theme.css tokens, so light and dark themes switch everywhere. */
+:root{--q-surface:var(--surface);--q-surface-2:var(--surface-2);--q-text:var(--text-2);--q-text-strong:var(--text-strong);--q-border:var(--line);--q-border-strong:var(--line-strong);--q-accent:var(--accent)}

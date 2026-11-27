@@ -1,0 +1,8 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+/* Quello cards: one base structure shared by all card types. */
+:where(.q-account-card,.q-account-hero,.character-card,.profile-stat,.global-board-card,.about-extra,.about-character-section,.server-card,.discovery-listing){border-color:var(--line);box-shadow:var(--q-control-shadow)}
+:where(.q-account-card,.global-board-card,.about-extra,.about-character-section,.server-card,.discovery-listing){border-radius:var(--q-panel-radius)}
+:where(.q-card,.q-account-card,.global-board-card,.about-extra,.server-card,.discovery-listing,.character-card,.profile-stat){box-sizing:border-box;min-width:0;max-width:100%;background:var(--surface);transition:transform var(--q-dur) var(--q-ease),border-color var(--q-dur),box-shadow var(--q-dur)}
+.q-card{border:1px solid var(--line);border-radius:var(--q-panel-radius);box-shadow:var(--q-control-shadow);padding:var(--q-card-pad)}
+@media(hover:hover){.q-card:hover{border-color:var(--line-hover);transform:translateY(-2px)}}
+.q-card:active{transform:translateY(0) scale(.995)}

@@ -1,0 +1,9 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+/* No page may scroll sideways. */
+html,body{max-width:100%;overflow-x:clip}
+:where(img,svg,video,canvas,iframe){max-width:100%}
+:where(img,video){height:auto}
+:where(input,select,textarea,button){max-width:100%}
+:where(.q-table-wrap,.table-wrap,.creator-table-wrap,[class*="table-wrap"]){max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+:where(table){max-width:100%}
+@media(max-width:620px){:where(main,section,article,header,footer,nav,.q-account-main,.about-wrap,.global-board-shell){min-width:0;max-width:100%}:where(.q-account-card,.about-card,.global-board-card,.server-card,.discovery-listing){min-width:0}:where(.q-grid,[class*="-grid"],[class*="-list"]){min-width:0}}

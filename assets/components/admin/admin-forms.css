@@ -1,0 +1,8 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+/* Creator Console's bespoke filter select uses the same glass surface as the shared picker. */
+.creator-console-overlay .creator-filter-select-trigger{min-height:42px;border:1px solid var(--line-strong);border-radius:13px;background:linear-gradient(145deg,var(--surface),var(--surface-2));color:var(--text-strong);box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 5px 16px rgba(0,0,0,.07)}
+.creator-console-overlay .creator-filter-select-trigger:hover,.creator-console-overlay .creator-filter-select.is-open .creator-filter-select-trigger{border-color:var(--accent);background:var(--surface-hover);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
+.creator-console-overlay .creator-filter-select-menu{border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line-strong));border-radius:15px;background:linear-gradient(145deg,var(--surface),var(--surface-2));box-shadow:var(--shadow-pop);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);padding:6px}
+.creator-console-overlay .creator-filter-select-option{min-height:38px;border-radius:10px;color:var(--text-2);transition:background .16s ease,color .16s ease}
+.creator-console-overlay .creator-filter-select-option:hover,.creator-console-overlay .creator-filter-select-option.is-selected{background:color-mix(in srgb,var(--accent) 13%,var(--surface));color:var(--accent-text)}
+.creator-console-overlay :where(input,select,textarea){max-width:100%;box-sizing:border-box}

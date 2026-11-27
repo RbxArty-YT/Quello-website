@@ -1,0 +1,3 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+.creator-console-overlay :where(button){max-width:100%}
+@media(max-width:620px){.creator-console-overlay :where(.creator-actions,.creator-toolbar,[class*="actions"]){flex-wrap:wrap}}

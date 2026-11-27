@@ -1,0 +1,6 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+:where(.q-account-footer a,.discovery-footer a){text-decoration:none}
+:where(.q-account-footer a:not(.q-account-back)){display:inline-flex;align-items:center;min-height:40px;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--accent-text);font-weight:700}
+:where(.q-account-footer a:not(.q-account-back)):hover{border-color:var(--accent);background:var(--surface-hover);color:var(--text-strong)}
+:where(.q-account-header,.global-board-header,.about-nav,.legal-nav){flex-wrap:wrap;min-width:0}
+:where(.q-account-actions,.global-board-actions,.about-nav-actions){flex-wrap:wrap;min-width:0}

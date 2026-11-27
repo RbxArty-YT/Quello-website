@@ -1,0 +1,16 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+/* Quello UI Library — the ONE contextual back button (Dashboard design). Place once, at the top of a page. */
+:where(.q-back,.dashboard-back-button,.global-board-back,.about-back,.universe-back,.character-back,.q-account-back){
+  box-sizing:border-box;min-height:var(--q-back-height,40px);max-width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:9px 15px;border:0!important;border-radius:13px;
+  background:var(--brand-flow,linear-gradient(100deg,#7c4dff,#c43c9b 62%,#e9455a))!important;background-size:220% 100%!important;background-repeat:no-repeat!important;
+  color:#fff!important;font-family:var(--font-ui,Arial,sans-serif);font-weight:750;line-height:1.2;text-decoration:none;cursor:pointer;
+  box-shadow:0 7px 22px var(--brand-glow,rgba(196,60,155,.25)),inset 0 1px 0 rgba(255,255,255,.18);
+  transition:transform .18s,filter .18s,box-shadow .18s}
+:where(.q-back,.dashboard-back-button,.global-board-back,.about-back,.universe-back,.character-back,.q-account-back):hover{
+  color:#fff!important;filter:brightness(1.08);transform:translateY(-2px);text-decoration:none;
+  box-shadow:0 11px 28px var(--brand-glow,rgba(196,60,155,.32)),inset 0 1px 0 rgba(255,255,255,.2)}
+:where(.q-back,.dashboard-back-button,.global-board-back,.about-back,.universe-back,.character-back,.q-account-back):active{transform:translateY(0) scale(.985)}
+.q-back-bar{display:flex;align-items:center;width:min(1120px,calc(100% - 32px));margin:14px auto 0;min-width:0}
+@media(max-width:620px){.q-back-bar{width:calc(100% - 26px)}:where(.q-back,.universe-back,.character-back,.about-back){white-space:normal;text-align:center}}
+@media(prefers-reduced-motion:reduce){:where(.q-back,.dashboard-back-button,.global-board-back,.about-back,.universe-back,.character-back,.q-account-back){transition:none;animation:none!important}}

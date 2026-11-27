@@ -1,0 +1,10 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+:where(button,input,select,textarea,a,[role="button"],[role="option"],[role="menuitem"],summary){-webkit-tap-highlight-color:transparent}
+:where(button,a,[role="button"],[role="option"],[role="menuitem"],summary):focus-visible,:where(input,select,textarea):focus-visible{outline:2px solid var(--accent)!important;outline-offset:3px!important}
+:where(input,textarea)::placeholder{color:var(--text-4);opacity:1}
+:where(button:disabled,input:disabled,select:disabled,textarea:disabled,[aria-disabled="true"]){cursor:not-allowed!important;opacity:.52}
+:where(button:not(:disabled),a,.q-account-button):hover{transition-duration:.16s}
+:where(details){border-color:var(--line)}
+:where(details>summary){cursor:pointer;transition:color .16s ease,background .16s ease,border-color .16s ease}
+:where(details>summary):focus-visible{border-radius:11px}
+@media(prefers-reduced-motion:reduce){:where(button,a,input,select,textarea,summary,[role="button"]){transition:none!important;scroll-behavior:auto!important;animation:none!important}}

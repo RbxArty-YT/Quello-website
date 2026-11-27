@@ -1,0 +1,2 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+:where(.side-menu,.side-menu-panel){max-width:min(100vw,380px);box-sizing:border-box;overflow-y:auto}

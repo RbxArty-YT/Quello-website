@@ -1,0 +1,4 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+/* Quello UI Library — design tokens. Theme colours stay in theme.css (light/dark); these add shared sizing tokens. */
+:root{--q-control-radius:13px;--q-panel-radius:21px;--q-control-height:42px;--q-control-border:var(--line-strong);--q-control-bg:var(--surface);--q-control-hover:var(--surface-hover);--q-control-shadow:var(--shadow-card);--q-glass:linear-gradient(145deg,color-mix(in srgb,var(--surface) 92%,white 2%),var(--surface-2))}
+:root{--q-space-1:4px;--q-space-2:8px;--q-space-3:12px;--q-space-4:16px;--q-space-5:24px;--q-card-pad:20px;--q-card-gap:16px;--q-ease:cubic-bezier(.2,.7,.2,1);--q-dur:.18s;--q-back-height:40px}
