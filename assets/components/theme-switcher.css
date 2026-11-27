@@ -1,4 +1,0 @@
-/* Quello theme switcher sample */
-.q-sample-theme-toggle{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:8px 13px;border:1px solid var(--line-strong);border-radius:14px;background:linear-gradient(145deg,var(--surface),var(--surface-2));color:var(--text-strong);font:700 13px var(--font-ui,Arial,sans-serif);cursor:pointer;transition:border-color .18s ease,transform .18s ease,background .18s ease}
-.q-sample-theme-toggle:hover{border-color:var(--accent);transform:translateY(-1px)}
-.q-sample-theme-icon{display:grid;place-items:center;width:26px;height:26px;border-radius:9px;background:color-mix(in srgb,var(--accent) 16%,var(--surface));color:var(--accent-text);font-size:16px}
