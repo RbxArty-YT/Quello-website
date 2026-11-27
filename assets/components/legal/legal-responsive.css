@@ -1,0 +1,21 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+/* Terms & Privacy: responsive rules */
+@media(max-width:980px){
+  .legal-layout{grid-template-columns:1fr}
+  .legal-aside{position:static}
+  .legal-toc nav{max-height:none}
+  .legal-cards{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .legal-nav{flex-wrap:wrap;row-gap:10px}
+  .legal-nav-actions{width:100%;gap:8px}
+  .legal-nav-actions .legal-btn{flex:1 1 0;justify-content:center;padding:0 10px;min-width:0}
+  .legal-hero{border-radius:22px}
+  .legal-tabs{display:flex;width:100%}.legal-tab{flex:1;text-align:center;padding:10px 8px;font-size:13px}
+  .legal-sec{border-radius:18px}
+  .legal-sec h2{gap:11px}.legal-num{min-width:34px;height:34px;border-radius:10px}
+}
+@media print{.legal-nav,.legal-aside,.legal-cards,.legal-top,.legal-tabs{display:none!important}.legal-sec,.legal-hero{border:0;box-shadow:none;background:none}.legal-layout{display:block}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media(max-width:520px){.legal-nav-actions .legal-btn{flex:0 0 auto;width:40px;padding:0;justify-content:center}.legal-nav-actions .legal-btn span{display:none}.legal-nav-actions{justify-content:flex-end}}
+@media(max-width:640px){.legal-nav{position:relative;z-index:40}.legal-sec{scroll-margin-top:16px}}

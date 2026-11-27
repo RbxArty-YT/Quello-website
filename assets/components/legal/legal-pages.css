@@ -1,0 +1,5 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+/* Quello UI Library — legal pages (terms.html, privacy.html). Own design, kept separate from the app UI. */
+@import url("legal-layout.css?v=1");
+@import url("legal-cards.css?v=1");
+@import url("legal-responsive.css?v=1");
