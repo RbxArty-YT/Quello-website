@@ -1,0 +1,126 @@
+/* Copyright (c) 2026 Quello. All rights reserved.
+ * Adoption layer for existing production markup. Keeps page-specific behavior
+ * and geometry while bringing shared surfaces, controls and focus states
+ * under the Quello UI token system.
+ */
+
+/* Production card families across About, Universe, account, feedback and boards. */
+:where(
+  .about-card,.about-info-card,.about-personality-card,.about-favorites-card,
+  .about-extra,.about-character-section,.extra-card,.evolution-card,
+  .universe-card,.character-card,.character-facts,.character-description,
+  .feedback-card,.flow-panel,.flow-card,.setup-step,.setup-checklist,
+  .achievement,.command-embed,.command-details,.discord-embed,
+  .global-board-card,.global-board-shell,.q-account-card,.q-account-hero,
+  .profile-settings-card,.server-card,.discovery-listing,.discovery-server-card,
+  .dash-card,.login-card,.auth-card,.mp-card,.builder-panel,
+  .community-box,.side-search-box
+){
+  min-width:0;
+  border-color:var(--line);
+  box-shadow:var(--q-control-shadow);
+}
+:where(
+  .about-card,.about-info-card,.about-personality-card,.about-favorites-card,
+  .about-extra,.about-character-section,.extra-card,.evolution-card,
+  .universe-card,.character-card,.feedback-card,.flow-panel,.flow-card,
+  .achievement,.global-board-card,.q-account-card,.q-account-hero,
+  .profile-settings-card,.server-card,.discovery-listing,.discovery-server-card,
+  .dash-card,.login-card,.auth-card,.mp-card,.builder-panel,
+  .community-box,.side-search-box
+){border-radius:var(--q-panel-radius)}
+
+/* Production action buttons retain their individual color and layout rules. */
+:where(
+  .intent-button,.hero-primary,.hero-secondary,.discord-button,
+  .secondary-button,.text-button,.mp-btn,.global-board-refresh,
+  .discovery-refresh,.discovery-filter,.side-action,.about-social-link,
+  .about-favorite-link,.board-link-action,.about-btn,.about-btn-primary,
+  .about-btn-secondary,.universe-back,.character-back,.dashboard-back-button,
+  .about-back,.flow-back,.global-board-back,.q-account-back,.q-account-button,
+  .primary-button,.discovery-owner-action
+){
+  font-family:var(--font-ui,Arial,sans-serif);
+  transition:background-color var(--q-dur) var(--q-ease),
+    border-color var(--q-dur) var(--q-ease),color var(--q-dur) var(--q-ease),
+    box-shadow var(--q-dur) var(--q-ease),transform var(--q-dur) var(--q-ease),
+    opacity var(--q-dur) var(--q-ease);
+  -webkit-tap-highlight-color:transparent;
+}
+:where(
+  .intent-button,.hero-primary,.hero-secondary,.discord-button,
+  .secondary-button,.text-button,.mp-btn,.global-board-refresh,
+  .discovery-refresh,.discovery-filter,.side-action,.about-social-link,
+  .about-favorite-link,.board-link-action,.about-btn,.about-btn-primary,
+  .about-btn-secondary,.universe-back,.character-back,.dashboard-back-button,
+  .about-back,.flow-back,.global-board-back,.q-account-back,.q-account-button,
+  .primary-button,.discovery-owner-action
+):focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+:where(
+  .intent-button:disabled,.hero-primary:disabled,.hero-secondary:disabled,
+  .discord-button:disabled,.secondary-button:disabled,.text-button:disabled,
+  .mp-btn:disabled,.global-board-refresh:disabled,.discovery-refresh:disabled,
+  .discovery-filter:disabled,.side-action:disabled,.q-account-button:disabled,
+  .primary-button:disabled,.discovery-owner-action:disabled,[aria-disabled="true"]
+){cursor:not-allowed;opacity:.55}
+
+/* Existing menus, drawers and modal shells use one glass surface language. */
+:where(
+  .header-language-menu,.header-avatar-menu,.side-menu,.side-menu-panel,
+  .command-drawer-panel,.menu-panel,.profile-menu,.qotd-menu,
+  .creator-filter-select-menu,.modal-panel,.modal-content,.popover-panel,
+  .language-dropdown,.language-picker
+){
+  border-color:var(--line-strong);
+  color:var(--text);
+  background:var(--q-glass);
+  box-shadow:var(--shadow-pop);
+  -webkit-backdrop-filter:blur(22px) saturate(135%);
+  backdrop-filter:blur(22px) saturate(135%);
+}
+:where(.side-menu,.side-menu-panel,.command-drawer-panel,.modal-panel,.modal-content){
+  border-radius:var(--q-panel-radius);
+}
+:where(.menu-overlay,.command-drawer-backdrop,.modal-backdrop,[data-overlay]){
+  -webkit-backdrop-filter:blur(7px);
+  backdrop-filter:blur(7px);
+}
+:where(
+  .header-language-menu button,.header-avatar-item,.side-menu-links a,
+  .side-action,.command-drawer-close,.menu-close,.language-option
+){
+  transition:background-color var(--q-dur) var(--q-ease),
+    border-color var(--q-dur) var(--q-ease),color var(--q-dur) var(--q-ease);
+}
+
+/* Shared field treatment; custom switches keep their own visual implementation. */
+:where(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),textarea,select){
+  max-width:100%;
+  font-family:var(--font-ui,Arial,sans-serif);
+}
+:where(input,textarea,select):disabled{cursor:not-allowed;opacity:.58}
+:where(input,textarea,select):focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Prevent common card and toolbar children from forcing mobile overflow. */
+:where(
+  .about-info-grid,.about-character-grid,.global-board-actions,
+  .global-board-header,.q-account-actions,.feedback-actions,
+  .discovery-toolbar,.profile-settings-actions,.about-nav-actions
+){min-width:0;flex-wrap:wrap}
+:where(.about-card,.about-info-card,.global-board-card,.q-account-card,.feedback-card,
+  .profile-settings-card,.universe-card,.character-card,.server-card,.discovery-listing){
+  overflow-wrap:anywhere;
+}
+@media(max-width:620px){
+  :where(.about-info-grid,.about-character-grid){min-width:0;max-width:100%}
+  :where(.global-board-actions,.q-account-actions,.feedback-actions,.profile-settings-actions){gap:8px}
+  :where(.about-card,.about-info-card,.global-board-card,.q-account-card,.feedback-card,
+    .profile-settings-card,.universe-card,.character-card,.server-card,.discovery-listing){max-width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  :where(.intent-button,.hero-primary,.hero-secondary,.discord-button,.secondary-button,
+    .text-button,.mp-btn,.global-board-refresh,.discovery-refresh,.discovery-filter,
+    .side-action,.about-social-link,.about-favorite-link,.board-link-action,
+    .about-back,.flow-back,.global-board-back,.q-account-back,.q-account-button,
+    .primary-button,.discovery-owner-action){transition:none!important}
+}

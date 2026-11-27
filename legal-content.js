@@ -3,7 +3,7 @@
 window.QUELLO_LEGAL = {
   "dates": {
     "effective": "2026-09-13",
-    "updated": "2026-11-25"
+    "updated": "2026-11-27"
   },
   "ui": {
     "en": {
@@ -163,7 +163,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Quello also offers server-specific QOTD categories, achievements, a public global leaderboard, opt-in public profiles, an opt-in Server Discovery directory and the signed-in Feedback Center."
+                "Quello also offers server-specific QOTD categories, achievements, a public global leaderboard, public profiles, an opt-in Server Discovery directory and the signed-in Feedback Center."
               ],
               [
                 "note",
@@ -368,7 +368,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "The limit applies to all members and authorized users without an owner bypass. It is enforced against the server ID and the UTC date of the QOTD publication record."
+                "The limit applies to all members. The Bot Owner and the relevant Server Owner may bypass it. It is enforced against the server ID and the UTC date of the QOTD publication record."
               ]
             ]
           ],
@@ -381,7 +381,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Public profiles are private by default and become visible only when the account owner opts in. The profile owner controls whether answer counts, created-question counts and achievement information are shown. Discord profile banners are displayed only when Discord makes a banner available."
+                "Quello profiles are public by default. Public profile pages may show the member’s Discord display name, avatar, available Discord banner, QOTD answer count, published-question count and achievement information. Discord profile banners are displayed only when Discord makes a banner available."
               ],
               [
                 "p",
@@ -444,7 +444,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Quello также предлагает категории QOTD для серверов, достижения, публичную глобальную таблицу лидеров, добровольные публичные профили, добровольный каталог Server Discovery и Центр обратной связи для вошедших пользователей."
+                "Quello также предлагает категории QOTD для серверов, достижения, публичную глобальную таблицу лидеров, публичные профили, добровольный каталог Server Discovery и Центр обратной связи для вошедших пользователей."
               ],
               [
                 "note",
@@ -649,7 +649,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Ограничение действует для всех участников и пользователей с правами управления, без исключений для владельцев. Проверка выполняется по ID Discord-сервера и UTC-дате записи о публикации QOTD."
+                "Ограничение действует для всех участников. Bot Owner и владелец соответствующего сервера могут обходить дневной лимит. Проверка выполняется по ID Discord-сервера и UTC-дате записи о публикации QOTD."
               ]
             ]
           ],
@@ -662,7 +662,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Публичные профили по умолчанию закрыты и становятся видимыми только после добровольного включения владельцем аккаунта. Владелец профиля управляет отображением количества ответов, созданных вопросов и достижений. Баннер Discord отображается только в том случае, если Discord предоставляет его."
+                "Профили Quello по умолчанию публичны. В них могут отображаться имя Discord, аватар, доступный баннер Discord, количество ответов QOTD, опубликованных вопросов и достижений. Баннер Discord отображается только в том случае, если Discord предоставляет его."
               ],
               [
                 "p",
@@ -725,7 +725,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Quello bietet außerdem serverspezifische QOTD-Kategorien, Erfolge, eine öffentliche globale Bestenliste, freiwillig öffentliche Profile, ein optionales Server-Discovery-Verzeichnis und ein Feedback-Center für angemeldete Nutzer."
+                "Quello bietet außerdem serverspezifische QOTD-Kategorien, Erfolge, eine öffentliche globale Bestenliste, öffentliche Profile, ein optionales Server-Discovery-Verzeichnis und ein Feedback-Center für angemeldete Nutzer."
               ],
               [
                 "note",
@@ -943,7 +943,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Öffentliche Profile sind standardmäßig privat und werden erst sichtbar, wenn der Kontoinhaber dies ausdrücklich aktiviert. Der Profilinhaber bestimmt, ob Antwortzahlen, erstellte Fragen und Erfolgsinformationen angezeigt werden. Discord-Profilbanner werden nur angezeigt, wenn Discord eines bereitstellt."
+                "Quello-Profile sind standardmäßig öffentlich. Öffentliche Profile können den Discord-Anzeigenamen, Avatar, verfügbares Discord-Banner, QOTD-Antwortzahlen, veröffentlichte Fragen und Erfolge anzeigen. Discord-Profilbanner werden nur angezeigt, wenn Discord eines bereitstellt."
               ],
               [
                 "p",
@@ -1006,7 +1006,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Quello propose également des catégories QOTD par serveur, des succès, un classement mondial public, des profils publics facultatifs, un annuaire Server Discovery facultatif et un centre de retours réservé aux utilisateurs connectés."
+                "Quello propose également des catégories QOTD par serveur, des succès, un classement mondial public, des profils publics, un annuaire Server Discovery facultatif et un centre de retours réservé aux utilisateurs connectés."
               ],
               [
                 "note",
@@ -1224,7 +1224,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Les profils publics sont privés par défaut et ne deviennent visibles que si leur propriétaire l’active volontairement. Le propriétaire du profil contrôle l’affichage du nombre de réponses, des questions créées et des succès. Les bannières de profil Discord ne sont affichées que si Discord en fournit une."
+                "Les profils Quello sont publics par défaut. Ils peuvent afficher le nom Discord, l’avatar, la bannière Discord disponible, le nombre de réponses QOTD, les questions publiées et les succès. Les bannières Discord ne sont affichées que si Discord en fournit une."
               ],
               [
                 "p",
@@ -1287,7 +1287,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Quello offre inoltre categorie QOTD per server, traguardi, una classifica globale pubblica, profili pubblici facoltativi, una directory Server Discovery facoltativa e un Centro feedback per gli utenti autenticati."
+                "Quello offre inoltre categorie QOTD per server, traguardi, una classifica globale pubblica, profili pubblici, una directory Server Discovery facoltativa e un Centro feedback per gli utenti autenticati."
               ],
               [
                 "note",
@@ -1505,7 +1505,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "I profili pubblici sono privati per impostazione predefinita e diventano visibili solo quando il proprietario dell’account sceglie di renderli pubblici. Il proprietario del profilo controlla se mostrare il numero di risposte, le domande create e le informazioni sui traguardi. I banner del profilo Discord vengono mostrati solo quando Discord ne rende disponibile uno."
+                "I profili Quello sono pubblici per impostazione predefinita. Possono mostrare il nome Discord, l’avatar, il banner Discord disponibile, il numero di risposte QOTD, le domande pubblicate e i traguardi. I banner Discord vengono mostrati solo quando Discord ne rende disponibile uno."
               ],
               [
                 "p",
@@ -1711,7 +1711,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Public-profile visibility settings remain stored when a profile is made private. Disabled Server Discovery listings are removed from the public directory, but their saved settings remain stored. Feedback items and replies remain in the database while managed by the service; the current implementation does not define an automatic expiry period for them."
+                "Public profile information is available by default. Disabled Server Discovery listings are removed from the public directory, but their saved settings remain stored. Feedback items and replies remain in the database while managed by the service; the current implementation does not define an automatic expiry period for them."
               ]
             ]
           ],
@@ -1885,7 +1885,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "You can make your profile private and control whether answers, created questions and achievements are shown. When a profile is made private, its public endpoint stops returning the profile. Your privacy settings remain stored so you can change them later."
+                "Quello profiles are public by default. A public profile may display the member’s Discord display name, avatar, available Discord banner, QOTD answer count, published-question count and achievement information. Do not include sensitive information in profile-related public content."
               ],
               [
                 "h3",
@@ -2097,7 +2097,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Настройки публичного профиля сохраняются после его закрытия. Отключённые карточки Server Discovery исчезают из публичного каталога, но сохранённые настройки остаются в базе данных. Обращения и ответы Центра обратной связи хранятся в базе, пока обрабатываются сервисом; текущая реализация не задаёт для них автоматический срок удаления."
+                "Профили Quello по умолчанию публичны. Отключённые карточки Server Discovery исчезают из публичного каталога, но сохранённые настройки остаются в базе данных. Обращения и ответы Центра обратной связи хранятся в базе, пока обрабатываются сервисом; текущая реализация не задаёт для них автоматический срок удаления."
               ]
             ]
           ],
@@ -2271,7 +2271,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Можно закрыть профиль и отдельно управлять отображением ответов, созданных вопросов и достижений. После закрытия профиль перестаёт возвращаться публичным API. Настройки конфиденциальности сохраняются, чтобы их можно было изменить позднее."
+                "Профили Quello по умолчанию публичны. В публичном профиле могут отображаться имя Discord, аватар, доступный баннер Discord, количество ответов QOTD, опубликованных вопросов и достижений."
               ],
               [
                 "h3",
@@ -2483,7 +2483,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Einstellungen zur Sichtbarkeit eines öffentlichen Profils bleiben gespeichert, wenn das Profil privat geschaltet wird. Deaktivierte Server-Discovery-Einträge werden aus dem öffentlichen Verzeichnis entfernt, ihre Einstellungen bleiben jedoch gespeichert. Feedback-Einträge und Antworten bleiben in der Datenbank, solange sie vom Dienst verwaltet werden; die aktuelle Implementierung legt dafür keine automatische Ablaufzeit fest."
+                "Quello-Profile sind standardmäßig öffentlich. Deaktivierte Server-Discovery-Einträge werden aus dem öffentlichen Verzeichnis entfernt, ihre Einstellungen bleiben jedoch gespeichert. Feedback-Einträge und Antworten bleiben in der Datenbank, solange sie vom Dienst verwaltet werden; die aktuelle Implementierung legt dafür keine automatische Ablaufzeit fest."
               ]
             ]
           ],
@@ -2657,7 +2657,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Du kannst dein Profil privat schalten und separat festlegen, ob Antworten, erstellte Fragen und Erfolge angezeigt werden. Bei einem privaten Profil liefert der öffentliche Endpunkt das Profil nicht mehr aus. Deine Datenschutzeinstellungen bleiben gespeichert, damit du sie später ändern kannst."
+                "Quello-Profile sind standardmäßig öffentlich. Ein öffentliches Profil kann deinen Discord-Anzeigenamen, Avatar, ein verfügbares Discord-Banner, QOTD-Antwortzahlen, veröffentlichte Fragen und Erfolge anzeigen."
               ],
               [
                 "h3",
@@ -2869,7 +2869,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Les réglages de visibilité d’un profil restent enregistrés lorsque celui-ci est rendu privé. Les fiches Server Discovery désactivées sont retirées de l’annuaire public, mais leurs paramètres restent enregistrés. Les retours et leurs réponses restent dans la base de données tant qu’ils sont gérés par le service ; l’implémentation actuelle ne prévoit pas de durée d’expiration automatique pour ces éléments."
+                "Les profils Quello sont publics par défaut. Les fiches Server Discovery désactivées sont retirées de l’annuaire public, mais leurs paramètres restent enregistrés. Les retours et leurs réponses restent dans la base de données tant qu’ils sont gérés par le service ; l’implémentation actuelle ne prévoit pas de durée d’expiration automatique pour ces éléments."
               ]
             ]
           ],
@@ -3043,7 +3043,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Vous pouvez rendre votre profil privé et choisir séparément d’afficher ou non vos réponses, vos questions publiées et vos succès. Une fois le profil rendu privé, le point d’accès public ne renvoie plus le profil. Vos réglages de confidentialité restent enregistrés afin que vous puissiez les modifier ultérieurement."
+                "Les profils Quello sont publics par défaut. Un profil public peut afficher votre nom Discord, votre avatar, votre bannière Discord disponible, le nombre de réponses QOTD, les questions publiées et les succès."
               ],
               [
                 "h3",
@@ -3255,7 +3255,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Le impostazioni di visibilità del profilo restano salvate quando il profilo viene reso privato. Le schede Server Discovery disattivate vengono rimosse dalla directory pubblica, ma le impostazioni restano nel database. I feedback e le risposte restano nel database mentre sono gestiti dal servizio; l’implementazione attuale non definisce una scadenza automatica."
+                "I profili Quello sono pubblici per impostazione predefinita. Le schede Server Discovery disattivate vengono rimosse dalla directory pubblica, ma le impostazioni restano nel database. I feedback e le risposte restano nel database mentre sono gestiti dal servizio; l’implementazione attuale non definisce una scadenza automatica."
               ]
             ]
           ],
@@ -3429,7 +3429,7 @@ window.QUELLO_LEGAL = {
               ],
               [
                 "p",
-                "Puoi rendere privato il profilo e scegliere separatamente se mostrare risposte, domande create e traguardi. Quando il profilo diventa privato, l’endpoint pubblico non lo restituisce più. Le impostazioni di privacy restano salvate così puoi modificarle in seguito."
+                "I profili Quello sono pubblici per impostazione predefinita. Un profilo pubblico può mostrare il nome Discord, l’avatar, il banner Discord disponibile, il numero di risposte QOTD, le domande pubblicate e i traguardi."
               ],
               [
                 "h3",

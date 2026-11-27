@@ -1,37 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <!-- Copyright (c) 2026 Quello. All rights reserved. -->
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
-  <meta name="description" content="Quello — your Question of the Day bot for creating, managing, and organizing QOTDs and discussions.">
-  <link rel="canonical" href="https://rbxarty-yt.github.io/Quello-website/">
-  <!-- Open Graph: rich link previews -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Quello">
-  <meta property="og:title" content="Quello — Your Question of the Day Bot">
-  <meta property="og:description" content="Create, manage, and organize Questions of the Day and discussions with Quello.">
-  <meta property="og:url" content="https://rbxarty-yt.github.io/Quello-website/">
-  <meta property="og:image" content="https://rbxarty-yt.github.io/Quello-website/og-preview.jpg">
-  <meta property="og:image:secure_url" content="https://rbxarty-yt.github.io/Quello-website/og-preview.jpg">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Quello — Your Question of the Day Bot, in a purple and magenta cosmic design.">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Quello — Your Question of the Day Bot">
-  <meta name="twitter:description" content="Create, manage, and organize Questions of the Day and discussions with Quello.">
-  <meta name="twitter:image" content="https://rbxarty-yt.github.io/Quello-website/og-preview.jpg">
-  <meta name="theme-color" content="#7200a8">
-  <title>Quello — Your Question of the Day Bot</title>
-  <script>(function(){try{var t=localStorage.getItem("quello-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme="dark";}})();</script>
-  <script src="login-gate.js?v=3"></script>
-  <script src="theme-switch.js?v=2"></script>
-  <link rel="preload" href="fonts/TwemojiCountryFlags.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=8">
-  <link rel="icon" type="image/png" href="quello-avatar.webp">
-  <link rel="apple-touch-icon" href="quello-avatar.webp">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,minimum-scale=1" name="viewport"/>
+<meta content="Quello — your Question of the Day bot for creating, managing, and organizing QOTDs and discussions." name="description"/>
+<link href="https://rbxarty-yt.github.io/Quello-website/" rel="canonical"/>
+<!-- Open Graph: rich link previews -->
+<meta content="website" property="og:type"/>
+<meta content="Quello" property="og:site_name"/>
+<meta content="Quello — Your Question of the Day Bot" property="og:title"/>
+<meta content="Create, manage, and organize Questions of the Day and discussions with Quello." property="og:description"/>
+<meta content="https://rbxarty-yt.github.io/Quello-website/" property="og:url"/>
+<meta content="https://rbxarty-yt.github.io/Quello-website/og-preview.jpg" property="og:image"/>
+<meta content="https://rbxarty-yt.github.io/Quello-website/og-preview.jpg" property="og:image:secure_url"/>
+<meta content="image/jpeg" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Quello — Your Question of the Day Bot, in a purple and magenta cosmic design." property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Quello — Your Question of the Day Bot" name="twitter:title"/>
+<meta content="Create, manage, and organize Questions of the Day and discussions with Quello." name="twitter:description"/>
+<meta content="https://rbxarty-yt.github.io/Quello-website/og-preview.jpg" name="twitter:image"/>
+<meta content="#7200a8" name="theme-color"/>
+<title>Quello — Your Question of the Day Bot</title>
+<script>(function(){try{var t=localStorage.getItem("quello-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme="dark";}})();</script>
+<script src="login-gate.js?v=3"></script>
+<script src="theme-switch.js?v=2"></script>
+<link as="font" crossorigin="" href="fonts/TwemojiCountryFlags.woff2" rel="preload" type="font/woff2"/>
+<link href="style.css?v=8" rel="stylesheet"/>
+<link href="quello-avatar.webp" rel="icon" type="image/png"/>
+<link href="quello-avatar.webp" rel="apple-touch-icon"/>
 <style id="quello-side-menu-v2">
 .side-section-label{padding:4px 4px 6px;color:var(--text-4);font-size:10px;font-weight:800;letter-spacing:.12em}
 .side-search{display:grid;gap:7px}
@@ -52,7 +52,6 @@ a.side-action:hover,.side-action:hover{background:var(--surface-3);color:var(--t
 .language-current-name{color:var(--text-3);font-weight:600}
 @media(max-width:600px){.side-section-label{font-size:9px}.side-action{min-height:46px}}
 </style>
-
 <style id="quello-tabs-v3">
 .header-language{position:relative;margin-left:auto;z-index:60}
 .header-language-button{display:flex;align-items:center;gap:7px;min-height:40px;padding:8px 11px;border:1px solid var(--line-strong);border-radius:11px;background:var(--surface);color:var(--text);font:inherit;font-size:12px;font-weight:800;letter-spacing:.06em;cursor:pointer;transition:.16s ease}
@@ -78,550 +77,519 @@ html{overflow-x:clip;touch-action:pan-y pinch-zoom}
 .tab-hidden{display:none!important}
 @media(max-width:600px){.site-tabs-inner{padding:0 12px;gap:2px}.site-tab{min-height:48px;padding:0 14px;font-size:13px}.header-language-button{min-height:38px;padding:7px 9px}.header-language-menu{right:0}}
 </style>
-<link rel="stylesheet" href="theme.css?v=4">
-  <link rel="stylesheet" href="landing-redesign.css?v=5">
-<link rel="stylesheet" href="motion-polish.css?v=14">
-  <link rel="stylesheet" href="interface-evolution.css?v=1">
-  <link rel="stylesheet" href="sidebar-evolution.css?v=1">
-  <link rel="stylesheet" href="performance-optimization.css?v=5">
+<link href="theme.css?v=4" rel="stylesheet"/>
+<link href="landing-redesign.css?v=5" rel="stylesheet"/>
+<link href="motion-polish.css?v=14" rel="stylesheet"/>
+<link href="interface-evolution.css?v=1" rel="stylesheet"/>
+<link href="sidebar-evolution.css?v=1" rel="stylesheet"/>
+<link href="performance-optimization.css?v=5" rel="stylesheet"/>
 <style>html{scroll-padding-top:112px} section[id]{scroll-margin-top:112px}</style>
-  <link rel="stylesheet" href="creator-console.css?v=13">
-  <link rel="stylesheet" href="brand-gradient.css?v=5">
-  <link rel="stylesheet" href="header-avatar.css?v=3">
-<link rel="stylesheet" href="quello-ui-system.css?v=4">  <link rel="stylesheet" href="sheet-select.css?v=2">
+<link href="creator-console.css?v=13" rel="stylesheet"/>
+<link href="brand-gradient.css?v=5" rel="stylesheet"/>
+<link href="header-avatar.css?v=3" rel="stylesheet"/>
+<link href="sheet-select.css?v=2" rel="stylesheet"/>
+<link href="assets/components/quello-ui.css?v=5" rel="stylesheet"/>
 </head>
 <body>
-  <header class="site-header" id="siteHeader">
-  <nav class="nav">
-    <div class="nav-inner">
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-controls="sideMenu" aria-expanded="false">☰</button>
-      <a class="brand" href="#home"><img class="brand-avatar" src="quello-avatar.webp" alt="Quello bot avatar" decoding="async" loading="eager" fetchpriority="high"> <span>Quello</span></a>
-      <div class="header-tools">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light / dark theme" title="Theme">
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.6 14.4A8.6 8.6 0 0 1 9.6 3.4a.7.7 0 0 0-.9-.9 9.9 9.9 0 1 0 12.8 12.8.7.7 0 0 0-.9-.9Z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></svg>
-      </button>
-      <div class="header-language" id="headerLanguage">
-        <button class="header-language-button" id="headerLanguageButton" type="button" aria-haspopup="listbox" aria-expanded="false">
-          <span class="flag" id="headerLanguageFlag">🇬🇧</span>
-          <span id="headerLanguageCode">EN</span>
-          <span class="header-language-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </button>
-        <div class="header-language-menu" id="headerLanguageMenu" role="listbox" aria-label="Language">
-          <button type="button" data-header-language="en" role="option"><span class="flag">🇬🇧</span> <span>English</span></button>
-          <button type="button" data-header-language="ru" role="option"><span class="flag">🇷🇺</span> <span>Русский</span></button>
-          <button type="button" data-header-language="de" role="option"><span class="flag">🇩🇪</span> <span>Deutsch</span></button>
-          <button type="button" data-header-language="fr" role="option"><span class="flag">🇫🇷</span> <span>Français</span></button>
-          <button type="button" data-header-language="it" role="option"><span class="flag">🇮🇹</span> <span>Italiano</span></button>
-        </div>
-      </div>
-      </div>
-    </div>
-  </nav>
-
-  <nav class="site-tabs" id="siteTabs" aria-label="Documentation sections">
-    <div class="site-tabs-inner">
-      <button class="site-tab active" type="button" data-tab="home" data-i18n="nav_home">Home</button>
-      <button class="site-tab" type="button" data-tab="commands" data-i18n="nav_commands">Commands</button>
-      <button class="site-tab" type="button" data-tab="playground" data-i18n="nav_playground">Playground</button>
-      <button class="site-tab" type="button" data-tab="builder" data-i18n="nav_builder">QOTD Builder</button>
-      <button class="site-tab" type="button" data-tab="guide" data-i18n="nav_guide">Guide</button>
-      <button class="site-tab" type="button" data-tab="changelog" data-i18n="nav_changelog">Changelog</button>
-      <button class="site-tab" type="button" data-tab="community" data-i18n="nav_community">Community</button>
-    </div>
-  </nav>
-  </header>
-  <script>
+<header class="site-header" id="siteHeader">
+<nav class="nav">
+<div class="nav-inner">
+<button aria-controls="sideMenu" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" id="menuToggle" type="button">☰</button>
+<a class="brand" href="#home"><img alt="Quello bot avatar" class="brand-avatar" decoding="async" fetchpriority="high" loading="eager" src="quello-avatar.webp"/> <span>Quello</span></a>
+<div class="header-tools">
+<button aria-label="Toggle light / dark theme" class="theme-toggle" id="themeToggle" title="Theme" type="button">
+<svg aria-hidden="true" class="icon-moon" viewbox="0 0 24 24"><path d="M20.6 14.4A8.6 8.6 0 0 1 9.6 3.4a.7.7 0 0 0-.9-.9 9.9 9.9 0 1 0 12.8 12.8.7.7 0 0 0-.9-.9Z" fill="currentColor"></path></svg>
+<svg aria-hidden="true" class="icon-sun" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="currentColor" r="4.6"></circle><g stroke="currentColor" stroke-linecap="round" stroke-width="2"><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"></path></g></svg>
+</button>
+<div class="header-language" id="headerLanguage">
+<button aria-expanded="false" aria-haspopup="listbox" class="header-language-button" id="headerLanguageButton" type="button">
+<span class="flag" id="headerLanguageFlag">🇬🇧</span>
+<span id="headerLanguageCode">EN</span>
+<span aria-hidden="true" class="header-language-arrow"><svg viewbox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path></svg></span>
+</button>
+<div aria-label="Language" class="header-language-menu" id="headerLanguageMenu" role="listbox">
+<button data-header-language="en" role="option" type="button"><span class="flag">🇬🇧</span> <span>English</span></button>
+<button data-header-language="ru" role="option" type="button"><span class="flag">🇷🇺</span> <span>Русский</span></button>
+<button data-header-language="de" role="option" type="button"><span class="flag">🇩🇪</span> <span>Deutsch</span></button>
+<button data-header-language="fr" role="option" type="button"><span class="flag">🇫🇷</span> <span>Français</span></button>
+<button data-header-language="it" role="option" type="button"><span class="flag">🇮🇹</span> <span>Italiano</span></button>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Documentation sections" class="site-tabs" id="siteTabs">
+<div class="site-tabs-inner">
+<button class="site-tab active" data-i18n="nav_home" data-tab="home" type="button">Home</button>
+<button class="site-tab" data-i18n="nav_commands" data-tab="commands" type="button">Commands</button>
+<button class="site-tab" data-i18n="nav_playground" data-tab="playground" type="button">Playground</button>
+<button class="site-tab" data-i18n="nav_builder" data-tab="builder" type="button">QOTD Builder</button>
+<button class="site-tab" data-i18n="nav_guide" data-tab="guide" type="button">Guide</button>
+<button class="site-tab" data-i18n="nav_changelog" data-tab="changelog" type="button">Changelog</button>
+<button class="site-tab" data-i18n="nav_community" data-tab="community" type="button">Community</button>
+</div>
+</nav>
+</header>
+<script>
   (function(){var h=document.getElementById('siteHeader');if(!h)return;
     function set(){var v=Math.round(h.getBoundingClientRect().height);if(v)document.documentElement.style.setProperty('--header-h',v+'px')}
     set();addEventListener('resize',set,{passive:true});addEventListener('load',set);
     if(window.ResizeObserver)new ResizeObserver(set).observe(h);
   })();
   </script>
-
-  <div class="menu-overlay" id="menuOverlay"></div>
-  <aside class="side-menu" id="sideMenu" aria-hidden="true">
-      <div class="side-menu-head">
-        <div class="side-brand"><img src="quello-avatar.webp" alt="Quello bot avatar" decoding="async" loading="lazy"><div><strong>Quello</strong><small data-i18n="menu_subtitle">Your Question of the Day bot</small></div></div>
-        <button class="menu-close" id="menuClose" type="button" aria-label="Close navigation">×</button>
-      </div>
-
-      <div class="side-menu-links">
-        <div class="side-search">
-          <div class="side-section-label" data-i18n="side_search_label">SEARCH</div>
-          <div class="side-search-box">
-            <span aria-hidden="true">🔍</span>
-            <input id="sideSearchInput" type="search" autocomplete="off" data-i18n-placeholder="side_search_placeholder" placeholder="Search documentation..." aria-label="Search documentation">
-            <button class="side-search-clear" id="sideSearchClear" type="button" aria-label="Clear search" title="Clear search" hidden>×</button>
-          </div>
-          <div class="side-search-results" id="sideSearchResults" hidden></div>
-        </div>
-
-        <div class="side-divider"></div>
-        <div class="side-section-label" data-i18n="side_quick_actions">⚡ QUICK ACTIONS</div>
-
-        <a class="side-action side-action-primary" href="https://discord.com/oauth2/authorize?client_id=1548745092586676246&permissions=8444577866836032&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer">
-          <span class="side-action-icon">🤖</span><span data-i18n="side_add_discord">Add Quello to Discord</span>
-        </a>
-        <a class="side-action" href="https://discord.gg/rYqGXWRbfJ" target="_blank" rel="noopener noreferrer">
-          <span class="side-action-icon">💬</span><span data-i18n="side_join_community">Join Community</span>
-        </a>
-        <button class="side-action" id="sideRandomQotd" type="button">
-          <span class="side-action-icon">🎲</span><span data-i18n="side_random_qotd">Random QOTD</span>
-        </button>
-        <a class="side-action" href="#playground">
-          <span class="side-action-icon">🧪</span><span data-i18n="side_open_playground">Open Playground</span>
-        </a>
-        <a class="side-action" href="login.html">
-          <span class="side-action-icon">⚙️</span><span data-i18n="nav_dashboard">Dashboard</span>
-        </a>
-
-        <div class="side-divider"></div>
-        <div class="side-section-label" data-i18n="side_resources">📚 RESOURCES</div>
-
-        <a class="side-action" href="#home">
-          <span class="side-action-icon">📖</span><span data-i18n="side_documentation">Documentation</span>
-        </a>
-        <a class="side-action" href="https://discord.gg/rYqGXWRbfJ" target="_blank" rel="noopener noreferrer">
-          <span class="side-action-icon">🆘</span><span data-i18n="side_support">Support</span>
-        </a>
-        <a class="side-action" href="global-leaderboard.html">
-          <span class="side-action-icon">🏆</span><span data-i18n="global_leaderboard_nav">Global Leaderboard</span>
-        </a>
-        <a class="side-action" href="about.html">
-          <span class="side-action-icon">✦</span><span data-i18n="about_nav">About the Creator</span>
-        </a>
-        <a class="side-action" href="terms.html">
-          <span class="side-action-icon">📝</span><span data-i18n="menu_terms">Terms of Service</span>
-        </a>
-        <a class="side-action" href="privacy.html">
-          <span class="side-action-icon">🔒</span><span data-i18n="menu_privacy">Privacy Policy</span>
-        </a>
-
-        <div class="side-divider"></div>
-        <div class="side-section-label" data-i18n="side_contact_section">✉ CONTACT</div>
-        <a class="side-action side-action-telegram" href="https://t.me/RbxArty_YT" target="_blank" rel="noopener noreferrer">
-          <span class="side-action-icon side-telegram-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M21.7 4.3 18.5 19c-.24 1.04-.87 1.3-1.76.81l-4.86-3.58-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.95 9.01-8.14c.39-.35-.08-.55-.6-.2L6.17 12.83l-4.8-1.5c-1.04-.33-1.06-1.04.22-1.55L20.36 2.7c.87-.32 1.63.2 1.34 1.6Z"/></svg></span><span data-i18n="side_contact_telegram">Contact me in Telegram</span>
-        </a>
-
-        <div class="side-divider"></div>
-        <div class="side-section-label" data-i18n="side_language_label">🌐 LANGUAGE</div>
-        <div class="language-picker" id="languagePicker">
-          <button class="language-switch side-language" id="languageSwitch" type="button" aria-haspopup="listbox" aria-expanded="false">
-            <span class="language-current-flag flag" id="languageCurrentFlag">🇬🇧</span>
-            <span class="language-current-code" id="languageCurrentCode">EN</span>
-            <span class="language-current-name" id="languageCurrentName">English</span>
-            <span class="language-caret" aria-hidden="true">⌃</span>
-          </button>
-          <div class="language-dropdown" id="languageDropdown" role="listbox" aria-label="Language">
-            <button type="button" class="language-option active" data-language="en" role="option" aria-selected="true"><span>🇬🇧</span><span>English</span></button>
-            <button type="button" class="language-option" data-language="ru" role="option" aria-selected="false"><span>🇷🇺</span><span>Русский</span></button>
-            <button type="button" class="language-option" data-language="de" role="option" aria-selected="false"><span>🇩🇪</span><span>Deutsch</span></button>
-            <button type="button" class="language-option" data-language="fr" role="option" aria-selected="false"><span>🇫🇷</span><span>Français</span></button>
-            <button type="button" class="language-option" data-language="it" role="option" aria-selected="false"><span>🇮🇹</span><span>Italiano</span></button>
-          </div>
-        </div>
-      </div>
-    </aside>
-
-  <main class="container" id="home">
-    <section class="hero hero-redesign" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <div class="hero-kicker"><span class="status-dot"></span><span data-i18n="badge">DISCORD BOT</span><span class="hero-kicker-divider">/</span><span data-i18n="hero_kicker_subtitle">Your Question of the Day</span></div>
-        <h1 id="hero-title">Quello<span class="hero-period">.</span></h1>
-        <p class="hero-tagline hero-gradient-text" data-i18n="overview_title">Questions made for community conversations.</p>
-        <p class="subtitle" data-i18n="hero_subtitle">A Discord bot for creating, managing, and tracking Question of the Day posts with configurable channels, roles, logs, history, and administration tools.</p>
-        <div class="buttons hero-buttons">
-          <a class="button hero-primary" href="https://discord.com/oauth2/authorize?client_id=1548745092586676246&permissions=8444577866836032&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer" data-i18n="add_discord">Add to Discord <span aria-hidden="true">↗</span></a>
-          <a class="button discord-button hero-secondary" href="#playground"><span aria-hidden="true">⌘</span><span data-i18n="nav_playground">Playground</span></a>
-        </div>
-        <div class="hero-proof"><span class="hero-proof-icon">✦</span><span data-i18n="overview_text">Create numbered QOTDs, optionally mention a configured role, optionally credit the suggester, and automatically open a discussion thread.</span></div>
-      </div>
-      <div class="hero-visual" aria-label="Illustrative preview of a Quello Question of the Day message">
-        <div class="hero-orbit hero-orbit-one"></div><div class="hero-orbit hero-orbit-two"></div><div class="hero-orbit hero-orbit-three" aria-hidden="true"></div><div class="hero-orbit hero-orbit-four" aria-hidden="true"></div><div class="hero-orbit hero-orbit-five" aria-hidden="true"></div><div class="hero-orbit hero-orbit-six" aria-hidden="true"></div>
-        <div class="hero-spark hero-spark-one">✦</div><div class="hero-spark hero-spark-two">✧</div><div class="hero-spark hero-spark-three">✦</div>
-        <div class="hero-bot-glow"><img src="quello-avatar.webp" alt="" class="hero-bot-avatar" decoding="async" loading="lazy"></div>
-        <article class="qotd-floating-card">
-          <div class="qotd-card-top"><img src="quello-avatar.webp" alt="" class="qotd-mini-avatar" decoding="async" loading="lazy"><div class="qotd-author"><strong>Quello</strong><span class="app-pill">APP</span><small data-i18n="hero_card_app_subtitle">Question of the Day</small></div><span class="qotd-menu">•••</span></div>
-          <div class="qotd-card-body" aria-live="polite" aria-atomic="true"><span class="qotd-number"><span data-i18n="hero_card_label">QUESTION OF THE DAY</span> <b id="heroQotdNumber">#01</b></span><h2 id="heroQotdQuestion">What's a game you could play forever?</h2><p id="heroQotdPrompt">Share your answer with the community.</p></div>
-          <div class="qotd-card-footer"><span data-i18n="hero_reply_thread">↩ Reply in thread</span><div class="qotd-card-actions"><span class="qotd-reaction">♡ <b data-i18n="hero_react">React</b></span><button class="qotd-next" id="heroNextQuestion" type="button" data-i18n-aria-label="hero_next_aria" data-i18n-title="hero_next_title" aria-label="Show another example question" title="Show another question">↻</button></div></div>
-        </article>
-        <div class="hero-visual-caption"><span class="caption-pulse"></span><span data-i18n="hero_caption">Preview a new question</span><span class="hero-preview-hint" data-i18n="hero_hint">Tap ↻ to explore</span></div>
-      </div>
-    </section>
-
-    <section class="hero-feature-strip" aria-label="Quello highlights">
-      <a class="hero-feature" href="#playground"><span class="hero-feature-icon">⌘</span><span><strong data-i18n="hero_feature_commands">Explore commands</strong><small data-i18n="hero_feature_commands_desc">Find the right tool fast</small></span><b aria-hidden="true">↗</b></a>
-      <a class="hero-feature" href="#preview"><span class="hero-feature-icon">✎</span><span><strong data-i18n="hero_feature_preview">Preview your QOTD</strong><small data-i18n="hero_feature_preview_desc">Build a message before posting</small></span><b aria-hidden="true">↗</b></a>
-      <a class="hero-feature" href="#setup"><span class="hero-feature-icon">⚙</span><span><strong data-i18n="hero_feature_setup">Simple setup</strong><small data-i18n="hero_feature_setup_desc">Get your server ready</small></span><b aria-hidden="true">↗</b></a>
-      <a class="hero-feature" href="#extras"><span class="hero-feature-icon">✧</span><span><strong data-i18n="hero_feature_extras">Discover extras</strong><small data-i18n="hero_feature_extras_desc">Tips, questions and secrets</small></span><b aria-hidden="true">↗</b></a>
-    </section>
-
-    <section class="evolution-showcase" aria-labelledby="evolution-title">
-      <div class="evolution-heading"><span class="eyebrow" data-i18n="evo_eyebrow">BUILT FOR COMMUNITIES</span><h2 id="evolution-title" data-i18n="evo_title">Everything your QOTD community needs.</h2><p data-i18n="evo_intro">A clearer way to create questions, keep conversations moving, and manage your server.</p></div>
-      <div class="evolution-grid">
-        <article class="evolution-card"><span class="evolution-icon" aria-hidden="true">✦</span><h3 data-i18n="evo_card1_title">Create with confidence</h3><p data-i18n="evo_card1_text">Build numbered questions using the server-configured language and send them to the QOTD channel.</p></article>
-        <article class="evolution-card"><span class="evolution-icon" aria-hidden="true">⌁</span><h3 data-i18n="evo_card2_title">Keep discussions flowing</h3><p data-i18n="evo_card2_text">Give every question a place for replies with automatically created discussion threads.</p></article>
-        <article class="evolution-card"><span class="evolution-icon" aria-hidden="true">◈</span><h3 data-i18n="evo_card3_title">Stay in control</h3><p data-i18n="evo_card3_text">Use roles, configuration, history, logs, and owner tools to manage QOTD activity.</p></article>
-      </div>
-    </section>
-    <section class="evolution-steps" aria-labelledby="evolution-steps-title">
-      <div class="evolution-heading"><span class="eyebrow" data-i18n="evo_steps_eyebrow">GET STARTED</span><h2 id="evolution-steps-title" data-i18n="evo_steps_title">From invite to first question.</h2><p data-i18n="evo_steps_intro">Four simple steps to bring Quello into your server.</p></div>
-      <ol class="evolution-step-list">
-        <li><span>01</span><div><strong data-i18n="evo_step1_title">Invite Quello</strong><small data-i18n="evo_step1_text">Add the bot to your Discord server.</small></div></li>
-        <li><span>02</span><div><strong data-i18n="evo_step2_title">Configure access</strong><small data-i18n="evo_step2_text">Choose the QOTD mention role and allowed role.</small></div></li>
-        <li><span>03</span><div><strong data-i18n="evo_step3_title">Choose the QOTD channel</strong><small data-i18n="evo_step3_text">Set the single QOTD channel and bot language.</small></div></li>
-        <li><span>04</span><div><strong data-i18n="evo_step4_title">Post your first QOTD</strong><small data-i18n="evo_step4_text">Create a question and start a conversation.</small></div></li>
-      </ol><a class="evolution-steps-link" href="#setup" data-i18n="evo_steps_link">Read the setup guide →</a>
-    </section>
-    <section class="quick-start discord-embed">
-      <div class="embed-accent"></div>
-      <div class="embed-content">
-        <span class="eyebrow" data-i18n="eyebrow_quickstart">QUICK START</span>
-        <h2 data-i18n="quickstart_title">Ready to use Quello?</h2>
-        <p data-i18n="quickstart_text">Invite the bot, configure your server, and create your first question in a few steps.</p>
-        <div class="quick-steps">
-          <span><b>01</b> <span data-i18n="quick1">Invite the bot</span></span>
-          <span><b>02</b> <span data-i18n="quick2">Run /setup</span></span>
-          <span><b>03</b> <span data-i18n="quick3">Check /config</span></span>
-          <span><b>04</b> <span data-i18n="quick4">Create /qotd</span></span>
-        </div>
-        <a class="button" href="#setup" data-i18n="quickstart_button">Open Setup Guide</a>
-      </div>
-    </section>
-
-    <section class="discord-embed intent-embed">
-      <div class="embed-accent"></div>
-      <div class="embed-content">
-        <span class="eyebrow" data-i18n="eyebrow_intent">QUICK NAVIGATION</span>
-        <h2 data-i18n="intent_title">What do you want to do?</h2>
-        <p data-i18n="intent_text">Jump directly to the part of the documentation you need.</p>
-        <div class="intent-actions">
-          <a href="#setup" class="intent-button" data-i18n="intent_setup">🚀 Set up the bot</a>
-          <a href="#preview" class="intent-button" data-i18n="intent_qotd">💬 Build a QOTD</a>
-          <a href="#commands" class="intent-button" data-i18n="intent_commands">📖 Explore commands</a>
-          <a href="#faq" class="intent-button" data-i18n="intent_help">❓ Get help</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="discord-embed whats-new">
-      <div class="embed-accent"></div>
-      <div class="embed-content">
-        <span class="eyebrow" data-i18n="eyebrow_new">WHAT'S NEW</span>
-        <h2 data-i18n="new_title">Latest website updates</h2>
-        <p data-i18n="new_text">Quello now has a smarter side navigation experience, an interactive Command Playground, a guided QOTD builder, setup progress, community highlights, and hidden extras.</p>
-        <a href="#changelog" class="text-link" data-i18n="new_button">View full changelog →</a>
-      </div>
-    </section>
-
-    <section class="section" id="playground">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow" data-i18n="eyebrow_playground">INTERACTIVE</span>
-          <h2 data-i18n="playground_title">Command Playground</h2>
-          <p class="section-intro" data-i18n="playground_intro">Pick a Quello command and explore what it does without leaving the page.</p>
-        </div>
-      </div>
-      <div class="playground-grid discord-embed">
-        <div class="embed-accent"></div>
-        <div class="embed-content">
-          <label class="playground-label" data-i18n="playground_choose">Choose a command</label>
-          <button class="command-picker-trigger" id="commandPickerTrigger" type="button" aria-haspopup="dialog" aria-expanded="false">
-            <span class="command-picker-current">
-              <code id="commandPickerName">/qotd</code>
-              <span id="commandPickerLabel">Create a new Question of the Day.</span>
-            </span>
-            <span class="command-picker-chevron" aria-hidden="true">⌄</span>
-          </button>
-
-          <div class="command-drawer" id="commandDrawer" aria-hidden="true">
-            <div class="command-drawer-backdrop" data-command-close></div>
-            <aside class="command-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="commandDrawerTitle">
-              <div class="command-drawer-head">
-                <div>
-                  <span class="eyebrow">COMMAND PLAYGROUND</span>
-                  <h3 id="commandDrawerTitle" data-i18n="playground_choose">Choose a command</h3>
-                </div>
-                <button class="command-drawer-close" type="button" data-command-close aria-label="Close">×</button>
-              </div>
-              <div class="command-options" id="commandOptions"></div>
-            </aside>
-          </div>
-          <div class="playground-card" id="playgroundCard">
-            <div class="command-head"><code id="playgroundName">/qotd</code><span class="command-tag" id="playgroundTag">QOTD</span></div>
-            <h3 id="playgroundTitle">Create a new Question of the Day.</h3>
-            <p id="playgroundDescription">Create and publish a QOTD using the configured server settings.</p>
-            <div class="playground-meta"><span id="playgroundAccess">Configured QOTD role, Bot Owner or Server Owner</span><span id="playgroundExample">/qotd question:"What should we discuss today?"</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="commands">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow" data-i18n="eyebrow_commands">EXPLORE</span>
-          <h2 data-i18n="commands_title">Command Explorer</h2>
-          <p class="section-intro" data-i18n="commands_intro">A clean Discord-style reference for every command currently available in Quello.</p>
-        </div>
-      </div>
-
-      <div class="command-embeds">
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/achievement_info</code><span class="command-tag">ACHIEVEMENTS</span></div><p data-i18n="cmd_achievement_info">View details for an achievement.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span><span data-i18n="achievement_info_params">achievement</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/achievement_leaderboard</code><span class="command-tag">ACHIEVEMENTS</span></div><p data-i18n="cmd_achievement_leaderboard">View the server achievement rankings.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span><span data-i18n="server_command">Current server</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/achievement_settings</code><span class="command-tag">ACHIEVEMENTS</span></div><p data-i18n="cmd_achievement_settings">Manage achievement settings.</p><div class="command-details"><span data-i18n="play_achievement_settings_access">Server Owner, Discord Administrator or Bot Owner; members control their own notifications.</span><span data-i18n="achievement_settings_params">category · enabled · notifications</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/achievements</code><span class="command-tag">ACHIEVEMENTS</span></div><p data-i18n="cmd_achievements">Browse the built-in achievement catalogue.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/audit_log</code><span class="command-tag">AUDIT</span></div><p data-i18n="cmd_audit">View the separate detailed interaction audit log.</p><div class="command-details"><span data-i18n="owner_only">Bot Owner or Server Owner</span><span data-i18n="audit_detail">Tracks interaction attempts and errors without storing secrets</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/config</code><span class="command-tag">CONFIG</span></div><p data-i18n="cmd_config">View and edit the QOTD configuration.</p><div class="command-details"><span data-i18n="admin_settings_access">Bot Owner or Server Owner</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/delete</code><span class="command-tag">QOTD</span></div><p data-i18n="cmd_delete">Delete an existing QOTD using its Discord message link.</p><div class="command-details"><span data-i18n="use_qotd_edit">Configured QOTD role, Bot Owner or Server Owner</span><span>message_link</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/diagnostics</code><span class="command-tag">OWNER</span></div><p data-i18n="cmd_diagnostics">Run technical checks for the bot, database, audit queue, backups, and channel permissions.</p><div class="command-details"><span data-i18n="owner_only">Bot Owner or Server Owner</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/edit</code><span class="command-tag">QOTD</span></div><p data-i18n="cmd_edit">Edit an existing QOTD using its Discord message link.</p><div class="command-details"><span data-i18n="use_qotd_edit">Configured QOTD role, Bot Owner or Server Owner</span><span>message_link · question</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/global_leaderboard</code><span class="command-tag">STATS</span></div><p data-i18n="cmd_global_leaderboard">View global QOTD rankings.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span><span data-i18n="global_scope">All Quello servers</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/help</code><span class="command-tag">HELP</span></div><p data-i18n="cmd_help">Show the available Quello commands.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/history</code><span class="command-tag">HISTORY</span></div><p data-i18n="cmd_history">View QOTD history.</p><div class="command-details"><span data-i18n="server_command">Current server</span><span data-i18n="history_detail">Browse previously created QOTDs</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/info</code><span class="command-tag">INFO</span></div><p data-i18n="cmd_info">View information about a QOTD using its Discord message link.</p><div class="command-details"><span data-i18n="owner_only">Bot Owner or Server Owner</span><span>message_link</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/leaderboard</code><span class="command-tag">STATS</span></div><p data-i18n="cmd_leaderboard">View the QOTD creator and responder leaderboards.</p><div class="command-details"><span data-i18n="server_command">Current server</span><span data-i18n="leaderboard_detail">Creator and responder rankings for this server</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/lock</code><span class="command-tag">SETTINGS</span></div><p data-i18n="cmd_lock">Lock or unlock QOTD creation.</p><div class="command-details"><span data-i18n="admin_settings_access">Bot Owner or Server Owner</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/logs</code><span class="command-tag">LOGS</span></div><p data-i18n="cmd_logs">View and filter QOTD logs with pagination and Refresh.</p><div class="command-details"><span data-i18n="owner_only">Bot Owner or Server Owner</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/maintenance</code><span class="command-tag">SETTINGS</span></div><p data-i18n="cmd_maintenance">Enable or disable QOTD maintenance mode.</p><div class="command-details"><span data-i18n="admin_settings_access">Bot Owner or Server Owner</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/me</code><span class="command-tag">STATS</span></div><p data-i18n="cmd_me">View your personal QOTD participation, authored QOTDs and answer streak.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span><span data-i18n="me_params">Answers · created QOTDs · current streak</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/my_achievements</code><span class="command-tag">ACHIEVEMENTS</span></div><p data-i18n="cmd_my_achievements">View your achievement unlocks and progress.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/qotd</code><span class="command-tag">QOTD</span></div><p data-i18n="cmd_qotd">Create a new Question of the Day.</p><div class="command-details"><span data-i18n="use_qotd">Configured QOTD role</span><span data-i18n="param_qotd">question · optional suggested_by</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/qotd_category</code><span class="command-tag">QOTD</span></div><p data-i18n="cmd_qotd_category">Manage QOTD categories.</p><div class="command-details"><span data-i18n="use_qotd_edit">Configured QOTD role, Bot Owner or Server Owner</span><span data-i18n="qotd_category_params">action · optional name</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/question_week</code><span class="command-tag">STATS</span></div><p data-i18n="cmd_week">View the QOTD with the most unique participants in the last seven days.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span><span data-i18n="server_command">Current server</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/random_qotd</code><span class="command-tag">AI QOTD</span></div><p data-i18n="cmd_random_qotd">Generate and instantly publish an AI-created random QOTD.</p><div class="command-details"><span data-i18n="use_qotd">Configured QOTD role</span><span data-i18n="random_qotd_params">No parameters · Uses server bot language</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/reset</code><span class="command-tag">OWNER</span></div><p data-i18n="cmd_reset">Reset the QOTD counter.</p><div class="command-details"><span data-i18n="owner_only">Bot Owner or Server Owner</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/reset_logs</code><span class="command-tag">OWNER</span></div><p data-i18n="cmd_resetlogs">Reset the normal QOTD logs.</p><div class="command-details"><span data-i18n="owner_only">Bot Owner or Server Owner</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/schedule_config</code><span class="command-tag">SCHEDULE</span></div><p data-i18n="cmd_schedule_config">View the current Scheduled QOTD settings.</p><div class="command-details"><span data-i18n="admin_settings_access">Bot Owner or Server Owner</span><span data-i18n="schedule_config_params">No parameters · Read-only</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/schedule_qotds</code><span class="command-tag">SCHEDULE</span></div><p data-i18n="cmd_schedule_qotds">Configure recurring AI-generated QOTDs every 1, 6, 12 or 24 hours.</p><div class="command-details"><span data-i18n="admin_settings_access">Bot Owner or Server Owner</span><span data-i18n="schedule_qotd_params">enabled · time · timezone · interval</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/setup</code><span class="command-tag">CONFIG</span></div><p data-i18n="cmd_setup">Configure QOTD roles, one shared QOTD channel, and bot language.</p><div class="command-details"><span data-i18n="admin_settings_access">Bot Owner or Server Owner</span><span data-i18n="setup_params">qotd_manager_role (required) · ping_role (optional) · one QOTD channel · bot_language</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/stats</code><span class="command-tag">STATS</span></div><p data-i18n="cmd_stats">View QOTD statistics for the current server.</p><div class="command-details"><span data-i18n="server_command">Current server</span><span data-i18n="no_global_stats">Server-only statistics</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/suggest</code><span class="command-tag">QOTD</span></div><p data-i18n="cmd_suggest">Suggest a question for a future QOTD.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span><span data-i18n="suggest_params">question</span></div></div></article>
-        <article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/suggestions</code><span class="command-tag">QOTD</span></div><p data-i18n="cmd_suggestions">Review pending QOTD suggestions one by one.</p><div class="command-details"><span data-i18n="use_qotd_edit">Configured QOTD role, Bot Owner or Server Owner</span><span data-i18n="suggestions_params">Browse · Approve · Reject with reason</span></div></div></article>
-      </div>
-
-      <div class="permission-note"><strong data-i18n="permissions_label">Permissions:</strong> <span data-i18n="permissions_text">QOTD creation, editing, and deletion use the configured allowed role; the Bot Owner and Server Owner can also use these tools. Owner-only management commands are restricted to the Bot Owner or Server Owner.</span></div>
-
-      <div class="command-details-panel discord-embed">
-        <div class="embed-accent"></div>
-        <div class="embed-content">
-          <span class="eyebrow" data-i18n="eyebrow_details">COMMAND DETAILS</span>
-          <h3 data-i18n="details_title">How the commands work</h3>
-          <p class="section-intro" data-i18n="details_intro">Open a command below to see what it does, what it expects, and who can use it.</p>
-          <div class="command-detail-list">
-            <details><summary><code>/achievement_info</code></summary><p data-i18n="detail_achievement_info">Inspect the achievement description, category, rarity, requirement and your progress.</p></details>
-            <details><summary><code>/achievement_leaderboard</code></summary><p data-i18n="detail_achievement_leaderboard">See members ranked by the number of achievements they have unlocked on this server.</p></details>
-            <details><summary><code>/achievement_settings</code></summary><p data-i18n="detail_achievement_settings">Server administrators can enable or disable achievement categories. Members can control their own unlock DMs.</p></details>
-            <details><summary><code>/achievements</code></summary><p data-i18n="detail_achievements">See the four achievement categories, five rarity levels and available built-in achievements.</p></details>
-            <details><summary><code>/audit_log</code></summary><p data-i18n="detail_audit">Displays the separate interaction audit log, including interaction attempts and errors, with filters for status, command name, and user. Restricted to the Bot Owner or Server Owner and designed not to store secrets.</p></details>
-            <details><summary><code>/config</code></summary><p data-i18n="detail_config">Displays the current QOTD configuration for the server. Restricted to the Bot Owner or Server Owner.</p></details>
-            <details><summary><code>/delete</code></summary><p data-i18n="detail_delete">Deletes an existing QOTD using its Discord message link. Quello first shows a preview with Confirm and Cancel buttons, and nothing is deleted until you press Confirm. Access uses the configured allowed role, Bot Owner, or Server Owner.</p></details>
-            <details><summary><code>/diagnostics</code></summary><p data-i18n="detail_diagnostics">Runs technical health checks for Quello, including bot connectivity, database availability and integrity, audit queue and worker status, backup integrity, channel permissions, thread capabilities, and QOTD entries without linked discussion threads. You can optionally choose which text channel to check. Restricted to the Bot Owner or Server Owner.</p></details>
-            <details><summary><code>/edit</code></summary><p data-i18n="detail_edit">Edits an existing QOTD using its Discord message link and the new question. Quello first shows a preview with Confirm and Cancel buttons, and nothing changes until you press Confirm. Access uses the configured allowed role, Bot Owner, or Server Owner.</p></details>
-            <details><summary><code>/global_leaderboard</code></summary><p data-i18n="detail_global_leaderboard">See the global creator, responder and current streak rankings across all Quello servers.</p></details>
-            <details><summary><code>/help</code></summary><p data-i18n="detail_help">Shows the bot's available commands and help categories.</p></details>
-            <details><summary><code>/history</code></summary><p data-i18n="detail_history">Shows paginated QOTD history in the server-configured language. You can choose how many questions to load (1–50, default 20).</p></details>
-            <details><summary><code>/info</code></summary><p data-i18n="detail_info">Shows information about a QOTD identified by its Discord message link. Restricted to the Bot Owner or Server Owner.</p></details>
-            <details><summary><code>/leaderboard</code></summary><p data-i18n="detail_leaderboard">Shows creator and responder rankings for QOTDs in the server-configured language.</p></details>
-            <details><summary><code>/lock</code></summary><p data-i18n="detail_lock">Locks or unlocks QOTD creation for the server. Restricted to the Bot Owner or Server Owner.</p></details>
-            <details><summary><code>/logs</code></summary><p data-i18n="detail_logs">Displays and filters normal QOTD logs (by action, user, or QOTD ID) with pagination and Refresh controls. Restricted to the Bot Owner or Server Owner.</p></details>
-            <details><summary><code>/maintenance</code></summary><p data-i18n="detail_maintenance">Turns QOTD maintenance mode on or off. While enabled, QOTD creation is blocked. Restricted to the Bot Owner or Server Owner.</p></details>
-            <details><summary><code>/me</code></summary><p data-i18n="detail_me">Shows your personal activity on this server: how many answers you have posted in QOTD discussion threads, how many QOTDs you have created, and your current streak of consecutive days with an answer. Available to everyone.</p></details>
-            <details><summary><code>/my_achievements</code></summary><p data-i18n="detail_my_achievements">See your unlocked achievements, unique QOTD answer count, current streak and progress.</p></details>
-            <details><summary><code>/qotd</code></summary><p data-i18n="detail_qotd">Creates a new numbered QOTD using the server-configured language and QOTD channel automatically, then opens a discussion thread. The command supports a question and an optional suggested-by member.</p></details>
-            <details><summary><code>/qotd_category</code></summary><p data-i18n="detail_qotd_category">List, create or delete server-specific QOTD categories. Assign categories to manual, random and scheduled QOTDs.</p></details>
-            <details><summary><code>/question_week</code></summary><p data-i18n="detail_week">Shows the QOTD posted in the last seven days that attracted the most unique participants, together with the number of participants. Available to everyone.</p></details>
-            <details><summary><code>/random_qotd</code></summary><p data-i18n="detail_random_qotd">Generates one new question through the same Groq AI provider and publishes it immediately. Uses the server’s configured bot language and the normal QOTD channel, permissions, and publishing flow.</p></details>
-            <details><summary><code>/reset</code></summary><p data-i18n="detail_reset">Resets the QOTD counter for the server-configured language. Restricted to the Bot Owner or Server Owner.</p></details>
-            <details><summary><code>/reset_logs</code></summary><p data-i18n="detail_resetlogs">Clears the normal QOTD logs. Restricted to the Bot Owner or Server Owner.</p></details>
-            <details><summary><code>/schedule_config</code></summary><p data-i18n="detail_schedule_config">Displays whether Scheduled QOTD is enabled, its first publication time, repeat interval, and IANA time zone. It does not change settings. Available to the server owner, Discord Administrators, and Bot Owner.</p></details>
-            <details><summary><code>/schedule_qotds</code></summary><p data-i18n="detail_schedule_qotds">Lets the server owner, a Discord Administrator, or the Bot Owner enable recurring AI-generated QOTDs, set the first publication time and IANA time zone, and choose an interval of every 1, 6, 12, or 24 hours. The server language follows the server’s configured bot language. Temporary generation or publication failures are retried every five minutes for up to one hour; non-retryable API errors (such as 401 or 403) skip the current slot and notify the server owner.</p></details>
-            <details><summary><code>/setup</code></summary><p data-i18n="detail_setup">Configures the required allowed role, an optional mention role, one shared QOTD channel, an optional announcement channel, and the bot language (English or Russian). If no language is selected, English is used by default. Quello shows the configuration with Confirm and Cancel buttons and saves it only after you press Confirm. Restricted to the Bot Owner or Server Owner.</p></details>
-            <details><summary><code>/stats</code></summary><p data-i18n="detail_stats">Shows QOTD statistics for the current server: totals per language, plus this month and this week. It is not a global statistics command.</p></details>
-            <details><summary><code>/suggest</code></summary><p data-i18n="detail_suggest">Lets any member send a question (up to 1,500 characters) in using the server-configured language. Each member can have one unreviewed suggestion at a time: sending another shows the one that is waiting, with a button to delete it and free the slot. Empty, very short (under 10 characters or a single word), link-only and filler questions are refused. The confirmation is private, and nothing is published until a QOTD manager approves the suggestion.</p></details>
-            <details><summary><code>/suggestions</code></summary><p data-i18n="detail_suggestions">Opens the pending suggestions for a QOTD manager one at a time, with arrow buttons to move through the queue (“Suggestion 2 of 7”) plus Approve and Reject buttons. Rejecting opens a form that requires a reason. The author receives a direct message with the decision: the reason on rejection, a link to the published QOTD on approval (if their DMs are closed, the reviewer is told). An approved suggestion is published as the next numbered QOTD in the matching language channel with a discussion thread, and the member who suggested it is credited. Approval is blocked while QOTD creation is locked or in maintenance mode. Access uses the configured allowed role, Bot Owner, or Server Owner.</p></details>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="preview">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow" data-i18n="eyebrow_preview">TRY IT</span>
-          <h2 data-i18n="preview_title">QOTD Preview Builder</h2>
-          <p class="section-intro" data-i18n="preview_intro">Build a realistic QOTD message, switch its language, hide optional credit, and copy the result with one tap.</p>
-        </div>
-      </div>
-
-      <div class="builder">
-        <div class="builder-panel">
-          <div class="builder-panel-title" data-i18n="builder_inputs">Message settings</div>
-          <label><span data-i18n="question_label">Question</span><textarea id="questionInput" maxlength="300">What game would you recommend to everyone?</textarea><small><span id="questionCount">38</span>/300</small></label>
-          <div class="input-row">
-            <label><span data-i18n="number_label">QOTD number</span><input id="numberInput" type="number" min="1" value="42"></label>
-
-          </div>
-          <label><span data-i18n="thanks_label">Suggested by</span><input id="authorInput" maxlength="80" value="Community Member"></label>
-          <label class="toggle-row"><input id="showAuthor" type="checkbox" checked><span data-i18n="show_suggester">Show suggested-by line</span></label>
-          <div class="builder-actions"><button class="secondary-button" id="resetPreview" type="button" data-i18n="reset_preview">Reset</button><button class="primary-button" id="copyPreview" type="button" data-i18n="copy_preview">Copy text</button></div>
-          <p class="copy-status" id="copyStatus" aria-live="polite"></p>
-        </div>
-
-        <div class="discord-message-preview">
-          <div class="fake-discord-header"><span class="fake-avatar"><img src="quello-avatar.webp" alt="Quello bot avatar" decoding="async" loading="lazy"></span><div><strong>Quello</strong><small>BOT</small><div data-i18n="preview_channel">Question of the Day</div></div></div>
-          <div class="message-body">
-            <div class="role-mention">@QOTD</div>
-            <div class="discord-embed live-embed">
-              <div class="embed-accent"></div>
-              <div class="embed-content">
-                <div class="preview-title" id="previewTitle">QOTD 42:</div>
-                <div class="preview-number" id="previewNumber" hidden>#42</div>
-                <div class="preview-question" id="previewQuestion">What game would you recommend to everyone?</div>
-                <div class="preview-author" id="previewAuthorLine"><span id="previewSuggestedLabel">Suggested by</span> <span id="previewAuthor">Community Member</span></div>
-              </div>
-            </div>
-            <div class="preview-thread">🧵 <span id="previewThread">QOTD 42</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="qotd-flow">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow" data-i18n="eyebrow_flow">QUICK BUILDER</span>
-          <h2 data-i18n="flow_title">Build Your QOTD</h2>
-          <p class="section-intro" data-i18n="flow_intro">A tiny step-by-step helper that turns your idea into a ready-to-use /qotd command.</p>
-        </div>
-      </div>
-      <div class="flow-card discord-embed">
-        <div class="embed-accent"></div>
-        <div class="embed-content">
-          <div class="flow-steps"><span class="flow-step active" data-step="1">01</span><span class="flow-line"></span><span class="flow-step" data-step="2">02</span></div>
-          <div class="flow-panel active" data-panel="1">
-            <h3 id="flowQuestionLabel" data-i18n="flow_step1">1. Write your question</h3>
-            <input id="flowQuestion" aria-labelledby="flowQuestionLabel" class="flow-input" maxlength="200" value="What game would you recommend to everyone?" data-i18n-placeholder="flow_placeholder">
-            <button class="button flow-next" type="button" data-i18n="flow_next">Next →</button>
-          </div>
-          <div class="flow-panel" data-panel="2">
-            <h3 data-i18n="flow_step3">2. Generate your command</h3>
-            <div class="generated-command" id="generatedCommand">/qotd question:"What game would you recommend to everyone?"</div>
-            <div class="flow-actions"><button class="button secondary flow-back" type="button" data-i18n="flow_back">← Back</button><button class="button" id="copyGenerated" type="button" data-i18n="flow_copy">Copy command</button></div>
-            <p class="copy-status" id="flowCopyStatus"></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="setup">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow" data-i18n="eyebrow_setup">GET STARTED</span>
-          <h2 data-i18n="setup_title">Set Up Quello</h2>
-          <p class="section-intro" data-i18n="setup_intro">A simple visual guide for getting your server ready for its first Question of the Day.</p>
-        </div>
-      </div>
-
-      <div class="setup-embed">
-        <div class="setup-header"><span>⚙️</span><div><strong data-i18n="setup_embed_title">Quello Setup Guide</strong><small data-i18n="setup_embed_subtitle">Complete these steps in order</small></div></div>
-        <div class="setup-step"><div class="step-number">01</div><div><h3 data-i18n="step1_title">Add Quello</h3><p data-i18n="step1_text">Use the Add to Discord button above and select the server where you want to use Quello.</p><div class="step-code">Invite → Select server → Authorize</div></div></div>
-        <div class="setup-step"><div class="step-number">02</div><div><h3 data-i18n="step2_title">Run /setup</h3><p data-i18n="step2_text">As the Server Owner or Bot Owner, choose the role allowed to create QOTDs, optionally a role to mention, one QOTD channel, and the bot interface language. Review the preview and press Confirm to save.</p><div class="step-code">/setup allowed_role: @QOTD Managers qotd_channel: #qotd</div></div></div>
-        <div class="setup-step"><div class="step-number">03</div><div><h3 data-i18n="step3_title">Check /config</h3><p data-i18n="step3_text">Review the saved configuration and make sure the roles and channels match your server.</p><div class="step-code">/config</div></div></div>
-        <div class="setup-step"><div class="step-number">04</div><div><h3 data-i18n="step4_title">Create your first QOTD</h3><p data-i18n="step4_text">Use /qotd with a question. The language is taken from the server configuration; you can optionally override the QOTD channel and credit the member who suggested the question.</p><div class="step-code">/qotd question: "Your question"</div></div></div>
-        <div class="setup-note"><strong data-i18n="setup_note_title">Tip</strong><span data-i18n="setup_note_text">The configured allowed role controls who can create, edit, and delete QOTDs. Bot Owner and Server Owner access is also supported. /setup, /edit, and /delete ask for confirmation with Confirm and Cancel buttons before changing anything.</span></div>
-        <div class="setup-checklist">
-          <div class="checklist-head"><strong data-i18n="checklist_title">Server setup checklist</strong><span id="checklistProgress">0 / 6</span></div>
-          <label><input class="setup-check" type="checkbox" data-key="invite"><span data-i18n="check_invite">Invite Quello</span></label>
-          <label><input class="setup-check" type="checkbox" data-key="setup"><span data-i18n="check_setup">Run /setup</span></label>
-          <label><input class="setup-check" type="checkbox" data-key="channels"><span data-i18n="check_channels">Choose the QOTD channel</span></label>
-          <label><input class="setup-check" type="checkbox" data-key="roles"><span data-i18n="check_roles">Configure the allowed role</span></label>
-          <label><input class="setup-check" type="checkbox" data-key="config"><span data-i18n="check_config">Verify /config</span></label>
-          <label><input class="setup-check" type="checkbox" data-key="first"><span data-i18n="check_first">Create your first QOTD</span></label>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="permissions">
-      <div class="section-heading">
-        <div><span class="eyebrow" data-i18n="eyebrow_permissions">ACCESS</span><h2 data-i18n="permissions_title">Permissions at a Glance</h2></div>
-      </div>
-      <div class="permission-embed discord-embed">
-        <div class="embed-accent"></div>
-        <div class="embed-content">
-          <div class="permission-line"><code>/qotd</code><span data-i18n="access_qotd">Configured allowed role, Bot Owner or Server Owner</span></div>
-          <div class="permission-line"><code>/edit</code> <code>/delete</code> <code>/suggestions</code><span data-i18n="access_edit_delete">Configured allowed role, Bot Owner or Server Owner</span></div>
-          <div class="permission-line"><code>/info</code> <code>/config</code><span data-i18n="access_owner">Bot Owner or Server Owner</span></div>
-          <div class="permission-line"><code>/setup</code><span data-i18n="access_setup">Bot Owner, Server Owner or Discord Administrator</span></div>
-          <div class="permission-line"><code>/logs</code> <code>/audit_log</code> <code>/reset_logs</code> <code>/reset</code><span data-i18n="access_owner">Bot Owner or Server Owner</span></div>
-          <div class="permission-line"><code>/stats</code> <code>/leaderboard</code> <code>/history</code> <code>/me</code> <code>/question_week</code> <code>/suggest</code> <code>/help</code><span data-i18n="all_users">Available to all users</span></div>
+<div class="menu-overlay" id="menuOverlay"></div>
+<aside aria-hidden="true" class="side-menu" id="sideMenu">
+<div class="side-menu-head">
+<div class="side-brand"><img alt="Quello bot avatar" decoding="async" loading="lazy" src="quello-avatar.webp"/><div><strong>Quello</strong><small data-i18n="menu_subtitle">Your Question of the Day bot</small></div></div>
+<button aria-label="Close navigation" class="menu-close" id="menuClose" type="button">×</button>
+</div>
+<div class="side-menu-links">
+<div class="side-search">
+<div class="side-section-label" data-i18n="side_search_label">SEARCH</div>
+<div class="side-search-box">
+<span aria-hidden="true">🔍</span>
+<input aria-label="Search documentation" autocomplete="off" data-i18n-placeholder="side_search_placeholder" id="sideSearchInput" placeholder="Search documentation..." type="search"/>
+<button aria-label="Clear search" class="side-search-clear" hidden="" id="sideSearchClear" title="Clear search" type="button">×</button>
+</div>
+<div class="side-search-results" hidden="" id="sideSearchResults"></div>
+</div>
+<div class="side-divider"></div>
+<div class="side-section-label" data-i18n="side_quick_actions">⚡ QUICK ACTIONS</div>
+<a class="side-action side-action-primary" href="https://discord.com/oauth2/authorize?client_id=1548745092586676246&amp;permissions=8444577866836032&amp;integration_type=0&amp;scope=bot+applications.commands" rel="noopener noreferrer" target="_blank">
+<span class="side-action-icon">🤖</span><span data-i18n="side_add_discord">Add Quello to Discord</span>
+</a>
+<a class="side-action" href="https://discord.gg/rYqGXWRbfJ" rel="noopener noreferrer" target="_blank">
+<span class="side-action-icon">💬</span><span data-i18n="side_join_community">Join Community</span>
+</a>
+<button class="side-action" id="sideRandomQotd" type="button">
+<span class="side-action-icon">🎲</span><span data-i18n="side_random_qotd">Random QOTD</span>
+</button>
+<a class="side-action" href="#playground">
+<span class="side-action-icon">🧪</span><span data-i18n="side_open_playground">Open Playground</span>
+</a>
+<a class="side-action" href="login.html">
+<span class="side-action-icon">⚙️</span><span data-i18n="nav_dashboard">Dashboard</span>
+</a>
+<div class="side-divider"></div>
+<div class="side-section-label" data-i18n="side_resources">📚 RESOURCES</div>
+<a class="side-action" href="#home">
+<span class="side-action-icon">📖</span><span data-i18n="side_documentation">Documentation</span>
+</a>
+<a class="side-action" href="https://discord.gg/rYqGXWRbfJ" rel="noopener noreferrer" target="_blank">
+<span class="side-action-icon">🆘</span><span data-i18n="side_support">Support</span>
+</a>
+<a class="side-action" href="global-leaderboard.html">
+<span class="side-action-icon">🏆</span><span data-i18n="global_leaderboard_nav">Global Leaderboard</span>
+</a>
+<a class="side-action" href="about.html">
+<span class="side-action-icon">✦</span><span data-i18n="about_nav">About the Creator</span>
+</a>
+<a class="side-action" href="terms.html">
+<span class="side-action-icon">📝</span><span data-i18n="menu_terms">Terms of Service</span>
+</a>
+<a class="side-action" href="privacy.html">
+<span class="side-action-icon">🔒</span><span data-i18n="menu_privacy">Privacy Policy</span>
+</a>
+<div class="side-divider"></div>
+<div class="side-section-label" data-i18n="side_contact_section">✉ CONTACT</div>
+<a class="side-action side-action-telegram" href="https://t.me/RbxArty_YT" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="side-action-icon side-telegram-icon"><svg focusable="false" viewbox="0 0 24 24"><path d="M21.7 4.3 18.5 19c-.24 1.04-.87 1.3-1.76.81l-4.86-3.58-2.35 2.26c-.26.26-.48.48-.98.48l.35-4.95 9.01-8.14c.39-.35-.08-.55-.6-.2L6.17 12.83l-4.8-1.5c-1.04-.33-1.06-1.04.22-1.55L20.36 2.7c.87-.32 1.63.2 1.34 1.6Z"></path></svg></span><span data-i18n="side_contact_telegram">Contact me in Telegram</span>
+</a>
+<div class="side-divider"></div>
+<div class="side-section-label" data-i18n="side_language_label">🌐 LANGUAGE</div>
+<div class="language-picker" id="languagePicker">
+<button aria-expanded="false" aria-haspopup="listbox" class="language-switch side-language" id="languageSwitch" type="button">
+<span class="language-current-flag flag" id="languageCurrentFlag">🇬🇧</span>
+<span class="language-current-code" id="languageCurrentCode">EN</span>
+<span class="language-current-name" id="languageCurrentName">English</span>
+<span aria-hidden="true" class="language-caret">⌃</span>
+</button>
+<div aria-label="Language" class="language-dropdown" id="languageDropdown" role="listbox">
+<button aria-selected="true" class="language-option active" data-language="en" role="option" type="button"><span>🇬🇧</span><span>English</span></button>
+<button aria-selected="false" class="language-option" data-language="ru" role="option" type="button"><span>🇷🇺</span><span>Русский</span></button>
+<button aria-selected="false" class="language-option" data-language="de" role="option" type="button"><span>🇩🇪</span><span>Deutsch</span></button>
+<button aria-selected="false" class="language-option" data-language="fr" role="option" type="button"><span>🇫🇷</span><span>Français</span></button>
+<button aria-selected="false" class="language-option" data-language="it" role="option" type="button"><span>🇮🇹</span><span>Italiano</span></button>
+</div>
+</div>
+</div>
+</aside>
+<main class="container" id="home">
+<section aria-labelledby="hero-title" class="hero hero-redesign">
+<div class="hero-copy">
+<div class="hero-kicker"><span class="status-dot"></span><span data-i18n="badge">DISCORD BOT</span><span class="hero-kicker-divider">/</span><span data-i18n="hero_kicker_subtitle">Your Question of the Day</span></div>
+<h1 id="hero-title">Quello<span class="hero-period">.</span></h1>
+<p class="hero-tagline hero-gradient-text" data-i18n="overview_title">Questions made for community conversations.</p>
+<p class="subtitle" data-i18n="hero_subtitle">A Discord bot for creating, managing, and tracking Question of the Day posts with configurable channels, roles, logs, history, and administration tools.</p>
+<div class="buttons hero-buttons">
+<a class="button hero-primary" data-i18n="add_discord" href="https://discord.com/oauth2/authorize?client_id=1548745092586676246&amp;permissions=8444577866836032&amp;integration_type=0&amp;scope=bot+applications.commands" rel="noopener noreferrer" target="_blank">Add to Discord <span aria-hidden="true">↗</span></a>
+<a class="button discord-button hero-secondary" href="#playground"><span aria-hidden="true">⌘</span><span data-i18n="nav_playground">Playground</span></a>
+</div>
+<div class="hero-proof"><span class="hero-proof-icon">✦</span><span data-i18n="overview_text">Create numbered QOTDs, optionally mention a configured role, optionally credit the suggester, and automatically open a discussion thread.</span></div>
+</div>
+<div aria-label="Illustrative preview of a Quello Question of the Day message" class="hero-visual">
+<div class="hero-orbit hero-orbit-one"></div><div class="hero-orbit hero-orbit-two"></div><div aria-hidden="true" class="hero-orbit hero-orbit-three"></div><div aria-hidden="true" class="hero-orbit hero-orbit-four"></div><div aria-hidden="true" class="hero-orbit hero-orbit-five"></div><div aria-hidden="true" class="hero-orbit hero-orbit-six"></div>
+<div class="hero-spark hero-spark-one">✦</div><div class="hero-spark hero-spark-two">✧</div><div class="hero-spark hero-spark-three">✦</div>
+<div class="hero-bot-glow"><img alt="" class="hero-bot-avatar" decoding="async" loading="lazy" src="quello-avatar.webp"/></div>
+<article class="qotd-floating-card">
+<div class="qotd-card-top"><img alt="" class="qotd-mini-avatar" decoding="async" loading="lazy" src="quello-avatar.webp"/><div class="qotd-author"><strong>Quello</strong><span class="app-pill">APP</span><small data-i18n="hero_card_app_subtitle">Question of the Day</small></div><span class="qotd-menu">•••</span></div>
+<div aria-atomic="true" aria-live="polite" class="qotd-card-body"><span class="qotd-number"><span data-i18n="hero_card_label">QUESTION OF THE DAY</span> <b id="heroQotdNumber">#01</b></span><h2 id="heroQotdQuestion">What's a game you could play forever?</h2><p id="heroQotdPrompt">Share your answer with the community.</p></div>
+<div class="qotd-card-footer"><span data-i18n="hero_reply_thread">↩ Reply in thread</span><div class="qotd-card-actions"><span class="qotd-reaction">♡ <b data-i18n="hero_react">React</b></span><button aria-label="Show another example question" class="qotd-next" data-i18n-aria-label="hero_next_aria" data-i18n-title="hero_next_title" id="heroNextQuestion" title="Show another question" type="button">↻</button></div></div>
+</article>
+<div class="hero-visual-caption"><span class="caption-pulse"></span><span data-i18n="hero_caption">Preview a new question</span><span class="hero-preview-hint" data-i18n="hero_hint">Tap ↻ to explore</span></div>
+</div>
+</section>
+<section aria-label="Quello highlights" class="hero-feature-strip">
+<a class="hero-feature" href="#playground"><span class="hero-feature-icon">⌘</span><span><strong data-i18n="hero_feature_commands">Explore commands</strong><small data-i18n="hero_feature_commands_desc">Find the right tool fast</small></span><b aria-hidden="true">↗</b></a>
+<a class="hero-feature" href="#preview"><span class="hero-feature-icon">✎</span><span><strong data-i18n="hero_feature_preview">Preview your QOTD</strong><small data-i18n="hero_feature_preview_desc">Build a message before posting</small></span><b aria-hidden="true">↗</b></a>
+<a class="hero-feature" href="#setup"><span class="hero-feature-icon">⚙</span><span><strong data-i18n="hero_feature_setup">Simple setup</strong><small data-i18n="hero_feature_setup_desc">Get your server ready</small></span><b aria-hidden="true">↗</b></a>
+<a class="hero-feature" href="#extras"><span class="hero-feature-icon">✧</span><span><strong data-i18n="hero_feature_extras">Discover extras</strong><small data-i18n="hero_feature_extras_desc">Tips, questions and secrets</small></span><b aria-hidden="true">↗</b></a>
+</section>
+<section aria-labelledby="evolution-title" class="evolution-showcase">
+<div class="evolution-heading"><span class="eyebrow" data-i18n="evo_eyebrow">BUILT FOR COMMUNITIES</span><h2 data-i18n="evo_title" id="evolution-title">Everything your QOTD community needs.</h2><p data-i18n="evo_intro">A clearer way to create questions, keep conversations moving, and manage your server.</p></div>
+<div class="evolution-grid">
+<article class="evolution-card"><span aria-hidden="true" class="evolution-icon">✦</span><h3 data-i18n="evo_card1_title">Create with confidence</h3><p data-i18n="evo_card1_text">Build numbered questions using the server-configured language and send them to the QOTD channel.</p></article>
+<article class="evolution-card"><span aria-hidden="true" class="evolution-icon">⌁</span><h3 data-i18n="evo_card2_title">Keep discussions flowing</h3><p data-i18n="evo_card2_text">Give every question a place for replies with automatically created discussion threads.</p></article>
+<article class="evolution-card"><span aria-hidden="true" class="evolution-icon">◈</span><h3 data-i18n="evo_card3_title">Stay in control</h3><p data-i18n="evo_card3_text">Use roles, configuration, history, logs, and owner tools to manage QOTD activity.</p></article>
+</div>
+</section>
+<section aria-labelledby="evolution-steps-title" class="evolution-steps">
+<div class="evolution-heading"><span class="eyebrow" data-i18n="evo_steps_eyebrow">GET STARTED</span><h2 data-i18n="evo_steps_title" id="evolution-steps-title">From invite to first question.</h2><p data-i18n="evo_steps_intro">Four simple steps to bring Quello into your server.</p></div>
+<ol class="evolution-step-list">
+<li><span>01</span><div><strong data-i18n="evo_step1_title">Invite Quello</strong><small data-i18n="evo_step1_text">Add the bot to your Discord server.</small></div></li>
+<li><span>02</span><div><strong data-i18n="evo_step2_title">Configure access</strong><small data-i18n="evo_step2_text">Choose the QOTD mention role and allowed role.</small></div></li>
+<li><span>03</span><div><strong data-i18n="evo_step3_title">Choose the QOTD channel</strong><small data-i18n="evo_step3_text">Set the single QOTD channel and bot language.</small></div></li>
+<li><span>04</span><div><strong data-i18n="evo_step4_title">Post your first QOTD</strong><small data-i18n="evo_step4_text">Create a question and start a conversation.</small></div></li>
+</ol><a class="evolution-steps-link" data-i18n="evo_steps_link" href="#setup">Read the setup guide →</a>
+</section>
+<section class="quick-start discord-embed">
+<div class="embed-accent"></div>
+<div class="embed-content">
+<span class="eyebrow" data-i18n="eyebrow_quickstart">QUICK START</span>
+<h2 data-i18n="quickstart_title">Ready to use Quello?</h2>
+<p data-i18n="quickstart_text">Invite the bot, configure your server, and create your first question in a few steps.</p>
+<div class="quick-steps">
+<span><b>01</b> <span data-i18n="quick1">Invite the bot</span></span>
+<span><b>02</b> <span data-i18n="quick2">Run /setup</span></span>
+<span><b>03</b> <span data-i18n="quick3">Check /config</span></span>
+<span><b>04</b> <span data-i18n="quick4">Create /qotd</span></span>
+</div>
+<a class="button" data-i18n="quickstart_button" href="#setup">Open Setup Guide</a>
+</div>
+</section>
+<section class="discord-embed intent-embed">
+<div class="embed-accent"></div>
+<div class="embed-content">
+<span class="eyebrow" data-i18n="eyebrow_intent">QUICK NAVIGATION</span>
+<h2 data-i18n="intent_title">What do you want to do?</h2>
+<p data-i18n="intent_text">Jump directly to the part of the documentation you need.</p>
+<div class="intent-actions">
+<a class="intent-button" data-i18n="intent_setup" href="#setup">🚀 Set up the bot</a>
+<a class="intent-button" data-i18n="intent_qotd" href="#preview">💬 Build a QOTD</a>
+<a class="intent-button" data-i18n="intent_commands" href="#commands">📖 Explore commands</a>
+<a class="intent-button" data-i18n="intent_help" href="#faq">❓ Get help</a>
+</div>
+</div>
+</section>
+<section class="discord-embed whats-new">
+<div class="embed-accent"></div>
+<div class="embed-content">
+<span class="eyebrow" data-i18n="eyebrow_new">WHAT'S NEW</span>
+<h2 data-i18n="new_title">Latest website updates</h2>
+<p data-i18n="new_text">Quello now has a smarter side navigation experience, an interactive Command Playground, a guided QOTD builder, setup progress, community highlights, and hidden extras.</p>
+<a class="text-link" data-i18n="new_button" href="#changelog">View full changelog →</a>
+</div>
+</section>
+<section class="section" id="playground">
+<div class="section-heading">
+<div>
+<span class="eyebrow" data-i18n="eyebrow_playground">INTERACTIVE</span>
+<h2 data-i18n="playground_title">Command Playground</h2>
+<p class="section-intro" data-i18n="playground_intro">Pick a Quello command and explore what it does without leaving the page.</p>
+</div>
+</div>
+<div class="playground-grid discord-embed">
+<div class="embed-accent"></div>
+<div class="embed-content">
+<label class="playground-label" data-i18n="playground_choose">Choose a command</label>
+<button aria-expanded="false" aria-haspopup="dialog" class="command-picker-trigger" id="commandPickerTrigger" type="button">
+<span class="command-picker-current">
+<code id="commandPickerName">/qotd</code>
+<span id="commandPickerLabel">Create a new Question of the Day.</span>
+</span>
+<span aria-hidden="true" class="command-picker-chevron">⌄</span>
+</button>
+<div aria-hidden="true" class="command-drawer" id="commandDrawer">
+<div class="command-drawer-backdrop" data-command-close=""></div>
+<aside aria-labelledby="commandDrawerTitle" aria-modal="true" class="command-drawer-panel" role="dialog">
+<div class="command-drawer-head">
+<div>
+<span class="eyebrow">COMMAND PLAYGROUND</span>
+<h3 data-i18n="playground_choose" id="commandDrawerTitle">Choose a command</h3>
+</div>
+<button aria-label="Close" class="command-drawer-close" data-command-close="" type="button">×</button>
+</div>
+<div class="command-options" id="commandOptions"></div>
+</aside>
+</div>
+<div class="playground-card" id="playgroundCard">
+<div class="command-head"><code id="playgroundName">/qotd</code><span class="command-tag" id="playgroundTag">QOTD</span></div>
+<h3 id="playgroundTitle">Create a new Question of the Day.</h3>
+<p id="playgroundDescription">Create and publish a QOTD using the configured server settings.</p>
+<div class="playground-meta"><span id="playgroundAccess">Configured QOTD role, Bot Owner or Server Owner</span><span id="playgroundExample">/qotd question:"What should we discuss today?"</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="commands">
+<div class="section-heading">
+<div>
+<span class="eyebrow" data-i18n="eyebrow_commands">EXPLORE</span>
+<h2 data-i18n="commands_title">Command Explorer</h2>
+<p class="section-intro" data-i18n="commands_intro">A clean Discord-style reference for every command currently available in Quello.</p>
+</div>
+</div>
+<div class="command-embeds">
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/achievement_info</code><span class="command-tag">ACHIEVEMENTS</span></div><p data-i18n="cmd_achievement_info">View details for an achievement.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span><span data-i18n="achievement_info_params">achievement</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/achievement_leaderboard</code><span class="command-tag">ACHIEVEMENTS</span></div><p data-i18n="cmd_achievement_leaderboard">View the server achievement rankings.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span><span data-i18n="server_command">Current server</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/achievement_settings</code><span class="command-tag">ACHIEVEMENTS</span></div><p data-i18n="cmd_achievement_settings">Manage achievement settings.</p><div class="command-details"><span data-i18n="play_achievement_settings_access">Server Owner, Discord Administrator or Bot Owner; members control their own notifications.</span><span data-i18n="achievement_settings_params">category · enabled · notifications</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/achievements</code><span class="command-tag">ACHIEVEMENTS</span></div><p data-i18n="cmd_achievements">Browse the built-in achievement catalogue.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/audit_log</code><span class="command-tag">AUDIT</span></div><p data-i18n="cmd_audit">View the separate detailed interaction audit log.</p><div class="command-details"><span data-i18n="owner_only">Bot Owner or Server Owner</span><span data-i18n="audit_detail">Tracks interaction attempts and errors without storing secrets</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/config</code><span class="command-tag">CONFIG</span></div><p data-i18n="cmd_config">View and edit the QOTD configuration.</p><div class="command-details"><span data-i18n="admin_settings_access">Bot Owner or Server Owner</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/delete</code><span class="command-tag">QOTD</span></div><p data-i18n="cmd_delete">Delete an existing QOTD using its Discord message link.</p><div class="command-details"><span data-i18n="use_qotd_edit">Configured QOTD role, Bot Owner or Server Owner</span><span>message_link</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/diagnostics</code><span class="command-tag">OWNER</span></div><p data-i18n="cmd_diagnostics">Run technical checks for the bot, database, audit queue, backups, and channel permissions.</p><div class="command-details"><span data-i18n="owner_only">Bot Owner or Server Owner</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/edit</code><span class="command-tag">QOTD</span></div><p data-i18n="cmd_edit">Edit an existing QOTD using its Discord message link.</p><div class="command-details"><span data-i18n="use_qotd_edit">Configured QOTD role, Bot Owner or Server Owner</span><span>message_link · question</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/global_leaderboard</code><span class="command-tag">STATS</span></div><p data-i18n="cmd_global_leaderboard">View global QOTD rankings.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span><span data-i18n="global_scope">All Quello servers</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/help</code><span class="command-tag">HELP</span></div><p data-i18n="cmd_help">Show the available Quello commands.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/history</code><span class="command-tag">HISTORY</span></div><p data-i18n="cmd_history">View QOTD history.</p><div class="command-details"><span data-i18n="server_command">Current server</span><span data-i18n="history_detail">Browse previously created QOTDs</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/info</code><span class="command-tag">INFO</span></div><p data-i18n="cmd_info">View information about a QOTD using its Discord message link.</p><div class="command-details"><span data-i18n="owner_only">Bot Owner or Server Owner</span><span>message_link</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/leaderboard</code><span class="command-tag">STATS</span></div><p data-i18n="cmd_leaderboard">View the QOTD creator and responder leaderboards.</p><div class="command-details"><span data-i18n="server_command">Current server</span><span data-i18n="leaderboard_detail">Creator and responder rankings for this server</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/lock</code><span class="command-tag">SETTINGS</span></div><p data-i18n="cmd_lock">Lock or unlock QOTD creation.</p><div class="command-details"><span data-i18n="admin_settings_access">Bot Owner or Server Owner</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/logs</code><span class="command-tag">LOGS</span></div><p data-i18n="cmd_logs">View and filter QOTD logs with pagination and Refresh.</p><div class="command-details"><span data-i18n="owner_only">Bot Owner or Server Owner</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/maintenance</code><span class="command-tag">SETTINGS</span></div><p data-i18n="cmd_maintenance">Enable or disable QOTD maintenance mode.</p><div class="command-details"><span data-i18n="admin_settings_access">Bot Owner or Server Owner</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/me</code><span class="command-tag">STATS</span></div><p data-i18n="cmd_me">View your personal QOTD participation, authored QOTDs and answer streak.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span><span data-i18n="me_params">Answers · created QOTDs · current streak</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/my_achievements</code><span class="command-tag">ACHIEVEMENTS</span></div><p data-i18n="cmd_my_achievements">View your achievement unlocks and progress.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/qotd</code><span class="command-tag">QOTD</span></div><p data-i18n="cmd_qotd">Create a new Question of the Day.</p><div class="command-details"><span data-i18n="use_qotd">Configured QOTD role</span><span data-i18n="param_qotd">question · optional suggested_by</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/qotd_category</code><span class="command-tag">QOTD</span></div><p data-i18n="cmd_qotd_category">Manage QOTD categories.</p><div class="command-details"><span data-i18n="use_qotd_edit">Configured QOTD role, Bot Owner or Server Owner</span><span data-i18n="qotd_category_params">action · optional name</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/question_week</code><span class="command-tag">STATS</span></div><p data-i18n="cmd_week">View the QOTD with the most unique participants in the last seven days.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span><span data-i18n="server_command">Current server</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/random_qotd</code><span class="command-tag">AI QOTD</span></div><p data-i18n="cmd_random_qotd">Generate and instantly publish an AI-created random QOTD.</p><div class="command-details"><span data-i18n="use_qotd">Configured QOTD role</span><span data-i18n="random_qotd_params">No parameters · Uses server bot language</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/reset</code><span class="command-tag">OWNER</span></div><p data-i18n="cmd_reset">Reset the QOTD counter.</p><div class="command-details"><span data-i18n="owner_only">Bot Owner or Server Owner</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/reset_logs</code><span class="command-tag">OWNER</span></div><p data-i18n="cmd_resetlogs">Reset the normal QOTD logs.</p><div class="command-details"><span data-i18n="owner_only">Bot Owner or Server Owner</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/schedule_config</code><span class="command-tag">SCHEDULE</span></div><p data-i18n="cmd_schedule_config">View the current Scheduled QOTD settings.</p><div class="command-details"><span data-i18n="admin_settings_access">Bot Owner or Server Owner</span><span data-i18n="schedule_config_params">No parameters · Read-only</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/schedule_qotds</code><span class="command-tag">SCHEDULE</span></div><p data-i18n="cmd_schedule_qotds">Configure recurring AI-generated QOTDs every 1, 6, 12 or 24 hours.</p><div class="command-details"><span data-i18n="admin_settings_access">Bot Owner or Server Owner</span><span data-i18n="schedule_qotd_params">enabled · time · timezone · interval</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/setup</code><span class="command-tag">CONFIG</span></div><p data-i18n="cmd_setup">Configure QOTD roles, one shared QOTD channel, and bot language.</p><div class="command-details"><span data-i18n="admin_settings_access">Bot Owner or Server Owner</span><span data-i18n="setup_params">qotd_manager_role (required) · ping_role (optional) · one QOTD channel · bot_language</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/stats</code><span class="command-tag">STATS</span></div><p data-i18n="cmd_stats">View QOTD statistics for the current server.</p><div class="command-details"><span data-i18n="server_command">Current server</span><span data-i18n="no_global_stats">Server-only statistics</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/suggest</code><span class="command-tag">QOTD</span></div><p data-i18n="cmd_suggest">Suggest a question for a future QOTD.</p><div class="command-details"><span data-i18n="all_users">Available to all users</span><span data-i18n="suggest_params">question</span></div></div></article>
+<article class="discord-embed command-embed"><div class="embed-accent"></div><div class="embed-content"><div class="command-head"><code>/suggestions</code><span class="command-tag">QOTD</span></div><p data-i18n="cmd_suggestions">Review pending QOTD suggestions one by one.</p><div class="command-details"><span data-i18n="use_qotd_edit">Configured QOTD role, Bot Owner or Server Owner</span><span data-i18n="suggestions_params">Browse · Approve · Reject with reason</span></div></div></article>
+</div>
+<div class="permission-note"><strong data-i18n="permissions_label">Permissions:</strong> <span data-i18n="permissions_text">QOTD creation, editing, and deletion use the configured allowed role; the Bot Owner and Server Owner can also use these tools. Owner-only management commands are restricted to the Bot Owner or Server Owner.</span></div>
+<div class="command-details-panel discord-embed">
+<div class="embed-accent"></div>
+<div class="embed-content">
+<span class="eyebrow" data-i18n="eyebrow_details">COMMAND DETAILS</span>
+<h3 data-i18n="details_title">How the commands work</h3>
+<p class="section-intro" data-i18n="details_intro">Open a command below to see what it does, what it expects, and who can use it.</p>
+<div class="command-detail-list">
+<details><summary><code>/achievement_info</code></summary><p data-i18n="detail_achievement_info">Inspect the achievement description, category, rarity, requirement and your progress.</p></details>
+<details><summary><code>/achievement_leaderboard</code></summary><p data-i18n="detail_achievement_leaderboard">See members ranked by the number of achievements they have unlocked on this server.</p></details>
+<details><summary><code>/achievement_settings</code></summary><p data-i18n="detail_achievement_settings">Server administrators can enable or disable achievement categories. Members can control their own unlock DMs.</p></details>
+<details><summary><code>/achievements</code></summary><p data-i18n="detail_achievements">See the four achievement categories, five rarity levels and available built-in achievements.</p></details>
+<details><summary><code>/audit_log</code></summary><p data-i18n="detail_audit">Displays the separate interaction audit log, including interaction attempts and errors, with filters for status, command name, and user. Restricted to the Bot Owner or Server Owner and designed not to store secrets.</p></details>
+<details><summary><code>/config</code></summary><p data-i18n="detail_config">Displays the current QOTD configuration for the server. Restricted to the Bot Owner or Server Owner.</p></details>
+<details><summary><code>/delete</code></summary><p data-i18n="detail_delete">Deletes an existing QOTD using its Discord message link. Quello first shows a preview with Confirm and Cancel buttons, and nothing is deleted until you press Confirm. Access uses the configured allowed role, Bot Owner, or Server Owner.</p></details>
+<details><summary><code>/diagnostics</code></summary><p data-i18n="detail_diagnostics">Runs technical health checks for Quello, including bot connectivity, database availability and integrity, audit queue and worker status, backup integrity, channel permissions, thread capabilities, and QOTD entries without linked discussion threads. You can optionally choose which text channel to check. Restricted to the Bot Owner or Server Owner.</p></details>
+<details><summary><code>/edit</code></summary><p data-i18n="detail_edit">Edits an existing QOTD using its Discord message link and the new question. Quello first shows a preview with Confirm and Cancel buttons, and nothing changes until you press Confirm. Access uses the configured allowed role, Bot Owner, or Server Owner.</p></details>
+<details><summary><code>/global_leaderboard</code></summary><p data-i18n="detail_global_leaderboard">See the global creator, responder and current streak rankings across all Quello servers.</p></details>
+<details><summary><code>/help</code></summary><p data-i18n="detail_help">Shows the bot's available commands and help categories.</p></details>
+<details><summary><code>/history</code></summary><p data-i18n="detail_history">Shows paginated QOTD history in the server-configured language. You can choose how many questions to load (1–50, default 20).</p></details>
+<details><summary><code>/info</code></summary><p data-i18n="detail_info">Shows information about a QOTD identified by its Discord message link. Restricted to the Bot Owner or Server Owner.</p></details>
+<details><summary><code>/leaderboard</code></summary><p data-i18n="detail_leaderboard">Shows creator and responder rankings for QOTDs in the server-configured language.</p></details>
+<details><summary><code>/lock</code></summary><p data-i18n="detail_lock">Locks or unlocks QOTD creation for the server. Restricted to the Bot Owner or Server Owner.</p></details>
+<details><summary><code>/logs</code></summary><p data-i18n="detail_logs">Displays and filters normal QOTD logs (by action, user, or QOTD ID) with pagination and Refresh controls. Restricted to the Bot Owner or Server Owner.</p></details>
+<details><summary><code>/maintenance</code></summary><p data-i18n="detail_maintenance">Turns QOTD maintenance mode on or off. While enabled, QOTD creation is blocked. Restricted to the Bot Owner or Server Owner.</p></details>
+<details><summary><code>/me</code></summary><p data-i18n="detail_me">Shows your personal activity on this server: how many answers you have posted in QOTD discussion threads, how many QOTDs you have created, and your current streak of consecutive days with an answer. Available to everyone.</p></details>
+<details><summary><code>/my_achievements</code></summary><p data-i18n="detail_my_achievements">See your unlocked achievements, unique QOTD answer count, current streak and progress.</p></details>
+<details><summary><code>/qotd</code></summary><p data-i18n="detail_qotd">Creates a new numbered QOTD using the server-configured language and QOTD channel automatically, then opens a discussion thread. The command supports a question and an optional suggested-by member.</p></details>
+<details><summary><code>/qotd_category</code></summary><p data-i18n="detail_qotd_category">List, create or delete server-specific QOTD categories. Assign categories to manual, random and scheduled QOTDs.</p></details>
+<details><summary><code>/question_week</code></summary><p data-i18n="detail_week">Shows the QOTD posted in the last seven days that attracted the most unique participants, together with the number of participants. Available to everyone.</p></details>
+<details><summary><code>/random_qotd</code></summary><p data-i18n="detail_random_qotd">Generates one new question through the same Groq AI provider and publishes it immediately. Uses the server’s configured bot language and the normal QOTD channel, permissions, and publishing flow.</p></details>
+<details><summary><code>/reset</code></summary><p data-i18n="detail_reset">Resets the QOTD counter for the server-configured language. Restricted to the Bot Owner or Server Owner.</p></details>
+<details><summary><code>/reset_logs</code></summary><p data-i18n="detail_resetlogs">Clears the normal QOTD logs. Restricted to the Bot Owner or Server Owner.</p></details>
+<details><summary><code>/schedule_config</code></summary><p data-i18n="detail_schedule_config">Displays whether Scheduled QOTD is enabled, its first publication time, repeat interval, and IANA time zone. It does not change settings. Available to the server owner, Discord Administrators, and Bot Owner.</p></details>
+<details><summary><code>/schedule_qotds</code></summary><p data-i18n="detail_schedule_qotds">Lets the server owner, a Discord Administrator, or the Bot Owner enable recurring AI-generated QOTDs, set the first publication time and IANA time zone, and choose an interval of every 1, 6, 12, or 24 hours. The server language follows the server’s configured bot language. Temporary generation or publication failures are retried every five minutes for up to one hour; non-retryable API errors (such as 401 or 403) skip the current slot and notify the server owner.</p></details>
+<details><summary><code>/setup</code></summary><p data-i18n="detail_setup">Configures the required allowed role, an optional mention role, one shared QOTD channel, an optional announcement channel, and the bot language (English or Russian). If no language is selected, English is used by default. Quello shows the configuration with Confirm and Cancel buttons and saves it only after you press Confirm. Restricted to the Bot Owner or Server Owner.</p></details>
+<details><summary><code>/stats</code></summary><p data-i18n="detail_stats">Shows QOTD statistics for the current server: totals per language, plus this month and this week. It is not a global statistics command.</p></details>
+<details><summary><code>/suggest</code></summary><p data-i18n="detail_suggest">Lets any member send a question (up to 1,500 characters) in using the server-configured language. Each member can have one unreviewed suggestion at a time: sending another shows the one that is waiting, with a button to delete it and free the slot. Empty, very short (under 10 characters or a single word), link-only and filler questions are refused. The confirmation is private, and nothing is published until a QOTD manager approves the suggestion.</p></details>
+<details><summary><code>/suggestions</code></summary><p data-i18n="detail_suggestions">Opens the pending suggestions for a QOTD manager one at a time, with arrow buttons to move through the queue (“Suggestion 2 of 7”) plus Approve and Reject buttons. Rejecting opens a form that requires a reason. The author receives a direct message with the decision: the reason on rejection, a link to the published QOTD on approval (if their DMs are closed, the reviewer is told). An approved suggestion is published as the next numbered QOTD in the matching language channel with a discussion thread, and the member who suggested it is credited. Approval is blocked while QOTD creation is locked or in maintenance mode. Access uses the configured allowed role, Bot Owner, or Server Owner.</p></details>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="preview">
+<div class="section-heading">
+<div>
+<span class="eyebrow" data-i18n="eyebrow_preview">TRY IT</span>
+<h2 data-i18n="preview_title">QOTD Preview Builder</h2>
+<p class="section-intro" data-i18n="preview_intro">Build a realistic QOTD message, switch its language, hide optional credit, and copy the result with one tap.</p>
+</div>
+</div>
+<div class="builder">
+<div class="builder-panel">
+<div class="builder-panel-title" data-i18n="builder_inputs">Message settings</div>
+<label><span data-i18n="question_label">Question</span><textarea id="questionInput" maxlength="300">What game would you recommend to everyone?</textarea><small><span id="questionCount">38</span>/300</small></label>
+<div class="input-row">
+<label><span data-i18n="number_label">QOTD number</span><input id="numberInput" min="1" type="number" value="42"/></label>
+</div>
+<label><span data-i18n="thanks_label">Suggested by</span><input id="authorInput" maxlength="80" value="Community Member"/></label>
+<label class="toggle-row"><input checked="" id="showAuthor" type="checkbox"/><span data-i18n="show_suggester">Show suggested-by line</span></label>
+<div class="builder-actions"><button class="secondary-button" data-i18n="reset_preview" id="resetPreview" type="button">Reset</button><button class="primary-button" data-i18n="copy_preview" id="copyPreview" type="button">Copy text</button></div>
+<p aria-live="polite" class="copy-status" id="copyStatus"></p>
+</div>
+<div class="discord-message-preview">
+<div class="fake-discord-header"><span class="fake-avatar"><img alt="Quello bot avatar" decoding="async" loading="lazy" src="quello-avatar.webp"/></span><div><strong>Quello</strong><small>BOT</small><div data-i18n="preview_channel">Question of the Day</div></div></div>
+<div class="message-body">
+<div class="role-mention">@QOTD</div>
+<div class="discord-embed live-embed">
+<div class="embed-accent"></div>
+<div class="embed-content">
+<div class="preview-title" id="previewTitle">QOTD 42:</div>
+<div class="preview-number" hidden="" id="previewNumber">#42</div>
+<div class="preview-question" id="previewQuestion">What game would you recommend to everyone?</div>
+<div class="preview-author" id="previewAuthorLine"><span id="previewSuggestedLabel">Suggested by</span> <span id="previewAuthor">Community Member</span></div>
+</div>
+</div>
+<div class="preview-thread">🧵 <span id="previewThread">QOTD 42</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="qotd-flow">
+<div class="section-heading">
+<div>
+<span class="eyebrow" data-i18n="eyebrow_flow">QUICK BUILDER</span>
+<h2 data-i18n="flow_title">Build Your QOTD</h2>
+<p class="section-intro" data-i18n="flow_intro">A tiny step-by-step helper that turns your idea into a ready-to-use /qotd command.</p>
+</div>
+</div>
+<div class="flow-card discord-embed">
+<div class="embed-accent"></div>
+<div class="embed-content">
+<div class="flow-steps"><span class="flow-step active" data-step="1">01</span><span class="flow-line"></span><span class="flow-step" data-step="2">02</span></div>
+<div class="flow-panel active" data-panel="1">
+<h3 data-i18n="flow_step1" id="flowQuestionLabel">1. Write your question</h3>
+<input aria-labelledby="flowQuestionLabel" class="flow-input" data-i18n-placeholder="flow_placeholder" id="flowQuestion" maxlength="200" value="What game would you recommend to everyone?"/>
+<button class="button flow-next" data-i18n="flow_next" type="button">Next →</button>
+</div>
+<div class="flow-panel" data-panel="2">
+<h3 data-i18n="flow_step3">2. Generate your command</h3>
+<div class="generated-command" id="generatedCommand">/qotd question:"What game would you recommend to everyone?"</div>
+<div class="flow-actions"><button class="button secondary flow-back" data-i18n="flow_back" type="button">← Back</button><button class="button" data-i18n="flow_copy" id="copyGenerated" type="button">Copy command</button></div>
+<p class="copy-status" id="flowCopyStatus"></p>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="setup">
+<div class="section-heading">
+<div>
+<span class="eyebrow" data-i18n="eyebrow_setup">GET STARTED</span>
+<h2 data-i18n="setup_title">Set Up Quello</h2>
+<p class="section-intro" data-i18n="setup_intro">A simple visual guide for getting your server ready for its first Question of the Day.</p>
+</div>
+</div>
+<div class="setup-embed">
+<div class="setup-header"><span>⚙️</span><div><strong data-i18n="setup_embed_title">Quello Setup Guide</strong><small data-i18n="setup_embed_subtitle">Complete these steps in order</small></div></div>
+<div class="setup-step"><div class="step-number">01</div><div><h3 data-i18n="step1_title">Add Quello</h3><p data-i18n="step1_text">Use the Add to Discord button above and select the server where you want to use Quello.</p><div class="step-code">Invite → Select server → Authorize</div></div></div>
+<div class="setup-step"><div class="step-number">02</div><div><h3 data-i18n="step2_title">Run /setup</h3><p data-i18n="step2_text">As the Server Owner or Bot Owner, choose the role allowed to create QOTDs, optionally a role to mention, one QOTD channel, and the bot interface language. Review the preview and press Confirm to save.</p><div class="step-code">/setup allowed_role: @QOTD Managers qotd_channel: #qotd</div></div></div>
+<div class="setup-step"><div class="step-number">03</div><div><h3 data-i18n="step3_title">Check /config</h3><p data-i18n="step3_text">Review the saved configuration and make sure the roles and channels match your server.</p><div class="step-code">/config</div></div></div>
+<div class="setup-step"><div class="step-number">04</div><div><h3 data-i18n="step4_title">Create your first QOTD</h3><p data-i18n="step4_text">Use /qotd with a question. The language is taken from the server configuration; you can optionally override the QOTD channel and credit the member who suggested the question.</p><div class="step-code">/qotd question: "Your question"</div></div></div>
+<div class="setup-note"><strong data-i18n="setup_note_title">Tip</strong><span data-i18n="setup_note_text">The configured allowed role controls who can create, edit, and delete QOTDs. Bot Owner and Server Owner access is also supported. /setup, /edit, and /delete ask for confirmation with Confirm and Cancel buttons before changing anything.</span></div>
+<div class="setup-checklist">
+<div class="checklist-head"><strong data-i18n="checklist_title">Server setup checklist</strong><span id="checklistProgress">0 / 6</span></div>
+<label><input class="setup-check" data-key="invite" type="checkbox"/><span data-i18n="check_invite">Invite Quello</span></label>
+<label><input class="setup-check" data-key="setup" type="checkbox"/><span data-i18n="check_setup">Run /setup</span></label>
+<label><input class="setup-check" data-key="channels" type="checkbox"/><span data-i18n="check_channels">Choose the QOTD channel</span></label>
+<label><input class="setup-check" data-key="roles" type="checkbox"/><span data-i18n="check_roles">Configure the allowed role</span></label>
+<label><input class="setup-check" data-key="config" type="checkbox"/><span data-i18n="check_config">Verify /config</span></label>
+<label><input class="setup-check" data-key="first" type="checkbox"/><span data-i18n="check_first">Create your first QOTD</span></label>
+</div>
+</div>
+</section>
+<section class="section" id="permissions">
+<div class="section-heading">
+<div><span class="eyebrow" data-i18n="eyebrow_permissions">ACCESS</span><h2 data-i18n="permissions_title">Permissions at a Glance</h2></div>
+</div>
+<div class="permission-embed discord-embed">
+<div class="embed-accent"></div>
+<div class="embed-content">
+<div class="permission-line"><code>/qotd</code><span data-i18n="access_qotd">Configured allowed role, Bot Owner or Server Owner</span></div>
+<div class="permission-line"><code>/edit</code> <code>/delete</code> <code>/suggestions</code><span data-i18n="access_edit_delete">Configured allowed role, Bot Owner or Server Owner</span></div>
+<div class="permission-line"><code>/info</code> <code>/config</code><span data-i18n="access_owner">Bot Owner or Server Owner</span></div>
+<div class="permission-line"><code>/setup</code><span data-i18n="access_setup">Bot Owner, Server Owner or Discord Administrator</span></div>
+<div class="permission-line"><code>/logs</code> <code>/audit_log</code> <code>/reset_logs</code> <code>/reset</code><span data-i18n="access_owner">Bot Owner or Server Owner</span></div>
+<div class="permission-line"><code>/stats</code> <code>/leaderboard</code> <code>/history</code> <code>/me</code> <code>/question_week</code> <code>/suggest</code> <code>/help</code><span data-i18n="all_users">Available to all users</span></div>
 <div class="permission-line"><code>/diagnostics</code><span data-i18n="access_owner">Bot Owner or Server Owner</span></div>
-          <div class="permission-line"><code>/maintenance</code> <code>/lock</code><span data-i18n="access_owner">Bot Owner or Server Owner</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="section-heading"><div><span class="eyebrow" data-i18n="eyebrow_faq">HELP</span><h2 data-i18n="faq_title">Frequently Asked Questions</h2></div></div>
-      <div class="faq">
-        <details open><summary data-i18n="faq1_q">Why isn't /qotd working?</summary><p data-i18n="faq1_a">Check that the bot is configured with /setup, that the selected roles and channels are correct, and that the user has the configured allowed role.</p></details>
-        <details><summary data-i18n="faq2_q">How do I change the QOTD channel?</summary><p data-i18n="faq2_a">Run /setup again and update the English and/or Russian QOTD channel. You can also choose a channel directly when using /qotd.</p></details>
-        <details><summary data-i18n="faq3_q">What does /lock do?</summary><p data-i18n="faq3_a">It lets an authorized owner temporarily prevent new QOTDs from being created.</p></details>
-        <details><summary data-i18n="faq4_q">What is /audit_log?</summary><p data-i18n="faq4_a">It provides a separate, detailed record of bot interaction attempts and errors for the server. It is restricted to the Bot Owner or Server Owner.</p></details>
-        <details><summary data-i18n="faq6_q">Who can use /diagnostics?</summary><p data-i18n="faq6_a">Only the Bot Owner and Server Owner can use /diagnostics. The report is posted as a normal message in the channel and includes a Refresh button, which only the Bot Owner and Server Owner can use.</p></details>
-        <details><summary data-i18n="faq7_q">How do member suggestions work?</summary><p data-i18n="faq7_a">Any member can send a question with /suggest, one at a time: a new one can be sent after the previous suggestion has been approved, rejected, or deleted by its author. A QOTD manager runs /suggestions, pages through the pending suggestions, and approves or rejects them; rejecting asks for a reason. The author gets a direct message with the decision. An approved suggestion is published as the next QOTD with the member credited.</p></details>
-        <details><summary data-i18n="faq8_q">How do I change a single setting?</summary><p data-i18n="faq8_a">Run /config, pick a setting from the menu, change it with the role, channel or language picker or the Enable / Disable / Clear buttons, and press Save changes. Only the fields you changed are updated, and nothing is saved until you confirm.</p></details>
+<div class="permission-line"><code>/maintenance</code> <code>/lock</code><span data-i18n="access_owner">Bot Owner or Server Owner</span></div>
+</div>
+</div>
+</section>
+<section class="section" id="faq">
+<div class="section-heading"><div><span class="eyebrow" data-i18n="eyebrow_faq">HELP</span><h2 data-i18n="faq_title">Frequently Asked Questions</h2></div></div>
+<div class="faq">
+<details open=""><summary data-i18n="faq1_q">Why isn't /qotd working?</summary><p data-i18n="faq1_a">Check that the bot is configured with /setup, that the selected roles and channels are correct, and that the user has the configured allowed role.</p></details>
+<details><summary data-i18n="faq2_q">How do I change the QOTD channel?</summary><p data-i18n="faq2_a">Run /setup again and update the English and/or Russian QOTD channel. You can also choose a channel directly when using /qotd.</p></details>
+<details><summary data-i18n="faq3_q">What does /lock do?</summary><p data-i18n="faq3_a">It lets an authorized owner temporarily prevent new QOTDs from being created.</p></details>
+<details><summary data-i18n="faq4_q">What is /audit_log?</summary><p data-i18n="faq4_a">It provides a separate, detailed record of bot interaction attempts and errors for the server. It is restricted to the Bot Owner or Server Owner.</p></details>
+<details><summary data-i18n="faq6_q">Who can use /diagnostics?</summary><p data-i18n="faq6_a">Only the Bot Owner and Server Owner can use /diagnostics. The report is posted as a normal message in the channel and includes a Refresh button, which only the Bot Owner and Server Owner can use.</p></details>
+<details><summary data-i18n="faq7_q">How do member suggestions work?</summary><p data-i18n="faq7_a">Any member can send a question with /suggest, one at a time: a new one can be sent after the previous suggestion has been approved, rejected, or deleted by its author. A QOTD manager runs /suggestions, pages through the pending suggestions, and approves or rejects them; rejecting asks for a reason. The author gets a direct message with the decision. An approved suggestion is published as the next QOTD with the member credited.</p></details>
+<details><summary data-i18n="faq8_q">How do I change a single setting?</summary><p data-i18n="faq8_a">Run /config, pick a setting from the menu, change it with the role, channel or language picker or the Enable / Disable / Clear buttons, and press Save changes. Only the fields you changed are updated, and nothing is saved until you confirm.</p></details>
 <details><summary data-i18n="faq_ping_q">How do I ping only @here or @everyone?</summary><p data-i18n="faq_ping_a">Run /config, pick Mention role and press Clear, then pick @here or @everyone, press Enable and finally Save changes. On the website dashboard, set Mention role to None and switch on @here or @everyone.</p></details>
-        <details><summary data-i18n="faq9_q">How does Scheduled QOTD work?</summary><p data-i18n="faq9_a">A server owner can enable Scheduled QOTD in the website Dashboard, choose a daily time and IANA time zone, and Quello will generate and publish a question in the server’s configured bot language. Temporary generation or publishing failures are retried every five minutes for up to one hour. Non-retryable API errors (such as authentication or permission failures) skip the current slot and notify the server owner.</p></details>
-        <details><summary data-i18n="faq5_q">Can I use Quello on multiple servers?</summary><p data-i18n="faq5_a">Yes. Each server has its own configuration, counters, QOTD history and normal logs.</p></details>
-      </div>
-    </section>
-
-    <section class="section" id="troubleshooting">
-      <div class="section-heading"><div><span class="eyebrow" data-i18n="eyebrow_trouble">TROUBLESHOOTING</span><h2 data-i18n="trouble_title">Something not working?</h2><p class="section-intro" data-i18n="trouble_intro">Use these quick checks before changing your server configuration.</p></div></div>
-      <div class="troubleshoot-embed discord-embed">
-        <div class="embed-accent"></div>
-        <div class="embed-content">
-          <details open><summary data-i18n="trouble1_q">/qotd is unavailable</summary><p data-i18n="trouble1_a">Run /setup and verify the allowed role, the single QOTD channel, and the server language. Make sure the user has the configured allowed role.</p></details>
-          <details><summary data-i18n="trouble2_q">The bot cannot send the QOTD</summary><p data-i18n="trouble2_a">Check that Quello can view the target channel, send messages, mention the configured role (if one is set), and create threads there.</p></details>
-          <details><summary data-i18n="trouble3_q">The QOTD counter is unexpected</summary><p data-i18n="trouble3_a">Check the server counter with the relevant management commands. Remember that failed operations can leave number gaps because counters are kept safe for concurrent use.</p></details>
-          <details><summary data-i18n="trouble4_q">I need to stop new QOTDs temporarily</summary><p data-i18n="trouble4_a">Use /lock for a temporary lock or /maintenance when the server is being serviced.</p></details>
-          <details><summary data-i18n="trouble5_q">I need to inspect bot interactions</summary><p data-i18n="trouble5_a">Use /logs for normal QOTD activity or /audit_log for the separate interaction audit record.</p></details>
-          <details><summary data-i18n="trouble6_q">I need to check Quello’s technical status</summary><p data-i18n="trouble6_a">Use /diagnostics to check the bot connection, database, audit queue, backups, and the selected channel’s permissions. Only the Bot Owner or Server Owner can run this command.</p></details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="extras">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow" data-i18n="eyebrow_extras">EXTRAS</span>
-          <h2 data-i18n="extras_title">A little more Quello</h2>
-          <p class="section-intro" data-i18n="extras_intro">Small interactive features, tips, and secrets for exploring the site.</p>
-        </div>
-      </div>
-      <div class="extras-grid">
-        <article class="discord-embed extra-card did-you-know"><div class="embed-accent"></div><div class="embed-content"><span class="eyebrow">💡 DID YOU KNOW?</span><h3 id="tipTitle">Quello keeps its QOTD tools focused on the current server.</h3><p id="tipText">Each server has its own configuration, counters, history, and normal logs.</p><button class="text-button" id="nextTip" type="button" data-i18n="next_tip">Show another tip →</button></div></article>
-        <article class="discord-embed extra-card random-qotd"><div class="embed-accent"></div><div class="embed-content"><span class="eyebrow">🎲 RANDOM QOTD</span><h3 id="randomQuestion">What game would you recommend to everyone?</h3><p data-i18n="random_intro">Need inspiration? Get a random question.</p><button class="button" id="randomQotd" type="button" data-i18n="random_button">Give me another</button></div></article>
-        <article class="discord-embed extra-card achievements-card"><div class="embed-accent"></div><div class="embed-content"><span class="eyebrow">🏆 ACHIEVEMENTS</span><h3 data-i18n="achievements_title">Quello Explorer</h3><p data-i18n="achievements_intro">Unlock small badges by exploring the website.</p><div class="achievement-list"><div class="achievement" data-achievement="playground"><span>◇</span><div><strong data-i18n="ach_playground">Command Explorer</strong><small data-i18n="ach_playground_text">Use the Command Playground.</small></div></div><div class="achievement" data-achievement="setup"><span>✓</span><div><strong data-i18n="ach_setup">Ready to Go</strong><small data-i18n="ach_setup_text">Complete the setup checklist.</small></div></div><div class="achievement" data-achievement="random"><span>🎲</span><div><strong data-i18n="ach_random">Question Hunter</strong><small data-i18n="ach_random_text">Generate a random QOTD.</small></div></div><div class="achievement" data-achievement="secret"><span>✦</span><div><strong data-i18n="ach_secret">Secret Finder</strong><small data-i18n="ach_secret_text">Find Quello's hidden secret.</small></div></div></div></div></article>
-        <article class="discord-embed extra-card easter-card" id="easterEgg"><div class="embed-accent"></div><div class="embed-content"><span class="eyebrow">🌌 EASTER EGG</span><h3 data-i18n="easter_title">There is something hidden here.</h3><p data-i18n="easter_text">Try clicking the Quello avatar a few times.</p><button class="text-button" id="secretHint" type="button" data-i18n="easter_button">I'm listening…</button><div class="secret-message" id="secretMessage"></div></div></article>
-      </div>
-    </section>
-
-    <section class="section" id="changelog">
-      <div class="section-heading"><div><span class="eyebrow" data-i18n="eyebrow_changelog">UPDATES</span><h2 data-i18n="changelog_title">Changelog</h2></div></div>
-      <div class="timeline">
-        <article><span>NOVEMBER 25, 2026</span><h3 data-i18n="change35_title">Legal documentation and Command Playground correction</h3><p data-i18n="change35_text">Updated the Privacy Policy and Terms of Service for public profiles, Discord profile banners, Server Discovery, Feedback Center and data retention. Removed the standalone category-management entry from the Command Playground and corrected its displayed command count and changelog notes.</p></article>
-        <article><span>NOVEMBER 24, 2026</span><h3 data-i18n="change32_title">Feedback Center</h3><p data-i18n="change32_text">Added a dedicated feedback space for feature ideas, bug reports and questions, with private submissions, threaded replies, status tracking and team moderation.</p></article>
-        <article><span>NOVEMBER 24, 2026</span><h3 data-i18n="change31_title">Achievements System</h3><p data-i18n="change31_text">Added automatic QOTD achievements with progress tracking, five rarity levels, four categories, unlock notifications, category controls and a server leaderboard. Achievement progress counts unique QOTD participation, not repeated messages. Special achievements remain listed while their exact trigger conditions are being finalized.</p></article>
-        <article><span>NOVEMBER 24, 2026</span><h3 data-i18n="change30_title">Question Categories</h3><p data-i18n="change30_text">Added server-specific QOTD categories. Managers can create and delete categories, assign them to manual QOTDs, and use them for AI-generated random questions. Scheduled QOTD can also be tied to a category from /schedule_qotds or /schedule_config. Existing QOTDs and answers are preserved when a category is deleted.</p></article>
-        <article><span>NOVEMBER 24, 2026</span><h3 data-i18n="change29_title">Global Leaderboard</h3><p data-i18n="change29_text">Added global creator, responder and current-streak rankings and a public leaderboard page.</p></article>
+<details><summary data-i18n="faq9_q">How does Scheduled QOTD work?</summary><p data-i18n="faq9_a">A server owner can enable Scheduled QOTD in the website Dashboard, choose a daily time and IANA time zone, and Quello will generate and publish a question in the server’s configured bot language. Temporary generation or publishing failures are retried every five minutes for up to one hour. Non-retryable API errors (such as authentication or permission failures) skip the current slot and notify the server owner.</p></details>
+<details><summary data-i18n="faq5_q">Can I use Quello on multiple servers?</summary><p data-i18n="faq5_a">Yes. Each server has its own configuration, counters, QOTD history and normal logs.</p></details>
+</div>
+</section>
+<section class="section" id="troubleshooting">
+<div class="section-heading"><div><span class="eyebrow" data-i18n="eyebrow_trouble">TROUBLESHOOTING</span><h2 data-i18n="trouble_title">Something not working?</h2><p class="section-intro" data-i18n="trouble_intro">Use these quick checks before changing your server configuration.</p></div></div>
+<div class="troubleshoot-embed discord-embed">
+<div class="embed-accent"></div>
+<div class="embed-content">
+<details open=""><summary data-i18n="trouble1_q">/qotd is unavailable</summary><p data-i18n="trouble1_a">Run /setup and verify the allowed role, the single QOTD channel, and the server language. Make sure the user has the configured allowed role.</p></details>
+<details><summary data-i18n="trouble2_q">The bot cannot send the QOTD</summary><p data-i18n="trouble2_a">Check that Quello can view the target channel, send messages, mention the configured role (if one is set), and create threads there.</p></details>
+<details><summary data-i18n="trouble3_q">The QOTD counter is unexpected</summary><p data-i18n="trouble3_a">Check the server counter with the relevant management commands. Remember that failed operations can leave number gaps because counters are kept safe for concurrent use.</p></details>
+<details><summary data-i18n="trouble4_q">I need to stop new QOTDs temporarily</summary><p data-i18n="trouble4_a">Use /lock for a temporary lock or /maintenance when the server is being serviced.</p></details>
+<details><summary data-i18n="trouble5_q">I need to inspect bot interactions</summary><p data-i18n="trouble5_a">Use /logs for normal QOTD activity or /audit_log for the separate interaction audit record.</p></details>
+<details><summary data-i18n="trouble6_q">I need to check Quello’s technical status</summary><p data-i18n="trouble6_a">Use /diagnostics to check the bot connection, database, audit queue, backups, and the selected channel’s permissions. Only the Bot Owner or Server Owner can run this command.</p></details>
+</div>
+</div>
+</section>
+<section class="section" id="extras">
+<div class="section-heading">
+<div>
+<span class="eyebrow" data-i18n="eyebrow_extras">EXTRAS</span>
+<h2 data-i18n="extras_title">A little more Quello</h2>
+<p class="section-intro" data-i18n="extras_intro">Small interactive features, tips, and secrets for exploring the site.</p>
+</div>
+</div>
+<div class="extras-grid">
+<article class="discord-embed extra-card did-you-know"><div class="embed-accent"></div><div class="embed-content"><span class="eyebrow">💡 DID YOU KNOW?</span><h3 id="tipTitle">Quello keeps its QOTD tools focused on the current server.</h3><p id="tipText">Each server has its own configuration, counters, history, and normal logs.</p><button class="text-button" data-i18n="next_tip" id="nextTip" type="button">Show another tip →</button></div></article>
+<article class="discord-embed extra-card random-qotd"><div class="embed-accent"></div><div class="embed-content"><span class="eyebrow">🎲 RANDOM QOTD</span><h3 id="randomQuestion">What game would you recommend to everyone?</h3><p data-i18n="random_intro">Need inspiration? Get a random question.</p><button class="button" data-i18n="random_button" id="randomQotd" type="button">Give me another</button></div></article>
+<article class="discord-embed extra-card achievements-card"><div class="embed-accent"></div><div class="embed-content"><span class="eyebrow">🏆 ACHIEVEMENTS</span><h3 data-i18n="achievements_title">Quello Explorer</h3><p data-i18n="achievements_intro">Unlock small badges by exploring the website.</p><div class="achievement-list"><div class="achievement" data-achievement="playground"><span>◇</span><div><strong data-i18n="ach_playground">Command Explorer</strong><small data-i18n="ach_playground_text">Use the Command Playground.</small></div></div><div class="achievement" data-achievement="setup"><span>✓</span><div><strong data-i18n="ach_setup">Ready to Go</strong><small data-i18n="ach_setup_text">Complete the setup checklist.</small></div></div><div class="achievement" data-achievement="random"><span>🎲</span><div><strong data-i18n="ach_random">Question Hunter</strong><small data-i18n="ach_random_text">Generate a random QOTD.</small></div></div><div class="achievement" data-achievement="secret"><span>✦</span><div><strong data-i18n="ach_secret">Secret Finder</strong><small data-i18n="ach_secret_text">Find Quello's hidden secret.</small></div></div></div></div></article>
+<article class="discord-embed extra-card easter-card" id="easterEgg"><div class="embed-accent"></div><div class="embed-content"><span class="eyebrow">🌌 EASTER EGG</span><h3 data-i18n="easter_title">There is something hidden here.</h3><p data-i18n="easter_text">Try clicking the Quello avatar a few times.</p><button class="text-button" data-i18n="easter_button" id="secretHint" type="button">I'm listening…</button><div class="secret-message" id="secretMessage"></div></div></article>
+</div>
+</section>
+<section class="section" id="changelog">
+<div class="section-heading"><div><span class="eyebrow" data-i18n="eyebrow_changelog">UPDATES</span><h2 data-i18n="changelog_title">Changelog</h2></div></div>
+<div class="timeline">
+<article><span>NOVEMBER 25, 2026</span><h3 data-i18n="change35_title">Legal documentation and Command Playground correction</h3><p data-i18n="change35_text">Updated the Privacy Policy and Terms of Service for public profiles, Discord profile banners, Server Discovery, Feedback Center and data retention. Removed the standalone category-management entry from the Command Playground and corrected its displayed command count and changelog notes.</p></article>
+<article><span>NOVEMBER 24, 2026</span><h3 data-i18n="change32_title">Feedback Center</h3><p data-i18n="change32_text">Added a dedicated feedback space for feature ideas, bug reports and questions, with private submissions, threaded replies, status tracking and team moderation.</p></article>
+<article><span>NOVEMBER 24, 2026</span><h3 data-i18n="change31_title">Achievements System</h3><p data-i18n="change31_text">Added automatic QOTD achievements with progress tracking, five rarity levels, four categories, unlock notifications, category controls and a server leaderboard. Achievement progress counts unique QOTD participation, not repeated messages. Special achievements remain listed while their exact trigger conditions are being finalized.</p></article>
+<article><span>NOVEMBER 24, 2026</span><h3 data-i18n="change30_title">Question Categories</h3><p data-i18n="change30_text">Added server-specific QOTD categories. Managers can create and delete categories, assign them to manual QOTDs, and use them for AI-generated random questions. Scheduled QOTD can also be tied to a category from /schedule_qotds or /schedule_config. Existing QOTDs and answers are preserved when a category is deleted.</p></article>
+<article><span>NOVEMBER 24, 2026</span><h3 data-i18n="change29_title">Global Leaderboard</h3><p data-i18n="change29_text">Added global creator, responder and current-streak rankings and a public leaderboard page.</p></article>
 <article><span>NOVEMBER 22, 2026</span><h3 data-i18n="change28_title">Global Logs, command refinements and Copyright Protection</h3><p data-i18n="change28_text">Added separate Global Logs and Global Audit Logs to the Admin Panel, restricted global log access to the Bot Owner, removed the requested lab and developer-tool tabs, added the Quello proprietary LICENSE and source copyright notices, updated the version to Early Access v2.534.9.1, simplified /qotd channel selection, renamed /setup role parameters, added a Dashboard link to /help, and added Dashboard controls to reset the QOTD counter without deleting history or published questions and to clear normal Logs without touching Audit Logs.</p></article>
 <article><span>NOVEMBER 21, 2026</span><h3 data-i18n="change27_title">Admin Panel, Developer Team list, QOTD delete button and session fixes</h3><p data-i18n="change27_text">The Admin Console is now the Admin Panel. It has a new Developer Team tab listing the members from the Discord Developer Portal with their role and a “pending acceptance” status, and all four roles (Bot Owner, Team Owner, Admin, Developer) share System Overview, Announcements, Owner Actions and Developer Actions; Admins and Developers can manage announcements. Fixed Developer Team Admin/Developer detection, ending Dashboard sessions (one session or all sessions of a user, confirmed in the page, no false “not found” errors) and Technical Work Mode (duration presets with a countdown, no lockout of panel roles, a localized Dashboard notice). The server Dashboard now has a Delete button for QOTDs next to Open in Discord and Edit. QOTD generation uses a new prompt with stricter single-question and repeat checks. Terms of Service and Privacy Policy updated in all five languages.</p></article>
 <article><span>NOVEMBER 20, 2026</span><h3 data-i18n="change25_title">Discord Administrator command access</h3><p data-i18n="change25_text">The website command reference and legal pages now clarify that Discord Administrators can use /setup, /config, /maintenance, /lock, /schedule_qotds and /schedule_config. This does not grant QOTD Manager or owner-only command access, and Developer Portal team roles remain separate.</p></article>
 <article><span>NOVEMBER 20, 2026</span><h3 data-i18n="change26_title">Admin Console authorization &amp; durable operations</h3><p data-i18n="change26_text">Added Discord Developer Team role checks for Owner, Admin and Developer access, separated Owner Actions from Developer Actions, added technical diagnostics for accepted Admins and Developers, and persisted Dashboard sessions and Technical Work Mode in SQLite. Technical Work Mode now pauses scheduled QOTD publishing and survives bot restarts. The /setup allowed_role option is required on every invocation, and setup documentation now reflects the single shared QOTD channel.</p></article>
-        <div class="timeline-extra" id="changelogExtra" hidden>
+<div class="timeline-extra" hidden="" id="changelogExtra">
 <article><span>NOVEMBER 17, 2026</span><h3 data-i18n="change23_title">Command Playground and Dashboard polish</h3><p data-i18n="change23_text">Synced the Command Playground with the bot’s current slash commands, added missing commands, localized the new QOTD descriptions in all five languages, and updated Dashboard dropdowns to use the same custom bottom-sheet picker as the Command Playground.</p></article>
 <article><span>NOVEMBER 25, 2026</span><h3 data-i18n="change33_title">Daily QOTD limit &amp; legal documentation update</h3><p data-i18n="change33_text">Added a global one-QOTD-per-UTC-day publishing limit across Quello servers, including manual, AI-generated, suggestion, Dashboard and Scheduled QOTD publications. Updated the Privacy Policy and Terms of Service to explain the limit, UTC reset and owner bypass. Scheduled publications are attributed to the user who last saved the schedule, and recovery checks use the same identity. Refreshed the About the Creator page and reviewed project code and website scripts.</p></article>
 <article><span>NOVEMBER 25, 2026</span><h3 data-i18n="change34_title">Command Playground synchronized with the bot</h3><p data-i18n="change34_text">Updated Command Playground examples, parameters, permissions and descriptions for 30 listed commands. Category selection is documented as an optional setting for QOTD, random and scheduled publishing; the standalone category-management entry is intentionally excluded from the Playground.</p></article>
@@ -629,47 +597,39 @@ html{overflow-x:clip;touch-action:pan-y pinch-zoom}
 <article><span>NOVEMBER 17, 2026</span><h3 data-i18n="change22_title">Generate a random QOTD from the Dashboard</h3><p data-i18n="change22_text">The QOTD Dashboard now has a one-click AI question generator for each server. It uses that server’s configured bot language and QOTD channel, then publishes the question immediately. The button follows the server’s QOTD lock and maintenance settings.</p></article>
 <article><span>NOVEMBER 17, 2026</span><h3 data-i18n="change21_title">Scheduled QOTD, leaderboard and statistics</h3><p data-i18n="change21_text">The Dashboard now includes daily Scheduled QOTD controls (time and IANA time zone), server leaderboards and QOTD statistics. Scheduled questions use the server’s configured bot language; temporary generation or publication failures are retried every five minutes for up to one hour; non-retryable API errors skip the current slot and notify the server owner. The Privacy Policy and Terms of Service now explain the Dashboard OAuth scopes and Groq processing.</p></article>
 <article><span>NOVEMBER 16, 2026</span><h3 data-i18n="change20_title">Sign-in for the documentation &amp; localization fixes</h3><p data-i18n="change20_text">The documentation (main page) now asks you to sign in with Discord first; the dashboard, About the Creator, Privacy Policy and Terms of Service stay open. After signing in you return to the page you opened; “Continue without signing in” on the login page opens the documentation as a guest. All five languages were checked and fixed: missing translations for the sidebar and the setup link, outdated German, French and Italian command descriptions (message links, Confirm / Cancel, history filters), inconsistent terms, the Admin Console prompts, and changelog dates now follow the selected language.</p></article>
-
 <article><span>NOVEMBER 12, 2026</span><h3 data-i18n="change19_title">Dashboard: QOTDs, suggestions, logs and moderators</h3><p data-i18n="change19_text">On the website dashboard you can now publish and edit QOTDs, approve or reject suggestions, and read the activity and audit logs (server owner). Members with the allowed role can sign in too: they see the settings read-only and can publish QOTDs and review suggestions. The dashboard also warns when Quello cannot post in a chosen channel.</p></article>
-
 <article><span>NOVEMBER 12, 2026</span><h3 data-i18n="change18_title">Website dashboard, switches and optional mention role</h3><p data-i18n="change18_text">The website now has a Discord sign-in and a dashboard where the server owner can edit the /config settings and turn maintenance mode and the QOTD lock on or off. /qotd and /suggest automatically use the bot language configured for the server. The mention role is optional: remove it with Clear in /config (or choose None on the dashboard) to ping only @everyone and/or @here, or nobody.</p></article>
-
 <article><span>NOVEMBER 11, 2026</span><h3 data-i18n="change17_title">Suggestion queue, rejection reasons and author notifications</h3><p data-i18n="change17_text">/suggestions now pages through the whole queue with arrow buttons. Rejecting a suggestion asks the moderator for a reason, and the author gets a direct message with the decision: the reason on rejection, a link to the QOTD on approval. Members still have one unreviewed suggestion at a time and can delete it while it waits, which frees the slot. Empty, too-short and filler questions are refused.</p></article>
 <article><span>NOVEMBER 11, 2026</span><h3 data-i18n="change16_title">Suggestions, personal stats and multi-role setup</h3><p data-i18n="change16_text">Added /suggest (one unreviewed suggestion per member) and /suggestions for member-submitted questions, /me for personal participation and streaks, and /question_week. /config is now an interactive editor that changes one setting at a time and saves only what you changed. /setup supports optional @everyone / @here pings, /reset and /reset_logs ask for confirmation, and /diagnostics also checks whether @everyone can reply in discussion threads.</p></article>
 <article><span>NOVEMBER 6, 2026</span><h3 data-i18n="change15_title">Documentation synced with the bot</h3><p data-i18n="change15_text">Updated the command reference, setup guide, and FAQ to match the current bot: /edit, /delete, and /info use Discord message links; /setup, /edit, and /delete use Confirm and Cancel buttons; the mention role is optional; and /diagnostics posts a normal message with a Refresh button. The QOTD preview now follows the real message format.</p></article>
-        <article><span>NOVEMBER 5, 2026</span><h3 data-i18n="change14_title">New /diagnostics command</h3><p data-i18n="change14_text">Added an owner-only diagnostics command that checks bot connectivity, database integrity, audit processing, backups, channel permissions, thread capabilities, and QOTD discussion links.</p></article>
-        <article><span>NOVEMBER 4, 2026</span><h3>Desktop GPU rendering optimization</h3><p>Reduced GPU-heavy blur, backdrop-filter, and shadow rendering on desktop while keeping the original orbit, hero, hover, and transition animations. Standardized changelog card layout across entries.</p></article>
-        <article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change13_title">Advanced desktop rendering optimization</h3><p data-i18n="change13_text">Reduced off-screen rendering work with content visibility, optimized pointer parallax to avoid repeated layout reads, and improved image decoding. Existing animations and visual timing are unchanged.</p></article>
-        <article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change12_title">Desktop performance optimization</h3><p data-i18n="change12_text">Reduced unnecessary work during scrolling and pointer movement by scheduling visual updates once per animation frame. Off-screen images now load lazily, and the Quello avatar uses a much smaller WebP asset. Existing animations, transitions, glow effects, and parallax remain intact.</p></article>
-        <article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change11_title">Motion, navigation &amp; interface polish</h3><p data-i18n="change11_text">Added refined hero parallax and orbit effects, scroll-aware navigation, a sliding active-tab indicator, spotlight interactions, animated content reveals, image-loading feedback, toast notifications, and an upgraded sidebar with clearer actions and language controls.</p></article>
-        <article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change10_title">Landing page redesign &amp; guided onboarding</h3><p data-i18n="change10_text">Introduced the redesigned hero with an interactive QOTD preview, a feature strip, a new community-focused showcase, and a four-step getting-started section. The desktop and responsive layouts now have a clearer visual hierarchy and more room for the key features.</p></article>
-        <article><span>OCTOBER 6, 2026</span><h3 data-i18n="change7_title">Quello Explorer &amp; progress polish</h3><p data-i18n="change7_text">Improved Quello Explorer with persistent achievements, clearer completion states, and a more distinct visual difference between completed and unfinished actions.</p></article>
-        <article><span>OCTOBER 6, 2026</span><h3 data-i18n="change8_title">Command Playground &amp; UI polish</h3><p data-i18n="change8_text">Reworked the Command Playground picker into a custom drawer, fixed its interaction flow, removed unwanted button outlines, and refined the responsive experience across desktop and mobile.</p></article>
-        <article><span>OCTOBER 6, 2026</span><h3 data-i18n="change9_title">Micro-interactions &amp; visual polish</h3><p data-i18n="change9_text">Added and refined lightweight website animations, tab transitions, language-picker interactions, avatar and Random QOTD effects, card reveals, and other small details that make Quello feel more responsive.</p></article>
-        <article><span>SEPTEMBER 22, 2026</span><h3 data-i18n="change4_title">Major website navigation &amp; interactive update</h3><p data-i18n="change4_text">Added the new side navigation experience, Command Playground, Build Your QOTD helper, setup progress, interactive extras, Community Spotlight, and hidden Quello easter eggs.</p></article>
-        <article><span>SEPTEMBER 22, 2026</span><h3 data-i18n="change3_title">/leaderboard expanded</h3><p data-i18n="change3_text">The /leaderboard command now includes separate QOTD Creator and QOTD Responder rankings, with language filtering for All, English, and Russian.</p></article>
-        <article><span>SEPTEMBER 21, 2026</span><h3 data-i18n="change1_title">Website redesign &amp; documentation update</h3><p data-i18n="change1_text">Reworked the site around Discord-style embeds, improved the QOTD preview builder, and redesigned the setup guide.</p></article>
-        <article><span>SEPTEMBER 21, 2026</span><h3 data-i18n="change2_title">Bot feature documentation</h3><p data-i18n="change2_text">Updated the website for Audit Log, Maintenance Mode, QOTD Lock, server statistics, history, and the latest administration tools.</p></article>
-      
-        </div></div>
-      <button class="secondary-button changelog-toggle" id="changelogToggle" type="button" data-i18n="changelog_show_all" aria-expanded="false" aria-controls="changelogExtra">Show all updates</button>
-    </section>
-
-    <section class="community" id="community">
-      <div class="community-box discord-embed">
-        <div class="embed-accent"></div>
-        <div class="embed-content"><span class="eyebrow" data-i18n="eyebrow_community">COMMUNITY</span><h2 data-i18n="community_title">Join the Quello Community</h2><p data-i18n="community_text">Get support, discuss updates, and share ideas with other Quello users.</p></div>
-        <a class="button" href="https://discord.gg/rYqGXWRbfJ" target="_blank" rel="noopener noreferrer" data-i18n="community_button">Join Discord</a>
-        <div class="community-spotlight"><span>✨</span><div><strong data-i18n="spotlight_title">Community Spotlight</strong><p data-i18n="spotlight_text">The place to share QOTD ideas, ask for help, and follow Quello updates.</p></div></div>
-      </div>
-    </section>
-
-    <div class="notice" id="privacyNotice"><strong data-i18n="privacy_first">Privacy first.</strong> <span data-i18n="privacy_text">Quello processes Discord and QOTD information needed for its features, including server configuration, QOTD history, normal logs, and detailed interaction audit records.</span> <a href="privacy.html" data-i18n="privacy_link">Read the Privacy Policy.</a></div>
-  </main>
-
-  <footer>Quello • <span data-i18n="footer_text">Questions for better conversations.</span><small class="footer-credits">© 2026 Quello. All rights reserved. <a href="LICENSE">LICENSE</a> · Flag emoji: <a href="https://github.com/twitter/twemoji" target="_blank" rel="noopener noreferrer">Twemoji</a> © Twitter, Inc. and contributors, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></small></footer>
-
-  <script>
+<article><span>NOVEMBER 5, 2026</span><h3 data-i18n="change14_title">New /diagnostics command</h3><p data-i18n="change14_text">Added an owner-only diagnostics command that checks bot connectivity, database integrity, audit processing, backups, channel permissions, thread capabilities, and QOTD discussion links.</p></article>
+<article><span>NOVEMBER 4, 2026</span><h3>Desktop GPU rendering optimization</h3><p>Reduced GPU-heavy blur, backdrop-filter, and shadow rendering on desktop while keeping the original orbit, hero, hover, and transition animations. Standardized changelog card layout across entries.</p></article>
+<article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change13_title">Advanced desktop rendering optimization</h3><p data-i18n="change13_text">Reduced off-screen rendering work with content visibility, optimized pointer parallax to avoid repeated layout reads, and improved image decoding. Existing animations and visual timing are unchanged.</p></article>
+<article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change12_title">Desktop performance optimization</h3><p data-i18n="change12_text">Reduced unnecessary work during scrolling and pointer movement by scheduling visual updates once per animation frame. Off-screen images now load lazily, and the Quello avatar uses a much smaller WebP asset. Existing animations, transitions, glow effects, and parallax remain intact.</p></article>
+<article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change11_title">Motion, navigation &amp; interface polish</h3><p data-i18n="change11_text">Added refined hero parallax and orbit effects, scroll-aware navigation, a sliding active-tab indicator, spotlight interactions, animated content reveals, image-loading feedback, toast notifications, and an upgraded sidebar with clearer actions and language controls.</p></article>
+<article><span>NOVEMBER 3, 2026</span><h3 data-i18n="change10_title">Landing page redesign &amp; guided onboarding</h3><p data-i18n="change10_text">Introduced the redesigned hero with an interactive QOTD preview, a feature strip, a new community-focused showcase, and a four-step getting-started section. The desktop and responsive layouts now have a clearer visual hierarchy and more room for the key features.</p></article>
+<article><span>OCTOBER 6, 2026</span><h3 data-i18n="change7_title">Quello Explorer &amp; progress polish</h3><p data-i18n="change7_text">Improved Quello Explorer with persistent achievements, clearer completion states, and a more distinct visual difference between completed and unfinished actions.</p></article>
+<article><span>OCTOBER 6, 2026</span><h3 data-i18n="change8_title">Command Playground &amp; UI polish</h3><p data-i18n="change8_text">Reworked the Command Playground picker into a custom drawer, fixed its interaction flow, removed unwanted button outlines, and refined the responsive experience across desktop and mobile.</p></article>
+<article><span>OCTOBER 6, 2026</span><h3 data-i18n="change9_title">Micro-interactions &amp; visual polish</h3><p data-i18n="change9_text">Added and refined lightweight website animations, tab transitions, language-picker interactions, avatar and Random QOTD effects, card reveals, and other small details that make Quello feel more responsive.</p></article>
+<article><span>SEPTEMBER 22, 2026</span><h3 data-i18n="change4_title">Major website navigation &amp; interactive update</h3><p data-i18n="change4_text">Added the new side navigation experience, Command Playground, Build Your QOTD helper, setup progress, interactive extras, Community Spotlight, and hidden Quello easter eggs.</p></article>
+<article><span>SEPTEMBER 22, 2026</span><h3 data-i18n="change3_title">/leaderboard expanded</h3><p data-i18n="change3_text">The /leaderboard command now includes separate QOTD Creator and QOTD Responder rankings, with language filtering for All, English, and Russian.</p></article>
+<article><span>SEPTEMBER 21, 2026</span><h3 data-i18n="change1_title">Website redesign &amp; documentation update</h3><p data-i18n="change1_text">Reworked the site around Discord-style embeds, improved the QOTD preview builder, and redesigned the setup guide.</p></article>
+<article><span>SEPTEMBER 21, 2026</span><h3 data-i18n="change2_title">Bot feature documentation</h3><p data-i18n="change2_text">Updated the website for Audit Log, Maintenance Mode, QOTD Lock, server statistics, history, and the latest administration tools.</p></article>
+</div></div>
+<button aria-controls="changelogExtra" aria-expanded="false" class="secondary-button changelog-toggle" data-i18n="changelog_show_all" id="changelogToggle" type="button">Show all updates</button>
+</section>
+<section class="community" id="community">
+<div class="community-box discord-embed">
+<div class="embed-accent"></div>
+<div class="embed-content"><span class="eyebrow" data-i18n="eyebrow_community">COMMUNITY</span><h2 data-i18n="community_title">Join the Quello Community</h2><p data-i18n="community_text">Get support, discuss updates, and share ideas with other Quello users.</p></div>
+<a class="button" data-i18n="community_button" href="https://discord.gg/rYqGXWRbfJ" rel="noopener noreferrer" target="_blank">Join Discord</a>
+<div class="community-spotlight"><span>✨</span><div><strong data-i18n="spotlight_title">Community Spotlight</strong><p data-i18n="spotlight_text">The place to share QOTD ideas, ask for help, and follow Quello updates.</p></div></div>
+</div>
+</section>
+<div class="notice" id="privacyNotice"><strong data-i18n="privacy_first">Privacy first.</strong> <span data-i18n="privacy_text">Quello processes Discord and QOTD information needed for its features, including server configuration, QOTD history, normal logs, and detailed interaction audit records.</span> <a data-i18n="privacy_link" href="privacy.html">Read the Privacy Policy.</a></div>
+</main>
+<footer>Quello • <span data-i18n="footer_text">Questions for better conversations.</span><small class="footer-credits">© 2026 Quello. All rights reserved. <a href="LICENSE">LICENSE</a> · Flag emoji: <a href="https://github.com/twitter/twemoji" rel="noopener noreferrer" target="_blank">Twemoji</a> © Twitter, Inc. and contributors, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener noreferrer" target="_blank">CC BY 4.0</a></small></footer>
+<script>
     const translations = {
       en: {hero_kicker_subtitle:'Your Question of the Day',hero_card_app_subtitle:'Question of the Day',hero_card_label:'QUESTION OF THE DAY',hero_reply_thread:'↩ Reply in thread',hero_react:'React',hero_next_aria:'Show another example question',hero_next_title:'Show another question',hero_caption:'Preview a new question',hero_hint:'Tap ↻ to explore',hero_feature_commands:'Explore commands',hero_feature_commands_desc:'Find the right tool fast',hero_feature_preview:'Preview your QOTD',hero_feature_preview_desc:'Build a message before posting',hero_feature_setup:'Simple setup',hero_feature_setup_desc:'Get your server ready',hero_feature_extras:'Discover extras',hero_feature_extras_desc:'Tips, questions and secrets',nav_home:'Home',nav_commands:'Commands',nav_playground:'Playground',nav_builder:'QOTD Builder',nav_guide:'Guide',nav_changelog:'Changelog',nav_community:'Community',
         nav_commands:'Commands',menu_playground:'◇ Command Playground',menu_qotd_flow:'➜ Build a QOTD',menu_extras:'✦ Quello Extras',eyebrow_playground:'INTERACTIVE',playground_title:'Command Playground',playground_intro:'Pick a Quello command and explore what it does without leaving the page.',playground_choose:'Choose a command',eyebrow_flow:'QUICK BUILDER',flow_title:'Build Your QOTD',flow_intro:'A tiny step-by-step helper that turns your idea into a ready-to-use /qotd command.',flow_step1:'1. Write your question',flow_placeholder:'Type your QOTD question…',flow_step2:'2. Generate your command',flow_step3:'2. Generate your command',flow_next:'Next →',flow_back:'← Back',flow_copy:'Copy command',eyebrow_extras:'EXTRAS',extras_title:'A little more Quello',extras_intro:'Small interactive features, tips, and secrets for exploring the site.',next_tip:'Show another tip →',random_intro:'Need inspiration? Get a random question.',random_button:'Give me another',achievements_title:'Quello Explorer',achievements_intro:'Unlock small badges by exploring the website.',ach_playground:'Command Explorer',ach_playground_text:'Use the Command Playground.',ach_setup:'Ready to Go',ach_setup_text:'Complete the setup checklist.',ach_random:'Question Hunter',ach_random_text:'Generate a random QOTD.',ach_secret:'Secret Finder',ach_secret_text:"Find Quello's hidden secret.",easter_title:'There is something hidden here.',easter_text:"Try clicking the Quello avatar a few times.",easter_button:"I'm listening…",spotlight_title:'Community Spotlight',spotlight_text:'The place to share QOTD ideas, ask for help, and follow Quello updates.',change4_title:'Major website navigation & interactive update',change4_text:'Added the new side navigation experience, Command Playground, Build Your QOTD helper, setup progress, interactive extras, Community Spotlight, and hidden Quello easter eggs.',nav_preview:'Preview',menu_hint:'Documentation',side_search_label:'SEARCH',side_search_placeholder:'Search documentation...',side_quick_actions:'⚡ QUICK ACTIONS',side_add_discord:'Add Quello to Discord',side_join_community:'Join Community',side_contact_telegram:'Contact me in Telegram',side_contact_section:'✉ CONTACT',side_random_qotd:'Random QOTD',side_open_playground:'Open Playground',side_resources:'📚 RESOURCES',side_documentation:'Documentation',side_support:'Support',side_language_label:'🌐 LANGUAGE',menu_subtitle:'Your Question of the Day bot',menu_home:'⌂ Home',menu_commands:'▣ Commands',menu_preview:'✦ QOTD Preview',menu_setup:'⚙ Setup',menu_faq:'? FAQ',menu_trouble:'⚠ Troubleshooting',menu_changelog:'↻ Changelog',menu_community:'☁ Community',menu_terms:'Terms of Service',menu_privacy:'Privacy Policy',nav_setup:'Setup',nav_faq:'FAQ',nav_changelog:'Changelog',nav_terms:'Terms',nav_privacy:'Privacy',badge:'DISCORD BOT',hero_subtitle:'A Discord bot for creating, managing, and tracking Question of the Day posts with configurable channels, roles, logs, history, and administration tools.',add_discord:'Add to Discord',join_discord:'Join our Discord',overview_label:'ABOUT QUELLO',overview_title:'Questions made for community conversations.',overview_text:'Create numbered QOTDs, optionally mention a configured role, optionally credit the suggester, and automatically open a discussion thread. Server owners can configure the bot and manage logs and controls from Discord.',eyebrow_commands:'EXPLORE',commands_title:'Command Explorer',commands_intro:'A clean Discord-style reference for every command currently available in Quello.',cmd_random_qotd:'Generate and instantly publish an AI-created random QOTD.',cmd_schedule_qotds:'Configure recurring AI-generated QOTDs every 1, 6, 12 or 24 hours.',random_qotd_params:'No parameters · Uses server bot language',schedule_qotd_params:'enabled · time · timezone · interval',detail_random_qotd:'Generates a question through Groq and publishes it immediately using the server’s configured bot language, QOTD channel and permissions.',detail_schedule_qotds:'Lets the server owner, a Discord Administrator, or Bot Owner choose the first publication time, IANA time zone and a repeat interval of 1, 6, 12 or 24 hours. Temporary generation or publishing failures are retried every five minutes for up to one hour; non-retryable API errors skip the current slot and notify the server owner.',cmd_qotd:'Create a new Question of the Day.',cmd_edit:'Edit an existing QOTD using its Discord message link.',cmd_delete:'Delete an existing QOTD using its Discord message link.',cmd_info:'View information about a QOTD using its Discord message link.',cmd_stats:'View QOTD statistics for the current server.',cmd_leaderboard:'View the QOTD creator and responder leaderboards.',cmd_history:'View QOTD history.',cmd_setup:'Configure QOTD roles, one shared QOTD channel, and bot language.',cmd_config:'View the current QOTD configuration.',cmd_logs:'View and filter QOTD logs with pagination and Refresh.',cmd_audit:'View the separate detailed interaction audit log.',cmd_resetlogs:'Reset the normal QOTD logs.',cmd_reset:'Reset the QOTD counter.',cmd_maintenance:'Enable or disable QOTD maintenance mode.',cmd_lock:'Lock or unlock QOTD creation.',cmd_help:'Show the available Quello commands.',use_qotd:'Configured QOTD role',param_qotd:'question · optional suggested_by',use_qotd_edit:'Configured QOTD role, Bot Owner or Server Owner',owner_only:'Bot Owner or Server Owner',server_command:'Current server',no_global_stats:'Server-only statistics',leaderboard_detail:'Creator and responder rankings for this server',history_detail:'Browse previously created QOTDs',setup_params:'qotd_manager_role (required) · ping_role / qotd_channel / announcement_channel (optional) · mention_everyone / mention_here · bot_language',audit_detail:'Tracks interaction attempts and errors without storing secrets',all_users:'Available to all users',permissions_label:'Permissions:',permissions_text:'QOTD creation, editing, and deletion use the configured allowed role; the Bot Owner and Server Owner can also use these tools. Owner-only management commands are restricted to the Bot Owner or Server Owner.',eyebrow_preview:'TRY IT',preview_title:'QOTD Preview Builder',preview_intro:'Build a realistic QOTD message, switch its language, hide optional credit, and copy the result with one tap.',builder_inputs:'Message settings',question_label:'Question',number_label:'QOTD number',language_label:'Server language',thanks_label:'Suggested by',show_suggester:'Show suggested-by line',reset_preview:'Reset',copy_preview:'Copy text',preview_channel:'Question of the Day',preview_suggested:'Suggested by:',preview_thread:'QOTD discussion thread',eyebrow_setup:'GET STARTED',setup_title:'Set Up Quello',setup_intro:'A simple visual guide for getting your server ready for its first Question of the Day.',setup_embed_title:'Quello Setup Guide',setup_embed_subtitle:'Complete these steps in order',step1_title:'Add Quello',step1_text:'Use the Add to Discord button above and select the server where you want to use Quello.',step2_title:'Run /setup',step2_text:'As the Server Owner or Bot Owner, choose the role allowed to create QOTDs, optionally a role to mention, one QOTD channel, and the bot interface language. Review the preview and press Confirm to save.',step3_title:'Check /config',step3_text:'Review the saved configuration and make sure the roles and channels match your server.',step4_title:'Create your first QOTD',step4_text:'Use /qotd with a question. The language is taken from the server configuration; you can optionally override the QOTD channel and credit the member who suggested the question.',setup_note_title:'Tip',setup_note_text:'The configured allowed role controls who can create, edit, and delete QOTDs. Bot Owner and Server Owner access is also supported. /setup, /edit, and /delete ask for confirmation with Confirm and Cancel buttons before changing anything.',eyebrow_permissions:'ACCESS',permissions_title:'Permissions at a Glance',access_qotd:'Configured allowed role, Bot Owner or Server Owner',access_edit_delete:'Configured allowed role, Bot Owner or Server Owner',access_owner:'Bot Owner or Server Owner',eyebrow_faq:'HELP',faq_title:'Frequently Asked Questions',faq1_q:"Why isn't /qotd working?",faq1_a:'Check that the bot is configured with /setup, that the selected roles and channels are correct, and that the user has the configured allowed role.',faq2_q:'How do I change the QOTD channel?',faq2_a:'Run /setup again and update the English and/or Russian QOTD channel. You can also choose a channel directly when using /qotd.',faq3_q:'What does /lock do?',faq3_a:'It lets an authorized owner temporarily prevent new QOTDs from being created.',faq4_q:'What is /audit_log?',faq4_a:'It provides a separate, detailed record of bot interaction attempts and errors for the server. It is restricted to the Bot Owner or Server Owner.',faq5_q:'Can I use Quello on multiple servers?',faq5_a:'Yes. Each server has its own configuration, counters, QOTD history and normal logs.',eyebrow_changelog:'UPDATES',changelog_title:'Changelog',changelog_show_all:'Show all updates',changelog_show_less:'Show less',change1_title:'Website redesign & documentation update',change1_text:'Reworked the site around Discord-style embeds, improved the QOTD preview builder, and redesigned the setup guide.',change2_title:'Bot feature documentation',change2_text:'Updated the website for Audit Log, Maintenance Mode, QOTD Lock, server statistics, history, and the latest administration tools.',change3_title:'/leaderboard expanded',change3_text:'The /leaderboard command now includes separate QOTD Creator and QOTD Responder rankings, using the server-configured language.',eyebrow_community:'COMMUNITY',community_title:'Join the Quello Community',community_text:'Get support, discuss updates, and share ideas with other Quello users.',community_button:'Join Discord',privacy_first:'Privacy first.',privacy_text:'Quello processes Discord and QOTD information needed for its features, including server configuration, QOTD history, normal logs, and detailed interaction audit records.',doc_nav_label:'DOCUMENTATION',doc_nav_commands:'Commands',doc_nav_preview:'Preview',doc_nav_setup:'Setup',doc_nav_faq:'FAQ',doc_nav_troubleshooting:'Troubleshooting',doc_nav_changelog:'Changelog',eyebrow_quickstart:'QUICK START',quickstart_title:'Ready to use Quello?',quickstart_text:'Invite the bot, configure your server, and create your first question in a few steps.',quick1:'Invite the bot',quick2:'Run /setup',quick3:'Check /config',quick4:'Create /qotd',quickstart_button:'Open Setup Guide',eyebrow_intent:'QUICK NAVIGATION',intent_title:'What do you want to do?',intent_text:'Jump directly to the part of the documentation you need.',intent_setup:'🚀 Set up the bot',intent_qotd:'💬 Build a QOTD',intent_commands:'📖 Explore commands',intent_help:'❓ Get help',eyebrow_new:"WHAT'S NEW",new_title:'Latest website updates',new_text:'The documentation now has a cleaner Discord-inspired layout, a more useful QOTD builder, and a guided server setup experience.',new_button:'View full changelog →',eyebrow_details:'COMMAND DETAILS',details_title:'How the commands work',details_intro:'Open a command below to see what it does, what it expects, and who can use it.',detail_qotd:'Creates a new numbered QOTD using the server-configured language and QOTD channel automatically, then opens a discussion thread. The command supports a question and an optional suggested-by member.',detail_edit:'Edits an existing QOTD using its Discord message link and the new question. Quello first shows a preview with Confirm and Cancel buttons, and nothing changes until you press Confirm. Access uses the configured allowed role, Bot Owner, or Server Owner.',detail_delete:'Deletes an existing QOTD using its Discord message link. Quello first shows a preview with Confirm and Cancel buttons, and nothing is deleted until you press Confirm. Access uses the configured allowed role, Bot Owner, or Server Owner.',detail_info:'Shows information about a QOTD identified by its Discord message link. Restricted to the Bot Owner or Server Owner.',detail_stats:'Shows QOTD statistics for the current server: totals per language, plus this month and this week. It is not a global statistics command.',detail_leaderboard:'Shows creator and responder rankings for QOTDs in the server-configured language.',detail_history:'Shows paginated QOTD history in the server-configured language. You can choose how many questions to load (1–50, default 20).',detail_setup:'Configures the required allowed role, an optional mention role, one shared QOTD channel, an optional announcement channel, and the bot language (English or Russian). If no language is selected, English is used by default. Quello shows the configuration with Confirm and Cancel buttons and saves it only after you press Confirm. Restricted to the Bot Owner or Server Owner.',detail_config:'Displays the current QOTD configuration for the server. Restricted to the Bot Owner or Server Owner.',detail_logs:'Displays and filters normal QOTD logs (by action, user, or QOTD ID) with pagination and Refresh controls. Restricted to the Bot Owner or Server Owner.',detail_audit:'Displays the separate interaction audit log, including interaction attempts and errors, with filters for status, command name, and user. Restricted to the Bot Owner or Server Owner and designed not to store secrets.',detail_resetlogs:'Clears the normal QOTD logs. Restricted to the Bot Owner or Server Owner.',detail_reset:'Resets the QOTD counter for the server-configured language. Restricted to the Bot Owner or Server Owner.',detail_maintenance:'Turns QOTD maintenance mode on or off. While enabled, QOTD creation is blocked. Restricted to the Bot Owner or Server Owner.',detail_lock:'Locks or unlocks QOTD creation for the server. Restricted to the Bot Owner or Server Owner.',detail_help:"Shows the bot's available commands and help categories.",checklist_title:'Server setup checklist',check_invite:'Invite Quello',check_setup:'Run /setup',check_channels:'Choose the QOTD channel',check_roles:'Configure the allowed role',check_config:'Verify /config',check_first:'Create your first QOTD',eyebrow_trouble:'TROUBLESHOOTING',trouble_title:'Something not working?',trouble_intro:'Use these quick checks before changing your server configuration.',trouble1_q:'/qotd is unavailable',trouble1_a:'Run /setup and verify the allowed role, the single QOTD channel, and the server language. Make sure the user has the configured allowed role.',trouble2_q:'The bot cannot send the QOTD',trouble2_a:'Check that Quello can view the target channel, send messages, mention the configured role (if one is set), and create threads there.',trouble3_q:'The QOTD counter is unexpected',trouble3_a:'Check the server counter with the relevant management commands. Remember that failed operations can leave number gaps because counters are kept safe for concurrent use.',trouble4_q:'I need to stop new QOTDs temporarily',trouble4_a:'Use /lock for a temporary lock or /maintenance when the server is being serviced.',trouble5_q:'I need to inspect bot interactions',trouble5_a:'Use /logs for normal QOTD activity or /audit_log for the separate interaction audit record.',footer_text:'Questions for better conversations.',
@@ -1615,14 +1575,14 @@ html{overflow-x:clip;touch-action:pan-y pinch-zoom}
       });
     }
   </script>
-  <script src="hero-interactions.js?v=2" defer></script>
-  <script src="interface-evolution.js?v=3" defer></script>
-  <script src="site-motion.js?v=2" defer></script>
-  <script src="signature-effects.js?v=1" defer></script>
-  <script src="site-config.js?v=2"></script>
-  <script src="creator-console.js?v=17"></script>
-  <script src="changelog-dates.js?v=1" defer></script>
-  <script src="header-avatar.js?v=4"></script>
-  <script src="sheet-select.js?v=2"></script>
+<script defer="" src="hero-interactions.js?v=2"></script>
+<script defer="" src="interface-evolution.js?v=3"></script>
+<script defer="" src="site-motion.js?v=2"></script>
+<script defer="" src="signature-effects.js?v=1"></script>
+<script src="site-config.js?v=2"></script>
+<script src="creator-console.js?v=18"></script>
+<script defer="" src="changelog-dates.js?v=1"></script>
+<script src="header-avatar.js?v=4"></script>
+<script src="sheet-select.js?v=2"></script>
 </body>
 </html>

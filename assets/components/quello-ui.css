@@ -1,5 +1,7 @@
 /* Copyright (c) 2026 Quello. All rights reserved. */
 /* Quello UI Library entry point. Load once per page, after theme.css and the page stylesheet. */
+/* Legacy production design tokens and shared primitives are included here once. */
+@import url("../../quello-ui-system.css?v=5");
 @import url("core/variables.css?v=1");
 @import url("core/colors.css?v=1");
 @import url("core/typography.css?v=1");
@@ -8,11 +10,15 @@
 @import url("cards/cards.css?v=1");
 @import url("cards/card-layouts.css?v=1");
 @import url("cards/card-variants.css?v=1");
+@import url("cards/card-compatibility.css?v=1");
+@import url("legacy-adoption.css?v=2");
 @import url("navigation/side-menu.css?v=1");
 @import url("navigation/language-switcher.css?v=1");
 @import url("navigation/navigation.css?v=1");
+@import url("drawers/drawers.css?v=1");
 @import url("drawers/vertical-drawer.css?v=1");
 @import url("drawers/side-drawer.css?v=1");
+@import url("drawers/production-drawers.css?v=1");
 @import url("controls/theme-switcher.css?v=1");
 @import url("controls/buttons.css?v=1");
 @import url("controls/back-buttons.css?v=1");
@@ -23,4 +29,5 @@
 @import url("admin/admin-panel.css?v=1");
 @import url("admin/admin-forms.css?v=1");
 @import url("admin/admin-buttons.css?v=1");
-@import url("admin/admin-launcher.css?v=1");
+@import url("admin/admin-launcher.css?v=2");
+@import url("navigation/production-header-controls.css?v=3");

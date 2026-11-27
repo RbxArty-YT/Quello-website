@@ -8,6 +8,7 @@
   const TOKEN_KEY = 'quello-dash-token';
   const LANG_KEY = 'quello-site-language-v2';
   let creatorFilterMenuSequence = 0;
+  let technicalWorkSubmitting = false;
 
   document.addEventListener('click', event => {
     if (event.target.closest('.creator-filter-select')) return;
@@ -448,6 +449,8 @@
     head.append(identity, close);
 
     const nav = el('nav', 'creator-console-tabs');
+    nav.setAttribute('role', 'tablist');
+    nav.setAttribute('aria-label', tr('adminPanel') || 'Admin Panel');
 
     const sections = [
       ['overview', 'overview'],
@@ -469,6 +472,9 @@
       const button = el('button', 'creator-tab', tr(key));
       button.type = 'button';
       button.dataset.tab = id;
+      button.setAttribute('role', 'tab');
+      button.setAttribute('aria-selected', 'false');
+      button.tabIndex = -1;
 
       button.addEventListener('click', () => {
         active = id;
@@ -483,6 +489,16 @@
       });
 
       nav.append(button);
+    });
+
+    nav.addEventListener('keydown', event => {
+      const tabs = [...nav.querySelectorAll('[role=\"tab\"]')];
+      const current = tabs.indexOf(document.activeElement);
+      if (current < 0 || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (current + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+      tabs[next].focus();
+      tabs[next].click();
     });
 
     body = el('div', 'creator-console-content');
@@ -511,7 +527,10 @@
     function markActiveTab() {
     if (!drawer) return;
     drawer.querySelectorAll('.creator-tab').forEach(button => {
-      button.classList.toggle('active', button.dataset.tab === active);
+      const selected = button.dataset.tab === active;
+      button.classList.toggle('active', selected);
+      button.setAttribute('aria-selected', String(selected));
+      button.tabIndex = selected ? 0 : -1;
     });
   }
 
@@ -754,13 +773,17 @@
   }
 
   async function sendTechnicalWork(payload) {
+    if (technicalWorkSubmitting) return;
+    technicalWorkSubmitting = true;
     try {
       await request('/api/creator/technical-work', { method: 'PATCH', body: payload });
       toast(ownerText('saved'));
     } catch (error) {
       toast(error.message || tr('offline'));
+    } finally {
+      technicalWorkSubmitting = false;
+      loadOwnerActions();
     }
-    loadOwnerActions();
   }
 
   async function loadOwnerActions() {

@@ -1,130 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <!-- Copyright (c) 2026 Quello. All rights reserved. -->
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#100b1c">
-  <title>About the Creator — Quello</title>
-  <script src="auth-boot.js"></script>
-  <script src="theme-switch.js?v=1"></script>
-  <link rel="icon" href="quello-avatar.webp" type="image/webp">
-  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="theme.css">
-  <link rel="stylesheet" href="creator-console.css?v=13"><link rel="stylesheet" href="about.css?v=8">
-  <link rel="stylesheet" href="brand-gradient.css?v=5">
-  <link rel="stylesheet" href="header-avatar.css?v=3">
-  <link rel="stylesheet" href="universe.css?v=11">
-  <link rel="stylesheet" href="music-player.css?v=1">
-<link rel="stylesheet" href="quello-ui-system.css?v=4">  <link rel="stylesheet" href="sheet-select.css?v=2">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#100b1c" name="theme-color"/>
+<title>About the Creator — Quello</title>
+<script src="auth-boot.js"></script>
+<script src="theme-switch.js?v=1"></script>
+<link href="quello-avatar.webp" rel="icon" type="image/webp"/>
+<link href="style.css" rel="stylesheet"/><link href="theme.css" rel="stylesheet"/>
+<link href="creator-console.css?v=13" rel="stylesheet"/><link href="about.css?v=8" rel="stylesheet"/>
+<link href="brand-gradient.css?v=5" rel="stylesheet"/>
+<link href="header-avatar.css?v=3" rel="stylesheet"/>
+<link href="universe.css?v=11" rel="stylesheet"/>
+<link href="music-player.css?v=1" rel="stylesheet"/>
+<link href="sheet-select.css?v=2" rel="stylesheet"/>
+<link href="assets/components/quello-ui.css?v=5" rel="stylesheet"/>
 </head>
 <body>
-  <header class="about-nav">
-    <a class="about-brand" href="index.html"><img src="quello-avatar.webp" alt="Quello"><span>Quello</span></a>
-    <div class="about-nav-actions">
-      <a class="about-btn about-btn-secondary" href="index.html#home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="docs">Documentation</span></a><a class="about-btn about-btn-primary" href="login.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3z M13 3h8v5h-8z M13 10h8v11h-8z M3 13h8v8H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span data-i18n="dashboard">Dashboard</span></a>
-      <div class="header-language" id="headerLanguage"><button class="header-language-button" id="headerLanguageButton" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language"><span class="flag" id="headerLanguageFlag">🇬🇧</span><span id="headerLanguageCode">EN</span><span class="header-language-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button><div class="header-language-menu" id="headerLanguageMenu" role="listbox" aria-label="Language"><button type="button" data-header-language="en" role="option"><span class="flag">🇬🇧</span> <span>English</span></button><button type="button" data-header-language="ru" role="option"><span class="flag">🇷🇺</span> <span>Русский</span></button><button type="button" data-header-language="de" role="option"><span class="flag">🇩🇪</span> <span>Deutsch</span></button><button type="button" data-header-language="fr" role="option"><span class="flag">🇫🇷</span> <span>Français</span></button><button type="button" data-header-language="it" role="option"><span class="flag">🇮🇹</span> <span>Italiano</span></button></div></div>
-      <button class="theme-toggle" id="aboutTheme" type="button" aria-label="Toggle light / dark theme" title="Theme">
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.6 14.4A8.6 8.6 0 0 1 9.6 3.4a.7.7 0 0 0-.9-.9 9.9 9.9 0 1 0 12.8 12.8.7.7 0 0 0-.9-.9Z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></svg>
-      </button>
-    </div>
-  </header>
-  <main class="about-wrap">
-    <section class="about-card">
-      <div class="about-orbit orbit-one"></div><div class="about-orbit orbit-two"></div>
-      <div class="about-avatar" id="aboutAvatar">
-        <img id="aboutCreatorDiscordAvatar" class="q-discord-avatar" src="creator-avatar.png" width="148" height="148" alt="Creator Discord avatar" decoding="async">
-        <span class="about-avatar-letter" aria-hidden="true">R</span>
-      </div>
-      <p class="about-eyebrow" data-i18n="eyebrow">BEHIND QUELLO</p>
-      <h1>Rbˣ∆rτy_YT//[∪ИÐΞҒ_NUŁŁØˣ∆]</h1>
-      <p class="about-role" data-i18n="role">Creator · Developer · Builder of Quello</p>
-      <p class="about-description" data-i18n="description">I create digital projects with a focus on interface design, bot development and thoughtful user experience. Quello began as a tool for managing Question of the Day sessions and gradually grew into a connected Discord and Telegram bot project with its own website and documentation. I enjoy turning ideas into practical, polished products and continuously improving the details that make them easier to use.</p>
-      <div class="about-socials" aria-label="Social links">
-        <a class="about-social-link about-social-discord" href="https://discord.com/users/981488941662371880" target="_blank" rel="noopener noreferrer" aria-label="Discord profile">
-          <img src="https://cdn.simpleicons.org/discord/5865F2" alt="" width="20" height="20" loading="lazy" decoding="async"><span>Discord</span>
-        </a>
-        <a class="about-social-link about-social-telegram" href="https://t.me/RbxArty_YT" target="_blank" rel="noopener noreferrer" aria-label="Telegram profile">
-          <img src="https://cdn.simpleicons.org/telegram/26A5E4" alt="" width="20" height="20" loading="lazy" decoding="async"><span>Telegram</span>
-        </a>
-        <a class="about-social-link about-social-tiktok" href="https://www.tiktok.com/@rbxarty_yt" target="_blank" rel="noopener noreferrer" aria-label="TikTok profile">
-          <img src="https://cdn.simpleicons.org/tiktok/000000" alt="" width="20" height="20" loading="lazy" decoding="async"><span>TikTok</span>
-        </a>
-      </div>
-      <a class="about-back" href="index.html#home" data-i18n="back">Back to Quello</a>
-    </section>
-
-    <section class="about-extra" aria-label="More about the creator">
-      <div class="about-section-heading">
-        <p class="about-eyebrow" data-i18n="moreEyebrow">A LITTLE MORE</p>
-        <h2 data-i18n="moreTitle">A little about me</h2>
-        <p data-i18n="moreIntro">Beyond development and Quello, here are a few things that make me who I am.</p>
-      </div>
-      <div class="about-info-grid">
-        <article class="about-info-card about-personality-card">
-          <div class="about-info-icon" aria-hidden="true">◈</div>
-          <h3 data-i18n="personalityTitle">My personality</h3>
-          <p data-i18n="personalityText">I am straightforward and independent-minded. I can be stubborn when I believe in something, and I prefer honest, clear communication over guessing games. I value being understood and having room to make my own decisions.</p>
-          <div class="about-tags"><span data-i18n="traitDirect">Straightforward</span><span data-i18n="traitIndependent">Independent</span><span data-i18n="traitStubborn">Persistent</span></div>
-        </article>
-        <article class="about-info-card">
-          <div class="about-info-icon" aria-hidden="true">⌘</div>
-          <h3 data-i18n="interestsTitle">What I enjoy</h3>
-          <p data-i18n="interestsText">I like technology, programming, interface design and building projects that feel complete. I also enjoy games and fictional worlds with memorable characters, atmosphere and interesting stories.</p>
-          <div class="about-tags"><span data-i18n="interestTech">Technology</span><span data-i18n="interestCode">Programming</span><span data-i18n="interestDesign">Design</span><span data-i18n="interestGames">Games & stories</span></div>
-        </article>
-        <article class="about-info-card about-favorites-card">
-          <div class="about-info-icon" aria-hidden="true">✦</div>
-          <h3 data-i18n="favoritesTitle">Worlds I like</h3>
-          <p data-i18n="favoritesText">Some of the universes and games I keep coming back to:</p>
-          <div class="about-favorites-list" aria-label="Favorite games and universes">
-            <a class="about-favorite-link" href="universe.html?game=dishonored"><span class="about-favorite-icon" data-game-art="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/205100/library_600x900.jpg"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">🗡️</span></span><span>Dishonored</span><span class="about-favorite-platform">STEAM</span></a>
-            <a class="about-favorite-link" href="universe.html?game=metro"><span class="about-favorite-icon" data-game-art="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/286690/library_600x900.jpg"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">🚇</span></span><span>Metro</span><span class="about-favorite-platform">STEAM</span></a>
-            <a class="about-favorite-link" href="universe.html?game=horizon-zero-dawn"><span class="about-favorite-icon" data-game-art="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1151640/library_600x900.jpg"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">🏹</span></span><span>Horizon Zero Dawn</span><span class="about-favorite-platform">STEAM</span></a>
-            <a class="about-favorite-link" href="universe.html?game=horizon-forbidden-west"><span class="about-favorite-icon" data-game-art="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2420110/library_600x900.jpg"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">🌄</span></span><span>Horizon Forbidden West</span><span class="about-favorite-platform">STEAM</span></a>
-            <a class="about-favorite-link" href="universe.html?game=tomb-raider"><span class="about-favorite-icon" data-game-art="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/203160/library_600x900.jpg"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">🧭</span></span><span>Tomb Raider</span><span class="about-favorite-platform">STEAM</span></a>
-            <a class="about-favorite-link" href="universe.html?game=undertale"><span class="about-favorite-icon" data-game-art="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/391540/library_600x900.jpg"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">❤️</span></span><span>Undertale</span><span class="about-favorite-platform">STEAM</span></a>
-            <a class="about-favorite-link" href="universe.html?game=portal"><span class="about-favorite-icon" data-game-art="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/400/library_600x900.jpg"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">🌀</span></span><span>Portal</span><span class="about-favorite-platform">STEAM</span></a>
-            <a class="about-favorite-link" href="universe.html?game=murder-drones"><span class="about-favorite-icon" data-game-art="https://glitchproductions.store/cdn/shop/files/Poster_Murder-Drones-Default-01.png?v=1701668116"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">🤖</span></span><span>Murder Drones</span><span class="about-favorite-platform">YOUTUBE</span></a>
-            <a class="about-favorite-link" href="universe.html?game=demon-slayer"><span class="about-favorite-icon" data-game-art="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1490890/library_600x900.jpg"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">⚔️</span></span><span>Demon Slayer</span><span class="about-favorite-platform">ANIME</span></a>
-            <a class="about-favorite-link" href="universe.html?game=doors"><span class="about-favorite-icon" data-roblox-place="6516141723"><img alt="" loading="lazy" decoding="async"><span class="about-favorite-fallback" aria-hidden="true">🚪</span></span><span>DOORS</span><span class="about-favorite-platform">ROBLOX</span></a>
-          </div>
-        </article>
-      </div>
-      <section class="about-character-section" aria-labelledby="aboutCharactersTitle">
-        <div class="about-character-heading">
-          <p class="about-eyebrow" data-i18n="charactersEyebrow">CHARACTERS</p>
-          <h2 id="aboutCharactersTitle" data-i18n="charactersTitle">Characters I like</h2>
-          <p data-i18n="charactersIntro">A closer look at some of my favourite characters — their stories, personalities and the worlds they come from.</p>
-        </div>
-        <div class="about-character-grid" id="aboutCharacterGrid" aria-live="polite"></div>
-      </section>
-      <section class="about-music" id="aboutMusic" aria-label="Music player">
-        <div class="about-music-head">
-          <p class="about-eyebrow" data-mp-i18n="eyebrow">MUSIC</p>
-          <h3 data-mp-i18n="title">What I listen to</h3>
-          <p data-mp-i18n="intro">A small playlist of tracks I like. Press play to start — nothing plays automatically.</p>
-        </div>
-        <div class="mp-card">
-          <div class="mp-cover" id="mpCover"><img alt="" width="112" height="112" decoding="async"><span class="mp-cover-fallback" aria-hidden="true">♪</span></div>
-          <div class="mp-main">
-            <div class="mp-meta"><strong class="mp-title" id="mpTitle">—</strong><p class="mp-artist" id="mpArtist"></p><p class="mp-error" id="mpError" role="status"></p></div>
-            <div class="mp-progress"><span id="mpCur">0:00</span><input id="mpSeek" type="range" min="0" max="1000" step="1" value="0" aria-label="Track progress"><span id="mpDur">0:00</span></div>
-            <div class="mp-controls">
-              <button class="mp-btn" id="mpPrev" type="button" aria-label="Previous track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2.4v14H6zM20 5.5v13a.8.8 0 0 1-1.25.66L9.6 12.66a.8.8 0 0 1 0-1.32l9.15-6.5A.8.8 0 0 1 20 5.5Z"/></svg></button>
-              <button class="mp-btn mp-btn-play" id="mpPlay" type="button" aria-label="Play" aria-pressed="false"><svg class="mp-i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6a.9.9 0 0 0 1.38.76l10.7-6.8a.9.9 0 0 0 0-1.52L9.38 4.44A.9.9 0 0 0 8 5.2Z"/></svg><svg class="mp-i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5h3.6v15H7zM13.4 4.5H17v15h-3.6z"/></svg></button>
-              <button class="mp-btn" id="mpNext" type="button" aria-label="Next track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.6 5H18v14h-2.4zM4 5.5v13a.8.8 0 0 0 1.25.66l9.15-6.5a.8.8 0 0 0 0-1.32l-9.15-6.5A.8.8 0 0 0 4 5.5Z"/></svg></button>
-              <span class="mp-count" id="mpCount" aria-hidden="true">1 / 17</span>
-              <button class="mp-btn" id="mpListToggle" type="button" aria-expanded="false" aria-controls="mpList" aria-label="Tracklist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v2.2H4zM4 10.9h16v2.2H4zM4 15.8h10v2.2H4z"/></svg></button>
-            </div>
-          </div>
-        </div>
-        <ol class="mp-list" id="mpList" hidden></ol>
-        <audio id="mpAudio" preload="none"></audio>
-      </section>
-      <p class="about-note" data-i18n="aboutNote">This page is a small snapshot, not a complete description — interests and projects keep evolving.</p>
-    </section>
-  </main>
-  <script>
+<header class="about-nav">
+<a class="about-brand" href="index.html"><img alt="Quello" src="quello-avatar.webp"/><span>Quello</span></a>
+<div class="about-nav-actions">
+<a class="about-btn about-btn-secondary" href="index.html#home"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg><span data-i18n="docs">Documentation</span></a><a class="about-btn about-btn-primary" href="login.html"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M3 3h8v8H3z M13 3h8v5h-8z M13 10h8v11h-8z M3 13h8v8H3z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg><span data-i18n="dashboard">Dashboard</span></a>
+<div class="header-language" id="headerLanguage"><button aria-expanded="false" aria-haspopup="listbox" aria-label="Language" class="header-language-button" id="headerLanguageButton" type="button"><span class="flag" id="headerLanguageFlag">🇬🇧</span><span id="headerLanguageCode">EN</span><span aria-hidden="true" class="header-language-arrow"><svg viewbox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path></svg></span></button><div aria-label="Language" class="header-language-menu" id="headerLanguageMenu" role="listbox"><button data-header-language="en" role="option" type="button"><span class="flag">🇬🇧</span> <span>English</span></button><button data-header-language="ru" role="option" type="button"><span class="flag">🇷🇺</span> <span>Русский</span></button><button data-header-language="de" role="option" type="button"><span class="flag">🇩🇪</span> <span>Deutsch</span></button><button data-header-language="fr" role="option" type="button"><span class="flag">🇫🇷</span> <span>Français</span></button><button data-header-language="it" role="option" type="button"><span class="flag">🇮🇹</span> <span>Italiano</span></button></div></div>
+<button aria-label="Toggle light / dark theme" class="theme-toggle" id="aboutTheme" title="Theme" type="button">
+<svg aria-hidden="true" class="icon-moon" viewbox="0 0 24 24"><path d="M20.6 14.4A8.6 8.6 0 0 1 9.6 3.4a.7.7 0 0 0-.9-.9 9.9 9.9 0 1 0 12.8 12.8.7.7 0 0 0-.9-.9Z" fill="currentColor"></path></svg>
+<svg aria-hidden="true" class="icon-sun" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="currentColor" r="4.6"></circle><g stroke="currentColor" stroke-linecap="round" stroke-width="2"><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"></path></g></svg>
+</button>
+</div>
+</header>
+<main class="about-wrap">
+<section class="about-card">
+<div class="about-orbit orbit-one"></div><div class="about-orbit orbit-two"></div>
+<div class="about-avatar" id="aboutAvatar">
+<img alt="Creator Discord avatar" class="q-discord-avatar" decoding="async" height="148" id="aboutCreatorDiscordAvatar" src="creator-avatar.png" width="148"/>
+<span aria-hidden="true" class="about-avatar-letter">R</span>
+</div>
+<p class="about-eyebrow" data-i18n="eyebrow">BEHIND QUELLO</p>
+<h1>Rbˣ∆rτy_YT//[∪ИÐΞҒ_NUŁŁØˣ∆]</h1>
+<p class="about-role" data-i18n="role">Creator · Developer · Builder of Quello</p>
+<p class="about-description" data-i18n="description">I create digital projects with a focus on interface design, bot development and thoughtful user experience. Quello began as a tool for managing Question of the Day sessions and gradually grew into a connected Discord and Telegram bot project with its own website and documentation. I enjoy turning ideas into practical, polished products and continuously improving the details that make them easier to use.</p>
+<div aria-label="Social links" class="about-socials">
+<a aria-label="Discord profile" class="about-social-link about-social-discord" href="https://discord.com/users/981488941662371880" rel="noopener noreferrer" target="_blank">
+<img alt="" decoding="async" height="20" loading="lazy" src="https://cdn.simpleicons.org/discord/5865F2" width="20"/><span>Discord</span>
+</a>
+<a aria-label="Telegram profile" class="about-social-link about-social-telegram" href="https://t.me/RbxArty_YT" rel="noopener noreferrer" target="_blank">
+<img alt="" decoding="async" height="20" loading="lazy" src="https://cdn.simpleicons.org/telegram/26A5E4" width="20"/><span>Telegram</span>
+</a>
+<a aria-label="TikTok profile" class="about-social-link about-social-tiktok" href="https://www.tiktok.com/@rbxarty_yt" rel="noopener noreferrer" target="_blank">
+<img alt="" decoding="async" height="20" loading="lazy" src="https://cdn.simpleicons.org/tiktok/000000" width="20"/><span>TikTok</span>
+</a>
+</div>
+<a class="about-back" data-i18n="back" href="index.html#home">Back to Quello</a>
+</section>
+<section aria-label="More about the creator" class="about-extra">
+<div class="about-section-heading">
+<p class="about-eyebrow" data-i18n="moreEyebrow">A LITTLE MORE</p>
+<h2 data-i18n="moreTitle">A little about me</h2>
+<p data-i18n="moreIntro">Beyond development and Quello, here are a few things that make me who I am.</p>
+</div>
+<div class="about-info-grid">
+<article class="about-info-card about-personality-card">
+<div aria-hidden="true" class="about-info-icon">◈</div>
+<h3 data-i18n="personalityTitle">My personality</h3>
+<p data-i18n="personalityText">I am straightforward and independent-minded. I can be stubborn when I believe in something, and I prefer honest, clear communication over guessing games. I value being understood and having room to make my own decisions.</p>
+<div class="about-tags"><span data-i18n="traitDirect">Straightforward</span><span data-i18n="traitIndependent">Independent</span><span data-i18n="traitStubborn">Persistent</span></div>
+</article>
+<article class="about-info-card">
+<div aria-hidden="true" class="about-info-icon">⌘</div>
+<h3 data-i18n="interestsTitle">What I enjoy</h3>
+<p data-i18n="interestsText">I like technology, programming, interface design and building projects that feel complete. I also enjoy games and fictional worlds with memorable characters, atmosphere and interesting stories.</p>
+<div class="about-tags"><span data-i18n="interestTech">Technology</span><span data-i18n="interestCode">Programming</span><span data-i18n="interestDesign">Design</span><span data-i18n="interestGames">Games &amp; stories</span></div>
+</article>
+<article class="about-info-card about-favorites-card">
+<div aria-hidden="true" class="about-info-icon">✦</div>
+<h3 data-i18n="favoritesTitle">Worlds I like</h3>
+<p data-i18n="favoritesText">Some of the universes and games I keep coming back to:</p>
+<div aria-label="Favorite games and universes" class="about-favorites-list">
+<a class="about-favorite-link" href="universe.html?game=horizon-zero-dawn"><span class="about-favorite-icon" data-game-art="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1151640/library_600x900.jpg"><img alt="" decoding="async" loading="lazy"/><span aria-hidden="true" class="about-favorite-fallback">🏹</span></span><span>Horizon Zero Dawn</span><span class="about-favorite-platform">STEAM</span></a>
+<a class="about-favorite-link" href="universe.html?game=horizon-forbidden-west"><span class="about-favorite-icon" data-game-art="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2420110/library_600x900.jpg"><img alt="" decoding="async" loading="lazy"/><span aria-hidden="true" class="about-favorite-fallback">🌄</span></span><span>Horizon Forbidden West</span><span class="about-favorite-platform">STEAM</span></a>
+</div>
+</article>
+</div>
+<section aria-labelledby="aboutCharactersTitle" class="about-character-section">
+<div class="about-character-heading">
+<p class="about-eyebrow" data-i18n="charactersEyebrow">CHARACTERS</p>
+<h2 data-i18n="charactersTitle" id="aboutCharactersTitle">Characters I like</h2>
+<p data-i18n="charactersIntro">A closer look at some of my favourite characters — their stories, personalities and the worlds they come from.</p>
+</div>
+<div aria-live="polite" class="about-character-grid" id="aboutCharacterGrid"></div>
+</section>
+<section aria-label="Music player" class="about-music" id="aboutMusic">
+<div class="about-music-head">
+<p class="about-eyebrow" data-mp-i18n="eyebrow">MUSIC</p>
+<h3 data-mp-i18n="title">What I listen to</h3>
+<p data-mp-i18n="intro">A small playlist of tracks I like. Press play to start — nothing plays automatically.</p>
+</div>
+<div class="mp-card">
+<div class="mp-cover" id="mpCover"><img alt="" decoding="async" height="112" width="112"/><span aria-hidden="true" class="mp-cover-fallback">♪</span></div>
+<div class="mp-main">
+<div class="mp-meta"><strong class="mp-title" id="mpTitle">—</strong><p class="mp-artist" id="mpArtist"></p><p class="mp-error" id="mpError" role="status"></p></div>
+<div class="mp-progress"><span id="mpCur">0:00</span><input aria-label="Track progress" id="mpSeek" max="1000" min="0" step="1" type="range" value="0"/><span id="mpDur">0:00</span></div>
+<div class="mp-controls">
+<button aria-label="Previous track" class="mp-btn" id="mpPrev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M6 5h2.4v14H6zM20 5.5v13a.8.8 0 0 1-1.25.66L9.6 12.66a.8.8 0 0 1 0-1.32l9.15-6.5A.8.8 0 0 1 20 5.5Z"></path></svg></button>
+<button aria-label="Play" aria-pressed="false" class="mp-btn mp-btn-play" id="mpPlay" type="button"><svg aria-hidden="true" class="mp-i-play" viewbox="0 0 24 24"><path d="M8 5.2v13.6a.9.9 0 0 0 1.38.76l10.7-6.8a.9.9 0 0 0 0-1.52L9.38 4.44A.9.9 0 0 0 8 5.2Z"></path></svg><svg aria-hidden="true" class="mp-i-pause" viewbox="0 0 24 24"><path d="M7 4.5h3.6v15H7zM13.4 4.5H17v15h-3.6z"></path></svg></button>
+<button aria-label="Next track" class="mp-btn" id="mpNext" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M15.6 5H18v14h-2.4zM4 5.5v13a.8.8 0 0 0 1.25.66l9.15-6.5a.8.8 0 0 0 0-1.32l-9.15-6.5A.8.8 0 0 0 4 5.5Z"></path></svg></button>
+<span aria-hidden="true" class="mp-count" id="mpCount">1 / 17</span>
+<button aria-controls="mpList" aria-expanded="false" aria-label="Tracklist" class="mp-btn" id="mpListToggle" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 6h16v2.2H4zM4 10.9h16v2.2H4zM4 15.8h10v2.2H4z"></path></svg></button>
+</div>
+</div>
+</div>
+<ol class="mp-list" hidden="" id="mpList"></ol>
+<audio id="mpAudio" preload="none"></audio>
+</section>
+<p class="about-note" data-i18n="aboutNote">This page is a small snapshot, not a complete description — interests and projects keep evolving.</p>
+</section>
+</main>
+<script>
   (function(){
     const dict={
       en:{docs:'Documentation',dashboard:'Dashboard',eyebrow:'BEHIND QUELLO',role:'Creator · Developer · Builder of Quello',description:'I create digital projects with a focus on interface design, bot development and thoughtful user experience. Quello began as a tool for managing Question of the Day sessions and gradually grew into a connected Discord and Telegram bot project with its own website and documentation. I enjoy turning ideas into practical, polished products and continuously improving the details that make them easier to use.',back:'Back to Quello',moreEyebrow:'A LITTLE MORE',moreTitle:'A little about me',moreIntro:'Beyond development and Quello, here are a few things that make me who I am.',personalityTitle:'My personality',personalityText:'I am straightforward and independent-minded. I can be stubborn when I believe in something, and I prefer honest, clear communication over guessing games. I value being understood and having room to make my own decisions.',traitDirect:'Straightforward',traitIndependent:'Independent',traitStubborn:'Persistent',interestsTitle:'What I enjoy',interestsText:'I like technology, programming, interface design and building projects that feel complete. I also enjoy games and fictional worlds with memorable characters, atmosphere and interesting stories.',interestTech:'Technology',interestCode:'Programming',interestDesign:'Design',interestGames:'Games & stories',favoritesTitle:'Worlds I like',favoritesText:'Some of the universes and games I keep coming back to:',charactersEyebrow:'CHARACTERS',charactersTitle:'Characters I like',charactersIntro:'A closer look at some of my favourite characters — their stories, personalities and the worlds they come from.',aboutNote:'This page is a small snapshot, not a complete description — interests and projects keep evolving.'},
@@ -149,11 +142,10 @@
     theme.addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='light'?'dark':'light',theme));
   })();
   </script>
-  <script src="site-config.js?v=2"></script><script src="creator-console.js?v=17"></script>
-  <script src="header-avatar.js?v=4"></script>
-  <script src="character-data.js?v=1"></script><script src="character-list.js?v=1" defer></script>
-  <script src="game-art.js?v=10" defer></script>
-  <script src="music-player.js?v=1" defer></script>
-
-  <script src="sheet-select.js?v=2"></script>
+<script src="site-config.js?v=2"></script><script src="creator-console.js?v=18"></script>
+<script src="header-avatar.js?v=4"></script>
+<script src="character-data.js?v=1"></script><script defer="" src="character-list.js?v=1"></script>
+<script defer="" src="game-art.js?v=10"></script>
+<script defer="" src="music-player.js?v=1"></script>
+<script src="sheet-select.js?v=2"></script>
 </body></html>

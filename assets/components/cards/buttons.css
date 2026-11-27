@@ -1,0 +1,14 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+:where(button:not(.command-option):not(.header-avatar-btn):not(.site-tab):not(.badge):not(.pill),.button,.primary-button,.about-back,.about-socials a,.q-account-button,.q-account-back,.character-back,.character-footer a,.global-board-back,a[class*="back-button"],button[class*="back-button"]){border-radius:var(--q-control-radius);font-family:var(--font-ui,Arial,sans-serif);transition:background-color .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease,opacity .18s ease}
+:where(button:not(:disabled),.button,a[class*="back"],.q-account-button):active{transform:translateY(0) scale(.985)}
+@media(hover:hover){:where(.q-account-button,.button,.about-socials a,.character-back,.character-footer a,.global-board-back):hover{transform:translateY(-1px)}}
+:where(.about-back,.universe-back,.about-btn,.legal-btn,.global-board-refresh,.discovery-refresh,.discovery-filter){min-height:40px;border-radius:13px;font-family:var(--font-ui,Arial,sans-serif);font-weight:700;transition:background .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease}
+:where(.site-tab,.legal-tab,.tab,.creator-tab,.sub-tabs button,.discovery-filter){border-radius:12px;transition:background .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease}
+:where(.site-tab,.legal-tab,.tab,.creator-tab,.sub-tabs button):hover{background:var(--surface-hover);color:var(--text-strong)}
+:where(.site-tab.active,.legal-tab.active,.tab.active,.creator-tab.active){color:var(--accent-text)}
+:where(.discovery-filter.is-active,.discovery-filter[aria-pressed="true"]){border-color:color-mix(in srgb,var(--accent) 55%,var(--line));background:color-mix(in srgb,var(--accent) 14%,var(--surface));color:var(--accent-text);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 12%,transparent)}
+
+/* Shared keyboard, disabled and touch states across legacy and library controls. */
+:where(button,a,[role="button"],input,select,textarea):focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+:where(button:disabled,[role="button"][aria-disabled="true"],a[aria-disabled="true"]){cursor:not-allowed;opacity:.55;filter:saturate(.7)}
+:where(button,a[role="button"],[role="button"]){-webkit-tap-highlight-color:transparent}

@@ -1,0 +1,27 @@
+/* Copyright (c) 2026 Quello. All rights reserved. */
+/* Compatibility bridge: legacy page markup adopts shared Quello card tokens. */
+html body :is(
+  .about-personality-card,.about-favorites-card,.about-info-card,.about-extra,.extra-card,
+  .feedback-card,.flow-panel,.flow-card,.playground-card,.builder-panel,.achievements-card,
+  .easter-card,.login-card,.profile-user-card,.user-card,.qotd-floating-card,
+  .qotd-card,.command-details-panel,.command-drawer-panel,.profile-settings-card,
+  .mp-card,.evolution-card,.universe-card,.character-card,.global-board-card,
+  .q-account-card,.q-account-hero,.server-card,.discovery-listing,.discovery-server-card,
+  .dash-card,.about-card,.about-character-section
+){
+  box-sizing:border-box;
+  min-width:0;
+  max-width:100%;
+  border-color:var(--line);
+  box-shadow:var(--q-control-shadow);
+}
+html body :is(
+  .about-personality-card,.about-favorites-card,.extra-card,.feedback-card,.flow-panel,
+  .flow-card,.playground-card,.builder-panel,.achievements-card,.easter-card,.login-card,
+  .profile-user-card,.user-card,.qotd-floating-card,.qotd-card,.command-details-panel,
+  .profile-settings-card,.mp-card
+){border-radius:var(--q-panel-radius)}
+html body :is(.about-personality-card,.about-favorites-card,.extra-card,.feedback-card,.flow-panel,.flow-card,.playground-card,.builder-panel,.achievements-card,.easter-card,.login-card,.profile-user-card,.user-card,.qotd-floating-card,.qotd-card,.command-details-panel,.profile-settings-card,.mp-card){transition:border-color var(--q-dur) var(--q-ease),box-shadow var(--q-dur) var(--q-ease),background-color var(--q-dur) var(--q-ease)}
+@media(max-width:620px){
+  html body :is(.about-personality-card,.about-favorites-card,.extra-card,.feedback-card,.flow-panel,.flow-card,.playground-card,.builder-panel,.achievements-card,.easter-card,.login-card,.profile-user-card,.user-card,.qotd-floating-card,.qotd-card,.command-details-panel,.profile-settings-card,.mp-card){max-width:100%}
+}

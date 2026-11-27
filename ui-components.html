@@ -1,133 +1,120 @@
-<!doctype html>
-<html lang="en" data-theme="dark">
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#100b1c">
-  <title>Quello — UI Component Samples</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="theme.css">
-  <link rel="stylesheet" href="brand-gradient.css">
-  <link rel="stylesheet" href="quello-ui-system.css">
-  <link rel="stylesheet" href="components/drawers.css">
-  <link rel="stylesheet" href="components/vertical-drawer.css">
-  <link rel="stylesheet" href="components/side-drawer.css">
-  <link rel="stylesheet" href="components/theme-switcher.css">
-  <link rel="stylesheet" href="components/language-switcher.css">
-  <link rel="stylesheet" href="components/back-buttons.css">
-  <link rel="stylesheet" href="components/admin-panel.css">
-  <link rel="stylesheet" href="ui-components.css">
-  <script src="auth-boot.js"></script>
-  <script src="theme-switch.js"></script>
-  <script src="components/drawer-core.js" defer></script>
-  <script src="components/vertical-drawer.js" defer></script>
-  <script src="components/side-drawer.js" defer></script>
-  <script src="components/theme-switcher.js" defer></script>
-  <script src="components/language-switcher.js" defer></script>
-  <script src="components/admin-panel.js" defer></script>
-  <script src="ui-components.js" defer></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#100b1c" name="theme-color"/>
+<title>Quello — UI Component Samples</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="theme.css" rel="stylesheet"/>
+<link href="brand-gradient.css" rel="stylesheet"/>
+<link href="ui-components.css" rel="stylesheet"/>
+<link href="assets/components/quello-ui.css?v=5" rel="stylesheet"/>
+<script src="auth-boot.js"></script>
+<script src="theme-switch.js"></script>
+<script defer="" src="assets/components/drawers/drawer-core.js"></script>
+<script defer="" src="assets/components/drawers/vertical-drawer.js"></script>
+<script defer="" src="assets/components/drawers/side-drawer.js"></script>
+<script defer="" src="assets/components/controls/theme-switcher.js"></script>
+<script defer="" src="assets/components/navigation/language-switcher.js"></script>
+<script defer="" src="assets/components/admin/admin-panel.js"></script>
+<script defer="" src="ui-components.js"></script>
 </head>
 <body>
-  <header class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="index.html">Quello</a>
-      <div class="q-samples-controls">
-        <div data-q-language-switcher>
-          <button class="q-sample-language-trigger" type="button" data-q-language-trigger aria-haspopup="dialog">
-            <span class="q-sample-language-flag" data-q-language-flag>🇬🇧</span>
-            <span class="q-sample-language-code" data-q-language-code>EN</span>
-            <span aria-hidden="true">⌄</span>
-          </button>
-        </div>
-        <button class="q-sample-theme-toggle" type="button" data-q-theme-toggle aria-pressed="false">
-          <span class="q-sample-theme-icon" aria-hidden="true">☾</span>
-          <span data-q-theme-label>Dark theme</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main class="q-samples-wrap">
-    <div class="q-samples-head">
-      <div>
-        <span class="q-samples-label">QUELLO DESIGN SYSTEM</span>
-        <h1>UI Component Samples</h1>
-        <p>Reusable interface examples based on Quello's current visual language. Each component has its own CSS and JavaScript file.</p>
-      </div>
-      <a class="q-sample-back" href="index.html"><span class="q-sample-back-arrow">←</span> Back to Quello</a>
-    </div>
-
-    <section class="q-samples-section">
-      <span class="q-samples-label">01 · DRAWERS</span>
-      <h2>Vertical and side drawers</h2>
-      <p>Two independent panel patterns with backdrop, Escape-to-close, focus handling and responsive sizing.</p>
-      <div class="q-samples-controls">
-        <button class="q-samples-open" type="button" data-open-vertical>Open vertical drawer</button>
-        <button class="q-samples-open" type="button" data-open-side>Open side drawer</button>
-      </div>
-    </section>
-
-    <section class="q-samples-section">
-      <span class="q-samples-label">02 · THEME</span>
-      <h2>Theme switch button</h2>
-      <p>Switches between the existing Quello dark and light theme tokens and stores the selection in local storage.</p>
-      <div class="q-samples-controls">
-        <button class="q-sample-theme-toggle" type="button" data-q-theme-toggle aria-pressed="false">
-          <span class="q-sample-theme-icon" aria-hidden="true">☾</span>
-          <span data-q-theme-label>Dark theme</span>
-        </button>
-      </div>
-    </section>
-
-    <section class="q-samples-section">
-      <span class="q-samples-label">03 · LANGUAGE</span>
-      <h2>Language selection sheet</h2>
-      <p>Opens a vertical selection sheet with the five current site languages: English, Russian, German, French and Italian.</p>
-      <div class="q-samples-controls">
-        <div data-q-language-switcher>
-          <button class="q-sample-language-trigger" type="button" data-q-language-trigger aria-haspopup="dialog">
-            <span class="q-sample-language-flag" data-q-language-flag>🇬🇧</span>
-            <span class="q-sample-language-code" data-q-language-code>EN</span>
-            <span aria-hidden="true">⌄</span>
-          </button>
-        </div>
-      </div>
-      <p class="q-samples-footer">This sample changes the document language and saved language preference. It does not translate the showcase content automatically.</p>
-    </section>
-
-    <section class="q-samples-section">
-      <span class="q-samples-label">04 · BACK BUTTONS</span>
-      <h2>“Back to…” buttons</h2>
-      <p>Two visual variants for navigation to the main page or a parent section.</p>
-      <div class="q-samples-controls">
-        <a class="q-sample-back" href="index.html"><span class="q-sample-back-arrow">←</span> Back to Quello</a>
-        <a class="q-sample-back is-primary" href="dashboard.html"><span class="q-sample-back-arrow">←</span> Back to Dashboard</a>
-      </div>
-    </section>
-
-    <section class="q-samples-section">
-      <span class="q-samples-label">05 · ADMIN PANEL</span>
-      <h2>Admin Panel layout sample</h2>
-      <p>Responsive visual mock-up of the Admin Panel workspace. This is a UI example only: it does not authenticate users, read roles or call the production API.</p>
-      <div class="q-sample-admin" data-q-admin-sample>
-        <aside class="q-sample-admin-sidebar">
-          <div class="q-sample-admin-brand"><span class="q-sample-admin-mark">Q</span><span><strong>Admin Panel</strong><small>Quello Control Center</small></span></div>
-          <nav class="q-sample-admin-nav" aria-label="Admin sample sections">
-            <button class="q-sample-admin-tab" type="button" data-q-admin-tab="overview" aria-current="page">System Overview</button>
-            <button class="q-sample-admin-tab" type="button" data-q-admin-tab="announcements" aria-current="false">Announcements</button>
-            <button class="q-sample-admin-tab" type="button" data-q-admin-tab="team" aria-current="false">Developer Team</button>
-          </nav>
-        </aside>
-        <div class="q-sample-admin-main">
-          <div class="q-sample-admin-top"><h3 data-q-admin-title>System Overview</h3><span class="q-sample-admin-status">SAMPLE UI</span></div>
-          <div class="q-sample-admin-cards" data-q-admin-cards></div>
-          <div class="q-sample-admin-note" data-q-admin-note></div>
-          <div class="q-sample-admin-actions"><button type="button">Preview action</button><button type="button">Secondary action</button></div>
-        </div>
-      </div>
-    </section>
-
-    <p class="q-samples-footer">Quello component samples · Separate reusable files · No production permissions or API behaviour changed.</p>
-  </main>
+<header class="nav">
+<div class="nav-inner">
+<a class="brand" href="index.html">Quello</a>
+<div class="q-samples-controls">
+<div data-q-language-switcher="">
+<button aria-haspopup="dialog" class="q-sample-language-trigger" data-q-language-trigger="" type="button">
+<span class="q-sample-language-flag" data-q-language-flag="">🇬🇧</span>
+<span class="q-sample-language-code" data-q-language-code="">EN</span>
+<span aria-hidden="true">⌄</span>
+</button>
+</div>
+<button aria-pressed="false" class="q-sample-theme-toggle" data-q-theme-toggle="" type="button">
+<span aria-hidden="true" class="q-sample-theme-icon">☾</span>
+<span data-q-theme-label="">Dark theme</span>
+</button>
+</div>
+</div>
+</header>
+<main class="q-samples-wrap">
+<div class="q-samples-head">
+<div>
+<span class="q-samples-label">QUELLO DESIGN SYSTEM</span>
+<h1>UI Component Samples</h1>
+<p>Reusable interface examples based on Quello's current visual language. Each component has its own CSS and JavaScript file.</p>
+</div>
+<a class="q-sample-back" href="index.html"><span class="q-sample-back-arrow">←</span> Back to Quello</a>
+</div>
+<section class="q-samples-section">
+<span class="q-samples-label">01 · DRAWERS</span>
+<h2>Vertical and side drawers</h2>
+<p>Two independent panel patterns with backdrop, Escape-to-close, focus handling and responsive sizing.</p>
+<div class="q-samples-controls">
+<button class="q-samples-open" data-open-vertical="" type="button">Open vertical drawer</button>
+<button class="q-samples-open" data-open-side="" type="button">Open side drawer</button>
+</div>
+</section>
+<section class="q-samples-section">
+<span class="q-samples-label">02 · THEME</span>
+<h2>Theme switch button</h2>
+<p>Switches between the existing Quello dark and light theme tokens and stores the selection in local storage.</p>
+<div class="q-samples-controls">
+<button aria-pressed="false" class="q-sample-theme-toggle" data-q-theme-toggle="" type="button">
+<span aria-hidden="true" class="q-sample-theme-icon">☾</span>
+<span data-q-theme-label="">Dark theme</span>
+</button>
+</div>
+</section>
+<section class="q-samples-section">
+<span class="q-samples-label">03 · LANGUAGE</span>
+<h2>Language selection sheet</h2>
+<p>Opens a vertical selection sheet with the five current site languages: English, Russian, German, French and Italian.</p>
+<div class="q-samples-controls">
+<div data-q-language-switcher="">
+<button aria-haspopup="dialog" class="q-sample-language-trigger" data-q-language-trigger="" type="button">
+<span class="q-sample-language-flag" data-q-language-flag="">🇬🇧</span>
+<span class="q-sample-language-code" data-q-language-code="">EN</span>
+<span aria-hidden="true">⌄</span>
+</button>
+</div>
+</div>
+<p class="q-samples-footer">This sample changes the document language and saved language preference. It does not translate the showcase content automatically.</p>
+</section>
+<section class="q-samples-section">
+<span class="q-samples-label">04 · BACK BUTTONS</span>
+<h2>“Back to…” buttons</h2>
+<p>Two visual variants for navigation to the main page or a parent section.</p>
+<div class="q-samples-controls">
+<a class="q-sample-back" href="index.html"><span class="q-sample-back-arrow">←</span> Back to Quello</a>
+<a class="q-sample-back is-primary" href="dashboard.html"><span class="q-sample-back-arrow">←</span> Back to Dashboard</a>
+</div>
+</section>
+<section class="q-samples-section">
+<span class="q-samples-label">05 · ADMIN PANEL</span>
+<h2>Admin Panel layout sample</h2>
+<p>Responsive visual mock-up of the Admin Panel workspace. This is a UI example only: it does not authenticate users, read roles or call the production API.</p>
+<div class="q-sample-admin" data-q-admin-sample="">
+<aside class="q-sample-admin-sidebar">
+<div class="q-sample-admin-brand"><span class="q-sample-admin-mark">Q</span><span><strong>Admin Panel</strong><small>Quello Control Center</small></span></div>
+<nav aria-label="Admin sample sections" class="q-sample-admin-nav">
+<button aria-current="page" class="q-sample-admin-tab" data-q-admin-tab="overview" type="button">System Overview</button>
+<button aria-current="false" class="q-sample-admin-tab" data-q-admin-tab="announcements" type="button">Announcements</button>
+<button aria-current="false" class="q-sample-admin-tab" data-q-admin-tab="team" type="button">Developer Team</button>
+</nav>
+</aside>
+<div class="q-sample-admin-main">
+<div class="q-sample-admin-top"><h3 data-q-admin-title="">System Overview</h3><span class="q-sample-admin-status">SAMPLE UI</span></div>
+<div class="q-sample-admin-cards" data-q-admin-cards=""></div>
+<div class="q-sample-admin-note" data-q-admin-note=""></div>
+<div class="q-sample-admin-actions"><button type="button">Preview action</button><button type="button">Secondary action</button></div>
+</div>
+</div>
+</section>
+<p class="q-samples-footer">Quello component samples · Separate reusable files · No production permissions or API behaviour changed.</p>
+</main>
 </body>
 </html>

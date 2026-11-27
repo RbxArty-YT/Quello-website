@@ -7,3 +7,8 @@
 :where(.site-tab,.legal-tab,.tab,.creator-tab,.sub-tabs button):hover{background:var(--surface-hover);color:var(--text-strong)}
 :where(.site-tab.active,.legal-tab.active,.tab.active,.creator-tab.active){color:var(--accent-text)}
 :where(.discovery-filter.is-active,.discovery-filter[aria-pressed="true"]){border-color:color-mix(in srgb,var(--accent) 55%,var(--line));background:color-mix(in srgb,var(--accent) 14%,var(--surface));color:var(--accent-text);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 12%,transparent)}
+
+/* Shared keyboard, disabled and touch states across legacy and library controls. */
+:where(button,a,[role="button"],input,select,textarea):focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+:where(button:disabled,[role="button"][aria-disabled="true"],a[aria-disabled="true"]){cursor:not-allowed;opacity:.55;filter:saturate(.7)}
+:where(button,a[role="button"],[role="button"]){-webkit-tap-highlight-color:transparent}

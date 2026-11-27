@@ -1,0 +1,90 @@
+/* Production header controls: one visual language, existing page-specific behavior intact. */
+:where(.header-language-button,.q-account-theme,.theme-toggle){
+  border:1px solid var(--line-strong);
+  color:var(--text);
+  background:var(--surface-2);
+  background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 90%,var(--accent) 7%),var(--surface-2));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 5px 18px color-mix(in srgb,var(--accent) 7%,transparent);
+  -webkit-tap-highlight-color:transparent;
+  transition:background .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease;
+}
+:where(.header-language-button,.q-account-theme,.theme-toggle):hover{
+  border-color:color-mix(in srgb,var(--accent) 58%,var(--line-strong));
+  background:var(--surface-hover);
+  background:linear-gradient(125deg,color-mix(in srgb,var(--accent) 16%,var(--surface)),color-mix(in srgb,var(--accent-2) 9%,var(--surface-2)));
+  box-shadow:0 8px 24px color-mix(in srgb,var(--accent) 13%,transparent),inset 0 1px 0 rgba(255,255,255,.05);
+}
+:where(.header-language-button,.q-account-theme,.theme-toggle):focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+.header-language-button{min-height:40px;border-radius:12px;font-weight:800;letter-spacing:.045em}
+.header-language.open .header-language-button,
+.header-language-button[aria-expanded="true"]{
+  border-color:color-mix(in srgb,var(--accent) 58%,var(--line-strong));
+  background:var(--surface-hover);
+  background:linear-gradient(125deg,color-mix(in srgb,var(--accent) 15%,var(--surface)),var(--surface-2));
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 10%,transparent);
+}
+.header-language-menu{
+  border:1px solid var(--line-strong);
+  border-radius:15px;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 93%,var(--accent) 7%),var(--surface-2));
+  box-shadow:var(--shadow-pop),0 0 26px color-mix(in srgb,var(--accent) 8%,transparent);
+  -webkit-backdrop-filter:blur(22px) saturate(140%);
+  backdrop-filter:blur(22px) saturate(140%);
+  overflow:hidden;
+}
+.header-language-menu button{
+  min-height:40px;
+  border-radius:10px;
+  color:var(--text-2);
+  transition:background .16s ease,color .16s ease,transform .16s ease;
+}
+.header-language-menu button:hover,
+.header-language-menu button:focus-visible,
+.header-language-menu button.active,
+.header-language-menu [aria-selected="true"]{
+  background:linear-gradient(100deg,color-mix(in srgb,var(--accent) 19%,transparent),color-mix(in srgb,var(--accent-2) 13%,transparent));
+  color:var(--text-strong);
+}
+.header-language-menu button:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:-2px;
+}
+:where(.theme-toggle,.q-account-theme){width:40px;height:40px;min-width:40px;min-height:40px;border-radius:12px;}
+:where(.theme-toggle,.q-account-theme) svg{width:19px;height:19px;}
+:where(.theme-toggle,.q-account-theme):active{transform:scale(.96);}
+:where(.theme-toggle,.q-account-theme):disabled,
+.header-language-button:disabled{
+  opacity:.55;
+  cursor:not-allowed;
+  box-shadow:none;
+}
+@media(max-width:620px){
+  .header-language-button{min-height:38px;padding:7px 10px;}
+  :where(.theme-toggle,.q-account-theme){width:38px;height:38px;min-width:38px;min-height:38px;}
+  .header-language-menu{max-width:min(92vw,260px);}
+}
+@media(prefers-reduced-motion:reduce){
+  :where(.header-language-button,.q-account-theme,.theme-toggle),.header-language-menu button{transition:none!important;}
+}
+
+/* The legacy theme sheet marks these two language-button backgrounds !important.
+   Keep the shared production finish authoritative without changing its JS behavior. */
+.header-language-button{
+  background:var(--surface-2)!important;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 90%,var(--accent) 7%),var(--surface-2))!important;
+}
+.header-language-button:hover,
+.header-language.open .header-language-button,
+.header-language-button[aria-expanded="true"]{
+  background:var(--surface-hover)!important;
+  background:linear-gradient(125deg,color-mix(in srgb,var(--accent) 16%,var(--surface)),color-mix(in srgb,var(--accent-2) 9%,var(--surface-2)))!important;
+}
+:root[data-theme="light"] :where(.theme-toggle,.q-account-theme){
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.72),0 5px 18px rgba(94,76,194,.09);
+}
+:root[data-theme="light"] :where(.theme-toggle,.q-account-theme):hover{
+  box-shadow:0 8px 24px rgba(94,76,194,.14),inset 0 1px 0 rgba(255,255,255,.82);
+}

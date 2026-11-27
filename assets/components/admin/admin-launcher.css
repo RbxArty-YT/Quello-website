@@ -1,2 +1,42 @@
 /* Copyright (c) 2026 Quello. All rights reserved. */
 .creator-console-launcher{max-width:calc(100vw - 24px)}
+
+/* Production launcher: keep the Admin Panel entry circular on desktop and mobile. */
+body .creator-fab{
+  box-sizing:border-box;
+  display:inline-grid;
+  place-items:center;
+  width:56px;
+  height:56px;
+  min-width:56px;
+  min-height:56px;
+  max-width:56px;
+  padding:0;
+  overflow:hidden;
+  border-radius:50%;
+  font-size:0;
+  line-height:0;
+  color:transparent;
+  -webkit-tap-highlight-color:transparent;
+}
+body .creator-fab::before{
+  content:"✦";
+  display:block;
+  color:#fff;
+  font:800 23px/1 var(--font-ui,Arial,sans-serif);
+  text-shadow:0 1px 8px rgba(255,255,255,.24);
+}
+body .creator-fab:active{transform:translateY(-1px) scale(.97)}
+@media(max-width:620px){
+  body .creator-fab{
+    right:14px;
+    bottom:14px;
+    width:50px;
+    height:50px;
+    min-width:50px;
+    min-height:50px;
+    max-width:50px;
+    border-radius:50%;
+  }
+  body .creator-fab::before{font-size:21px}
+}

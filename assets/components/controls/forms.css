@@ -16,3 +16,9 @@ input[type="radio"]:checked::after{transform:scale(1)}
 input[type="range"]{appearance:none;-webkit-appearance:none;width:100%;height:6px;border:0;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));cursor:pointer;accent-color:var(--accent)}
 input[type="range"]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:17px;height:17px;border:3px solid var(--surface);border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 1px var(--accent),0 3px 12px rgba(0,0,0,.25)}
 input[type="range"]::-moz-range-thumb{width:12px;height:12px;border:3px solid var(--surface);border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 1px var(--accent),0 3px 12px rgba(0,0,0,.25)}
+
+/* Native selects join the same field treatment as text inputs. */
+:where(select){min-height:var(--q-control-height);max-width:100%;border:1px solid var(--q-control-border);border-radius:var(--q-control-radius);background-color:var(--surface);color:var(--text);font:inherit;transition:border-color .18s ease,box-shadow .18s ease,background .18s ease}
+:where(select):hover{border-color:var(--line-hover)}
+:where(select):focus-visible{border-color:var(--accent);outline:2px solid color-mix(in srgb,var(--accent) 45%,transparent);outline-offset:2px}
+:where(input,select,textarea):disabled{cursor:not-allowed;opacity:.58}
